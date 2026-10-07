@@ -152,7 +152,7 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/intersects/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/intersects/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects",
   "type": "ImplementationProfile",
   "prefLabel": "Intersects",
@@ -246,9 +246,9 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
@@ -259,18 +259,7 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
     skos:definition "Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share at least one point). Equivalent to the negation of Disjoint." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Intersects" ;
-    gp:inputs [ ns3:geometry1 [ proc:keywords "GML",
-                        "geometry" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:schema [ a ns2:string ;
-                            ns2:contentMediaType "text/xml" ;
-                            ns2:description "GML" ] ] ;
-            ns3:geometry2 [ proc:keywords "GML",
+    gp:inputs [ ns1:geometry1 [ proc:keywords "GML",
                         "geometry" ;
                     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
@@ -280,8 +269,19 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
                     proc:schema [ a ns2:string ;
                             ns2:contentMediaType "text/xml" ;
+                            ns2:description "GML" ] ] ;
+            ns1:geometry2 [ proc:keywords "GML",
+                        "geometry" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+                    proc:schema [ a ns2:string ;
+                            ns2:contentMediaType "text/xml" ;
                             ns2:description "GML" ] ] ] ;
-    gp:outputs [ ns1:result [ proc:keywords "boolean" ;
+    gp:outputs [ ns3:result [ proc:keywords "boolean" ;
                     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ] ] ;
@@ -304,7 +304,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Intersects" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -443,8 +443,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/intersects/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/intersects/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/intersects/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/intersects/schema.yaml)
 
 
 # JSON-LD Context
@@ -534,7 +534,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/intersects/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/intersects/context.jsonld)
 
 ## Sources
 

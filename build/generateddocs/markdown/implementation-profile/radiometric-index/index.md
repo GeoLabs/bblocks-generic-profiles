@@ -161,7 +161,7 @@ the ZOO-Project Geonovum testbed
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/radiometric-index/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/radiometric-index/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index",
   "type": "ImplementationProfile",
   "prefLabel": "Radiometric index",
@@ -259,28 +259,28 @@ the ZOO-Project Geonovum testbed
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
-        [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html> ;
-            dcterms:title "OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image" ] ;
+    dcterms:source [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html> ;
+            dcterms:title "OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image" ],
+        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
     skos:definition "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s)." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Radiometric index" ;
-    gp:inputs [ ns3:index [ proc:keywords "radiometric index" ;
+    gp:inputs [ ns2:index [ proc:keywords "radiometric index" ;
                     proc:metadata [ dcterms:title "Generic Profile: Radiometric index" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
                         [ dcterms:title "Process Concept: Raster Coverage Processing" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ] ;
-            ns3:rasters [ proc:keywords "GeoTIFF",
+            ns2:rasters [ proc:keywords "GeoTIFF",
                         "raster" ;
                     proc:maxOccurs 1 ;
                     proc:metadata [ dcterms:title "Generic Profile: Radiometric index" ;
@@ -293,7 +293,7 @@ the ZOO-Project Geonovum testbed
                             ns1:contentEncoding "base64" ;
                             ns1:contentMediaType "image/tiff" ;
                             ns1:description "GeoTIFF" ] ] ] ;
-    gp:outputs [ ns2:raster [ proc:keywords "GeoTIFF",
+    gp:outputs [ ns3:raster [ proc:keywords "GeoTIFF",
                         "raster" ;
                     proc:metadata [ dcterms:title "Generic Profile: Radiometric index" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> ;
@@ -320,7 +320,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Radiometric index" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -449,8 +449,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/radiometric-index/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/radiometric-index/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/radiometric-index/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/radiometric-index/schema.yaml)
 
 
 # JSON-LD Context
@@ -540,7 +540,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/radiometric-index/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/radiometric-index/context.jsonld)
 
 ## Sources
 

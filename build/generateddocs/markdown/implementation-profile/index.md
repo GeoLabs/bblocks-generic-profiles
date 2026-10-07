@@ -164,7 +164,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile",
   "type": "ImplementationProfile",
   "prefLabel": "Example Implementation Profile (placeholder, not a real operation)",
@@ -241,9 +241,9 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns3: <https://w3id.org/ogc/api/schema/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
@@ -251,7 +251,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     skos:definition "Illustrates the shape of an Implementation Profile entry only. Real ones are each their own building block -- see generic-profiles.implementation-profile.intersects, .buffer and the other siblings." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Example Implementation Profile (placeholder, not a real operation)" ;
-    gp:inputs [ ns3:geometry1 [ proc:keywords "GML",
+    gp:inputs [ ns1:geometry1 [ proc:keywords "GML",
                         "geometry" ;
                     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
@@ -259,21 +259,21 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
                         [ dcterms:title "Generic Profile: Binary spatial predicate" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
-                    proc:schema [ a ns2:string ;
-                            ns2:contentMediaType "text/xml" ;
-                            ns2:description "GML" ] ] ;
-            ns3:geometry2 [ proc:keywords "GML",
+                    proc:schema [ a ns3:string ;
+                            ns3:contentMediaType "text/xml" ;
+                            ns3:description "GML" ] ] ;
+            ns1:geometry2 [ proc:keywords "GML",
                         "geometry" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:schema [ a ns2:string ;
-                            ns2:contentMediaType "text/xml" ;
-                            ns2:description "GML" ] ] ] ;
-    gp:outputs [ ns1:result [ proc:keywords "boolean" ] ] ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
+                        [ dcterms:title "Generic Profile: Binary spatial predicate" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
+                    proc:schema [ a ns3:string ;
+                            ns3:contentMediaType "text/xml" ;
+                            ns3:description "GML" ] ] ] ;
+    gp:outputs [ ns2:result [ proc:keywords "boolean" ] ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
     gp:status "submitted" ;
     proc:keywords "example",
@@ -503,8 +503,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml)
 
 
 # JSON-LD Context
@@ -600,7 +600,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/context.jsonld)
 
 ## Sources
 

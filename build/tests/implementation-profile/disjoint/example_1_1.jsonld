@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/disjoint/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/disjoint/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint",
   "type": "ImplementationProfile",
   "prefLabel": "Disjoint",

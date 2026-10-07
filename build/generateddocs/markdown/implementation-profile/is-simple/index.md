@@ -109,7 +109,7 @@ process of the ZOO-Project Geonovum testbed.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/is-simple/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/is-simple/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple",
   "type": "ImplementationProfile",
   "prefLabel": "Is simple",
@@ -183,22 +183,22 @@ process of the ZOO-Project Geonovum testbed.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
+    dcterms:source [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/IsSimple> ;
+            dcterms:title "ZOO-Project Geonovum testbed -- IsSimple: IsSimple test." ],
+        [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
             dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.1.1 IsSimple()" ],
-        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_IsSimple" ],
-        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/IsSimple> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- IsSimple: IsSimple test." ] ;
+        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_IsSimple" ] ;
     skos:definition "Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection or self tangency." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Is simple" ;
-    gp:inputs [ ns1:geometry [ proc:keywords "GML",
+    gp:inputs [ ns2:geometry [ proc:keywords "GML",
                         "geometry" ;
                     proc:metadata [ dcterms:title "Generic Profile: Unary spatial predicate" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate> ;
@@ -206,9 +206,9 @@ process of the ZOO-Project Geonovum testbed.
                         [ dcterms:title "Process Concept: Vector Geometry Processing" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:schema [ a ns2:string ;
-                            ns2:contentMediaType "text/xml" ;
-                            ns2:description "GML" ] ] ] ;
+                    proc:schema [ a ns1:string ;
+                            ns1:contentMediaType "text/xml" ;
+                            ns1:description "GML" ] ] ] ;
     gp:outputs [ ns3:result [ proc:keywords "boolean" ;
                     proc:metadata [ dcterms:title "Generic Profile: Unary spatial predicate" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate> ;
@@ -231,7 +231,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Is simple" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -333,8 +333,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/is-simple/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/is-simple/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/is-simple/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/is-simple/schema.yaml)
 
 
 # JSON-LD Context
@@ -424,7 +424,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/is-simple/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/is-simple/context.jsonld)
 
 ## Sources
 

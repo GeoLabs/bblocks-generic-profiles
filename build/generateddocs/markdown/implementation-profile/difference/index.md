@@ -156,7 +156,7 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/difference/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/difference/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference",
   "type": "ImplementationProfile",
   "prefLabel": "Difference",
@@ -256,20 +256,31 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference> a skos:Concept ;
-    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.13 ST_Difference" ],
-        [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
-            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.26" ] ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.26" ],
+        [ dcterms:title "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.13 ST_Difference" ] ;
     skos:definition "Returns a geometric object representing the point set difference of this geometric object with anotherGeometry." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Difference" ;
-    gp:inputs [ ns3:geometry1 [ proc:keywords "GML",
+    gp:inputs [ ns2:geometry1 [ proc:keywords "GML",
+                        "geometry" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+                    proc:schema [ a ns1:string ;
+                            ns1:contentMediaType "text/xml" ;
+                            ns1:description "GML" ] ] ;
+            ns2:geometry2 [ proc:keywords "GML",
                         "geometry" ;
                     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
@@ -277,28 +288,17 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
                         [ dcterms:title "Generic Profile: Binary spatial set operation" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
-                    proc:schema [ a ns2:string ;
-                            ns2:contentMediaType "text/xml" ;
-                            ns2:description "GML" ] ] ;
-            ns3:geometry2 [ proc:keywords "GML",
-                        "geometry" ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-                        [ dcterms:title "Generic Profile: Binary spatial set operation" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
-                    proc:schema [ a ns2:string ;
-                            ns2:contentMediaType "text/xml" ;
-                            ns2:description "GML" ] ] ] ;
-    gp:outputs [ ns1:result [ proc:keywords "GML",
+                    proc:schema [ a ns1:string ;
+                            ns1:contentMediaType "text/xml" ;
+                            ns1:description "GML" ] ] ] ;
+    gp:outputs [ ns3:result [ proc:keywords "GML",
                         "geometry" ;
                     proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
-                    proc:schema [ a ns2:string ;
-                            ns2:contentMediaType "text/xml" ;
-                            ns2:description "GML" ] ] ] ;
+                    proc:schema [ a ns1:string ;
+                            ns1:contentMediaType "text/xml" ;
+                            ns1:description "GML" ] ] ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> ;
     gp:status "submitted" ;
     proc:keywords "Difference",
@@ -318,7 +318,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Difference" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -457,8 +457,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/difference/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/difference/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/difference/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/difference/schema.yaml)
 
 
 # JSON-LD Context
@@ -548,7 +548,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/difference/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/difference/context.jsonld)
 
 ## Sources
 

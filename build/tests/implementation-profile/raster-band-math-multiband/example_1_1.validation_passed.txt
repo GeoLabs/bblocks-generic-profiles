@@ -1,5 +1,5 @@
 Validation report for generic-profiles.implementation-profile.raster-band-math-multiband - Implementation Profile: Raster band math (multi-band output)
-Generated 2026-10-07T12:46:14.428639+00:00
+Generated 2026-10-07T12:50:54.788934+00:00
 === Files ===
 Using examples/raster-band-math-multiband.json from examples
 JSON-LD context is present - uplifting

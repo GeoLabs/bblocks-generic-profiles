@@ -3,9 +3,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
-        [ dcterms:title "ISO 19123-1:2023 Geographic information -- Schema for coverage geometry and functions -- Part 1: Fundamentals" ] ;
+    dcterms:source [ dcterms:title "ISO 19123-1:2023 Geographic information -- Schema for coverage geometry and functions -- Part 1: Fundamentals" ],
+        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
     skos:definition "Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, deriving a new raster from one or more others via a mathematical expression or a named radiometric index, cropping a coverage to a region of interest, or converting a coverage to another encoding -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1)." ;
     skos:inScheme gp:concept ;
     skos:prefLabel "Raster Coverage Processing" ;

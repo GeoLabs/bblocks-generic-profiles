@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/geometry-buffer/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer",
   "type": "GenericProfile",
   "prefLabel": "Geometry buffer",

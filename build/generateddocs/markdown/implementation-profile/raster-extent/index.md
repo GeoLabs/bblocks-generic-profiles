@@ -143,7 +143,7 @@ process of the ZOO-Project Geonovum testbed
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/raster-extent/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-extent/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent",
   "type": "ImplementationProfile",
   "prefLabel": "Raster extent",
@@ -237,12 +237,12 @@ process of the ZOO-Project Geonovum testbed
     skos:prefLabel "Raster extent" ;
     gp:inputs [ ns2:raster [ proc:keywords "GeoTIFF",
                         "raster" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Raster extent" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-                        [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
+                        [ dcterms:title "Generic Profile: Raster extent" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
                     proc:schema [ a ns1:string ;
                             ns1:contentEncoding "base64" ;
                             ns1:contentMediaType "image/tiff" ;
@@ -273,7 +273,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Raster extent" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -375,8 +375,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/raster-extent/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/raster-extent/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-extent/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-extent/schema.yaml)
 
 
 # JSON-LD Context
@@ -466,7 +466,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/raster-extent/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-extent/context.jsonld)
 
 ## Sources
 

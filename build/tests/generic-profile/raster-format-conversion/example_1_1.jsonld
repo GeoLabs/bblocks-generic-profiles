@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-format-conversion/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-format-conversion/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion",
   "type": "GenericProfile",
   "prefLabel": "Raster format conversion",

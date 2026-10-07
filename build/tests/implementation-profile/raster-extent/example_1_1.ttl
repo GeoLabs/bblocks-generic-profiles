@@ -16,12 +16,12 @@
     skos:prefLabel "Raster extent" ;
     gp:inputs [ ns2:raster [ proc:keywords "GeoTIFF",
                         "raster" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Raster extent" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-                        [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
+                        [ dcterms:title "Generic Profile: Raster extent" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
                     proc:schema [ a ns1:string ;
                             ns1:contentEncoding "base64" ;
                             ns1:contentMediaType "image/tiff" ;

@@ -115,7 +115,7 @@ process of the ZOO-Project Geonovum testbed.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/centroid/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/centroid/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid",
   "type": "ImplementationProfile",
   "prefLabel": "Centroid",
@@ -195,22 +195,22 @@ process of the ZOO-Project Geonovum testbed.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Centroid> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- Centroid: Computes the centroid of a polygon." ],
+    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Centroid" ],
         [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
             dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Centroid()" ],
-        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Centroid" ] ;
+        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Centroid> ;
+            dcterms:title "ZOO-Project Geonovum testbed -- Centroid: Computes the centroid of a polygon." ] ;
     skos:definition "The mathematical centroid for this Surface as a Point. The result is not guaranteed to be on this Surface." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Centroid" ;
-    gp:inputs [ ns3:geometry [ proc:keywords "GML",
+    gp:inputs [ ns1:geometry [ proc:keywords "GML",
                         "geometry" ;
                     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
@@ -221,7 +221,7 @@ process of the ZOO-Project Geonovum testbed.
                     proc:schema [ a ns2:string ;
                             ns2:contentMediaType "text/xml" ;
                             ns2:description "GML" ] ] ] ;
-    gp:outputs [ ns1:result [ proc:keywords "GML",
+    gp:outputs [ ns3:result [ proc:keywords "GML",
                         "geometry" ;
                     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation> ;
@@ -247,7 +247,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Centroid" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -349,8 +349,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/centroid/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/centroid/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/centroid/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/centroid/schema.yaml)
 
 
 # JSON-LD Context
@@ -440,7 +440,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/centroid/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/centroid/context.jsonld)
 
 ## Sources
 

@@ -2,7 +2,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Generic Profile "Radiometric index" -- see generic-profiles.generic-profile
   for the general shape every Generic Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
 - type: object
   properties:
     id:

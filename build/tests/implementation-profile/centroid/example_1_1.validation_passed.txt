@@ -1,5 +1,5 @@
 Validation report for generic-profiles.implementation-profile.centroid - Implementation Profile: Centroid
-Generated 2026-10-07T12:46:13.579407+00:00
+Generated 2026-10-07T12:50:54.022873+00:00
 === Files ===
 Using examples/centroid.json from examples
 JSON-LD context is present - uplifting

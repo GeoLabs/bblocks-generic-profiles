@@ -3,7 +3,7 @@
   "description": "The Generic Profile \"Raster format conversion\" -- see generic-profiles.generic-profile for the general shape every Generic Profile shares.",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/schema.json"
+      "$ref": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.json"
     },
     {
       "type": "object",

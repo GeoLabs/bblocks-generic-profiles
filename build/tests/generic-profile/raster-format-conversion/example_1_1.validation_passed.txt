@@ -1,5 +1,5 @@
 Validation report for generic-profiles.generic-profile.raster-format-conversion - Generic Profile: Raster format conversion
-Generated 2026-10-07T12:46:13.088678+00:00
+Generated 2026-10-07T12:50:53.521205+00:00
 === Files ===
 Using examples/raster-format-conversion.json from examples
 JSON-LD context is present - uplifting

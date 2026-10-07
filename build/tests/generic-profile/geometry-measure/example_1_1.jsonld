@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/geometry-measure/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-measure/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure",
   "type": "GenericProfile",
   "prefLabel": "Geometry measure",

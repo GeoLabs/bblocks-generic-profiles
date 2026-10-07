@@ -2,7 +2,7 @@
   "title": "Validation report for generic-profiles.generic-profile - Generic Process Profile",
   "bblockName": "Generic Process Profile",
   "bblockId": "generic-profiles.generic-profile",
-  "generated": "2026-10-07T12:46:12.410121+00:00",
+  "generated": "2026-10-07T12:50:52.817247+00:00",
   "result": true,
   "items": [
     {
@@ -10,7 +10,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/generic-profile/example_1_1.json",
-        "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/tests/generic-profile/example_1_1.json",
+        "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/example_1_1.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
         "language": "application/json"

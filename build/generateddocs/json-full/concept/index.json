@@ -7,7 +7,7 @@
   "abstract": "The shape every Process Concept shares: high-level documentation about a general group of processes, no input, no output, no format, no implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1). Each real Concept (generic-profiles.concept.*) is its own building block that allOf-references this one -- this block is not itself a catalogue, only the common shape plus one illustrative example.",
   "status": "under-development",
   "dateTimeAddition": "2026-09-30T00:00:00Z",
-  "dateOfLastChange": "2026-10-07",
+  "dateOfLastChange": "2026-09-30",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",
@@ -18,8 +18,8 @@
     "SKOS",
     "WPS"
   ],
-  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/concept/schema.yaml",
-  "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/context.jsonld",
+  "sourceSchema": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/context.jsonld",
   "sources": [
     {
       "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, \u00a77.5.1 Process Concept",
@@ -34,12 +34,12 @@
     "name": "Apache-2.0"
   },
   "schema": {
-    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/schema.yaml",
-    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/schema.json"
+    "application/yaml": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.json"
   },
-  "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/concept/context.jsonld",
-  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/resolvedProperties.json",
-  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/concept/",
+  "sourceLdContext": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/context.jsonld",
+  "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/resolvedProperties.json",
+  "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/",
   "validationPassed": true,
   "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/concept/",
   "description": "Process Concept -- the shape every Concept in this register shares.\n\n## What a Process Concept is\n\nOGC 14-065 WPS 2.0.2 \u00a77.5.1: *\"a process concept is an object that provides high-level\ndocumentation about a general group of processes. It describes the purpose, methodology and\nproperties of a process but not the specific input and output parameters. It is rather a\ndocumentation resource that may be referenced by refined process definitions to document their\nrelation to a common principle.\"*\n\nThis block is not itself a catalogue: it carries one placeholder example only, clearly marked as\nillustrative, not a real vocabulary entry. The real Concepts in this register are each their own\nbuilding block, `allOf`-referencing this one and adding their own `const`-pinned `id`/`prefLabel`:\n\n- [`vector-geometry-processing`](vector-geometry-processing/) -- operations on vector geometries.\n- [`raster-coverage-processing`](raster-coverage-processing/) -- operations on raster/coverage data.\n\n## Register position\n\nTop tier of the four-tier model (OGC 14-065 WPS 2.0.2 \u00a77.5): **Concept** -> Generic Profile ->\nImplementation Profile -> Implementation (instance level).\n",
@@ -50,20 +50,20 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/concept/examples/example-concept.json",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/tests/concept/example_1_1.json",
+          "ref": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/examples/example-concept.json",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/example_1_1.json",
           "sizeBytes": 606,
           "code": "{\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept\",\n  \"type\": \"Concept\",\n  \"prefLabel\": \"Example Concept (placeholder, not a real vocabulary entry)\",\n  \"definition\": \"Illustrates the shape of a Concept entry only. Real Concepts are each their own building block -- see generic-profiles.concept.vector-geometry-processing for actual vocabulary content.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept\",\n  \"status\": \"submitted\",\n  \"source\": [\n    {\n      \"title\": \"Placeholder -- not a real citation\",\n      \"clause\": \"n/a\"\n    }\n  ]\n}\n"
         },
         {
           "language": "jsonld",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/tests/concept/example_1_1.jsonld",
-          "sizeBytes": 738,
-          "code": "{\n  \"@context\": \"https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/context.jsonld\",\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept\",\n  \"type\": \"Concept\",\n  \"prefLabel\": \"Example Concept (placeholder, not a real vocabulary entry)\",\n  \"definition\": \"Illustrates the shape of a Concept entry only. Real Concepts are each their own building block -- see generic-profiles.concept.vector-geometry-processing for actual vocabulary content.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept\",\n  \"status\": \"submitted\",\n  \"source\": [\n    {\n      \"title\": \"Placeholder -- not a real citation\",\n      \"clause\": \"n/a\"\n    }\n  ]\n}"
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/example_1_1.jsonld",
+          "sizeBytes": 712,
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/context.jsonld\",\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept\",\n  \"type\": \"Concept\",\n  \"prefLabel\": \"Example Concept (placeholder, not a real vocabulary entry)\",\n  \"definition\": \"Illustrates the shape of a Concept entry only. Real Concepts are each their own building block -- see generic-profiles.concept.vector-geometry-processing for actual vocabulary content.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept\",\n  \"status\": \"submitted\",\n  \"source\": [\n    {\n      \"title\": \"Placeholder -- not a real citation\",\n      \"clause\": \"n/a\"\n    }\n  ]\n}"
         },
         {
           "language": "ttl",
-          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/tests/concept/example_1_1.ttl",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/example_1_1.ttl",
           "sizeBytes": 730,
           "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept> a skos:Concept ;\n    dcterms:source [ dcterms:title \"Placeholder -- not a real citation\" ;\n            gp:clause \"n/a\" ] ;\n    skos:definition \"Illustrates the shape of a Concept entry only. Real Concepts are each their own building block -- see generic-profiles.concept.vector-geometry-processing for actual vocabulary content.\" ;\n    skos:inScheme gp:concept ;\n    skos:prefLabel \"Example Concept (placeholder, not a real vocabulary entry)\" ;\n    gp:status \"submitted\" .\n\n"
         }

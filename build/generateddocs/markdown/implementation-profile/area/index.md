@@ -113,7 +113,7 @@ process of the ZOO-Project Geonovum testbed.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/area/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/area/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area",
   "type": "ImplementationProfile",
   "prefLabel": "Area",
@@ -191,38 +191,38 @@ process of the ZOO-Project Geonovum testbed.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
-            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Area()" ],
-        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area" ],
+    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area" ],
         [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry." ] ;
+            dcterms:title "ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry." ],
+        [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
+            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Area()" ] ;
     skos:definition "The area of this Surface, as measured in the spatial reference system of this Surface." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Area" ;
     gp:inputs [ ns3:geometry [ proc:keywords "GML",
                         "geometry" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Geometry measure" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:schema [ a ns2:string ;
-                            ns2:contentMediaType "text/xml" ;
-                            ns2:description "GML" ] ] ] ;
-    gp:outputs [ ns1:result [ proc:keywords "number" ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
+                        [ dcterms:title "Generic Profile: Geometry measure" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
+                    proc:schema [ a ns1:string ;
+                            ns1:contentMediaType "text/xml" ;
+                            ns1:description "GML" ] ] ] ;
+    gp:outputs [ ns2:result [ proc:keywords "number" ;
                     proc:metadata [ dcterms:title "Generic Profile: Geometry measure" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
-                    proc:schema [ a ns2:number ;
-                            ns2:description "a plain number" ] ] ] ;
+                    proc:schema [ a ns1:number ;
+                            ns1:description "a plain number" ] ] ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> ;
     gp:status "submitted" ;
     proc:keywords "Area",
@@ -241,7 +241,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Area" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -343,8 +343,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/area/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/area/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/area/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/area/schema.yaml)
 
 
 # JSON-LD Context
@@ -434,7 +434,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/area/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/area/context.jsonld)
 
 ## Sources
 

@@ -76,7 +76,7 @@ not part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-pro
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/vector-geometry-processing/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/vector-geometry-processing/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing",
   "type": "Concept",
   "prefLabel": "Vector Geometry Processing",
@@ -102,9 +102,9 @@ not part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-pro
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> a skos:Concept ;
-    dcterms:source [ dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1" ],
-        [ dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ;
-            gp:clause "§6.1" ] ;
+    dcterms:source [ dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ;
+            gp:clause "§6.1" ],
+        [ dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1" ] ;
     skos:definition "Operations on vector geometries: testing a spatial relationship between two geometries, deriving a new geometry from one or two others, or measuring a property of a geometry. Covers the spatial predicates, set operations and measures of OGC Simple Feature Access - Common Architecture (06-103r4) and its harmonized-with-SQL predecessor, Simple Features Specification For SQL Revision 1.1 (99-049), independent of any specific operation's own input/output signature." ;
     skos:inScheme gp:concept ;
     skos:prefLabel "Vector Geometry Processing" ;
@@ -120,7 +120,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Concept "Vector Geometry Processing" -- see generic-profiles.concept
   for the general shape every Concept shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
 - type: object
   properties:
     id:
@@ -157,8 +157,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/vector-geometry-processing/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/vector-geometry-processing/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/vector-geometry-processing/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/vector-geometry-processing/schema.yaml)
 
 
 # JSON-LD Context
@@ -196,7 +196,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/vector-geometry-processing/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/vector-geometry-processing/context.jsonld)
 
 ## Sources
 

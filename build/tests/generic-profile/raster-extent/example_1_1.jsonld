@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-extent/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-extent/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent",
   "type": "GenericProfile",
   "prefLabel": "Raster extent",

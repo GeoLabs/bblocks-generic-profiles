@@ -1,5 +1,5 @@
 Validation report for generic-profiles.implementation-profile.buffer - Implementation Profile: Buffer
-Generated 2026-10-07T12:46:13.529378+00:00
+Generated 2026-10-07T12:50:53.948211+00:00
 === Files ===
 Using examples/buffer.json from examples
 JSON-LD context is present - uplifting

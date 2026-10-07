@@ -109,7 +109,7 @@ Implementation Profile -> Implementation (instance level).
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-format-conversion/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-format-conversion/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion",
   "type": "GenericProfile",
   "prefLabel": "Raster format conversion",
@@ -181,8 +181,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -192,7 +192,7 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Converts a raster coverage from one encoding to another, without changing its content. One Raster input, a target format, one Raster output in the new encoding." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster format conversion" ;
-    gp:inputs [ ns2:raster [ dcterms:description "the input raster coverage" ;
+    gp:inputs [ ns1:raster [ dcterms:description "the input raster coverage" ;
                     dcterms:title "Raster" ;
                     proc:keywords "raster" ;
                     proc:maxOccurs 1 ;
@@ -200,7 +200,7 @@ Implementation Profile -> Implementation (instance level).
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:minOccurs 1 ] ;
-            ns2:targetFormat [ dcterms:description "the target raster encoding" ;
+            ns1:targetFormat [ dcterms:description "the target raster encoding" ;
                     dcterms:title "String" ;
                     proc:keywords "format" ;
                     proc:maxOccurs 1 ;
@@ -208,7 +208,7 @@ Implementation Profile -> Implementation (instance level).
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns1:raster [ dcterms:description "the converted raster coverage" ;
+    gp:outputs [ ns2:raster [ dcterms:description "the converted raster coverage" ;
                     dcterms:title "Raster" ;
                     proc:keywords "raster" ;
                     proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
@@ -229,7 +229,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Generic Profile "Raster format conversion" -- see generic-profiles.generic-profile
   for the general shape every Generic Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -304,8 +304,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-format-conversion/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-format-conversion/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-format-conversion/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-format-conversion/schema.yaml)
 
 
 # JSON-LD Context
@@ -387,7 +387,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-format-conversion/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-format-conversion/context.jsonld)
 
 ## Sources
 

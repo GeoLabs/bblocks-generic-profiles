@@ -3,7 +3,7 @@
   "description": "The Concept \"Raster Coverage Processing\" -- see generic-profiles.concept for the general shape every Concept shares.",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/schema.json"
+      "$ref": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.json"
     },
     {
       "type": "object",

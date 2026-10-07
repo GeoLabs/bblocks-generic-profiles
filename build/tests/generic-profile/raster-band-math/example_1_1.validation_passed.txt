@@ -1,5 +1,5 @@
 Validation report for generic-profiles.generic-profile.raster-band-math - Generic Profile: Raster band math
-Generated 2026-10-07T12:46:12.736272+00:00
+Generated 2026-10-07T12:50:53.321954+00:00
 === Files ===
 Using examples/raster-band-math.json from examples
 JSON-LD context is present - uplifting

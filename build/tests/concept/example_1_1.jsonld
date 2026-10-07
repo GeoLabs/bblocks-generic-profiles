@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept",
   "type": "Concept",
   "prefLabel": "Example Concept (placeholder, not a real vocabulary entry)",

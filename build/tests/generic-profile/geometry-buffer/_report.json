@@ -2,7 +2,7 @@
   "title": "Validation report for generic-profiles.generic-profile.geometry-buffer - Generic Profile: Geometry buffer",
   "bblockName": "Generic Profile: Geometry buffer",
   "bblockId": "generic-profiles.generic-profile.geometry-buffer",
-  "generated": "2026-10-07T12:46:12.542135+00:00",
+  "generated": "2026-10-07T12:50:53.003042+00:00",
   "result": true,
   "items": [
     {
@@ -10,7 +10,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/generic-profile/geometry-buffer/example_1_1.json",
-        "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/tests/generic-profile/geometry-buffer/example_1_1.json",
+        "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/geometry-buffer/example_1_1.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
         "language": "application/json"

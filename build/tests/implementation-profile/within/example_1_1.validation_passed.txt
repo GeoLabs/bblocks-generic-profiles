@@ -1,5 +1,5 @@
 Validation report for generic-profiles.implementation-profile.within - Implementation Profile: Within
-Generated 2026-10-07T12:46:14.903584+00:00
+Generated 2026-10-07T12:50:55.238533+00:00
 === Files ===
 Using examples/within.json from examples
 JSON-LD context is present - uplifting

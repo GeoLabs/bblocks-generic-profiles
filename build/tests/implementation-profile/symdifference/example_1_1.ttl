@@ -15,23 +15,23 @@
     skos:prefLabel "Symmetric difference" ;
     gp:inputs [ ns2:geometry1 [ proc:keywords "GML",
                         "geometry" ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-                        [ dcterms:title "Generic Profile: Binary spatial set operation" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:schema [ a ns1:string ;
                             ns1:contentMediaType "text/xml" ;
                             ns1:description "GML" ] ] ;
             ns2:geometry2 [ proc:keywords "GML",
                         "geometry" ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-                        [ dcterms:title "Generic Profile: Binary spatial set operation" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:schema [ a ns1:string ;
                             ns1:contentMediaType "text/xml" ;
                             ns1:description "GML" ] ] ] ;

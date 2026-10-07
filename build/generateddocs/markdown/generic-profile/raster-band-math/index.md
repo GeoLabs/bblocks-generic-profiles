@@ -128,7 +128,7 @@ Implementation Profile -> Implementation (instance level).
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-band-math/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-band-math/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math",
   "type": "GenericProfile",
   "prefLabel": "Raster band math",
@@ -200,8 +200,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -211,7 +211,7 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Derives a new raster from one or more input rasters via a user-supplied mathematical expression evaluated per pixel. One or more Raster inputs, an expression, one Raster output -- the output's band structure (one band or several) is not part of this signature, see its Implementation Profiles." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster band math" ;
-    gp:inputs [ ns2:expression [ dcterms:description "the per-pixel mathematical expression" ;
+    gp:inputs [ ns1:expression [ dcterms:description "the per-pixel mathematical expression" ;
                     dcterms:title "String" ;
                     proc:keywords "expression" ;
                     proc:maxOccurs 1 ;
@@ -219,7 +219,7 @@ Implementation Profile -> Implementation (instance level).
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:minOccurs 1 ] ;
-            ns2:rasters [ dcterms:description "the input raster band(s)/image(s)" ;
+            ns1:rasters [ dcterms:description "the input raster band(s)/image(s)" ;
                     dcterms:title "Raster" ;
                     proc:keywords "raster" ;
                     proc:maxOccurs "unbounded" ;
@@ -227,7 +227,7 @@ Implementation Profile -> Implementation (instance level).
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns1:raster [ dcterms:description "the resulting raster" ;
+    gp:outputs [ ns2:raster [ dcterms:description "the resulting raster" ;
                     dcterms:title "Raster" ;
                     proc:keywords "raster" ;
                     proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
@@ -248,7 +248,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Generic Profile "Raster band math" -- see generic-profiles.generic-profile
   for the general shape every Generic Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -323,8 +323,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-band-math/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-band-math/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-band-math/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-band-math/schema.yaml)
 
 
 # JSON-LD Context
@@ -406,7 +406,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-band-math/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-band-math/context.jsonld)
 
 ## Sources
 

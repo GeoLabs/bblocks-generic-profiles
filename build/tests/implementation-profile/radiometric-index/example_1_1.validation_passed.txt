@@ -1,5 +1,5 @@
 Validation report for generic-profiles.implementation-profile.radiometric-index - Implementation Profile: Radiometric index
-Generated 2026-10-07T12:46:14.316104+00:00
+Generated 2026-10-07T12:50:54.674894+00:00
 === Files ===
 Using examples/radiometric-index.json from examples
 JSON-LD context is present - uplifting

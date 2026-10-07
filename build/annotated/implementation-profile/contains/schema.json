@@ -3,7 +3,7 @@
   "description": "The Implementation Profile \"Contains\" -- see generic-profiles.implementation-profile for the general shape every Implementation Profile shares.",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.json"
+      "$ref": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.json"
     },
     {
       "type": "object",

@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/vector-geometry-processing/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/vector-geometry-processing/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing",
   "type": "Concept",
   "prefLabel": "Vector Geometry Processing",

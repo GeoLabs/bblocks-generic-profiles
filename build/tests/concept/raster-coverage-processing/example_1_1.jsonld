@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/raster-coverage-processing/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/raster-coverage-processing/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing",
   "type": "Concept",
   "prefLabel": "Raster Coverage Processing",

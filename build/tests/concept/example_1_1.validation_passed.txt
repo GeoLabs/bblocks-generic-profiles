@@ -1,5 +1,5 @@
 Validation report for generic-profiles.concept - Process Concept
-Generated 2026-10-07T12:46:12.338424+00:00
+Generated 2026-10-07T12:50:52.733187+00:00
 === Files ===
 Using examples/example-concept.json from examples
 JSON-LD context is present - uplifting

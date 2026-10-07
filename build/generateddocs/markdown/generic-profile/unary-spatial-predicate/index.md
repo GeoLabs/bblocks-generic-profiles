@@ -93,7 +93,7 @@ Implementation Profile -> Implementation (instance level).
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/unary-spatial-predicate/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/unary-spatial-predicate/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate",
   "type": "GenericProfile",
   "prefLabel": "Unary spatial predicate",
@@ -149,8 +149,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -160,7 +160,7 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Tests a boolean property of a single geometry. One Geometry input, one Boolean output -- the one-input counterpart to `binary-spatial-predicate`'s two." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Unary spatial predicate" ;
-    gp:inputs [ ns2:geometry [ dcterms:description "the input geometry" ;
+    gp:inputs [ ns1:geometry [ dcterms:description "the input geometry" ;
                     dcterms:title "Geometry" ;
                     proc:keywords "geometry" ;
                     proc:maxOccurs 1 ;
@@ -168,7 +168,7 @@ Implementation Profile -> Implementation (instance level).
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns1:result [ dcterms:description "the predicate's truth value" ;
+    gp:outputs [ ns2:result [ dcterms:description "the predicate's truth value" ;
                     dcterms:title "Boolean" ;
                     proc:keywords "boolean" ;
                     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
@@ -189,7 +189,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Generic Profile "Unary spatial predicate" -- see generic-profiles.generic-profile
   for the general shape every Generic Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -264,8 +264,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/unary-spatial-predicate/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/unary-spatial-predicate/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/unary-spatial-predicate/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/unary-spatial-predicate/schema.yaml)
 
 
 # JSON-LD Context
@@ -347,7 +347,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/unary-spatial-predicate/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/unary-spatial-predicate/context.jsonld)
 
 ## Sources
 

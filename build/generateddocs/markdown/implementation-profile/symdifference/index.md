@@ -156,7 +156,7 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/symdifference/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/symdifference/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/symdifference",
   "type": "ImplementationProfile",
   "prefLabel": "Symmetric difference",
@@ -271,23 +271,23 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
     skos:prefLabel "Symmetric difference" ;
     gp:inputs [ ns2:geometry1 [ proc:keywords "GML",
                         "geometry" ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-                        [ dcterms:title "Generic Profile: Binary spatial set operation" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:schema [ a ns1:string ;
                             ns1:contentMediaType "text/xml" ;
                             ns1:description "GML" ] ] ;
             ns2:geometry2 [ proc:keywords "GML",
                         "geometry" ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-                        [ dcterms:title "Generic Profile: Binary spatial set operation" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:schema [ a ns1:string ;
                             ns1:contentMediaType "text/xml" ;
                             ns1:description "GML" ] ] ] ;
@@ -318,7 +318,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Symmetric difference" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -457,8 +457,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/symdifference/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/symdifference/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/symdifference/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/symdifference/schema.yaml)
 
 
 # JSON-LD Context
@@ -548,7 +548,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/symdifference/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/symdifference/context.jsonld)
 
 ## Sources
 

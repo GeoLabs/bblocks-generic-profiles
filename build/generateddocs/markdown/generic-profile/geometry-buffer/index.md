@@ -108,7 +108,7 @@ Implementation Profile -> Implementation (instance level).
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/geometry-buffer/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer",
   "type": "GenericProfile",
   "prefLabel": "Geometry buffer",
@@ -181,8 +181,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -192,7 +192,7 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Computes a new geometry from one input geometry and a scalar distance. A different shape from binary-spatial-operation: one Geometry, one Number, not two Geometries." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Geometry buffer" ;
-    gp:inputs [ ns2:distance [ dcterms:description "the buffer distance" ;
+    gp:inputs [ ns1:distance [ dcterms:description "the buffer distance" ;
                     dcterms:title "Number" ;
                     proc:keywords "distance" ;
                     proc:maxOccurs 1 ;
@@ -200,7 +200,7 @@ Implementation Profile -> Implementation (instance level).
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:minOccurs 1 ] ;
-            ns2:geometry [ dcterms:description "the input geometry" ;
+            ns1:geometry [ dcterms:description "the input geometry" ;
                     dcterms:title "Geometry" ;
                     proc:keywords "geometry" ;
                     proc:maxOccurs 1 ;
@@ -208,7 +208,7 @@ Implementation Profile -> Implementation (instance level).
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns1:result [ dcterms:description "the buffered geometry" ;
+    gp:outputs [ ns2:result [ dcterms:description "the buffered geometry" ;
                     dcterms:title "Geometry" ;
                     proc:keywords "geometry" ;
                     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
@@ -230,7 +230,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Generic Profile "Geometry buffer" -- see generic-profiles.generic-profile
   for the general shape every Generic Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -305,8 +305,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/geometry-buffer/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/geometry-buffer/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/schema.yaml)
 
 
 # JSON-LD Context
@@ -388,7 +388,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/geometry-buffer/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/context.jsonld)
 
 ## Sources
 

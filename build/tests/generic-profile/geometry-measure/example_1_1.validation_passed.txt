@@ -1,5 +1,5 @@
 Validation report for generic-profiles.generic-profile.geometry-measure - Generic Profile: Geometry measure
-Generated 2026-10-07T12:46:12.585583+00:00
+Generated 2026-10-07T12:50:53.206264+00:00
 === Files ===
 Using examples/geometry-measure.json from examples
 JSON-LD context is present - uplifting

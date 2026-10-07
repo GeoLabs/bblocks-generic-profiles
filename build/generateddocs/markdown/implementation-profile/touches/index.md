@@ -152,7 +152,7 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/touches/context.jsonld",
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/touches/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/touches",
   "type": "ImplementationProfile",
   "prefLabel": "Touches",
@@ -253,20 +253,20 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/touches> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
-            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.20" ],
-        [ dcterms:title "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.49 ST_Touches" ] ;
+    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.49 ST_Touches" ],
+        [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.20" ] ;
     skos:definition "Returns TRUE if the only points in common between this geometric object and anotherGeometry lie in the union of their boundaries: at least one boundary point in common, but no interior points in common." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Touches" ;
     gp:inputs [ ns1:geometry1 [ proc:keywords "GML",
                         "geometry" ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-                        [ dcterms:title "Generic Profile: Binary spatial predicate" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:schema [ a ns2:string ;
                             ns2:contentMediaType "text/xml" ;
                             ns2:description "GML" ] ] ;
@@ -304,7 +304,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: The Implementation Profile "Touches" -- see generic-profiles.implementation-profile
   for the general shape every Implementation Profile shares.
 allOf:
-- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 - type: object
   properties:
     id:
@@ -443,8 +443,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/touches/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/touches/schema.yaml)
+* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/touches/schema.json)
+* JSON version: [schema.json](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/touches/schema.yaml)
 
 
 # JSON-LD Context
@@ -534,7 +534,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/touches/context.jsonld)
+[context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/touches/context.jsonld)
 
 ## Sources
 
