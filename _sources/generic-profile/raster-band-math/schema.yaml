@@ -9,3 +9,20 @@ allOf:
       id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"}
       type: {const: GenericProfile}
       prefLabel: {const: "Raster band math"}
+  - type: object
+    properties:
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+      inputs:
+        properties:
+          rasters: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters"}}}
+          expression: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression"}}}
+      outputs:
+        properties:
+          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster"}}}

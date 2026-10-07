@@ -10,13 +10,28 @@ allOf:
       type: {const: ImplementationProfile}
       prefLabel: {const: "Raster format conversion"}
       refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion"}
-      # Table 21 against raster-format-conversion: keywords Extend (E), input metadata Extend (E, footnote a),
+      # Table 21 against raster-format-conversion: keywords Extend (E), metadata Extend
+      # (E, footnote a: Table 22 references on the process, input/output-level ones below),
       # input maxOccurs Restrict (R).
       keywords:
         allOf:
         - contains: {const: raster}
         - contains: {const: coverage}
         - contains: {const: format conversion}
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion'}
       inputs:
         type: object
         required: [raster, targetFormat]
@@ -32,14 +47,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
-                - contains:
-                    type: object
-                    required: [role, href]
-                    properties:
-                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion'}
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/inputs/raster'}
               maxOccurs: {type: integer, maximum: 1}
           targetFormat:
             properties:
@@ -52,14 +61,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
-                - contains:
-                    type: object
-                    required: [role, href]
-                    properties:
-                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion'}
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/inputs/targetFormat'}
               maxOccurs: {type: integer, maximum: 1}
       outputs:
         type: object
@@ -70,3 +73,20 @@ allOf:
               keywords:
                 allOf:
                 - contains: {const: raster}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/outputs/raster'}
+  - type: object
+    properties:
+      inputs:
+        properties:
+          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-format-conversion/inputs/raster"}}}
+          targetFormat: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-format-conversion/inputs/targetFormat"}}}
+      outputs:
+        properties:
+          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-format-conversion/outputs/raster"}}}

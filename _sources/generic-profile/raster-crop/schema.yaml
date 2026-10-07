@@ -9,3 +9,20 @@ allOf:
       id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop"}
       type: {const: GenericProfile}
       prefLabel: {const: "Raster crop"}
+  - type: object
+    properties:
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+      inputs:
+        properties:
+          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster"}}}
+          areaOfInterest: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest"}}}
+      outputs:
+        properties:
+          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster"}}}

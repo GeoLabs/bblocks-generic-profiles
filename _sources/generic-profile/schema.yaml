@@ -26,11 +26,14 @@ description: >-
   and its Outputs -- including `keywords` (Process, Input, Output) and `metadata` (Input,
   Output), both taken from OGC API - Processes' own `descriptionType` (whose `metadata` item,
   `ogc.api.processes.v1.schemas.metadata`, is WPS Table 5's Metadata structure: `title`, `role`,
-  `href`). Every input's `metadata` must reference this Generic Profile's superior, its Process
-  Concept, with the Table 22 role `http://www.opengis.net/spec/wps/2.0/def/process-profile/concept`:
-  that is the list Table 21 footnote a requires the Implementation Profile to extend.
+  `href`). Profile-level references, with the Table 22 roles, are made once, on the process
+  itself: here, to this Generic Profile's superior, its Process Concept
+  (`http://www.opengis.net/spec/wps/2.0/def/process-profile/concept`) -- the list Table 21
+  footnote a requires the Implementation Profile to extend. An input's or output's own `metadata`
+  only ever references the corresponding input/output of a superior profile; a Process Concept
+  has none, so at this tier it is declared but normally empty.
 type: object
-required: [id, type, prefLabel, definition, inScheme, status, broader, keywords, inputs, outputs]
+required: [id, type, prefLabel, definition, inScheme, status, broader, keywords, metadata, inputs, outputs]
 properties:
   id:
     type: string
@@ -57,6 +60,17 @@ properties:
     type: array
     minItems: 1
     items: {type: string}
+  metadata:
+    description: >-
+      Table 21 Process.Metadata (D): references to superior profiles, with Table 22 roles -- here
+      the Process Concept(s) of `broader`.
+    type: array
+    items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+    contains:
+      type: object
+      required: [role, href]
+      properties:
+        role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"}
   source:
     type: array
     items:
@@ -75,19 +89,22 @@ properties:
     minProperties: 1
     additionalProperties:
       type: object
-      required: [title, keywords, metadata]
+      required: [id, title, keywords]
       properties:
+        id:
+          description: This input's own IRI, `<profile id>/inputs/<name>` -- what a lower tier's
+            metadata `href` points at.
+          type: string
+          format: uri
         title: {type: string}
         description: {type: string}
         keywords: {type: array, minItems: 1, items: {type: string}}
         metadata:
+          description: >-
+            Table 21 Input.Metadata (D). References to the corresponding input of a superior
+            profile only; a Process Concept has no inputs, so normally empty at this tier.
           type: array
           items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
-          contains:
-            type: object
-            required: [role, href]
-            properties:
-              role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"}
         minOccurs: {type: integer, default: 1}
         maxOccurs:
           default: 1
@@ -105,14 +122,19 @@ properties:
     minProperties: 1
     additionalProperties:
       type: object
-      required: [title, keywords]
+      required: [id, title, keywords]
       properties:
+        id:
+          description: This output's own IRI, `<profile id>/outputs/<name>` -- what a lower tier's
+            metadata `href` points at.
+          type: string
+          format: uri
         title: {type: string}
         description: {type: string}
         keywords: {type: array, minItems: 1, items: {type: string}}
         metadata:
           description: >-
-            Table 21 Output.Metadata is D here then plain O below (no footnote a): unlike an
-            input's, an output's metadata carries no obligation to be kept by lower tiers.
+            Table 21 Output.Metadata (D, then O below: no footnote a). As for inputs, normally
+            empty at this tier.
           type: array
           items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}

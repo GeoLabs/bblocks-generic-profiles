@@ -39,17 +39,17 @@ Generic Profile (generated from it by `scripts/apply_table21_keywords_metadata.p
 |---|---|---|---|---|
 | Process Identifier, Title, Abstract | D | **O** | O | `id`/`prefLabel`/`definition`, `const`-pinned per operation |
 | Process Keywords | D | **E** | E | `keywords` must `contain` every Generic Profile keyword |
-| Process Metadata | D | **E/O** ᵃ | E/O ᵃ | `source` (citations) and `refinesGenericProfile` -- see below |
+| Process Metadata | D | **E/O** ᵃ | E/O ᵃ | `metadata` must keep the Generic Profile's Table 22 `concept` reference and add a `generic` one; `source` (citations) stays free |
 | Input (the set itself) | | | E ᵇ | every Generic Profile input must be listed (`required`) |
 | Input Identifier, Title, Abstract | D | **I** | I | the input's key; Title/Abstract not repeated (unchanged) |
 | Input Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile input's |
-| Input Metadata | D | **E/O** ᵃ | E/O ᵃ | `metadata` must keep the Table 22 `concept` reference and add a `generic` one |
+| Input Metadata | D | **E/O** ᵃ | E/O ᵃ | `metadata` must reference the corresponding Generic Profile input (`generic-input`, below) |
 | Input Multiplicity | D | **R** ᶜ | E ᵈ | `maxOccurs` ≤ the Generic Profile's; no `minOccurs` at all |
 | Input Data format | -- | **D** | E ᵈ | `schema` |
 | Output (the set itself) | | | E ᵇ | every Generic Profile output must be listed (`required`) |
 | Output Identifier, Title, Abstract | D | **I** | I | as for inputs |
 | Output Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile output's |
-| Output Metadata | D | **O** | O | `metadata` free (no footnote a for outputs) |
+| Output Metadata | D | **O** | O | `metadata` references the corresponding Generic Profile output (`generic-output`): a register choice, Table 21 leaves it free |
 | Output Data format | -- | **D** | E ᵈ | `schema` |
 
 ᵃ *"The list of metadata references to superior process profiles shall be extended.
@@ -59,10 +59,31 @@ whose `role` is a Table 22 identifier: `http://www.opengis.net/spec/wps/2.0/def/
 `concept`, `generic` or `implementation`. ᵇ additional optional inputs or supplementary outputs.
 ᶜ maximum only, never the minimum. ᵈ more or larger inputs, additional formats.
 
-Process Metadata is the one row still carried the older way: bibliographic `source` entries
-(free to differ per tier, which is the "documentation may be overridden" half of footnote a) and
-the structural `refinesGenericProfile`/`isProfileOf` link. The Process-level list of Table 22
-references that footnote a asks to extend is not yet a `metadata` array of its own.
+Each input/output here has its own IRI, `<Implementation Profile id>/inputs/<name>`
+(`/outputs/<name>`), so that an implementation can reference one input rather than the whole
+profile. References are made at the level they are about:
+
+- **on the process**, references to whole superior profiles, with the Table 22 roles (`concept`,
+  `generic`, `implementation`) -- made once, never repeated on inputs/outputs;
+- **on an input/output**, references to the corresponding input/output of each superior profile,
+  with roles this register defines, since Table 22 only names profile *levels*:
+
+| Role | Meaning |
+|---|---|
+| `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input` | the `href` is the Generic Profile input this input refines |
+| `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output` | the same, for an output |
+| `https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input` | the `href` is one input of an Implementation Profile, which the referencing input implements |
+| `https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output` | the same, for an output |
+
+They are this register's own identifiers, not OGC ones: nothing is minted under
+`http://www.opengis.net/spec/wps/2.0/def/`, where OGC 14-065r1 defines only the three Table 22
+roles and `process/description/documentation`.
+
+Footnote a thus becomes a real chain at each level. For an input of `area`: nothing at Generic
+Profile (a Process Concept has no inputs), `generic-input` here, and `generic-input` plus
+`implementation-input` at the Implementation (instance level) -- see
+`ospd.process-profiles.sqlmm.area`'s `processDescription.inherited.json`. On the process: `concept`
+at Generic Profile, `concept` + `generic` here, all three at the instance level.
 
 `schema` -- OGC API - Processes Part 1 Core's own property, a full JSON Schema / OpenAPI Schema
 Object, able to `$ref` a real shared type's own published schema (e.g.

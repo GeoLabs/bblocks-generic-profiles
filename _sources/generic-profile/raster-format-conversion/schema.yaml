@@ -9,3 +9,20 @@ allOf:
       id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion"}
       type: {const: GenericProfile}
       prefLabel: {const: "Raster format conversion"}
+  - type: object
+    properties:
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+      inputs:
+        properties:
+          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/inputs/raster"}}}
+          targetFormat: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/inputs/targetFormat"}}}
+      outputs:
+        properties:
+          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/outputs/raster"}}}

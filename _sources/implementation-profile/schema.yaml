@@ -35,17 +35,21 @@ description: >-
   The rest of Table 21 at this tier, as each real Implementation Profile's own `schema.yaml`
   enforces it against its Generic Profile:
   - Process: `keywords` Extend (E) -- must contain every Generic Profile keyword;
-    `id`/`prefLabel`/`definition` Override (O).
-  - Input: every Generic Profile input is listed, because footnote a ("the list of metadata
-    references to superior process profiles shall be extended") applies to each one: its
-    `metadata` keeps the Generic Profile's Table 22 `concept` reference and adds a `generic` one
-    (`http://www.opengis.net/spec/wps/2.0/def/process-profile/generic`) to the Generic Profile
-    itself; `keywords` Extend (E); Identifier/Title/Abstract Inherit (I), so not repeated;
-    `maxOccurs` Restrict (R); `schema` Declare (D).
-  - Output: every Generic Profile output is listed too, so that this tier is self-describing;
-    `keywords` Extend (E); `metadata` Override (O, free); `schema` Declare (D).
+    `id`/`prefLabel`/`definition` Override (O); `metadata` Extends (E, footnote a: "the list of
+    metadata references to superior process profiles shall be extended") the Generic Profile's
+    list -- its Table 22 `concept` reference -- with a `generic` one to the Generic Profile
+    itself. Profile-level references are made here only, never repeated on inputs/outputs.
+  - Input: every Generic Profile input is listed. Its `metadata` references the corresponding
+    Generic Profile input (`<Generic Profile id>/inputs/<name>`) with this register's role
+    `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input` -- footnote a, at the level of the input; `keywords` Extend (E);
+    Identifier/Title/Abstract Inherit (I), so not repeated; `maxOccurs` Restrict (R); `schema`
+    Declare (D).
+  - Output: every Generic Profile output is listed too; `metadata` references the corresponding
+    Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output` (Table 21 allows any value here,
+    O; the register keeps outputs symmetric with inputs); `keywords` Extend (E); `schema`
+    Declare (D).
 type: object
-required: [id, type, prefLabel, definition, inScheme, status, refinesGenericProfile, keywords, inputs, outputs]
+required: [id, type, prefLabel, definition, inScheme, status, refinesGenericProfile, keywords, metadata, inputs, outputs]
 properties:
   id:
     type: string
@@ -71,6 +75,23 @@ properties:
     type: array
     minItems: 1
     items: {type: string}
+  metadata:
+    description: >-
+      Table 21 Process.Metadata (E, footnote a): the Generic Profile's references (Table 22
+      `concept`) plus a Table 22 `generic` reference to the Generic Profile.
+    type: array
+    items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+    allOf:
+      - contains:
+          type: object
+          required: [role, href]
+          properties:
+            role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"}
+      - contains:
+          type: object
+          required: [role, href]
+          properties:
+            role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"}
   inputs:
     description: >-
       Keyed by the same input names as the Generic Profile's own `inputs` (Identifier/Title/
@@ -81,8 +102,13 @@ properties:
     type: object
     additionalProperties:
       type: object
-      required: [keywords, metadata]
+      required: [id, keywords, metadata]
       properties:
+        id:
+          description: This input's own IRI, `<profile id>/inputs/<name>` -- what a lower tier's
+            metadata `href` points at.
+          type: string
+          format: uri
         schema: {}
         maxOccurs:
           oneOf:
@@ -92,29 +118,33 @@ properties:
         metadata:
           type: array
           items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
-          allOf:
-            - contains:
-                type: object
-                required: [role, href]
-                properties:
-                  role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"}
-            - contains:
-                type: object
-                required: [role, href]
-                properties:
-                  role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"}
+          contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"}
   outputs:
     description: Keyed by the same output names as the Generic Profile's own `outputs`.
     type: object
     additionalProperties:
       type: object
-      required: [keywords]
+      required: [id, keywords, metadata]
       properties:
+        id:
+          description: This output's own IRI, `<profile id>/outputs/<name>` -- what a lower tier's
+            metadata `href` points at.
+          type: string
+          format: uri
         schema: {}
         keywords: {type: array, minItems: 1, items: {type: string}}
         metadata:
           type: array
           items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+          contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output"}
   source:
     type: array
     items:

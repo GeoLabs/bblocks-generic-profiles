@@ -10,13 +10,28 @@ allOf:
       type: {const: ImplementationProfile}
       prefLabel: {const: "Raster extent"}
       refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"}
-      # Table 21 against raster-extent: keywords Extend (E), input metadata Extend (E, footnote a),
+      # Table 21 against raster-extent: keywords Extend (E), metadata Extend
+      # (E, footnote a: Table 22 references on the process, input/output-level ones below),
       # input maxOccurs Restrict (R).
       keywords:
         allOf:
         - contains: {const: raster}
         - contains: {const: coverage}
         - contains: {const: extent}
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent'}
       inputs:
         type: object
         required: [raster]
@@ -32,14 +47,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
-                - contains:
-                    type: object
-                    required: [role, href]
-                    properties:
-                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent'}
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster'}
               maxOccurs: {type: integer, maximum: 1}
       outputs:
         type: object
@@ -50,3 +59,19 @@ allOf:
               keywords:
                 allOf:
                 - contains: {const: geometry}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result'}
+  - type: object
+    properties:
+      inputs:
+        properties:
+          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster"}}}
+      outputs:
+        properties:
+          result: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result"}}}

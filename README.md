@@ -132,15 +132,21 @@ so all four tiers are now structurally, not just conceptually, consistent:
 - **Keywords and Metadata** follow the rest of Table 21, also with OGC API - Processes' own
   `descriptionType` properties: `keywords` on the process and on every input/output (Declared by
   the Generic Profile, Extended by the Implementation Profile, whose schema requires it to
-  contain every Generic Profile keyword), and `metadata` on every input/output as WPS Table 5
-  Metadata structures (`title`/`role`/`href`, i.e. `ogc.api.processes.v1.schemas.metadata`).
-  Footnote a ("the list of metadata references to superior process profiles shall be extended")
-  is made concrete with the [Table 22](https://docs.ogc.org/is/14-065/14-065r1.html) role
-  identifiers: a Generic Profile input references its Process Concept
-  (`.../process-profile/concept`), and the Implementation Profile keeps that reference and adds
-  one to its Generic Profile (`.../process-profile/generic`). Because footnote a applies to each
-  input, every Generic Profile input and output is now listed on its Implementation Profiles,
-  not only those that declare a `schema`.
+  contain every Generic Profile keyword), and `metadata` as WPS Table 5 Metadata structures
+  (`title`/`role`/`href`, i.e. `ogc.api.processes.v1.schemas.metadata`). Footnote a ("the list
+  of metadata references to superior process profiles shall be extended") is applied at the level
+  each reference is about. On the process, references to whole profiles with the
+  [Table 22](https://docs.ogc.org/is/14-065/14-065r1.html) roles: a Generic Profile references
+  its Process Concept (`.../process-profile/concept`), an Implementation Profile keeps that and
+  adds its Generic Profile (`.../process-profile/generic`). On an input/output, only references
+  to the corresponding input/output of a superior profile, with this register's roles
+  `role/generic-input`/`-output` (and `role/implementation-input`/`-output` at the instance level,
+  in `bblocks-process-profiles`). Every Generic Profile input and output is listed on its
+  Implementation Profiles, not only those that declare a `schema`.
+- **Every input/output description has its own IRI**, `<profile id>/inputs/<name>`
+  (`/outputs/<name>`), carried as `id` and pinned by each building block's schema, so that a lower
+  tier's metadata `href` -- e.g. a live process's `implementation` reference in
+  `bblocks-process-profiles` -- names a node of this register's graph rather than nothing.
 
 The declared default is kept deliberately minimal -- **GML** for every vector geometry role,
 **GeoTIFF** for every raster role, not an exhaustive list. Table 21's own rule for this is `E`
@@ -157,7 +163,9 @@ single image, not a list) are the real evidence behind `raster-band-math`/
 `raster-band-math-multiband`/`radiometric-index`'s `maxOccurs` values. See
 [`implementation-profile/description.md`](_sources/implementation-profile/description.md) for the
 full Table 21 account, and each Implementation Profile's own `description.md` for its specific
-grounding. 
+grounding. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how this design was reached --
+checked first on `geometry-extent`/`raster-crop` alone, then rolled out register-wide once
+confirmed.
 
 ## Building blocks
 
@@ -210,7 +218,9 @@ The three base blocks (`generic-profiles.concept`, `generic-profiles.generic-pro
 each real entry `allOf`-references its base
 and pins its own `id`/`prefLabel` (and, for Implementation Profiles, `refinesGenericProfile`) with
 `const`. They are not a catalogue themselves: each carries exactly one clearly-labelled
-placeholder example, never a real operation.
+placeholder example, never a real operation — see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for
+why that distinction matters (an earlier draft of this register got it wrong, using real SQL/MM
+operations as "examples" of the shared schema instead of giving each its own building block).
 
 ## Known limitation: band count is not formally modelled
 
@@ -238,7 +248,10 @@ geometry) -- a mismatch an earlier draft left visible rather than papered over. 
 register. Once the register moved to reusing OGC API - Processes' own `InputDescription`/`schema`
 structure (above), both were superseded: `areaOfInterest`'s `schema` now `$ref`s
 `ogc.api.processes.v1.schemas.bbox` directly -- OGC API - Processes - Part 1: Core's own,
-already-published bbox type, not a custom one. 
+already-published bbox type, not a custom one. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+for the full account, including why `eoap.cct.bbox` (bblocks-eoap-cct) was considered and set
+aside -- a type for CWL inputs/outputs crossing into OGC API - Processes - Part 2, a different
+vocabulary layer from the `schema` property this tier's Implementation Profile actually models.
 
 ## Not limited to spatial operations
 

@@ -9,3 +9,20 @@ allOf:
       id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"}
       type: {const: GenericProfile}
       prefLabel: {const: "Binary spatial predicate"}
+  - type: object
+    properties:
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing'}
+      inputs:
+        properties:
+          geometry1: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1"}}}
+          geometry2: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2"}}}
+      outputs:
+        properties:
+          result: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result"}}}

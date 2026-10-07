@@ -14,6 +14,14 @@
     "status": "gp:status",
     "refinesGenericProfile": { "@id": "gp:refinesGenericProfile", "@type": "@id" },
     "keywords": "proc:keywords",
+    "metadata": {
+      "@id": "proc:metadata",
+      "@context": {
+        "title": "dct:title",
+        "role": { "@id": "proc:role", "@type": "@id" },
+        "href": { "@id": "proc:href", "@type": "@id" }
+      }
+    },
     "source": "dct:source",
     "title": "dct:title",
     "link": { "@id": "dct:references", "@type": "@id" },

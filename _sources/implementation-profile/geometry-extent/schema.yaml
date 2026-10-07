@@ -10,13 +10,28 @@ allOf:
       type: {const: ImplementationProfile}
       prefLabel: {const: "Geometry extent"}
       refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation"}
-      # Table 21 against unary-geometry-operation: keywords Extend (E), input metadata Extend (E, footnote a),
+      # Table 21 against unary-geometry-operation: keywords Extend (E), metadata Extend
+      # (E, footnote a: Table 22 references on the process, input/output-level ones below),
       # input maxOccurs Restrict (R).
       keywords:
         allOf:
         - contains: {const: vector}
         - contains: {const: geometry}
         - contains: {const: derived geometry}
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing'}
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation'}
       inputs:
         type: object
         required: [geometry]
@@ -32,14 +47,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing'}
-                - contains:
-                    type: object
-                    required: [role, href]
-                    properties:
-                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation'}
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry'}
               maxOccurs: {type: integer, maximum: 1}
       outputs:
         type: object
@@ -50,3 +59,19 @@ allOf:
               keywords:
                 allOf:
                 - contains: {const: geometry}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/outputs/result'}
+  - type: object
+    properties:
+      inputs:
+        properties:
+          geometry: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry"}}}
+      outputs:
+        properties:
+          result: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result"}}}

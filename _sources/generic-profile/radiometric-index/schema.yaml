@@ -9,3 +9,20 @@ allOf:
       id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"}
       type: {const: GenericProfile}
       prefLabel: {const: "Radiometric index"}
+  - type: object
+    properties:
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+      inputs:
+        properties:
+          rasters: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters"}}}
+          index: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index"}}}
+      outputs:
+        properties:
+          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster"}}}
