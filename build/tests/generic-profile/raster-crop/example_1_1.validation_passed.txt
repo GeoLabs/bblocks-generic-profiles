@@ -1,5 +1,5 @@
 Validation report for generic-profiles.generic-profile.raster-crop - Generic Profile: Raster crop
-Generated 2026-10-07T12:50:53.389810+00:00
+Generated 2026-10-07T12:54:23.350024+00:00
 === Files ===
 Using examples/raster-crop.json from examples
 JSON-LD context is present - uplifting

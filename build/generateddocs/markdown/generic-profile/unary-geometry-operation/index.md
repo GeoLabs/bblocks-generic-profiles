@@ -151,8 +151,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -162,7 +162,7 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Derives a new geometry from a single input geometry. One Geometry input, one Geometry output. Covers operations that differ only in what they compute (bounding envelope, centroid, convex hull), not in signature -- the same principle `binary-spatial-predicate` and `binary-spatial-operation` already use for their own several operations." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Unary geometry operation" ;
-    gp:inputs [ ns2:geometry [ dcterms:description "the input geometry" ;
+    gp:inputs [ ns1:geometry [ dcterms:description "the input geometry" ;
                     dcterms:title "Geometry" ;
                     proc:keywords "geometry" ;
                     proc:maxOccurs 1 ;
@@ -170,7 +170,7 @@ Implementation Profile -> Implementation (instance level).
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns1:result [ dcterms:description "the derived geometry" ;
+    gp:outputs [ ns2:result [ dcterms:description "the derived geometry" ;
                     dcterms:title "Geometry" ;
                     proc:keywords "geometry" ;
                     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;

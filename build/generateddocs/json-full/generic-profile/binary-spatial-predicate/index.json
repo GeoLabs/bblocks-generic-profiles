@@ -7,7 +7,7 @@
   "abstract": "Tests a boolean spatial relationship between two geometries. Shared I/O shape of every SQL/MM DE-9IM-family predicate: two Geometry inputs, one Boolean output, no side effect.",
   "status": "under-development",
   "dateTimeAddition": "2026-09-30T00:00:00Z",
-  "dateOfLastChange": "2026-09-30",
+  "dateOfLastChange": "2026-10-07",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",

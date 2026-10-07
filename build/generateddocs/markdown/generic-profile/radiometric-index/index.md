@@ -181,8 +181,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -192,7 +192,7 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral bands of one or more input rasters. One or more Raster inputs, the name(s) of the index/indices to compute, one Raster output (one band per selected index)." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Radiometric index" ;
-    gp:inputs [ ns2:index [ dcterms:description "the name of the radiometric index (or indices) to compute" ;
+    gp:inputs [ ns1:index [ dcterms:description "the name of the radiometric index (or indices) to compute" ;
                     dcterms:title "String" ;
                     proc:keywords "radiometric index" ;
                     proc:maxOccurs "unbounded" ;
@@ -200,7 +200,7 @@ Implementation Profile -> Implementation (instance level).
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:minOccurs 1 ] ;
-            ns2:rasters [ dcterms:description "the input spectral band(s)" ;
+            ns1:rasters [ dcterms:description "the input spectral band(s)" ;
                     dcterms:title "Raster" ;
                     proc:keywords "raster" ;
                     proc:maxOccurs "unbounded" ;
@@ -208,7 +208,7 @@ Implementation Profile -> Implementation (instance level).
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
                     proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns1:raster [ dcterms:description "the resulting raster (one band per selected index)" ;
+    gp:outputs [ ns2:raster [ dcterms:description "the resulting raster (one band per selected index)" ;
                     dcterms:title "Raster" ;
                     proc:keywords "raster" ;
                     proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;

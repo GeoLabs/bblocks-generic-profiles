@@ -1,5 +1,5 @@
 Validation report for generic-profiles.implementation-profile.geometry-extent - Implementation Profile: Geometry extent
-Generated 2026-10-07T12:50:54.469539+00:00
+Generated 2026-10-07T12:54:24.790840+00:00
 === Files ===
 Using examples/geometry-extent.json from examples
 JSON-LD context is present - uplifting

@@ -7,7 +7,7 @@
   "abstract": "Computes the minimum bounding rectangle of a set of input geometries, as a geometry.",
   "status": "under-development",
   "dateTimeAddition": "2026-10-01T00:00:00Z",
-  "dateOfLastChange": "2026-10-01",
+  "dateOfLastChange": "2026-10-07",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",

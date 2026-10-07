@@ -7,7 +7,7 @@
   "abstract": "Crops a raster coverage to a region of interest. One Raster input, a bounding box, one Raster output covering only that area.",
   "status": "under-development",
   "dateTimeAddition": "2026-09-30T00:00:00Z",
-  "dateOfLastChange": "2026-10-01",
+  "dateOfLastChange": "2026-10-07",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",

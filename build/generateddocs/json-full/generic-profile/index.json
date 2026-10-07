@@ -7,13 +7,13 @@
   "abstract": "The shape every Generic Profile shares: the abstract interface of one process, declaring a signature for its inputs and outputs (OGC 14-065 WPS 2.0.2 \u00a77.5.2), linked to its Process Concept by `broader`. Each real Generic Profile (generic-profiles.generic-profile.*) is its own building block that allOf-references this one -- this block is not itself a catalogue, only the common shape plus one illustrative example.",
   "status": "under-development",
   "dateTimeAddition": "2026-09-30T00:00:00Z",
-  "dateOfLastChange": "2026-09-30",
+  "dateOfLastChange": "2026-10-07",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",
   "dependsOn": [
-    "ogc.api.processes.v1.schemas.metadata",
-    "generic-profiles.concept"
+    "generic-profiles.concept",
+    "ogc.api.processes.v1.schemas.metadata"
   ],
   "scope": "dev",
   "tags": [
@@ -68,7 +68,7 @@
           "language": "ttl",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/example_1_1.ttl",
           "sizeBytes": 1889,
-          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .\n@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .\n@prefix proc: <https://w3id.org/ogc/api/processes/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile> a skos:Concept ;\n    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;\n    skos:definition \"Illustrates the shape of a Generic Profile entry only. Real Generic Profiles are each their own building block -- see generic-profiles.generic-profile.binary-spatial-predicate, .geometry-buffer and the other siblings for actual signatures.\" ;\n    skos:inScheme gp:generic-profile ;\n    skos:prefLabel \"Example Generic Profile (placeholder, not a real signature)\" ;\n    gp:inputs [ ns1:input1 [ dcterms:description \"an input role\" ;\n                    dcterms:title \"Geometry\" ;\n                    proc:keywords \"geometry\" ;\n                    proc:maxOccurs 1 ;\n                    proc:metadata [ dcterms:title \"Process Concept: Vector Geometry Processing\" ;\n                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;\n                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;\n                    proc:minOccurs 1 ] ] ;\n    gp:outputs [ ns2:result [ dcterms:description \"an output role\" ;\n                    dcterms:title \"Boolean\" ;\n                    proc:keywords \"boolean\" ] ] ;\n    gp:status \"submitted\" ;\n    proc:keywords \"example\" .\n\n"
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .\n@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .\n@prefix proc: <https://w3id.org/ogc/api/processes/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile> a skos:Concept ;\n    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;\n    skos:definition \"Illustrates the shape of a Generic Profile entry only. Real Generic Profiles are each their own building block -- see generic-profiles.generic-profile.binary-spatial-predicate, .geometry-buffer and the other siblings for actual signatures.\" ;\n    skos:inScheme gp:generic-profile ;\n    skos:prefLabel \"Example Generic Profile (placeholder, not a real signature)\" ;\n    gp:inputs [ ns2:input1 [ dcterms:description \"an input role\" ;\n                    dcterms:title \"Geometry\" ;\n                    proc:keywords \"geometry\" ;\n                    proc:maxOccurs 1 ;\n                    proc:metadata [ dcterms:title \"Process Concept: Vector Geometry Processing\" ;\n                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;\n                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;\n                    proc:minOccurs 1 ] ] ;\n    gp:outputs [ ns1:result [ dcterms:description \"an output role\" ;\n                    dcterms:title \"Boolean\" ;\n                    proc:keywords \"boolean\" ] ] ;\n    gp:status \"submitted\" ;\n    proc:keywords \"example\" .\n\n"
         }
       ]
     }

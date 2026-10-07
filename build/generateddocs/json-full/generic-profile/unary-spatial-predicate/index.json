@@ -7,7 +7,7 @@
   "abstract": "Tests a boolean property of a single geometry. One Geometry input, one Boolean output -- the one-input counterpart to `binary-spatial-predicate`'s two.",
   "status": "under-development",
   "dateTimeAddition": "2026-10-06T00:00:00Z",
-  "dateOfLastChange": "2026-10-06",
+  "dateOfLastChange": "2026-10-07",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",

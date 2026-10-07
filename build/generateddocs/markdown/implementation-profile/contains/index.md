@@ -249,8 +249,8 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
@@ -261,7 +261,7 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
     skos:definition "Returns TRUE if this geometric object spatially contains anotherGeometry (no point of anotherGeometry lies outside this geometric object, and at least one point of the interior of anotherGeometry lies in the interior of this geometric object)." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Contains" ;
-    gp:inputs [ ns2:geometry1 [ proc:keywords "GML",
+    gp:inputs [ ns3:geometry1 [ proc:keywords "GML",
                         "geometry" ;
                     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
@@ -272,7 +272,7 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
                     proc:schema [ a ns1:string ;
                             ns1:contentMediaType "text/xml" ;
                             ns1:description "GML" ] ] ;
-            ns2:geometry2 [ proc:keywords "GML",
+            ns3:geometry2 [ proc:keywords "GML",
                         "geometry" ;
                     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
@@ -283,7 +283,7 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
                     proc:schema [ a ns1:string ;
                             ns1:contentMediaType "text/xml" ;
                             ns1:description "GML" ] ] ] ;
-    gp:outputs [ ns3:result [ proc:keywords "boolean" ;
+    gp:outputs [ ns2:result [ proc:keywords "boolean" ;
                     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
                             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ] ] ;
