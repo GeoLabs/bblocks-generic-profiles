@@ -1,0 +1,118 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  Generic Process Profile (OGC 14-065 WPS 2.0.2 §7.5.2): "the abstract interface of a process...
+  declares a signature for process inputs and outputs." One Generic Profile per signature: several
+  operations sharing the identical I/O shape (the seven binary spatial predicates, for instance)
+  share one Generic Profile and differ only at Implementation Profile; `broader` links it to the
+  Process Concept (generic-profiles.concept.*) documenting the general group it belongs to.
+
+  Implementation Profiles and Implementations (instance level) -- concrete, deployable processes
+  binding a Generic Profile to real formats -- are not part of this register; they live wherever
+  the implementation itself is profiled (e.g. `ospd.process-profiles.sqlmm.*`) and link back here
+  via their own `implementsProfile` property. This register does not cross-reference them.
+
+  `inputs`/`outputs` use a subset of OGC API - Processes - Part 1: Core's own
+  `InputDescription`/`OutputDescription` structure (`title`, `description`, `keywords`,
+  `minOccurs`/`maxOccurs`) rather than a custom vocabulary invented for this register: this
+  project already imports and uses that structure at Implementation (instance level)
+  (`ogc.api.processes.v1.schemas.*`), so reusing it here makes all four tiers structurally, not
+  just conceptually, consistent. There is deliberately no type/format property at this tier:
+  [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32) gives
+  Generic Profile no "Data format" row at all (only Implementation Profile does, "D") -- what
+  WPS §7.5.2 calls a "signature" is the existence, naming and multiplicity of inputs/outputs,
+  conveyed here in `title`/`description` prose, not a machine-checked abstract type.
+
+  This tier is where Table 21 Declares (D) every property it lists for the Process, its Inputs
+  and its Outputs -- including `keywords` (Process, Input, Output) and `metadata` (Input,
+  Output), both taken from OGC API - Processes' own `descriptionType` (whose `metadata` item,
+  `ogc.api.processes.v1.schemas.metadata`, is WPS Table 5's Metadata structure: `title`, `role`,
+  `href`). Every input's `metadata` must reference this Generic Profile's superior, its Process
+  Concept, with the Table 22 role `http://www.opengis.net/spec/wps/2.0/def/process-profile/concept`:
+  that is the list Table 21 footnote a requires the Implementation Profile to extend.
+type: object
+required: [id, type, prefLabel, definition, inScheme, status, broader, keywords, inputs, outputs]
+properties:
+  id:
+    type: string
+    format: uri
+  type:
+    const: GenericProfile
+  prefLabel:
+    type: string
+  definition:
+    type: string
+  inScheme:
+    type: string
+    format: uri
+  status:
+    type: string
+    enum: [submitted, valid, invalid, superseded, retired]
+  broader:
+    description: The Process Concept(s) (generic-profiles.concept.*) documenting the general group this operation belongs to.
+    type: array
+    minItems: 1
+    items: {type: string, format: uri}
+  keywords:
+    description: Table 21 Process.Keywords (D). Each Implementation Profile must keep all of them (E).
+    type: array
+    minItems: 1
+    items: {type: string}
+  source:
+    type: array
+    items:
+      type: object
+      required: [title]
+      properties:
+        title: {type: string}
+        link: {type: string, format: uri}
+        clause: {type: string}
+  inputs:
+    description: >-
+      Keyed by role name. A subset of OGC API - Processes Part 1 Core's own InputDescription:
+      `title`/`description` carry the "signature" informally, `minOccurs`/`maxOccurs` are the one
+      machine-checkable property this tier actually has (Table 21: Input.Multiplicity, D).
+    type: object
+    minProperties: 1
+    additionalProperties:
+      type: object
+      required: [title, keywords, metadata]
+      properties:
+        title: {type: string}
+        description: {type: string}
+        keywords: {type: array, minItems: 1, items: {type: string}}
+        metadata:
+          type: array
+          items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+          contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"}
+        minOccurs: {type: integer, default: 1}
+        maxOccurs:
+          default: 1
+          oneOf:
+            - type: integer
+            - const: unbounded
+  outputs:
+    description: >-
+      Keyed by role name. No `minOccurs`/`maxOccurs` -- Table 21 has no Output.Multiplicity row
+      (and, per the same reasoning as the earlier `cardinality`-on-outputs mistake this replaces,
+      an output's internal structure, e.g. a raster's band count, is not an output cardinality
+      either way; see generic-profiles.implementation-profile.raster-band-math-multiband's
+      `description.md`).
+    type: object
+    minProperties: 1
+    additionalProperties:
+      type: object
+      required: [title, keywords]
+      properties:
+        title: {type: string}
+        description: {type: string}
+        keywords: {type: array, minItems: 1, items: {type: string}}
+        metadata:
+          description: >-
+            Table 21 Output.Metadata is D here then plain O below (no footnote a): unlike an
+            input's, an output's metadata carries no obligation to be kept by lower tiers.
+          type: array
+          items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}

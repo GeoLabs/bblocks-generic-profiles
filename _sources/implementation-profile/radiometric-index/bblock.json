@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Implementation Profile: Radiometric index",
+  "abstract": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-30T00:00:00Z",
+  "dateOfLastChange": "2026-09-30",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.implementation-profile"
+  ],
+  "sources": [
+    {
+      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
+      "link": "https://www.ogc.org/standards/wcps/"
+    },
+    {
+      "title": "OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image",
+      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "implementation profile",
+    "SKOS",
+    "Radiometric index"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Implementation Profiles",
+  "isProfileOf": [
+    "generic-profiles.implementation-profile",
+    "generic-profiles.generic-profile.radiometric-index"
+  ]
+}

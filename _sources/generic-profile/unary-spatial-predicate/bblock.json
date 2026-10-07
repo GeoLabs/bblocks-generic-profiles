@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Generic Profile: Unary spatial predicate",
+  "abstract": "Tests a boolean property of a single geometry. One Geometry input, one Boolean output -- the one-input counterpart to `binary-spatial-predicate`'s two.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-06T00:00:00Z",
+  "dateOfLastChange": "2026-10-06",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.generic-profile"
+  ],
+  "sources": [
+    {
+      "title": "ZOO-Project process-profiles: Concept / Generic Profile / Implementation Profile",
+      "link": "https://zoo-project.github.io/docs/services/process-profiles.html"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "generic profile",
+    "SKOS",
+    "Unary spatial predicate"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Generic Profiles",
+  "isProfileOf": [
+    "generic-profiles.generic-profile",
+    "generic-profiles.concept.vector-geometry-processing"
+  ]
+}

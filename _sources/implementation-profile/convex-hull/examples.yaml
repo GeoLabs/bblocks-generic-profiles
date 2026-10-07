@@ -1,0 +1,5 @@
+- title: Convex hull
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/
+  snippets:
+  - language: json
+    ref: examples/convex-hull.json

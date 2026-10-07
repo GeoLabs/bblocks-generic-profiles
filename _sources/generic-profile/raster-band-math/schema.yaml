@@ -1,0 +1,11 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Generic Profile "Raster band math" -- see generic-profiles.generic-profile for the general
+  shape every Generic Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.generic-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"}
+      type: {const: GenericProfile}
+      prefLabel: {const: "Raster band math"}

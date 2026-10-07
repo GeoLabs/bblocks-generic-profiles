@@ -1,91 +1,59 @@
-# A short, descriptive name of this building block collection
-name: My OGC Building Blocks repository
+# Register configuration for bblocks-generic-profiles
+# Structure follows GeoLabs/bblocks-process-profiles / GeoLabs/bblocks-eoap-cct.
 
-# Short abstract for this collection (optional)
+identifier-prefix: generic-profiles.
+
+name: Generic Process Profiles
+
 abstract: |
-  This is an example text for the abstract. It should be short and to the point.
-  A "Tell me more" link will appear if there is an additional description with a longer explanation.
+  A general-purpose, engine- and format-agnostic vocabulary of Generic Profiles, independent of
+  any one project. A Generic Profile gives one or more related operations an abstract I/O
+  signature (named roles and abstract types, no format, no size limit) -- e.g. every binary
+  boolean spatial predicate (Intersects, Contains, Within, Touches, Crosses, Equals, Disjoint)
+  takes two Geometry inputs and returns one Boolean, and is one Generic Profile, not seven.
+  Implementation Profiles (concrete, deployable processes binding a Generic Profile to real
+  formats) are not part of this register; they live wherever the implementation itself is
+  profiled (e.g. `ospd.process-profiles.*` for OSPD's CWL- and OGC-API-Processes-sourced profiles)
+  and link back here via their own `implementsGenericProfile` property.
 
-# Description for this collection (optional)
 description: |
-  The description can be longer. Both **the abstract** *and the description* support Markdown,
-  including [links](https://google.es).
+  Produced by GeoLabs, first grounded in the 12 spatial predicates and set operations of OGC
+  Simple Feature Access - Common Architecture (06-103r4) as a worked example: every one of them
+  shares one of a small number of I/O shapes, so the Generic Profile layer stays small (3 profiles
+  cover all 12 here). SQL/MM Spatial (ISO/IEC 13249-3) binds the same operations to SQL (the
+  `ST_Geometry` type, `ST_Intersects`-style function names) and real deployed processes bind them
+  further still (e.g. to GML 3.1.0 Polygon) -- both are concrete bindings, not part of this
+  register; they are profiled as Implementation Profiles in whichever register profiles the
+  concrete process (e.g. `ospd.process-profiles.*`), linked back here by `implementsGenericProfile`.
+  Not limited to spatial operations -- any domain with standardised abstract operations and several
+  independent bindings is a candidate.
 
-# Customize the following prefix (will be prepended to the path of the building blocks):
-identifier-prefix: ogc.bbr.template.
+contact:
+  name: GeoLabs SARL
+  url: https://www.geolabs.fr/
 
-# List of imports ("default" is an alias for the main OGC Building Blocks Register).
-# An entry can also be an "@org/register" alias (e.g. "@ogc/main", equivalent to "default"),
-# resolved against a Building Blocks meta-registry -- see "meta-registry" below -- instead of
-# a full register.json URL.
+version: 0.1.0
+
+baseURL: https://geolabs.github.io/bblocks-generic-profiles/
+gitHubBaseURL: https://github.com/GeoLabs/bblocks-generic-profiles/
+
+keywords:
+  - generic profile
+  - SKOS
+  - SQL/MM
+  - Simple Feature Access
+  - process profile
+
 imports:
   - default
+  # OGC API - Processes - Part 1: Core schemas. Implementation Profile's `schema` property (Table
+  # 21 Data format) is a subset of this vocabulary's own InputDescription/OutputDescription/Schema
+  # structure, and can $ref a real shared type's own published schema directly (e.g.
+  # ogc.api.processes.v1.schemas.bbox for raster-crop's areaOfInterest) -- not bblocks-eoap-cct,
+  # whose types (e.g. eoap.cct.bbox) are for CWL inputs/outputs crossing into OGC API - Processes
+  # - Part 2: Deploy, Replace, Undeploy, a different vocabulary layer (2026-10-01).
+  - https://geolabs.github.io/bblocks-ogcapi-processes/build/register.json
 
-# Meta-registry used to resolve "@org/register" import aliases above (optional).
-# Defaults to the postprocessor's built-in meta-registry if omitted; set to null to disable
-# alias resolution entirely (any "@org/register" import will then fail).
-#
-# meta-registry: https://w3id.org/ogc/bblocks/meta-register.json
-
-# Whether to enable the (highly experimental) downcompiling of JSON schemas to an OpenAPI 3.0-compatible
-# version
 schema-oas30-downcompile: False
 
-# Default license for this register and all of its building blocks (optional).
-# At least one of "name"/"url" is required. A building block can override this by declaring its own
-# "license" in its bblock.json.
-# If "url" is left unspecified and a LICENSE, LICENSE.md or LICENSE.txt file exists at the repository
-# root, its published URL is used automatically.
-#
-# license:
-#   name: Apache-2.0
-#   url: https://www.apache.org/licenses/LICENSE-2.0
-
-# Viewer configuration (optional)
-#
-# viewer:
-#   show-imported-depth: 0  # Controls which imported building blocks are shown in the viewer.
-#                           #   0 (default): only local building blocks
-#                           #   N (positive integer): local + imported up to N levels deep
-#                           #   -1 (any negative number): show all imported building blocks
-#                           # This setting is written to register.json and used by the viewer
-#                           # whether it is deployed via GitHub Pages or run locally against
-#                           # the register. It takes precedence over the viewer_show_imported
-#                           # GitHub workflow input (which is now deprecated).
-#   view-plugins:           # Client-side view plugins for the viewer (optional)
-#     - url: https://example.com/my-view-plugin.js  # ESM module, loaded at runtime via import()
-#       export: MyView                              # Optional: named export(s) to use (string or array; defaults to the default export)
-#       weight: 10                                   # Optional: controls tab ordering relative to other view plugins
-
-# SPARQL configuration (optional)
-#   Authentication can be set through the sparql_username and sparql_password GitHub Workflow inputs
-#   (see .github/workflow/process-bblocks.yml)
-#
-# sparql:
-#   push: https://example.com/gsp           # SPARQL Graph Store Protocol endpoint for uploading data
-#   graph: https://my.bblocks.example.com/  # SPARQL Graph where data will be uploaded
-#                                           #  if left empty, the base URL for the publication will be used
-#   query: https://example.com/sparql       # SPARQL query endpoint where data will be available
-#   resources:                              # Additional resources to upload apart from building block metadata
-#      ontologies: true                     #   Whether to upload ontology files to the triplestore
-
-# External transformer/validator plugins (optional)
-#   Each entry installs its pip dependencies into a sandbox and imports the given modules,
-#   which are scanned for plugin classes. Unless the postprocessor is run with
-#   --skip-permissions=true, you will be prompted before plugin code is installed/run.
-#
-# plugins:
-#   transforms:
-#     - modules: [my.custom.Transformer]     # Dotted Python module path(s) to import
-#       pip: [my-custom-package]             # pip install specifier(s) for the module(s)
-#       url: https://example.com/my-plugin   # Optional: plugin homepage/repo (auto-derived from pip if omitted)
-#   validators:
-#     - modules: [my.custom.Validator]
-#       pip: [my-custom-package]
-#   build:                                   # Lifecycle-hook plugins (before_run, before/after_bblock,
-#                                             #   after_register, after_uplift, after_run, on_error),
-#                                             #   run locally and in CI alike.
-#     - classes: [my.custom.BuildHooks]      # Fully-qualified module.ClassName(s) - used exactly as
-#                                             #   given, not scanned like transforms/validators' "modules"
-#       pip: [my-custom-package]
-#       url: https://example.com/my-plugin
+license: Apache-2.0

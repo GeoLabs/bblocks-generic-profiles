@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Process Concept: Vector Geometry Processing",
+  "abstract": "General group covering operations on vector geometries: testing spatial relationships between two geometries, deriving a new geometry from one or two others, and measuring a geometry's own properties -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-30T00:00:00Z",
+  "dateOfLastChange": "2026-09-30",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.concept"
+  ],
+  "scope": "dev",
+  "tags": [
+    "concept",
+    "SKOS",
+    "vector",
+    "geometry"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "sources": [
+    {
+      "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, §7.5.1 Process Concept",
+      "link": "https://docs.ogc.org/is/14-065/14-065.html"
+    },
+    {
+      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+      "link": "https://www.ogc.org/standards/sfa/"
+    },
+    {
+      "title": "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1",
+      "link": "https://www.ogc.org/standards/sfs/"
+    }
+  ],
+  "maturity": "development",
+  "highlighted": true,
+  "group": "Concepts",
+  "isProfileOf": "generic-profiles.concept"
+}

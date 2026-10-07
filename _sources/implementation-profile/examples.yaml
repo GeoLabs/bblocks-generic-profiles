@@ -1,0 +1,5 @@
+- title: Example Implementation Profile (illustrative shape only, not a real operation)
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/
+  snippets:
+  - language: json
+    ref: examples/example-implementation-profile.json

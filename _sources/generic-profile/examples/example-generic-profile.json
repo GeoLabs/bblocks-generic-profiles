@@ -1,0 +1,31 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile",
+  "type": "GenericProfile",
+  "prefLabel": "Example Generic Profile (placeholder, not a real signature)",
+  "definition": "Illustrates the shape of a Generic Profile entry only. Real Generic Profiles are each their own building block -- see generic-profiles.generic-profile.binary-spatial-predicate, .geometry-buffer and the other siblings for actual signatures.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "status": "submitted",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+  ],
+  "keywords": ["example"],
+  "inputs": {
+    "input1": {
+      "title": "Geometry",
+      "description": "an input role",
+      "keywords": ["geometry"],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "result": {"title": "Boolean", "description": "an output role", "keywords": ["boolean"]}
+  }
+}

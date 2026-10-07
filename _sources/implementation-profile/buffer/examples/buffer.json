@@ -1,0 +1,88 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer",
+  "type": "ImplementationProfile",
+  "prefLabel": "Buffer",
+  "definition": "Returns a geometric object representing all points whose distance from this geometric object is less than or equal to a given distance.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer",
+  "keywords": [
+    "vector",
+    "geometry",
+    "spatial analysis",
+    "buffer",
+    "Buffer",
+    "ST_Buffer"
+  ],
+  "inputs": {
+    "geometry": {
+      "schema": {
+        "type": "string",
+        "contentMediaType": "text/xml",
+        "description": "GML"
+      },
+      "keywords": [
+        "geometry",
+        "GML"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        },
+        {
+          "title": "Generic Profile: Geometry buffer",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer"
+        }
+      ]
+    },
+    "distance": {
+      "keywords": [
+        "distance"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        },
+        {
+          "title": "Generic Profile: Geometry buffer",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "result": {
+      "schema": {
+        "type": "string",
+        "contentMediaType": "text/xml",
+        "description": "GML"
+      },
+      "keywords": [
+        "geometry",
+        "GML"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Geometry buffer",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.23",
+      "link": "https://www.ogc.org/standards/sfa/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.5 ST_Buffer"
+    }
+  ]
+}

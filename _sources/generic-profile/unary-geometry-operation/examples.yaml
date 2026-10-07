@@ -1,0 +1,5 @@
+- title: Unary geometry operation
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/
+  snippets:
+  - language: json
+    ref: examples/unary-geometry-operation.json

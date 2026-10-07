@@ -1,0 +1,5 @@
+- title: Area
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/
+  snippets:
+  - language: json
+    ref: examples/area.json

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Implementation Profile: Raster crop",
+  "abstract": "Extracts the pixels of a raster coverage that fall within a region of interest. `areaOfInterest`'s `schema` $refs `ogc.api.processes.v1.schemas.bbox` directly (OGC API - Processes Part 1 Core's own bbox type), not a bespoke format string.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-30T00:00:00Z",
+  "dateOfLastChange": "2026-10-01",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.implementation-profile",
+    "ogc.api.processes.v1.schemas.bbox"
+  ],
+  "sources": [
+    {
+      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
+      "link": "https://www.ogc.org/standards/wcps/"
+    },
+    {
+      "title": "OTB ExtractROI -- Extracts a region of interest defined by the user",
+      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_ExtractROI.html"
+    },
+    {
+      "title": "OGC 17-069r4 OGC API - Features - Part 1: Core, §7.15.3 Parameter bbox",
+      "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+    },
+    {
+      "title": "ogc.api.processes.v1.schemas.bbox -- bbox schema (OGC API - Processes - Part 1: Core)",
+      "link": "https://geolabs.github.io/bblocks-ogcapi-processes/"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "implementation profile",
+    "SKOS",
+    "Raster crop"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Implementation Profiles",
+  "isProfileOf": [
+    "generic-profiles.implementation-profile",
+    "generic-profiles.generic-profile.raster-crop"
+  ]
+}

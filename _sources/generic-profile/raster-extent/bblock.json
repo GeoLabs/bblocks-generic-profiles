@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Generic Profile: Raster extent",
+  "abstract": "Computes the bounding envelope of a raster coverage, returned as a geometry (a rectangular polygon in the coverage's CRS). One Raster input, one Geometry output.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-01T00:00:00Z",
+  "dateOfLastChange": "2026-10-01",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.generic-profile"
+  ],
+  "sources": [
+    {
+      "title": "ZOO-Project process-profiles: Concept / Generic Profile / Implementation Profile",
+      "link": "https://zoo-project.github.io/docs/services/process-profiles.html"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "generic profile",
+    "SKOS",
+    "Raster extent"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Generic Profiles",
+  "isProfileOf": [
+    "generic-profiles.generic-profile",
+    "generic-profiles.concept.raster-coverage-processing"
+  ]
+}

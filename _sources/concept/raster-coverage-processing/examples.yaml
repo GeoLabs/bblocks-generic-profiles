@@ -1,0 +1,5 @@
+- title: Raster Coverage Processing
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/concept/
+  snippets:
+  - language: json
+    ref: examples/raster-coverage-processing.json

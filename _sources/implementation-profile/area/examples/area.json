@@ -1,0 +1,72 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area",
+  "type": "ImplementationProfile",
+  "prefLabel": "Area",
+  "definition": "The area of this Surface, as measured in the spatial reference system of this Surface.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure",
+  "keywords": [
+    "vector",
+    "geometry",
+    "measure",
+    "Area",
+    "ST_Area"
+  ],
+  "inputs": {
+    "geometry": {
+      "schema": {
+        "type": "string",
+        "contentMediaType": "text/xml",
+        "description": "GML"
+      },
+      "keywords": [
+        "geometry",
+        "GML"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        },
+        {
+          "title": "Generic Profile: Geometry measure",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "result": {
+      "schema": {
+        "type": "number",
+        "description": "a plain number"
+      },
+      "keywords": [
+        "number"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Geometry measure",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, \u00a72.1.9.1 Area()",
+      "link": "https://www.ogc.org/standards/sfs/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area"
+    },
+    {
+      "title": "ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry.",
+      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea"
+    }
+  ]
+}

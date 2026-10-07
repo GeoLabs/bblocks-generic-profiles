@@ -1,0 +1,5 @@
+- title: Binary spatial predicate
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/
+  snippets:
+  - language: json
+    ref: examples/binary-spatial-predicate.json

@@ -1,0 +1,125 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  Process Implementation Profile (OGC 14-065 WPS 2.0.2 §7.5.3): "Implementation profiles cover
+  all descriptive elements of a process down to the supported data exchange formats." One per
+  specific named operation (Intersects, Buffer, ...), `refinesGenericProfile` to exactly one
+  Generic Profile (the shared abstract I/O shape).
+
+  `inputs`/`outputs` use OGC API - Processes - Part 1: Core's own `schema` property (a full JSON
+  Schema / OpenAPI Schema Object) for Table 21's Data format (D), instead of a custom format
+  vocabulary: this project already imports and uses the same `schema` property at Implementation
+  (instance level), so a real deployment's processDescription and this tier's declared default
+  are now directly comparable JSON, not a bespoke string next to real JSON. `maxOccurs`, when
+  present, Restricts (R, footnote c: "Implementation profiles may restrict the maximum
+  cardinality of a superior generic profile... They shall not modify the minimum cardinality")
+  the Generic Profile's own value -- a real integer (or `unbounded`), not free text. Only
+  inputs/outputs that carry spatial/raster/bbox data need a `schema` entry; a plain parameter
+  (an expression, a CRS code, a distance) has none to declare.
+
+  Keep the declared `schema` minimal and deliberately not exhaustive (one format is often enough:
+  GML for vector geometry data, GeoTIFF for raster, OGC API - Processes' own `bbox` schema for a
+  bounding box). Per Table 21, Implementation (instance level) may *Extend* this (footnote d:
+  "Implementations may... support additional data exchange formats") -- a specific deployment is
+  free to support more than this tier's minimal default, so this tier should not try to pre-empt
+  every format a future deployment might add. See each Implementation Profile's own
+  `description.md` for whether its default is grounded in a real deployment's processDescription
+  or left as the vocabulary's own minimal baseline.
+
+  A `schema` may `$ref` a real shared type's own published schema directly -- e.g.
+  `ogc.api.processes.v1.schemas.bbox` for a bounding box, the same OGC API - Processes - Part 1:
+  Core type this register's Implementation (instance level) processDescriptions already use.
+  `eoap.cct.*` types (bblocks-eoap-cct) are a *different* vocabulary, for typing CWL
+  inputs/outputs passed to OGC API - Processes - Part 2: Deploy, Replace, Undeploy, not for
+  describing an OGC API - Processes processDescription's own `schema` -- not used here.
+
+  The rest of Table 21 at this tier, as each real Implementation Profile's own `schema.yaml`
+  enforces it against its Generic Profile:
+  - Process: `keywords` Extend (E) -- must contain every Generic Profile keyword;
+    `id`/`prefLabel`/`definition` Override (O).
+  - Input: every Generic Profile input is listed, because footnote a ("the list of metadata
+    references to superior process profiles shall be extended") applies to each one: its
+    `metadata` keeps the Generic Profile's Table 22 `concept` reference and adds a `generic` one
+    (`http://www.opengis.net/spec/wps/2.0/def/process-profile/generic`) to the Generic Profile
+    itself; `keywords` Extend (E); Identifier/Title/Abstract Inherit (I), so not repeated;
+    `maxOccurs` Restrict (R); `schema` Declare (D).
+  - Output: every Generic Profile output is listed too, so that this tier is self-describing;
+    `keywords` Extend (E); `metadata` Override (O, free); `schema` Declare (D).
+type: object
+required: [id, type, prefLabel, definition, inScheme, status, refinesGenericProfile, keywords, inputs, outputs]
+properties:
+  id:
+    type: string
+    format: uri
+  type:
+    const: ImplementationProfile
+  prefLabel:
+    type: string
+  definition:
+    type: string
+  inScheme:
+    type: string
+    format: uri
+  status:
+    type: string
+    enum: [submitted, valid, invalid, superseded, retired]
+  refinesGenericProfile:
+    description: The single Generic Profile (generic-profiles.generic-profile.*) this Implementation Profile refines.
+    type: string
+    format: uri
+  keywords:
+    description: Table 21 Process.Keywords (E) -- the Generic Profile's keywords plus this operation's own.
+    type: array
+    minItems: 1
+    items: {type: string}
+  inputs:
+    description: >-
+      Keyed by the same input names as the Generic Profile's own `inputs` (Identifier/Title/
+      Abstract Inherited, not repeated). `schema` is Table 21's Data format (D); `maxOccurs`,
+      when present, Restricts (R, footnote c) the Generic Profile's own value; `keywords` Extend
+      (E) the Generic Profile's; `metadata` Extends (E, footnote a) its superior-profile
+      references.
+    type: object
+    additionalProperties:
+      type: object
+      required: [keywords, metadata]
+      properties:
+        schema: {}
+        maxOccurs:
+          oneOf:
+            - type: integer
+            - const: unbounded
+        keywords: {type: array, minItems: 1, items: {type: string}}
+        metadata:
+          type: array
+          items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+          allOf:
+            - contains:
+                type: object
+                required: [role, href]
+                properties:
+                  role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"}
+            - contains:
+                type: object
+                required: [role, href]
+                properties:
+                  role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"}
+  outputs:
+    description: Keyed by the same output names as the Generic Profile's own `outputs`.
+    type: object
+    additionalProperties:
+      type: object
+      required: [keywords]
+      properties:
+        schema: {}
+        keywords: {type: array, minItems: 1, items: {type: string}}
+        metadata:
+          type: array
+          items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+  source:
+    type: array
+    items:
+      type: object
+      required: [title]
+      properties:
+        title: {type: string}
+        link: {type: string, format: uri}

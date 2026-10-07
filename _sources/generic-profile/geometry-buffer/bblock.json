@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Generic Profile: Geometry buffer",
+  "abstract": "Computes a new geometry from one input geometry and a scalar distance. A different shape from binary-spatial-operation: one Geometry, one Number, not two Geometries.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-30T00:00:00Z",
+  "dateOfLastChange": "2026-09-30",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.generic-profile"
+  ],
+  "sources": [
+    {
+      "title": "ZOO-Project process-profiles: Concept / Generic Profile / Implementation Profile",
+      "link": "https://zoo-project.github.io/docs/services/process-profiles.html"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "generic profile",
+    "SKOS",
+    "Geometry buffer"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Generic Profiles",
+  "isProfileOf": [
+    "generic-profiles.generic-profile",
+    "generic-profiles.concept.vector-geometry-processing"
+  ]
+}

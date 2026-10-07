@@ -1,0 +1,50 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure",
+  "type": "GenericProfile",
+  "prefLabel": "Geometry measure",
+  "definition": "Computes a scalar measurement of a single geometry. One Geometry input, one Number output.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "status": "submitted",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+  ],
+  "keywords": [
+    "vector",
+    "geometry",
+    "measure"
+  ],
+  "inputs": {
+    "geometry": {
+      "title": "Geometry",
+      "description": "the input geometry",
+      "keywords": [
+        "geometry"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "result": {
+      "title": "Number",
+      "description": "the computed measurement",
+      "keywords": [
+        "number"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        }
+      ]
+    }
+  }
+}

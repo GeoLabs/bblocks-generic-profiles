@@ -1,0 +1,73 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Implementation Profile "Buffer" -- see generic-profiles.implementation-profile for
+  the general shape every Implementation Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.implementation-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer"}
+      type: {const: ImplementationProfile}
+      prefLabel: {const: "Buffer"}
+      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer"}
+      # Table 21 against geometry-buffer: keywords Extend (E), input metadata Extend (E, footnote a),
+      # input maxOccurs Restrict (R).
+      keywords:
+        allOf:
+        - contains: {const: vector}
+        - contains: {const: geometry}
+        - contains: {const: spatial analysis}
+        - contains: {const: buffer}
+      inputs:
+        type: object
+        required: [geometry, distance]
+        properties:
+          geometry:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: geometry}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing'}
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer'}
+              maxOccurs: {type: integer, maximum: 1}
+          distance:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: distance}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing'}
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer'}
+              maxOccurs: {type: integer, maximum: 1}
+      outputs:
+        type: object
+        required: [result]
+        properties:
+          result:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: geometry}

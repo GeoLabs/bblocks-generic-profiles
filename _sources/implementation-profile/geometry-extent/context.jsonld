@@ -1,0 +1,60 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dct": "http://purl.org/dc/terms/",
+    "proc": "https://w3id.org/ogc/api/processes/",
+    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "id": "@id",
+    "type": "@type",
+    "ImplementationProfile": "skos:Concept",
+    "prefLabel": "skos:prefLabel",
+    "definition": "skos:definition",
+    "inScheme": { "@id": "skos:inScheme", "@type": "@id" },
+    "status": "gp:status",
+    "refinesGenericProfile": { "@id": "gp:refinesGenericProfile", "@type": "@id" },
+    "keywords": "proc:keywords",
+    "source": "dct:source",
+    "title": "dct:title",
+    "link": { "@id": "dct:references", "@type": "@id" },
+    "inputs": {
+      "@id": "gp:inputs",
+      "@context": {
+        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
+        "schema": {
+          "@id": "proc:schema",
+          "@context": { "@vocab": "https://w3id.org/ogc/api/schema/" }
+        },
+        "maxOccurs": "proc:maxOccurs",
+        "keywords": "proc:keywords",
+        "metadata": {
+          "@id": "proc:metadata",
+          "@context": {
+            "title": "dct:title",
+            "role": { "@id": "proc:role", "@type": "@id" },
+            "href": { "@id": "proc:href", "@type": "@id" }
+          }
+        }
+      }
+    },
+    "outputs": {
+      "@id": "gp:outputs",
+      "@context": {
+        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/",
+        "schema": {
+          "@id": "proc:schema",
+          "@context": { "@vocab": "https://w3id.org/ogc/api/schema/" }
+        },
+        "keywords": "proc:keywords",
+        "metadata": {
+          "@id": "proc:metadata",
+          "@context": {
+            "title": "dct:title",
+            "role": { "@id": "proc:role", "@type": "@id" },
+            "href": { "@id": "proc:href", "@type": "@id" }
+          }
+        }
+      }
+    }
+  }
+}
