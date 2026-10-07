@@ -1,0 +1,67 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-crop/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop",
+  "type": "GenericProfile",
+  "prefLabel": "Raster crop",
+  "definition": "Crops a raster coverage to a region of interest. One Raster input, an area of interest, one Raster output covering only that area.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "status": "submitted",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+  ],
+  "keywords": [
+    "raster",
+    "coverage",
+    "crop"
+  ],
+  "inputs": {
+    "raster": {
+      "title": "Raster",
+      "description": "the input raster coverage",
+      "keywords": [
+        "raster"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "areaOfInterest": {
+      "title": "Bounding box",
+      "description": "the region of interest to crop to",
+      "keywords": [
+        "bounding box"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "raster": {
+      "title": "Raster",
+      "description": "the cropped raster coverage",
+      "keywords": [
+        "raster"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        }
+      ]
+    }
+  }
+}

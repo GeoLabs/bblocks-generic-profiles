@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "GenericProfile": "skos:Concept",
+    "id": "@id",
+    "type": "@type",
+    "prefLabel": "skos:prefLabel",
+    "definition": "skos:definition",
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "status": "gp:status",
+    "broader": {
+      "@id": "skos:broader",
+      "@type": "@id"
+    },
+    "keywords": "proc:keywords",
+    "source": "dct:source",
+    "inputs": {
+      "@context": {
+        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
+        "description": "dct:description",
+        "metadata": {
+          "@context": {
+            "role": {
+              "@id": "proc:role",
+              "@type": "@id"
+            },
+            "href": {
+              "@id": "proc:href",
+              "@type": "@id"
+            }
+          },
+          "@id": "proc:metadata"
+        },
+        "minOccurs": "proc:minOccurs",
+        "maxOccurs": "proc:maxOccurs"
+      },
+      "@id": "gp:inputs"
+    },
+    "outputs": {
+      "@context": {
+        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
+        "description": "dct:description",
+        "metadata": {
+          "@context": {
+            "role": {
+              "@id": "proc:role",
+              "@type": "@id"
+            },
+            "href": {
+              "@id": "proc:href",
+              "@type": "@id"
+            }
+          },
+          "@id": "proc:metadata"
+        }
+      },
+      "@id": "gp:outputs"
+    },
+    "title": "dct:title",
+    "link": {
+      "@id": "dct:references",
+      "@type": "@id"
+    },
+    "clause": "gp:clause",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "proc": "https://w3id.org/ogc/api/processes/",
+    "dct": "http://purl.org/dc/terms/",
+    "@version": 1.1
+  }
+}

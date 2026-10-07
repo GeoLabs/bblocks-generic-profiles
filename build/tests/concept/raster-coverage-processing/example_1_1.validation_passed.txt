@@ -1,0 +1,13 @@
+Validation report for generic-profiles.concept.raster-coverage-processing - Process Concept: Raster Coverage Processing
+Generated 2026-10-07T12:46:12.350725+00:00
+=== Files ===
+Using examples/raster-coverage-processing.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

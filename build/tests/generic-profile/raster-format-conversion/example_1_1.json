@@ -1,0 +1,66 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion",
+  "type": "GenericProfile",
+  "prefLabel": "Raster format conversion",
+  "definition": "Converts a raster coverage from one encoding to another, without changing its content. One Raster input, a target format, one Raster output in the new encoding.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "status": "submitted",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+  ],
+  "keywords": [
+    "raster",
+    "coverage",
+    "format conversion"
+  ],
+  "inputs": {
+    "raster": {
+      "title": "Raster",
+      "description": "the input raster coverage",
+      "keywords": [
+        "raster"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1
+    },
+    "targetFormat": {
+      "title": "String",
+      "description": "the target raster encoding",
+      "keywords": [
+        "format"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "raster": {
+      "title": "Raster",
+      "description": "the converted raster coverage",
+      "keywords": [
+        "raster"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        }
+      ]
+    }
+  }
+}

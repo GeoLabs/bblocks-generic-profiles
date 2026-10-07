@@ -1,0 +1,13 @@
+Validation report for generic-profiles.generic-profile.unary-spatial-predicate - Generic Profile: Unary spatial predicate
+Generated 2026-10-07T12:46:13.295109+00:00
+=== Files ===
+Using examples/unary-spatial-predicate.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

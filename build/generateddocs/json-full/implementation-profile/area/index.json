@@ -1,0 +1,88 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.implementation-profile.area",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Implementation Profile: Area",
+  "abstract": "The area of this Surface, as measured in the spatial reference system of this Surface.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-06T00:00:00Z",
+  "dateOfLastChange": "2026-10-07",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.implementation-profile"
+  ],
+  "sources": [
+    {
+      "title": "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, \u00a72.1.9.1 Area()",
+      "link": "https://www.ogc.org/standards/sfs/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area"
+    },
+    {
+      "title": "ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry.",
+      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "implementation profile",
+    "SKOS",
+    "Area"
+  ],
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/implementation-profile/area/schema.yaml",
+  "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/area/context.jsonld",
+  "maturity": "development",
+  "group": "Implementation Profiles",
+  "isProfileOf": [
+    "generic-profiles.implementation-profile",
+    "generic-profiles.generic-profile.geometry-measure"
+  ],
+  "shaclShapes": {},
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/area/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/area/schema.json"
+  },
+  "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/implementation-profile/area/context.jsonld",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/area/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/implementation-profile/area/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/area/",
+  "description": "Implementation Profile: **Area**.\n\n> The area of this Surface, as measured in the spatial reference system of this Surface.\n\n## Source\n\n- [OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, \u00a72.1.9.1 Area()](https://www.ogc.org/standards/sfs/)\n- ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area\n- [ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry.](https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea)\n\n## Relations\n\n- `refinesGenericProfile`: [`generic-profiles.generic-profile.geometry-measure`](../../generic-profile/geometry-measure/)\n\n## Register position\n\nThird tier of the four-tier model (OGC 14-065 WPS 2.0.2 \u00a77.5): Concept -> Generic Profile ->\n**Implementation Profile** -> Implementation (instance level). The fourth tier is not part of\nthis register: see `ospd.process-profiles.vector.*` in `bblocks-process-profiles` -- a real\nprocess of the ZOO-Project Geonovum testbed.\n",
+  "examples": [
+    {
+      "title": "Area",
+      "base-uri": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/implementation-profile/area/examples/area.json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/tests/implementation-profile/area/example_1_1.json",
+          "sizeBytes": 2372,
+          "code": "{\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area\",\n  \"type\": \"ImplementationProfile\",\n  \"prefLabel\": \"Area\",\n  \"definition\": \"The area of this Surface, as measured in the spatial reference system of this Surface.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile\",\n  \"status\": \"submitted\",\n  \"refinesGenericProfile\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure\",\n  \"keywords\": [\n    \"vector\",\n    \"geometry\",\n    \"measure\",\n    \"Area\",\n    \"ST_Area\"\n  ],\n  \"inputs\": {\n    \"geometry\": {\n      \"schema\": {\n        \"type\": \"string\",\n        \"contentMediaType\": \"text/xml\",\n        \"description\": \"GML\"\n      },\n      \"keywords\": [\n        \"geometry\",\n        \"GML\"\n      ],\n      \"metadata\": [\n        {\n          \"title\": \"Process Concept: Vector Geometry Processing\",\n          \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\",\n          \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing\"\n        },\n        {\n          \"title\": \"Generic Profile: Geometry measure\",\n          \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/generic\",\n          \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure\"\n        }\n      ]\n    }\n  },\n  \"outputs\": {\n    \"result\": {\n      \"schema\": {\n        \"type\": \"number\",\n        \"description\": \"a plain number\"\n      },\n      \"keywords\": [\n        \"number\"\n      ],\n      \"metadata\": [\n        {\n          \"title\": \"Generic Profile: Geometry measure\",\n          \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/generic\",\n          \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure\"\n        }\n      ]\n    }\n  },\n  \"source\": [\n    {\n      \"title\": \"OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, \\u00a72.1.9.1 Area()\",\n      \"link\": \"https://www.ogc.org/standards/sfs/\"\n    },\n    {\n      \"title\": \"ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area\"\n    },\n    {\n      \"title\": \"ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry.\",\n      \"link\": \"https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea\"\n    }\n  ]\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/tests/implementation-profile/area/example_1_1.jsonld",
+          "sizeBytes": 2524,
+          "code": "{\n  \"@context\": \"https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/area/context.jsonld\",\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area\",\n  \"type\": \"ImplementationProfile\",\n  \"prefLabel\": \"Area\",\n  \"definition\": \"The area of this Surface, as measured in the spatial reference system of this Surface.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile\",\n  \"status\": \"submitted\",\n  \"refinesGenericProfile\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure\",\n  \"keywords\": [\n    \"vector\",\n    \"geometry\",\n    \"measure\",\n    \"Area\",\n    \"ST_Area\"\n  ],\n  \"inputs\": {\n    \"geometry\": {\n      \"schema\": {\n        \"type\": \"string\",\n        \"contentMediaType\": \"text/xml\",\n        \"description\": \"GML\"\n      },\n      \"keywords\": [\n        \"geometry\",\n        \"GML\"\n      ],\n      \"metadata\": [\n        {\n          \"title\": \"Process Concept: Vector Geometry Processing\",\n          \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\",\n          \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing\"\n        },\n        {\n          \"title\": \"Generic Profile: Geometry measure\",\n          \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/generic\",\n          \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure\"\n        }\n      ]\n    }\n  },\n  \"outputs\": {\n    \"result\": {\n      \"schema\": {\n        \"type\": \"number\",\n        \"description\": \"a plain number\"\n      },\n      \"keywords\": [\n        \"number\"\n      ],\n      \"metadata\": [\n        {\n          \"title\": \"Generic Profile: Geometry measure\",\n          \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/generic\",\n          \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure\"\n        }\n      ]\n    }\n  },\n  \"source\": [\n    {\n      \"title\": \"OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, \\u00a72.1.9.1 Area()\",\n      \"link\": \"https://www.ogc.org/standards/sfs/\"\n    },\n    {\n      \"title\": \"ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area\"\n    },\n    {\n      \"title\": \"ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry.\",\n      \"link\": \"https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea\"\n    }\n  ]\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/tests/implementation-profile/area/example_1_1.ttl",
+          "sizeBytes": 2955,
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .\n@prefix ns2: <https://w3id.org/ogc/api/schema/> .\n@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .\n@prefix proc: <https://w3id.org/ogc/api/processes/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> a skos:Concept ;\n    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfs/> ;\n            dcterms:title \"OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, \u00a72.1.9.1 Area()\" ],\n        [ dcterms:title \"ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area\" ],\n        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea> ;\n            dcterms:title \"ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry.\" ] ;\n    skos:definition \"The area of this Surface, as measured in the spatial reference system of this Surface.\" ;\n    skos:inScheme gp:implementation-profile ;\n    skos:prefLabel \"Area\" ;\n    gp:inputs [ ns3:geometry [ proc:keywords \"GML\",\n                        \"geometry\" ;\n                    proc:metadata [ dcterms:title \"Generic Profile: Geometry measure\" ;\n                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> ;\n                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],\n                        [ dcterms:title \"Process Concept: Vector Geometry Processing\" ;\n                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;\n                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;\n                    proc:schema [ a ns2:string ;\n                            ns2:contentMediaType \"text/xml\" ;\n                            ns2:description \"GML\" ] ] ] ;\n    gp:outputs [ ns1:result [ proc:keywords \"number\" ;\n                    proc:metadata [ dcterms:title \"Generic Profile: Geometry measure\" ;\n                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> ;\n                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;\n                    proc:schema [ a ns2:number ;\n                            ns2:description \"a plain number\" ] ] ] ;\n    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> ;\n    gp:status \"submitted\" ;\n    proc:keywords \"Area\",\n        \"ST_Area\",\n        \"geometry\",\n        \"measure\",\n        \"vector\" .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: The Implementation Profile \"Area\" -- see generic-profiles.implementation-profile\n  for the general shape every Implementation Profile shares.\nallOf:\n- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml\n- type: object\n  properties:\n    id:\n      const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area\n      x-jsonld-id: '@id'\n    type:\n      const: ImplementationProfile\n      x-jsonld-id: '@type'\n    prefLabel:\n      const: Area\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel\n    refinesGenericProfile:\n      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure\n      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile\n      x-jsonld-type: '@id'\n    keywords:\n      allOf:\n      - contains:\n          const: vector\n      - contains:\n          const: geometry\n      - contains:\n          const: measure\n      x-jsonld-id: https://w3id.org/ogc/api/processes/keywords\n    inputs:\n      type: object\n      required:\n      - geometry\n      properties:\n        geometry:\n          properties:\n            keywords:\n              allOf:\n              - contains:\n                  const: geometry\n              x-jsonld-id: https://w3id.org/ogc/api/processes/keywords\n            metadata:\n              allOf:\n              - contains:\n                  type: object\n                  required:\n                  - role\n                  - href\n                  properties:\n                    role:\n                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\n                    href:\n                      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing\n              - contains:\n                  type: object\n                  required:\n                  - role\n                  - href\n                  properties:\n                    role:\n                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic\n                    href:\n                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure\n              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata\n            maxOccurs:\n              type: integer\n              maximum: 1\n              x-jsonld-id: https://w3id.org/ogc/api/processes/maxOccurs\n      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs\n      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/\n    outputs:\n      type: object\n      required:\n      - result\n      properties:\n        result:\n          properties:\n            keywords:\n              allOf:\n              - contains:\n                  const: number\n              x-jsonld-id: https://w3id.org/ogc/api/processes/keywords\n      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs\n      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/\nx-jsonld-extra-terms:\n  ImplementationProfile: http://www.w3.org/2004/02/skos/core#Concept\n  definition: http://www.w3.org/2004/02/skos/core#definition\n  inScheme:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme\n    x-jsonld-type: '@id'\n  status: https://geolabs.github.io/bblocks-generic-profiles/def/status\n  source: http://purl.org/dc/terms/source\n  title: http://purl.org/dc/terms/title\n  link:\n    x-jsonld-id: http://purl.org/dc/terms/references\n    x-jsonld-type: '@id'\nx-jsonld-prefixes:\n  skos: http://www.w3.org/2004/02/skos/core#\n  gp: https://geolabs.github.io/bblocks-generic-profiles/def/\n  proc: https://w3id.org/ogc/api/processes/\n  dct: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/implementation-profile/area"
+}

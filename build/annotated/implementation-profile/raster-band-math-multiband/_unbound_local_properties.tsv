@@ -1,0 +1,8 @@
+path
+/inputs/rasters
+/inputs/rasters/metadata/role
+/inputs/rasters/metadata/href
+/inputs/expression
+/inputs/expression/metadata/role
+/inputs/expression/metadata/href
+/outputs/raster

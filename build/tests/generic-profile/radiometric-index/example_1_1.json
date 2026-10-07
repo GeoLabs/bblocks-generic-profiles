@@ -1,0 +1,66 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index",
+  "type": "GenericProfile",
+  "prefLabel": "Radiometric index",
+  "definition": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral bands of one or more input rasters. One or more Raster inputs, the name(s) of the index/indices to compute, one Raster output (one band per selected index).",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "status": "submitted",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+  ],
+  "keywords": [
+    "raster",
+    "coverage",
+    "radiometric index"
+  ],
+  "inputs": {
+    "rasters": {
+      "title": "Raster",
+      "description": "the input spectral band(s)",
+      "keywords": [
+        "raster"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": "unbounded"
+    },
+    "index": {
+      "title": "String",
+      "description": "the name of the radiometric index (or indices) to compute",
+      "keywords": [
+        "radiometric index"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": "unbounded"
+    }
+  },
+  "outputs": {
+    "raster": {
+      "title": "Raster",
+      "description": "the resulting raster (one band per selected index)",
+      "keywords": [
+        "raster"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        }
+      ]
+    }
+  }
+}

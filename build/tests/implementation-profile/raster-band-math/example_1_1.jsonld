@@ -1,0 +1,92 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/raster-band-math/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math",
+  "type": "ImplementationProfile",
+  "prefLabel": "Raster band math",
+  "definition": "Evaluates a user-supplied mathematical expression per pixel across one or more input rasters, producing a monoband output raster.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math",
+  "keywords": [
+    "raster",
+    "coverage",
+    "band math",
+    "OTB",
+    "BandMath"
+  ],
+  "inputs": {
+    "rasters": {
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff",
+        "description": "GeoTIFF"
+      },
+      "maxOccurs": 1024,
+      "keywords": [
+        "raster",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        },
+        {
+          "title": "Generic Profile: Raster band math",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"
+        }
+      ]
+    },
+    "expression": {
+      "keywords": [
+        "expression"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        },
+        {
+          "title": "Generic Profile: Raster band math",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "raster": {
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff",
+        "description": "GeoTIFF"
+      },
+      "keywords": [
+        "raster",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Raster band math",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
+      "link": "https://www.ogc.org/standards/wcps/"
+    },
+    {
+      "title": "OTB BandMath -- Outputs a monoband image from a mathematical operation on several multi-band images",
+      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMath.html"
+    }
+  ]
+}

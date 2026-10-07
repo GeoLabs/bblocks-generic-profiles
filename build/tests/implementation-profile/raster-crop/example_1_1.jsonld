@@ -1,0 +1,97 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/raster-crop/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop",
+  "type": "ImplementationProfile",
+  "prefLabel": "Raster crop",
+  "definition": "Extracts the pixels of a raster coverage that fall within a region of interest.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop",
+  "keywords": [
+    "raster",
+    "coverage",
+    "crop",
+    "OTB",
+    "ExtractROI"
+  ],
+  "inputs": {
+    "raster": {
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff"
+      },
+      "keywords": [
+        "raster",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        },
+        {
+          "title": "Generic Profile: Raster crop",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop"
+        }
+      ]
+    },
+    "areaOfInterest": {
+      "schema": {
+        "$ref": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/bbox/schema.json"
+      },
+      "keywords": [
+        "bounding box",
+        "bbox"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        },
+        {
+          "title": "Generic Profile: Raster crop",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "raster": {
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff"
+      },
+      "keywords": [
+        "raster",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Raster crop",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
+      "link": "https://www.ogc.org/standards/wcps/"
+    },
+    {
+      "title": "OTB ExtractROI -- Extracts a region of interest defined by the user",
+      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_ExtractROI.html"
+    },
+    {
+      "title": "ogc.api.processes.v1.schemas.bbox -- bbox schema (OGC API - Processes - Part 1: Core)",
+      "link": "https://geolabs.github.io/bblocks-ogcapi-processes/"
+    }
+  ]
+}

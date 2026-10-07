@@ -1,0 +1,89 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/intersects/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects",
+  "type": "ImplementationProfile",
+  "prefLabel": "Intersects",
+  "definition": "Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share at least one point). Equivalent to the negation of Disjoint.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
+  "keywords": [
+    "vector",
+    "geometry",
+    "spatial relation",
+    "predicate",
+    "Intersects",
+    "ST_Intersects"
+  ],
+  "inputs": {
+    "geometry1": {
+      "schema": {
+        "type": "string",
+        "contentMediaType": "text/xml",
+        "description": "GML"
+      },
+      "keywords": [
+        "geometry",
+        "GML"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        },
+        {
+          "title": "Generic Profile: Binary spatial predicate",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+        }
+      ]
+    },
+    "geometry2": {
+      "schema": {
+        "type": "string",
+        "contentMediaType": "text/xml",
+        "description": "GML"
+      },
+      "keywords": [
+        "geometry",
+        "GML"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        },
+        {
+          "title": "Generic Profile: Binary spatial predicate",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "result": {
+      "keywords": [
+        "boolean"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Binary spatial predicate",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.15",
+      "link": "https://www.ogc.org/standards/sfa/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.24 ST_Intersects"
+    }
+  ]
+}

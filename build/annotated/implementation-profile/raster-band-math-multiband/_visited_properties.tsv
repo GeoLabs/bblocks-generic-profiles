@@ -1,0 +1,37 @@
+path	@id	schema
+/id	@id	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/type	@type	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/prefLabel	http://www.w3.org/2004/02/skos/core#prefLabel	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/definition	http://www.w3.org/2004/02/skos/core#definition	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/inScheme	http://www.w3.org/2004/02/skos/core#inScheme	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/status	https://geolabs.github.io/bblocks-generic-profiles/def/status	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/refinesGenericProfile	https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs	https://geolabs.github.io/bblocks-generic-profiles/def/inputs	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs/schema	https://w3id.org/ogc/api/processes/schema	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/inputs/maxOccurs	https://w3id.org/ogc/api/processes/maxOccurs	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/inputs/keywords	https://w3id.org/ogc/api/processes/keywords	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/inputs/metadata	https://w3id.org/ogc/api/processes/metadata	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/inputs/metadata/role		https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/inputs/metadata/href		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+/inputs/metadata/title		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+/outputs	https://geolabs.github.io/bblocks-generic-profiles/def/outputs	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/outputs/schema	https://w3id.org/ogc/api/processes/schema	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/outputs/keywords	https://w3id.org/ogc/api/processes/keywords	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/outputs/metadata	https://w3id.org/ogc/api/processes/metadata	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/source	http://purl.org/dc/terms/source	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/source/title	http://purl.org/dc/terms/title	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/source/link	http://purl.org/dc/terms/references	https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/schema.yaml
+/inputs/rasters		/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs/rasters/keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs/rasters/metadata	https://w3id.org/ogc/api/processes/metadata	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs/rasters/metadata/role		/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs/rasters/metadata/href		/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs/expression		/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs/expression/keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs/expression/metadata	https://w3id.org/ogc/api/processes/metadata	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs/expression/metadata/role		/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs/expression/metadata/href		/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/inputs/expression/maxOccurs	https://w3id.org/ogc/api/processes/maxOccurs	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/outputs/raster		/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml
+/outputs/raster/keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml

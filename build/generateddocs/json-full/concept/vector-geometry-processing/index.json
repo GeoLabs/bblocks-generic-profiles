@@ -1,0 +1,90 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.concept.vector-geometry-processing",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Process Concept: Vector Geometry Processing",
+  "abstract": "General group covering operations on vector geometries: testing spatial relationships between two geometries, deriving a new geometry from one or two others, and measuring a geometry's own properties -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-09-30T00:00:00Z",
+  "dateOfLastChange": "2026-10-07",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.concept"
+  ],
+  "scope": "dev",
+  "tags": [
+    "concept",
+    "SKOS",
+    "vector",
+    "geometry"
+  ],
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/concept/vector-geometry-processing/schema.yaml",
+  "ldContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/vector-geometry-processing/context.jsonld",
+  "sources": [
+    {
+      "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, \u00a77.5.1 Process Concept",
+      "link": "https://docs.ogc.org/is/14-065/14-065.html"
+    },
+    {
+      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+      "link": "https://www.ogc.org/standards/sfa/"
+    },
+    {
+      "title": "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1",
+      "link": "https://www.ogc.org/standards/sfs/"
+    }
+  ],
+  "maturity": "development",
+  "highlighted": true,
+  "group": "Concepts",
+  "isProfileOf": [
+    "generic-profiles.concept"
+  ],
+  "shaclShapes": {},
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/vector-geometry-processing/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/vector-geometry-processing/schema.json"
+  },
+  "sourceLdContext": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/concept/vector-geometry-processing/context.jsonld",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/vector-geometry-processing/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/concept/vector-geometry-processing/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/concept/vector-geometry-processing/",
+  "description": "Process Concept: **Vector Geometry Processing**.\n\n> Operations on vector geometries: testing a spatial relationship between two geometries, deriving\n> a new geometry from one or two others, or measuring a property of a geometry.\n\n## What a Process Concept is\n\nOGC 14-065 WPS 2.0.2 \u00a77.5.1: *\"a process concept is an object that provides high-level\ndocumentation about a general group of processes. It describes the purpose, methodology and\nproperties of a process but not the specific input and output parameters. It is rather a\ndocumentation resource that may be referenced by refined process definitions to document their\nrelation to a common principle.\"*\n\nThis Concept deliberately carries no input, no output, no format, no CWL and no implementation --\nthat is what the two tiers below it are for. It exists so that several Generic Profiles with\ndifferent I/O shapes can still declare their kinship: [`binary-spatial-predicate`](../../generic-profile/binary-spatial-predicate/),\n[`binary-spatial-operation`](../../generic-profile/binary-spatial-operation/),\n[`geometry-buffer`](../../generic-profile/geometry-buffer/),\n[`unary-geometry-operation`](../../generic-profile/unary-geometry-operation/),\n[`unary-spatial-predicate`](../../generic-profile/unary-spatial-predicate/) and\n[`geometry-measure`](../../generic-profile/geometry-measure/) each declare this Concept as their\n`broader`.\n\n## Source\n\n- [OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture](https://www.ogc.org/standards/sfa/), \u00a76.1 -- the 7\n  predicates, 4 set operations and buffer are defined there.\n- [OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1](https://www.ogc.org/standards/sfs/) --\n  the harmonized-with-SQL predecessor to 06-103r4; Envelope (\u00a72.1.1.1), Centroid/Area/PointOnSurface\n  (\u00a72.1.9.1) and ConvexHull/IsSimple (\u00a72.1.1.1, \u00a72.1.1.3) are defined there. Together the two\n  standards ground the 17 operations this Concept groups (7 predicates, 4 set operations, buffer,\n  envelope, centroid, convex hull, area, is-simple).\n\n## Register position\n\nTop tier of the four-tier model this register implements (OGC 14-065 WPS 2.0.2 \u00a77.5): Concept ->\nGeneric Profile -> Implementation Profile -> Implementation (instance level). The fourth tier is\nnot part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-process-profiles`.\n",
+  "examples": [
+    {
+      "title": "Vector Geometry Processing",
+      "base-uri": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/_sources/concept/vector-geometry-processing/examples/vector-geometry-processing.json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/tests/concept/vector-geometry-processing/example_1_1.json",
+          "sizeBytes": 999,
+          "code": "{\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing\",\n  \"type\": \"Concept\",\n  \"prefLabel\": \"Vector Geometry Processing\",\n  \"definition\": \"Operations on vector geometries: testing a spatial relationship between two geometries, deriving a new geometry from one or two others, or measuring a property of a geometry. Covers the spatial predicates, set operations and measures of OGC Simple Feature Access - Common Architecture (06-103r4) and its harmonized-with-SQL predecessor, Simple Features Specification For SQL Revision 1.1 (99-049), independent of any specific operation's own input/output signature.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept\",\n  \"status\": \"submitted\",\n  \"source\": [\n    {\n      \"title\": \"OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture\",\n      \"clause\": \"\u00a76.1\"\n    },\n    {\n      \"title\": \"OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1\"\n    }\n  ]\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/tests/concept/vector-geometry-processing/example_1_1.jsonld",
+          "sizeBytes": 1162,
+          "code": "{\n  \"@context\": \"https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/vector-geometry-processing/context.jsonld\",\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing\",\n  \"type\": \"Concept\",\n  \"prefLabel\": \"Vector Geometry Processing\",\n  \"definition\": \"Operations on vector geometries: testing a spatial relationship between two geometries, deriving a new geometry from one or two others, or measuring a property of a geometry. Covers the spatial predicates, set operations and measures of OGC Simple Feature Access - Common Architecture (06-103r4) and its harmonized-with-SQL predecessor, Simple Features Specification For SQL Revision 1.1 (99-049), independent of any specific operation's own input/output signature.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept\",\n  \"status\": \"submitted\",\n  \"source\": [\n    {\n      \"title\": \"OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture\",\n      \"clause\": \"\\u00a76.1\"\n    },\n    {\n      \"title\": \"OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1\"\n    }\n  ]\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/tests/concept/vector-geometry-processing/example_1_1.ttl",
+          "sizeBytes": 1122,
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> a skos:Concept ;\n    dcterms:source [ dcterms:title \"OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1\" ],\n        [ dcterms:title \"OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture\" ;\n            gp:clause \"\u00a76.1\" ] ;\n    skos:definition \"Operations on vector geometries: testing a spatial relationship between two geometries, deriving a new geometry from one or two others, or measuring a property of a geometry. Covers the spatial predicates, set operations and measures of OGC Simple Feature Access - Common Architecture (06-103r4) and its harmonized-with-SQL predecessor, Simple Features Specification For SQL Revision 1.1 (99-049), independent of any specific operation's own input/output signature.\" ;\n    skos:inScheme gp:concept ;\n    skos:prefLabel \"Vector Geometry Processing\" ;\n    gp:status \"submitted\" .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: The Concept \"Vector Geometry Processing\" -- see generic-profiles.concept\n  for the general shape every Concept shares.\nallOf:\n- $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/schema.yaml\n- type: object\n  properties:\n    id:\n      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing\n      x-jsonld-id: '@id'\n    type:\n      const: Concept\n      x-jsonld-id: '@type'\n    prefLabel:\n      const: Vector Geometry Processing\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel\nx-jsonld-extra-terms:\n  Concept: http://www.w3.org/2004/02/skos/core#Concept\n  definition: http://www.w3.org/2004/02/skos/core#definition\n  inScheme:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme\n    x-jsonld-type: '@id'\n  status: https://geolabs.github.io/bblocks-generic-profiles/def/status\n  narrower:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#narrower\n    x-jsonld-type: '@id'\n  source: http://purl.org/dc/terms/source\n  title: http://purl.org/dc/terms/title\n  link:\n    x-jsonld-id: http://purl.org/dc/terms/references\n    x-jsonld-type: '@id'\n  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause\nx-jsonld-prefixes:\n  skos: http://www.w3.org/2004/02/skos/core#\n  gp: https://geolabs.github.io/bblocks-generic-profiles/def/\n  dct: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/concept/vector-geometry-processing"
+}

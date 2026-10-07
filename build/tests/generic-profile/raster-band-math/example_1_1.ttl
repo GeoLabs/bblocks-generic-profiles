@@ -1,0 +1,40 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+    skos:definition "Derives a new raster from one or more input rasters via a user-supplied mathematical expression evaluated per pixel. One or more Raster inputs, an expression, one Raster output -- the output's band structure (one band or several) is not part of this signature, see its Implementation Profiles." ;
+    skos:inScheme gp:generic-profile ;
+    skos:prefLabel "Raster band math" ;
+    gp:inputs [ ns2:expression [ dcterms:description "the per-pixel mathematical expression" ;
+                    dcterms:title "String" ;
+                    proc:keywords "expression" ;
+                    proc:maxOccurs 1 ;
+                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+                    proc:minOccurs 1 ] ;
+            ns2:rasters [ dcterms:description "the input raster band(s)/image(s)" ;
+                    dcterms:title "Raster" ;
+                    proc:keywords "raster" ;
+                    proc:maxOccurs "unbounded" ;
+                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+                    proc:minOccurs 1 ] ] ;
+    gp:outputs [ ns1:raster [ dcterms:description "the resulting raster" ;
+                    dcterms:title "Raster" ;
+                    proc:keywords "raster" ;
+                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ] ] ;
+    gp:status "submitted" ;
+    proc:keywords "band math",
+        "coverage",
+        "raster" .
+

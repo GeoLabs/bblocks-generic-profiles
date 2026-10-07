@@ -1,0 +1,18 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/concept/vector-geometry-processing/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing",
+  "type": "Concept",
+  "prefLabel": "Vector Geometry Processing",
+  "definition": "Operations on vector geometries: testing a spatial relationship between two geometries, deriving a new geometry from one or two others, or measuring a property of a geometry. Covers the spatial predicates, set operations and measures of OGC Simple Feature Access - Common Architecture (06-103r4) and its harmonized-with-SQL predecessor, Simple Features Specification For SQL Revision 1.1 (99-049), independent of any specific operation's own input/output signature.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
+  "status": "submitted",
+  "source": [
+    {
+      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+      "clause": "\u00a76.1"
+    },
+    {
+      "title": "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1"
+    }
+  ]
+}

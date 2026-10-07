@@ -1,0 +1,92 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/radiometric-index/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index",
+  "type": "ImplementationProfile",
+  "prefLabel": "Radiometric index",
+  "definition": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index",
+  "keywords": [
+    "raster",
+    "coverage",
+    "radiometric index",
+    "OTB",
+    "RadiometricIndices"
+  ],
+  "inputs": {
+    "rasters": {
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff",
+        "description": "GeoTIFF"
+      },
+      "maxOccurs": 1,
+      "keywords": [
+        "raster",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        },
+        {
+          "title": "Generic Profile: Radiometric index",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+        }
+      ]
+    },
+    "index": {
+      "keywords": [
+        "radiometric index"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        },
+        {
+          "title": "Generic Profile: Radiometric index",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "raster": {
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff",
+        "description": "GeoTIFF"
+      },
+      "keywords": [
+        "raster",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Radiometric index",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
+      "link": "https://www.ogc.org/standards/wcps/"
+    },
+    {
+      "title": "OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image",
+      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html"
+    }
+  ]
+}

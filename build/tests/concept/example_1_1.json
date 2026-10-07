@@ -1,0 +1,14 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept",
+  "type": "Concept",
+  "prefLabel": "Example Concept (placeholder, not a real vocabulary entry)",
+  "definition": "Illustrates the shape of a Concept entry only. Real Concepts are each their own building block -- see generic-profiles.concept.vector-geometry-processing for actual vocabulary content.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
+  "status": "submitted",
+  "source": [
+    {
+      "title": "Placeholder -- not a real citation",
+      "clause": "n/a"
+    }
+  ]
+}

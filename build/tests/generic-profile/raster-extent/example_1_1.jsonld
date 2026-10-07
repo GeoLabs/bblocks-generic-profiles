@@ -1,0 +1,51 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/raster-extent/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent",
+  "type": "GenericProfile",
+  "prefLabel": "Raster extent",
+  "definition": "Computes the bounding envelope of a raster coverage, returned as a geometry (a rectangular polygon in the coverage's CRS). One Raster input, one Geometry output.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "status": "submitted",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+  ],
+  "keywords": [
+    "raster",
+    "coverage",
+    "extent"
+  ],
+  "inputs": {
+    "raster": {
+      "title": "Raster",
+      "description": "the input raster coverage",
+      "keywords": [
+        "raster"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "result": {
+      "title": "Geometry",
+      "description": "the raster's bounding envelope",
+      "keywords": [
+        "geometry"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        }
+      ]
+    }
+  }
+}

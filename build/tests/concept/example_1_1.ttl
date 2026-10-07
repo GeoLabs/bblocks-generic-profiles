@@ -1,0 +1,12 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept> a skos:Concept ;
+    dcterms:source [ dcterms:title "Placeholder -- not a real citation" ;
+            gp:clause "n/a" ] ;
+    skos:definition "Illustrates the shape of a Concept entry only. Real Concepts are each their own building block -- see generic-profiles.concept.vector-geometry-processing for actual vocabulary content." ;
+    skos:inScheme gp:concept ;
+    skos:prefLabel "Example Concept (placeholder, not a real vocabulary entry)" ;
+    gp:status "submitted" .
+

@@ -1,0 +1,68 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple",
+  "type": "ImplementationProfile",
+  "prefLabel": "Is simple",
+  "definition": "Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection or self tangency.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate",
+  "keywords": [
+    "vector",
+    "geometry",
+    "predicate",
+    "IsSimple",
+    "ST_IsSimple"
+  ],
+  "inputs": {
+    "geometry": {
+      "schema": {
+        "type": "string",
+        "contentMediaType": "text/xml",
+        "description": "GML"
+      },
+      "keywords": [
+        "geometry",
+        "GML"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        },
+        {
+          "title": "Generic Profile: Unary spatial predicate",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "result": {
+      "keywords": [
+        "boolean"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Unary spatial predicate",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, \u00a72.1.1.1 IsSimple()",
+      "link": "https://www.ogc.org/standards/sfs/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_IsSimple"
+    },
+    {
+      "title": "ZOO-Project Geonovum testbed -- IsSimple: IsSimple test.",
+      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/IsSimple"
+    }
+  ]
+}

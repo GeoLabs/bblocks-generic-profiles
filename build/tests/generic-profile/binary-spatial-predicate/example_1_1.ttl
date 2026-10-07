@@ -1,0 +1,41 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+    skos:definition "Tests a boolean spatial relationship between two geometries. Shared I/O shape of every SQL/MM DE-9IM-family predicate: two Geometry inputs, one Boolean output, no side effect." ;
+    skos:inScheme gp:generic-profile ;
+    skos:prefLabel "Binary spatial predicate" ;
+    gp:inputs [ ns1:geometry1 [ dcterms:description "the first geometry" ;
+                    dcterms:title "Geometry" ;
+                    proc:keywords "geometry" ;
+                    proc:maxOccurs 1 ;
+                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+                    proc:minOccurs 1 ] ;
+            ns1:geometry2 [ dcterms:description "the second geometry" ;
+                    dcterms:title "Geometry" ;
+                    proc:keywords "geometry" ;
+                    proc:maxOccurs 1 ;
+                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+                    proc:minOccurs 1 ] ] ;
+    gp:outputs [ ns2:result [ dcterms:description "the predicate's truth value" ;
+                    dcterms:title "Boolean" ;
+                    proc:keywords "boolean" ;
+                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ] ] ;
+    gp:status "submitted" ;
+    proc:keywords "geometry",
+        "predicate",
+        "spatial relation",
+        "vector" .
+

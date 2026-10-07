@@ -1,0 +1,13 @@
+Validation report for generic-profiles.generic-profile.geometry-measure - Generic Profile: Geometry measure
+Generated 2026-10-07T12:46:12.585583+00:00
+=== Files ===
+Using examples/geometry-measure.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

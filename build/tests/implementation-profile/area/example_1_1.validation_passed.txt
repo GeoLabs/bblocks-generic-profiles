@@ -1,0 +1,13 @@
+Validation report for generic-profiles.implementation-profile.area - Implementation Profile: Area
+Generated 2026-10-07T12:46:13.413155+00:00
+=== Files ===
+Using examples/area.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

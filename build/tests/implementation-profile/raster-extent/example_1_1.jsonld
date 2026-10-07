@@ -1,0 +1,73 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/implementation-profile/raster-extent/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent",
+  "type": "ImplementationProfile",
+  "prefLabel": "Raster extent",
+  "definition": "Computes the bounding envelope of a raster coverage, as a vector polygon.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent",
+  "keywords": [
+    "raster",
+    "coverage",
+    "extent",
+    "OTB",
+    "ImageEnvelope"
+  ],
+  "inputs": {
+    "raster": {
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff",
+        "description": "GeoTIFF"
+      },
+      "keywords": [
+        "raster",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Raster Coverage Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+        },
+        {
+          "title": "Generic Profile: Raster extent",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "result": {
+      "schema": {
+        "type": "string",
+        "contentMediaType": "text/xml",
+        "description": "GML"
+      },
+      "keywords": [
+        "geometry",
+        "GML"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Raster extent",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
+      "link": "https://www.ogc.org/standards/wcps/"
+    },
+    {
+      "title": "OTB ImageEnvelope -- Build a vector data containing the image envelope polygon",
+      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "@context": "https://raw.githubusercontent.com/GeoLabs/bblocks-generic-profiles/undefined/build/annotated/generic-profile/unary-spatial-predicate/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate",
+  "type": "GenericProfile",
+  "prefLabel": "Unary spatial predicate",
+  "definition": "Tests a boolean property of a single geometry. One Geometry input, one Boolean output -- the one-input counterpart to `binary-spatial-predicate`'s two.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "status": "submitted",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+  ],
+  "keywords": [
+    "vector",
+    "geometry",
+    "predicate"
+  ],
+  "inputs": {
+    "geometry": {
+      "title": "Geometry",
+      "description": "the input geometry",
+      "keywords": [
+        "geometry"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "result": {
+      "title": "Boolean",
+      "description": "the predicate's truth value",
+      "keywords": [
+        "boolean"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        }
+      ]
+    }
+  }
+}

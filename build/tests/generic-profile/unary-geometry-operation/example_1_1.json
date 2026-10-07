@@ -1,0 +1,50 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation",
+  "type": "GenericProfile",
+  "prefLabel": "Unary geometry operation",
+  "definition": "Derives a new geometry from a single input geometry. One Geometry input, one Geometry output. Covers operations that differ only in what they compute (bounding envelope, centroid, convex hull), not in signature -- the same principle `binary-spatial-predicate` and `binary-spatial-operation` already use for their own several operations.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "status": "submitted",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+  ],
+  "keywords": [
+    "vector",
+    "geometry",
+    "derived geometry"
+  ],
+  "inputs": {
+    "geometry": {
+      "title": "Geometry",
+      "description": "the input geometry",
+      "keywords": [
+        "geometry"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1
+    }
+  },
+  "outputs": {
+    "result": {
+      "title": "Geometry",
+      "description": "the derived geometry",
+      "keywords": [
+        "geometry"
+      ],
+      "metadata": [
+        {
+          "title": "Process Concept: Vector Geometry Processing",
+          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+        }
+      ]
+    }
+  }
+}
