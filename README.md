@@ -157,9 +157,7 @@ single image, not a list) are the real evidence behind `raster-band-math`/
 `raster-band-math-multiband`/`radiometric-index`'s `maxOccurs` values. See
 [`implementation-profile/description.md`](_sources/implementation-profile/description.md) for the
 full Table 21 account, and each Implementation Profile's own `description.md` for its specific
-grounding. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how this design was reached --
-checked first on `geometry-extent`/`raster-crop` alone, then rolled out register-wide once
-confirmed.
+grounding. 
 
 ## Building blocks
 
@@ -212,9 +210,7 @@ The three base blocks (`generic-profiles.concept`, `generic-profiles.generic-pro
 each real entry `allOf`-references its base
 and pins its own `id`/`prefLabel` (and, for Implementation Profiles, `refinesGenericProfile`) with
 `const`. They are not a catalogue themselves: each carries exactly one clearly-labelled
-placeholder example, never a real operation — see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for
-why that distinction matters (an earlier draft of this register got it wrong, using real SQL/MM
-operations as "examples" of the shared schema instead of giving each its own building block).
+placeholder example, never a real operation.
 
 ## Known limitation: band count is not formally modelled
 
@@ -242,10 +238,7 @@ geometry) -- a mismatch an earlier draft left visible rather than papered over. 
 register. Once the register moved to reusing OGC API - Processes' own `InputDescription`/`schema`
 structure (above), both were superseded: `areaOfInterest`'s `schema` now `$ref`s
 `ogc.api.processes.v1.schemas.bbox` directly -- OGC API - Processes - Part 1: Core's own,
-already-published bbox type, not a custom one. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
-for the full account, including why `eoap.cct.bbox` (bblocks-eoap-cct) was considered and set
-aside -- a type for CWL inputs/outputs crossing into OGC API - Processes - Part 2, a different
-vocabulary layer from the `schema` property this tier's Implementation Profile actually models.
+already-published bbox type, not a custom one. 
 
 ## Not limited to spatial operations
 
