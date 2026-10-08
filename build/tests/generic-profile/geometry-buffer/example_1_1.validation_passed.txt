@@ -1,5 +1,5 @@
 Validation report for generic-profiles.generic-profile.geometry-buffer - Generic Profile: Geometry buffer
-Generated 2026-10-07T12:54:22.986891+00:00
+Generated 2026-10-08T08:41:16.105340+00:00
 === Files ===
 Using examples/geometry-buffer.json from examples
 JSON-LD context is present - uplifting

@@ -1,7 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -11,22 +11,23 @@
     skos:definition "Tests a boolean property of a single geometry. One Geometry input, one Boolean output -- the one-input counterpart to `binary-spatial-predicate`'s two." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Unary spatial predicate" ;
-    gp:inputs [ ns1:geometry [ dcterms:description "the input geometry" ;
-                    dcterms:title "Geometry" ;
-                    proc:keywords "geometry" ;
-                    proc:maxOccurs 1 ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns2:result [ dcterms:description "the predicate's truth value" ;
-                    dcterms:title "Boolean" ;
-                    proc:keywords "boolean" ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ] ] ;
+    gp:inputs [ ns2:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry> ] ;
+    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result> ] ;
     gp:status "submitted" ;
     proc:keywords "geometry",
         "predicate",
-        "vector" .
+        "vector" ;
+    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry> dcterms:description "the input geometry" ;
+    dcterms:title "Geometry" ;
+    proc:keywords "geometry" ;
+    proc:maxOccurs 1 ;
+    proc:minOccurs 1 .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result> dcterms:description "the predicate's truth value" ;
+    dcterms:title "Boolean" ;
+    proc:keywords "boolean" .
 

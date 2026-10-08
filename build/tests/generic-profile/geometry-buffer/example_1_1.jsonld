@@ -15,35 +15,30 @@
     "spatial analysis",
     "buffer"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    }
+  ],
   "inputs": {
     "geometry": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/inputs/geometry",
       "title": "Geometry",
       "description": "the input geometry",
       "keywords": [
         "geometry"
       ],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
-      ],
       "minOccurs": 1,
       "maxOccurs": 1
     },
     "distance": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/inputs/distance",
       "title": "Number",
       "description": "the buffer distance",
       "keywords": [
         "distance"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
       ],
       "minOccurs": 1,
       "maxOccurs": 1
@@ -51,17 +46,11 @@
   },
   "outputs": {
     "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/outputs/result",
       "title": "Geometry",
       "description": "the buffered geometry",
       "keywords": [
         "geometry"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
       ]
     }
   }

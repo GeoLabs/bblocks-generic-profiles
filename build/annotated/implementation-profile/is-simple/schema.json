@@ -45,6 +45,45 @@
           ],
           "x-jsonld-id": "https://w3id.org/ogc/api/processes/keywords"
         },
+        "metadata": {
+          "allOf": [
+            {
+              "contains": {
+                "type": "object",
+                "required": [
+                  "role",
+                  "href"
+                ],
+                "properties": {
+                  "role": {
+                    "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"
+                  },
+                  "href": {
+                    "const": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+                  }
+                }
+              }
+            },
+            {
+              "contains": {
+                "type": "object",
+                "required": [
+                  "role",
+                  "href"
+                ],
+                "properties": {
+                  "role": {
+                    "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"
+                  },
+                  "href": {
+                    "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
+                  }
+                }
+              }
+            }
+          ],
+          "x-jsonld-id": "https://w3id.org/ogc/api/processes/metadata"
+        },
         "inputs": {
           "type": "object",
           "required": [
@@ -74,27 +113,10 @@
                         ],
                         "properties": {
                           "role": {
-                            "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"
+                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"
                           },
                           "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "contains": {
-                        "type": "object",
-                        "required": [
-                          "role",
-                          "href"
-                        ],
-                        "properties": {
-                          "role": {
-                            "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"
-                          },
-                          "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
+                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry"
                           }
                         }
                       }
@@ -130,6 +152,67 @@
                     }
                   ],
                   "x-jsonld-id": "https://w3id.org/ogc/api/processes/keywords"
+                },
+                "metadata": {
+                  "allOf": [
+                    {
+                      "contains": {
+                        "type": "object",
+                        "required": [
+                          "role",
+                          "href"
+                        ],
+                        "properties": {
+                          "role": {
+                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output"
+                          },
+                          "href": {
+                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result"
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "x-jsonld-id": "https://w3id.org/ogc/api/processes/metadata"
+                }
+              }
+            }
+          },
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/outputs",
+          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "inputs": {
+          "properties": {
+            "geometry": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/inputs/geometry",
+                  "x-jsonld-id": "@id"
+                }
+              }
+            }
+          },
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/inputs",
+          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/"
+        },
+        "outputs": {
+          "properties": {
+            "result": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/outputs/result",
+                  "x-jsonld-id": "@id"
                 }
               }
             }

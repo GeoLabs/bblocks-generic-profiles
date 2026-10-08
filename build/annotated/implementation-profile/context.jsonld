@@ -15,6 +15,20 @@
       "@type": "@id"
     },
     "keywords": "proc:keywords",
+    "metadata": {
+      "@context": {
+        "href": {
+          "@id": "proc:href",
+          "@type": "@id"
+        },
+        "role": {
+          "@id": "proc:role",
+          "@type": "@id"
+        },
+        "title": "dct:title"
+      },
+      "@id": "proc:metadata"
+    },
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
@@ -24,21 +38,7 @@
           },
           "@id": "proc:schema"
         },
-        "maxOccurs": "proc:maxOccurs",
-        "metadata": {
-          "@context": {
-            "title": "dct:title",
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        }
+        "maxOccurs": "proc:maxOccurs"
       },
       "@id": "gp:inputs"
     },
@@ -50,20 +50,6 @@
             "@vocab": "https://w3id.org/ogc/api/schema/"
           },
           "@id": "proc:schema"
-        },
-        "metadata": {
-          "@context": {
-            "title": "dct:title",
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
         }
       },
       "@id": "gp:outputs"

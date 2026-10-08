@@ -11,30 +11,30 @@
     skos:definition "Crops a raster coverage to a region of interest. One Raster input, an area of interest, one Raster output covering only that area." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster crop" ;
-    gp:inputs [ ns1:areaOfInterest [ dcterms:description "the region of interest to crop to" ;
-                    dcterms:title "Bounding box" ;
-                    proc:keywords "bounding box" ;
-                    proc:maxOccurs 1 ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:minOccurs 1 ] ;
-            ns1:raster [ dcterms:description "the input raster coverage" ;
-                    dcterms:title "Raster" ;
-                    proc:keywords "raster" ;
-                    proc:maxOccurs 1 ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns2:raster [ dcterms:description "the cropped raster coverage" ;
-                    dcterms:title "Raster" ;
-                    proc:keywords "raster" ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ] ] ;
+    gp:inputs [ ns1:areaOfInterest <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest> ;
+            ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster> ] ;
+    gp:outputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster> ] ;
     gp:status "submitted" ;
     proc:keywords "coverage",
         "crop",
-        "raster" .
+        "raster" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest> dcterms:description "the region of interest to crop to" ;
+    dcterms:title "Bounding box" ;
+    proc:keywords "bounding box" ;
+    proc:maxOccurs 1 ;
+    proc:minOccurs 1 .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster> dcterms:description "the input raster coverage" ;
+    dcterms:title "Raster" ;
+    proc:keywords "raster" ;
+    proc:maxOccurs 1 ;
+    proc:minOccurs 1 .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster> dcterms:description "the cropped raster coverage" ;
+    dcterms:title "Raster" ;
+    proc:keywords "raster" .
 

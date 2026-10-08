@@ -14,8 +14,21 @@
     "OTB",
     "RadiometricIndices"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    },
+    {
+      "title": "Generic Profile: Radiometric index",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+    }
+  ],
   "inputs": {
     "rasters": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/rasters",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -29,37 +42,29 @@
       ],
       "metadata": [
         {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        },
-        {
-          "title": "Generic Profile: Radiometric index",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+          "title": "Generic Profile: Radiometric index -- input `rasters`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters"
         }
       ]
     },
     "index": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/index",
       "keywords": [
         "radiometric index"
       ],
       "metadata": [
         {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        },
-        {
-          "title": "Generic Profile: Radiometric index",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+          "title": "Generic Profile: Radiometric index -- input `index`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index"
         }
       ]
     }
   },
   "outputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/outputs/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -72,9 +77,9 @@
       ],
       "metadata": [
         {
-          "title": "Generic Profile: Radiometric index",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+          "title": "Generic Profile: Radiometric index -- output `raster`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster"
         }
       ]
     }

@@ -1,7 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -11,22 +11,23 @@
     skos:definition "Computes the bounding envelope of a raster coverage, returned as a geometry (a rectangular polygon in the coverage's CRS). One Raster input, one Geometry output." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster extent" ;
-    gp:inputs [ ns2:raster [ dcterms:description "the input raster coverage" ;
-                    dcterms:title "Raster" ;
-                    proc:keywords "raster" ;
-                    proc:maxOccurs 1 ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns1:result [ dcterms:description "the raster's bounding envelope" ;
-                    dcterms:title "Geometry" ;
-                    proc:keywords "geometry" ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ] ] ;
+    gp:inputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result> ] ;
     gp:status "submitted" ;
     proc:keywords "coverage",
         "extent",
-        "raster" .
+        "raster" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster> dcterms:description "the input raster coverage" ;
+    dcterms:title "Raster" ;
+    proc:keywords "raster" ;
+    proc:maxOccurs 1 ;
+    proc:minOccurs 1 .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result> dcterms:description "the raster's bounding envelope" ;
+    dcterms:title "Geometry" ;
+    proc:keywords "geometry" .
 

@@ -50,17 +50,17 @@ Generic Profile (generated from it by `scripts/apply_table21_keywords_metadata.p
 |---|---|---|---|---|
 | Process Identifier, Title, Abstract | D | **O** | O | `id`/`prefLabel`/`definition`, `const`-pinned per operation |
 | Process Keywords | D | **E** | E | `keywords` must `contain` every Generic Profile keyword |
-| Process Metadata | D | **E/O** ᵃ | E/O ᵃ | `source` (citations) and `refinesGenericProfile` -- see below |
+| Process Metadata | D | **E/O** ᵃ | E/O ᵃ | `metadata` must keep the Generic Profile's Table 22 `concept` reference and add a `generic` one; `source` (citations) stays free |
 | Input (the set itself) | | | E ᵇ | every Generic Profile input must be listed (`required`) |
 | Input Identifier, Title, Abstract | D | **I** | I | the input's key; Title/Abstract not repeated (unchanged) |
 | Input Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile input's |
-| Input Metadata | D | **E/O** ᵃ | E/O ᵃ | `metadata` must keep the Table 22 `concept` reference and add a `generic` one |
+| Input Metadata | D | **E/O** ᵃ | E/O ᵃ | `metadata` must reference the corresponding Generic Profile input (`generic-input`, below) |
 | Input Multiplicity | D | **R** ᶜ | E ᵈ | `maxOccurs` ≤ the Generic Profile's; no `minOccurs` at all |
 | Input Data format | -- | **D** | E ᵈ | `schema` |
 | Output (the set itself) | | | E ᵇ | every Generic Profile output must be listed (`required`) |
 | Output Identifier, Title, Abstract | D | **I** | I | as for inputs |
 | Output Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile output's |
-| Output Metadata | D | **O** | O | `metadata` free (no footnote a for outputs) |
+| Output Metadata | D | **O** | O | `metadata` references the corresponding Generic Profile output (`generic-output`): a register choice, Table 21 leaves it free |
 | Output Data format | -- | **D** | E ᵈ | `schema` |
 
 ᵃ *"The list of metadata references to superior process profiles shall be extended.
@@ -70,10 +70,31 @@ whose `role` is a Table 22 identifier: `http://www.opengis.net/spec/wps/2.0/def/
 `concept`, `generic` or `implementation`. ᵇ additional optional inputs or supplementary outputs.
 ᶜ maximum only, never the minimum. ᵈ more or larger inputs, additional formats.
 
-Process Metadata is the one row still carried the older way: bibliographic `source` entries
-(free to differ per tier, which is the "documentation may be overridden" half of footnote a) and
-the structural `refinesGenericProfile`/`isProfileOf` link. The Process-level list of Table 22
-references that footnote a asks to extend is not yet a `metadata` array of its own.
+Each input/output here has its own IRI, `<Implementation Profile id>/inputs/<name>`
+(`/outputs/<name>`), so that an implementation can reference one input rather than the whole
+profile. References are made at the level they are about:
+
+- **on the process**, references to whole superior profiles, with the Table 22 roles (`concept`,
+  `generic`, `implementation`) -- made once, never repeated on inputs/outputs;
+- **on an input/output**, references to the corresponding input/output of each superior profile,
+  with roles this register defines, since Table 22 only names profile *levels*:
+
+| Role | Meaning |
+|---|---|
+| `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input` | the `href` is the Generic Profile input this input refines |
+| `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output` | the same, for an output |
+| `https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input` | the `href` is one input of an Implementation Profile, which the referencing input implements |
+| `https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output` | the same, for an output |
+
+They are this register's own identifiers, not OGC ones: nothing is minted under
+`http://www.opengis.net/spec/wps/2.0/def/`, where OGC 14-065r1 defines only the three Table 22
+roles and `process/description/documentation`.
+
+Footnote a thus becomes a real chain at each level. For an input of `area`: nothing at Generic
+Profile (a Process Concept has no inputs), `generic-input` here, and `generic-input` plus
+`implementation-input` at the Implementation (instance level) -- see
+`ospd.process-profiles.sqlmm.area`'s `processDescription.inherited.json`. On the process: `concept`
+at Generic Profile, `concept` + `generic` here, all three at the instance level.
 
 `schema` -- OGC API - Processes Part 1 Core's own property, a full JSON Schema / OpenAPI Schema
 Object, able to `$ref` a real shared type's own published schema (e.g.
@@ -119,43 +140,79 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
   "status": "submitted",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
-  "keywords": ["vector", "geometry", "spatial relation", "predicate", "example"],
+  "keywords": [
+    "vector",
+    "geometry",
+    "spatial relation",
+    "predicate",
+    "example"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    },
+    {
+      "title": "Generic Profile: Binary spatial predicate",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+    }
+  ],
   "inputs": {
     "geometry1": {
-      "schema": {"type": "string", "contentMediaType": "text/xml", "description": "GML"},
-      "keywords": ["geometry", "GML"],
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "text/xml",
+        "description": "GML"
+      },
+      "keywords": [
+        "geometry",
+        "GML"
+      ],
       "metadata": [
         {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        },
-        {
-          "title": "Generic Profile: Binary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+          "title": "Generic Profile: Binary spatial predicate -- input `geometry1`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1"
         }
       ]
     },
     "geometry2": {
-      "schema": {"type": "string", "contentMediaType": "text/xml", "description": "GML"},
-      "keywords": ["geometry", "GML"],
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "text/xml",
+        "description": "GML"
+      },
+      "keywords": [
+        "geometry",
+        "GML"
+      ],
       "metadata": [
         {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        },
-        {
-          "title": "Generic Profile: Binary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+          "title": "Generic Profile: Binary spatial predicate -- input `geometry2`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2"
         }
       ]
     }
   },
   "outputs": {
-    "result": {"keywords": ["boolean"]}
+    "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result",
+      "keywords": [
+        "boolean"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Binary spatial predicate -- output `result`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result"
+        }
+      ]
+    }
   }
 }
 
@@ -179,8 +236,21 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     "predicate",
     "example"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    },
+    {
+      "title": "Generic Profile: Binary spatial predicate",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+    }
+  ],
   "inputs": {
     "geometry1": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -192,18 +262,14 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
       ],
       "metadata": [
         {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        },
-        {
-          "title": "Generic Profile: Binary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+          "title": "Generic Profile: Binary spatial predicate -- input `geometry1`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1"
         }
       ]
     },
     "geometry2": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -215,22 +281,25 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
       ],
       "metadata": [
         {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        },
-        {
-          "title": "Generic Profile: Binary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+          "title": "Generic Profile: Binary spatial predicate -- input `geometry2`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2"
         }
       ]
     }
   },
   "outputs": {
     "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result",
       "keywords": [
         "boolean"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Binary spatial predicate -- output `result`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result"
+        }
       ]
     }
   }
@@ -242,8 +311,8 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
@@ -251,36 +320,45 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     skos:definition "Illustrates the shape of an Implementation Profile entry only. Real ones are each their own building block -- see generic-profiles.implementation-profile.intersects, .buffer and the other siblings." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Example Implementation Profile (placeholder, not a real operation)" ;
-    gp:inputs [ ns2:geometry1 [ proc:keywords "GML",
-                        "geometry" ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-                        [ dcterms:title "Generic Profile: Binary spatial predicate" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
-                    proc:schema [ a ns1:string ;
-                            ns1:contentMediaType "text/xml" ;
-                            ns1:description "GML" ] ] ;
-            ns2:geometry2 [ proc:keywords "GML",
-                        "geometry" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:schema [ a ns1:string ;
-                            ns1:contentMediaType "text/xml" ;
-                            ns1:description "GML" ] ] ] ;
-    gp:outputs [ ns3:result [ proc:keywords "boolean" ] ] ;
+    gp:inputs [ ns3:geometry1 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> ;
+            ns3:geometry2 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
     gp:status "submitted" ;
     proc:keywords "example",
         "geometry",
         "predicate",
         "spatial relation",
-        "vector" .
+        "vector" ;
+    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
+        [ dcterms:title "Generic Profile: Binary spatial predicate" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> proc:keywords "GML",
+        "geometry" ;
+    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry1`" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1> ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
+    proc:schema [ a ns1:string ;
+            ns1:contentMediaType "text/xml" ;
+            ns1:description "GML" ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> proc:keywords "GML",
+        "geometry" ;
+    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry2`" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2> ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
+    proc:schema [ a ns1:string ;
+            ns1:contentMediaType "text/xml" ;
+            ns1:description "GML" ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> proc:keywords "boolean" ;
+    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- output `result`" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result> ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
 
 
 ```
@@ -321,14 +399,19 @@ description: "Process Implementation Profile (OGC 14-065 WPS 2.0.2 \xA77.5.3): \
   own `schema` -- not used here.\nThe rest of Table 21 at this tier, as each real
   Implementation Profile's own `schema.yaml` enforces it against its Generic Profile:
   - Process: `keywords` Extend (E) -- must contain every Generic Profile keyword;\n
-  \ `id`/`prefLabel`/`definition` Override (O).\n- Input: every Generic Profile input
-  is listed, because footnote a (\"the list of metadata\n  references to superior
-  process profiles shall be extended\") applies to each one: its\n  `metadata` keeps
-  the Generic Profile's Table 22 `concept` reference and adds a `generic` one\n  (`http://www.opengis.net/spec/wps/2.0/def/process-profile/generic`)
-  to the Generic Profile\n  itself; `keywords` Extend (E); Identifier/Title/Abstract
-  Inherit (I), so not repeated;\n  `maxOccurs` Restrict (R); `schema` Declare (D).\n-
-  Output: every Generic Profile output is listed too, so that this tier is self-describing;\n
-  \ `keywords` Extend (E); `metadata` Override (O, free); `schema` Declare (D)."
+  \ `id`/`prefLabel`/`definition` Override (O); `metadata` Extends (E, footnote a:
+  \"the list of\n  metadata references to superior process profiles shall be extended\")
+  the Generic Profile's\n  list -- its Table 22 `concept` reference -- with a `generic`
+  one to the Generic Profile\n  itself. Profile-level references are made here only,
+  never repeated on inputs/outputs.\n- Input: every Generic Profile input is listed.
+  Its `metadata` references the corresponding\n  Generic Profile input (`<Generic
+  Profile id>/inputs/<name>`) with this register's role\n  `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input`
+  -- footnote a, at the level of the input; `keywords` Extend (E);\n  Identifier/Title/Abstract
+  Inherit (I), so not repeated; `maxOccurs` Restrict (R); `schema`\n  Declare (D).\n-
+  Output: every Generic Profile output is listed too; `metadata` references the corresponding\n
+  \ Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output`
+  (Table 21 allows any value here,\n  O; the register keeps outputs symmetric with
+  inputs); `keywords` Extend (E); `schema`\n  Declare (D)."
 type: object
 required:
 - id
@@ -339,6 +422,7 @@ required:
 - status
 - refinesGenericProfile
 - keywords
+- metadata
 - inputs
 - outputs
 properties:
@@ -384,6 +468,39 @@ properties:
     items:
       type: string
     x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+  metadata:
+    description: 'Table 21 Process.Metadata (E, footnote a): the Generic Profile''s
+      references (Table 22 `concept`) plus a Table 22 `generic` reference to the Generic
+      Profile.'
+    type: array
+    items:
+      $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+    allOf:
+    - contains:
+        type: object
+        required:
+        - role
+        - href
+        properties:
+          role:
+            const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+    - contains:
+        type: object
+        required:
+        - role
+        - href
+        properties:
+          role:
+            const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
+    x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+    x-jsonld-extra-terms:
+      title: http://purl.org/dc/terms/title
+      role:
+        x-jsonld-id: https://w3id.org/ogc/api/processes/role
+        x-jsonld-type: '@id'
+      href:
+        x-jsonld-id: https://w3id.org/ogc/api/processes/href
+        x-jsonld-type: '@id'
   inputs:
     description: Keyed by the same input names as the Generic Profile's own `inputs`
       (Identifier/Title/ Abstract Inherited, not repeated). `schema` is Table 21's
@@ -394,9 +511,16 @@ properties:
     additionalProperties:
       type: object
       required:
+      - id
       - keywords
       - metadata
       properties:
+        id:
+          description: This input's own IRI, `<profile id>/inputs/<name>` -- what
+            a lower tier's metadata `href` points at.
+          type: string
+          format: uri
+          x-jsonld-id: '@id'
         schema:
           x-jsonld-id: https://w3id.org/ogc/api/processes/schema
           x-jsonld-vocab: https://w3id.org/ogc/api/schema/
@@ -415,29 +539,19 @@ properties:
           type: array
           items:
             $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
-          allOf:
-          - contains:
-              type: object
-              required:
-              - role
-              - href
-              properties:
-                role:
-                  const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
-          - contains:
-              type: object
-              required:
-              - role
-              - href
-              properties:
-                role:
-                  const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
+          contains:
+            type: object
+            required:
+            - role
+            - href
+            properties:
+              role:
+                const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                x-jsonld-id: https://w3id.org/ogc/api/processes/role
+                x-jsonld-type: '@id'
           x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
           x-jsonld-extra-terms:
             title: http://purl.org/dc/terms/title
-            role:
-              x-jsonld-id: https://w3id.org/ogc/api/processes/role
-              x-jsonld-type: '@id'
             href:
               x-jsonld-id: https://w3id.org/ogc/api/processes/href
               x-jsonld-type: '@id'
@@ -449,8 +563,16 @@ properties:
     additionalProperties:
       type: object
       required:
+      - id
       - keywords
+      - metadata
       properties:
+        id:
+          description: This output's own IRI, `<profile id>/outputs/<name>` -- what
+            a lower tier's metadata `href` points at.
+          type: string
+          format: uri
+          x-jsonld-id: '@id'
         schema:
           x-jsonld-id: https://w3id.org/ogc/api/processes/schema
           x-jsonld-vocab: https://w3id.org/ogc/api/schema/
@@ -464,12 +586,19 @@ properties:
           type: array
           items:
             $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+          contains:
+            type: object
+            required:
+            - role
+            - href
+            properties:
+              role:
+                const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                x-jsonld-id: https://w3id.org/ogc/api/processes/role
+                x-jsonld-type: '@id'
           x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
           x-jsonld-extra-terms:
             title: http://purl.org/dc/terms/title
-            role:
-              x-jsonld-id: https://w3id.org/ogc/api/processes/role
-              x-jsonld-type: '@id'
             href:
               x-jsonld-id: https://w3id.org/ogc/api/processes/href
               x-jsonld-type: '@id'
@@ -527,6 +656,20 @@ Links to the schema:
       "@type": "@id"
     },
     "keywords": "proc:keywords",
+    "metadata": {
+      "@context": {
+        "href": {
+          "@id": "proc:href",
+          "@type": "@id"
+        },
+        "role": {
+          "@id": "proc:role",
+          "@type": "@id"
+        },
+        "title": "dct:title"
+      },
+      "@id": "proc:metadata"
+    },
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
@@ -536,21 +679,7 @@ Links to the schema:
           },
           "@id": "proc:schema"
         },
-        "maxOccurs": "proc:maxOccurs",
-        "metadata": {
-          "@context": {
-            "title": "dct:title",
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        }
+        "maxOccurs": "proc:maxOccurs"
       },
       "@id": "gp:inputs"
     },
@@ -562,20 +691,6 @@ Links to the schema:
             "@vocab": "https://w3id.org/ogc/api/schema/"
           },
           "@id": "proc:schema"
-        },
-        "metadata": {
-          "@context": {
-            "title": "dct:title",
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
         }
       },
       "@id": "gp:outputs"

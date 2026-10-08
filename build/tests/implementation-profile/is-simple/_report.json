@@ -2,7 +2,7 @@
   "title": "Validation report for generic-profiles.implementation-profile.is-simple - Implementation Profile: Is simple",
   "bblockName": "Implementation Profile: Is simple",
   "bblockId": "generic-profiles.implementation-profile.is-simple",
-  "generated": "2026-10-07T12:54:25.056101+00:00",
+  "generated": "2026-10-08T08:41:17.698275+00:00",
   "result": true,
   "items": [
     {
@@ -40,7 +40,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 42,
+              "size": 46,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }

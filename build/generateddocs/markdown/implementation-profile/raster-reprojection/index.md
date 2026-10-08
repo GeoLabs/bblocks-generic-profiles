@@ -74,8 +74,21 @@ the ZOO-Project Geonovum testbed
     "GDAL",
     "gdalwarp"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    },
+    {
+      "title": "Generic Profile: Raster reprojection",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+    }
+  ],
   "inputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -88,37 +101,29 @@ the ZOO-Project Geonovum testbed
       ],
       "metadata": [
         {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        },
-        {
-          "title": "Generic Profile: Raster reprojection",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+          "title": "Generic Profile: Raster reprojection -- input `raster`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster"
         }
       ]
     },
     "targetCRS": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS",
       "keywords": [
         "CRS"
       ],
       "metadata": [
         {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        },
-        {
-          "title": "Generic Profile: Raster reprojection",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+          "title": "Generic Profile: Raster reprojection -- input `targetCRS`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS"
         }
       ]
     }
   },
   "outputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -131,9 +136,9 @@ the ZOO-Project Geonovum testbed
       ],
       "metadata": [
         {
-          "title": "Generic Profile: Raster reprojection",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+          "title": "Generic Profile: Raster reprojection -- output `raster`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster"
         }
       ]
     }
@@ -170,8 +175,21 @@ the ZOO-Project Geonovum testbed
     "GDAL",
     "gdalwarp"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    },
+    {
+      "title": "Generic Profile: Raster reprojection",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+    }
+  ],
   "inputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -184,37 +202,29 @@ the ZOO-Project Geonovum testbed
       ],
       "metadata": [
         {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        },
-        {
-          "title": "Generic Profile: Raster reprojection",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+          "title": "Generic Profile: Raster reprojection -- input `raster`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster"
         }
       ]
     },
     "targetCRS": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS",
       "keywords": [
         "CRS"
       ],
       "metadata": [
         {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        },
-        {
-          "title": "Generic Profile: Raster reprojection",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+          "title": "Generic Profile: Raster reprojection -- input `targetCRS`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS"
         }
       ]
     }
   },
   "outputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -227,9 +237,9 @@ the ZOO-Project Geonovum testbed
       ],
       "metadata": [
         {
-          "title": "Generic Profile: Raster reprojection",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+          "title": "Generic Profile: Raster reprojection -- output `raster`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster"
         }
       ]
     }
@@ -258,48 +268,54 @@ the ZOO-Project Geonovum testbed
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://gdal.org/programs/gdalwarp.html> ;
-            dcterms:title "GDAL gdalwarp -- Image mosaicing, reprojection and warping utility" ],
-        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
+        [ dcterms:references <https://gdal.org/programs/gdalwarp.html> ;
+            dcterms:title "GDAL gdalwarp -- Image mosaicing, reprojection and warping utility" ] ;
     skos:definition "Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster reprojection" ;
-    gp:inputs [ ns3:raster [ proc:keywords "GeoTIFF",
-                        "raster" ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-                        [ dcterms:title "Generic Profile: Raster reprojection" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
-                    proc:schema [ a ns1:string ;
-                            ns1:contentEncoding "base64" ;
-                            ns1:contentMediaType "image/tiff" ;
-                            ns1:description "GeoTIFF" ] ] ;
-            ns3:targetCRS [ proc:keywords "CRS" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Raster reprojection" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-                        [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ] ] ;
-    gp:outputs [ ns2:raster [ proc:keywords "GeoTIFF",
-                        "raster" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Raster reprojection" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
-                    proc:schema [ a ns1:string ;
-                            ns1:contentEncoding "base64" ;
-                            ns1:contentMediaType "image/tiff" ;
-                            ns1:description "GeoTIFF" ] ] ] ;
+    gp:inputs [ ns3:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster> ;
+            ns3:targetCRS <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS> ] ;
+    gp:outputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> ;
     gp:status "submitted" ;
     proc:keywords "GDAL",
         "coverage",
         "gdalwarp",
         "raster",
-        "reprojection" .
+        "reprojection" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
+        [ dcterms:title "Generic Profile: Raster reprojection" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster> proc:keywords "GeoTIFF",
+        "raster" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster reprojection -- input `raster`" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster> ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
+    proc:schema [ a ns1:string ;
+            ns1:contentEncoding "base64" ;
+            ns1:contentMediaType "image/tiff" ;
+            ns1:description "GeoTIFF" ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS> proc:keywords "CRS" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster reprojection -- input `targetCRS`" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS> ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster> proc:keywords "GeoTIFF",
+        "raster" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster reprojection -- output `raster`" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster> ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
+    proc:schema [ a ns1:string ;
+            ns1:contentEncoding "base64" ;
+            ns1:contentMediaType "image/tiff" ;
+            ns1:description "GeoTIFF" ] .
 
 
 ```
@@ -336,6 +352,29 @@ allOf:
       - contains:
           const: reprojection
       x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+    metadata:
+      allOf:
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection
+      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       type: object
       required:
@@ -358,19 +397,9 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing
-              - contains:
-                  type: object
-                  required:
-                  - role
-                  - href
-                  properties:
-                    role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
-                    href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
             maxOccurs:
               type: integer
@@ -392,19 +421,9 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing
-              - contains:
-                  type: object
-                  required:
-                  - role
-                  - href
-                  properties:
-                    role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
-                    href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
             maxOccurs:
               type: integer
@@ -424,6 +443,50 @@ allOf:
               - contains:
                   const: raster
               x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+            metadata:
+              allOf:
+              - contains:
+                  type: object
+                  required:
+                  - role
+                  - href
+                  properties:
+                    role:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                    href:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster
+              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+- type: object
+  properties:
+    inputs:
+      properties:
+        raster:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster
+              x-jsonld-id: '@id'
+        targetCRS:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS
+              x-jsonld-id: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+    outputs:
+      properties:
+        raster:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster
+              x-jsonld-id: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
 x-jsonld-extra-terms:
@@ -472,6 +535,19 @@ Links to the schema:
       "@type": "@id"
     },
     "keywords": "proc:keywords",
+    "metadata": {
+      "@context": {
+        "role": {
+          "@id": "proc:role",
+          "@type": "@id"
+        },
+        "href": {
+          "@id": "proc:href",
+          "@type": "@id"
+        }
+      },
+      "@id": "proc:metadata"
+    },
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
@@ -481,20 +557,7 @@ Links to the schema:
           },
           "@id": "proc:schema"
         },
-        "maxOccurs": "proc:maxOccurs",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        }
+        "maxOccurs": "proc:maxOccurs"
       },
       "@id": "gp:inputs"
     },
@@ -506,19 +569,6 @@ Links to the schema:
             "@vocab": "https://w3id.org/ogc/api/schema/"
           },
           "@id": "proc:schema"
-        },
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
         }
       },
       "@id": "gp:outputs"

@@ -27,6 +27,29 @@ allOf:
       - contains:
           const: extent
       x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+    metadata:
+      allOf:
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent
+      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       type: object
       required:
@@ -48,19 +71,9 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing
-              - contains:
-                  type: object
-                  required:
-                  - role
-                  - href
-                  properties:
-                    role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
-                    href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
             maxOccurs:
               type: integer
@@ -80,6 +93,43 @@ allOf:
               - contains:
                   const: geometry
               x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+            metadata:
+              allOf:
+              - contains:
+                  type: object
+                  required:
+                  - role
+                  - href
+                  properties:
+                    role:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                    href:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result
+              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+- type: object
+  properties:
+    inputs:
+      properties:
+        raster:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster
+              x-jsonld-id: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+    outputs:
+      properties:
+        result:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result
+              x-jsonld-id: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
 x-jsonld-extra-terms:

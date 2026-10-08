@@ -1,1 +1,5 @@
 path
+/metadata/href
+/inputs/raster
+/inputs/targetFormat
+/outputs/raster

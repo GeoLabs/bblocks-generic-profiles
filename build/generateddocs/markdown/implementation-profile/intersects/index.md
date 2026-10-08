@@ -74,8 +74,21 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
     "Intersects",
     "ST_Intersects"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    },
+    {
+      "title": "Generic Profile: Binary spatial predicate",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+    }
+  ],
   "inputs": {
     "geometry1": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/inputs/geometry1",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -87,18 +100,14 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
       ],
       "metadata": [
         {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        },
-        {
-          "title": "Generic Profile: Binary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+          "title": "Generic Profile: Binary spatial predicate -- input `geometry1`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1"
         }
       ]
     },
     "geometry2": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/inputs/geometry2",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -110,28 +119,24 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
       ],
       "metadata": [
         {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        },
-        {
-          "title": "Generic Profile: Binary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+          "title": "Generic Profile: Binary spatial predicate -- input `geometry2`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2"
         }
       ]
     }
   },
   "outputs": {
     "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/outputs/result",
       "keywords": [
         "boolean"
       ],
       "metadata": [
         {
-          "title": "Generic Profile: Binary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+          "title": "Generic Profile: Binary spatial predicate -- output `result`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result"
         }
       ]
     }
@@ -168,8 +173,21 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
     "Intersects",
     "ST_Intersects"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    },
+    {
+      "title": "Generic Profile: Binary spatial predicate",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+    }
+  ],
   "inputs": {
     "geometry1": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/inputs/geometry1",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -181,18 +199,14 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
       ],
       "metadata": [
         {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        },
-        {
-          "title": "Generic Profile: Binary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+          "title": "Generic Profile: Binary spatial predicate -- input `geometry1`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1"
         }
       ]
     },
     "geometry2": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/inputs/geometry2",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -204,28 +218,24 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
       ],
       "metadata": [
         {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        },
-        {
-          "title": "Generic Profile: Binary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+          "title": "Generic Profile: Binary spatial predicate -- input `geometry2`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2"
         }
       ]
     }
   },
   "outputs": {
     "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/outputs/result",
       "keywords": [
         "boolean"
       ],
       "metadata": [
         {
-          "title": "Generic Profile: Binary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+          "title": "Generic Profile: Binary spatial predicate -- output `result`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result"
         }
       ]
     }
@@ -253,38 +263,15 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
-            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.15" ],
-        [ dcterms:title "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.24 ST_Intersects" ] ;
+    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.24 ST_Intersects" ],
+        [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.15" ] ;
     skos:definition "Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share at least one point). Equivalent to the negation of Disjoint." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Intersects" ;
-    gp:inputs [ ns2:geometry1 [ proc:keywords "GML",
-                        "geometry" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:schema [ a ns1:string ;
-                            ns1:contentMediaType "text/xml" ;
-                            ns1:description "GML" ] ] ;
-            ns2:geometry2 [ proc:keywords "GML",
-                        "geometry" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:schema [ a ns1:string ;
-                            ns1:contentMediaType "text/xml" ;
-                            ns1:description "GML" ] ] ] ;
-    gp:outputs [ ns3:result [ proc:keywords "boolean" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ] ] ;
+    gp:inputs [ ns2:geometry1 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/inputs/geometry1> ;
+            ns2:geometry2 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/inputs/geometry2> ] ;
+    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
     gp:status "submitted" ;
     proc:keywords "Intersects",
@@ -292,7 +279,36 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
         "geometry",
         "predicate",
         "spatial relation",
-        "vector" .
+        "vector" ;
+    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/inputs/geometry1> proc:keywords "GML",
+        "geometry" ;
+    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry1`" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1> ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
+    proc:schema [ a ns1:string ;
+            ns1:contentMediaType "text/xml" ;
+            ns1:description "GML" ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/inputs/geometry2> proc:keywords "GML",
+        "geometry" ;
+    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry2`" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2> ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
+    proc:schema [ a ns1:string ;
+            ns1:contentMediaType "text/xml" ;
+            ns1:description "GML" ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/outputs/result> proc:keywords "boolean" ;
+    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- output `result`" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result> ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
 
 
 ```
@@ -331,6 +347,29 @@ allOf:
       - contains:
           const: predicate
       x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+    metadata:
+      allOf:
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate
+      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       type: object
       required:
@@ -353,19 +392,9 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing
-              - contains:
-                  type: object
-                  required:
-                  - role
-                  - href
-                  properties:
-                    role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
-                    href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
             maxOccurs:
               type: integer
@@ -387,19 +416,9 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing
-              - contains:
-                  type: object
-                  required:
-                  - role
-                  - href
-                  properties:
-                    role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
-                    href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
             maxOccurs:
               type: integer
@@ -419,6 +438,50 @@ allOf:
               - contains:
                   const: boolean
               x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+            metadata:
+              allOf:
+              - contains:
+                  type: object
+                  required:
+                  - role
+                  - href
+                  properties:
+                    role:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                    href:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result
+              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+- type: object
+  properties:
+    inputs:
+      properties:
+        geometry1:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/inputs/geometry1
+              x-jsonld-id: '@id'
+        geometry2:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/inputs/geometry2
+              x-jsonld-id: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+    outputs:
+      properties:
+        result:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/outputs/result
+              x-jsonld-id: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
 x-jsonld-extra-terms:
@@ -467,6 +530,19 @@ Links to the schema:
       "@type": "@id"
     },
     "keywords": "proc:keywords",
+    "metadata": {
+      "@context": {
+        "role": {
+          "@id": "proc:role",
+          "@type": "@id"
+        },
+        "href": {
+          "@id": "proc:href",
+          "@type": "@id"
+        }
+      },
+      "@id": "proc:metadata"
+    },
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
@@ -476,20 +552,7 @@ Links to the schema:
           },
           "@id": "proc:schema"
         },
-        "maxOccurs": "proc:maxOccurs",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        }
+        "maxOccurs": "proc:maxOccurs"
       },
       "@id": "gp:inputs"
     },
@@ -501,19 +564,6 @@ Links to the schema:
             "@vocab": "https://w3id.org/ogc/api/schema/"
           },
           "@id": "proc:schema"
-        },
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
         }
       },
       "@id": "gp:outputs"

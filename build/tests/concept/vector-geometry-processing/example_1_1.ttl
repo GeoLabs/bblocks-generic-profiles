@@ -3,9 +3,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> a skos:Concept ;
-    dcterms:source [ dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ;
-            gp:clause "§6.1" ],
-        [ dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1" ] ;
+    dcterms:source [ dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1" ],
+        [ dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ;
+            gp:clause "§6.1" ] ;
     skos:definition "Operations on vector geometries: testing a spatial relationship between two geometries, deriving a new geometry from one or two others, or measuring a property of a geometry. Covers the spatial predicates, set operations and measures of OGC Simple Feature Access - Common Architecture (06-103r4) and its harmonized-with-SQL predecessor, Simple Features Specification For SQL Revision 1.1 (99-049), independent of any specific operation's own input/output signature." ;
     skos:inScheme gp:concept ;
     skos:prefLabel "Vector Geometry Processing" ;

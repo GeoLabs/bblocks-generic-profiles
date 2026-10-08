@@ -50,8 +50,21 @@ process of the ZOO-Project Geonovum testbed.
     "IsSimple",
     "ST_IsSimple"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    },
+    {
+      "title": "Generic Profile: Unary spatial predicate",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
+    }
+  ],
   "inputs": {
     "geometry": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/inputs/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -63,28 +76,24 @@ process of the ZOO-Project Geonovum testbed.
       ],
       "metadata": [
         {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        },
-        {
-          "title": "Generic Profile: Unary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
+          "title": "Generic Profile: Unary spatial predicate -- input `geometry`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry"
         }
       ]
     }
   },
   "outputs": {
     "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/outputs/result",
       "keywords": [
         "boolean"
       ],
       "metadata": [
         {
-          "title": "Generic Profile: Unary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
+          "title": "Generic Profile: Unary spatial predicate -- output `result`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result"
         }
       ]
     }
@@ -124,8 +133,21 @@ process of the ZOO-Project Geonovum testbed.
     "IsSimple",
     "ST_IsSimple"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    },
+    {
+      "title": "Generic Profile: Unary spatial predicate",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
+    }
+  ],
   "inputs": {
     "geometry": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/inputs/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -137,28 +159,24 @@ process of the ZOO-Project Geonovum testbed.
       ],
       "metadata": [
         {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        },
-        {
-          "title": "Generic Profile: Unary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
+          "title": "Generic Profile: Unary spatial predicate -- input `geometry`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry"
         }
       ]
     }
   },
   "outputs": {
     "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/outputs/result",
       "keywords": [
         "boolean"
       ],
       "metadata": [
         {
-          "title": "Generic Profile: Unary spatial predicate",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
+          "title": "Generic Profile: Unary spatial predicate -- output `result`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result"
         }
       ]
     }
@@ -183,43 +201,50 @@ process of the ZOO-Project Geonovum testbed.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns3: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
-            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.1.1 IsSimple()" ],
+    dcterms:source [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/IsSimple> ;
+            dcterms:title "ZOO-Project Geonovum testbed -- IsSimple: IsSimple test." ],
         [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_IsSimple" ],
-        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/IsSimple> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- IsSimple: IsSimple test." ] ;
+        [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
+            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.1.1 IsSimple()" ] ;
     skos:definition "Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection or self tangency." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Is simple" ;
-    gp:inputs [ ns1:geometry [ proc:keywords "GML",
-                        "geometry" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Unary spatial predicate" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-                        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:schema [ a ns3:string ;
-                            ns3:contentMediaType "text/xml" ;
-                            ns3:description "GML" ] ] ] ;
-    gp:outputs [ ns2:result [ proc:keywords "boolean" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Unary spatial predicate" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ] ] ;
+    gp:inputs [ ns3:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/inputs/geometry> ] ;
+    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate> ;
     gp:status "submitted" ;
     proc:keywords "IsSimple",
         "ST_IsSimple",
         "geometry",
         "predicate",
-        "vector" .
+        "vector" ;
+    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
+        [ dcterms:title "Generic Profile: Unary spatial predicate" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/inputs/geometry> proc:keywords "GML",
+        "geometry" ;
+    proc:metadata [ dcterms:title "Generic Profile: Unary spatial predicate -- input `geometry`" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry> ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
+    proc:schema [ a ns2:string ;
+            ns2:contentMediaType "text/xml" ;
+            ns2:description "GML" ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/outputs/result> proc:keywords "boolean" ;
+    proc:metadata [ dcterms:title "Generic Profile: Unary spatial predicate -- output `result`" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result> ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
 
 
 ```
@@ -256,6 +281,29 @@ allOf:
       - contains:
           const: predicate
       x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+    metadata:
+      allOf:
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate
+      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       type: object
       required:
@@ -277,19 +325,9 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing
-              - contains:
-                  type: object
-                  required:
-                  - role
-                  - href
-                  properties:
-                    role:
-                      const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
-                    href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
             maxOccurs:
               type: integer
@@ -309,6 +347,43 @@ allOf:
               - contains:
                   const: boolean
               x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+            metadata:
+              allOf:
+              - contains:
+                  type: object
+                  required:
+                  - role
+                  - href
+                  properties:
+                    role:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                    href:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result
+              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+- type: object
+  properties:
+    inputs:
+      properties:
+        geometry:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/inputs/geometry
+              x-jsonld-id: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+    outputs:
+      properties:
+        result:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/outputs/result
+              x-jsonld-id: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
 x-jsonld-extra-terms:
@@ -357,6 +432,19 @@ Links to the schema:
       "@type": "@id"
     },
     "keywords": "proc:keywords",
+    "metadata": {
+      "@context": {
+        "role": {
+          "@id": "proc:role",
+          "@type": "@id"
+        },
+        "href": {
+          "@id": "proc:href",
+          "@type": "@id"
+        }
+      },
+      "@id": "proc:metadata"
+    },
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
@@ -366,20 +454,7 @@ Links to the schema:
           },
           "@id": "proc:schema"
         },
-        "maxOccurs": "proc:maxOccurs",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        }
+        "maxOccurs": "proc:maxOccurs"
       },
       "@id": "gp:inputs"
     },
@@ -391,19 +466,6 @@ Links to the schema:
             "@vocab": "https://w3id.org/ogc/api/schema/"
           },
           "@id": "proc:schema"
-        },
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
         }
       },
       "@id": "gp:outputs"

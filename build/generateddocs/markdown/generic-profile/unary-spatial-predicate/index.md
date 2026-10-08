@@ -52,19 +52,20 @@ Implementation Profile -> Implementation (instance level).
     "geometry",
     "predicate"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    }
+  ],
   "inputs": {
     "geometry": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry",
       "title": "Geometry",
       "description": "the input geometry",
       "keywords": [
         "geometry"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
       ],
       "minOccurs": 1,
       "maxOccurs": 1
@@ -72,17 +73,11 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result",
       "title": "Boolean",
       "description": "the predicate's truth value",
       "keywords": [
         "boolean"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
       ]
     }
   }
@@ -108,19 +103,20 @@ Implementation Profile -> Implementation (instance level).
     "geometry",
     "predicate"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    }
+  ],
   "inputs": {
     "geometry": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry",
       "title": "Geometry",
       "description": "the input geometry",
       "keywords": [
         "geometry"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
       ],
       "minOccurs": 1,
       "maxOccurs": 1
@@ -128,17 +124,11 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result",
       "title": "Boolean",
       "description": "the predicate's truth value",
       "keywords": [
         "boolean"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
       ]
     }
   }
@@ -149,8 +139,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -160,24 +150,25 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Tests a boolean property of a single geometry. One Geometry input, one Boolean output -- the one-input counterpart to `binary-spatial-predicate`'s two." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Unary spatial predicate" ;
-    gp:inputs [ ns1:geometry [ dcterms:description "the input geometry" ;
-                    dcterms:title "Geometry" ;
-                    proc:keywords "geometry" ;
-                    proc:maxOccurs 1 ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns2:result [ dcterms:description "the predicate's truth value" ;
-                    dcterms:title "Boolean" ;
-                    proc:keywords "boolean" ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ] ] ;
+    gp:inputs [ ns2:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry> ] ;
+    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result> ] ;
     gp:status "submitted" ;
     proc:keywords "geometry",
         "predicate",
-        "vector" .
+        "vector" ;
+    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry> dcterms:description "the input geometry" ;
+    dcterms:title "Geometry" ;
+    proc:keywords "geometry" ;
+    proc:maxOccurs 1 ;
+    proc:minOccurs 1 .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result> dcterms:description "the predicate's truth value" ;
+    dcterms:title "Boolean" ;
+    proc:keywords "boolean" .
 
 
 ```
@@ -201,6 +192,43 @@ allOf:
     prefLabel:
       const: Unary spatial predicate
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
+- type: object
+  properties:
+    metadata:
+      allOf:
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing
+      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+    inputs:
+      properties:
+        geometry:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry
+              x-jsonld-id: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
+    outputs:
+      properties:
+        result:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result
+              x-jsonld-id: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
 x-jsonld-extra-terms:
   GenericProfile: http://www.w3.org/2004/02/skos/core#Concept
   definition: http://www.w3.org/2004/02/skos/core#definition
@@ -218,42 +246,6 @@ x-jsonld-extra-terms:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
   clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause
-  inputs:
-    x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-    x-jsonld-context:
-      '@vocab': https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
-      title: http://purl.org/dc/terms/title
-      description: http://purl.org/dc/terms/description
-      keywords: https://w3id.org/ogc/api/processes/keywords
-      metadata:
-        '@id': https://w3id.org/ogc/api/processes/metadata
-        '@context':
-          title: http://purl.org/dc/terms/title
-          role:
-            '@id': https://w3id.org/ogc/api/processes/role
-            '@type': '@id'
-          href:
-            '@id': https://w3id.org/ogc/api/processes/href
-            '@type': '@id'
-      minOccurs: https://w3id.org/ogc/api/processes/minOccurs
-      maxOccurs: https://w3id.org/ogc/api/processes/maxOccurs
-  outputs:
-    x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-    x-jsonld-context:
-      '@vocab': https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
-      title: http://purl.org/dc/terms/title
-      description: http://purl.org/dc/terms/description
-      keywords: https://w3id.org/ogc/api/processes/keywords
-      metadata:
-        '@id': https://w3id.org/ogc/api/processes/metadata
-        '@context':
-          title: http://purl.org/dc/terms/title
-          role:
-            '@id': https://w3id.org/ogc/api/processes/role
-            '@type': '@id'
-          href:
-            '@id': https://w3id.org/ogc/api/processes/href
-            '@type': '@id'
 x-jsonld-prefixes:
   skos: http://www.w3.org/2004/02/skos/core#
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
@@ -288,24 +280,24 @@ Links to the schema:
       "@type": "@id"
     },
     "keywords": "proc:keywords",
+    "metadata": {
+      "@context": {
+        "href": {
+          "@id": "proc:href",
+          "@type": "@id"
+        },
+        "role": {
+          "@id": "proc:role",
+          "@type": "@id"
+        }
+      },
+      "@id": "proc:metadata"
+    },
     "source": "dct:source",
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
         "description": "dct:description",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        },
         "minOccurs": "proc:minOccurs",
         "maxOccurs": "proc:maxOccurs"
       },
@@ -314,20 +306,7 @@ Links to the schema:
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
-        "description": "dct:description",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        }
+        "description": "dct:description"
       },
       "@id": "gp:outputs"
     },

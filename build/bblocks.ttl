@@ -2,8 +2,8 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <http://www.w3.org/ns/oa#> .
+@prefix ns1: <http://www.w3.org/ns/oa#> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -43,12 +43,12 @@
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/area/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/area/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/area/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/area/schema.json> ;
             prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.geometry-measure>,
         <bblocks://generic-profiles.implementation-profile> ;
@@ -65,10 +65,10 @@
     rdfs:label "Implementation Profile: Buffer" ;
     dct:abstract "Returns a geometric object representing all points whose distance from this geometric object is less than or equal to a given distance."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/buffer/index.json> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.buffer> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/buffer/index.json> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/buffer/index.md> ] ;
     dct:hasVersion "0.1" ;
@@ -82,18 +82,18 @@
     dcat:keyword "Buffer",
         "SKOS",
         "implementation profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/buffer/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/buffer/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/buffer/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/buffer/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.geometry-buffer>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -109,12 +109,12 @@
     rdfs:label "Implementation Profile: Centroid" ;
     dct:abstract "The mathematical centroid for this Surface as a Point. The result is not guaranteed to be on this Surface."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-06T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/centroid/index.json> ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.centroid> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/centroid/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.centroid> ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/centroid/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -131,14 +131,14 @@
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/centroid/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/centroid/schema.yaml> ;
-            prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/centroid/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/centroid/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.unary-geometry-operation>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -154,10 +154,10 @@
     rdfs:label "Implementation Profile: Contains" ;
     dct:abstract "Returns TRUE if this geometric object spatially contains anotherGeometry (no point of anotherGeometry lies outside this geometric object, and at least one point of the interior of anotherGeometry lies in the interior of this geometric object)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.contains> ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/contains/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.contains> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/contains/index.md> ] ;
     dct:hasVersion "0.1" ;
@@ -176,12 +176,12 @@
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/contains/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/contains/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/contains/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/contains/schema.yaml> ;
             prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.binary-spatial-predicate>,
         <bblocks://generic-profiles.implementation-profile> ;
@@ -198,12 +198,12 @@
     rdfs:label "Implementation Profile: Convex hull" ;
     dct:abstract "Returns a geometry that represents the convex hull of this Geometry."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-06T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/convex-hull/index.json> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.convex-hull> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/convex-hull/index.md> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/convex-hull/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/convex-hull/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -216,18 +216,18 @@
     dcat:keyword "Convex hull",
         "SKOS",
         "implementation profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/convex-hull/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/convex-hull/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/convex-hull/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/convex-hull/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.unary-geometry-operation>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -243,12 +243,12 @@
     rdfs:label "Implementation Profile: Crosses" ;
     dct:abstract "Returns TRUE if this geometric object 'spatially crosses' anotherGeometry: the intersection results in a geometry of dimension one less than the maximum dimension of the two source geometries, and the intersection set is interior to both."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/crosses/index.json> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/crosses/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.crosses> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.crosses> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/crosses/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -287,12 +287,12 @@
     rdfs:label "Implementation Profile: Difference" ;
     dct:abstract "Returns a geometric object representing the point set difference of this geometric object with anotherGeometry."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/difference/index.json> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/difference/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.difference> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.difference> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/difference/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -331,12 +331,12 @@
     rdfs:label "Implementation Profile: Disjoint" ;
     dct:abstract "Returns TRUE if this geometric object is spatially disjoint from anotherGeometry (they share no point). Equivalent to the negation of Intersects."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/disjoint/index.md> ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/disjoint/index.json> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.disjoint> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/disjoint/index.json> ] ;
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/disjoint/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -348,18 +348,18 @@
     dcat:keyword "Disjoint",
         "SKOS",
         "implementation profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/disjoint/schema.json> ;
-            prof:hasRole role:schema ],
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/disjoint/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/disjoint/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/disjoint/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/disjoint/schema.json> ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.binary-spatial-predicate>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -375,10 +375,10 @@
     rdfs:label "Implementation Profile: Equals" ;
     dct:abstract "Returns TRUE if this geometric object is spatially equal to anotherGeometry (same point set), independent of vertex order or representation."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.equals> ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/equals/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.equals> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/equals/index.md> ] ;
     dct:hasVersion "0.1" ;
@@ -393,17 +393,17 @@
         "SKOS",
         "implementation profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/equals/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/equals/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/equals/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/equals/schema.json> ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.binary-spatial-predicate>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -419,12 +419,12 @@
     rdfs:label "Implementation Profile: Geometry extent" ;
     dct:abstract "Computes the minimum bounding rectangle of a set of input geometries, as a geometry."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.geometry-extent> ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/geometry-extent/index.json> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/geometry-extent/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/geometry-extent/index.json> ] ;
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.geometry-extent> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -466,10 +466,10 @@
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.intersection> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/intersection/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/intersection/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/intersection/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/intersection/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -482,17 +482,17 @@
         "SKOS",
         "implementation profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/intersection/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/intersection/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/intersection/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/intersection/schema.json> ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.binary-spatial-operation>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -508,12 +508,12 @@
     rdfs:label "Implementation Profile: Intersects" ;
     dct:abstract "Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share at least one point). Equivalent to the negation of Disjoint."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/intersects/index.md> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.intersects> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/intersects/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/intersects/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/intersects/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -554,10 +554,10 @@
     dct:created "2026-10-06T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/is-simple/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.is-simple> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/is-simple/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/is-simple/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.is-simple> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -574,14 +574,14 @@
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/is-simple/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/is-simple/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/is-simple/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/is-simple/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.unary-spatial-predicate>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -597,10 +597,10 @@
     rdfs:label "Implementation Profile: Radiometric index" ;
     dct:abstract "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.radiometric-index> ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/radiometric-index/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.radiometric-index> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/radiometric-index/index.md> ] ;
     dct:hasVersion "0.1" ;
@@ -614,17 +614,17 @@
     dcat:keyword "Radiometric index",
         "SKOS",
         "implementation profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/radiometric-index/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/radiometric-index/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/radiometric-index/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/radiometric-index/schema.yaml> ;
             prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.radiometric-index>,
         <bblocks://generic-profiles.implementation-profile> ;
@@ -641,12 +641,12 @@
     rdfs:label "Implementation Profile: Raster band math" ;
     dct:abstract "Evaluates a user-supplied mathematical expression per pixel across one or more input rasters, producing a monoband output raster."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-band-math/index.json> ],
+        [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.raster-band-math> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-band-math/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-band-math/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-band-math/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -659,17 +659,17 @@
         "SKOS",
         "implementation profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:mapping ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.raster-band-math>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -685,12 +685,12 @@
     rdfs:label "Implementation Profile: Raster band math (multi-band output)" ;
     dct:abstract "Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-band-math-multiband/index.json> ],
+        [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-band-math-multiband/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.raster-band-math-multiband> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-band-math-multiband/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.raster-band-math-multiband> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -704,17 +704,17 @@
         "SKOS",
         "implementation profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math-multiband/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math-multiband/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-band-math-multiband/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.raster-band-math>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -732,10 +732,10 @@
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-crop/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-crop/index.json> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.raster-crop> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.raster-crop> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-crop/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -753,14 +753,14 @@
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-crop/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-crop/schema.json> ;
-            prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-crop/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-crop/schema.json> ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.raster-crop>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile>,
@@ -777,12 +777,12 @@
     rdfs:label "Implementation Profile: Raster extent" ;
     dct:abstract "Computes the bounding envelope of a raster coverage, as a vector polygon."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-extent/index.md> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.raster-extent> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-extent/index.json> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-extent/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-extent/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -795,17 +795,17 @@
         "SKOS",
         "implementation profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-extent/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-extent/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-extent/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-extent/schema.json> ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.raster-extent>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -838,18 +838,18 @@
     dcat:keyword "Raster format conversion",
         "SKOS",
         "implementation profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-format-conversion/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-format-conversion/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-format-conversion/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-format-conversion/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.raster-format-conversion>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -882,18 +882,18 @@
     dcat:keyword "Raster reprojection",
         "SKOS",
         "implementation profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-reprojection/schema.yaml> ;
-            prof:hasRole role:schema ],
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-reprojection/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-reprojection/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-reprojection/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-reprojection/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.raster-reprojection>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -927,12 +927,12 @@
         "Symmetric difference",
         "implementation profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/symdifference/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/symdifference/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/symdifference/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
@@ -953,10 +953,10 @@
     rdfs:label "Implementation Profile: Touches" ;
     dct:abstract "Returns TRUE if the only points in common between this geometric object and anotherGeometry lie in the union of their boundaries: at least one boundary point in common, but no interior points in common."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/touches/index.md> ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/touches/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/touches/index.md> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.touches> ] ;
     dct:hasVersion "0.1" ;
@@ -970,18 +970,18 @@
     dcat:keyword "SKOS",
         "Touches",
         "implementation profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/touches/schema.yaml> ;
-            prof:hasRole role:schema ],
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/touches/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/touches/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/touches/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/touches/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.binary-spatial-predicate>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -997,10 +997,10 @@
     rdfs:label "Implementation Profile: Union" ;
     dct:abstract "Returns a geometric object representing the point set union of this geometric object with anotherGeometry."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/union/index.md> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.union> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/union/index.md> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/union/index.json> ] ;
     dct:hasVersion "0.1" ;
@@ -1015,17 +1015,17 @@
         "Union",
         "implementation profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/union/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/union/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/union/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/union/schema.json> ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.binary-spatial-operation>,
         <bblocks://generic-profiles.implementation-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.implementation-profile> ;
@@ -1041,12 +1041,12 @@
     rdfs:label "Implementation Profile: Within" ;
     dct:abstract "Returns TRUE if this geometric object is spatially within anotherGeometry. The converse of Contains."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.within> ],
+        [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/within/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/within/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile.within> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/within/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -1058,17 +1058,17 @@
     dcat:keyword "SKOS",
         "Within",
         "implementation profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/within/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/within/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/within/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/within/schema.json> ;
             prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.generic-profile.binary-spatial-predicate>,
         <bblocks://generic-profiles.implementation-profile> ;
@@ -1088,18 +1088,18 @@
 
 <https://geolabs.github.io/bblocks-generic-profiles/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:N553200fc7fb4417c8f196afa9ee82b6d ;
+    prov:wasAttributedTo _:Nf4cf3395c9f54cf090f8e5c67f90ec0e ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-10-07T12:54:26.453144"^^xsd:dateTime ;
-            prov:startedAtTime "2026-10-07T12:54:26.116175"^^xsd:dateTime ;
+            prov:endedAtTime "2026-10-08T08:41:18.682514"^^xsd:dateTime ;
+            prov:startedAtTime "2026-10-08T08:41:18.415722"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
                     dct:format "application/yaml" ;
                     rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
                 [ a prov:Entity ;
                     dct:format "application/json" ;
-                    dct:hasVersion "git:fc9a37d59dcb32763b302f9b7b45c4f40c666109" ;
+                    dct:hasVersion "git:6ec270416b2f6eae96b2b3f8467ca0fa69541fc3" ;
                     rdfs:seeAlso <https://geolabs.github.io/bblocks-generic-profiles/build/register.json> ] ;
-            prov:wasAssociatedWith _:N553200fc7fb4417c8f196afa9ee82b6d ] .
+            prov:wasAssociatedWith _:Nf4cf3395c9f54cf090f8e5c67f90ec0e ] .
 
 <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Centroid> rdfs:label "ZOO-Project Geonovum testbed -- Centroid: Computes the centroid of a polygon." .
 
@@ -1128,10 +1128,10 @@
     rdfs:label "Generic Profile: Geometry buffer" ;
     dct:abstract "Computes a new geometry from one input geometry and a scalar distance. A different shape from binary-spatial-operation: one Geometry, one Number, not two Geometries."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.geometry-buffer> ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/geometry-buffer/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.geometry-buffer> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/geometry-buffer/index.md> ] ;
     dct:hasVersion "0.1" ;
@@ -1149,12 +1149,12 @@
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-buffer/schema.json> ;
             prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.concept.vector-geometry-processing>,
         <bblocks://generic-profiles.generic-profile> ;
@@ -1187,18 +1187,18 @@
     dcat:keyword "Geometry measure",
         "SKOS",
         "generic profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-measure/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-measure/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-measure/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/geometry-measure/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     prof:isProfileOf <bblocks://generic-profiles.concept.vector-geometry-processing>,
         <bblocks://generic-profiles.generic-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.generic-profile> ;
@@ -1216,10 +1216,10 @@
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/radiometric-index/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/radiometric-index/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.radiometric-index> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.radiometric-index> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/radiometric-index/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -1275,12 +1275,12 @@
         "SKOS",
         "generic profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-crop/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-crop/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-crop/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
@@ -1301,12 +1301,12 @@
     rdfs:label "Generic Profile: Raster extent" ;
     dct:abstract "Computes the bounding envelope of a raster coverage, returned as a geometry (a rectangular polygon in the coverage's CRS). One Raster input, one Geometry output."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/raster-extent/index.json> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-extent/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.raster-extent> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.raster-extent> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/raster-extent/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -1321,14 +1321,14 @@
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-extent/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-extent/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-extent/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-extent/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     prof:isProfileOf <bblocks://generic-profiles.concept.raster-coverage-processing>,
         <bblocks://generic-profiles.generic-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.generic-profile> ;
@@ -1344,12 +1344,12 @@
     rdfs:label "Generic Profile: Raster format conversion" ;
     dct:abstract "Converts a raster coverage from one encoding to another, without changing its content. One Raster input, a target format, one Raster output in the new encoding."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/raster-format-conversion/index.json> ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.raster-format-conversion> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-format-conversion/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.raster-format-conversion> ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/raster-format-conversion/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -1360,18 +1360,18 @@
     dcat:keyword "Raster format conversion",
         "SKOS",
         "generic profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-format-conversion/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-format-conversion/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-format-conversion/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-format-conversion/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.concept.raster-coverage-processing>,
         <bblocks://generic-profiles.generic-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.generic-profile> ;
@@ -1387,12 +1387,12 @@
     rdfs:label "Generic Profile: Raster reprojection" ;
     dct:abstract "Reprojects a raster coverage to another coordinate reference system, preserving its content. One Raster input, a target CRS, one Raster output in the new CRS."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/raster-reprojection/index.json> ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.raster-reprojection> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-reprojection/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.raster-reprojection> ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/raster-reprojection/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -1404,17 +1404,17 @@
         "SKOS",
         "generic profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-reprojection/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-reprojection/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-reprojection/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-reprojection/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:mapping ] ;
     prof:isProfileOf <bblocks://generic-profiles.concept.raster-coverage-processing>,
         <bblocks://generic-profiles.generic-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.generic-profile> ;
@@ -1430,12 +1430,12 @@
     rdfs:label "Generic Profile: Unary spatial predicate" ;
     dct:abstract "Tests a boolean property of a single geometry. One Geometry input, one Boolean output -- the one-input counterpart to `binary-spatial-predicate`'s two."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-06T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.unary-spatial-predicate> ],
+        [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/unary-spatial-predicate/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/unary-spatial-predicate/index.json> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.unary-spatial-predicate> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/unary-spatial-predicate/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -1446,18 +1446,18 @@
     dcat:keyword "SKOS",
         "Unary spatial predicate",
         "generic profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/unary-spatial-predicate/context.jsonld> ;
-            prof:hasRole role:mapping ],
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/unary-spatial-predicate/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/unary-spatial-predicate/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/unary-spatial-predicate/schema.json> ;
-            prof:hasRole role:schema ] ;
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/unary-spatial-predicate/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     prof:isProfileOf <bblocks://generic-profiles.concept.vector-geometry-processing>,
         <bblocks://generic-profiles.generic-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.generic-profile> ;
@@ -1492,18 +1492,18 @@
     dcat:keyword "Raster band math",
         "SKOS",
         "generic profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-band-math/schema.yaml> ;
-            prof:hasRole role:schema ],
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-band-math/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-band-math/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-band-math/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-band-math/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.concept.raster-coverage-processing>,
         <bblocks://generic-profiles.generic-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.generic-profile> ;
@@ -1521,10 +1521,10 @@
     dct:created "2026-10-06T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/unary-geometry-operation/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/unary-geometry-operation/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.unary-geometry-operation> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.unary-geometry-operation> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/unary-geometry-operation/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -1586,14 +1586,14 @@
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/binary-spatial-operation/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/binary-spatial-operation/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/binary-spatial-operation/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/binary-spatial-operation/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     prof:isProfileOf <bblocks://generic-profiles.concept.vector-geometry-processing>,
         <bblocks://generic-profiles.generic-profile> ;
     bblocks:dependsOn <bblocks://generic-profiles.generic-profile> ;
@@ -1615,12 +1615,12 @@
     rdfs:label "Process Concept" ;
     dct:abstract "The shape every Process Concept shares: high-level documentation about a general group of processes, no input, no output, no format, no implementation (OGC 14-065 WPS 2.0.2 §7.5.1). Each real Concept (generic-profiles.concept.*) is its own building block that allOf-references this one -- this block is not itself a catalogue, only the common shape plus one illustrative example."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.concept> ],
+        [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/concept/index.json> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.concept> ] ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/concept/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -1631,18 +1631,18 @@
     dcat:keyword "SKOS",
         "WPS",
         "concept" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:schema ] ;
     bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
@@ -1655,12 +1655,12 @@
     rdfs:label "Process Concept: Raster Coverage Processing" ;
     dct:abstract "Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, deriving a new raster from one or more others via a mathematical expression or a named radiometric index, cropping a coverage to a region of interest, or converting a coverage to another encoding -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/concept/raster-coverage-processing/index.json> ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.concept.raster-coverage-processing> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/raster-coverage-processing/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.concept.raster-coverage-processing> ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/concept/raster-coverage-processing/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -1672,18 +1672,18 @@
         "concept",
         "coverage",
         "raster" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/raster-coverage-processing/context.jsonld> ;
-            prof:hasRole role:mapping ],
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/raster-coverage-processing/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/raster-coverage-processing/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/raster-coverage-processing/schema.json> ;
-            prof:hasRole role:schema ] ;
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/raster-coverage-processing/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     prof:isProfileOf <bblocks://generic-profiles.concept> ;
     bblocks:dependsOn <bblocks://generic-profiles.concept> ;
     bblocks:hasSourceJsonLdContext <https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/raster-coverage-processing/context.jsonld> ;
@@ -1698,10 +1698,10 @@
     rdfs:label "Process Concept: Vector Geometry Processing" ;
     dct:abstract "General group covering operations on vector geometries: testing spatial relationships between two geometries, deriving a new geometry from one or two others, and measuring a geometry's own properties -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1)."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/vector-geometry-processing/index.md> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.concept.vector-geometry-processing> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/vector-geometry-processing/index.md> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/concept/vector-geometry-processing/index.json> ] ;
     dct:hasVersion "0.1" ;
@@ -1745,10 +1745,10 @@
     rdfs:label "Generic Profile: Binary spatial predicate" ;
     dct:abstract "Tests a boolean spatial relationship between two geometries. Shared I/O shape of every SQL/MM DE-9IM-family predicate: two Geometry inputs, one Boolean output, no side effect."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/binary-spatial-predicate/index.json> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile.binary-spatial-predicate> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/binary-spatial-predicate/index.json> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/binary-spatial-predicate/index.md> ] ;
     dct:hasVersion "0.1" ;
@@ -1761,17 +1761,17 @@
     dcat:keyword "Binary spatial predicate",
         "SKOS",
         "generic profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/binary-spatial-predicate/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/binary-spatial-predicate/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/binary-spatial-predicate/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/binary-spatial-predicate/schema.json> ;
             prof:hasRole role:schema ] ;
     prof:isProfileOf <bblocks://generic-profiles.concept.vector-geometry-processing>,
         <bblocks://generic-profiles.generic-profile> ;
@@ -1805,10 +1805,10 @@
     rdfs:label "Generic Process Profile" ;
     dct:abstract "The shape every Generic Profile shares: the abstract interface of one process, declaring a signature for its inputs and outputs (OGC 14-065 WPS 2.0.2 §7.5.2), linked to its Process Concept by `broader`. Each real Generic Profile (generic-profiles.generic-profile.*) is its own building block that allOf-references this one -- this block is not itself a catalogue, only the common shape plus one illustrative example."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile> ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.generic-profile> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/index.md> ] ;
     dct:hasVersion "0.1" ;
@@ -1821,17 +1821,17 @@
     dcat:keyword "SKOS",
         "WPS",
         "generic profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.json> ;
             prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://generic-profiles.concept>,
         <bblocks://ogc.api.processes.v1.schemas.metadata> ;
@@ -1847,12 +1847,12 @@
     rdfs:label "Process Implementation Profile" ;
     dct:abstract "The shape every Implementation Profile shares: a specific named operation refining one Generic Profile, adding the standard data exchange formats it is commonly expressed in (OGC 14-065 WPS 2.0.2 §7.5.3). Each real Implementation Profile (generic-profiles.implementation-profile.*) is its own building block that allOf-references this one."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/index.md> ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/index.json> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.implementation-profile> ] ;
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
     dct:modified "2026-10-07"^^xsd:date ;
@@ -1864,16 +1864,16 @@
         "WPS",
         "implementation profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.json> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.json> ;
             prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://generic-profiles.generic-profile>,
         <bblocks://ogc.api.processes.v1.schemas.metadata> ;
@@ -1908,7 +1908,7 @@ Not limited to spatial operations -- any domain with standardised abstract opera
 independent bindings is a candidate.
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:license [ rdfs:label "Apache-2.0" ] ;
-    dct:modified "2026-10-07T12:54:11.962422"^^xsd:dateTime ;
+    dct:modified "2026-10-08T08:41:03.713381"^^xsd:dateTime ;
     owl:imports <https://geolabs.github.io/bblocks-ogcapi-processes/build/register.json>,
         <https://opengeospatial.github.io/bblocks/register.json> ;
     skos:hasTopConcept <bblocks://generic-profiles.concept>,
@@ -1955,20 +1955,20 @@ independent bindings is a candidate.
     skos:prefLabel "Building Blocks - Generic Process Profiles" ;
     prof:hasResource [ rdfs:label "This Building Blocks Register in JSON format" ;
             dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://geolabs.github.io/bblocks-generic-profiles/build/register.json> ],
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://geolabs.github.io/bblocks-generic-profiles/build/register.json> ],
         [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
             dct:type "application/ld+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://geolabs.github.io/bblocks-generic-profiles/build/bblocks.jsonld> ],
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://geolabs.github.io/bblocks-generic-profiles/build/bblocks.jsonld> ],
         [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
             dct:type "text/turtle" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://geolabs.github.io/bblocks-generic-profiles/build/bblocks.ttl> ] ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://geolabs.github.io/bblocks-generic-profiles/build/bblocks.ttl> ] ;
     foaf:homepage <https://geolabs.github.io/bblocks-generic-profiles/> ;
     bblocks:hasValidationReport <https://geolabs.github.io/bblocks-generic-profiles/build/tests/report.html> .
 
-_:N553200fc7fb4417c8f196afa9ee82b6d a prov:Agent,
+_:Nf4cf3395c9f54cf090f8e5c67f90ec0e a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.5.35" ;

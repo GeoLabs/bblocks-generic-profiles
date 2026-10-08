@@ -1,4 +1,6 @@
 path
+/metadata/role
+/metadata/href
 /inputs/raster
 /inputs/raster/metadata/role
 /inputs/raster/metadata/href
@@ -6,3 +8,5 @@ path
 /inputs/targetFormat/metadata/role
 /inputs/targetFormat/metadata/href
 /outputs/raster
+/outputs/raster/metadata/role
+/outputs/raster/metadata/href

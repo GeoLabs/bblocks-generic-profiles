@@ -31,14 +31,19 @@ description: "Process Implementation Profile (OGC 14-065 WPS 2.0.2 \xA77.5.3): \
   own `schema` -- not used here.\nThe rest of Table 21 at this tier, as each real
   Implementation Profile's own `schema.yaml` enforces it against its Generic Profile:
   - Process: `keywords` Extend (E) -- must contain every Generic Profile keyword;\n
-  \ `id`/`prefLabel`/`definition` Override (O).\n- Input: every Generic Profile input
-  is listed, because footnote a (\"the list of metadata\n  references to superior
-  process profiles shall be extended\") applies to each one: its\n  `metadata` keeps
-  the Generic Profile's Table 22 `concept` reference and adds a `generic` one\n  (`http://www.opengis.net/spec/wps/2.0/def/process-profile/generic`)
-  to the Generic Profile\n  itself; `keywords` Extend (E); Identifier/Title/Abstract
-  Inherit (I), so not repeated;\n  `maxOccurs` Restrict (R); `schema` Declare (D).\n-
-  Output: every Generic Profile output is listed too, so that this tier is self-describing;\n
-  \ `keywords` Extend (E); `metadata` Override (O, free); `schema` Declare (D)."
+  \ `id`/`prefLabel`/`definition` Override (O); `metadata` Extends (E, footnote a:
+  \"the list of\n  metadata references to superior process profiles shall be extended\")
+  the Generic Profile's\n  list -- its Table 22 `concept` reference -- with a `generic`
+  one to the Generic Profile\n  itself. Profile-level references are made here only,
+  never repeated on inputs/outputs.\n- Input: every Generic Profile input is listed.
+  Its `metadata` references the corresponding\n  Generic Profile input (`<Generic
+  Profile id>/inputs/<name>`) with this register's role\n  `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input`
+  -- footnote a, at the level of the input; `keywords` Extend (E);\n  Identifier/Title/Abstract
+  Inherit (I), so not repeated; `maxOccurs` Restrict (R); `schema`\n  Declare (D).\n-
+  Output: every Generic Profile output is listed too; `metadata` references the corresponding\n
+  \ Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output`
+  (Table 21 allows any value here,\n  O; the register keeps outputs symmetric with
+  inputs); `keywords` Extend (E); `schema`\n  Declare (D)."
 type: object
 required:
 - id
@@ -49,6 +54,7 @@ required:
 - status
 - refinesGenericProfile
 - keywords
+- metadata
 - inputs
 - outputs
 properties:
@@ -94,6 +100,39 @@ properties:
     items:
       type: string
     x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+  metadata:
+    description: 'Table 21 Process.Metadata (E, footnote a): the Generic Profile''s
+      references (Table 22 `concept`) plus a Table 22 `generic` reference to the Generic
+      Profile.'
+    type: array
+    items:
+      $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+    allOf:
+    - contains:
+        type: object
+        required:
+        - role
+        - href
+        properties:
+          role:
+            const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+    - contains:
+        type: object
+        required:
+        - role
+        - href
+        properties:
+          role:
+            const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
+    x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+    x-jsonld-extra-terms:
+      title: http://purl.org/dc/terms/title
+      role:
+        x-jsonld-id: https://w3id.org/ogc/api/processes/role
+        x-jsonld-type: '@id'
+      href:
+        x-jsonld-id: https://w3id.org/ogc/api/processes/href
+        x-jsonld-type: '@id'
   inputs:
     description: Keyed by the same input names as the Generic Profile's own `inputs`
       (Identifier/Title/ Abstract Inherited, not repeated). `schema` is Table 21's
@@ -104,9 +143,16 @@ properties:
     additionalProperties:
       type: object
       required:
+      - id
       - keywords
       - metadata
       properties:
+        id:
+          description: This input's own IRI, `<profile id>/inputs/<name>` -- what
+            a lower tier's metadata `href` points at.
+          type: string
+          format: uri
+          x-jsonld-id: '@id'
         schema:
           x-jsonld-id: https://w3id.org/ogc/api/processes/schema
           x-jsonld-vocab: https://w3id.org/ogc/api/schema/
@@ -125,29 +171,19 @@ properties:
           type: array
           items:
             $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
-          allOf:
-          - contains:
-              type: object
-              required:
-              - role
-              - href
-              properties:
-                role:
-                  const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
-          - contains:
-              type: object
-              required:
-              - role
-              - href
-              properties:
-                role:
-                  const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
+          contains:
+            type: object
+            required:
+            - role
+            - href
+            properties:
+              role:
+                const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                x-jsonld-id: https://w3id.org/ogc/api/processes/role
+                x-jsonld-type: '@id'
           x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
           x-jsonld-extra-terms:
             title: http://purl.org/dc/terms/title
-            role:
-              x-jsonld-id: https://w3id.org/ogc/api/processes/role
-              x-jsonld-type: '@id'
             href:
               x-jsonld-id: https://w3id.org/ogc/api/processes/href
               x-jsonld-type: '@id'
@@ -159,8 +195,16 @@ properties:
     additionalProperties:
       type: object
       required:
+      - id
       - keywords
+      - metadata
       properties:
+        id:
+          description: This output's own IRI, `<profile id>/outputs/<name>` -- what
+            a lower tier's metadata `href` points at.
+          type: string
+          format: uri
+          x-jsonld-id: '@id'
         schema:
           x-jsonld-id: https://w3id.org/ogc/api/processes/schema
           x-jsonld-vocab: https://w3id.org/ogc/api/schema/
@@ -174,12 +218,19 @@ properties:
           type: array
           items:
             $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+          contains:
+            type: object
+            required:
+            - role
+            - href
+            properties:
+              role:
+                const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                x-jsonld-id: https://w3id.org/ogc/api/processes/role
+                x-jsonld-type: '@id'
           x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
           x-jsonld-extra-terms:
             title: http://purl.org/dc/terms/title
-            role:
-              x-jsonld-id: https://w3id.org/ogc/api/processes/role
-              x-jsonld-type: '@id'
             href:
               x-jsonld-id: https://w3id.org/ogc/api/processes/href
               x-jsonld-type: '@id'

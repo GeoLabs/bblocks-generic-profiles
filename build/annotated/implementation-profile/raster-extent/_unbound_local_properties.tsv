@@ -1,5 +1,9 @@
 path
+/metadata/role
+/metadata/href
 /inputs/raster
 /inputs/raster/metadata/role
 /inputs/raster/metadata/href
 /outputs/result
+/outputs/result/metadata/role
+/outputs/result/metadata/href

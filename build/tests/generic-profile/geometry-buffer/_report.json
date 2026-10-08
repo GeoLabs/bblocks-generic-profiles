@@ -2,7 +2,7 @@
   "title": "Validation report for generic-profiles.generic-profile.geometry-buffer - Generic Profile: Geometry buffer",
   "bblockName": "Generic Profile: Geometry buffer",
   "bblockId": "generic-profiles.generic-profile.geometry-buffer",
-  "generated": "2026-10-07T12:54:22.986959+00:00",
+  "generated": "2026-10-08T08:41:16.105410+00:00",
   "result": true,
   "items": [
     {
@@ -40,7 +40,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 40,
+              "size": 32,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }

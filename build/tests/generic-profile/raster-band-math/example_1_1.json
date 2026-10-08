@@ -13,35 +13,30 @@
     "coverage",
     "band math"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    }
+  ],
   "inputs": {
     "rasters": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters",
       "title": "Raster",
       "description": "the input raster band(s)/image(s)",
       "keywords": [
         "raster"
       ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
-      ],
       "minOccurs": 1,
       "maxOccurs": "unbounded"
     },
     "expression": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression",
       "title": "String",
       "description": "the per-pixel mathematical expression",
       "keywords": [
         "expression"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
       ],
       "minOccurs": 1,
       "maxOccurs": 1
@@ -49,17 +44,11 @@
   },
   "outputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster",
       "title": "Raster",
       "description": "the resulting raster",
       "keywords": [
         "raster"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
       ]
     }
   }

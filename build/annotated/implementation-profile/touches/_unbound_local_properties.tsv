@@ -1,4 +1,6 @@
 path
+/metadata/role
+/metadata/href
 /inputs/geometry1
 /inputs/geometry1/metadata/role
 /inputs/geometry1/metadata/href
@@ -6,3 +8,5 @@ path
 /inputs/geometry2/metadata/role
 /inputs/geometry2/metadata/href
 /outputs/result
+/outputs/result/metadata/role
+/outputs/result/metadata/href

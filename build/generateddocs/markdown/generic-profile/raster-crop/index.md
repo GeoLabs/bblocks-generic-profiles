@@ -68,35 +68,30 @@ Implementation Profile -> Implementation (instance level).
     "coverage",
     "crop"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    }
+  ],
   "inputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster",
       "title": "Raster",
       "description": "the input raster coverage",
       "keywords": [
         "raster"
       ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
-      ],
       "minOccurs": 1,
       "maxOccurs": 1
     },
     "areaOfInterest": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest",
       "title": "Bounding box",
       "description": "the region of interest to crop to",
       "keywords": [
         "bounding box"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
       ],
       "minOccurs": 1,
       "maxOccurs": 1
@@ -104,17 +99,11 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster",
       "title": "Raster",
       "description": "the cropped raster coverage",
       "keywords": [
         "raster"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
       ]
     }
   }
@@ -140,35 +129,30 @@ Implementation Profile -> Implementation (instance level).
     "coverage",
     "crop"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    }
+  ],
   "inputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster",
       "title": "Raster",
       "description": "the input raster coverage",
       "keywords": [
         "raster"
       ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
-      ],
       "minOccurs": 1,
       "maxOccurs": 1
     },
     "areaOfInterest": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest",
       "title": "Bounding box",
       "description": "the region of interest to crop to",
       "keywords": [
         "bounding box"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
       ],
       "minOccurs": 1,
       "maxOccurs": 1
@@ -176,17 +160,11 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster",
       "title": "Raster",
       "description": "the cropped raster coverage",
       "keywords": [
         "raster"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
       ]
     }
   }
@@ -208,32 +186,32 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Crops a raster coverage to a region of interest. One Raster input, an area of interest, one Raster output covering only that area." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster crop" ;
-    gp:inputs [ ns1:areaOfInterest [ dcterms:description "the region of interest to crop to" ;
-                    dcterms:title "Bounding box" ;
-                    proc:keywords "bounding box" ;
-                    proc:maxOccurs 1 ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:minOccurs 1 ] ;
-            ns1:raster [ dcterms:description "the input raster coverage" ;
-                    dcterms:title "Raster" ;
-                    proc:keywords "raster" ;
-                    proc:maxOccurs 1 ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns2:raster [ dcterms:description "the cropped raster coverage" ;
-                    dcterms:title "Raster" ;
-                    proc:keywords "raster" ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ] ] ;
+    gp:inputs [ ns1:areaOfInterest <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest> ;
+            ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster> ] ;
+    gp:outputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster> ] ;
     gp:status "submitted" ;
     proc:keywords "coverage",
         "crop",
-        "raster" .
+        "raster" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest> dcterms:description "the region of interest to crop to" ;
+    dcterms:title "Bounding box" ;
+    proc:keywords "bounding box" ;
+    proc:maxOccurs 1 ;
+    proc:minOccurs 1 .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster> dcterms:description "the input raster coverage" ;
+    dcterms:title "Raster" ;
+    proc:keywords "raster" ;
+    proc:maxOccurs 1 ;
+    proc:minOccurs 1 .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster> dcterms:description "the cropped raster coverage" ;
+    dcterms:title "Raster" ;
+    proc:keywords "raster" .
 
 
 ```
@@ -257,6 +235,50 @@ allOf:
     prefLabel:
       const: Raster crop
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
+- type: object
+  properties:
+    metadata:
+      allOf:
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing
+      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+    inputs:
+      properties:
+        raster:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster
+              x-jsonld-id: '@id'
+        areaOfInterest:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest
+              x-jsonld-id: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
+    outputs:
+      properties:
+        raster:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster
+              x-jsonld-id: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
 x-jsonld-extra-terms:
   GenericProfile: http://www.w3.org/2004/02/skos/core#Concept
   definition: http://www.w3.org/2004/02/skos/core#definition
@@ -274,42 +296,6 @@ x-jsonld-extra-terms:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
   clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause
-  inputs:
-    x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-    x-jsonld-context:
-      '@vocab': https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
-      title: http://purl.org/dc/terms/title
-      description: http://purl.org/dc/terms/description
-      keywords: https://w3id.org/ogc/api/processes/keywords
-      metadata:
-        '@id': https://w3id.org/ogc/api/processes/metadata
-        '@context':
-          title: http://purl.org/dc/terms/title
-          role:
-            '@id': https://w3id.org/ogc/api/processes/role
-            '@type': '@id'
-          href:
-            '@id': https://w3id.org/ogc/api/processes/href
-            '@type': '@id'
-      minOccurs: https://w3id.org/ogc/api/processes/minOccurs
-      maxOccurs: https://w3id.org/ogc/api/processes/maxOccurs
-  outputs:
-    x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-    x-jsonld-context:
-      '@vocab': https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
-      title: http://purl.org/dc/terms/title
-      description: http://purl.org/dc/terms/description
-      keywords: https://w3id.org/ogc/api/processes/keywords
-      metadata:
-        '@id': https://w3id.org/ogc/api/processes/metadata
-        '@context':
-          title: http://purl.org/dc/terms/title
-          role:
-            '@id': https://w3id.org/ogc/api/processes/role
-            '@type': '@id'
-          href:
-            '@id': https://w3id.org/ogc/api/processes/href
-            '@type': '@id'
 x-jsonld-prefixes:
   skos: http://www.w3.org/2004/02/skos/core#
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
@@ -344,24 +330,24 @@ Links to the schema:
       "@type": "@id"
     },
     "keywords": "proc:keywords",
+    "metadata": {
+      "@context": {
+        "href": {
+          "@id": "proc:href",
+          "@type": "@id"
+        },
+        "role": {
+          "@id": "proc:role",
+          "@type": "@id"
+        }
+      },
+      "@id": "proc:metadata"
+    },
     "source": "dct:source",
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
         "description": "dct:description",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        },
         "minOccurs": "proc:minOccurs",
         "maxOccurs": "proc:maxOccurs"
       },
@@ -370,20 +356,7 @@ Links to the schema:
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
-        "description": "dct:description",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        }
+        "description": "dct:description"
       },
       "@id": "gp:outputs"
     },

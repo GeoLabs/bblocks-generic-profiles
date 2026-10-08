@@ -1,5 +1,5 @@
 Validation report for generic-profiles.generic-profile.binary-spatial-predicate - Generic Profile: Binary spatial predicate
-Generated 2026-10-07T12:54:22.892455+00:00
+Generated 2026-10-08T08:41:15.993608+00:00
 === Files ===
 Using examples/binary-spatial-predicate.json from examples
 JSON-LD context is present - uplifting

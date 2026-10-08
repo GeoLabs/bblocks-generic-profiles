@@ -7,18 +7,23 @@ path	@id	schema
 /status	https://geolabs.github.io/bblocks-generic-profiles/def/status	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /refinesGenericProfile	https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile	/github/workspace/build/annotated/implementation-profile/within/schema.yaml
 /keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/within/schema.yaml
+/metadata	https://w3id.org/ogc/api/processes/metadata	/github/workspace/build/annotated/implementation-profile/within/schema.yaml
+/metadata/role		https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/metadata/href		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+/metadata/title		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
 /inputs	https://geolabs.github.io/bblocks-generic-profiles/def/inputs	/github/workspace/build/annotated/implementation-profile/within/schema.yaml
+/inputs/id	@id	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /inputs/schema	https://w3id.org/ogc/api/processes/schema	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /inputs/maxOccurs	https://w3id.org/ogc/api/processes/maxOccurs	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /inputs/keywords	https://w3id.org/ogc/api/processes/keywords	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /inputs/metadata	https://w3id.org/ogc/api/processes/metadata	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
-/inputs/metadata/role		https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
-/inputs/metadata/href		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
-/inputs/metadata/title		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+/inputs/metadata/role	https://w3id.org/ogc/api/processes/role	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /outputs	https://geolabs.github.io/bblocks-generic-profiles/def/outputs	/github/workspace/build/annotated/implementation-profile/within/schema.yaml
+/outputs/id	@id	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /outputs/schema	https://w3id.org/ogc/api/processes/schema	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /outputs/keywords	https://w3id.org/ogc/api/processes/keywords	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /outputs/metadata	https://w3id.org/ogc/api/processes/metadata	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/outputs/metadata/role	https://w3id.org/ogc/api/processes/role	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /source	http://purl.org/dc/terms/source	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /source/title	http://purl.org/dc/terms/title	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /source/link	http://purl.org/dc/terms/references	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
@@ -36,3 +41,9 @@ path	@id	schema
 /inputs/geometry2/maxOccurs	https://w3id.org/ogc/api/processes/maxOccurs	/github/workspace/build/annotated/implementation-profile/within/schema.yaml
 /outputs/result		/github/workspace/build/annotated/implementation-profile/within/schema.yaml
 /outputs/result/keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/within/schema.yaml
+/outputs/result/metadata	https://w3id.org/ogc/api/processes/metadata	/github/workspace/build/annotated/implementation-profile/within/schema.yaml
+/outputs/result/metadata/role		/github/workspace/build/annotated/implementation-profile/within/schema.yaml
+/outputs/result/metadata/href		/github/workspace/build/annotated/implementation-profile/within/schema.yaml
+/inputs/geometry1/id	@id	/github/workspace/build/annotated/implementation-profile/within/schema.yaml
+/inputs/geometry2/id	@id	/github/workspace/build/annotated/implementation-profile/within/schema.yaml
+/outputs/result/id	@id	/github/workspace/build/annotated/implementation-profile/within/schema.yaml

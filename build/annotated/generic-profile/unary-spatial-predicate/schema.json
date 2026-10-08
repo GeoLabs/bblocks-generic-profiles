@@ -21,6 +21,67 @@
           "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#prefLabel"
         }
       }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "allOf": [
+            {
+              "contains": {
+                "type": "object",
+                "required": [
+                  "role",
+                  "href"
+                ],
+                "properties": {
+                  "role": {
+                    "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"
+                  },
+                  "href": {
+                    "const": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+                  }
+                }
+              }
+            }
+          ],
+          "x-jsonld-id": "https://w3id.org/ogc/api/processes/metadata"
+        },
+        "inputs": {
+          "properties": {
+            "geometry": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry",
+                  "x-jsonld-id": "@id"
+                }
+              }
+            }
+          },
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/inputs",
+          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/"
+        },
+        "outputs": {
+          "properties": {
+            "result": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result",
+                  "x-jsonld-id": "@id"
+                }
+              }
+            }
+          },
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/outputs",
+          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/"
+        }
+      }
     }
   ],
   "x-jsonld-extra-terms": {
@@ -42,55 +103,7 @@
       "x-jsonld-id": "http://purl.org/dc/terms/references",
       "x-jsonld-type": "@id"
     },
-    "clause": "https://geolabs.github.io/bblocks-generic-profiles/def/clause",
-    "inputs": {
-      "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/inputs",
-      "x-jsonld-context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
-        "title": "http://purl.org/dc/terms/title",
-        "description": "http://purl.org/dc/terms/description",
-        "keywords": "https://w3id.org/ogc/api/processes/keywords",
-        "metadata": {
-          "@id": "https://w3id.org/ogc/api/processes/metadata",
-          "@context": {
-            "title": "http://purl.org/dc/terms/title",
-            "role": {
-              "@id": "https://w3id.org/ogc/api/processes/role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "https://w3id.org/ogc/api/processes/href",
-              "@type": "@id"
-            }
-          }
-        },
-        "minOccurs": "https://w3id.org/ogc/api/processes/minOccurs",
-        "maxOccurs": "https://w3id.org/ogc/api/processes/maxOccurs"
-      }
-    },
-    "outputs": {
-      "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/outputs",
-      "x-jsonld-context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
-        "title": "http://purl.org/dc/terms/title",
-        "description": "http://purl.org/dc/terms/description",
-        "keywords": "https://w3id.org/ogc/api/processes/keywords",
-        "metadata": {
-          "@id": "https://w3id.org/ogc/api/processes/metadata",
-          "@context": {
-            "title": "http://purl.org/dc/terms/title",
-            "role": {
-              "@id": "https://w3id.org/ogc/api/processes/role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "https://w3id.org/ogc/api/processes/href",
-              "@type": "@id"
-            }
-          }
-        }
-      }
-    }
+    "clause": "https://geolabs.github.io/bblocks-generic-profiles/def/clause"
   },
   "x-jsonld-prefixes": {
     "skos": "http://www.w3.org/2004/02/skos/core#",

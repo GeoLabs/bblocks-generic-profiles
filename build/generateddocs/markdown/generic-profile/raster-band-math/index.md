@@ -71,35 +71,30 @@ Implementation Profile -> Implementation (instance level).
     "coverage",
     "band math"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    }
+  ],
   "inputs": {
     "rasters": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters",
       "title": "Raster",
       "description": "the input raster band(s)/image(s)",
       "keywords": [
         "raster"
       ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
-      ],
       "minOccurs": 1,
       "maxOccurs": "unbounded"
     },
     "expression": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression",
       "title": "String",
       "description": "the per-pixel mathematical expression",
       "keywords": [
         "expression"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
       ],
       "minOccurs": 1,
       "maxOccurs": 1
@@ -107,17 +102,11 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster",
       "title": "Raster",
       "description": "the resulting raster",
       "keywords": [
         "raster"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
       ]
     }
   }
@@ -143,35 +132,30 @@ Implementation Profile -> Implementation (instance level).
     "coverage",
     "band math"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    }
+  ],
   "inputs": {
     "rasters": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters",
       "title": "Raster",
       "description": "the input raster band(s)/image(s)",
       "keywords": [
         "raster"
       ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
-      ],
       "minOccurs": 1,
       "maxOccurs": "unbounded"
     },
     "expression": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression",
       "title": "String",
       "description": "the per-pixel mathematical expression",
       "keywords": [
         "expression"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
       ],
       "minOccurs": 1,
       "maxOccurs": 1
@@ -179,17 +163,11 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster",
       "title": "Raster",
       "description": "the resulting raster",
       "keywords": [
         "raster"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Raster Coverage Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-        }
       ]
     }
   }
@@ -200,8 +178,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -211,32 +189,32 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Derives a new raster from one or more input rasters via a user-supplied mathematical expression evaluated per pixel. One or more Raster inputs, an expression, one Raster output -- the output's band structure (one band or several) is not part of this signature, see its Implementation Profiles." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster band math" ;
-    gp:inputs [ ns1:expression [ dcterms:description "the per-pixel mathematical expression" ;
-                    dcterms:title "String" ;
-                    proc:keywords "expression" ;
-                    proc:maxOccurs 1 ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:minOccurs 1 ] ;
-            ns1:rasters [ dcterms:description "the input raster band(s)/image(s)" ;
-                    dcterms:title "Raster" ;
-                    proc:keywords "raster" ;
-                    proc:maxOccurs "unbounded" ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns2:raster [ dcterms:description "the resulting raster" ;
-                    dcterms:title "Raster" ;
-                    proc:keywords "raster" ;
-                    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ] ] ;
+    gp:inputs [ ns2:expression <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression> ;
+            ns2:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters> ] ;
+    gp:outputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster> ] ;
     gp:status "submitted" ;
     proc:keywords "band math",
         "coverage",
-        "raster" .
+        "raster" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression> dcterms:description "the per-pixel mathematical expression" ;
+    dcterms:title "String" ;
+    proc:keywords "expression" ;
+    proc:maxOccurs 1 ;
+    proc:minOccurs 1 .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters> dcterms:description "the input raster band(s)/image(s)" ;
+    dcterms:title "Raster" ;
+    proc:keywords "raster" ;
+    proc:maxOccurs "unbounded" ;
+    proc:minOccurs 1 .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster> dcterms:description "the resulting raster" ;
+    dcterms:title "Raster" ;
+    proc:keywords "raster" .
 
 
 ```
@@ -260,6 +238,50 @@ allOf:
     prefLabel:
       const: Raster band math
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
+- type: object
+  properties:
+    metadata:
+      allOf:
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing
+      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+    inputs:
+      properties:
+        rasters:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters
+              x-jsonld-id: '@id'
+        expression:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression
+              x-jsonld-id: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
+    outputs:
+      properties:
+        raster:
+          required:
+          - id
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster
+              x-jsonld-id: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
 x-jsonld-extra-terms:
   GenericProfile: http://www.w3.org/2004/02/skos/core#Concept
   definition: http://www.w3.org/2004/02/skos/core#definition
@@ -277,42 +299,6 @@ x-jsonld-extra-terms:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
   clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause
-  inputs:
-    x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-    x-jsonld-context:
-      '@vocab': https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
-      title: http://purl.org/dc/terms/title
-      description: http://purl.org/dc/terms/description
-      keywords: https://w3id.org/ogc/api/processes/keywords
-      metadata:
-        '@id': https://w3id.org/ogc/api/processes/metadata
-        '@context':
-          title: http://purl.org/dc/terms/title
-          role:
-            '@id': https://w3id.org/ogc/api/processes/role
-            '@type': '@id'
-          href:
-            '@id': https://w3id.org/ogc/api/processes/href
-            '@type': '@id'
-      minOccurs: https://w3id.org/ogc/api/processes/minOccurs
-      maxOccurs: https://w3id.org/ogc/api/processes/maxOccurs
-  outputs:
-    x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-    x-jsonld-context:
-      '@vocab': https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
-      title: http://purl.org/dc/terms/title
-      description: http://purl.org/dc/terms/description
-      keywords: https://w3id.org/ogc/api/processes/keywords
-      metadata:
-        '@id': https://w3id.org/ogc/api/processes/metadata
-        '@context':
-          title: http://purl.org/dc/terms/title
-          role:
-            '@id': https://w3id.org/ogc/api/processes/role
-            '@type': '@id'
-          href:
-            '@id': https://w3id.org/ogc/api/processes/href
-            '@type': '@id'
 x-jsonld-prefixes:
   skos: http://www.w3.org/2004/02/skos/core#
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
@@ -347,24 +333,24 @@ Links to the schema:
       "@type": "@id"
     },
     "keywords": "proc:keywords",
+    "metadata": {
+      "@context": {
+        "href": {
+          "@id": "proc:href",
+          "@type": "@id"
+        },
+        "role": {
+          "@id": "proc:role",
+          "@type": "@id"
+        }
+      },
+      "@id": "proc:metadata"
+    },
     "source": "dct:source",
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
         "description": "dct:description",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        },
         "minOccurs": "proc:minOccurs",
         "maxOccurs": "proc:maxOccurs"
       },
@@ -373,20 +359,7 @@ Links to the schema:
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
-        "description": "dct:description",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        }
+        "description": "dct:description"
       },
       "@id": "gp:outputs"
     },

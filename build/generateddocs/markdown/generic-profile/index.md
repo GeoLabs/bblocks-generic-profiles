@@ -100,25 +100,37 @@ Implementation Profile -> Implementation (instance level).
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
   ],
-  "keywords": ["example"],
+  "keywords": [
+    "example"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    }
+  ],
   "inputs": {
     "input1": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1",
       "title": "Geometry",
       "description": "an input role",
-      "keywords": ["geometry"],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
+      "keywords": [
+        "geometry"
       ],
       "minOccurs": 1,
       "maxOccurs": 1
     }
   },
   "outputs": {
-    "result": {"title": "Boolean", "description": "an output role", "keywords": ["boolean"]}
+    "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result",
+      "title": "Boolean",
+      "description": "an output role",
+      "keywords": [
+        "boolean"
+      ]
+    }
   }
 }
 
@@ -140,19 +152,20 @@ Implementation Profile -> Implementation (instance level).
   "keywords": [
     "example"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    }
+  ],
   "inputs": {
     "input1": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1",
       "title": "Geometry",
       "description": "an input role",
       "keywords": [
         "geometry"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
       ],
       "minOccurs": 1,
       "maxOccurs": 1
@@ -160,6 +173,7 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result",
       "title": "Boolean",
       "description": "an output role",
       "keywords": [
@@ -185,19 +199,23 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Illustrates the shape of a Generic Profile entry only. Real Generic Profiles are each their own building block -- see generic-profiles.generic-profile.binary-spatial-predicate, .geometry-buffer and the other siblings for actual signatures." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Example Generic Profile (placeholder, not a real signature)" ;
-    gp:inputs [ ns2:input1 [ dcterms:description "an input role" ;
-                    dcterms:title "Geometry" ;
-                    proc:keywords "geometry" ;
-                    proc:maxOccurs 1 ;
-                    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-                            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-                    proc:minOccurs 1 ] ] ;
-    gp:outputs [ ns1:result [ dcterms:description "an output role" ;
-                    dcterms:title "Boolean" ;
-                    proc:keywords "boolean" ] ] ;
+    gp:inputs [ ns2:input1 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1> ] ;
+    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result> ] ;
     gp:status "submitted" ;
-    proc:keywords "example" .
+    proc:keywords "example" ;
+    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1> dcterms:description "an input role" ;
+    dcterms:title "Geometry" ;
+    proc:keywords "geometry" ;
+    proc:maxOccurs 1 ;
+    proc:minOccurs 1 .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result> dcterms:description "an output role" ;
+    dcterms:title "Boolean" ;
+    proc:keywords "boolean" .
 
 
 ```
@@ -231,9 +249,13 @@ description: "Generic Process Profile (OGC 14-065 WPS 2.0.2 \xA77.5.2): \"the ab
   Inputs and its Outputs -- including `keywords` (Process, Input, Output) and `metadata`
   (Input, Output), both taken from OGC API - Processes' own `descriptionType` (whose
   `metadata` item, `ogc.api.processes.v1.schemas.metadata`, is WPS Table 5's Metadata
-  structure: `title`, `role`, `href`). Every input's `metadata` must reference this
-  Generic Profile's superior, its Process Concept, with the Table 22 role `http://www.opengis.net/spec/wps/2.0/def/process-profile/concept`:
-  that is the list Table 21 footnote a requires the Implementation Profile to extend."
+  structure: `title`, `role`, `href`). Profile-level references, with the Table 22
+  roles, are made once, on the process itself: here, to this Generic Profile's superior,
+  its Process Concept (`http://www.opengis.net/spec/wps/2.0/def/process-profile/concept`)
+  -- the list Table 21 footnote a requires the Implementation Profile to extend. An
+  input's or output's own `metadata` only ever references the corresponding input/output
+  of a superior profile; a Process Concept has none, so at this tier it is declared
+  but normally empty."
 type: object
 required:
 - id
@@ -244,6 +266,7 @@ required:
 - status
 - broader
 - keywords
+- metadata
 - inputs
 - outputs
 properties:
@@ -292,6 +315,28 @@ properties:
     items:
       type: string
     x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+  metadata:
+    description: 'Table 21 Process.Metadata (D): references to superior profiles,
+      with Table 22 roles -- here the Process Concept(s) of `broader`.'
+    type: array
+    items:
+      $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+    contains:
+      type: object
+      required:
+      - role
+      - href
+      properties:
+        role:
+          const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+          x-jsonld-id: https://w3id.org/ogc/api/processes/role
+          x-jsonld-type: '@id'
+    x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+    x-jsonld-extra-terms:
+      title: http://purl.org/dc/terms/title
+      href:
+        x-jsonld-id: https://w3id.org/ogc/api/processes/href
+        x-jsonld-type: '@id'
   source:
     type: array
     items:
@@ -321,10 +366,16 @@ properties:
     additionalProperties:
       type: object
       required:
+      - id
       - title
       - keywords
-      - metadata
       properties:
+        id:
+          description: This input's own IRI, `<profile id>/inputs/<name>` -- what
+            a lower tier's metadata `href` points at.
+          type: string
+          format: uri
+          x-jsonld-id: '@id'
         title:
           type: string
           x-jsonld-id: http://purl.org/dc/terms/title
@@ -338,22 +389,18 @@ properties:
             type: string
           x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
         metadata:
+          description: Table 21 Input.Metadata (D). References to the corresponding
+            input of a superior profile only; a Process Concept has no inputs, so
+            normally empty at this tier.
           type: array
           items:
             $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
-          contains:
-            type: object
-            required:
-            - role
-            - href
-            properties:
-              role:
-                const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
-                x-jsonld-id: https://w3id.org/ogc/api/processes/role
-                x-jsonld-type: '@id'
           x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
           x-jsonld-extra-terms:
             title: http://purl.org/dc/terms/title
+            role:
+              x-jsonld-id: https://w3id.org/ogc/api/processes/role
+              x-jsonld-type: '@id'
             href:
               x-jsonld-id: https://w3id.org/ogc/api/processes/href
               x-jsonld-type: '@id'
@@ -380,9 +427,16 @@ properties:
     additionalProperties:
       type: object
       required:
+      - id
       - title
       - keywords
       properties:
+        id:
+          description: This output's own IRI, `<profile id>/outputs/<name>` -- what
+            a lower tier's metadata `href` points at.
+          type: string
+          format: uri
+          x-jsonld-id: '@id'
         title:
           type: string
           x-jsonld-id: http://purl.org/dc/terms/title
@@ -396,9 +450,8 @@ properties:
             type: string
           x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
         metadata:
-          description: 'Table 21 Output.Metadata is D here then plain O below (no
-            footnote a): unlike an input''s, an output''s metadata carries no obligation
-            to be kept by lower tiers.'
+          description: 'Table 21 Output.Metadata (D, then O below: no footnote a).
+            As for inputs, normally empty at this tier.'
           type: array
           items:
             $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
@@ -449,6 +502,20 @@ Links to the schema:
       "@type": "@id"
     },
     "keywords": "proc:keywords",
+    "metadata": {
+      "@context": {
+        "href": {
+          "@id": "proc:href",
+          "@type": "@id"
+        },
+        "role": {
+          "@id": "proc:role",
+          "@type": "@id"
+        },
+        "title": "dct:title"
+      },
+      "@id": "proc:metadata"
+    },
     "source": {
       "@context": {
         "title": "dct:title",
@@ -465,19 +532,6 @@ Links to the schema:
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
         "title": "dct:title",
         "description": "dct:description",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        },
         "minOccurs": "proc:minOccurs",
         "maxOccurs": "proc:maxOccurs"
       },
@@ -487,20 +541,7 @@ Links to the schema:
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
         "title": "dct:title",
-        "description": "dct:description",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        }
+        "description": "dct:description"
       },
       "@id": "gp:outputs"
     },

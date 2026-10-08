@@ -13,19 +13,20 @@
     "geometry",
     "measure"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    }
+  ],
   "inputs": {
     "geometry": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/inputs/geometry",
       "title": "Geometry",
       "description": "the input geometry",
       "keywords": [
         "geometry"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
       ],
       "minOccurs": 1,
       "maxOccurs": 1
@@ -33,17 +34,11 @@
   },
   "outputs": {
     "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/outputs/result",
       "title": "Number",
       "description": "the computed measurement",
       "keywords": [
         "number"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
       ]
     }
   }

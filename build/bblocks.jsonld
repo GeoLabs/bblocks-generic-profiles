@@ -213,12 +213,12 @@
   "name": "Building Blocks - Generic Process Profiles",
   "abstract": "A general-purpose, engine- and format-agnostic vocabulary of Generic Profiles, independent of\nany one project. A Generic Profile gives one or more related operations an abstract I/O\nsignature (named roles and abstract types, no format, no size limit) -- e.g. every binary\nboolean spatial predicate (Intersects, Contains, Within, Touches, Crosses, Equals, Disjoint)\ntakes two Geometry inputs and returns one Boolean, and is one Generic Profile, not seven.\nImplementation Profiles (concrete, deployable processes binding a Generic Profile to real\nformats) are not part of this register; they live wherever the implementation itself is\nprofiled (e.g. `ospd.process-profiles.*` for OSPD's CWL- and OGC-API-Processes-sourced profiles)\nand link back here via their own `implementsGenericProfile` property.\n",
   "description": "Produced by GeoLabs, first grounded in the 12 spatial predicates and set operations of OGC\nSimple Feature Access - Common Architecture (06-103r4) as a worked example: every one of them\nshares one of a small number of I/O shapes, so the Generic Profile layer stays small (3 profiles\ncover all 12 here). SQL/MM Spatial (ISO/IEC 13249-3) binds the same operations to SQL (the\n`ST_Geometry` type, `ST_Intersects`-style function names) and real deployed processes bind them\nfurther still (e.g. to GML 3.1.0 Polygon) -- both are concrete bindings, not part of this\nregister; they are profiled as Implementation Profiles in whichever register profiles the\nconcrete process (e.g. `ospd.process-profiles.*`), linked back here by `implementsGenericProfile`.\nNot limited to spatial operations -- any domain with standardised abstract operations and several\nindependent bindings is a candidate.\n",
-  "modified": "2026-10-07T12:54:11.962422",
+  "modified": "2026-10-08T08:41:03.713381",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"61586a2bc19ebf936b761c53d9a886e719c1f312",
-      "shortCommitId": "\"61586a",
-      "date": "2026-10-06T15:23:00+00:00\""
+      "commitId": "\"864ddcf48e5bf8be9c5660d54d35b5d0e702b41b",
+      "shortCommitId": "\"864ddc",
+      "date": "2026-10-07T14:32:33+00:00\""
     }
   },
   "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
@@ -3359,8 +3359,8 @@
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
-        "bblocks://generic-profiles.implementation-profile",
-        "bblocks://ogc.api.processes.v1.schemas.bbox"
+        "bblocks://ogc.api.processes.v1.schemas.bbox",
+        "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
         {

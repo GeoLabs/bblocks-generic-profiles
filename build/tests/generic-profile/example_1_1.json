@@ -11,19 +11,20 @@
   "keywords": [
     "example"
   ],
+  "metadata": [
+    {
+      "title": "Process Concept: Vector Geometry Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    }
+  ],
   "inputs": {
     "input1": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1",
       "title": "Geometry",
       "description": "an input role",
       "keywords": [
         "geometry"
-      ],
-      "metadata": [
-        {
-          "title": "Process Concept: Vector Geometry Processing",
-          "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
-        }
       ],
       "minOccurs": 1,
       "maxOccurs": 1
@@ -31,6 +32,7 @@
   },
   "outputs": {
     "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result",
       "title": "Boolean",
       "description": "an output role",
       "keywords": [

@@ -15,6 +15,20 @@
       "@type": "@id"
     },
     "keywords": "proc:keywords",
+    "metadata": {
+      "@context": {
+        "href": {
+          "@id": "proc:href",
+          "@type": "@id"
+        },
+        "role": {
+          "@id": "proc:role",
+          "@type": "@id"
+        },
+        "title": "dct:title"
+      },
+      "@id": "proc:metadata"
+    },
     "source": {
       "@context": {
         "title": "dct:title",
@@ -31,19 +45,6 @@
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
         "title": "dct:title",
         "description": "dct:description",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        },
         "minOccurs": "proc:minOccurs",
         "maxOccurs": "proc:maxOccurs"
       },
@@ -53,20 +54,7 @@
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
         "title": "dct:title",
-        "description": "dct:description",
-        "metadata": {
-          "@context": {
-            "role": {
-              "@id": "proc:role",
-              "@type": "@id"
-            },
-            "href": {
-              "@id": "proc:href",
-              "@type": "@id"
-            }
-          },
-          "@id": "proc:metadata"
-        }
+        "description": "dct:description"
       },
       "@id": "gp:outputs"
     },

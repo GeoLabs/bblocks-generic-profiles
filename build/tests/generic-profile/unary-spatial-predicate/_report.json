@@ -2,7 +2,7 @@
   "title": "Validation report for generic-profiles.generic-profile.unary-spatial-predicate - Generic Profile: Unary spatial predicate",
   "bblockName": "Generic Profile: Unary spatial predicate",
   "bblockId": "generic-profiles.generic-profile.unary-spatial-predicate",
-  "generated": "2026-10-07T12:54:23.785559+00:00",
+  "generated": "2026-10-08T08:41:16.618920+00:00",
   "result": true,
   "items": [
     {
@@ -40,7 +40,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 29,
+              "size": 25,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }

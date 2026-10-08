@@ -45,6 +45,45 @@
           ],
           "x-jsonld-id": "https://w3id.org/ogc/api/processes/keywords"
         },
+        "metadata": {
+          "allOf": [
+            {
+              "contains": {
+                "type": "object",
+                "required": [
+                  "role",
+                  "href"
+                ],
+                "properties": {
+                  "role": {
+                    "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"
+                  },
+                  "href": {
+                    "const": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+                  }
+                }
+              }
+            },
+            {
+              "contains": {
+                "type": "object",
+                "required": [
+                  "role",
+                  "href"
+                ],
+                "properties": {
+                  "role": {
+                    "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"
+                  },
+                  "href": {
+                    "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+                  }
+                }
+              }
+            }
+          ],
+          "x-jsonld-id": "https://w3id.org/ogc/api/processes/metadata"
+        },
         "inputs": {
           "type": "object",
           "required": [
@@ -75,27 +114,10 @@
                         ],
                         "properties": {
                           "role": {
-                            "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"
+                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"
                           },
                           "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "contains": {
-                        "type": "object",
-                        "required": [
-                          "role",
-                          "href"
-                        ],
-                        "properties": {
-                          "role": {
-                            "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"
-                          },
-                          "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster"
                           }
                         }
                       }
@@ -133,27 +155,10 @@
                         ],
                         "properties": {
                           "role": {
-                            "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"
+                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"
                           },
                           "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "contains": {
-                        "type": "object",
-                        "required": [
-                          "role",
-                          "href"
-                        ],
-                        "properties": {
-                          "role": {
-                            "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"
-                          },
-                          "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS"
                           }
                         }
                       }
@@ -189,6 +194,78 @@
                     }
                   ],
                   "x-jsonld-id": "https://w3id.org/ogc/api/processes/keywords"
+                },
+                "metadata": {
+                  "allOf": [
+                    {
+                      "contains": {
+                        "type": "object",
+                        "required": [
+                          "role",
+                          "href"
+                        ],
+                        "properties": {
+                          "role": {
+                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output"
+                          },
+                          "href": {
+                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster"
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "x-jsonld-id": "https://w3id.org/ogc/api/processes/metadata"
+                }
+              }
+            }
+          },
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/outputs",
+          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "inputs": {
+          "properties": {
+            "raster": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster",
+                  "x-jsonld-id": "@id"
+                }
+              }
+            },
+            "targetCRS": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS",
+                  "x-jsonld-id": "@id"
+                }
+              }
+            }
+          },
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/inputs",
+          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/"
+        },
+        "outputs": {
+          "properties": {
+            "raster": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster",
+                  "x-jsonld-id": "@id"
                 }
               }
             }
