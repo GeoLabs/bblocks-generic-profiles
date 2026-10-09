@@ -1,0 +1,5 @@
+- title: Point Cloud Processing
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/concept/
+  snippets:
+  - language: json
+    ref: examples/point-cloud-processing.json

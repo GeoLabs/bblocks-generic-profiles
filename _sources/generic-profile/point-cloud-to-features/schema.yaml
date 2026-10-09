@@ -1,0 +1,26 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Generic Profile "Point cloud to features" -- see generic-profiles.generic-profile for the general shape every Generic Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.generic-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features"}
+      type: {const: GenericProfile}
+      prefLabel: {const: "Point cloud to features"}
+  - type: object
+    properties:
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing'}
+      inputs:
+        properties:
+          points: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud"}}}
+      outputs:
+        properties:
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection"}}}

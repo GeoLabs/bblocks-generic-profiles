@@ -35,6 +35,7 @@
         },
         "maxOccurs": "proc:maxOccurs",
         "keywords": "proc:keywords",
+        "dataType": { "@id": "dct:type", "@type": "@id" },
         "metadata": {
           "@id": "proc:metadata",
           "@context": {
@@ -54,6 +55,7 @@
           "@context": { "@vocab": "https://w3id.org/ogc/api/schema/" }
         },
         "keywords": "proc:keywords",
+        "dataType": { "@id": "dct:type", "@type": "@id" },
         "metadata": {
           "@id": "proc:metadata",
           "@context": {

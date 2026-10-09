@@ -1,0 +1,5 @@
+- title: Point cloud to features
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/
+  snippets:
+  - language: json
+    ref: examples/point-cloud-to-features.json

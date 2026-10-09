@@ -1,0 +1,10 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Concept "Point Cloud Processing" -- see generic-profiles.concept for the general shape every Concept shares.
+allOf:
+  - $ref: bblocks://generic-profiles.concept
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"}
+      type: {const: Concept}
+      prefLabel: {const: "Point Cloud Processing"}

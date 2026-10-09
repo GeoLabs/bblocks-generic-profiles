@@ -28,6 +28,7 @@
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -49,6 +50,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -77,7 +79,7 @@
     },
     {
       "title": "SAGA GIS -- Get Shapes Extents (shapes_tools)",
-      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/9.4.0/shapes_tools_19.html"
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/shapes_tools_19.html"
     }
   ]
 }

@@ -23,28 +23,28 @@
   "inputs": {
     "rasters": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the input raster band(s)/image(s)",
       "keywords": [
         "raster"
       ],
-      "minOccurs": 1,
       "maxOccurs": "unbounded"
     },
     "expression": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string",
       "title": "String",
       "description": "the per-pixel mathematical expression",
       "keywords": [
         "expression"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     }
   },
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the resulting raster",
       "keywords": [

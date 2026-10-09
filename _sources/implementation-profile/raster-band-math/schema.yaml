@@ -12,7 +12,8 @@ allOf:
       refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"}
       # Table 21 against raster-band-math: keywords Extend (E), metadata Extend
       # (E, footnote a: Table 22 references on the process, input/output-level ones below),
-      # input maxOccurs Restrict (R).
+      # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,
+      # maxOccurs Restrict (R)).
       keywords:
         allOf:
         - contains: {const: raster}
@@ -62,7 +63,6 @@ allOf:
                     properties:
                       role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
                       href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression'}
-              maxOccurs: {type: integer, maximum: 1}
       outputs:
         type: object
         required: [raster]
@@ -84,8 +84,8 @@ allOf:
     properties:
       inputs:
         properties:
-          rasters: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/inputs/rasters"}}}
-          expression: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/inputs/expression"}}}
+          rasters: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/inputs/rasters"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster"}}}
+          expression: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/inputs/expression"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string"}}}
       outputs:
         properties:
-          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/outputs/raster"}}}
+          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band"}}}

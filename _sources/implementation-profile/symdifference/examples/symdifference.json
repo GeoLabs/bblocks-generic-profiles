@@ -29,6 +29,7 @@
   "inputs": {
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/symdifference/inputs/geometry1",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -48,6 +49,7 @@
     },
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/symdifference/inputs/geometry2",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -69,6 +71,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/symdifference/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",

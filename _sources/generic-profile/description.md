@@ -36,6 +36,22 @@ Raster/coverage (broader: [`raster-coverage-processing`](../concept/raster-cover
 - [`raster-format-conversion`](raster-format-conversion/) -- one Raster and a target format in, one Raster out
 - [`raster-extent`](raster-extent/) -- one Raster in, one Geometry out (bounding envelope)
 
+Terrain analysis (broader: [`terrain-analysis`](../concept/terrain-analysis/)):
+
+- [`terrain-derivative`](terrain-derivative/) -- one elevation model in, one single-band raster out
+  (slope, terrain ruggedness index, topographic position index)
+- [`analytical-hillshading`](analytical-hillshading/) -- one elevation model and the light source's
+  azimuth and altitude in, one single-band raster out
+
+Point clouds (broader: [`point-cloud-processing`](../concept/point-cloud-processing/)):
+
+- [`point-cloud-rasterization`](point-cloud-rasterization/) -- one point cloud and a cell size in, one raster out
+- [`point-cloud-thinning`](point-cloud-thinning/) -- one point cloud and a percentage in, one point cloud out
+- [`point-cloud-to-features`](point-cloud-to-features/) -- one point cloud in, one feature collection out
+
+Each input/output also names its kind of data with `dataType`, a concept of
+[`generic-profiles.data-type`](../data-type/).
+
 A Generic Profile declares a signature "for *a* process" (WPS's own wording, singular) -- but
 several distinct operations sharing the identical shape are still modelled as **one** Generic
 Profile when nothing in the signature itself distinguishes them: the seven vector predicates, and

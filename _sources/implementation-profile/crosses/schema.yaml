@@ -12,7 +12,8 @@ allOf:
       refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"}
       # Table 21 against binary-spatial-predicate: keywords Extend (E), metadata Extend
       # (E, footnote a: Table 22 references on the process, input/output-level ones below),
-      # input maxOccurs Restrict (R).
+      # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,
+      # maxOccurs Restrict (R)).
       keywords:
         allOf:
         - contains: {const: vector}
@@ -50,7 +51,6 @@ allOf:
                     properties:
                       role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
                       href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1'}
-              maxOccurs: {type: integer, maximum: 1}
           geometry2:
             properties:
               keywords:
@@ -64,7 +64,6 @@ allOf:
                     properties:
                       role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
                       href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2'}
-              maxOccurs: {type: integer, maximum: 1}
       outputs:
         type: object
         required: [result]
@@ -86,8 +85,8 @@ allOf:
     properties:
       inputs:
         properties:
-          geometry1: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/inputs/geometry1"}}}
-          geometry2: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/inputs/geometry2"}}}
+          geometry1: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/inputs/geometry1"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry"}}}
+          geometry2: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/inputs/geometry2"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry"}}}
       outputs:
         properties:
-          result: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/outputs/result"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean"}}}

@@ -21,8 +21,8 @@ allOf:
               href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
       inputs:
         properties:
-          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster"}}}
-          targetCRS: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS"}}}
+          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster"}}}
+          targetCRS: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string"}}}
       outputs:
         properties:
-          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster"}}}
+          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster"}}}

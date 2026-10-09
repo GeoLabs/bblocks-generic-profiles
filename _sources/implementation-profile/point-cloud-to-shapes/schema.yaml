@@ -1,0 +1,76 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Implementation Profile "Point cloud to shapes" -- see generic-profiles.implementation-profile for the general shape every Implementation Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.implementation-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes"}
+      type: {const: ImplementationProfile}
+      prefLabel: {const: "Point cloud to shapes"}
+      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features"}
+      # Table 21 against point-cloud-to-features: keywords Extend (E), metadata Extend
+      # (E, footnote a: Table 22 references on the process, input/output-level ones below),
+      # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,
+      # maxOccurs Restrict (R)).
+      keywords:
+        allOf:
+        - contains: {const: point cloud}
+        - contains: {const: feature collection}
+        - contains: {const: conversion}
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing'}
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features'}
+      inputs:
+        type: object
+        required: [points]
+        properties:
+          points:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: point cloud}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points'}
+      outputs:
+        type: object
+        required: [result]
+        properties:
+          result:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: feature collection}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result'}
+  - type: object
+    properties:
+      inputs:
+        properties:
+          points: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud"}}}
+      outputs:
+        properties:
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection"}}}

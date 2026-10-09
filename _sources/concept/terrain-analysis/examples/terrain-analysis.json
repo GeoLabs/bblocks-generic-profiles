@@ -1,0 +1,17 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis",
+  "type": "Concept",
+  "prefLabel": "Terrain Analysis",
+  "definition": "Operations deriving terrain attributes from an elevation model: local surface derivatives (slope, aspect, curvature), neighbourhood indices (terrain ruggedness, topographic position) and illumination (hillshading) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1). A kind of raster coverage processing: an elevation model is a single-band raster whose values are elevations.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
+  "status": "submitted",
+  "source": [
+    {
+      "title": "SAGA 7.3.0 tool libraries, category Terrain Analysis",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/index.html"
+    },
+    {
+      "title": "Wilson, J.P., Gallant, J.C. (2000): Terrain Analysis: Principles and Applications (cited by SAGA's Topographic Position Index tool)"
+    }
+  ]
+}

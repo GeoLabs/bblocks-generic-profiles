@@ -28,6 +28,7 @@
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/inputs/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -49,6 +50,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
       "schema": {
         "type": "number",
         "description": "a plain number"

@@ -76,6 +76,33 @@ raster is still one Raster output value, not several. See
 [`raster-band-math`](_sources/generic-profile/raster-band-math/)'s own `description.md` ("Why one
 Generic Profile, not two") and the "Known limitation" section below.
 
+Two more families come from SAGA GIS 7.3.0 tools exposed by the Geonovum testbed, with data the
+register did not have before: **elevation models** and **point clouds** (2026-10-08).
+
+| Generic Profile | Signature (data types) | Implementation Profile(s) |
+|---|---|---|
+| [`terrain-derivative`](_sources/generic-profile/terrain-derivative/) | elevation-model -> raster-single-band | `slope` (SAGA `ta_morphometry 0`), `terrain-ruggedness-index` (`ta_morphometry 16`), `topographic-position-index` (`ta_morphometry 18`) |
+| [`analytical-hillshading`](_sources/generic-profile/analytical-hillshading/) | elevation-model, number (azimuth), number (altitude) -> raster-single-band | `analytical-hillshading` (`ta_lighting 0`) |
+| [`point-cloud-rasterization`](_sources/generic-profile/point-cloud-rasterization/) | point-cloud, number (cell size) -> raster | `point-cloud-to-grid` (`pointcloud_tools 4`, output narrowed to raster-single-band) |
+| [`point-cloud-thinning`](_sources/generic-profile/point-cloud-thinning/) | point-cloud, number (percentage) -> point-cloud | `point-cloud-thinning` (`pointcloud_tools 9`) |
+| [`point-cloud-to-features`](_sources/generic-profile/point-cloud-to-features/) | point-cloud -> feature-collection | `point-cloud-to-shapes` (`pointcloud_tools 5`) |
+
+The terrain ones `broader` to a new Concept, **Terrain Analysis**, itself listed as `narrower`
+than Raster Coverage Processing -- an elevation model is a single-band raster; the point cloud ones
+to **Point Cloud Processing**. Point clouds are declared as LAS
+([OGC 17-030r1](https://www.ogc.org/standards/las/), media type `application/vnd.las`).
+
+## Data types
+
+Every Generic and Implementation Profile input/output carries a `dataType`, a concept of the
+[data type vocabulary](_sources/data-type/) (`generic-profiles.data-type`): raster, single- or
+multi-band, elevation model, geometry and its point/curve/surface kinds, feature collection, point
+cloud, TIN, table, bounding box, number, string, boolean. It is the kind of data, not its encoding
+(an Implementation Profile's `schema`), so it is not the "Data format" Table 21 denies the Generic
+Profile. An Implementation Profile may narrow it along `broader`, and its schema pins the result --
+e.g. `centroid` takes a `surface` and returns a `point` (OGC 99-049 §2.1.9.1: Area and Centroid are
+Surface methods), `raster-band-math` returns a `raster-single-band`.
+
 ## Why SQL/MM (and GDAL/OTB) matter here
 
 Each Implementation Profile is grounded in *two* standards, not one, because they answer different
@@ -158,9 +185,10 @@ in a real processDescription this is stated (the SQL/MM testbed exposes geometri
 exactly `image/tiff`, `image/jpeg`, `image/png`, of which GeoTIFF is the one georeferencing-capable
 member); where it is not (`Gdal_Warp`/`Gdal_Translate`'s DSN-typed inputs carry no format
 structurally at all on this testbed), that is stated too, rather than implied. `OTB.BandMath`/
-`BandMathX`'s own `il` input (`maxOccurs: 1024`) and `OTB.RadiometricIndices`' own `in` input (a
-single image, not a list) are the real evidence behind `raster-band-math`/
-`raster-band-math-multiband`/`radiometric-index`'s `maxOccurs` values. See
+`BandMathX`'s own `il` input (a list) and `OTB.RadiometricIndices`' own `in` input (a single image, not a list) are the real
+evidence behind `raster-band-math`/`raster-band-math-multiband`'s `maxOccurs: unbounded` and
+`radiometric-index`'s `maxOccurs: 1`. A cardinality is written only where there is one: an input
+without `minOccurs`/`maxOccurs` has the OGC API - Processes default, exactly one. See
 [`implementation-profile/description.md`](_sources/implementation-profile/description.md) for the
 full Table 21 account, and each Implementation Profile's own `description.md` for its specific
 grounding. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how this design was reached --
@@ -212,6 +240,21 @@ confirmed.
 | `generic-profiles.implementation-profile.raster-crop` | Implementation Profile |
 | `generic-profiles.implementation-profile.raster-format-conversion` | Implementation Profile |
 | `generic-profiles.implementation-profile.raster-extent` | Implementation Profile |
+| `generic-profiles.data-type` | Data type vocabulary |
+| `generic-profiles.concept.terrain-analysis` | Concept |
+| `generic-profiles.concept.point-cloud-processing` | Concept |
+| `generic-profiles.generic-profile.terrain-derivative` | Generic Profile |
+| `generic-profiles.generic-profile.analytical-hillshading` | Generic Profile |
+| `generic-profiles.generic-profile.point-cloud-rasterization` | Generic Profile |
+| `generic-profiles.generic-profile.point-cloud-thinning` | Generic Profile |
+| `generic-profiles.generic-profile.point-cloud-to-features` | Generic Profile |
+| `generic-profiles.implementation-profile.slope` | Implementation Profile |
+| `generic-profiles.implementation-profile.terrain-ruggedness-index` | Implementation Profile |
+| `generic-profiles.implementation-profile.topographic-position-index` | Implementation Profile |
+| `generic-profiles.implementation-profile.analytical-hillshading` | Implementation Profile |
+| `generic-profiles.implementation-profile.point-cloud-to-grid` | Implementation Profile |
+| `generic-profiles.implementation-profile.point-cloud-thinning` | Implementation Profile |
+| `generic-profiles.implementation-profile.point-cloud-to-shapes` | Implementation Profile |
 
 The three base blocks (`generic-profiles.concept`, `generic-profiles.generic-profile`,
 `generic-profiles.implementation-profile`) are the shape every real entry of that tier shares —
@@ -222,20 +265,21 @@ placeholder example, never a real operation — see [docs/ARCHITECTURE.md](docs/
 why that distinction matters (an earlier draft of this register got it wrong, using real SQL/MM
 operations as "examples" of the shared schema instead of giving each its own building block).
 
-## Known limitation: band count is not formally modelled
+## Band count: modelled by data type, not by field list
 
 `raster-band-math`'s two Implementation Profiles differ in whether the output raster is fixed to
-one band or may have several (`OTB.BandMath`/muParser vs. `OTB.BandMathX`/muParserX). The
-standards-correct way to express that is a coverage's **RangeType**
-([OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1](https://docs.ogc.org/is/09-146r8/09-146r8.html)
-§6.5: a `SWE Common::DataRecord` with one named field per band, attached to the coverage — also
-surfaced operationally by OGC API - Coverages as "field selection"), not an output cardinality —
-a multi-band raster is still one Raster value. This register does not yet model a RangeType-like
-field list; the distinction is documented in prose only (each Implementation Profile's
-`description.md`), not enforced by a schema property. See
+one band or may have several (`OTB.BandMath`/muParser vs. `OTB.BandMathX`/muParserX). Since
+2026-10-08 that is stated, and checked, with the [data type vocabulary](_sources/data-type/):
+`raster-band-math`'s output is `raster-single-band`, a narrower type than the Generic Profile's
+`raster`, while `raster-band-math-multiband`'s stays `raster` (BandMathX may output one band or
+several). An elevation model is likewise `elevation-model`, a narrower `raster-single-band`.
+
+What is still not modelled is the band *structure*: which bands, what they mean -- a coverage's
+**RangeType** ([OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1](https://docs.ogc.org/is/09-146r8/09-146r8.html)
+§6.5: a `SWE Common::DataRecord` with one named field per band). The data type says "one band" or
+"several", not "red, green, near-infrared". See
 [`raster-band-math-multiband`](_sources/implementation-profile/raster-band-math-multiband/)'s
-`description.md` ("Open question") for the full account — left for a future revision rather than
-added provisionally.
+`description.md` ("Open question").
 
 ## History: from a custom `BoundingBox` type to reusing OGC API - Processes' own `bbox`
 

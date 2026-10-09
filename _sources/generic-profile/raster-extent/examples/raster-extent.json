@@ -23,18 +23,18 @@
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the input raster coverage",
       "keywords": [
         "raster"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     }
   },
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "title": "Geometry",
       "description": "the raster's bounding envelope",
       "keywords": [

@@ -24,6 +24,9 @@ different I/O shapes can still declare their kinship:
 [`raster-extent`](../../generic-profile/raster-extent/) each declare this
 Concept as their `broader`.
 
+Narrower concept: [`terrain-analysis`](../terrain-analysis/) -- an elevation model is a single-band
+raster (`generic-profiles.data-type`'s `elevation-model`).
+
 ## Source
 
 Two standards, at different levels, the same way [`vector-geometry-processing`](../vector-geometry-processing/)

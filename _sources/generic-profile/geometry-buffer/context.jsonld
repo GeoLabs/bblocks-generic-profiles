@@ -33,6 +33,7 @@
         "title": "dct:title",
         "description": "dct:description",
         "keywords": "proc:keywords",
+        "dataType": { "@id": "dct:type", "@type": "@id" },
         "metadata": {
           "@id": "proc:metadata",
           "@context": {
@@ -52,6 +53,7 @@
         "title": "dct:title",
         "description": "dct:description",
         "keywords": "proc:keywords",
+        "dataType": { "@id": "dct:type", "@type": "@id" },
         "metadata": {
           "@id": "proc:metadata",
           "@context": {

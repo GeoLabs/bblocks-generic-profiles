@@ -44,7 +44,7 @@ Generic Profile (generated from it by `scripts/apply_table21_keywords_metadata.p
 | Input Identifier, Title, Abstract | D | **I** | I | the input's key; Title/Abstract not repeated (unchanged) |
 | Input Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile input's |
 | Input Metadata | D | **E/O** ᵃ | E/O ᵃ | `metadata` must reference the corresponding Generic Profile input (`generic-input`, below) |
-| Input Multiplicity | D | **R** ᶜ | E ᵈ | `maxOccurs` ≤ the Generic Profile's; no `minOccurs` at all |
+| Input Multiplicity | D | **R** ᶜ | E ᵈ | only where declared: `maxOccurs` ≤ the Generic Profile's; `minOccurs` between 0 and the Generic Profile's -- making an input optional is allowed, a register choice beyond footnote c; no declaration means the default, exactly one |
 | Input Data format | -- | **D** | E ᵈ | `schema` |
 | Output (the set itself) | | | E ᵇ | every Generic Profile output must be listed (`required`) |
 | Output Identifier, Title, Abstract | D | **I** | I | as for inputs |
@@ -107,9 +107,11 @@ format structurally at all), that is also stated explicitly rather than implied.
 maximum cardinality of a superior generic profile... They shall not modify the minimum
 cardinality"*) the Generic Profile's own `maxOccurs` for one input -- a real integer (or
 `unbounded`), the same property OGC API - Processes' own `InputDescription` uses, not free text.
-E.g. `OTB.BandMath`/`OTB.BandMathX`'s own `il` input caps at `maxOccurs: 1024`, and
-`OTB.RadiometricIndices`' own `in` input is a single image, restricting the Generic Profile's
-`maxOccurs: unbounded` all the way down to `1`.
+E.g. `OTB.RadiometricIndices`' own `in` input is a single image, restricting the Generic
+Profile's `maxOccurs: unbounded` down to `1`; `OTB.BandMath`/`OTB.BandMathX`'s `il` input is a
+list, left `maxOccurs: unbounded` here -- a cap a real implementation applies is recorded at the
+instance level (`bblocks-process-profiles`), not at this tier. A cardinality is written only where there is one: an input without `minOccurs`/`maxOccurs`
+has the OGC API - Processes default, exactly one, and no rule is generated for it.
 
 ## Register position
 

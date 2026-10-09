@@ -1,0 +1,225 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type",
+  "type": "ConceptScheme",
+  "prefLabel": "Data types",
+  "definition": "The kinds of data a process profile's inputs and outputs carry, independent of any encoding (which an Implementation Profile's `schema` declares).",
+  "concepts": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "type": "DataType",
+      "prefLabel": "Raster",
+      "definition": "A coverage on a regular grid of cells, each cell carrying one value per band; how many bands it has, and what they mean, is its range type.",
+      "source": [
+        {
+          "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
+          "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band",
+      "type": "DataType",
+      "prefLabel": "Raster (single band)",
+      "definition": "A raster with exactly one band: a range type of one field.",
+      "broader": [
+        "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster"
+      ],
+      "source": [
+        {
+          "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
+          "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-multi-band",
+      "type": "DataType",
+      "prefLabel": "Raster (multiple bands)",
+      "definition": "A raster with more than one band: a range type of several fields.",
+      "broader": [
+        "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster"
+      ],
+      "source": [
+        {
+          "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
+          "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model",
+      "type": "DataType",
+      "prefLabel": "Elevation model",
+      "definition": "A single-band raster whose values are elevations of the terrain or of a surface (DEM, DTM, DSM).",
+      "broader": [
+        "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band"
+      ],
+      "source": [
+        {
+          "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
+          "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
+        },
+        {
+          "title": "SAGA 7.3.0 Terrain Analysis tools, `Elevation` grid inputs",
+          "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry.html"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "type": "DataType",
+      "prefLabel": "Geometry",
+      "definition": "A geometric object of the Simple Feature Access geometry model.",
+      "source": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point",
+      "type": "DataType",
+      "prefLabel": "Point",
+      "definition": "A 0-dimensional geometry, a single location.",
+      "broader": [
+        "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry"
+      ],
+      "source": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/curve",
+      "type": "DataType",
+      "prefLabel": "Curve",
+      "definition": "A 1-dimensional geometry, e.g. a LineString.",
+      "broader": [
+        "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry"
+      ],
+      "source": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface",
+      "type": "DataType",
+      "prefLabel": "Surface",
+      "definition": "A 2-dimensional geometry, e.g. a Polygon.",
+      "broader": [
+        "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry"
+      ],
+      "source": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection",
+      "type": "DataType",
+      "prefLabel": "Feature collection",
+      "definition": "A set of features, each with a geometry and attributes -- e.g. a SAGA shapes layer, a GeoJSON or OGC API - Features feature collection.",
+      "source": [
+        {
+          "title": "OGC 17-069r4 OGC API - Features - Part 1: Core",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "type": "DataType",
+      "prefLabel": "Point cloud",
+      "definition": "A set of three-dimensional points, each with its own attributes (intensity, classification, ...), typically from LiDAR.",
+      "source": [
+        {
+          "title": "OGC 17-030r1 LAS Specification 1.4 OGC Community Standard",
+          "link": "https://www.ogc.org/standards/las/"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/tin",
+      "type": "DataType",
+      "prefLabel": "Triangulated irregular network",
+      "definition": "A surface represented by a network of triangles over irregularly spaced points.",
+      "source": [
+        {
+          "title": "ISO 19107:2019 Geographic information -- Spatial schema (TIN)"
+        },
+        {
+          "title": "SAGA 7.3.0 TIN tools",
+          "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/tin_tools.html"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/table",
+      "type": "DataType",
+      "prefLabel": "Table",
+      "definition": "Records of attribute values, without geometry.",
+      "source": [
+        {
+          "title": "SAGA 7.3.0 Table tools",
+          "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/table_tools.html"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box",
+      "type": "DataType",
+      "prefLabel": "Bounding box",
+      "definition": "An axis-aligned extent given by its corners, with its CRS.",
+      "source": [
+        {
+          "title": "ogc.api.processes.v1.schemas.bbox, after OGC 17-069r4 \u00a77.15.3 `bbox`",
+          "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "type": "DataType",
+      "prefLabel": "Number",
+      "definition": "A literal number.",
+      "source": [
+        {
+          "title": "OGC 18-062r2 OGC API - Processes - Part 1: Core (inputs/outputs `schema`, JSON Schema)",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string",
+      "type": "DataType",
+      "prefLabel": "String",
+      "definition": "A literal character string, e.g. an expression, a CRS identifier or a format name.",
+      "source": [
+        {
+          "title": "OGC 18-062r2 OGC API - Processes - Part 1: Core (inputs/outputs `schema`, JSON Schema)",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ]
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean",
+      "type": "DataType",
+      "prefLabel": "Boolean",
+      "definition": "A literal truth value.",
+      "source": [
+        {
+          "title": "OGC 18-062r2 OGC API - Processes - Part 1: Core (inputs/outputs `schema`, JSON Schema)",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ]
+    }
+  ]
+}

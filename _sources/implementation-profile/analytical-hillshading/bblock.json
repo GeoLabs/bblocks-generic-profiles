@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Implementation Profile: Analytical hillshading",
+  "abstract": "For each cell, the angle at which light coming from the position of the light source hits the terrain surface (SAGA's standard method).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-08T00:00:00Z",
+  "dateOfLastChange": "2026-10-08",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.implementation-profile"
+  ],
+  "sources": [
+    {
+      "title": "SAGA 7.3.0 -- Analytical Hillshading",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_lighting_0.html"
+    },
+    {
+      "title": "ZOO-Project Geonovum testbed -- SAGA.ta_lighting.0: Analytical Hillshading",
+      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_lighting.0"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "implementation profile",
+    "SKOS",
+    "Analytical hillshading"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Implementation Profiles",
+  "isProfileOf": [
+    "generic-profiles.implementation-profile",
+    "generic-profiles.generic-profile.analytical-hillshading"
+  ]
+}

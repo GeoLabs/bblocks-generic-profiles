@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Implementation Profile: Point cloud to grid",
+  "abstract": "Writes one value per grid cell from the points falling in it -- by default the z value of the first point -- as a single-band raster.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-08T00:00:00Z",
+  "dateOfLastChange": "2026-10-08",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.implementation-profile"
+  ],
+  "sources": [
+    {
+      "title": "SAGA 7.3.0 -- Point Cloud to Grid",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_4.html"
+    },
+    {
+      "title": "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.4: Point Cloud to Grid",
+      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.4"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "implementation profile",
+    "SKOS",
+    "Point cloud to grid"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Implementation Profiles",
+  "isProfileOf": [
+    "generic-profiles.implementation-profile",
+    "generic-profiles.generic-profile.point-cloud-rasterization"
+  ]
+}

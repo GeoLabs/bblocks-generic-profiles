@@ -1,0 +1,5 @@
+- title: Data types
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/
+  snippets:
+  - language: json
+    ref: examples/data-types.json

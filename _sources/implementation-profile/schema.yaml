@@ -42,8 +42,9 @@ description: >-
   - Input: every Generic Profile input is listed. Its `metadata` references the corresponding
     Generic Profile input (`<Generic Profile id>/inputs/<name>`) with this register's role
     `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input` -- footnote a, at the level of the input; `keywords` Extend (E);
-    Identifier/Title/Abstract Inherit (I), so not repeated; `maxOccurs` Restrict (R); `schema`
-    Declare (D).
+    Identifier/Title/Abstract Inherit (I), so not repeated; `maxOccurs` Restrict (R); `minOccurs`
+    may be restricted down to 0 (a register choice beyond Table 21, footnote c forbidding it);
+    `schema` Declare (D).
   - Output: every Generic Profile output is listed too; `metadata` references the corresponding
     Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output` (Table 21 allows any value here,
     O; the register keeps outputs symmetric with inputs); `keywords` Extend (E); `schema`
@@ -102,14 +103,31 @@ properties:
     type: object
     additionalProperties:
       type: object
-      required: [id, keywords, metadata]
+      required: [id, dataType, keywords, metadata]
       properties:
+        dataType:
+          description: >-
+            What kind of data this input is, as a concept of the generic-profiles.data-type
+            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
+            The Generic Profile's, or a narrower one (`skos:broader` chain): e.g. a band-count or a
+            geometry-type restriction.
+          type: string
+          format: uri
         id:
           description: This input's own IRI, `<profile id>/inputs/<name>` -- what a lower tier's
             metadata `href` points at.
           type: string
           format: uri
         schema: {}
+        minOccurs:
+          description: >-
+            Restricts the Generic Profile's minimum, down to 0 (the input becomes optional),
+            never above it. A deliberate departure from Table 21 footnote c ("shall not modify
+            the minimum cardinality"): a Generic Profile keeps `minOccurs: 1` and lower tiers,
+            down to a real implementation, may make the input optional (e.g. `Gdal_Warp`'s
+            `t_srs`, absent meaning no reprojection).
+          type: integer
+          minimum: 0
         maxOccurs:
           oneOf:
             - type: integer
@@ -128,8 +146,16 @@ properties:
     type: object
     additionalProperties:
       type: object
-      required: [id, keywords, metadata]
+      required: [id, dataType, keywords, metadata]
       properties:
+        dataType:
+          description: >-
+            What kind of data this output is, as a concept of the generic-profiles.data-type
+            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
+            The Generic Profile's, or a narrower one (`skos:broader` chain): e.g. a band-count or a
+            geometry-type restriction.
+          type: string
+          format: uri
         id:
           description: This output's own IRI, `<profile id>/outputs/<name>` -- what a lower tier's
             metadata `href` points at.

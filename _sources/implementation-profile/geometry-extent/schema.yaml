@@ -12,7 +12,8 @@ allOf:
       refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation"}
       # Table 21 against unary-geometry-operation: keywords Extend (E), metadata Extend
       # (E, footnote a: Table 22 references on the process, input/output-level ones below),
-      # input maxOccurs Restrict (R).
+      # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,
+      # maxOccurs Restrict (R)).
       keywords:
         allOf:
         - contains: {const: vector}
@@ -49,7 +50,6 @@ allOf:
                     properties:
                       role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
                       href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry'}
-              maxOccurs: {type: integer, maximum: 1}
       outputs:
         type: object
         required: [result]
@@ -71,7 +71,7 @@ allOf:
     properties:
       inputs:
         properties:
-          geometry: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry"}}}
+          geometry: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry"}}}
       outputs:
         properties:
-          result: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface"}}}

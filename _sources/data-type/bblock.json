@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Data types",
+  "abstract": "Reference vocabulary of the kinds of data process profile inputs and outputs carry (raster, single- or multi-band, elevation model, geometry by type, feature collection, point cloud, TIN, table, bounding box, literals).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-08T00:00:00Z",
+  "dateOfLastChange": "2026-10-08",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "sources": [
+    {
+      "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
+      "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
+    },
+    {
+      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+      "link": "https://www.ogc.org/standards/sfa/"
+    },
+    {
+      "title": "OGC 17-030r1 LAS Specification 1.4 OGC Community Standard",
+      "link": "https://www.ogc.org/standards/las/"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "data type",
+    "SKOS",
+    "vocabulary"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Data types"
+}

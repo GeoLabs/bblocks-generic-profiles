@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Process Concept: Terrain Analysis",
+  "abstract": "Operations deriving terrain attributes from an elevation model: local surface derivatives (slope, aspect, curvature), neighbourhood indices (terrain ruggedness, topographic position) and illumination (hillshading) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1). A kind of raster coverage processing: an elevation model is a single-band raster whose values are elevations.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-08T00:00:00Z",
+  "dateOfLastChange": "2026-10-08",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.concept"
+  ],
+  "sources": [
+    {
+      "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, \u00a77.5.1 Process Concept",
+      "link": "https://docs.ogc.org/is/14-065/14-065.html"
+    },
+    {
+      "title": "SAGA 7.3.0 tool libraries, category Terrain Analysis",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/index.html"
+    },
+    {
+      "title": "Wilson, J.P., Gallant, J.C. (2000): Terrain Analysis: Principles and Applications (cited by SAGA's Topographic Position Index tool)"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "concept",
+    "SKOS",
+    "Terrain Analysis"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Concepts",
+  "isProfileOf": "generic-profiles.concept"
+}

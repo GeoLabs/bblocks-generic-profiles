@@ -21,8 +21,8 @@ allOf:
               href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
       inputs:
         properties:
-          rasters: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters"}}}
-          index: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index"}}}
+          rasters: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster"}}}
+          index: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string"}}}
       outputs:
         properties:
-          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster"}}}
+          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster"}}}

@@ -28,6 +28,7 @@
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -47,6 +48,7 @@
     },
     "areaOfInterest": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/areaOfInterest",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box",
       "schema": {
         "$ref": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/bbox/schema.json"
       },
@@ -66,6 +68,7 @@
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",

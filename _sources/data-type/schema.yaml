@@ -1,0 +1,33 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The data type vocabulary: a SKOS concept scheme whose concepts are what Generic and
+  Implementation Profile inputs/outputs point at with `dataType`. A type's `broader` type is what an
+  Implementation Profile may narrow from (e.g. `raster` to `raster-single-band`).
+type: object
+required: [id, type, prefLabel, concepts]
+properties:
+  id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type"}
+  type: {const: ConceptScheme}
+  prefLabel: {type: string}
+  definition: {type: string}
+  concepts:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required: [id, type, prefLabel, definition, source]
+      properties:
+        id: {type: string, format: uri, pattern: '^https://geolabs\.github\.io/bblocks\-generic\-profiles/def/data\-type/'}
+        type: {const: DataType}
+        prefLabel: {type: string}
+        definition: {type: string}
+        broader: {type: array, items: {type: string, format: uri}}
+        source:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required: [title]
+            properties:
+              title: {type: string}
+              link: {type: string, format: uri}

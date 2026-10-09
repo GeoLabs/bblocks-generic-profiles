@@ -12,7 +12,8 @@ allOf:
       refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"}
       # Table 21 against raster-extent: keywords Extend (E), metadata Extend
       # (E, footnote a: Table 22 references on the process, input/output-level ones below),
-      # input maxOccurs Restrict (R).
+      # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,
+      # maxOccurs Restrict (R)).
       keywords:
         allOf:
         - contains: {const: raster}
@@ -49,7 +50,6 @@ allOf:
                     properties:
                       role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
                       href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster'}
-              maxOccurs: {type: integer, maximum: 1}
       outputs:
         type: object
         required: [result]
@@ -71,7 +71,7 @@ allOf:
     properties:
       inputs:
         properties:
-          raster: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster"}}}
+          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster"}}}
       outputs:
         properties:
-          result: {required: [id], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface"}}}

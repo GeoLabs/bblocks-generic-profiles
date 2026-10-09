@@ -1,0 +1,77 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Implementation Profile "Slope" -- see generic-profiles.implementation-profile for the general shape every Implementation Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.implementation-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope"}
+      type: {const: ImplementationProfile}
+      prefLabel: {const: Slope}
+      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative"}
+      # Table 21 against terrain-derivative: keywords Extend (E), metadata Extend
+      # (E, footnote a: Table 22 references on the process, input/output-level ones below),
+      # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,
+      # maxOccurs Restrict (R)).
+      keywords:
+        allOf:
+        - contains: {const: terrain}
+        - contains: {const: elevation}
+        - contains: {const: raster}
+        - contains: {const: derivative}
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis'}
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative'}
+      inputs:
+        type: object
+        required: [elevation]
+        properties:
+          elevation:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: elevation}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation'}
+      outputs:
+        type: object
+        required: [result]
+        properties:
+          result:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: raster}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result'}
+  - type: object
+    properties:
+      inputs:
+        properties:
+          elevation: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope/inputs/elevation"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model"}}}
+      outputs:
+        properties:
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band"}}}

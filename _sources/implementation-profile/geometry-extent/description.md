@@ -14,7 +14,7 @@ tool this testbed actually runs:
 - ISO/IEC 13249-3:2016 *SQL multimedia and application packages -- Part 3: Spatial*, `ST_Envelope`
   -- the same operation bound to SQL, the same way SQL/MM grounds every other vector Implementation
   Profile in this register.
-- [SAGA GIS -- Get Shapes Extents](https://saga-gis.sourceforge.io/saga_tool_doc/9.4.0/shapes_tools_19.html)
+- [SAGA GIS -- Get Shapes Extents](https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/shapes_tools_19.html)
   -- the concrete software binding the Geonovum testbed actually runs,
   [`SAGA.shapes_tools.19`](https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.shapes_tools.19)
   ("Get Shapes Extents"): takes a shapes layer (`SHAPES`) and returns its extent (`EXTENTS`), both

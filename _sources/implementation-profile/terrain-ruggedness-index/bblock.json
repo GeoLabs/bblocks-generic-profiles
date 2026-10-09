@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Implementation Profile: Terrain ruggedness index",
+  "abstract": "The terrain ruggedness index (TRI) of Riley et al. (1999): how much the elevation of each cell differs from that of its neighbourhood.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-08T00:00:00Z",
+  "dateOfLastChange": "2026-10-08",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.implementation-profile"
+  ],
+  "sources": [
+    {
+      "title": "SAGA 7.3.0 -- Terrain Ruggedness Index (TRI)",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry_16.html"
+    },
+    {
+      "title": "ZOO-Project Geonovum testbed -- SAGA.ta_morphometry.16: Terrain Ruggedness Index (TRI)",
+      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.16"
+    },
+    {
+      "title": "Riley, S.J., De Gloria, S.D., Elliot, R. (1999): A Terrain Ruggedness that Quantifies Topographic Heterogeneity. Intermountain Journal of Science, Vol.5, No.1-4, pp.23-27"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "implementation profile",
+    "SKOS",
+    "Terrain ruggedness index"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Implementation Profiles",
+  "isProfileOf": [
+    "generic-profiles.implementation-profile",
+    "generic-profiles.generic-profile.terrain-derivative"
+  ]
+}

@@ -29,10 +29,10 @@ georeferencing-capable member of that set (plain JPEG/PNG carry no CRS).
 
 ## Multiplicity
 
-`rasters`: restricted (Table 21, R, footnote c) to a maximum of 1024 -- `OTB.BandMath`'s own `il`
-input declares `maxOccurs: 1024`, narrowing the Generic Profile's abstract "one-or-many". Table
-21 footnote c: "Implementation profiles may restrict the maximum cardinality of a superior
-generic profile... They shall not modify the minimum cardinality."
+`rasters`: `maxOccurs: unbounded`, as in the Generic Profile. Any practical cap belongs to a real
+implementation, not to this tier. Nothing is restricted here (Table 21 would allow it, R, footnote c: "Implementation
+profiles may restrict the maximum cardinality of a superior generic profile... They shall not
+modify the minimum cardinality."
 
 Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32), a specific deployment may *Extend* (E, footnote d) this minimal default with additional formats it happens to support -- this tier intentionally does not pre-empt that.
 
