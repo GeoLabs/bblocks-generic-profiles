@@ -25,28 +25,27 @@
   "inputs": {
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "title": "Geometry",
       "description": "the first geometry",
       "keywords": [
         "geometry"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     },
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "title": "Geometry",
       "description": "the second geometry",
       "keywords": [
         "geometry"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     }
   },
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean",
       "title": "Boolean",
       "description": "the predicate's truth value",
       "keywords": [

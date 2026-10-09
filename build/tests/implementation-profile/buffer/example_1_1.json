@@ -29,6 +29,7 @@
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -48,6 +49,7 @@
     },
     "distance": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/distance",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
       "keywords": [
         "distance"
       ],
@@ -63,6 +65,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",

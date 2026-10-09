@@ -1,0 +1,98 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid",
+  "type": "ImplementationProfile",
+  "prefLabel": "Point cloud to grid",
+  "definition": "Writes one value per grid cell from the points falling in it -- by default the z value of the first point -- as a single-band raster.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization",
+  "keywords": [
+    "point cloud",
+    "raster",
+    "rasterization",
+    "Point Cloud to Grid",
+    "pointcloud_tools"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Point Cloud Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
+    },
+    {
+      "title": "Generic Profile: Point cloud rasterization",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization"
+    }
+  ],
+  "inputs": {
+    "points": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/points",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "application/vnd.las",
+        "description": "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type"
+      },
+      "keywords": [
+        "point cloud",
+        "LAS"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Point cloud rasterization -- input `points`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/points"
+        }
+      ]
+    },
+    "cellSize": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/cellSize",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "keywords": [
+        "cell size"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Point cloud rasterization -- input `cellSize`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/cellSize"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band",
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff",
+        "description": "GeoTIFF"
+      },
+      "keywords": [
+        "raster",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Point cloud rasterization -- output `result`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "SAGA 7.3.0 -- Point Cloud to Grid",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_4.html"
+    },
+    {
+      "title": "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.4: Point Cloud to Grid",
+      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.4"
+    }
+  ]
+}

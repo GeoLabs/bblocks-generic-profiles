@@ -65,6 +65,7 @@ process of the ZOO-Project Geonovum testbed.
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/inputs/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -86,6 +87,7 @@ process of the ZOO-Project Geonovum testbed.
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -154,6 +156,7 @@ process of the ZOO-Project Geonovum testbed.
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/inputs/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -175,6 +178,7 @@ process of the ZOO-Project Geonovum testbed.
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -214,8 +218,8 @@ process of the ZOO-Project Geonovum testbed.
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
@@ -228,8 +232,8 @@ process of the ZOO-Project Geonovum testbed.
     skos:definition "Returns a geometry that represents the convex hull of this Geometry." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Convex hull" ;
-    gp:inputs [ ns3:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/inputs/geometry> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/outputs/result> ] ;
+    gp:inputs [ ns2:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/inputs/geometry> ] ;
+    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation> ;
     gp:status "submitted" ;
     proc:keywords "ConvexHull",
@@ -244,7 +248,8 @@ process of the ZOO-Project Geonovum testbed.
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/inputs/geometry> proc:keywords "GML",
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/inputs/geometry> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- input `geometry`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry> ;
@@ -253,7 +258,8 @@ process of the ZOO-Project Geonovum testbed.
             ns1:contentMediaType "text/xml" ;
             ns1:description "GML" ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/outputs/result> proc:keywords "GML",
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- output `result`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/outputs/result> ;
@@ -345,10 +351,6 @@ allOf:
                     href:
                       const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-            maxOccurs:
-              type: integer
-              maximum: 1
-              x-jsonld-id: https://w3id.org/ogc/api/processes/maxOccurs
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
     outputs:
@@ -385,10 +387,15 @@ allOf:
         geometry:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/inputs/geometry
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
     outputs:
@@ -396,10 +403,15 @@ allOf:
         result:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/outputs/result
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
 x-jsonld-extra-terms:
@@ -464,6 +476,10 @@ Links to the schema:
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"
@@ -477,6 +493,10 @@ Links to the schema:
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"

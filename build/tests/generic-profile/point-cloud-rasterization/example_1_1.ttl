@@ -1,0 +1,38 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
+    skos:definition "Converts a point cloud to a raster on a grid of a given cell size. One point cloud and one cell size in, one raster out." ;
+    skos:inScheme gp:generic-profile ;
+    skos:prefLabel "Point cloud rasterization" ;
+    gp:inputs [ ns2:cellSize <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/cellSize> ;
+            ns2:points <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/points> ] ;
+    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result> ] ;
+    gp:status "submitted" ;
+    proc:keywords "point cloud",
+        "raster",
+        "rasterization" ;
+    proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/cellSize> dcterms:description "the cell size of the output grid" ;
+    dcterms:title "Number" ;
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number> ;
+    proc:keywords "cell size" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/points> dcterms:description "the input point cloud" ;
+    dcterms:title "Point cloud" ;
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud> ;
+    proc:keywords "point cloud" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result> dcterms:description "the point cloud's attribute(s) on the grid" ;
+    dcterms:title "Raster" ;
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
+    proc:keywords "raster" .
+

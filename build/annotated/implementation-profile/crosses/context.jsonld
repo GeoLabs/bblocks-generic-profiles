@@ -31,6 +31,10 @@
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"
@@ -44,6 +48,10 @@
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"

@@ -1,0 +1,12 @@
+path	@id	schema
+/id	@id	/github/workspace/build/annotated/concept/point-cloud-processing/schema.yaml
+/type	@type	/github/workspace/build/annotated/concept/point-cloud-processing/schema.yaml
+/prefLabel	http://www.w3.org/2004/02/skos/core#prefLabel	/github/workspace/build/annotated/concept/point-cloud-processing/schema.yaml
+/definition	http://www.w3.org/2004/02/skos/core#definition	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
+/inScheme	http://www.w3.org/2004/02/skos/core#inScheme	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
+/status	https://geolabs.github.io/bblocks-generic-profiles/def/status	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
+/source	http://purl.org/dc/terms/source	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
+/source/title	http://purl.org/dc/terms/title	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
+/source/link	http://purl.org/dc/terms/references	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
+/source/clause	https://geolabs.github.io/bblocks-generic-profiles/def/clause	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
+/narrower	http://www.w3.org/2004/02/skos/core#narrower	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml

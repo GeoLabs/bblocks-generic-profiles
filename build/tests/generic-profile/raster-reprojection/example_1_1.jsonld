@@ -24,28 +24,27 @@
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the input raster coverage",
       "keywords": [
         "raster"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     },
     "targetCRS": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string",
       "title": "String",
       "description": "the target coordinate reference system identifier",
       "keywords": [
         "CRS"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     }
   },
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the reprojected raster coverage",
       "keywords": [

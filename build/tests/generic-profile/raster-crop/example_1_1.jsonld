@@ -24,28 +24,27 @@
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the input raster coverage",
       "keywords": [
         "raster"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     },
     "areaOfInterest": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box",
       "title": "Bounding box",
       "description": "the region of interest to crop to",
       "keywords": [
         "bounding box"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     }
   },
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the cropped raster coverage",
       "keywords": [

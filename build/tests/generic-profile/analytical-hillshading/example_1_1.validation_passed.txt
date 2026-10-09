@@ -1,0 +1,13 @@
+Validation report for generic-profiles.generic-profile.analytical-hillshading - Generic Profile: Analytical hillshading
+Generated 2026-10-09T10:07:58.901135+00:00
+=== Files ===
+Using examples/analytical-hillshading.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

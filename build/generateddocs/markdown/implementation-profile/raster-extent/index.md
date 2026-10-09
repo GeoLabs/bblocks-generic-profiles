@@ -95,6 +95,7 @@ process of the ZOO-Project Geonovum testbed
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -117,6 +118,7 @@ process of the ZOO-Project Geonovum testbed
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -182,6 +184,7 @@ process of the ZOO-Project Geonovum testbed
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -204,6 +207,7 @@ process of the ZOO-Project Geonovum testbed
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -246,10 +250,10 @@ process of the ZOO-Project Geonovum testbed
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
-        [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html> ;
-            dcterms:title "OTB ImageEnvelope -- Build a vector data containing the image envelope polygon" ] ;
+    dcterms:source [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html> ;
+            dcterms:title "OTB ImageEnvelope -- Build a vector data containing the image envelope polygon" ],
+        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
     skos:definition "Computes the bounding envelope of a raster coverage, as a vector polygon." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster extent" ;
@@ -262,14 +266,15 @@ process of the ZOO-Project Geonovum testbed
         "coverage",
         "extent",
         "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Generic Profile: Raster extent" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster extent" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+        [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster> proc:keywords "GeoTIFF",
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
+    proc:keywords "GeoTIFF",
         "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster extent -- input `raster`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster> ;
@@ -279,7 +284,8 @@ process of the ZOO-Project Geonovum testbed
             ns1:contentMediaType "image/tiff" ;
             ns1:description "GeoTIFF" ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result> proc:keywords "GML",
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface> ;
+    proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster extent -- output `result`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result> ;
@@ -371,10 +377,6 @@ allOf:
                     href:
                       const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-            maxOccurs:
-              type: integer
-              maximum: 1
-              x-jsonld-id: https://w3id.org/ogc/api/processes/maxOccurs
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
     outputs:
@@ -411,10 +413,15 @@ allOf:
         raster:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
     outputs:
@@ -422,10 +429,15 @@ allOf:
         result:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
 x-jsonld-extra-terms:
@@ -490,6 +502,10 @@ Links to the schema:
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"
@@ -503,6 +519,10 @@ Links to the schema:
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"

@@ -4,7 +4,6 @@
 @prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> a skos:Concept ;
     skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
@@ -25,17 +24,16 @@
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry1> dcterms:description "the first geometry" ;
     dcterms:title "Geometry" ;
-    proc:keywords "geometry" ;
-    proc:maxOccurs 1 ;
-    proc:minOccurs 1 .
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    proc:keywords "geometry" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry2> dcterms:description "the second geometry" ;
     dcterms:title "Geometry" ;
-    proc:keywords "geometry" ;
-    proc:maxOccurs 1 ;
-    proc:minOccurs 1 .
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    proc:keywords "geometry" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/outputs/result> dcterms:description "the resulting geometry" ;
     dcterms:title "Geometry" ;
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
     proc:keywords "geometry" .
 

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "The Concept \"Point Cloud Processing\" -- see generic-profiles.concept for the general shape every Concept shares.",
+  "allOf": [
+    {
+      "$ref": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing",
+          "x-jsonld-id": "@id"
+        },
+        "type": {
+          "const": "Concept",
+          "x-jsonld-id": "@type"
+        },
+        "prefLabel": {
+          "const": "Point Cloud Processing",
+          "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        }
+      }
+    }
+  ],
+  "x-jsonld-extra-terms": {
+    "Concept": "http://www.w3.org/2004/02/skos/core#Concept",
+    "definition": "http://www.w3.org/2004/02/skos/core#definition",
+    "inScheme": {
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#inScheme",
+      "x-jsonld-type": "@id"
+    },
+    "status": "https://geolabs.github.io/bblocks-generic-profiles/def/status",
+    "narrower": {
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#narrower",
+      "x-jsonld-type": "@id"
+    },
+    "source": "http://purl.org/dc/terms/source",
+    "title": "http://purl.org/dc/terms/title",
+    "link": {
+      "x-jsonld-id": "http://purl.org/dc/terms/references",
+      "x-jsonld-type": "@id"
+    },
+    "clause": "https://geolabs.github.io/bblocks-generic-profiles/def/clause"
+  },
+  "x-jsonld-prefixes": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "dct": "http://purl.org/dc/terms/"
+  }
+}

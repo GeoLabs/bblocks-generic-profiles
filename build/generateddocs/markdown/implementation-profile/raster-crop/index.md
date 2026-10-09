@@ -106,6 +106,7 @@ the ZOO-Project Geonovum testbed
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -125,6 +126,7 @@ the ZOO-Project Geonovum testbed
     },
     "areaOfInterest": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/areaOfInterest",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box",
       "schema": {
         "$ref": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/bbox/schema.json"
       },
@@ -144,6 +146,7 @@ the ZOO-Project Geonovum testbed
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -213,6 +216,7 @@ the ZOO-Project Geonovum testbed
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -232,6 +236,7 @@ the ZOO-Project Geonovum testbed
     },
     "areaOfInterest": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/areaOfInterest",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box",
       "schema": {
         "$ref": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/bbox/schema.json"
       },
@@ -251,6 +256,7 @@ the ZOO-Project Geonovum testbed
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -298,12 +304,12 @@ the ZOO-Project Geonovum testbed
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+    dcterms:source [ dcterms:references <https://geolabs.github.io/bblocks-ogcapi-processes/> ;
+            dcterms:title "ogc.api.processes.v1.schemas.bbox -- bbox schema (OGC API - Processes - Part 1: Core)" ],
+        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
             dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
         [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_ExtractROI.html> ;
-            dcterms:title "OTB ExtractROI -- Extracts a region of interest defined by the user" ],
-        [ dcterms:references <https://geolabs.github.io/bblocks-ogcapi-processes/> ;
-            dcterms:title "ogc.api.processes.v1.schemas.bbox -- bbox schema (OGC API - Processes - Part 1: Core)" ] ;
+            dcterms:title "OTB ExtractROI -- Extracts a region of interest defined by the user" ] ;
     skos:definition "Extracts the pixels of a raster coverage that fall within a region of interest." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster crop" ;
@@ -324,14 +330,16 @@ the ZOO-Project Geonovum testbed
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/areaOfInterest> proc:keywords "bbox",
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/areaOfInterest> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box> ;
+    proc:keywords "bbox",
         "bounding box" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster crop -- input `areaOfInterest`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest> ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
     proc:schema [ ns3:ref "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/bbox/schema.json" ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/raster> proc:keywords "GeoTIFF",
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/raster> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
+    proc:keywords "GeoTIFF",
         "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster crop -- input `raster`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster> ;
@@ -340,7 +348,8 @@ the ZOO-Project Geonovum testbed
             ns1:contentEncoding "base64" ;
             ns1:contentMediaType "image/tiff" ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/outputs/raster> proc:keywords "GeoTIFF",
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/outputs/raster> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
+    proc:keywords "GeoTIFF",
         "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster crop -- output `raster`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster> ;
@@ -433,10 +442,6 @@ allOf:
                     href:
                       const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-            maxOccurs:
-              type: integer
-              maximum: 1
-              x-jsonld-id: https://w3id.org/ogc/api/processes/maxOccurs
         areaOfInterest:
           properties:
             keywords:
@@ -457,10 +462,6 @@ allOf:
                     href:
                       const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-            maxOccurs:
-              type: integer
-              maximum: 1
-              x-jsonld-id: https://w3id.org/ogc/api/processes/maxOccurs
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
     outputs:
@@ -497,17 +498,27 @@ allOf:
         raster:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/raster
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
         areaOfInterest:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/areaOfInterest
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
     outputs:
@@ -515,10 +526,15 @@ allOf:
         raster:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/outputs/raster
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
 x-jsonld-extra-terms:
@@ -583,6 +599,10 @@ Links to the schema:
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"
@@ -596,6 +616,10 @@ Links to the schema:
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"

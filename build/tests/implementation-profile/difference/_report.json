@@ -2,7 +2,7 @@
   "title": "Validation report for generic-profiles.implementation-profile.difference - Implementation Profile: Difference",
   "bblockName": "Implementation Profile: Difference",
   "bblockId": "generic-profiles.implementation-profile.difference",
-  "generated": "2026-10-08T08:41:17.317282+00:00",
+  "generated": "2026-10-09T10:08:00.346285+00:00",
   "result": true,
   "items": [
     {
@@ -40,7 +40,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 60,
+              "size": 63,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }

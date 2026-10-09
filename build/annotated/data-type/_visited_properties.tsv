@@ -1,0 +1,14 @@
+path	@id	schema
+/id	@id	/github/workspace/build/annotated/data-type/schema.yaml
+/type	@type	/github/workspace/build/annotated/data-type/schema.yaml
+/prefLabel	http://www.w3.org/2004/02/skos/core#prefLabel	/github/workspace/build/annotated/data-type/schema.yaml
+/definition	http://www.w3.org/2004/02/skos/core#definition	/github/workspace/build/annotated/data-type/schema.yaml
+/concepts	skos:inScheme	/github/workspace/build/annotated/data-type/schema.yaml
+/concepts/id	@id	/github/workspace/build/annotated/data-type/schema.yaml
+/concepts/type	@type	/github/workspace/build/annotated/data-type/schema.yaml
+/concepts/prefLabel	http://www.w3.org/2004/02/skos/core#prefLabel	/github/workspace/build/annotated/data-type/schema.yaml
+/concepts/definition	http://www.w3.org/2004/02/skos/core#definition	/github/workspace/build/annotated/data-type/schema.yaml
+/concepts/broader	http://www.w3.org/2004/02/skos/core#broader	/github/workspace/build/annotated/data-type/schema.yaml
+/concepts/source	http://purl.org/dc/terms/source	/github/workspace/build/annotated/data-type/schema.yaml
+/concepts/source/title	http://purl.org/dc/terms/title	/github/workspace/build/annotated/data-type/schema.yaml
+/concepts/source/link	http://purl.org/dc/terms/references	/github/workspace/build/annotated/data-type/schema.yaml

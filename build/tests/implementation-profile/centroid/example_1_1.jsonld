@@ -29,6 +29,7 @@
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/inputs/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -50,6 +51,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",

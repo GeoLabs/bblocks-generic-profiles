@@ -64,28 +64,27 @@ Implementation Profile -> Implementation (instance level).
   "inputs": {
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry1",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "title": "Geometry",
       "description": "the first geometry",
       "keywords": [
         "geometry"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     },
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry2",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "title": "Geometry",
       "description": "the second geometry",
       "keywords": [
         "geometry"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     }
   },
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "title": "Geometry",
       "description": "the resulting geometry",
       "keywords": [
@@ -126,28 +125,27 @@ Implementation Profile -> Implementation (instance level).
   "inputs": {
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry1",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "title": "Geometry",
       "description": "the first geometry",
       "keywords": [
         "geometry"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     },
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry2",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "title": "Geometry",
       "description": "the second geometry",
       "keywords": [
         "geometry"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     }
   },
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "title": "Geometry",
       "description": "the resulting geometry",
       "keywords": [
@@ -166,7 +164,6 @@ Implementation Profile -> Implementation (instance level).
 @prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> a skos:Concept ;
     skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
@@ -187,18 +184,17 @@ Implementation Profile -> Implementation (instance level).
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry1> dcterms:description "the first geometry" ;
     dcterms:title "Geometry" ;
-    proc:keywords "geometry" ;
-    proc:maxOccurs 1 ;
-    proc:minOccurs 1 .
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    proc:keywords "geometry" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry2> dcterms:description "the second geometry" ;
     dcterms:title "Geometry" ;
-    proc:keywords "geometry" ;
-    proc:maxOccurs 1 ;
-    proc:minOccurs 1 .
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    proc:keywords "geometry" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/outputs/result> dcterms:description "the resulting geometry" ;
     dcterms:title "Geometry" ;
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
     proc:keywords "geometry" .
 
 
@@ -243,17 +239,27 @@ allOf:
         geometry1:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry1
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
         geometry2:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry2
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
     outputs:
@@ -261,10 +267,15 @@ allOf:
         result:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/outputs/result
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
 x-jsonld-extra-terms:
@@ -335,6 +346,10 @@ Links to the schema:
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "description": "dct:description",
         "minOccurs": "proc:minOccurs",
         "maxOccurs": "proc:maxOccurs"
@@ -344,6 +359,10 @@ Links to the schema:
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "description": "dct:description"
       },
       "@id": "gp:outputs"

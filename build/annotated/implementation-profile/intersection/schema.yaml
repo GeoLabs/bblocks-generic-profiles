@@ -78,10 +78,6 @@ allOf:
                     href:
                       const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry1
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-            maxOccurs:
-              type: integer
-              maximum: 1
-              x-jsonld-id: https://w3id.org/ogc/api/processes/maxOccurs
         geometry2:
           properties:
             keywords:
@@ -102,10 +98,6 @@ allOf:
                     href:
                       const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry2
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-            maxOccurs:
-              type: integer
-              maximum: 1
-              x-jsonld-id: https://w3id.org/ogc/api/processes/maxOccurs
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
     outputs:
@@ -142,17 +134,27 @@ allOf:
         geometry1:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/inputs/geometry1
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
         geometry2:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/inputs/geometry2
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
     outputs:
@@ -160,10 +162,15 @@ allOf:
         result:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/outputs/result
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
 x-jsonld-extra-terms:

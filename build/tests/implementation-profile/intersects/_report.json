@@ -2,7 +2,7 @@
   "title": "Validation report for generic-profiles.implementation-profile.intersects - Implementation Profile: Intersects",
   "bblockName": "Implementation Profile: Intersects",
   "bblockId": "generic-profiles.implementation-profile.intersects",
-  "generated": "2026-10-08T08:41:17.647562+00:00",
+  "generated": "2026-10-09T10:08:00.640182+00:00",
   "result": true,
   "items": [
     {
@@ -40,7 +40,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 55,
+              "size": 58,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }

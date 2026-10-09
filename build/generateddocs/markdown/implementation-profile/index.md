@@ -55,7 +55,7 @@ Generic Profile (generated from it by `scripts/apply_table21_keywords_metadata.p
 | Input Identifier, Title, Abstract | D | **I** | I | the input's key; Title/Abstract not repeated (unchanged) |
 | Input Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile input's |
 | Input Metadata | D | **E/O** ᵃ | E/O ᵃ | `metadata` must reference the corresponding Generic Profile input (`generic-input`, below) |
-| Input Multiplicity | D | **R** ᶜ | E ᵈ | `maxOccurs` ≤ the Generic Profile's; no `minOccurs` at all |
+| Input Multiplicity | D | **R** ᶜ | E ᵈ | only where declared: `maxOccurs` ≤ the Generic Profile's; `minOccurs` between 0 and the Generic Profile's -- making an input optional is allowed, a register choice beyond footnote c; no declaration means the default, exactly one |
 | Input Data format | -- | **D** | E ᵈ | `schema` |
 | Output (the set itself) | | | E ᵇ | every Generic Profile output must be listed (`required`) |
 | Output Identifier, Title, Abstract | D | **I** | I | as for inputs |
@@ -118,9 +118,11 @@ format structurally at all), that is also stated explicitly rather than implied.
 maximum cardinality of a superior generic profile... They shall not modify the minimum
 cardinality"*) the Generic Profile's own `maxOccurs` for one input -- a real integer (or
 `unbounded`), the same property OGC API - Processes' own `InputDescription` uses, not free text.
-E.g. `OTB.BandMath`/`OTB.BandMathX`'s own `il` input caps at `maxOccurs: 1024`, and
-`OTB.RadiometricIndices`' own `in` input is a single image, restricting the Generic Profile's
-`maxOccurs: unbounded` all the way down to `1`.
+E.g. `OTB.RadiometricIndices`' own `in` input is a single image, restricting the Generic
+Profile's `maxOccurs: unbounded` down to `1`; `OTB.BandMath`/`OTB.BandMathX`'s `il` input is a
+list, left `maxOccurs: unbounded` here -- a cap a real implementation applies is recorded at the
+instance level (`bblocks-process-profiles`), not at this tier. A cardinality is written only where there is one: an input without `minOccurs`/`maxOccurs`
+has the OGC API - Processes default, exactly one, and no rule is generated for it.
 
 ## Register position
 
@@ -162,6 +164,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "inputs": {
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -181,6 +184,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     },
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -202,6 +206,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean",
       "keywords": [
         "boolean"
       ],
@@ -251,6 +256,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "inputs": {
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -270,6 +276,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     },
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -291,6 +298,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean",
       "keywords": [
         "boolean"
       ],
@@ -311,8 +319,8 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
@@ -320,9 +328,9 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     skos:definition "Illustrates the shape of an Implementation Profile entry only. Real ones are each their own building block -- see generic-profiles.implementation-profile.intersects, .buffer and the other siblings." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Example Implementation Profile (placeholder, not a real operation)" ;
-    gp:inputs [ ns3:geometry1 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> ;
-            ns3:geometry2 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> ] ;
+    gp:inputs [ ns2:geometry1 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> ;
+            ns2:geometry2 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> ] ;
+    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
     gp:status "submitted" ;
     proc:keywords "example",
@@ -337,7 +345,8 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> proc:keywords "GML",
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry1`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1> ;
@@ -346,7 +355,8 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
             ns1:contentMediaType "text/xml" ;
             ns1:description "GML" ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> proc:keywords "GML",
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry2`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2> ;
@@ -355,7 +365,8 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
             ns1:contentMediaType "text/xml" ;
             ns1:description "GML" ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> proc:keywords "boolean" ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean> ;
+    proc:keywords "boolean" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- output `result`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result> ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
@@ -407,9 +418,10 @@ description: "Process Implementation Profile (OGC 14-065 WPS 2.0.2 \xA77.5.3): \
   Its `metadata` references the corresponding\n  Generic Profile input (`<Generic
   Profile id>/inputs/<name>`) with this register's role\n  `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input`
   -- footnote a, at the level of the input; `keywords` Extend (E);\n  Identifier/Title/Abstract
-  Inherit (I), so not repeated; `maxOccurs` Restrict (R); `schema`\n  Declare (D).\n-
-  Output: every Generic Profile output is listed too; `metadata` references the corresponding\n
-  \ Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output`
+  Inherit (I), so not repeated; `maxOccurs` Restrict (R); `minOccurs`\n  may be restricted
+  down to 0 (a register choice beyond Table 21, footnote c forbidding it);\n  `schema`
+  Declare (D).\n- Output: every Generic Profile output is listed too; `metadata` references
+  the corresponding\n  Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output`
   (Table 21 allows any value here,\n  O; the register keeps outputs symmetric with
   inputs); `keywords` Extend (E); `schema`\n  Declare (D)."
 type: object
@@ -512,9 +524,19 @@ properties:
       type: object
       required:
       - id
+      - dataType
       - keywords
       - metadata
       properties:
+        dataType:
+          description: 'What kind of data this input is, as a concept of the generic-profiles.data-type
+            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
+            The Generic Profile''s, or a narrower one (`skos:broader` chain): e.g.
+            a band-count or a geometry-type restriction.'
+          type: string
+          format: uri
+          x-jsonld-id: http://purl.org/dc/terms/type
+          x-jsonld-type: '@id'
         id:
           description: This input's own IRI, `<profile id>/inputs/<name>` -- what
             a lower tier's metadata `href` points at.
@@ -524,6 +546,15 @@ properties:
         schema:
           x-jsonld-id: https://w3id.org/ogc/api/processes/schema
           x-jsonld-vocab: https://w3id.org/ogc/api/schema/
+        minOccurs:
+          description: 'Restricts the Generic Profile''s minimum, down to 0 (the input
+            becomes optional), never above it. A deliberate departure from Table 21
+            footnote c ("shall not modify the minimum cardinality"): a Generic Profile
+            keeps `minOccurs: 1` and lower tiers, down to a real implementation, may
+            make the input optional (e.g. `Gdal_Warp`''s `t_srs`, absent meaning no
+            reprojection).'
+          type: integer
+          minimum: 0
         maxOccurs:
           oneOf:
           - type: integer
@@ -564,9 +595,19 @@ properties:
       type: object
       required:
       - id
+      - dataType
       - keywords
       - metadata
       properties:
+        dataType:
+          description: 'What kind of data this output is, as a concept of the generic-profiles.data-type
+            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
+            The Generic Profile''s, or a narrower one (`skos:broader` chain): e.g.
+            a band-count or a geometry-type restriction.'
+          type: string
+          format: uri
+          x-jsonld-id: http://purl.org/dc/terms/type
+          x-jsonld-type: '@id'
         id:
           description: This output's own IRI, `<profile id>/outputs/<name>` -- what
             a lower tier's metadata `href` points at.
@@ -673,6 +714,10 @@ Links to the schema:
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"
@@ -686,6 +731,10 @@ Links to the schema:
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"

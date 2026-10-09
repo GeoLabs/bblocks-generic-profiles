@@ -25,7 +25,7 @@ tool this testbed actually runs:
 - ISO/IEC 13249-3:2016 *SQL multimedia and application packages -- Part 3: Spatial*, `ST_Envelope`
   -- the same operation bound to SQL, the same way SQL/MM grounds every other vector Implementation
   Profile in this register.
-- [SAGA GIS -- Get Shapes Extents](https://saga-gis.sourceforge.io/saga_tool_doc/9.4.0/shapes_tools_19.html)
+- [SAGA GIS -- Get Shapes Extents](https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/shapes_tools_19.html)
   -- the concrete software binding the Geonovum testbed actually runs,
   [`SAGA.shapes_tools.19`](https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.shapes_tools.19)
   ("Get Shapes Extents"): takes a shapes layer (`SHAPES`) and returns its extent (`EXTENTS`), both
@@ -89,6 +89,7 @@ process of the ZOO-Project Geonovum testbed
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -110,6 +111,7 @@ process of the ZOO-Project Geonovum testbed
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -138,7 +140,7 @@ process of the ZOO-Project Geonovum testbed
     },
     {
       "title": "SAGA GIS -- Get Shapes Extents (shapes_tools)",
-      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/9.4.0/shapes_tools_19.html"
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/shapes_tools_19.html"
     }
   ]
 }
@@ -178,6 +180,7 @@ process of the ZOO-Project Geonovum testbed
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -199,6 +202,7 @@ process of the ZOO-Project Geonovum testbed
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -227,7 +231,7 @@ process of the ZOO-Project Geonovum testbed
     },
     {
       "title": "SAGA GIS -- Get Shapes Extents (shapes_tools)",
-      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/9.4.0/shapes_tools_19.html"
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/shapes_tools_19.html"
     }
   ]
 }
@@ -238,22 +242,22 @@ process of the ZOO-Project Geonovum testbed
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/9.4.0/shapes_tools_19.html> ;
+    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Envelope" ],
+        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/shapes_tools_19.html> ;
             dcterms:title "SAGA GIS -- Get Shapes Extents (shapes_tools)" ],
         [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
-            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture (Envelope)" ],
-        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Envelope" ] ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture (Envelope)" ] ;
     skos:definition "Computes the minimum bounding rectangle of a set of input geometries, as a geometry." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Geometry extent" ;
-    gp:inputs [ ns2:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry> ] ;
-    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result> ] ;
+    gp:inputs [ ns3:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation> ;
     gp:status "submitted" ;
     proc:keywords "Envelope",
@@ -261,14 +265,15 @@ process of the ZOO-Project Geonovum testbed
         "derived geometry",
         "geometry",
         "vector" ;
-    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Generic Profile: Unary geometry operation" ;
+    proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+        [ dcterms:title "Process Concept: Vector Geometry Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry> proc:keywords "GML",
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- input `geometry`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry> ;
@@ -277,7 +282,8 @@ process of the ZOO-Project Geonovum testbed
             ns1:contentMediaType "text/xml" ;
             ns1:description "GML (minimal default; SAGA.shapes_tools.19 also accepts KML and a generic object encoding)" ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result> proc:keywords "GML",
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface> ;
+    proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- output `result`" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/outputs/result> ;
@@ -369,10 +375,6 @@ allOf:
                     href:
                       const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-            maxOccurs:
-              type: integer
-              maximum: 1
-              x-jsonld-id: https://w3id.org/ogc/api/processes/maxOccurs
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
     outputs:
@@ -409,10 +411,15 @@ allOf:
         geometry:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
     outputs:
@@ -420,10 +427,15 @@ allOf:
         result:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
 x-jsonld-extra-terms:
@@ -488,6 +500,10 @@ Links to the schema:
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"
@@ -501,6 +517,10 @@ Links to the schema:
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "schema": {
           "@context": {
             "@vocab": "https://w3id.org/ogc/api/schema/"
@@ -532,7 +552,7 @@ You can find the full JSON-LD context here:
 
 * [OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture (Envelope)](https://www.ogc.org/standards/sfa/)
 * ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Envelope
-* [SAGA GIS -- Get Shapes Extents (shapes_tools)](https://saga-gis.sourceforge.io/saga_tool_doc/9.4.0/shapes_tools_19.html)
+* [SAGA GIS -- Get Shapes Extents (shapes_tools)](https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/shapes_tools_19.html)
 
 # For developers
 

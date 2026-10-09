@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Process Implementation Profile (OGC 14-065 WPS 2.0.2 \u00a77.5.3): \"Implementation profiles cover all descriptive elements of a process down to the supported data exchange formats.\" One per specific named operation (Intersects, Buffer, ...), `refinesGenericProfile` to exactly one Generic Profile (the shared abstract I/O shape).\n`inputs`/`outputs` use OGC API - Processes - Part 1: Core's own `schema` property (a full JSON Schema / OpenAPI Schema Object) for Table 21's Data format (D), instead of a custom format vocabulary: this project already imports and uses the same `schema` property at Implementation (instance level), so a real deployment's processDescription and this tier's declared default are now directly comparable JSON, not a bespoke string next to real JSON. `maxOccurs`, when present, Restricts (R, footnote c: \"Implementation profiles may restrict the maximum cardinality of a superior generic profile... They shall not modify the minimum cardinality\") the Generic Profile's own value -- a real integer (or `unbounded`), not free text. Only inputs/outputs that carry spatial/raster/bbox data need a `schema` entry; a plain parameter (an expression, a CRS code, a distance) has none to declare.\nKeep the declared `schema` minimal and deliberately not exhaustive (one format is often enough: GML for vector geometry data, GeoTIFF for raster, OGC API - Processes' own `bbox` schema for a bounding box). Per Table 21, Implementation (instance level) may *Extend* this (footnote d: \"Implementations may... support additional data exchange formats\") -- a specific deployment is free to support more than this tier's minimal default, so this tier should not try to pre-empt every format a future deployment might add. See each Implementation Profile's own `description.md` for whether its default is grounded in a real deployment's processDescription or left as the vocabulary's own minimal baseline.\nA `schema` may `$ref` a real shared type's own published schema directly -- e.g. `ogc.api.processes.v1.schemas.bbox` for a bounding box, the same OGC API - Processes - Part 1: Core type this register's Implementation (instance level) processDescriptions already use. `eoap.cct.*` types (bblocks-eoap-cct) are a *different* vocabulary, for typing CWL inputs/outputs passed to OGC API - Processes - Part 2: Deploy, Replace, Undeploy, not for describing an OGC API - Processes processDescription's own `schema` -- not used here.\nThe rest of Table 21 at this tier, as each real Implementation Profile's own `schema.yaml` enforces it against its Generic Profile: - Process: `keywords` Extend (E) -- must contain every Generic Profile keyword;\n  `id`/`prefLabel`/`definition` Override (O); `metadata` Extends (E, footnote a: \"the list of\n  metadata references to superior process profiles shall be extended\") the Generic Profile's\n  list -- its Table 22 `concept` reference -- with a `generic` one to the Generic Profile\n  itself. Profile-level references are made here only, never repeated on inputs/outputs.\n- Input: every Generic Profile input is listed. Its `metadata` references the corresponding\n  Generic Profile input (`<Generic Profile id>/inputs/<name>`) with this register's role\n  `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input` -- footnote a, at the level of the input; `keywords` Extend (E);\n  Identifier/Title/Abstract Inherit (I), so not repeated; `maxOccurs` Restrict (R); `schema`\n  Declare (D).\n- Output: every Generic Profile output is listed too; `metadata` references the corresponding\n  Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output` (Table 21 allows any value here,\n  O; the register keeps outputs symmetric with inputs); `keywords` Extend (E); `schema`\n  Declare (D).",
+  "description": "Process Implementation Profile (OGC 14-065 WPS 2.0.2 \u00a77.5.3): \"Implementation profiles cover all descriptive elements of a process down to the supported data exchange formats.\" One per specific named operation (Intersects, Buffer, ...), `refinesGenericProfile` to exactly one Generic Profile (the shared abstract I/O shape).\n`inputs`/`outputs` use OGC API - Processes - Part 1: Core's own `schema` property (a full JSON Schema / OpenAPI Schema Object) for Table 21's Data format (D), instead of a custom format vocabulary: this project already imports and uses the same `schema` property at Implementation (instance level), so a real deployment's processDescription and this tier's declared default are now directly comparable JSON, not a bespoke string next to real JSON. `maxOccurs`, when present, Restricts (R, footnote c: \"Implementation profiles may restrict the maximum cardinality of a superior generic profile... They shall not modify the minimum cardinality\") the Generic Profile's own value -- a real integer (or `unbounded`), not free text. Only inputs/outputs that carry spatial/raster/bbox data need a `schema` entry; a plain parameter (an expression, a CRS code, a distance) has none to declare.\nKeep the declared `schema` minimal and deliberately not exhaustive (one format is often enough: GML for vector geometry data, GeoTIFF for raster, OGC API - Processes' own `bbox` schema for a bounding box). Per Table 21, Implementation (instance level) may *Extend* this (footnote d: \"Implementations may... support additional data exchange formats\") -- a specific deployment is free to support more than this tier's minimal default, so this tier should not try to pre-empt every format a future deployment might add. See each Implementation Profile's own `description.md` for whether its default is grounded in a real deployment's processDescription or left as the vocabulary's own minimal baseline.\nA `schema` may `$ref` a real shared type's own published schema directly -- e.g. `ogc.api.processes.v1.schemas.bbox` for a bounding box, the same OGC API - Processes - Part 1: Core type this register's Implementation (instance level) processDescriptions already use. `eoap.cct.*` types (bblocks-eoap-cct) are a *different* vocabulary, for typing CWL inputs/outputs passed to OGC API - Processes - Part 2: Deploy, Replace, Undeploy, not for describing an OGC API - Processes processDescription's own `schema` -- not used here.\nThe rest of Table 21 at this tier, as each real Implementation Profile's own `schema.yaml` enforces it against its Generic Profile: - Process: `keywords` Extend (E) -- must contain every Generic Profile keyword;\n  `id`/`prefLabel`/`definition` Override (O); `metadata` Extends (E, footnote a: \"the list of\n  metadata references to superior process profiles shall be extended\") the Generic Profile's\n  list -- its Table 22 `concept` reference -- with a `generic` one to the Generic Profile\n  itself. Profile-level references are made here only, never repeated on inputs/outputs.\n- Input: every Generic Profile input is listed. Its `metadata` references the corresponding\n  Generic Profile input (`<Generic Profile id>/inputs/<name>`) with this register's role\n  `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input` -- footnote a, at the level of the input; `keywords` Extend (E);\n  Identifier/Title/Abstract Inherit (I), so not repeated; `maxOccurs` Restrict (R); `minOccurs`\n  may be restricted down to 0 (a register choice beyond Table 21, footnote c forbidding it);\n  `schema` Declare (D).\n- Output: every Generic Profile output is listed too; `metadata` references the corresponding\n  Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output` (Table 21 allows any value here,\n  O; the register keeps outputs symmetric with inputs); `keywords` Extend (E); `schema`\n  Declare (D).",
   "type": "object",
   "required": [
     "id",
@@ -122,10 +122,18 @@
         "type": "object",
         "required": [
           "id",
+          "dataType",
           "keywords",
           "metadata"
         ],
         "properties": {
+          "dataType": {
+            "description": "What kind of data this input is, as a concept of the generic-profiles.data-type vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`). The Generic Profile's, or a narrower one (`skos:broader` chain): e.g. a band-count or a geometry-type restriction.",
+            "type": "string",
+            "format": "uri",
+            "x-jsonld-id": "http://purl.org/dc/terms/type",
+            "x-jsonld-type": "@id"
+          },
           "id": {
             "description": "This input's own IRI, `<profile id>/inputs/<name>` -- what a lower tier's metadata `href` points at.",
             "type": "string",
@@ -135,6 +143,11 @@
           "schema": {
             "x-jsonld-id": "https://w3id.org/ogc/api/processes/schema",
             "x-jsonld-vocab": "https://w3id.org/ogc/api/schema/"
+          },
+          "minOccurs": {
+            "description": "Restricts the Generic Profile's minimum, down to 0 (the input becomes optional), never above it. A deliberate departure from Table 21 footnote c (\"shall not modify the minimum cardinality\"): a Generic Profile keeps `minOccurs: 1` and lower tiers, down to a real implementation, may make the input optional (e.g. `Gdal_Warp`'s `t_srs`, absent meaning no reprojection).",
+            "type": "integer",
+            "minimum": 0
           },
           "maxOccurs": {
             "oneOf": [
@@ -195,10 +208,18 @@
         "type": "object",
         "required": [
           "id",
+          "dataType",
           "keywords",
           "metadata"
         ],
         "properties": {
+          "dataType": {
+            "description": "What kind of data this output is, as a concept of the generic-profiles.data-type vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`). The Generic Profile's, or a narrower one (`skos:broader` chain): e.g. a band-count or a geometry-type restriction.",
+            "type": "string",
+            "format": "uri",
+            "x-jsonld-id": "http://purl.org/dc/terms/type",
+            "x-jsonld-type": "@id"
+          },
           "id": {
             "description": "This output's own IRI, `<profile id>/outputs/<name>` -- what a lower tier's metadata `href` points at.",
             "type": "string",

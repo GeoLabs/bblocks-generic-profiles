@@ -78,28 +78,27 @@ Implementation Profile -> Implementation (instance level).
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the input raster coverage",
       "keywords": [
         "raster"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     },
     "areaOfInterest": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box",
       "title": "Bounding box",
       "description": "the region of interest to crop to",
       "keywords": [
         "bounding box"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     }
   },
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the cropped raster coverage",
       "keywords": [
@@ -139,28 +138,27 @@ Implementation Profile -> Implementation (instance level).
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the input raster coverage",
       "keywords": [
         "raster"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     },
     "areaOfInterest": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box",
       "title": "Bounding box",
       "description": "the region of interest to crop to",
       "keywords": [
         "bounding box"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     }
   },
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the cropped raster coverage",
       "keywords": [
@@ -179,7 +177,6 @@ Implementation Profile -> Implementation (instance level).
 @prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop> a skos:Concept ;
     skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
@@ -199,18 +196,17 @@ Implementation Profile -> Implementation (instance level).
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest> dcterms:description "the region of interest to crop to" ;
     dcterms:title "Bounding box" ;
-    proc:keywords "bounding box" ;
-    proc:maxOccurs 1 ;
-    proc:minOccurs 1 .
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box> ;
+    proc:keywords "bounding box" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster> dcterms:description "the input raster coverage" ;
     dcterms:title "Raster" ;
-    proc:keywords "raster" ;
-    proc:maxOccurs 1 ;
-    proc:minOccurs 1 .
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
+    proc:keywords "raster" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster> dcterms:description "the cropped raster coverage" ;
     dcterms:title "Raster" ;
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
     proc:keywords "raster" .
 
 
@@ -255,17 +251,27 @@ allOf:
         raster:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
         areaOfInterest:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
     outputs:
@@ -273,10 +279,15 @@ allOf:
         raster:
           required:
           - id
+          - dataType
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster
               x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
 x-jsonld-extra-terms:
@@ -347,6 +358,10 @@ Links to the schema:
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "description": "dct:description",
         "minOccurs": "proc:minOccurs",
         "maxOccurs": "proc:maxOccurs"
@@ -356,6 +371,10 @@ Links to the schema:
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "description": "dct:description"
       },
       "@id": "gp:outputs"

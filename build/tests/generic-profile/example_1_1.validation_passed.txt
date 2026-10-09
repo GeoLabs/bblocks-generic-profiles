@@ -1,5 +1,5 @@
 Validation report for generic-profiles.generic-profile - Generic Process Profile
-Generated 2026-10-08T08:41:15.840743+00:00
+Generated 2026-10-09T10:07:58.855820+00:00
 === Files ===
 Using examples/example-generic-profile.json from examples
 JSON-LD context is present - uplifting

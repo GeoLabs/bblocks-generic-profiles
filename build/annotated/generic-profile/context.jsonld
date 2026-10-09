@@ -43,6 +43,10 @@
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "title": "dct:title",
         "description": "dct:description",
         "minOccurs": "proc:minOccurs",
@@ -53,6 +57,10 @@
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "title": "dct:title",
         "description": "dct:description"
       },

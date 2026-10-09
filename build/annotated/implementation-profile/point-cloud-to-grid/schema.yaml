@@ -1,0 +1,190 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: The Implementation Profile "Point cloud to grid" -- see generic-profiles.implementation-profile
+  for the general shape every Implementation Profile shares.
+allOf:
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+- type: object
+  properties:
+    id:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid
+      x-jsonld-id: '@id'
+    type:
+      const: ImplementationProfile
+      x-jsonld-id: '@type'
+    prefLabel:
+      const: Point cloud to grid
+      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
+    refinesGenericProfile:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
+      x-jsonld-type: '@id'
+    keywords:
+      allOf:
+      - contains:
+          const: point cloud
+      - contains:
+          const: raster
+      - contains:
+          const: rasterization
+      x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+    metadata:
+      allOf:
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization
+      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+    inputs:
+      type: object
+      required:
+      - points
+      - cellSize
+      properties:
+        points:
+          properties:
+            keywords:
+              allOf:
+              - contains:
+                  const: point cloud
+              x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+            metadata:
+              allOf:
+              - contains:
+                  type: object
+                  required:
+                  - role
+                  - href
+                  properties:
+                    role:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                    href:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/points
+              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+        cellSize:
+          properties:
+            keywords:
+              allOf:
+              - contains:
+                  const: cell size
+              x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+            metadata:
+              allOf:
+              - contains:
+                  type: object
+                  required:
+                  - role
+                  - href
+                  properties:
+                    role:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                    href:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/cellSize
+              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+    outputs:
+      type: object
+      required:
+      - result
+      properties:
+        result:
+          properties:
+            keywords:
+              allOf:
+              - contains:
+                  const: raster
+              x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+            metadata:
+              allOf:
+              - contains:
+                  type: object
+                  required:
+                  - role
+                  - href
+                  properties:
+                    role:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                    href:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result
+              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+- type: object
+  properties:
+    inputs:
+      properties:
+        points:
+          required:
+          - id
+          - dataType
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/points
+              x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+        cellSize:
+          required:
+          - id
+          - dataType
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/cellSize
+              x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+    outputs:
+      properties:
+        result:
+          required:
+          - id
+          - dataType
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/outputs/result
+              x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+x-jsonld-extra-terms:
+  ImplementationProfile: http://www.w3.org/2004/02/skos/core#Concept
+  definition: http://www.w3.org/2004/02/skos/core#definition
+  inScheme:
+    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
+    x-jsonld-type: '@id'
+  status: https://geolabs.github.io/bblocks-generic-profiles/def/status
+  source: http://purl.org/dc/terms/source
+  title: http://purl.org/dc/terms/title
+  link:
+    x-jsonld-id: http://purl.org/dc/terms/references
+    x-jsonld-type: '@id'
+x-jsonld-prefixes:
+  skos: http://www.w3.org/2004/02/skos/core#
+  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  proc: https://w3id.org/ogc/api/processes/
+  dct: http://purl.org/dc/terms/

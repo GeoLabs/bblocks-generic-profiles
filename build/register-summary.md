@@ -31,11 +31,29 @@ independent bindings is a candidate.
 
 The shape every Process Concept shares: high-level documentation about a general group of processes, no input, no output, no format, no implementation (OGC 14-065 WPS 2.0.2 §7.5.1). Each real Concept (generic-profiles.concept.*) is its own building block that allOf-references this one -- this block is not itself a catalogue, only the common shape plus one illustrative example.
 
+### `generic-profiles.data-type` — Data types
+
+**Type:** schema
+
+Reference vocabulary of the kinds of data process profile inputs and outputs carry (raster, single- or multi-band, elevation model, geometry by type, feature collection, point cloud, TIN, table, bounding box, literals).
+
+### `generic-profiles.concept.point-cloud-processing` — Process Concept: Point Cloud Processing
+
+**Type:** schema
+
+Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1).
+
 ### `generic-profiles.concept.raster-coverage-processing` — Process Concept: Raster Coverage Processing
 
 **Type:** schema
 
 Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, deriving a new raster from one or more others via a mathematical expression or a named radiometric index, cropping a coverage to a region of interest, or converting a coverage to another encoding -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1).
+
+### `generic-profiles.concept.terrain-analysis` — Process Concept: Terrain Analysis
+
+**Type:** schema
+
+Operations deriving terrain attributes from an elevation model: local surface derivatives (slope, aspect, curvature), neighbourhood indices (terrain ruggedness, topographic position) and illumination (hillshading) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1). A kind of raster coverage processing: an elevation model is a single-band raster whose values are elevations.
 
 ### `generic-profiles.concept.vector-geometry-processing` — Process Concept: Vector Geometry Processing
 
@@ -48,6 +66,12 @@ General group covering operations on vector geometries: testing spatial relation
 **Type:** schema
 
 The shape every Generic Profile shares: the abstract interface of one process, declaring a signature for its inputs and outputs (OGC 14-065 WPS 2.0.2 §7.5.2), linked to its Process Concept by `broader`. Each real Generic Profile (generic-profiles.generic-profile.*) is its own building block that allOf-references this one -- this block is not itself a catalogue, only the common shape plus one illustrative example.
+
+### `generic-profiles.generic-profile.analytical-hillshading` — Generic Profile: Analytical hillshading
+
+**Type:** schema
+
+Computes how the terrain is lit by a light source. One elevation model and the light source's azimuth and altitude in, one single-band raster out.
 
 ### `generic-profiles.generic-profile.binary-spatial-operation` — Generic Profile: Binary spatial set operation
 
@@ -72,6 +96,24 @@ Computes a new geometry from one input geometry and a scalar distance. A differe
 **Type:** schema
 
 Computes a scalar measurement of a single geometry. One Geometry input, one Number output.
+
+### `generic-profiles.generic-profile.point-cloud-rasterization` — Generic Profile: Point cloud rasterization
+
+**Type:** schema
+
+Converts a point cloud to a raster on a grid of a given cell size. One point cloud and one cell size in, one raster out.
+
+### `generic-profiles.generic-profile.point-cloud-thinning` — Generic Profile: Point cloud thinning
+
+**Type:** schema
+
+Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out.
+
+### `generic-profiles.generic-profile.point-cloud-to-features` — Generic Profile: Point cloud to features
+
+**Type:** schema
+
+Converts a point cloud to a feature collection. One point cloud in, one feature collection out.
 
 ### `generic-profiles.generic-profile.radiometric-index` — Generic Profile: Radiometric index
 
@@ -109,6 +151,12 @@ Converts a raster coverage from one encoding to another, without changing its co
 
 Reprojects a raster coverage to another coordinate reference system, preserving its content. One Raster input, a target CRS, one Raster output in the new CRS.
 
+### `generic-profiles.generic-profile.terrain-derivative` — Generic Profile: Terrain derivative
+
+**Type:** schema
+
+Derives one terrain attribute, as a single-band raster, from an elevation model. One elevation model input, one single-band raster output. Covers operations that differ only in the attribute computed (slope, aspect, curvature, terrain ruggedness, topographic position), not in signature.
+
 ### `generic-profiles.generic-profile.unary-geometry-operation` — Generic Profile: Unary geometry operation
 
 **Type:** schema
@@ -126,6 +174,12 @@ Tests a boolean property of a single geometry. One Geometry input, one Boolean o
 **Type:** schema
 
 The shape every Implementation Profile shares: a specific named operation refining one Generic Profile, adding the standard data exchange formats it is commonly expressed in (OGC 14-065 WPS 2.0.2 §7.5.3). Each real Implementation Profile (generic-profiles.implementation-profile.*) is its own building block that allOf-references this one.
+
+### `generic-profiles.implementation-profile.analytical-hillshading` — Implementation Profile: Analytical hillshading
+
+**Type:** schema
+
+For each cell, the angle at which light coming from the position of the light source hits the terrain surface (SAGA's standard method).
 
 ### `generic-profiles.implementation-profile.area` — Implementation Profile: Area
 
@@ -205,6 +259,24 @@ Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e.
 
 Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection or self tangency.
 
+### `generic-profiles.implementation-profile.point-cloud-thinning` — Implementation Profile: Point cloud thinning (simple)
+
+**Type:** schema
+
+Reduces the number of points to the given percentage by sequential point removal, which suits points stored in chronological order best.
+
+### `generic-profiles.implementation-profile.point-cloud-to-grid` — Implementation Profile: Point cloud to grid
+
+**Type:** schema
+
+Writes one value per grid cell from the points falling in it -- by default the z value of the first point -- as a single-band raster.
+
+### `generic-profiles.implementation-profile.point-cloud-to-shapes` — Implementation Profile: Point cloud to shapes
+
+**Type:** schema
+
+Converts a point cloud to a SAGA shapes layer of points, i.e. a feature collection.
+
 ### `generic-profiles.implementation-profile.radiometric-index` — Implementation Profile: Radiometric index
 
 **Type:** schema
@@ -247,11 +319,29 @@ Re-encodes a raster coverage into another raster format, without altering its co
 
 Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content.
 
+### `generic-profiles.implementation-profile.slope` — Implementation Profile: Slope
+
+**Type:** schema
+
+The slope gradient of an elevation model at each cell, from a local fit of the surface (SAGA's default method: the 9 parameter 2nd order polynom of Zevenbergen & Thorne 1987).
+
 ### `generic-profiles.implementation-profile.symdifference` — Implementation Profile: Symmetric difference
 
 **Type:** schema
 
 Returns a geometric object representing the point set symmetric difference of this geometric object with anotherGeometry.
+
+### `generic-profiles.implementation-profile.terrain-ruggedness-index` — Implementation Profile: Terrain ruggedness index
+
+**Type:** schema
+
+The terrain ruggedness index (TRI) of Riley et al. (1999): how much the elevation of each cell differs from that of its neighbourhood.
+
+### `generic-profiles.implementation-profile.topographic-position-index` — Implementation Profile: Topographic position index
+
+**Type:** schema
+
+The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.
 
 ### `generic-profiles.implementation-profile.touches` — Implementation Profile: Touches
 

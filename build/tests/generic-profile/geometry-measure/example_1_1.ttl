@@ -4,7 +4,6 @@
 @prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> a skos:Concept ;
     skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
@@ -23,11 +22,11 @@
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/inputs/geometry> dcterms:description "the input geometry" ;
     dcterms:title "Geometry" ;
-    proc:keywords "geometry" ;
-    proc:maxOccurs 1 ;
-    proc:minOccurs 1 .
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    proc:keywords "geometry" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/outputs/result> dcterms:description "the computed measurement" ;
     dcterms:title "Number" ;
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number> ;
     proc:keywords "number" .
 

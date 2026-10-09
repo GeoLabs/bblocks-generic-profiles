@@ -28,13 +28,14 @@
   "inputs": {
     "rasters": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/inputs/rasters",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
         "contentMediaType": "image/tiff",
         "description": "GeoTIFF"
       },
-      "maxOccurs": 1024,
+      "maxOccurs": "unbounded",
       "keywords": [
         "raster",
         "GeoTIFF"
@@ -49,6 +50,7 @@
     },
     "expression": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/inputs/expression",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string",
       "keywords": [
         "expression"
       ],
@@ -64,6 +66,7 @@
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",

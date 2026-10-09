@@ -1,0 +1,88 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope",
+  "type": "ImplementationProfile",
+  "prefLabel": "Slope",
+  "definition": "The slope gradient of an elevation model at each cell, from a local fit of the surface (SAGA's default method: the 9 parameter 2nd order polynom of Zevenbergen & Thorne 1987).",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
+  "keywords": [
+    "terrain",
+    "elevation",
+    "raster",
+    "derivative",
+    "Slope",
+    "ta_morphometry"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Terrain Analysis",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
+    },
+    {
+      "title": "Generic Profile: Terrain derivative",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative"
+    }
+  ],
+  "inputs": {
+    "elevation": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope/inputs/elevation",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model",
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff",
+        "description": "GeoTIFF"
+      },
+      "keywords": [
+        "elevation",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Terrain derivative -- input `elevation`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band",
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff",
+        "description": "GeoTIFF"
+      },
+      "keywords": [
+        "raster",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Terrain derivative -- output `result`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "SAGA 7.3.0 -- Slope, Aspect, Curvature",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry_0.html"
+    },
+    {
+      "title": "ZOO-Project Geonovum testbed -- SAGA.ta_morphometry.0: Slope, Aspect, Curvature",
+      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.0"
+    },
+    {
+      "title": "Zevenbergen, L.W., Thorne, C.R. (1987): Quantitative analysis of land surface topography. Earth Surface Processes and Landforms, 12: 47-56"
+    }
+  ]
+}

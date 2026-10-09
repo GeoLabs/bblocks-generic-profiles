@@ -29,6 +29,7 @@
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -49,6 +50,7 @@
     },
     "targetCRS": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string",
       "keywords": [
         "CRS"
       ],
@@ -64,6 +66,7 @@
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",

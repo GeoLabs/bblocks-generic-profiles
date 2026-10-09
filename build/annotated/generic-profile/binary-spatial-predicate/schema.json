@@ -51,23 +51,35 @@
           "properties": {
             "geometry1": {
               "required": [
-                "id"
+                "id",
+                "dataType"
               ],
               "properties": {
                 "id": {
                   "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1",
                   "x-jsonld-id": "@id"
+                },
+                "dataType": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+                  "x-jsonld-id": "http://purl.org/dc/terms/type",
+                  "x-jsonld-type": "@id"
                 }
               }
             },
             "geometry2": {
               "required": [
-                "id"
+                "id",
+                "dataType"
               ],
               "properties": {
                 "id": {
                   "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2",
                   "x-jsonld-id": "@id"
+                },
+                "dataType": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+                  "x-jsonld-id": "http://purl.org/dc/terms/type",
+                  "x-jsonld-type": "@id"
                 }
               }
             }
@@ -79,12 +91,18 @@
           "properties": {
             "result": {
               "required": [
-                "id"
+                "id",
+                "dataType"
               ],
               "properties": {
                 "id": {
                   "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result",
                   "x-jsonld-id": "@id"
+                },
+                "dataType": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean",
+                  "x-jsonld-id": "http://purl.org/dc/terms/type",
+                  "x-jsonld-type": "@id"
                 }
               }
             }

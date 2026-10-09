@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total": 41,
-    "passed": 41,
+    "total": 56,
+    "passed": 56,
     "failed": 0,
     "result": true
   },
@@ -10,7 +10,7 @@
       "title": "Validation report for generic-profiles.concept - Process Concept",
       "bblockName": "Process Concept",
       "bblockId": "generic-profiles.concept",
-      "generated": "2026-10-08T08:41:15.771907+00:00",
+      "generated": "2026-10-09T10:07:58.660209+00:00",
       "result": true,
       "items": [
         {
@@ -76,11 +76,151 @@
         "failed": 0
       }
     },
+    "generic-profiles.data-type": {
+      "title": "Validation report for generic-profiles.data-type - Data types",
+      "bblockName": "Data types",
+      "bblockId": "generic-profiles.data-type",
+      "generated": "2026-10-09T10:07:58.689679+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/data-type/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/data-type/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/data-types.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 126,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.concept.point-cloud-processing": {
+      "title": "Validation report for generic-profiles.concept.point-cloud-processing - Process Concept: Point Cloud Processing",
+      "bblockName": "Process Concept: Point Cloud Processing",
+      "bblockId": "generic-profiles.concept.point-cloud-processing",
+      "generated": "2026-10-09T10:07:58.702360+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/concept/point-cloud-processing/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/point-cloud-processing/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/point-cloud-processing.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 11,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
     "generic-profiles.concept.raster-coverage-processing": {
       "title": "Validation report for generic-profiles.concept.raster-coverage-processing - Process Concept: Raster Coverage Processing",
       "bblockName": "Process Concept: Raster Coverage Processing",
       "bblockId": "generic-profiles.concept.raster-coverage-processing",
-      "generated": "2026-10-08T08:41:15.783802+00:00",
+      "generated": "2026-10-09T10:07:58.714416+00:00",
       "result": true,
       "items": [
         {
@@ -102,6 +242,76 @@
                 {
                   "isError": false,
                   "message": "Using examples/raster-coverage-processing.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 11,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.concept.terrain-analysis": {
+      "title": "Validation report for generic-profiles.concept.terrain-analysis - Process Concept: Terrain Analysis",
+      "bblockName": "Process Concept: Terrain Analysis",
+      "bblockId": "generic-profiles.concept.terrain-analysis",
+      "generated": "2026-10-09T10:07:58.726242+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/concept/terrain-analysis/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/terrain-analysis/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/terrain-analysis.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -150,7 +360,7 @@
       "title": "Validation report for generic-profiles.concept.vector-geometry-processing - Process Concept: Vector Geometry Processing",
       "bblockName": "Process Concept: Vector Geometry Processing",
       "bblockId": "generic-profiles.concept.vector-geometry-processing",
-      "generated": "2026-10-08T08:41:15.795160+00:00",
+      "generated": "2026-10-09T10:07:58.738239+00:00",
       "result": true,
       "items": [
         {
@@ -220,7 +430,7 @@
       "title": "Validation report for generic-profiles.generic-profile - Generic Process Profile",
       "bblockName": "Generic Process Profile",
       "bblockId": "generic-profiles.generic-profile",
-      "generated": "2026-10-08T08:41:15.840822+00:00",
+      "generated": "2026-10-09T10:07:58.855894+00:00",
       "result": true,
       "items": [
         {
@@ -286,11 +496,81 @@
         "failed": 0
       }
     },
+    "generic-profiles.generic-profile.analytical-hillshading": {
+      "title": "Validation report for generic-profiles.generic-profile.analytical-hillshading - Generic Profile: Analytical hillshading",
+      "bblockName": "Generic Profile: Analytical hillshading",
+      "bblockId": "generic-profiles.generic-profile.analytical-hillshading",
+      "generated": "2026-10-09T10:07:58.901210+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/generic-profile/analytical-hillshading/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/analytical-hillshading/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/analytical-hillshading.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 37,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
     "generic-profiles.generic-profile.binary-spatial-operation": {
       "title": "Validation report for generic-profiles.generic-profile.binary-spatial-operation - Generic Profile: Binary spatial set operation",
       "bblockName": "Generic Profile: Binary spatial set operation",
       "bblockId": "generic-profiles.generic-profile.binary-spatial-operation",
-      "generated": "2026-10-08T08:41:15.883406+00:00",
+      "generated": "2026-10-09T10:07:58.950092+00:00",
       "result": true,
       "items": [
         {
@@ -328,7 +608,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 32,
+                  "size": 31,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -360,7 +640,7 @@
       "title": "Validation report for generic-profiles.generic-profile.binary-spatial-predicate - Generic Profile: Binary spatial predicate",
       "bblockName": "Generic Profile: Binary spatial predicate",
       "bblockId": "generic-profiles.generic-profile.binary-spatial-predicate",
-      "generated": "2026-10-08T08:41:15.993676+00:00",
+      "generated": "2026-10-09T10:07:59.011392+00:00",
       "result": true,
       "items": [
         {
@@ -398,7 +678,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 32,
+                  "size": 31,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -430,7 +710,7 @@
       "title": "Validation report for generic-profiles.generic-profile.geometry-buffer - Generic Profile: Geometry buffer",
       "bblockName": "Generic Profile: Geometry buffer",
       "bblockId": "generic-profiles.generic-profile.geometry-buffer",
-      "generated": "2026-10-08T08:41:16.105410+00:00",
+      "generated": "2026-10-09T10:07:59.054663+00:00",
       "result": true,
       "items": [
         {
@@ -468,7 +748,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 32,
+                  "size": 31,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -500,7 +780,7 @@
       "title": "Validation report for generic-profiles.generic-profile.geometry-measure - Generic Profile: Geometry measure",
       "bblockName": "Generic Profile: Geometry measure",
       "bblockId": "generic-profiles.generic-profile.geometry-measure",
-      "generated": "2026-10-08T08:41:16.145429+00:00",
+      "generated": "2026-10-09T10:07:59.095095+00:00",
       "result": true,
       "items": [
         {
@@ -566,11 +846,221 @@
         "failed": 0
       }
     },
+    "generic-profiles.generic-profile.point-cloud-rasterization": {
+      "title": "Validation report for generic-profiles.generic-profile.point-cloud-rasterization - Generic Profile: Point cloud rasterization",
+      "bblockName": "Generic Profile: Point cloud rasterization",
+      "bblockId": "generic-profiles.generic-profile.point-cloud-rasterization",
+      "generated": "2026-10-09T10:07:59.157795+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/generic-profile/point-cloud-rasterization/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/point-cloud-rasterization/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/point-cloud-rasterization.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 30,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.generic-profile.point-cloud-thinning": {
+      "title": "Validation report for generic-profiles.generic-profile.point-cloud-thinning - Generic Profile: Point cloud thinning",
+      "bblockName": "Generic Profile: Point cloud thinning",
+      "bblockId": "generic-profiles.generic-profile.point-cloud-thinning",
+      "generated": "2026-10-09T10:07:59.201108+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/generic-profile/point-cloud-thinning/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/point-cloud-thinning/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/point-cloud-thinning.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 29,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.generic-profile.point-cloud-to-features": {
+      "title": "Validation report for generic-profiles.generic-profile.point-cloud-to-features - Generic Profile: Point cloud to features",
+      "bblockName": "Generic Profile: Point cloud to features",
+      "bblockId": "generic-profiles.generic-profile.point-cloud-to-features",
+      "generated": "2026-10-09T10:07:59.242981+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/generic-profile/point-cloud-to-features/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/point-cloud-to-features/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/point-cloud-to-features.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 25,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
     "generic-profiles.generic-profile.radiometric-index": {
       "title": "Validation report for generic-profiles.generic-profile.radiometric-index - Generic Profile: Radiometric index",
       "bblockName": "Generic Profile: Radiometric index",
       "bblockId": "generic-profiles.generic-profile.radiometric-index",
-      "generated": "2026-10-08T08:41:16.188856+00:00",
+      "generated": "2026-10-09T10:07:59.290006+00:00",
       "result": true,
       "items": [
         {
@@ -608,7 +1098,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 31,
+                  "size": 32,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -640,7 +1130,7 @@
       "title": "Validation report for generic-profiles.generic-profile.raster-band-math - Generic Profile: Raster band math",
       "bblockName": "Generic Profile: Raster band math",
       "bblockId": "generic-profiles.generic-profile.raster-band-math",
-      "generated": "2026-10-08T08:41:16.233097+00:00",
+      "generated": "2026-10-09T10:07:59.360375+00:00",
       "result": true,
       "items": [
         {
@@ -710,7 +1200,7 @@
       "title": "Validation report for generic-profiles.generic-profile.raster-crop - Generic Profile: Raster crop",
       "bblockName": "Generic Profile: Raster crop",
       "bblockId": "generic-profiles.generic-profile.raster-crop",
-      "generated": "2026-10-08T08:41:16.274968+00:00",
+      "generated": "2026-10-09T10:07:59.473827+00:00",
       "result": true,
       "items": [
         {
@@ -748,7 +1238,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 31,
+                  "size": 30,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -780,7 +1270,7 @@
       "title": "Validation report for generic-profiles.generic-profile.raster-extent - Generic Profile: Raster extent",
       "bblockName": "Generic Profile: Raster extent",
       "bblockId": "generic-profiles.generic-profile.raster-extent",
-      "generated": "2026-10-08T08:41:16.381869+00:00",
+      "generated": "2026-10-09T10:07:59.519099+00:00",
       "result": true,
       "items": [
         {
@@ -850,7 +1340,7 @@
       "title": "Validation report for generic-profiles.generic-profile.raster-format-conversion - Generic Profile: Raster format conversion",
       "bblockName": "Generic Profile: Raster format conversion",
       "bblockId": "generic-profiles.generic-profile.raster-format-conversion",
-      "generated": "2026-10-08T08:41:16.488524+00:00",
+      "generated": "2026-10-09T10:07:59.561836+00:00",
       "result": true,
       "items": [
         {
@@ -888,7 +1378,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 31,
+                  "size": 30,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -920,7 +1410,7 @@
       "title": "Validation report for generic-profiles.generic-profile.raster-reprojection - Generic Profile: Raster reprojection",
       "bblockName": "Generic Profile: Raster reprojection",
       "bblockId": "generic-profiles.generic-profile.raster-reprojection",
-      "generated": "2026-10-08T08:41:16.530808+00:00",
+      "generated": "2026-10-09T10:07:59.605383+00:00",
       "result": true,
       "items": [
         {
@@ -958,7 +1448,77 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 31,
+                  "size": 30,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.generic-profile.terrain-derivative": {
+      "title": "Validation report for generic-profiles.generic-profile.terrain-derivative - Generic Profile: Terrain derivative",
+      "bblockName": "Generic Profile: Terrain derivative",
+      "bblockId": "generic-profiles.generic-profile.terrain-derivative",
+      "generated": "2026-10-09T10:07:59.645766+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/generic-profile/terrain-derivative/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/terrain-derivative/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/terrain-derivative.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 26,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -990,7 +1550,7 @@
       "title": "Validation report for generic-profiles.generic-profile.unary-geometry-operation - Generic Profile: Unary geometry operation",
       "bblockName": "Generic Profile: Unary geometry operation",
       "bblockId": "generic-profiles.generic-profile.unary-geometry-operation",
-      "generated": "2026-10-08T08:41:16.580657+00:00",
+      "generated": "2026-10-09T10:07:59.683418+00:00",
       "result": true,
       "items": [
         {
@@ -1060,7 +1620,7 @@
       "title": "Validation report for generic-profiles.generic-profile.unary-spatial-predicate - Generic Profile: Unary spatial predicate",
       "bblockName": "Generic Profile: Unary spatial predicate",
       "bblockId": "generic-profiles.generic-profile.unary-spatial-predicate",
-      "generated": "2026-10-08T08:41:16.618920+00:00",
+      "generated": "2026-10-09T10:07:59.745801+00:00",
       "result": true,
       "items": [
         {
@@ -1130,7 +1690,7 @@
       "title": "Validation report for generic-profiles.implementation-profile - Process Implementation Profile",
       "bblockName": "Process Implementation Profile",
       "bblockId": "generic-profiles.implementation-profile",
-      "generated": "2026-10-08T08:41:16.666918+00:00",
+      "generated": "2026-10-09T10:07:59.797396+00:00",
       "result": true,
       "items": [
         {
@@ -1168,7 +1728,77 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 49,
+                  "size": 52,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.implementation-profile.analytical-hillshading": {
+      "title": "Validation report for generic-profiles.implementation-profile.analytical-hillshading - Implementation Profile: Analytical hillshading",
+      "bblockName": "Implementation Profile: Analytical hillshading",
+      "bblockId": "generic-profiles.implementation-profile.analytical-hillshading",
+      "generated": "2026-10-09T10:07:59.860942+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/implementation-profile/analytical-hillshading/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/analytical-hillshading/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/analytical-hillshading.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 69,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1200,7 +1830,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.area - Implementation Profile: Area",
       "bblockName": "Implementation Profile: Area",
       "bblockId": "generic-profiles.implementation-profile.area",
-      "generated": "2026-10-08T08:41:16.898170+00:00",
+      "generated": "2026-10-09T10:07:59.913194+00:00",
       "result": true,
       "items": [
         {
@@ -1238,7 +1868,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 49,
+                  "size": 51,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1270,7 +1900,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.buffer - Implementation Profile: Buffer",
       "bblockName": "Implementation Profile: Buffer",
       "bblockId": "generic-profiles.implementation-profile.buffer",
-      "generated": "2026-10-08T08:41:17.012840+00:00",
+      "generated": "2026-10-09T10:08:00.064646+00:00",
       "result": true,
       "items": [
         {
@@ -1308,7 +1938,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 55,
+                  "size": 58,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1340,7 +1970,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.centroid - Implementation Profile: Centroid",
       "bblockName": "Implementation Profile: Centroid",
       "bblockId": "generic-profiles.implementation-profile.centroid",
-      "generated": "2026-10-08T08:41:17.083336+00:00",
+      "generated": "2026-10-09T10:08:00.115996+00:00",
       "result": true,
       "items": [
         {
@@ -1378,7 +2008,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 51,
+                  "size": 53,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1410,7 +2040,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.contains - Implementation Profile: Contains",
       "bblockName": "Implementation Profile: Contains",
       "bblockId": "generic-profiles.implementation-profile.contains",
-      "generated": "2026-10-08T08:41:17.154308+00:00",
+      "generated": "2026-10-09T10:08:00.170275+00:00",
       "result": true,
       "items": [
         {
@@ -1448,7 +2078,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 55,
+                  "size": 58,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1480,7 +2110,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.convex-hull - Implementation Profile: Convex hull",
       "bblockName": "Implementation Profile: Convex hull",
       "bblockId": "generic-profiles.implementation-profile.convex-hull",
-      "generated": "2026-10-08T08:41:17.205224+00:00",
+      "generated": "2026-10-09T10:08:00.226193+00:00",
       "result": true,
       "items": [
         {
@@ -1518,7 +2148,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 51,
+                  "size": 53,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1550,7 +2180,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.crosses - Implementation Profile: Crosses",
       "bblockName": "Implementation Profile: Crosses",
       "bblockId": "generic-profiles.implementation-profile.crosses",
-      "generated": "2026-10-08T08:41:17.259347+00:00",
+      "generated": "2026-10-09T10:08:00.288179+00:00",
       "result": true,
       "items": [
         {
@@ -1588,7 +2218,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 55,
+                  "size": 58,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1620,7 +2250,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.difference - Implementation Profile: Difference",
       "bblockName": "Implementation Profile: Difference",
       "bblockId": "generic-profiles.implementation-profile.difference",
-      "generated": "2026-10-08T08:41:17.317282+00:00",
+      "generated": "2026-10-09T10:08:00.346285+00:00",
       "result": true,
       "items": [
         {
@@ -1658,7 +2288,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 60,
+                  "size": 63,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1690,7 +2320,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.disjoint - Implementation Profile: Disjoint",
       "bblockName": "Implementation Profile: Disjoint",
       "bblockId": "generic-profiles.implementation-profile.disjoint",
-      "generated": "2026-10-08T08:41:17.370991+00:00",
+      "generated": "2026-10-09T10:08:00.404550+00:00",
       "result": true,
       "items": [
         {
@@ -1728,7 +2358,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 55,
+                  "size": 58,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1760,7 +2390,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.equals - Implementation Profile: Equals",
       "bblockName": "Implementation Profile: Equals",
       "bblockId": "generic-profiles.implementation-profile.equals",
-      "generated": "2026-10-08T08:41:17.423267+00:00",
+      "generated": "2026-10-09T10:08:00.470517+00:00",
       "result": true,
       "items": [
         {
@@ -1798,7 +2428,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 55,
+                  "size": 58,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1830,7 +2460,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.geometry-extent - Implementation Profile: Geometry extent",
       "bblockName": "Implementation Profile: Geometry extent",
       "bblockId": "generic-profiles.implementation-profile.geometry-extent",
-      "generated": "2026-10-08T08:41:17.538834+00:00",
+      "generated": "2026-10-09T10:08:00.524817+00:00",
       "result": true,
       "items": [
         {
@@ -1868,7 +2498,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 51,
+                  "size": 53,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1900,7 +2530,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.intersection - Implementation Profile: Intersection",
       "bblockName": "Implementation Profile: Intersection",
       "bblockId": "generic-profiles.implementation-profile.intersection",
-      "generated": "2026-10-08T08:41:17.593907+00:00",
+      "generated": "2026-10-09T10:08:00.580891+00:00",
       "result": true,
       "items": [
         {
@@ -1922,6 +2552,286 @@
                 {
                   "isError": false,
                   "message": "Using examples/intersection.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 63,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.implementation-profile.intersects": {
+      "title": "Validation report for generic-profiles.implementation-profile.intersects - Implementation Profile: Intersects",
+      "bblockName": "Implementation Profile: Intersects",
+      "bblockId": "generic-profiles.implementation-profile.intersects",
+      "generated": "2026-10-09T10:08:00.640182+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/implementation-profile/intersects/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/intersects/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/intersects.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 58,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.implementation-profile.is-simple": {
+      "title": "Validation report for generic-profiles.implementation-profile.is-simple - Implementation Profile: Is simple",
+      "bblockName": "Implementation Profile: Is simple",
+      "bblockId": "generic-profiles.implementation-profile.is-simple",
+      "generated": "2026-10-09T10:08:00.693790+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/implementation-profile/is-simple/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/is-simple/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/is-simple.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 48,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.implementation-profile.point-cloud-thinning": {
+      "title": "Validation report for generic-profiles.implementation-profile.point-cloud-thinning - Implementation Profile: Point cloud thinning (simple)",
+      "bblockName": "Implementation Profile: Point cloud thinning (simple)",
+      "bblockId": "generic-profiles.implementation-profile.point-cloud-thinning",
+      "generated": "2026-10-09T10:08:00.749113+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/implementation-profile/point-cloud-thinning/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/point-cloud-thinning/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/point-cloud-thinning.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 59,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.implementation-profile.point-cloud-to-grid": {
+      "title": "Validation report for generic-profiles.implementation-profile.point-cloud-to-grid - Implementation Profile: Point cloud to grid",
+      "bblockName": "Implementation Profile: Point cloud to grid",
+      "bblockId": "generic-profiles.implementation-profile.point-cloud-to-grid",
+      "generated": "2026-10-09T10:08:00.800873+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/implementation-profile/point-cloud-to-grid/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/point-cloud-to-grid/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/point-cloud-to-grid.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1966,19 +2876,19 @@
         "failed": 0
       }
     },
-    "generic-profiles.implementation-profile.intersects": {
-      "title": "Validation report for generic-profiles.implementation-profile.intersects - Implementation Profile: Intersects",
-      "bblockName": "Implementation Profile: Intersects",
-      "bblockId": "generic-profiles.implementation-profile.intersects",
-      "generated": "2026-10-08T08:41:17.647562+00:00",
+    "generic-profiles.implementation-profile.point-cloud-to-shapes": {
+      "title": "Validation report for generic-profiles.implementation-profile.point-cloud-to-shapes - Implementation Profile: Point cloud to shapes",
+      "bblockName": "Implementation Profile: Point cloud to shapes",
+      "bblockId": "generic-profiles.implementation-profile.point-cloud-to-shapes",
+      "generated": "2026-10-09T10:08:00.853898+00:00",
       "result": true,
       "items": [
         {
           "source": {
             "type": "EXAMPLE",
             "requireFail": false,
-            "filename": "build/tests/implementation-profile/intersects/example_1_1.json",
-            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/intersects/example_1_1.json",
+            "filename": "build/tests/implementation-profile/point-cloud-to-shapes/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/point-cloud-to-shapes/example_1_1.json",
             "exampleIndex": 1,
             "snippetIndex": 1,
             "language": "application/json"
@@ -1991,7 +2901,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using examples/intersects.json from examples"
+                  "message": "Using examples/point-cloud-to-shapes.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -2008,77 +2918,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 55,
-                  "isError": false,
-                  "message": "Output Turtle example_1_1.ttl created"
-                }
-              ]
-            },
-            {
-              "name": "JSON_SCHEMA",
-              "title": "JSON Schema",
-              "entries": [
-                {
-                  "op": "validation",
-                  "result": true,
-                  "isError": false,
-                  "message": "Validation passed"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "globalErrors": {},
-      "counts": {
-        "total": 1,
-        "passed": 1,
-        "failed": 0
-      }
-    },
-    "generic-profiles.implementation-profile.is-simple": {
-      "title": "Validation report for generic-profiles.implementation-profile.is-simple - Implementation Profile: Is simple",
-      "bblockName": "Implementation Profile: Is simple",
-      "bblockId": "generic-profiles.implementation-profile.is-simple",
-      "generated": "2026-10-08T08:41:17.698275+00:00",
-      "result": true,
-      "items": [
-        {
-          "source": {
-            "type": "EXAMPLE",
-            "requireFail": false,
-            "filename": "build/tests/implementation-profile/is-simple/example_1_1.json",
-            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/is-simple/example_1_1.json",
-            "exampleIndex": 1,
-            "snippetIndex": 1,
-            "language": "application/json"
-          },
-          "result": true,
-          "sections": [
-            {
-              "name": "FILES",
-              "title": "Files",
-              "entries": [
-                {
-                  "isError": false,
-                  "message": "Using examples/is-simple.json from examples"
-                },
-                {
-                  "op": "jsonld-uplift",
-                  "isError": false,
-                  "message": "JSON-LD context is present - uplifting"
-                },
-                {
-                  "op": "jsonld-create",
-                  "filename": "example_1_1.jsonld",
-                  "isError": false,
-                  "message": "Output JSON-LD example_1_1.jsonld created"
-                },
-                {
-                  "op": "ttl-create",
-                  "empty": false,
-                  "filename": "example_1_1.ttl",
-                  "size": 46,
+                  "size": 52,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -2110,7 +2950,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.radiometric-index - Implementation Profile: Radiometric index",
       "bblockName": "Implementation Profile: Radiometric index",
       "bblockId": "generic-profiles.implementation-profile.radiometric-index",
-      "generated": "2026-10-08T08:41:17.750794+00:00",
+      "generated": "2026-10-09T10:08:00.911691+00:00",
       "result": true,
       "items": [
         {
@@ -2132,216 +2972,6 @@
                 {
                   "isError": false,
                   "message": "Using examples/radiometric-index.json from examples"
-                },
-                {
-                  "op": "jsonld-uplift",
-                  "isError": false,
-                  "message": "JSON-LD context is present - uplifting"
-                },
-                {
-                  "op": "jsonld-create",
-                  "filename": "example_1_1.jsonld",
-                  "isError": false,
-                  "message": "Output JSON-LD example_1_1.jsonld created"
-                },
-                {
-                  "op": "ttl-create",
-                  "empty": false,
-                  "filename": "example_1_1.ttl",
-                  "size": 58,
-                  "isError": false,
-                  "message": "Output Turtle example_1_1.ttl created"
-                }
-              ]
-            },
-            {
-              "name": "JSON_SCHEMA",
-              "title": "JSON Schema",
-              "entries": [
-                {
-                  "op": "validation",
-                  "result": true,
-                  "isError": false,
-                  "message": "Validation passed"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "globalErrors": {},
-      "counts": {
-        "total": 1,
-        "passed": 1,
-        "failed": 0
-      }
-    },
-    "generic-profiles.implementation-profile.raster-band-math": {
-      "title": "Validation report for generic-profiles.implementation-profile.raster-band-math - Implementation Profile: Raster band math",
-      "bblockName": "Implementation Profile: Raster band math",
-      "bblockId": "generic-profiles.implementation-profile.raster-band-math",
-      "generated": "2026-10-08T08:41:17.807798+00:00",
-      "result": true,
-      "items": [
-        {
-          "source": {
-            "type": "EXAMPLE",
-            "requireFail": false,
-            "filename": "build/tests/implementation-profile/raster-band-math/example_1_1.json",
-            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/raster-band-math/example_1_1.json",
-            "exampleIndex": 1,
-            "snippetIndex": 1,
-            "language": "application/json"
-          },
-          "result": true,
-          "sections": [
-            {
-              "name": "FILES",
-              "title": "Files",
-              "entries": [
-                {
-                  "isError": false,
-                  "message": "Using examples/raster-band-math.json from examples"
-                },
-                {
-                  "op": "jsonld-uplift",
-                  "isError": false,
-                  "message": "JSON-LD context is present - uplifting"
-                },
-                {
-                  "op": "jsonld-create",
-                  "filename": "example_1_1.jsonld",
-                  "isError": false,
-                  "message": "Output JSON-LD example_1_1.jsonld created"
-                },
-                {
-                  "op": "ttl-create",
-                  "empty": false,
-                  "filename": "example_1_1.ttl",
-                  "size": 58,
-                  "isError": false,
-                  "message": "Output Turtle example_1_1.ttl created"
-                }
-              ]
-            },
-            {
-              "name": "JSON_SCHEMA",
-              "title": "JSON Schema",
-              "entries": [
-                {
-                  "op": "validation",
-                  "result": true,
-                  "isError": false,
-                  "message": "Validation passed"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "globalErrors": {},
-      "counts": {
-        "total": 1,
-        "passed": 1,
-        "failed": 0
-      }
-    },
-    "generic-profiles.implementation-profile.raster-band-math-multiband": {
-      "title": "Validation report for generic-profiles.implementation-profile.raster-band-math-multiband - Implementation Profile: Raster band math (multi-band output)",
-      "bblockName": "Implementation Profile: Raster band math (multi-band output)",
-      "bblockId": "generic-profiles.implementation-profile.raster-band-math-multiband",
-      "generated": "2026-10-08T08:41:17.865831+00:00",
-      "result": true,
-      "items": [
-        {
-          "source": {
-            "type": "EXAMPLE",
-            "requireFail": false,
-            "filename": "build/tests/implementation-profile/raster-band-math-multiband/example_1_1.json",
-            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/raster-band-math-multiband/example_1_1.json",
-            "exampleIndex": 1,
-            "snippetIndex": 1,
-            "language": "application/json"
-          },
-          "result": true,
-          "sections": [
-            {
-              "name": "FILES",
-              "title": "Files",
-              "entries": [
-                {
-                  "isError": false,
-                  "message": "Using examples/raster-band-math-multiband.json from examples"
-                },
-                {
-                  "op": "jsonld-uplift",
-                  "isError": false,
-                  "message": "JSON-LD context is present - uplifting"
-                },
-                {
-                  "op": "jsonld-create",
-                  "filename": "example_1_1.jsonld",
-                  "isError": false,
-                  "message": "Output JSON-LD example_1_1.jsonld created"
-                },
-                {
-                  "op": "ttl-create",
-                  "empty": false,
-                  "filename": "example_1_1.ttl",
-                  "size": 62,
-                  "isError": false,
-                  "message": "Output Turtle example_1_1.ttl created"
-                }
-              ]
-            },
-            {
-              "name": "JSON_SCHEMA",
-              "title": "JSON Schema",
-              "entries": [
-                {
-                  "op": "validation",
-                  "result": true,
-                  "isError": false,
-                  "message": "Validation passed"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "globalErrors": {},
-      "counts": {
-        "total": 1,
-        "passed": 1,
-        "failed": 0
-      }
-    },
-    "generic-profiles.implementation-profile.raster-crop": {
-      "title": "Validation report for generic-profiles.implementation-profile.raster-crop - Implementation Profile: Raster crop",
-      "bblockName": "Implementation Profile: Raster crop",
-      "bblockId": "generic-profiles.implementation-profile.raster-crop",
-      "generated": "2026-10-08T08:41:17.920776+00:00",
-      "result": true,
-      "items": [
-        {
-          "source": {
-            "type": "EXAMPLE",
-            "requireFail": false,
-            "filename": "build/tests/implementation-profile/raster-crop/example_1_1.json",
-            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/raster-crop/example_1_1.json",
-            "exampleIndex": 1,
-            "snippetIndex": 1,
-            "language": "application/json"
-          },
-          "result": true,
-          "sections": [
-            {
-              "name": "FILES",
-              "title": "Files",
-              "entries": [
-                {
-                  "isError": false,
-                  "message": "Using examples/raster-crop.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -2386,11 +3016,221 @@
         "failed": 0
       }
     },
+    "generic-profiles.implementation-profile.raster-band-math": {
+      "title": "Validation report for generic-profiles.implementation-profile.raster-band-math - Implementation Profile: Raster band math",
+      "bblockName": "Implementation Profile: Raster band math",
+      "bblockId": "generic-profiles.implementation-profile.raster-band-math",
+      "generated": "2026-10-09T10:08:00.964129+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/implementation-profile/raster-band-math/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/raster-band-math/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/raster-band-math.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 61,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.implementation-profile.raster-band-math-multiband": {
+      "title": "Validation report for generic-profiles.implementation-profile.raster-band-math-multiband - Implementation Profile: Raster band math (multi-band output)",
+      "bblockName": "Implementation Profile: Raster band math (multi-band output)",
+      "bblockId": "generic-profiles.implementation-profile.raster-band-math-multiband",
+      "generated": "2026-10-09T10:08:01.089546+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/implementation-profile/raster-band-math-multiband/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/raster-band-math-multiband/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/raster-band-math-multiband.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 65,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.implementation-profile.raster-crop": {
+      "title": "Validation report for generic-profiles.implementation-profile.raster-crop - Implementation Profile: Raster crop",
+      "bblockName": "Implementation Profile: Raster crop",
+      "bblockId": "generic-profiles.implementation-profile.raster-crop",
+      "generated": "2026-10-09T10:08:01.144199+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/implementation-profile/raster-crop/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/raster-crop/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/raster-crop.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 64,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
     "generic-profiles.implementation-profile.raster-extent": {
       "title": "Validation report for generic-profiles.implementation-profile.raster-extent - Implementation Profile: Raster extent",
       "bblockName": "Implementation Profile: Raster extent",
       "bblockId": "generic-profiles.implementation-profile.raster-extent",
-      "generated": "2026-10-08T08:41:17.972054+00:00",
+      "generated": "2026-10-09T10:08:01.206888+00:00",
       "result": true,
       "items": [
         {
@@ -2428,7 +3268,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 50,
+                  "size": 52,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -2460,7 +3300,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.raster-format-conversion - Implementation Profile: Raster format conversion",
       "bblockName": "Implementation Profile: Raster format conversion",
       "bblockId": "generic-profiles.implementation-profile.raster-format-conversion",
-      "generated": "2026-10-08T08:41:18.031291+00:00",
+      "generated": "2026-10-09T10:08:01.269744+00:00",
       "result": true,
       "items": [
         {
@@ -2498,7 +3338,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 57,
+                  "size": 60,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -2530,7 +3370,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.raster-reprojection - Implementation Profile: Raster reprojection",
       "bblockName": "Implementation Profile: Raster reprojection",
       "bblockId": "generic-profiles.implementation-profile.raster-reprojection",
-      "generated": "2026-10-08T08:41:18.088058+00:00",
+      "generated": "2026-10-09T10:08:01.393725+00:00",
       "result": true,
       "items": [
         {
@@ -2568,7 +3408,77 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 57,
+                  "size": 60,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.implementation-profile.slope": {
+      "title": "Validation report for generic-profiles.implementation-profile.slope - Implementation Profile: Slope",
+      "bblockName": "Implementation Profile: Slope",
+      "bblockId": "generic-profiles.implementation-profile.slope",
+      "generated": "2026-10-09T10:08:01.444734+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/implementation-profile/slope/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/slope/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/slope.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 56,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -2600,7 +3510,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.symdifference - Implementation Profile: Symmetric difference",
       "bblockName": "Implementation Profile: Symmetric difference",
       "bblockId": "generic-profiles.implementation-profile.symdifference",
-      "generated": "2026-10-08T08:41:18.145188+00:00",
+      "generated": "2026-10-09T10:08:01.502960+00:00",
       "result": true,
       "items": [
         {
@@ -2638,7 +3548,147 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 60,
+                  "size": 63,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.implementation-profile.terrain-ruggedness-index": {
+      "title": "Validation report for generic-profiles.implementation-profile.terrain-ruggedness-index - Implementation Profile: Terrain ruggedness index",
+      "bblockName": "Implementation Profile: Terrain ruggedness index",
+      "bblockId": "generic-profiles.implementation-profile.terrain-ruggedness-index",
+      "generated": "2026-10-09T10:08:01.558258+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/implementation-profile/terrain-ruggedness-index/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/terrain-ruggedness-index/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/terrain-ruggedness-index.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 56,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": true,
+                  "isError": false,
+                  "message": "Validation passed"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "generic-profiles.implementation-profile.topographic-position-index": {
+      "title": "Validation report for generic-profiles.implementation-profile.topographic-position-index - Implementation Profile: Topographic position index",
+      "bblockName": "Implementation Profile: Topographic position index",
+      "bblockId": "generic-profiles.implementation-profile.topographic-position-index",
+      "generated": "2026-10-09T10:08:01.620135+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/implementation-profile/topographic-position-index/example_1_1.json",
+            "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/implementation-profile/topographic-position-index/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/topographic-position-index.json from examples"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 56,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -2670,7 +3720,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.touches - Implementation Profile: Touches",
       "bblockName": "Implementation Profile: Touches",
       "bblockId": "generic-profiles.implementation-profile.touches",
-      "generated": "2026-10-08T08:41:18.198749+00:00",
+      "generated": "2026-10-09T10:08:01.679953+00:00",
       "result": true,
       "items": [
         {
@@ -2708,7 +3758,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 55,
+                  "size": 58,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -2740,7 +3790,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.union - Implementation Profile: Union",
       "bblockName": "Implementation Profile: Union",
       "bblockId": "generic-profiles.implementation-profile.union",
-      "generated": "2026-10-08T08:41:18.254267+00:00",
+      "generated": "2026-10-09T10:08:01.749004+00:00",
       "result": true,
       "items": [
         {
@@ -2778,7 +3828,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 60,
+                  "size": 63,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -2810,7 +3860,7 @@
       "title": "Validation report for generic-profiles.implementation-profile.within - Implementation Profile: Within",
       "bblockName": "Implementation Profile: Within",
       "bblockId": "generic-profiles.implementation-profile.within",
-      "generated": "2026-10-08T08:41:18.341533+00:00",
+      "generated": "2026-10-09T10:08:01.804673+00:00",
       "result": true,
       "items": [
         {
@@ -2848,7 +3898,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 55,
+                  "size": 58,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }

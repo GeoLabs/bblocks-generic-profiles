@@ -1,0 +1,19 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/point-cloud-processing/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing",
+  "type": "Concept",
+  "prefLabel": "Point Cloud Processing",
+  "definition": "Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
+  "status": "submitted",
+  "source": [
+    {
+      "title": "OGC 17-030r1 LAS Specification 1.4 OGC Community Standard",
+      "link": "https://www.ogc.org/standards/las/"
+    },
+    {
+      "title": "SAGA 7.3.0 tool library Shapes - Point Clouds",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html"
+    }
+  ]
+}

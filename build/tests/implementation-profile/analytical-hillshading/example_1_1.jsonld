@@ -1,0 +1,115 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/analytical-hillshading/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading",
+  "type": "ImplementationProfile",
+  "prefLabel": "Analytical hillshading",
+  "definition": "For each cell, the angle at which light coming from the position of the light source hits the terrain surface (SAGA's standard method).",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading",
+  "keywords": [
+    "terrain",
+    "elevation",
+    "raster",
+    "illumination",
+    "hillshade",
+    "Hillshade",
+    "ta_lighting"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Terrain Analysis",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
+    },
+    {
+      "title": "Generic Profile: Analytical hillshading",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading"
+    }
+  ],
+  "inputs": {
+    "elevation": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/elevation",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model",
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff",
+        "description": "GeoTIFF"
+      },
+      "keywords": [
+        "elevation",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Analytical hillshading -- input `elevation`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/elevation"
+        }
+      ]
+    },
+    "azimuth": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/azimuth",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "keywords": [
+        "azimuth"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Analytical hillshading -- input `azimuth`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/azimuth"
+        }
+      ]
+    },
+    "altitude": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/altitude",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "keywords": [
+        "altitude"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Analytical hillshading -- input `altitude`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/altitude"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band",
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "image/tiff",
+        "description": "GeoTIFF"
+      },
+      "keywords": [
+        "raster",
+        "GeoTIFF"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Analytical hillshading -- output `result`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/outputs/result"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "SAGA 7.3.0 -- Analytical Hillshading",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_lighting_0.html"
+    },
+    {
+      "title": "ZOO-Project Geonovum testbed -- SAGA.ta_lighting.0: Analytical Hillshading",
+      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_lighting.0"
+    }
+  ]
+}

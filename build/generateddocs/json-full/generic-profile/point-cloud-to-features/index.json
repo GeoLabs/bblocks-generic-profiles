@@ -1,0 +1,81 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.generic-profile.point-cloud-to-features",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Generic Profile: Point cloud to features",
+  "abstract": "Converts a point cloud to a feature collection. One point cloud in, one feature collection out.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-08T00:00:00Z",
+  "dateOfLastChange": "2026-10-09",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.generic-profile"
+  ],
+  "sources": [
+    {
+      "title": "ZOO-Project process-profiles: Concept / Generic Profile / Implementation Profile",
+      "link": "https://zoo-project.github.io/docs/services/process-profiles.html"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "generic profile",
+    "SKOS",
+    "Point cloud to features"
+  ],
+  "sourceSchema": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/point-cloud-to-features/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-to-features/context.jsonld",
+  "maturity": "development",
+  "group": "Generic Profiles",
+  "isProfileOf": [
+    "generic-profiles.generic-profile",
+    "generic-profiles.concept.point-cloud-processing"
+  ],
+  "shaclShapes": {},
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-to-features/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-to-features/schema.json"
+  },
+  "sourceLdContext": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/point-cloud-to-features/context.jsonld",
+  "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-to-features/resolvedProperties.json",
+  "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/point-cloud-to-features/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/point-cloud-to-features/",
+  "description": "Generic Profile: **Point cloud to features**.\n\n> Converts a point cloud to a feature collection. One point cloud in, one feature collection out.\n\n## Signature\n\n| | Name | Data type | Description |\n|---|---|---|---|\n| input | `points` | [`point-cloud`](../../data-type/) | the input point cloud |\n| output | `result` | [`feature-collection`](../../data-type/) | one feature per point, its attributes as feature attributes |\n\n## Source\n\n- [OGC 14-065 WPS 2.0.2](https://docs.ogc.org/is/14-065/14-065.html) \u00a77.5.2 -- what a Generic Profile is.\n- The operations below are each grounded in their own SAGA 7.3.0 tool documentation (see each\n  Implementation Profile).\n\n## Relations\n\n- `broader`: [`generic-profiles.concept.point-cloud-processing`](../../concept/point-cloud-processing/)\n- Refined by (1 Implementation Profile): [`point-cloud-to-shapes`](../../implementation-profile/point-cloud-to-shapes/)\n\n## Register position\n\nSecond tier of the four-tier model (OGC 14-065 WPS 2.0.2 \u00a77.5): Concept -> **Generic Profile** ->\nImplementation Profile -> Implementation (instance level).\n",
+  "examples": [
+    {
+      "title": "Point cloud to features",
+      "base-uri": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/point-cloud-to-features/examples/point-cloud-to-features.json",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/point-cloud-to-features/example_1_1.json",
+          "sizeBytes": 1715,
+          "code": "{\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features\",\n  \"type\": \"GenericProfile\",\n  \"prefLabel\": \"Point cloud to features\",\n  \"definition\": \"Converts a point cloud to a feature collection. One point cloud in, one feature collection out.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile\",\n  \"status\": \"submitted\",\n  \"broader\": [\n    \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\"\n  ],\n  \"keywords\": [\n    \"point cloud\",\n    \"feature collection\",\n    \"conversion\"\n  ],\n  \"metadata\": [\n    {\n      \"title\": \"Process Concept: Point Cloud Processing\",\n      \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\",\n      \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\"\n    }\n  ],\n  \"inputs\": {\n    \"points\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud\",\n      \"title\": \"Point cloud\",\n      \"description\": \"the input point cloud\",\n      \"keywords\": [\n        \"point cloud\"\n      ]\n    }\n  },\n  \"outputs\": {\n    \"result\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection\",\n      \"title\": \"Feature collection\",\n      \"description\": \"one feature per point, its attributes as feature attributes\",\n      \"keywords\": [\n        \"feature collection\"\n      ]\n    }\n  }\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/point-cloud-to-features/example_1_1.jsonld",
+          "sizeBytes": 1853,
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-to-features/context.jsonld\",\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features\",\n  \"type\": \"GenericProfile\",\n  \"prefLabel\": \"Point cloud to features\",\n  \"definition\": \"Converts a point cloud to a feature collection. One point cloud in, one feature collection out.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile\",\n  \"status\": \"submitted\",\n  \"broader\": [\n    \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\"\n  ],\n  \"keywords\": [\n    \"point cloud\",\n    \"feature collection\",\n    \"conversion\"\n  ],\n  \"metadata\": [\n    {\n      \"title\": \"Process Concept: Point Cloud Processing\",\n      \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\",\n      \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\"\n    }\n  ],\n  \"inputs\": {\n    \"points\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud\",\n      \"title\": \"Point cloud\",\n      \"description\": \"the input point cloud\",\n      \"keywords\": [\n        \"point cloud\"\n      ]\n    }\n  },\n  \"outputs\": {\n    \"result\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection\",\n      \"title\": \"Feature collection\",\n      \"description\": \"one feature per point, its attributes as feature attributes\",\n      \"keywords\": [\n        \"feature collection\"\n      ]\n    }\n  }\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/point-cloud-to-features/example_1_1.ttl",
+          "sizeBytes": 2240,
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .\n@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .\n@prefix proc: <https://w3id.org/ogc/api/processes/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features> a skos:Concept ;\n    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;\n    skos:definition \"Converts a point cloud to a feature collection. One point cloud in, one feature collection out.\" ;\n    skos:inScheme gp:generic-profile ;\n    skos:prefLabel \"Point cloud to features\" ;\n    gp:inputs [ ns1:points <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points> ] ;\n    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result> ] ;\n    gp:status \"submitted\" ;\n    proc:keywords \"conversion\",\n        \"feature collection\",\n        \"point cloud\" ;\n    proc:metadata [ dcterms:title \"Process Concept: Point Cloud Processing\" ;\n            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;\n            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points> dcterms:description \"the input point cloud\" ;\n    dcterms:title \"Point cloud\" ;\n    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud> ;\n    proc:keywords \"point cloud\" .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result> dcterms:description \"one feature per point, its attributes as feature attributes\" ;\n    dcterms:title \"Feature collection\" ;\n    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection> ;\n    proc:keywords \"feature collection\" .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: The Generic Profile \"Point cloud to features\" -- see generic-profiles.generic-profile\n  for the general shape every Generic Profile shares.\nallOf:\n- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml\n- type: object\n  properties:\n    id:\n      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features\n      x-jsonld-id: '@id'\n    type:\n      const: GenericProfile\n      x-jsonld-id: '@type'\n    prefLabel:\n      const: Point cloud to features\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel\n- type: object\n  properties:\n    metadata:\n      allOf:\n      - contains:\n          type: object\n          required:\n          - role\n          - href\n          properties:\n            role:\n              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\n            href:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\n      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata\n    inputs:\n      properties:\n        points:\n          required:\n          - id\n          - dataType\n          properties:\n            id:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points\n              x-jsonld-id: '@id'\n            dataType:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud\n              x-jsonld-id: http://purl.org/dc/terms/type\n              x-jsonld-type: '@id'\n      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs\n      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/\n    outputs:\n      properties:\n        result:\n          required:\n          - id\n          - dataType\n          properties:\n            id:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result\n              x-jsonld-id: '@id'\n            dataType:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection\n              x-jsonld-id: http://purl.org/dc/terms/type\n              x-jsonld-type: '@id'\n      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs\n      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/\nx-jsonld-extra-terms:\n  GenericProfile: http://www.w3.org/2004/02/skos/core#Concept\n  definition: http://www.w3.org/2004/02/skos/core#definition\n  inScheme:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme\n    x-jsonld-type: '@id'\n  status: https://geolabs.github.io/bblocks-generic-profiles/def/status\n  broader:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#broader\n    x-jsonld-type: '@id'\n  keywords: https://w3id.org/ogc/api/processes/keywords\n  source: http://purl.org/dc/terms/source\n  title: http://purl.org/dc/terms/title\n  link:\n    x-jsonld-id: http://purl.org/dc/terms/references\n    x-jsonld-type: '@id'\n  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause\nx-jsonld-prefixes:\n  skos: http://www.w3.org/2004/02/skos/core#\n  gp: https://geolabs.github.io/bblocks-generic-profiles/def/\n  proc: https://w3id.org/ogc/api/processes/\n  dct: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/generic-profile/point-cloud-to-features"
+}

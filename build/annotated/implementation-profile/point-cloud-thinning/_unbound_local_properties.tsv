@@ -1,0 +1,12 @@
+path
+/metadata/role
+/metadata/href
+/inputs/points
+/inputs/points/metadata/role
+/inputs/points/metadata/href
+/inputs/percentage
+/inputs/percentage/metadata/role
+/inputs/percentage/metadata/href
+/outputs/result
+/outputs/result/metadata/role
+/outputs/result/metadata/href

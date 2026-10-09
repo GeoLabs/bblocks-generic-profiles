@@ -123,11 +123,6 @@
                     }
                   ],
                   "x-jsonld-id": "https://w3id.org/ogc/api/processes/metadata"
-                },
-                "maxOccurs": {
-                  "type": "integer",
-                  "maximum": 1,
-                  "x-jsonld-id": "https://w3id.org/ogc/api/processes/maxOccurs"
                 }
               }
             }
@@ -190,12 +185,18 @@
           "properties": {
             "geometry": {
               "required": [
-                "id"
+                "id",
+                "dataType"
               ],
               "properties": {
                 "id": {
                   "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/inputs/geometry",
                   "x-jsonld-id": "@id"
+                },
+                "dataType": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface",
+                  "x-jsonld-id": "http://purl.org/dc/terms/type",
+                  "x-jsonld-type": "@id"
                 }
               }
             }
@@ -207,12 +208,18 @@
           "properties": {
             "result": {
               "required": [
-                "id"
+                "id",
+                "dataType"
               ],
               "properties": {
                 "id": {
                   "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/outputs/result",
                   "x-jsonld-id": "@id"
+                },
+                "dataType": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point",
+                  "x-jsonld-id": "http://purl.org/dc/terms/type",
+                  "x-jsonld-type": "@id"
                 }
               }
             }

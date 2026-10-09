@@ -1,0 +1,14 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html> ;
+            dcterms:title "SAGA 7.3.0 tool library Shapes - Point Clouds" ],
+        [ dcterms:references <https://www.ogc.org/standards/las/> ;
+            dcterms:title "OGC 17-030r1 LAS Specification 1.4 OGC Community Standard" ] ;
+    skos:definition "Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1)." ;
+    skos:inScheme gp:concept ;
+    skos:prefLabel "Point Cloud Processing" ;
+    gp:status "submitted" .
+

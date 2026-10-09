@@ -142,9 +142,19 @@ properties:
       type: object
       required:
       - id
+      - dataType
       - title
       - keywords
       properties:
+        dataType:
+          description: 'What kind of data this input is, as a concept of the generic-profiles.data-type
+            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
+            Not a data format: Table 21 gives this tier none; an Implementation Profile
+            may narrow it (e.g. `raster` to `raster-single-band`, `geometry` to `surface`).'
+          type: string
+          format: uri
+          x-jsonld-id: http://purl.org/dc/terms/type
+          x-jsonld-type: '@id'
         id:
           description: This input's own IRI, `<profile id>/inputs/<name>` -- what
             a lower tier's metadata `href` points at.
@@ -203,9 +213,19 @@ properties:
       type: object
       required:
       - id
+      - dataType
       - title
       - keywords
       properties:
+        dataType:
+          description: 'What kind of data this output is, as a concept of the generic-profiles.data-type
+            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
+            Not a data format: Table 21 gives this tier none; an Implementation Profile
+            may narrow it (e.g. `raster` to `raster-single-band`, `geometry` to `surface`).'
+          type: string
+          format: uri
+          x-jsonld-id: http://purl.org/dc/terms/type
+          x-jsonld-type: '@id'
         id:
           description: This output's own IRI, `<profile id>/outputs/<name>` -- what
             a lower tier's metadata `href` points at.

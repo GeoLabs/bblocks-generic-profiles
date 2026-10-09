@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "ConceptScheme": "skos:ConceptScheme",
+    "DataType": "skos:Concept",
+    "clause": "gp:clause",
+    "id": "@id",
+    "type": "@type",
+    "prefLabel": "skos:prefLabel",
+    "definition": "skos:definition",
+    "concepts": {
+      "@context": {
+        "broader": {
+          "@id": "skos:broader",
+          "@type": "@id"
+        },
+        "source": {
+          "@context": {
+            "title": "dct:title",
+            "link": {
+              "@id": "dct:references",
+              "@type": "@id"
+            }
+          },
+          "@id": "dct:source"
+        }
+      },
+      "@reverse": "skos:inScheme"
+    },
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dct": "http://purl.org/dc/terms/",
+    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "@version": 1.1
+  }
+}

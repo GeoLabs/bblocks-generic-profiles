@@ -24,28 +24,29 @@
   "inputs": {
     "rasters": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the input spectral band(s)",
       "keywords": [
         "raster"
       ],
-      "minOccurs": 1,
       "maxOccurs": "unbounded"
     },
     "index": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string",
       "title": "String",
       "description": "the name of the radiometric index (or indices) to compute",
       "keywords": [
         "radiometric index"
       ],
-      "minOccurs": 1,
       "maxOccurs": "unbounded"
     }
   },
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
       "title": "Raster",
       "description": "the resulting raster (one band per selected index)",
       "keywords": [

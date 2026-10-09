@@ -1,0 +1,98 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-thinning/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning",
+  "type": "ImplementationProfile",
+  "prefLabel": "Point cloud thinning (simple)",
+  "definition": "Reduces the number of points to the given percentage by sequential point removal, which suits points stored in chronological order best.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning",
+  "keywords": [
+    "point cloud",
+    "thinning",
+    "Point Cloud Thinning",
+    "pointcloud_tools"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Point Cloud Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
+    },
+    {
+      "title": "Generic Profile: Point cloud thinning",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning"
+    }
+  ],
+  "inputs": {
+    "points": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/points",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "application/vnd.las",
+        "description": "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type"
+      },
+      "keywords": [
+        "point cloud",
+        "LAS"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Point cloud thinning -- input `points`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points"
+        }
+      ]
+    },
+    "percentage": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/percentage",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "keywords": [
+        "percentage"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Point cloud thinning -- input `percentage`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "application/vnd.las",
+        "description": "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type"
+      },
+      "keywords": [
+        "point cloud",
+        "LAS"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Point cloud thinning -- output `result`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "SAGA 7.3.0 -- Point Cloud Thinning (Simple)",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_9.html"
+    },
+    {
+      "title": "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.9: Point Cloud Thinning (Simple)",
+      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.9"
+    }
+  ]
+}

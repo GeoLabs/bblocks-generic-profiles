@@ -16,6 +16,7 @@ path	@id	schema
 /source/link	http://purl.org/dc/terms/references	/github/workspace/build/annotated/generic-profile/schema.yaml
 /source/clause	https://geolabs.github.io/bblocks-generic-profiles/def/clause	/github/workspace/build/annotated/generic-profile/schema.yaml
 /inputs	https://geolabs.github.io/bblocks-generic-profiles/def/inputs	/github/workspace/build/annotated/generic-profile/schema.yaml
+/inputs/dataType	http://purl.org/dc/terms/type	/github/workspace/build/annotated/generic-profile/schema.yaml
 /inputs/id	@id	/github/workspace/build/annotated/generic-profile/schema.yaml
 /inputs/title	http://purl.org/dc/terms/title	/github/workspace/build/annotated/generic-profile/schema.yaml
 /inputs/description	http://purl.org/dc/terms/description	/github/workspace/build/annotated/generic-profile/schema.yaml
@@ -24,6 +25,7 @@ path	@id	schema
 /inputs/minOccurs	https://w3id.org/ogc/api/processes/minOccurs	/github/workspace/build/annotated/generic-profile/schema.yaml
 /inputs/maxOccurs	https://w3id.org/ogc/api/processes/maxOccurs	/github/workspace/build/annotated/generic-profile/schema.yaml
 /outputs	https://geolabs.github.io/bblocks-generic-profiles/def/outputs	/github/workspace/build/annotated/generic-profile/schema.yaml
+/outputs/dataType	http://purl.org/dc/terms/type	/github/workspace/build/annotated/generic-profile/schema.yaml
 /outputs/id	@id	/github/workspace/build/annotated/generic-profile/schema.yaml
 /outputs/title	http://purl.org/dc/terms/title	/github/workspace/build/annotated/generic-profile/schema.yaml
 /outputs/description	http://purl.org/dc/terms/description	/github/workspace/build/annotated/generic-profile/schema.yaml

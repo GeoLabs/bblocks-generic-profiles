@@ -2,7 +2,7 @@
   "title": "Validation report for generic-profiles.implementation-profile.raster-crop - Implementation Profile: Raster crop",
   "bblockName": "Implementation Profile: Raster crop",
   "bblockId": "generic-profiles.implementation-profile.raster-crop",
-  "generated": "2026-10-08T08:41:17.920776+00:00",
+  "generated": "2026-10-09T10:08:01.144199+00:00",
   "result": true,
   "items": [
     {
@@ -40,7 +40,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 61,
+              "size": 64,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }

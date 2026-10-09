@@ -1,0 +1,129 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/18-062r2/18-062r2.html> ;
+            dcterms:title "OGC 18-062r2 OGC API - Processes - Part 1: Core (inputs/outputs `schema`, JSON Schema)" ] ;
+    skos:definition "A literal truth value." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Boolean" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/17-069r4/17-069r4.html> ;
+            dcterms:title "ogc.api.processes.v1.schemas.bbox, after OGC 17-069r4 §7.15.3 `bbox`" ] ;
+    skos:definition "An axis-aligned extent given by its corners, with its CRS." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Bounding box" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/curve> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ] ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    skos:definition "A 1-dimensional geometry, e.g. a LineString." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Curve" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry.html> ;
+            dcterms:title "SAGA 7.3.0 Terrain Analysis tools, `Elevation` grid inputs" ],
+        [ dcterms:references <https://docs.ogc.org/is/09-146r8/09-146r8.html> ;
+            dcterms:title "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType" ] ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band> ;
+    skos:definition "A single-band raster whose values are elevations of the terrain or of a surface (DEM, DTM, DSM)." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Elevation model" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/17-069r4/17-069r4.html> ;
+            dcterms:title "OGC 17-069r4 OGC API - Features - Part 1: Core" ] ;
+    skos:definition "A set of features, each with a geometry and attributes -- e.g. a SAGA shapes layer, a GeoJSON or OGC API - Features feature collection." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Feature collection" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/18-062r2/18-062r2.html> ;
+            dcterms:title "OGC 18-062r2 OGC API - Processes - Part 1: Core (inputs/outputs `schema`, JSON Schema)" ] ;
+    skos:definition "A literal number." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Number" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ] ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    skos:definition "A 0-dimensional geometry, a single location." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Point" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/las/> ;
+            dcterms:title "OGC 17-030r1 LAS Specification 1.4 OGC Community Standard" ] ;
+    skos:definition "A set of three-dimensional points, each with its own attributes (intensity, classification, ...), typically from LiDAR." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Point cloud" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-multi-band> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/09-146r8/09-146r8.html> ;
+            dcterms:title "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType" ] ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
+    skos:definition "A raster with more than one band: a range type of several fields." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Raster (multiple bands)" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/18-062r2/18-062r2.html> ;
+            dcterms:title "OGC 18-062r2 OGC API - Processes - Part 1: Core (inputs/outputs `schema`, JSON Schema)" ] ;
+    skos:definition "A literal character string, e.g. an expression, a CRS identifier or a format name." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "String" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ] ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    skos:definition "A 2-dimensional geometry, e.g. a Polygon." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Surface" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/table> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/table_tools.html> ;
+            dcterms:title "SAGA 7.3.0 Table tools" ] ;
+    skos:definition "Records of attribute values, without geometry." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Table" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/tin> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/tin_tools.html> ;
+            dcterms:title "SAGA 7.3.0 TIN tools" ],
+        [ dcterms:title "ISO 19107:2019 Geographic information -- Spatial schema (TIN)" ] ;
+    skos:definition "A surface represented by a network of triangles over irregularly spaced points." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Triangulated irregular network" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/09-146r8/09-146r8.html> ;
+            dcterms:title "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType" ] ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
+    skos:definition "A raster with exactly one band: a range type of one field." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Raster (single band)" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/09-146r8/09-146r8.html> ;
+            dcterms:title "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType" ] ;
+    skos:definition "A coverage on a regular grid of cells, each cell carrying one value per band; how many bands it has, and what they mean, is its range type." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Raster" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> a skos:Concept ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ] ;
+    skos:definition "A geometric object of the Simple Feature Access geometry model." ;
+    skos:inScheme gp:data-type ;
+    skos:prefLabel "Geometry" .
+
+gp:data-type a skos:ConceptScheme ;
+    skos:definition "The kinds of data a process profile's inputs and outputs carry, independent of any encoding (which an Implementation Profile's `schema` declares)." ;
+    skos:prefLabel "Data types" .
+

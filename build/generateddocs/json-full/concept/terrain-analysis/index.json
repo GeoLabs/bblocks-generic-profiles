@@ -1,0 +1,87 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.concept.terrain-analysis",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Process Concept: Terrain Analysis",
+  "abstract": "Operations deriving terrain attributes from an elevation model: local surface derivatives (slope, aspect, curvature), neighbourhood indices (terrain ruggedness, topographic position) and illumination (hillshading) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1). A kind of raster coverage processing: an elevation model is a single-band raster whose values are elevations.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-08T00:00:00Z",
+  "dateOfLastChange": "2026-10-09",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.concept"
+  ],
+  "sources": [
+    {
+      "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, \u00a77.5.1 Process Concept",
+      "link": "https://docs.ogc.org/is/14-065/14-065.html"
+    },
+    {
+      "title": "SAGA 7.3.0 tool libraries, category Terrain Analysis",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/index.html"
+    },
+    {
+      "title": "Wilson, J.P., Gallant, J.C. (2000): Terrain Analysis: Principles and Applications (cited by SAGA's Topographic Position Index tool)"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "concept",
+    "SKOS",
+    "Terrain Analysis"
+  ],
+  "sourceSchema": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/terrain-analysis/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/terrain-analysis/context.jsonld",
+  "maturity": "development",
+  "group": "Concepts",
+  "isProfileOf": [
+    "generic-profiles.concept"
+  ],
+  "shaclShapes": {},
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/terrain-analysis/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/terrain-analysis/schema.json"
+  },
+  "sourceLdContext": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/terrain-analysis/context.jsonld",
+  "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/terrain-analysis/resolvedProperties.json",
+  "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/terrain-analysis/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/concept/terrain-analysis/",
+  "description": "Process Concept: **Terrain Analysis**.\n\n> Operations deriving terrain attributes from an elevation model: local surface derivatives (slope, aspect, curvature), neighbourhood indices (terrain ruggedness, topographic position) and illumination (hillshading) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1). A kind of raster coverage processing: an elevation model is a single-band raster whose values are elevations.\n\n## Source\n\n- [SAGA 7.3.0 tool libraries, category Terrain Analysis](https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/index.html)\n- Wilson, J.P., Gallant, J.C. (2000): Terrain Analysis: Principles and Applications (cited by SAGA's Topographic Position Index tool)\n\n## Relations\n\n- Broader concept of (`broader`): [`terrain-derivative`](../../generic-profile/terrain-derivative/), [`analytical-hillshading`](../../generic-profile/analytical-hillshading/)\n- Narrower than [`raster-coverage-processing`](../raster-coverage-processing/) (listed in its `narrower`)\n\n## Register position\n\nTop tier of the four-tier model (OGC 14-065 WPS 2.0.2 \u00a77.5): **Concept** -> Generic Profile ->\nImplementation Profile -> Implementation (instance level).\n",
+  "examples": [
+    {
+      "title": "Terrain Analysis",
+      "base-uri": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/terrain-analysis/examples/terrain-analysis.json",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/terrain-analysis/example_1_1.json",
+          "sizeBytes": 1040,
+          "code": "{\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis\",\n  \"type\": \"Concept\",\n  \"prefLabel\": \"Terrain Analysis\",\n  \"definition\": \"Operations deriving terrain attributes from an elevation model: local surface derivatives (slope, aspect, curvature), neighbourhood indices (terrain ruggedness, topographic position) and illumination (hillshading) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \\u00a77.5.1). A kind of raster coverage processing: an elevation model is a single-band raster whose values are elevations.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept\",\n  \"status\": \"submitted\",\n  \"source\": [\n    {\n      \"title\": \"SAGA 7.3.0 tool libraries, category Terrain Analysis\",\n      \"link\": \"https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/index.html\"\n    },\n    {\n      \"title\": \"Wilson, J.P., Gallant, J.C. (2000): Terrain Analysis: Principles and Applications (cited by SAGA's Topographic Position Index tool)\"\n    }\n  ]\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/terrain-analysis/example_1_1.jsonld",
+          "sizeBytes": 1163,
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/terrain-analysis/context.jsonld\",\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis\",\n  \"type\": \"Concept\",\n  \"prefLabel\": \"Terrain Analysis\",\n  \"definition\": \"Operations deriving terrain attributes from an elevation model: local surface derivatives (slope, aspect, curvature), neighbourhood indices (terrain ruggedness, topographic position) and illumination (hillshading) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \\u00a77.5.1). A kind of raster coverage processing: an elevation model is a single-band raster whose values are elevations.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept\",\n  \"status\": \"submitted\",\n  \"source\": [\n    {\n      \"title\": \"SAGA 7.3.0 tool libraries, category Terrain Analysis\",\n      \"link\": \"https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/index.html\"\n    },\n    {\n      \"title\": \"Wilson, J.P., Gallant, J.C. (2000): Terrain Analysis: Principles and Applications (cited by SAGA's Topographic Position Index tool)\"\n    }\n  ]\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/terrain-analysis/example_1_1.ttl",
+          "sizeBytes": 1170,
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> a skos:Concept ;\n    dcterms:source [ dcterms:title \"Wilson, J.P., Gallant, J.C. (2000): Terrain Analysis: Principles and Applications (cited by SAGA's Topographic Position Index tool)\" ],\n        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/index.html> ;\n            dcterms:title \"SAGA 7.3.0 tool libraries, category Terrain Analysis\" ] ;\n    skos:definition \"Operations deriving terrain attributes from an elevation model: local surface derivatives (slope, aspect, curvature), neighbourhood indices (terrain ruggedness, topographic position) and illumination (hillshading) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1). A kind of raster coverage processing: an elevation model is a single-band raster whose values are elevations.\" ;\n    skos:inScheme gp:concept ;\n    skos:prefLabel \"Terrain Analysis\" ;\n    gp:status \"submitted\" .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: The Concept \"Terrain Analysis\" -- see generic-profiles.concept for the\n  general shape every Concept shares.\nallOf:\n- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml\n- type: object\n  properties:\n    id:\n      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis\n      x-jsonld-id: '@id'\n    type:\n      const: Concept\n      x-jsonld-id: '@type'\n    prefLabel:\n      const: Terrain Analysis\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel\nx-jsonld-extra-terms:\n  Concept: http://www.w3.org/2004/02/skos/core#Concept\n  definition: http://www.w3.org/2004/02/skos/core#definition\n  inScheme:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme\n    x-jsonld-type: '@id'\n  status: https://geolabs.github.io/bblocks-generic-profiles/def/status\n  narrower:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#narrower\n    x-jsonld-type: '@id'\n  source: http://purl.org/dc/terms/source\n  title: http://purl.org/dc/terms/title\n  link:\n    x-jsonld-id: http://purl.org/dc/terms/references\n    x-jsonld-type: '@id'\n  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause\nx-jsonld-prefixes:\n  skos: http://www.w3.org/2004/02/skos/core#\n  gp: https://geolabs.github.io/bblocks-generic-profiles/def/\n  dct: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/concept/terrain-analysis"
+}

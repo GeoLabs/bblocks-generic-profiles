@@ -1,0 +1,13 @@
+Validation report for generic-profiles.implementation-profile.terrain-ruggedness-index - Implementation Profile: Terrain ruggedness index
+Generated 2026-10-09T10:08:01.558189+00:00
+=== Files ===
+Using examples/terrain-ruggedness-index.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

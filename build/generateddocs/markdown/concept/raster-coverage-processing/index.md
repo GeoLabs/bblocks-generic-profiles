@@ -35,6 +35,9 @@ different I/O shapes can still declare their kinship:
 [`raster-extent`](../../generic-profile/raster-extent/) each declare this
 Concept as their `broader`.
 
+Narrower concept: [`terrain-analysis`](../terrain-analysis/) -- an elevation model is a single-band
+raster (`generic-profiles.data-type`'s `elevation-model`).
+
 ## Source
 
 Two standards, at different levels, the same way [`vector-geometry-processing`](../vector-geometry-processing/)
@@ -77,6 +80,9 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
       "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
       "link": "https://www.ogc.org/standards/wcps/"
     }
+  ],
+  "narrower": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
   ]
 }
 
@@ -100,6 +106,9 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
       "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
       "link": "https://www.ogc.org/standards/wcps/"
     }
+  ],
+  "narrower": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
   ]
 }
 ```
@@ -116,6 +125,7 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
             dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
     skos:definition "Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, deriving a new raster from one or more others via a mathematical expression or a named radiometric index, cropping a coverage to a region of interest, or converting a coverage to another encoding -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1)." ;
     skos:inScheme gp:concept ;
+    skos:narrower <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
     skos:prefLabel "Raster Coverage Processing" ;
     gp:status "submitted" .
 

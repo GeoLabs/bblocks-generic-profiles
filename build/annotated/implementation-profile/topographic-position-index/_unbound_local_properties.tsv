@@ -1,0 +1,9 @@
+path
+/metadata/role
+/metadata/href
+/inputs/elevation
+/inputs/elevation/metadata/role
+/inputs/elevation/metadata/href
+/outputs/result
+/outputs/result/metadata/role
+/outputs/result/metadata/href

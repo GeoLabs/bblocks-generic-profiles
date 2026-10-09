@@ -47,6 +47,22 @@ Raster/coverage (broader: [`raster-coverage-processing`](../concept/raster-cover
 - [`raster-format-conversion`](raster-format-conversion/) -- one Raster and a target format in, one Raster out
 - [`raster-extent`](raster-extent/) -- one Raster in, one Geometry out (bounding envelope)
 
+Terrain analysis (broader: [`terrain-analysis`](../concept/terrain-analysis/)):
+
+- [`terrain-derivative`](terrain-derivative/) -- one elevation model in, one single-band raster out
+  (slope, terrain ruggedness index, topographic position index)
+- [`analytical-hillshading`](analytical-hillshading/) -- one elevation model and the light source's
+  azimuth and altitude in, one single-band raster out
+
+Point clouds (broader: [`point-cloud-processing`](../concept/point-cloud-processing/)):
+
+- [`point-cloud-rasterization`](point-cloud-rasterization/) -- one point cloud and a cell size in, one raster out
+- [`point-cloud-thinning`](point-cloud-thinning/) -- one point cloud and a percentage in, one point cloud out
+- [`point-cloud-to-features`](point-cloud-to-features/) -- one point cloud in, one feature collection out
+
+Each input/output also names its kind of data with `dataType`, a concept of
+[`generic-profiles.data-type`](../data-type/).
+
 A Generic Profile declares a signature "for *a* process" (WPS's own wording, singular) -- but
 several distinct operations sharing the identical shape are still modelled as **one** Generic
 Profile when nothing in the signature itself distinguishes them: the seven vector predicates, and
@@ -113,18 +129,18 @@ Implementation Profile -> Implementation (instance level).
   "inputs": {
     "input1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "title": "Geometry",
       "description": "an input role",
       "keywords": [
         "geometry"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     }
   },
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean",
       "title": "Boolean",
       "description": "an output role",
       "keywords": [
@@ -162,18 +178,18 @@ Implementation Profile -> Implementation (instance level).
   "inputs": {
     "input1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
       "title": "Geometry",
       "description": "an input role",
       "keywords": [
         "geometry"
-      ],
-      "minOccurs": 1,
-      "maxOccurs": 1
+      ]
     }
   },
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean",
       "title": "Boolean",
       "description": "an output role",
       "keywords": [
@@ -188,19 +204,18 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile> a skos:Concept ;
     skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
     skos:definition "Illustrates the shape of a Generic Profile entry only. Real Generic Profiles are each their own building block -- see generic-profiles.generic-profile.binary-spatial-predicate, .geometry-buffer and the other siblings for actual signatures." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Example Generic Profile (placeholder, not a real signature)" ;
-    gp:inputs [ ns2:input1 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1> ] ;
-    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result> ] ;
+    gp:inputs [ ns1:input1 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result> ] ;
     gp:status "submitted" ;
     proc:keywords "example" ;
     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
@@ -209,12 +224,12 @@ Implementation Profile -> Implementation (instance level).
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1> dcterms:description "an input role" ;
     dcterms:title "Geometry" ;
-    proc:keywords "geometry" ;
-    proc:maxOccurs 1 ;
-    proc:minOccurs 1 .
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+    proc:keywords "geometry" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result> dcterms:description "an output role" ;
     dcterms:title "Boolean" ;
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean> ;
     proc:keywords "boolean" .
 
 
@@ -367,9 +382,19 @@ properties:
       type: object
       required:
       - id
+      - dataType
       - title
       - keywords
       properties:
+        dataType:
+          description: 'What kind of data this input is, as a concept of the generic-profiles.data-type
+            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
+            Not a data format: Table 21 gives this tier none; an Implementation Profile
+            may narrow it (e.g. `raster` to `raster-single-band`, `geometry` to `surface`).'
+          type: string
+          format: uri
+          x-jsonld-id: http://purl.org/dc/terms/type
+          x-jsonld-type: '@id'
         id:
           description: This input's own IRI, `<profile id>/inputs/<name>` -- what
             a lower tier's metadata `href` points at.
@@ -428,9 +453,19 @@ properties:
       type: object
       required:
       - id
+      - dataType
       - title
       - keywords
       properties:
+        dataType:
+          description: 'What kind of data this output is, as a concept of the generic-profiles.data-type
+            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
+            Not a data format: Table 21 gives this tier none; an Implementation Profile
+            may narrow it (e.g. `raster` to `raster-single-band`, `geometry` to `surface`).'
+          type: string
+          format: uri
+          x-jsonld-id: http://purl.org/dc/terms/type
+          x-jsonld-type: '@id'
         id:
           description: This output's own IRI, `<profile id>/outputs/<name>` -- what
             a lower tier's metadata `href` points at.
@@ -530,6 +565,10 @@ Links to the schema:
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "title": "dct:title",
         "description": "dct:description",
         "minOccurs": "proc:minOccurs",
@@ -540,6 +579,10 @@ Links to the schema:
     "outputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "title": "dct:title",
         "description": "dct:description"
       },

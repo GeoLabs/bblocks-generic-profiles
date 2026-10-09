@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning> a skos:Concept ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
+    skos:definition "Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out." ;
+    skos:inScheme gp:generic-profile ;
+    skos:prefLabel "Point cloud thinning" ;
+    gp:inputs [ ns2:percentage <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage> ;
+            ns2:points <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points> ] ;
+    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result> ] ;
+    gp:status "submitted" ;
+    proc:keywords "point cloud",
+        "thinning" ;
+    proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage> dcterms:description "the share of points to keep, in percent" ;
+    dcterms:title "Number" ;
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number> ;
+    proc:keywords "percentage" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points> dcterms:description "the input point cloud" ;
+    dcterms:title "Point cloud" ;
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud> ;
+    proc:keywords "point cloud" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result> dcterms:description "the thinned point cloud" ;
+    dcterms:title "Point cloud" ;
+    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud> ;
+    proc:keywords "point cloud" .
+

@@ -1,0 +1,81 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.generic-profile.point-cloud-thinning",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Generic Profile: Point cloud thinning",
+  "abstract": "Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-08T00:00:00Z",
+  "dateOfLastChange": "2026-10-09",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.generic-profile"
+  ],
+  "sources": [
+    {
+      "title": "ZOO-Project process-profiles: Concept / Generic Profile / Implementation Profile",
+      "link": "https://zoo-project.github.io/docs/services/process-profiles.html"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "generic profile",
+    "SKOS",
+    "Point cloud thinning"
+  ],
+  "sourceSchema": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/point-cloud-thinning/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-thinning/context.jsonld",
+  "maturity": "development",
+  "group": "Generic Profiles",
+  "isProfileOf": [
+    "generic-profiles.generic-profile",
+    "generic-profiles.concept.point-cloud-processing"
+  ],
+  "shaclShapes": {},
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-thinning/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-thinning/schema.json"
+  },
+  "sourceLdContext": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/point-cloud-thinning/context.jsonld",
+  "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-thinning/resolvedProperties.json",
+  "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/point-cloud-thinning/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/point-cloud-thinning/",
+  "description": "Generic Profile: **Point cloud thinning**.\n\n> Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out.\n\n## Signature\n\n| | Name | Data type | Description |\n|---|---|---|---|\n| input | `points` | [`point-cloud`](../../data-type/) | the input point cloud |\n| input | `percentage` | [`number`](../../data-type/) | the share of points to keep, in percent |\n| output | `result` | [`point-cloud`](../../data-type/) | the thinned point cloud |\n\n## Source\n\n- [OGC 14-065 WPS 2.0.2](https://docs.ogc.org/is/14-065/14-065.html) \u00a77.5.2 -- what a Generic Profile is.\n- The operations below are each grounded in their own SAGA 7.3.0 tool documentation (see each\n  Implementation Profile).\n\n## Relations\n\n- `broader`: [`generic-profiles.concept.point-cloud-processing`](../../concept/point-cloud-processing/)\n- Refined by (1 Implementation Profile): [`point-cloud-thinning`](../../implementation-profile/point-cloud-thinning/)\n\n## Register position\n\nSecond tier of the four-tier model (OGC 14-065 WPS 2.0.2 \u00a77.5): Concept -> **Generic Profile** ->\nImplementation Profile -> Implementation (instance level).\n",
+  "examples": [
+    {
+      "title": "Point cloud thinning",
+      "base-uri": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/point-cloud-thinning/examples/point-cloud-thinning.json",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/point-cloud-thinning/example_1_1.json",
+          "sizeBytes": 2025,
+          "code": "{\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning\",\n  \"type\": \"GenericProfile\",\n  \"prefLabel\": \"Point cloud thinning\",\n  \"definition\": \"Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile\",\n  \"status\": \"submitted\",\n  \"broader\": [\n    \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\"\n  ],\n  \"keywords\": [\n    \"point cloud\",\n    \"thinning\"\n  ],\n  \"metadata\": [\n    {\n      \"title\": \"Process Concept: Point Cloud Processing\",\n      \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\",\n      \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\"\n    }\n  ],\n  \"inputs\": {\n    \"points\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud\",\n      \"title\": \"Point cloud\",\n      \"description\": \"the input point cloud\",\n      \"keywords\": [\n        \"point cloud\"\n      ]\n    },\n    \"percentage\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number\",\n      \"title\": \"Number\",\n      \"description\": \"the share of points to keep, in percent\",\n      \"keywords\": [\n        \"percentage\"\n      ]\n    }\n  },\n  \"outputs\": {\n    \"result\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud\",\n      \"title\": \"Point cloud\",\n      \"description\": \"the thinned point cloud\",\n      \"keywords\": [\n        \"point cloud\"\n      ]\n    }\n  }\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/point-cloud-thinning/example_1_1.jsonld",
+          "sizeBytes": 2160,
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-thinning/context.jsonld\",\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning\",\n  \"type\": \"GenericProfile\",\n  \"prefLabel\": \"Point cloud thinning\",\n  \"definition\": \"Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile\",\n  \"status\": \"submitted\",\n  \"broader\": [\n    \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\"\n  ],\n  \"keywords\": [\n    \"point cloud\",\n    \"thinning\"\n  ],\n  \"metadata\": [\n    {\n      \"title\": \"Process Concept: Point Cloud Processing\",\n      \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\",\n      \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\"\n    }\n  ],\n  \"inputs\": {\n    \"points\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud\",\n      \"title\": \"Point cloud\",\n      \"description\": \"the input point cloud\",\n      \"keywords\": [\n        \"point cloud\"\n      ]\n    },\n    \"percentage\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number\",\n      \"title\": \"Number\",\n      \"description\": \"the share of points to keep, in percent\",\n      \"keywords\": [\n        \"percentage\"\n      ]\n    }\n  },\n  \"outputs\": {\n    \"result\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud\",\n      \"title\": \"Point cloud\",\n      \"description\": \"the thinned point cloud\",\n      \"keywords\": [\n        \"point cloud\"\n      ]\n    }\n  }\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/point-cloud-thinning/example_1_1.ttl",
+          "sizeBytes": 2630,
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .\n@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .\n@prefix proc: <https://w3id.org/ogc/api/processes/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning> a skos:Concept ;\n    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;\n    skos:definition \"Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out.\" ;\n    skos:inScheme gp:generic-profile ;\n    skos:prefLabel \"Point cloud thinning\" ;\n    gp:inputs [ ns2:percentage <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage> ;\n            ns2:points <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points> ] ;\n    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result> ] ;\n    gp:status \"submitted\" ;\n    proc:keywords \"point cloud\",\n        \"thinning\" ;\n    proc:metadata [ dcterms:title \"Process Concept: Point Cloud Processing\" ;\n            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;\n            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage> dcterms:description \"the share of points to keep, in percent\" ;\n    dcterms:title \"Number\" ;\n    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number> ;\n    proc:keywords \"percentage\" .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points> dcterms:description \"the input point cloud\" ;\n    dcterms:title \"Point cloud\" ;\n    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud> ;\n    proc:keywords \"point cloud\" .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result> dcterms:description \"the thinned point cloud\" ;\n    dcterms:title \"Point cloud\" ;\n    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud> ;\n    proc:keywords \"point cloud\" .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: The Generic Profile \"Point cloud thinning\" -- see generic-profiles.generic-profile\n  for the general shape every Generic Profile shares.\nallOf:\n- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml\n- type: object\n  properties:\n    id:\n      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning\n      x-jsonld-id: '@id'\n    type:\n      const: GenericProfile\n      x-jsonld-id: '@type'\n    prefLabel:\n      const: Point cloud thinning\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel\n- type: object\n  properties:\n    metadata:\n      allOf:\n      - contains:\n          type: object\n          required:\n          - role\n          - href\n          properties:\n            role:\n              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\n            href:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\n      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata\n    inputs:\n      properties:\n        points:\n          required:\n          - id\n          - dataType\n          properties:\n            id:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points\n              x-jsonld-id: '@id'\n            dataType:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud\n              x-jsonld-id: http://purl.org/dc/terms/type\n              x-jsonld-type: '@id'\n        percentage:\n          required:\n          - id\n          - dataType\n          properties:\n            id:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage\n              x-jsonld-id: '@id'\n            dataType:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number\n              x-jsonld-id: http://purl.org/dc/terms/type\n              x-jsonld-type: '@id'\n      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs\n      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/\n    outputs:\n      properties:\n        result:\n          required:\n          - id\n          - dataType\n          properties:\n            id:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result\n              x-jsonld-id: '@id'\n            dataType:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud\n              x-jsonld-id: http://purl.org/dc/terms/type\n              x-jsonld-type: '@id'\n      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs\n      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/\nx-jsonld-extra-terms:\n  GenericProfile: http://www.w3.org/2004/02/skos/core#Concept\n  definition: http://www.w3.org/2004/02/skos/core#definition\n  inScheme:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme\n    x-jsonld-type: '@id'\n  status: https://geolabs.github.io/bblocks-generic-profiles/def/status\n  broader:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#broader\n    x-jsonld-type: '@id'\n  keywords: https://w3id.org/ogc/api/processes/keywords\n  source: http://purl.org/dc/terms/source\n  title: http://purl.org/dc/terms/title\n  link:\n    x-jsonld-id: http://purl.org/dc/terms/references\n    x-jsonld-type: '@id'\n  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause\nx-jsonld-prefixes:\n  skos: http://www.w3.org/2004/02/skos/core#\n  gp: https://geolabs.github.io/bblocks-generic-profiles/def/\n  proc: https://w3id.org/ogc/api/processes/\n  dct: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/generic-profile/point-cloud-thinning"
+}

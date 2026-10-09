@@ -39,9 +39,10 @@ description: "Process Implementation Profile (OGC 14-065 WPS 2.0.2 \xA77.5.3): \
   Its `metadata` references the corresponding\n  Generic Profile input (`<Generic
   Profile id>/inputs/<name>`) with this register's role\n  `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input`
   -- footnote a, at the level of the input; `keywords` Extend (E);\n  Identifier/Title/Abstract
-  Inherit (I), so not repeated; `maxOccurs` Restrict (R); `schema`\n  Declare (D).\n-
-  Output: every Generic Profile output is listed too; `metadata` references the corresponding\n
-  \ Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output`
+  Inherit (I), so not repeated; `maxOccurs` Restrict (R); `minOccurs`\n  may be restricted
+  down to 0 (a register choice beyond Table 21, footnote c forbidding it);\n  `schema`
+  Declare (D).\n- Output: every Generic Profile output is listed too; `metadata` references
+  the corresponding\n  Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output`
   (Table 21 allows any value here,\n  O; the register keeps outputs symmetric with
   inputs); `keywords` Extend (E); `schema`\n  Declare (D)."
 type: object
@@ -144,9 +145,19 @@ properties:
       type: object
       required:
       - id
+      - dataType
       - keywords
       - metadata
       properties:
+        dataType:
+          description: 'What kind of data this input is, as a concept of the generic-profiles.data-type
+            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
+            The Generic Profile''s, or a narrower one (`skos:broader` chain): e.g.
+            a band-count or a geometry-type restriction.'
+          type: string
+          format: uri
+          x-jsonld-id: http://purl.org/dc/terms/type
+          x-jsonld-type: '@id'
         id:
           description: This input's own IRI, `<profile id>/inputs/<name>` -- what
             a lower tier's metadata `href` points at.
@@ -156,6 +167,15 @@ properties:
         schema:
           x-jsonld-id: https://w3id.org/ogc/api/processes/schema
           x-jsonld-vocab: https://w3id.org/ogc/api/schema/
+        minOccurs:
+          description: 'Restricts the Generic Profile''s minimum, down to 0 (the input
+            becomes optional), never above it. A deliberate departure from Table 21
+            footnote c ("shall not modify the minimum cardinality"): a Generic Profile
+            keeps `minOccurs: 1` and lower tiers, down to a real implementation, may
+            make the input optional (e.g. `Gdal_Warp`''s `t_srs`, absent meaning no
+            reprojection).'
+          type: integer
+          minimum: 0
         maxOccurs:
           oneOf:
           - type: integer
@@ -196,9 +216,19 @@ properties:
       type: object
       required:
       - id
+      - dataType
       - keywords
       - metadata
       properties:
+        dataType:
+          description: 'What kind of data this output is, as a concept of the generic-profiles.data-type
+            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
+            The Generic Profile''s, or a narrower one (`skos:broader` chain): e.g.
+            a band-count or a geometry-type restriction.'
+          type: string
+          format: uri
+          x-jsonld-id: http://purl.org/dc/terms/type
+          x-jsonld-type: '@id'
         id:
           description: This output's own IRI, `<profile id>/outputs/<name>` -- what
             a lower tier's metadata `href` points at.

@@ -1,0 +1,54 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-thinning/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning",
+  "type": "GenericProfile",
+  "prefLabel": "Point cloud thinning",
+  "definition": "Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "status": "submitted",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
+  ],
+  "keywords": [
+    "point cloud",
+    "thinning"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Point Cloud Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
+    }
+  ],
+  "inputs": {
+    "points": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "title": "Point cloud",
+      "description": "the input point cloud",
+      "keywords": [
+        "point cloud"
+      ]
+    },
+    "percentage": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "title": "Number",
+      "description": "the share of points to keep, in percent",
+      "keywords": [
+        "percentage"
+      ]
+    }
+  },
+  "outputs": {
+    "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "title": "Point cloud",
+      "description": "the thinned point cloud",
+      "keywords": [
+        "point cloud"
+      ]
+    }
+  }
+}

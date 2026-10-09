@@ -1,5 +1,5 @@
 Validation report for generic-profiles.generic-profile.unary-geometry-operation - Generic Profile: Unary geometry operation
-Generated 2026-10-08T08:41:16.580594+00:00
+Generated 2026-10-09T10:07:59.683362+00:00
 === Files ===
 Using examples/unary-geometry-operation.json from examples
 JSON-LD context is present - uplifting

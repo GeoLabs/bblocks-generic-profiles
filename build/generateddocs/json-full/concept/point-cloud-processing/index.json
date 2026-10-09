@@ -1,0 +1,88 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.concept.point-cloud-processing",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Process Concept: Point Cloud Processing",
+  "abstract": "Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-08T00:00:00Z",
+  "dateOfLastChange": "2026-10-09",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.concept"
+  ],
+  "sources": [
+    {
+      "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, \u00a77.5.1 Process Concept",
+      "link": "https://docs.ogc.org/is/14-065/14-065.html"
+    },
+    {
+      "title": "OGC 17-030r1 LAS Specification 1.4 OGC Community Standard",
+      "link": "https://www.ogc.org/standards/las/"
+    },
+    {
+      "title": "SAGA 7.3.0 tool library Shapes - Point Clouds",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "concept",
+    "SKOS",
+    "Point Cloud Processing"
+  ],
+  "sourceSchema": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/point-cloud-processing/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/point-cloud-processing/context.jsonld",
+  "maturity": "development",
+  "group": "Concepts",
+  "isProfileOf": [
+    "generic-profiles.concept"
+  ],
+  "shaclShapes": {},
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/point-cloud-processing/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/point-cloud-processing/schema.json"
+  },
+  "sourceLdContext": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/point-cloud-processing/context.jsonld",
+  "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/point-cloud-processing/resolvedProperties.json",
+  "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/point-cloud-processing/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/concept/point-cloud-processing/",
+  "description": "Process Concept: **Point Cloud Processing**.\n\n> Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).\n\n## Source\n\n- [OGC 17-030r1 LAS Specification 1.4 OGC Community Standard](https://www.ogc.org/standards/las/)\n- [SAGA 7.3.0 tool library Shapes - Point Clouds](https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html)\n\n## Relations\n\n- Broader concept of (`broader`): [`point-cloud-rasterization`](../../generic-profile/point-cloud-rasterization/), [`point-cloud-thinning`](../../generic-profile/point-cloud-thinning/), [`point-cloud-to-features`](../../generic-profile/point-cloud-to-features/)\n\n## Register position\n\nTop tier of the four-tier model (OGC 14-065 WPS 2.0.2 \u00a77.5): **Concept** -> Generic Profile ->\nImplementation Profile -> Implementation (instance level).\n",
+  "examples": [
+    {
+      "title": "Point Cloud Processing",
+      "base-uri": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/point-cloud-processing/examples/point-cloud-processing.json",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/point-cloud-processing/example_1_1.json",
+          "sizeBytes": 835,
+          "code": "{\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\",\n  \"type\": \"Concept\",\n  \"prefLabel\": \"Point Cloud Processing\",\n  \"definition\": \"Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \\u00a77.5.1).\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept\",\n  \"status\": \"submitted\",\n  \"source\": [\n    {\n      \"title\": \"OGC 17-030r1 LAS Specification 1.4 OGC Community Standard\",\n      \"link\": \"https://www.ogc.org/standards/las/\"\n    },\n    {\n      \"title\": \"SAGA 7.3.0 tool library Shapes - Point Clouds\",\n      \"link\": \"https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html\"\n    }\n  ]\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/point-cloud-processing/example_1_1.jsonld",
+          "sizeBytes": 964,
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/point-cloud-processing/context.jsonld\",\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\",\n  \"type\": \"Concept\",\n  \"prefLabel\": \"Point Cloud Processing\",\n  \"definition\": \"Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \\u00a77.5.1).\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept\",\n  \"status\": \"submitted\",\n  \"source\": [\n    {\n      \"title\": \"OGC 17-030r1 LAS Specification 1.4 OGC Community Standard\",\n      \"link\": \"https://www.ogc.org/standards/las/\"\n    },\n    {\n      \"title\": \"SAGA 7.3.0 tool library Shapes - Point Clouds\",\n      \"link\": \"https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html\"\n    }\n  ]\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/point-cloud-processing/example_1_1.ttl",
+          "sizeBytes": 983,
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> a skos:Concept ;\n    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html> ;\n            dcterms:title \"SAGA 7.3.0 tool library Shapes - Point Clouds\" ],\n        [ dcterms:references <https://www.ogc.org/standards/las/> ;\n            dcterms:title \"OGC 17-030r1 LAS Specification 1.4 OGC Community Standard\" ] ;\n    skos:definition \"Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).\" ;\n    skos:inScheme gp:concept ;\n    skos:prefLabel \"Point Cloud Processing\" ;\n    gp:status \"submitted\" .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: The Concept \"Point Cloud Processing\" -- see generic-profiles.concept\n  for the general shape every Concept shares.\nallOf:\n- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml\n- type: object\n  properties:\n    id:\n      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing\n      x-jsonld-id: '@id'\n    type:\n      const: Concept\n      x-jsonld-id: '@type'\n    prefLabel:\n      const: Point Cloud Processing\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel\nx-jsonld-extra-terms:\n  Concept: http://www.w3.org/2004/02/skos/core#Concept\n  definition: http://www.w3.org/2004/02/skos/core#definition\n  inScheme:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme\n    x-jsonld-type: '@id'\n  status: https://geolabs.github.io/bblocks-generic-profiles/def/status\n  narrower:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#narrower\n    x-jsonld-type: '@id'\n  source: http://purl.org/dc/terms/source\n  title: http://purl.org/dc/terms/title\n  link:\n    x-jsonld-id: http://purl.org/dc/terms/references\n    x-jsonld-type: '@id'\n  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause\nx-jsonld-prefixes:\n  skos: http://www.w3.org/2004/02/skos/core#\n  gp: https://geolabs.github.io/bblocks-generic-profiles/def/\n  dct: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/concept/point-cloud-processing"
+}

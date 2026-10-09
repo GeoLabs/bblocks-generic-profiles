@@ -1,0 +1,84 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/point-cloud-to-shapes/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes",
+  "type": "ImplementationProfile",
+  "prefLabel": "Point cloud to shapes",
+  "definition": "Converts a point cloud to a SAGA shapes layer of points, i.e. a feature collection.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "status": "submitted",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features",
+  "keywords": [
+    "point cloud",
+    "feature collection",
+    "conversion",
+    "Point Cloud to Shapes",
+    "pointcloud_tools"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Point Cloud Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
+    },
+    {
+      "title": "Generic Profile: Point cloud to features",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features"
+    }
+  ],
+  "inputs": {
+    "points": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "schema": {
+        "type": "string",
+        "contentEncoding": "base64",
+        "contentMediaType": "application/vnd.las",
+        "description": "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type"
+      },
+      "keywords": [
+        "point cloud",
+        "LAS"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Point cloud to features -- input `points`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "result": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result",
+      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection",
+      "schema": {
+        "type": "string",
+        "contentMediaType": "text/xml",
+        "description": "GML"
+      },
+      "keywords": [
+        "feature collection",
+        "GML"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Point cloud to features -- output `result`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result"
+        }
+      ]
+    }
+  },
+  "source": [
+    {
+      "title": "SAGA 7.3.0 -- Point Cloud to Shapes",
+      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_5.html"
+    },
+    {
+      "title": "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.5: Point Cloud to Shapes",
+      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.5"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+path
+/metadata/role
+/metadata/href
+/inputs/elevation
+/inputs/elevation/metadata/role
+/inputs/elevation/metadata/href
+/inputs/azimuth
+/inputs/azimuth/metadata/role
+/inputs/azimuth/metadata/href
+/inputs/altitude
+/inputs/altitude/metadata/role
+/inputs/altitude/metadata/href
+/outputs/result
+/outputs/result/metadata/role
+/outputs/result/metadata/href
