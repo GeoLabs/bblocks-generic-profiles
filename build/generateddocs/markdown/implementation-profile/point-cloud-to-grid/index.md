@@ -278,8 +278,8 @@ the ZOO-Project Geonovum testbed.
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -294,17 +294,17 @@ the ZOO-Project Geonovum testbed.
     skos:definition "Writes one value per grid cell from the points falling in it -- by default the z value of the first point -- as a single-band raster." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Point cloud to grid" ;
-    gp:inputs [ ns2:cellSize <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/cellSize> ;
-            ns2:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/points> ] ;
-    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/outputs/result> ] ;
+    gp:inputs [ ns3:cellSize <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/cellSize> ;
+            ns3:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/points> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization> ;
     proc:keywords "Point Cloud to Grid",
         "point cloud",
         "pointcloud_tools",
         "raster",
         "rasterization" ;
-    proc:metadata [ dcterms:title "Generic Profile: Point cloud rasterization" ],
-        [ dcterms:title "Process Concept: Point Cloud Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ],
+        [ dcterms:title "Generic Profile: Point cloud rasterization" ] ;
     rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/actions/addition> ;
     rim:inRegister gp:register ;
     rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
@@ -321,14 +321,14 @@ the ZOO-Project Geonovum testbed.
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/cellSize> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/number> ;
     proc:keywords "cell size" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud rasterization -- input `cellSize`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/cellSize" ;
+            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/cellSize" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/points> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud> ;
     proc:keywords "LAS",
         "point cloud" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud rasterization -- input `points`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/points" ;
+            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/points" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
     proc:schema [ a ns1:string ;
             dcterms:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ;
@@ -339,7 +339,7 @@ the ZOO-Project Geonovum testbed.
     proc:keywords "GeoTIFF",
         "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud rasterization -- output `result`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result" ;
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
     proc:schema [ a ns1:string ;
             dcterms:description "GeoTIFF" ;

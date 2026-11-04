@@ -339,9 +339,9 @@ this register: see `ospd.process-profiles.raster.band-math-multiband` in
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -349,18 +349,18 @@ this register: see `ospd.process-profiles.raster.band-math-multiband` in
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
-        [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMathX.html> ;
+    dcterms:source [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMathX.html> ;
             dcterms:title "OTB BandMathX -- Performs mathematical operations on several multiband images, outputting a mono- or multi-band image" ],
+        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
         [ dcterms:references <https://docs.ogc.org/is/09-146r8/09-146r8.html> ;
             dcterms:title "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType" ] ;
     skos:definition "Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster band math (multi-band output)" ;
-    gp:inputs [ ns2:expression <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/expression> ;
-            ns2:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/rasters> ] ;
-    gp:outputs [ ns3:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/outputs/raster> ] ;
+    gp:inputs [ ns3:expression <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/expression> ;
+            ns3:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/rasters> ] ;
+    gp:outputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/outputs/raster> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math> ;
     proc:keywords "BandMathX",
         "OTB",
@@ -368,8 +368,8 @@ this register: see `ospd.process-profiles.raster.band-math-multiband` in
         "coverage",
         "multi-band",
         "raster" ;
-    proc:metadata [ dcterms:title "Generic Profile: Raster band math" ],
-        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
+        [ dcterms:title "Generic Profile: Raster band math" ] ;
     rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/actions/addition> ;
     rim:inRegister gp:register ;
     rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
@@ -386,7 +386,7 @@ this register: see `ospd.process-profiles.raster.band-math-multiband` in
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/expression> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/string> ;
     proc:keywords "expression" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster band math -- input `expression`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression" ;
+            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/rasters> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
@@ -394,23 +394,23 @@ this register: see `ospd.process-profiles.raster.band-math-multiband` in
         "raster" ;
     proc:maxOccurs "unbounded" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster band math -- input `rasters`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters" ;
+            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GeoTIFF" ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "image/tiff" ] .
+            ns2:contentEncoding "base64" ;
+            ns2:contentMediaType "image/tiff" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/outputs/raster> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
     proc:keywords "GeoTIFF",
         "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster band math -- output `raster`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns1:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GeoTIFF" ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "image/tiff" ] .
+            ns2:contentEncoding "base64" ;
+            ns2:contentMediaType "image/tiff" ] .
 
 
 ```

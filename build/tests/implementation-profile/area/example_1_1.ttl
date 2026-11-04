@@ -1,7 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix ns3: <https://w3id.org/ogc/api/schema/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -11,23 +11,23 @@
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> a gp:ImplementationProfile ;
     dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area" ],
-        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry." ],
         [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
-            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Area()" ] ;
+            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Area()" ],
+        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea> ;
+            dcterms:title "ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry." ] ;
     skos:definition "The area of this Surface, as measured in the spatial reference system of this Surface." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Area" ;
-    gp:inputs [ ns2:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/inputs/geometry> ] ;
-    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/outputs/result> ] ;
+    gp:inputs [ ns1:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/inputs/geometry> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> ;
     proc:keywords "Area",
         "ST_Area",
         "geometry",
         "measure",
         "vector" ;
-    proc:metadata [ dcterms:title "Generic Profile: Geometry measure" ],
-        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
+        [ dcterms:title "Generic Profile: Geometry measure" ] ;
     rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/addition> ;
     rim:inRegister gp:register ;
     rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
@@ -45,7 +45,7 @@
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Geometry measure -- input `geometry`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/inputs/geometry" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/inputs/geometry" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
     proc:schema [ a ns3:string ;
             dcterms:description "GML" ;
@@ -54,7 +54,7 @@
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/number> ;
     proc:keywords "number" ;
     proc:metadata [ dcterms:title "Generic Profile: Geometry measure -- output `result`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/outputs/result" ;
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
     proc:schema [ a ns3:number ;
             dcterms:description "a plain number" ] .

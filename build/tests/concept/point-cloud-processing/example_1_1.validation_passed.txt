@@ -1,5 +1,5 @@
 Validation report for generic-profiles.concept.point-cloud-processing - Process Concept: Point Cloud Processing
-Generated 2026-11-04T19:04:04.433696+00:00
+Generated 2026-11-04T22:48:44.754184+00:00
 === Files ===
 Using examples/point-cloud-processing.json from examples
 JSON-LD context is present - uplifting
@@ -12,38 +12,157 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
+Error processing closure source ../data-type/string-uuid/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uuid/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-iri-reference/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-iri-reference/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/triangle/ontology.ttl: [Errno 2] No such file or directory: '/data-type/triangle/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-uri-template/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri-template/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/feature/ontology.ttl: [Errno 2] No such file or directory: '/data-type/feature/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/linear-ring/ontology.ttl: [Errno 2] No such file or directory: '/data-type/linear-ring/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-relative-json-pointer/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-relative-json-pointer/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-uri-reference/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri-reference/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-duration/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-duration/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/point/ontology.ttl: [Errno 2] No such file or directory: '/data-type/point/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/elevation-model/ontology.ttl: [Errno 2] No such file or directory: '/data-type/elevation-model/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-password/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-password/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/raster-single-band/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster-single-band/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-hostname/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-hostname/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/multi-curve/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-curve/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/feature-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/feature-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/stac-catalog/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-catalog/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/tin/ontology.ttl: [Errno 2] No such file or directory: '/data-type/tin/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/polyhedral-surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/polyhedral-surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/raster/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/multi-polygon/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-polygon/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/geometry-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/geometry-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/polygon/ontology.ttl: [Errno 2] No such file or directory: '/data-type/polygon/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/bounding-box/ontology.ttl: [Errno 2] No such file or directory: '/data-type/bounding-box/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/table/ontology.ttl: [Errno 2] No such file or directory: '/data-type/table/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/boolean/ontology.ttl: [Errno 2] No such file or directory: '/data-type/boolean/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/number/ontology.ttl: [Errno 2] No such file or directory: '/data-type/number/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/line-string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/line-string/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-idn-hostname/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-idn-hostname/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-uri/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/curve/ontology.ttl: [Errno 2] No such file or directory: '/data-type/curve/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/stac-item-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-item-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-idn-email/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-idn-email/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-ipv6/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-ipv6/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/stac-item/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-item/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-json-pointer/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-json-pointer/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-date-time/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-date-time/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-time/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-time/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/multi-point/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-point/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-ipv4/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-ipv4/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/multi-line-string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-line-string/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/raster-multi-band/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster-multi-band/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/geometry/ontology.ttl: [Errno 2] No such file or directory: '/data-type/geometry/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../vocabulary/data.ttl: [Errno 2] No such file or directory: '/vocabulary/data.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/stac-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/line/ontology.ttl: [Errno 2] No such file or directory: '/data-type/line/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/point-cloud/ontology.ttl: [Errno 2] No such file or directory: '/data-type/point-cloud/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-date/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-date/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-email/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-email/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/multi-surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../data-type/string-iri/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-iri/ontology.ttl' - SHACL validation will run against an incomplete closure graph
 Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
- - /github/workspace/_sources/register/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date-time/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-hostname/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-polygon/ontology.ttl
  - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-time/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/build/annotated/vocabulary/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-duration/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry-collection/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-line-string/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-json-pointer/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature-collection/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri-reference/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-curve/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/line-string/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-point/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/surface/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-email/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/point/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/elevation-model/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/data.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/polyhedral-surface/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv6/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/tin/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-reference/ontology.ttl
+ - /github/workspace/_sources/register/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-email/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-catalog/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/linear-ring/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv4/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/table/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/bounding-box/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-surface/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/boolean/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-hostname/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uuid/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/line/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/point-cloud/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/curve/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-password/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-relative-json-pointer/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/number/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-single-band/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/polygon/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-collection/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/triangle/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-multi-band/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item-collection/ontology.ttl
+ - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-template/ontology.ttl
 Validation result for _sources/register/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/register/shapes.shacl:
  - Shape gp:GenericProfileShape: *none*
- - Shape gp:GenericProfileItemClassShape: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile>
- - Shape gp:ProcessConceptItemClassShape: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept>
  - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*
- - Shape gp:ImplementationProfileShape: *none*
- - Shape gp:ProcessConceptShape: <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing>
  - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing>
+ - Shape gp:ProcessConceptShape: <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing>
+ - Shape gp:DataTypeReferenceShape: *none*
+ - Shape gp:ProcessConceptItemClassShape: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept>
+ - Shape gp:ImplementationProfileShape: *none*
+ - Shape gp:GenericProfileItemClassShape: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile>
  - Shape gp:ImplementationProfileItemClassShape: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile>
+
+Validation result for https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl:
+ - Shape dt:RegisterShape: <https://geolabs.github.io/bblocks-data-types/def/register>
+ - Shape dt:DataTypeVersionShape: *none*
+ - Shape dt:DataTypeItemShape: *none*
+ - Shape dt:DataTypeVersionShape/sh:property/sh:qualifiedValueShape: *none*
+ - Shape dt:DataTypeShape: *none*
 
 Validation result for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:
- - Shape rim:RegisterSpecificationShape: *none*
- - Shape rim:RegisterItemClassShape: *none*
  - Shape rim:RegisterItemShape: *none*
- - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape rim:TextShape: *none*
  - Shape rim:ConceptVersionShape: *none*
- - Shape rim:RegisterShape: *none*
- - Shape rim:CommitmentShape: *none*
- - Shape rim:ConceptShape: *none*
  - Shape rim:RegisterActionShape: <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing/actions/addition>
+ - Shape rim:RegisterShape: *none*
+ - Shape rim:RegisterItemClassShape: *none*
+ - Shape rim:TextShape: *none*
+ - Shape rim:RegisterSpecificationShape: *none*
+ - Shape rim:ConceptShape: *none*
+ - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape rim:CommitmentShape: *none*
  - Shape rim:TextShape/sh:or/rdf:first: *none*
 
 === End SHACL ===

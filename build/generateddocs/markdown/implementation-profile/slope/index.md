@@ -255,9 +255,9 @@ the ZOO-Project Geonovum testbed.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -273,8 +273,8 @@ the ZOO-Project Geonovum testbed.
     skos:definition "The slope gradient of an elevation model at each cell, from a local fit of the surface (SAGA's default method: the 9 parameter 2nd order polynom of Zevenbergen & Thorne 1987)." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Slope" ;
-    gp:inputs [ ns2:elevation <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope/inputs/elevation> ] ;
-    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope/outputs/result> ] ;
+    gp:inputs [ ns3:elevation <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope/inputs/elevation> ] ;
+    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> ;
     proc:keywords "Slope",
         "derivative",
@@ -301,23 +301,23 @@ the ZOO-Project Geonovum testbed.
     proc:keywords "GeoTIFF",
         "elevation" ;
     proc:metadata [ dcterms:title "Generic Profile: Terrain derivative -- input `elevation`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation" ;
+            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GeoTIFF" ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "image/tiff" ] .
+            ns2:contentEncoding "base64" ;
+            ns2:contentMediaType "image/tiff" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band> ;
     proc:keywords "GeoTIFF",
         "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Terrain derivative -- output `result`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns1:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GeoTIFF" ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "image/tiff" ] .
+            ns2:contentEncoding "base64" ;
+            ns2:contentMediaType "image/tiff" ] .
 
 
 ```

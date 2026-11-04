@@ -45,6 +45,9 @@
     "generic-profiles.register": [
       "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
     ],
+    "data-types.vocabulary": [
+      "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+    ],
     "ogc.rim.core-ontology": [
       "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
     ]

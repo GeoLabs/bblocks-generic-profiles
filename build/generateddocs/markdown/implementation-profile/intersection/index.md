@@ -299,8 +299,8 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns3: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -308,15 +308,15 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
-            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.24" ],
-        [ dcterms:title "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.25 ST_Intersection" ] ;
+    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.25 ST_Intersection" ],
+        [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.24" ] ;
     skos:definition "Returns a geometric object representing the point set intersection of this geometric object with anotherGeometry." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Intersection" ;
     gp:inputs [ ns1:geometry1 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/inputs/geometry1> ;
             ns1:geometry2 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/inputs/geometry2> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/outputs/result> ] ;
+    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> ;
     proc:keywords "Intersection",
         "ST_Intersection",
@@ -345,9 +345,9 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation -- input `geometry1`" ;
             ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry1" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns3:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GML" ;
-            ns3:contentMediaType "text/xml" ] .
+            ns2:contentMediaType "text/xml" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/inputs/geometry2> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
     proc:keywords "GML",
@@ -355,19 +355,19 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation -- input `geometry2`" ;
             ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry2" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns3:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GML" ;
-            ns3:contentMediaType "text/xml" ] .
+            ns2:contentMediaType "text/xml" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation -- output `result`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/outputs/result" ;
+            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns3:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GML" ;
-            ns3:contentMediaType "text/xml" ] .
+            ns2:contentMediaType "text/xml" ] .
 
 
 ```

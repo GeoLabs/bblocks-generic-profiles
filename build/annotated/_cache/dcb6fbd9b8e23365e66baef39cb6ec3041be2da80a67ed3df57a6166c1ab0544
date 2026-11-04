@@ -3,12 +3,12 @@
   "name": "Data Types",
   "abstract": "A concept-plane register (ISO 19135:2026, via the Registered Item Model) of the kinds of data\nthat process profile inputs and outputs carry -- raster (by band count), elevation model,\ngeometry (by type), feature collection, point cloud, TIN, table, bounding box and the literals.\nEach data type is a rim:Concept in a rim:ConceptSystem, with a governed rim:ConceptVersion.\nA data type names the *kind* of data, not its encoding: the encoding a concrete process uses is\ndeclared where that process is profiled (an Implementation Profile's schema).\n",
   "description": "This register holds, as a Registered Item Model **concept plane**, the vocabulary first drafted\ninline in [GeoLabs/bblocks-generic-profiles](https://github.com/GeoLabs/bblocks-generic-profiles)\nas its generic-profiles.data-type block. Extracting it makes the vocabulary reusable beyond that\none register and gives it its own governance and lifecycle.\n\nModelled on the concept plane of the\n[Registered Item Model](https://ogcincubator.github.io/registered-item-model/): dt:DataType is a\nsub-class of rim:Concept (a unit of meaning), dt:dataTypes is the rim:ConceptSystem that holds\nthem, and each type's governed state lives on a rim:ConceptVersion. A data type names the kind of\ndata (its meaning); the encoding a concrete process uses is declared at the Implementation Profile\ntier, not here. Some types are nonetheless grounded in a standard that happens to be a format\n(e.g. point cloud in the OGC LAS community standard) -- that is their source, not their encoding.\n\nIdentifiers: this register mints its own IRIs\n(https://geolabs.github.io/bblocks-data-types/def/data-type/...). The original inline block in\nbblocks-generic-profiles keeps its own until a permanent, register-independent namespace is agreed\nand that register is pointed here. Nothing in bblocks-generic-profiles is changed by this register.\n",
-  "modified": "2026-11-04T10:40:42.364948",
+  "modified": "2026-11-04T21:57:20.934760",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"373c26d1cdf143759ae2c602c0713e98e6af6fc9",
-      "shortCommitId": "\"373c26",
-      "date": "2026-11-03T13:31:34+00:00\""
+      "commitId": "\"c1af50a182c92d7ab055f34158d5605167dfe786",
+      "shortCommitId": "\"c1af50",
+      "date": "2026-11-04T12:47:53+00:00\""
     }
   },
   "gitRepository": "https://github.com/GeoLabs/bblocks-data-types",
@@ -227,6 +227,318 @@
           "ref": "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/data.ttl",
           "format": "text/turtle",
           "title": "Register metadata (register, owner, system and concept system)"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/boolean/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Boolean data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/bounding-box/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Bounding box data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/curve/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Curve data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/elevation-model/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Elevation model data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature-collection/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Feature collection data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Feature data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry-collection/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the GeometryCollection data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Geometry data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/line-string/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the LineString data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/line/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Line data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/linear-ring/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the LinearRing data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-curve/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the MultiCurve data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-line-string/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the MultiLineString data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-point/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the MultiPoint data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-polygon/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the MultiPolygon data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-surface/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the MultiSurface data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/number/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Number data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/point-cloud/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Point cloud data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/point/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Point data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/polygon/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Polygon data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/polyhedral-surface/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the PolyhedralSurface data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-multi-band/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Raster (multiple bands) data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-single-band/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Raster (single band) data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Raster data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-catalog/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the STAC Catalog data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-collection/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the STAC Collection data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item-collection/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the STAC Item Collection data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the STAC Item data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date-time/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Date-time string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Date string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-duration/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Duration string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-email/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Email address string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-hostname/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Hostname string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-email/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Internationalized email address string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-hostname/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Internationalized hostname string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv4/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the IPv4 address string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv6/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the IPv6 address string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri-reference/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the IRI reference string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the IRI string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-json-pointer/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the JSON Pointer string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-password/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Password string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-relative-json-pointer/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Relative JSON Pointer string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-time/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Time string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-reference/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the URI reference string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-template/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the URI template string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the URI string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uuid/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the UUID string data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the String data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/surface/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Surface data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/table/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Table data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/tin/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Triangulated irregular network data type"
+        },
+        {
+          "role": "data",
+          "ref": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/triangle/ontology.ttl",
+          "format": "text/turtle",
+          "title": "Ontology of the Triangle data type"
         }
       ],
       "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/vocabulary/context.jsonld",
@@ -415,146 +727,6 @@
         "bblocks-viewer": {
           "mediatype": "text/html",
           "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.bounding-box"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.curve",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: Curve",
-      "abstract": "A 1-dimensional geometry, e.g. a LineString.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-11-04",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.geometry"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/curve"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/curve/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/curve/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/curve/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/curve/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/curve/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/curve/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/curve/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/curve/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/curve/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/curve/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.curve"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.elevation-model",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: Elevation model",
-      "abstract": "A single-band raster whose values are elevations of the terrain or of a surface (DEM, DTM, DSM).",
-      "status": "under-development",
-      "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-11-04",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.raster-single-band"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 09-146r8 CIS 1.1.1, \u00a76.5 RangeType",
-          "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
-        },
-        {
-          "title": "SAGA 7.3.0 Terrain Analysis tools, Elevation grid inputs",
-          "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry.html"
-        }
-      ],
-      "group": "Raster data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/elevation-model/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/elevation-model/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/elevation-model/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/elevation-model/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/elevation-model/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/elevation-model/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/elevation-model/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/elevation-model/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/elevation-model/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/elevation-model/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.elevation-model"
         }
       }
     },
@@ -757,650 +929,6 @@
       }
     },
     {
-      "itemIdentifier": "data-types.data-type.geometry-collection",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: GeometryCollection",
-      "abstract": "A geometry that is a collection of geometry objects, which may be of different types.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-01T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.geometry"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry-collection"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/geometry-collection/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/geometry-collection/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/geometry-collection/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry-collection/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/geometry-collection/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/geometry-collection/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry-collection/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/geometry-collection/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/geometry-collection/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/geometry-collection/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.geometry-collection"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.line",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: Line",
-      "abstract": "A line string with exactly two points, hence a single straight line segment.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-03T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.line-string"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/line"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
-          "link": "https://docs.ogc.org/is/23-034/23-034.html"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/line/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/line/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/line/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/line/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/line/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.line"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.line-string",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: LineString",
-      "abstract": "A curve with linear interpolation between points: each consecutive pair of points defines a line segment.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-01T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.curve"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/line-string"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
-          "link": "https://docs.ogc.org/is/23-034/23-034.html"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line-string/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line-string/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line-string/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/line-string/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line-string/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line-string/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/line-string/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/line-string/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/line-string/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/line-string/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.line-string"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.linear-ring",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: LinearRing",
-      "abstract": "A line string that is both closed and simple.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-03T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.line-string"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/linear-ring"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
-          "link": "https://docs.ogc.org/is/23-034/23-034.html"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/linear-ring/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/linear-ring/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/linear-ring/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/linear-ring/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/linear-ring/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/linear-ring/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/linear-ring/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/linear-ring/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/linear-ring/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/linear-ring/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.linear-ring"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.multi-curve",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: MultiCurve",
-      "abstract": "A 1-dimensional geometry collection whose elements are curves.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-03T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.geometry-collection"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/multi-curve"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
-          "link": "https://docs.ogc.org/is/23-034/23-034.html"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-curve/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-curve/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-curve/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-curve/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-curve/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-curve/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-curve/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/multi-curve/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/multi-curve/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/multi-curve/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.multi-curve"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.multi-line-string",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: MultiLineString",
-      "abstract": "A multi-curve whose elements are line strings.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-01T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.multi-curve"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/multi-line-string"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
-          "link": "https://docs.ogc.org/is/23-034/23-034.html"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-line-string/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-line-string/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-line-string/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-line-string/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-line-string/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-line-string/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-line-string/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/multi-line-string/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/multi-line-string/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/multi-line-string/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.multi-line-string"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.multi-point",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: MultiPoint",
-      "abstract": "A 0-dimensional geometry collection whose elements are points.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-01T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.geometry-collection"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/multi-point"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
-          "link": "https://docs.ogc.org/is/23-034/23-034.html"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-point/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-point/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-point/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-point/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-point/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-point/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-point/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/multi-point/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/multi-point/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/multi-point/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.multi-point"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.multi-polygon",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: MultiPolygon",
-      "abstract": "A multi-surface whose elements are polygons.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-01T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.multi-surface"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/multi-polygon"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
-          "link": "https://docs.ogc.org/is/23-034/23-034.html"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-polygon/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-polygon/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-polygon/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-polygon/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-polygon/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-polygon/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-polygon/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/multi-polygon/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/multi-polygon/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/multi-polygon/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.multi-polygon"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.multi-surface",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: MultiSurface",
-      "abstract": "A 2-dimensional geometry collection whose elements are surfaces. The interiors of any two of its surfaces do not intersect.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-03T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.geometry-collection"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/multi-surface"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
-          "link": "https://docs.ogc.org/is/23-034/23-034.html"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-surface/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-surface/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-surface/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-surface/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-surface/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-surface/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-surface/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/multi-surface/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/multi-surface/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/multi-surface/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.multi-surface"
-        }
-      }
-    },
-    {
       "itemIdentifier": "data-types.data-type.number",
       "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
       "name": "Data type: Number",
@@ -1462,74 +990,6 @@
         "bblocks-viewer": {
           "mediatype": "text/html",
           "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.number"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.point",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: Point",
-      "abstract": "A 0-dimensional geometry, a single location.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-11-04",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.geometry"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/point"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/point/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/point/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/point/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/point/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/point/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/point/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/point/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/point/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/point/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/point/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.point"
         }
       }
     },
@@ -1599,154 +1059,6 @@
       }
     },
     {
-      "itemIdentifier": "data-types.data-type.polygon",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: Polygon",
-      "abstract": "A planar surface defined by one exterior boundary and zero or more interior boundaries; each interior boundary defines a hole in the polygon.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-01T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.surface"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/polygon"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
-          "link": "https://docs.ogc.org/is/23-034/23-034.html"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polygon/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polygon/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polygon/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/polygon/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polygon/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polygon/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/polygon/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/polygon/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/polygon/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/polygon/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.polygon"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.polyhedral-surface",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: PolyhedralSurface",
-      "abstract": "A contiguous collection of polygons that share common boundary segments.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-03T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.surface"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/polyhedral-surface"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
-          "link": "https://docs.ogc.org/is/23-034/23-034.html"
-        },
-        {
-          "title": "OGC 06-103r3 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://docs.ogc.org/is/06-103r3/06-103r3.pdf"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polyhedral-surface/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polyhedral-surface/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polyhedral-surface/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/polyhedral-surface/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polyhedral-surface/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polyhedral-surface/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/polyhedral-surface/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/polyhedral-surface/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/polyhedral-surface/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/polyhedral-surface/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.polyhedral-surface"
-        }
-      }
-    },
-    {
       "itemIdentifier": "data-types.data-type.raster",
       "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
       "name": "Data type: Raster",
@@ -1808,142 +1120,6 @@
         "bblocks-viewer": {
           "mediatype": "text/html",
           "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.raster"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.raster-multi-band",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: Raster (multiple bands)",
-      "abstract": "A raster with more than one band: a range type of several fields.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-11-04",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.raster"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-multi-band"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
-          "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
-        }
-      ],
-      "group": "Raster data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-multi-band/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-multi-band/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-multi-band/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-multi-band/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-multi-band/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-multi-band/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-multi-band/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/raster-multi-band/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/raster-multi-band/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/raster-multi-band/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.raster-multi-band"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.raster-single-band",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: Raster (single band)",
-      "abstract": "A raster with exactly one band: a range type of one field.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-11-04",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.raster"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
-          "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
-        }
-      ],
-      "group": "Raster data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-single-band/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-single-band/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-single-band/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-single-band/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-single-band/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-single-band/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-single-band/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/raster-single-band/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/raster-single-band/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/raster-single-band/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.raster-single-band"
         }
       }
     },
@@ -2013,38 +1189,32 @@
       }
     },
     {
-      "itemIdentifier": "data-types.data-type.stac-collection",
+      "itemIdentifier": "data-types.data-type.string",
       "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: STAC Collection",
-      "abstract": "A STAC Collection: a Catalog specialization that describes a collection of related spatiotemporal assets with spatial and temporal extents.",
+      "name": "Data type: String",
+      "abstract": "A literal character string, e.g. an expression, a CRS identifier or a format name.",
       "status": "under-development",
-      "dateTimeAddition": "2026-11-02T00:00:00Z",
+      "dateTimeAddition": "2026-10-08T00:00:00Z",
+      "dateOfLastChange": "2026-11-04",
       "version": "1.0",
       "itemClass": "model",
       "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.stac-catalog"
-      ],
       "dependsOn": [
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/stac-collection"
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/string"
       ],
       "rdfType": [
         "https://geolabs.github.io/bblocks-data-types/def/DataType"
       ],
       "sources": [
         {
-          "title": "STAC Collection JSON Schema",
-          "link": "https://github.com/radiantearth/stac-spec/blob/master/collection-spec/json-schema/collection.json"
-        },
-        {
-          "title": "STAC Catalog JSON Schema",
-          "link": "https://github.com/radiantearth/stac-spec/blob/master/catalog-spec/json-schema/catalog.json"
+          "title": "OGC 18-062r2 OGC API - Processes - Part 1: Core (inputs/outputs schema, JSON Schema)",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
         }
       ],
-      "group": "STAC data types",
+      "group": "Literal data types",
       "highlighted": true,
       "shaclShapes": {
         "data-types.vocabulary": [
@@ -2057,30 +1227,94 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/stac-collection/ontology.ttl",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/string/ontology.ttl",
       "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/stac-collection/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/stac-collection/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/string/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/string/schema.json"
       },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-collection/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/stac-collection/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/stac-collection/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-collection/",
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/string/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/string/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/stac-collection/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/string/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/stac-collection/index.md"
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/string/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/stac-collection/index.json"
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/string/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.stac-collection"
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.string"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.table",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: Table",
+      "abstract": "Records of attribute values, without geometry.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-10-08T00:00:00Z",
+      "dateOfLastChange": "2026-11-04",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "dependsOn": [
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/table"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "SAGA 7.3.0 Table tools",
+          "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/table_tools.html"
+        }
+      ],
+      "group": "Other data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/table/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/table/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/table/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/table/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/table/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/table/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/table/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/table/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/table/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/table/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.table"
         }
       }
     },
@@ -2098,6 +1332,7 @@
         "bblocks://data-types.data-type.feature"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.feature",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -2166,6 +1401,7 @@
         "bblocks://data-types.data-type.feature-collection"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.feature-collection",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -2229,32 +1465,36 @@
       }
     },
     {
-      "itemIdentifier": "data-types.data-type.string",
+      "itemIdentifier": "data-types.data-type.curve",
       "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: String",
-      "abstract": "A literal character string, e.g. an expression, a CRS identifier or a format name.",
+      "name": "Data type: Curve",
+      "abstract": "A 1-dimensional geometry, e.g. a LineString.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
       "dateOfLastChange": "2026-11-04",
       "version": "1.0",
       "itemClass": "model",
       "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.geometry"
+      ],
       "dependsOn": [
+        "bblocks://data-types.data-type.geometry",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/string"
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/curve"
       ],
       "rdfType": [
         "https://geolabs.github.io/bblocks-data-types/def/DataType"
       ],
       "sources": [
         {
-          "title": "OGC 18-062r2 OGC API - Processes - Part 1: Core (inputs/outputs schema, JSON Schema)",
-          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
         }
       ],
-      "group": "Literal data types",
+      "group": "Geometry data types",
       "highlighted": true,
       "shaclShapes": {
         "data-types.vocabulary": [
@@ -2267,29 +1507,451 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/string/ontology.ttl",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/curve/ontology.ttl",
       "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/string/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/string/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/curve/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/curve/schema.json"
       },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/string/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/string/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/string/",
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/curve/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/curve/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/curve/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/curve/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/string/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/curve/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/string/index.md"
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/curve/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/string/index.json"
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/curve/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.string"
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.curve"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.geometry-collection",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: GeometryCollection",
+      "abstract": "A geometry that is a collection of geometry objects, which may be of different types.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-01T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.geometry"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.geometry",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry-collection"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/geometry-collection/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/geometry-collection/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/geometry-collection/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry-collection/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/geometry-collection/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/geometry-collection/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry-collection/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/geometry-collection/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/geometry-collection/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/geometry-collection/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.geometry-collection"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.point",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: Point",
+      "abstract": "A 0-dimensional geometry, a single location.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-10-08T00:00:00Z",
+      "dateOfLastChange": "2026-11-04",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.geometry"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.geometry",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/point"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/point/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/point/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/point/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/point/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/point/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/point/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/point/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/point/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/point/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/point/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.point"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.surface",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: Surface",
+      "abstract": "A 2-dimensional geometry, e.g. a Polygon.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-10-08T00:00:00Z",
+      "dateOfLastChange": "2026-11-04",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.geometry"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.geometry",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/surface"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 06-103r3 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://docs.ogc.org/is/06-103r3/06-103r3.pdf"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/surface/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/surface/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/surface/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/surface/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/surface/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/surface/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/surface/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/surface/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/surface/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/surface/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.surface"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.raster-multi-band",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: Raster (multiple bands)",
+      "abstract": "A raster with more than one band: a range type of several fields.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-10-08T00:00:00Z",
+      "dateOfLastChange": "2026-11-04",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.raster"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.raster",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-multi-band"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
+          "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
+        }
+      ],
+      "group": "Raster data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-multi-band/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-multi-band/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-multi-band/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-multi-band/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-multi-band/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-multi-band/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-multi-band/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/raster-multi-band/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/raster-multi-band/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/raster-multi-band/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.raster-multi-band"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.raster-single-band",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: Raster (single band)",
+      "abstract": "A raster with exactly one band: a range type of one field.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-10-08T00:00:00Z",
+      "dateOfLastChange": "2026-11-04",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.raster"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.raster",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
+          "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
+        }
+      ],
+      "group": "Raster data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-single-band/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-single-band/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-single-band/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-single-band/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-single-band/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/raster-single-band/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-single-band/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/raster-single-band/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/raster-single-band/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/raster-single-band/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.raster-single-band"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.stac-collection",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: STAC Collection",
+      "abstract": "A STAC Collection: a Catalog specialization that describes a collection of related spatiotemporal assets with spatial and temporal extents.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-02T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.stac-catalog"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.stac-catalog",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/stac-collection"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "STAC Collection JSON Schema",
+          "link": "https://github.com/radiantearth/stac-spec/blob/master/collection-spec/json-schema/collection.json"
+        },
+        {
+          "title": "STAC Catalog JSON Schema",
+          "link": "https://github.com/radiantearth/stac-spec/blob/master/catalog-spec/json-schema/catalog.json"
+        }
+      ],
+      "group": "STAC data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/stac-collection/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/stac-collection/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/stac-collection/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-collection/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/stac-collection/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/stac-collection/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-collection/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/stac-collection/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/stac-collection/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/stac-collection/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.stac-collection"
         }
       }
     },
@@ -2307,6 +1969,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -2375,6 +2038,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -2443,6 +2107,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -2511,6 +2176,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -2583,6 +2249,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -2655,6 +2322,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -2723,6 +2391,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -2791,6 +2460,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -2863,6 +2533,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -2935,6 +2606,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -3007,6 +2679,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -3079,6 +2752,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -3151,6 +2825,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -3219,6 +2894,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -3291,6 +2967,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -3359,6 +3036,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -3431,6 +3109,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -3503,6 +3182,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -3575,6 +3255,7 @@
         "bblocks://data-types.data-type.string"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.string",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -3634,24 +3315,24 @@
       }
     },
     {
-      "itemIdentifier": "data-types.data-type.surface",
+      "itemIdentifier": "data-types.data-type.line-string",
       "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: Surface",
-      "abstract": "A 2-dimensional geometry, e.g. a Polygon.",
+      "name": "Data type: LineString",
+      "abstract": "A curve with linear interpolation between points: each consecutive pair of points defines a line segment.",
       "status": "under-development",
-      "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-11-04",
+      "dateTimeAddition": "2026-11-01T00:00:00Z",
       "version": "1.0",
       "itemClass": "model",
       "register": "data-types",
       "isProfileOf": [
-        "bblocks://data-types.data-type.geometry"
+        "bblocks://data-types.data-type.curve"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.curve",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/surface"
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/line-string"
       ],
       "rdfType": [
         "https://geolabs.github.io/bblocks-data-types/def/DataType"
@@ -3660,6 +3341,375 @@
         {
           "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
           "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
+          "link": "https://docs.ogc.org/is/23-034/23-034.html"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line-string/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line-string/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line-string/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/line-string/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line-string/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line-string/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/line-string/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/line-string/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/line-string/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/line-string/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.line-string"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.multi-curve",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: MultiCurve",
+      "abstract": "A 1-dimensional geometry collection whose elements are curves.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-03T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.geometry-collection"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.geometry-collection",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/multi-curve"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
+          "link": "https://docs.ogc.org/is/23-034/23-034.html"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-curve/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-curve/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-curve/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-curve/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-curve/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-curve/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-curve/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/multi-curve/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/multi-curve/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/multi-curve/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.multi-curve"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.multi-point",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: MultiPoint",
+      "abstract": "A 0-dimensional geometry collection whose elements are points.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-01T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.geometry-collection"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.geometry-collection",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/multi-point"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
+          "link": "https://docs.ogc.org/is/23-034/23-034.html"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-point/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-point/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-point/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-point/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-point/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-point/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-point/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/multi-point/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/multi-point/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/multi-point/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.multi-point"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.multi-surface",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: MultiSurface",
+      "abstract": "A 2-dimensional geometry collection whose elements are surfaces. The interiors of any two of its surfaces do not intersect.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-03T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.geometry-collection"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.geometry-collection",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/multi-surface"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
+          "link": "https://docs.ogc.org/is/23-034/23-034.html"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-surface/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-surface/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-surface/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-surface/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-surface/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-surface/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-surface/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/multi-surface/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/multi-surface/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/multi-surface/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.multi-surface"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.polygon",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: Polygon",
+      "abstract": "A planar surface defined by one exterior boundary and zero or more interior boundaries; each interior boundary defines a hole in the polygon.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-01T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.surface"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.surface",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/polygon"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
+          "link": "https://docs.ogc.org/is/23-034/23-034.html"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polygon/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polygon/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polygon/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/polygon/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polygon/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polygon/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/polygon/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/polygon/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/polygon/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/polygon/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.polygon"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.polyhedral-surface",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: PolyhedralSurface",
+      "abstract": "A contiguous collection of polygons that share common boundary segments.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-03T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.surface"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.surface",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/polyhedral-surface"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
+          "link": "https://docs.ogc.org/is/23-034/23-034.html"
         },
         {
           "title": "OGC 06-103r3 Simple Feature Access - Part 1: Common Architecture",
@@ -3679,59 +3729,68 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/surface/ontology.ttl",
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polyhedral-surface/ontology.ttl",
       "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/surface/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/surface/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polyhedral-surface/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polyhedral-surface/schema.json"
       },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/surface/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/surface/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/surface/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/surface/",
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/polyhedral-surface/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polyhedral-surface/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/polyhedral-surface/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/polyhedral-surface/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/surface/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/polyhedral-surface/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/surface/index.md"
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/polyhedral-surface/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/surface/index.json"
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/polyhedral-surface/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.surface"
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.polyhedral-surface"
         }
       }
     },
     {
-      "itemIdentifier": "data-types.data-type.table",
+      "itemIdentifier": "data-types.data-type.elevation-model",
       "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: Table",
-      "abstract": "Records of attribute values, without geometry.",
+      "name": "Data type: Elevation model",
+      "abstract": "A single-band raster whose values are elevations of the terrain or of a surface (DEM, DTM, DSM).",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
       "dateOfLastChange": "2026-11-04",
       "version": "1.0",
       "itemClass": "model",
       "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.raster-single-band"
+      ],
       "dependsOn": [
+        "bblocks://data-types.data-type.raster-single-band",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/table"
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model"
       ],
       "rdfType": [
         "https://geolabs.github.io/bblocks-data-types/def/DataType"
       ],
       "sources": [
         {
-          "title": "SAGA 7.3.0 Table tools",
-          "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/table_tools.html"
+          "title": "OGC 09-146r8 CIS 1.1.1, \u00a76.5 RangeType",
+          "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
+        },
+        {
+          "title": "SAGA 7.3.0 Terrain Analysis tools, Elevation grid inputs",
+          "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry.html"
         }
       ],
-      "group": "Other data types",
+      "group": "Raster data types",
       "highlighted": true,
       "shaclShapes": {
         "data-types.vocabulary": [
@@ -3744,29 +3803,394 @@
       "license": {
         "name": "Apache-2.0"
       },
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/table/ontology.ttl",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/elevation-model/ontology.ttl",
       "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/table/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/table/schema.json"
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/elevation-model/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/elevation-model/schema.json"
       },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/table/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/table/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/table/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/table/",
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/elevation-model/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/elevation-model/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/elevation-model/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/elevation-model/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/table/",
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/elevation-model/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/table/index.md"
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/elevation-model/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/table/index.json"
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/elevation-model/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.table"
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.elevation-model"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.line",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: Line",
+      "abstract": "A line string with exactly two points, hence a single straight line segment.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-03T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.line-string"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.line-string",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/line"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
+          "link": "https://docs.ogc.org/is/23-034/23-034.html"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/line/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/line/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/line/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/line/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/line/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/line/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.line"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.linear-ring",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: LinearRing",
+      "abstract": "A line string that is both closed and simple.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-03T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.line-string"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.line-string",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/linear-ring"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
+          "link": "https://docs.ogc.org/is/23-034/23-034.html"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/linear-ring/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/linear-ring/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/linear-ring/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/linear-ring/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/linear-ring/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/linear-ring/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/linear-ring/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/linear-ring/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/linear-ring/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/linear-ring/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.linear-ring"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.multi-line-string",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: MultiLineString",
+      "abstract": "A multi-curve whose elements are line strings.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-01T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.multi-curve"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.multi-curve",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/multi-line-string"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
+          "link": "https://docs.ogc.org/is/23-034/23-034.html"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-line-string/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-line-string/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-line-string/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-line-string/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-line-string/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-line-string/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-line-string/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/multi-line-string/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/multi-line-string/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/multi-line-string/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.multi-line-string"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.multi-polygon",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: MultiPolygon",
+      "abstract": "A multi-surface whose elements are polygons.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-01T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.multi-surface"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.multi-surface",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/multi-polygon"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
+          "link": "https://docs.ogc.org/is/23-034/23-034.html"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-polygon/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-polygon/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-polygon/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-polygon/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-polygon/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/multi-polygon/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-polygon/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/multi-polygon/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/multi-polygon/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/multi-polygon/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.multi-polygon"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "data-types.data-type.triangle",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Data type: Triangle",
+      "abstract": "A polygon with three distinct, non-collinear vertices and no interior boundary.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-03T00:00:00Z",
+      "version": "1.0",
+      "itemClass": "model",
+      "register": "data-types",
+      "isProfileOf": [
+        "bblocks://data-types.data-type.polygon"
+      ],
+      "dependsOn": [
+        "bblocks://data-types.data-type.polygon",
+        "bblocks://data-types.vocabulary"
+      ],
+      "concept": [
+        "https://geolabs.github.io/bblocks-data-types/def/data-type/triangle"
+      ],
+      "rdfType": [
+        "https://geolabs.github.io/bblocks-data-types/def/DataType"
+      ],
+      "sources": [
+        {
+          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
+          "link": "https://www.ogc.org/standards/sfa/"
+        },
+        {
+          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
+          "link": "https://docs.ogc.org/is/23-034/23-034.html"
+        }
+      ],
+      "group": "Geometry data types",
+      "highlighted": true,
+      "shaclShapes": {
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
+        "ogc.rim.core-ontology": [
+          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+        ]
+      },
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "dateOfLastChange": "2026-11-04",
+      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/triangle/ontology.ttl",
+      "schema": {
+        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/triangle/schema.yaml",
+        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/triangle/schema.json"
+      },
+      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/triangle/schema.yaml",
+      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/triangle/context.jsonld",
+      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/triangle/resolvedProperties.json",
+      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/triangle/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/triangle/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/triangle/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/triangle/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.triangle"
         }
       }
     },
@@ -3785,6 +4209,7 @@
         "bblocks://data-types.data-type.polyhedral-surface"
       ],
       "dependsOn": [
+        "bblocks://data-types.data-type.polyhedral-surface",
         "bblocks://data-types.vocabulary"
       ],
       "concept": [
@@ -3850,78 +4275,6 @@
         "bblocks-viewer": {
           "mediatype": "text/html",
           "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.tin"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "data-types.data-type.triangle",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data type: Triangle",
-      "abstract": "A polygon with three distinct, non-collinear vertices and no interior boundary.",
-      "status": "under-development",
-      "dateTimeAddition": "2026-11-03T00:00:00Z",
-      "version": "1.0",
-      "itemClass": "model",
-      "register": "data-types",
-      "isProfileOf": [
-        "bblocks://data-types.data-type.polygon"
-      ],
-      "dependsOn": [
-        "bblocks://data-types.vocabulary"
-      ],
-      "concept": [
-        "https://geolabs.github.io/bblocks-data-types/def/data-type/triangle"
-      ],
-      "rdfType": [
-        "https://geolabs.github.io/bblocks-data-types/def/DataType"
-      ],
-      "sources": [
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 23-034 OGC CDB Version 2 - Part 1: Core Standard, 7.6 Geometry",
-          "link": "https://docs.ogc.org/is/23-034/23-034.html"
-        }
-      ],
-      "group": "Geometry data types",
-      "highlighted": true,
-      "shaclShapes": {
-        "data-types.vocabulary": [
-          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
-        ],
-        "ogc.rim.core-ontology": [
-          "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
-        ]
-      },
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/triangle/ontology.ttl",
-      "schema": {
-        "application/yaml": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/triangle/schema.yaml",
-        "application/json": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/triangle/schema.json"
-      },
-      "sourceSchema": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/triangle/schema.yaml",
-      "ldContext": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/triangle/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-data-types/build/annotated/data-type/triangle/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-data-types/_sources/data-type/triangle/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-data-types/blob/master/build/tests/data-type/triangle/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/markdown/data-type/triangle/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-data-types/build/generateddocs/json-full/data-type/triangle/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-data-types/bblock/data-types.data-type.triangle"
         }
       }
     }

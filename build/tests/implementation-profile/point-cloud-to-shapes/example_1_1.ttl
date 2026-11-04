@@ -1,8 +1,8 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -10,15 +10,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.5> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.5: Point Cloud to Shapes" ],
-        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_5.html> ;
-            dcterms:title "SAGA 7.3.0 -- Point Cloud to Shapes" ] ;
+    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_5.html> ;
+            dcterms:title "SAGA 7.3.0 -- Point Cloud to Shapes" ],
+        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.5> ;
+            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.5: Point Cloud to Shapes" ] ;
     skos:definition "Converts a point cloud to a SAGA shapes layer of points, i.e. a feature collection." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Point cloud to shapes" ;
-    gp:inputs [ ns1:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> ] ;
-    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> ] ;
+    gp:inputs [ ns3:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features> ;
     proc:keywords "Point Cloud to Shapes",
         "conversion",
@@ -44,20 +44,20 @@
     proc:keywords "LAS",
         "point cloud" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud to features -- input `points`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points" ;
+            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns2:string ;
+    proc:schema [ a ns1:string ;
             dcterms:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ;
-            ns2:contentEncoding "base64" ;
-            ns2:contentMediaType "application/vnd.las" ] .
+            ns1:contentEncoding "base64" ;
+            ns1:contentMediaType "application/vnd.las" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/feature-collection> ;
     proc:keywords "GML",
         "feature collection" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud to features -- output `result`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result" ;
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns2:string ;
+    proc:schema [ a ns1:string ;
             dcterms:description "GML" ;
-            ns2:contentMediaType "text/xml" ] .
+            ns1:contentMediaType "text/xml" ] .
 

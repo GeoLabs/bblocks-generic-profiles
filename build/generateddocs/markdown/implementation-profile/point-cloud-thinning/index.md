@@ -273,9 +273,9 @@ the ZOO-Project Geonovum testbed.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns3: <https://w3id.org/ogc/api/schema/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -283,23 +283,23 @@ the ZOO-Project Geonovum testbed.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.9> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.9: Point Cloud Thinning (Simple)" ],
-        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_9.html> ;
-            dcterms:title "SAGA 7.3.0 -- Point Cloud Thinning (Simple)" ] ;
+    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_9.html> ;
+            dcterms:title "SAGA 7.3.0 -- Point Cloud Thinning (Simple)" ],
+        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.9> ;
+            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.9: Point Cloud Thinning (Simple)" ] ;
     skos:definition "Reduces the number of points to the given percentage by sequential point removal, which suits points stored in chronological order best." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Point cloud thinning (simple)" ;
-    gp:inputs [ ns3:percentage <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/percentage> ;
-            ns3:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/points> ] ;
-    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/outputs/result> ] ;
+    gp:inputs [ ns1:percentage <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/percentage> ;
+            ns1:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/points> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning> ;
     proc:keywords "Point Cloud Thinning",
         "point cloud",
         "pointcloud_tools",
         "thinning" ;
-    proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning" ],
-        [ dcterms:title "Process Concept: Point Cloud Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ],
+        [ dcterms:title "Generic Profile: Point cloud thinning" ] ;
     rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/actions/addition> ;
     rim:inRegister gp:register ;
     rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
@@ -316,30 +316,30 @@ the ZOO-Project Geonovum testbed.
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/percentage> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/number> ;
     proc:keywords "percentage" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning -- input `percentage`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/points> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud> ;
     proc:keywords "LAS",
         "point cloud" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning -- input `points`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns2:string ;
+    proc:schema [ a ns3:string ;
             dcterms:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ;
-            ns2:contentEncoding "base64" ;
-            ns2:contentMediaType "application/vnd.las" ] .
+            ns3:contentEncoding "base64" ;
+            ns3:contentMediaType "application/vnd.las" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud> ;
     proc:keywords "LAS",
         "point cloud" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning -- output `result`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result" ;
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns2:string ;
+    proc:schema [ a ns3:string ;
             dcterms:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ;
-            ns2:contentEncoding "base64" ;
-            ns2:contentMediaType "application/vnd.las" ] .
+            ns3:contentEncoding "base64" ;
+            ns3:contentMediaType "application/vnd.las" ] .
 
 
 ```

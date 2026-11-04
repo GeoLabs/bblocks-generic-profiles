@@ -286,8 +286,8 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -302,8 +302,8 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
     skos:definition "Returns TRUE if this geometric object 'spatially crosses' anotherGeometry: the intersection results in a geometry of dimension one less than the maximum dimension of the two source geometries, and the intersection set is interior to both." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Crosses" ;
-    gp:inputs [ ns2:geometry1 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/inputs/geometry1> ;
-            ns2:geometry2 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/inputs/geometry2> ] ;
+    gp:inputs [ ns1:geometry1 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/inputs/geometry1> ;
+            ns1:geometry2 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/inputs/geometry2> ] ;
     gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
     proc:keywords "Crosses",
@@ -331,21 +331,21 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry1`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GML" ;
-            ns1:contentMediaType "text/xml" ] .
+            ns2:contentMediaType "text/xml" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/inputs/geometry2> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry2`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GML" ;
-            ns1:contentMediaType "text/xml" ] .
+            ns2:contentMediaType "text/xml" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/crosses/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/boolean> ;
     proc:keywords "boolean" ;

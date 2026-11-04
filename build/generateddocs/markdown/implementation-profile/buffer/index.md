@@ -286,9 +286,9 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -302,9 +302,9 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
     skos:definition "Returns a geometric object representing all points whose distance from this geometric object is less than or equal to a given distance." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Buffer" ;
-    gp:inputs [ ns3:distance <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/distance> ;
-            ns3:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/geometry> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/outputs/result> ] ;
+    gp:inputs [ ns1:distance <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/distance> ;
+            ns1:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/geometry> ] ;
+    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer> ;
     proc:keywords "Buffer",
         "ST_Buffer",
@@ -330,28 +330,28 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/distance> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/number> ;
     proc:keywords "distance" ;
     proc:metadata [ dcterms:title "Generic Profile: Geometry buffer -- input `distance`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/inputs/distance" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/inputs/distance" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/geometry> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Geometry buffer -- input `geometry`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/inputs/geometry" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/inputs/geometry" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GML" ;
-            ns1:contentMediaType "text/xml" ] .
+            ns2:contentMediaType "text/xml" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/surface> ;
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Geometry buffer -- output `result`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/outputs/result" ;
+            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns1:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GML" ;
-            ns1:contentMediaType "text/xml" ] .
+            ns2:contentMediaType "text/xml" ] .
 
 
 ```

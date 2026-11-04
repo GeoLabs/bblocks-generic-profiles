@@ -241,8 +241,8 @@ process of the ZOO-Project Geonovum testbed.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -251,15 +251,15 @@ process of the ZOO-Project Geonovum testbed.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_ConvexHull" ],
+    dcterms:source [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/ConvexHull> ;
+            dcterms:title "ZOO-Project Geonovum testbed -- ConvexHull: Compute convex hull." ],
         [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
             dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.1.3 ConvexHull()" ],
-        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/ConvexHull> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- ConvexHull: Compute convex hull." ] ;
+        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_ConvexHull" ] ;
     skos:definition "Returns a geometry that represents the convex hull of this Geometry." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Convex hull" ;
-    gp:inputs [ ns2:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/inputs/geometry> ] ;
+    gp:inputs [ ns1:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/inputs/geometry> ] ;
     gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation> ;
     proc:keywords "ConvexHull",
@@ -286,11 +286,11 @@ process of the ZOO-Project Geonovum testbed.
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- input `geometry`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GML" ;
-            ns1:contentMediaType "text/xml" ] .
+            ns2:contentMediaType "text/xml" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
     proc:keywords "GML",
@@ -298,9 +298,9 @@ process of the ZOO-Project Geonovum testbed.
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- output `result`" ;
             ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns1:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GML" ;
-            ns1:contentMediaType "text/xml" ] .
+            ns2:contentMediaType "text/xml" ] .
 
 
 ```

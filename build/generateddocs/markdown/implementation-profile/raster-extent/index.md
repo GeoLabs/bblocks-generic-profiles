@@ -267,9 +267,9 @@ process of the ZOO-Project Geonovum testbed
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -277,15 +277,15 @@ process of the ZOO-Project Geonovum testbed
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
-        [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html> ;
-            dcterms:title "OTB ImageEnvelope -- Build a vector data containing the image envelope polygon" ] ;
+    dcterms:source [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html> ;
+            dcterms:title "OTB ImageEnvelope -- Build a vector data containing the image envelope polygon" ],
+        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
     skos:definition "Computes the bounding envelope of a raster coverage, as a vector polygon." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster extent" ;
-    gp:inputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster> ] ;
-    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result> ] ;
+    gp:inputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster> ] ;
+    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> ;
     proc:keywords "ImageEnvelope",
         "OTB",
@@ -311,22 +311,22 @@ process of the ZOO-Project Geonovum testbed
     proc:keywords "GeoTIFF",
         "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster extent -- input `raster`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns3:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GeoTIFF" ;
-            ns3:contentEncoding "base64" ;
-            ns3:contentMediaType "image/tiff" ] .
+            ns2:contentEncoding "base64" ;
+            ns2:contentMediaType "image/tiff" ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/surface> ;
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster extent -- output `result`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result" ;
+            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns3:string ;
+    proc:schema [ a ns2:string ;
             dcterms:description "GML" ;
-            ns3:contentMediaType "text/xml" ] .
+            ns2:contentMediaType "text/xml" ] .
 
 
 ```

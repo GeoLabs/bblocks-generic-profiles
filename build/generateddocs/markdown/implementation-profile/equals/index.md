@@ -296,9 +296,9 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/equals> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
-            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.14" ],
-        [ dcterms:title "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.16 ST_Equals" ] ;
+    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.16 ST_Equals" ],
+        [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.14" ] ;
     skos:definition "Returns TRUE if this geometric object is spatially equal to anotherGeometry (same point set), independent of vertex order or representation." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Equals" ;
@@ -312,8 +312,8 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
         "predicate",
         "spatial relation",
         "vector" ;
-    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
-        [ dcterms:title "Generic Profile: Binary spatial predicate" ] ;
+    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ],
+        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
     rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/equals/actions/addition> ;
     rim:inRegister gp:register ;
     rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;

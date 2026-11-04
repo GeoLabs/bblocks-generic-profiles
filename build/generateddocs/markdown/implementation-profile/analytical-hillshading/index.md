@@ -318,10 +318,10 @@ the ZOO-Project Geonovum testbed.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_lighting.0> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.ta_lighting.0: Analytical Hillshading" ],
-        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_lighting_0.html> ;
-            dcterms:title "SAGA 7.3.0 -- Analytical Hillshading" ] ;
+    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_lighting_0.html> ;
+            dcterms:title "SAGA 7.3.0 -- Analytical Hillshading" ],
+        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_lighting.0> ;
+            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.ta_lighting.0: Analytical Hillshading" ] ;
     skos:definition "For each cell, the angle at which light coming from the position of the light source hits the terrain surface (SAGA's standard method)." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Analytical hillshading" ;
@@ -337,8 +337,8 @@ the ZOO-Project Geonovum testbed.
         "raster",
         "ta_lighting",
         "terrain" ;
-    proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading" ],
-        [ dcterms:title "Process Concept: Terrain Analysis" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Terrain Analysis" ],
+        [ dcterms:title "Generic Profile: Analytical hillshading" ] ;
     rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/addition> ;
     rim:inRegister gp:register ;
     rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;

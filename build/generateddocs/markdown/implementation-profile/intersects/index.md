@@ -312,8 +312,8 @@ in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum test
         "predicate",
         "spatial relation",
         "vector" ;
-    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
-        [ dcterms:title "Generic Profile: Binary spatial predicate" ] ;
+    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ],
+        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
     rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition> ;
     rim:inRegister gp:register ;
     rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;

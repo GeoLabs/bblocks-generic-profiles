@@ -275,11 +275,11 @@ process of the ZOO-Project Geonovum testbed
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
-            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture (Envelope)" ],
+    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Envelope" ],
         [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/shapes_tools_19.html> ;
             dcterms:title "SAGA GIS -- Get Shapes Extents (shapes_tools)" ],
-        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Envelope" ] ;
+        [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture (Envelope)" ] ;
     skos:definition "Computes the minimum bounding rectangle of a set of input geometries, as a geometry." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Geometry extent" ;
@@ -291,8 +291,8 @@ process of the ZOO-Project Geonovum testbed
         "derived geometry",
         "geometry",
         "vector" ;
-    proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation" ],
-        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
+        [ dcterms:title "Generic Profile: Unary geometry operation" ] ;
     rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/actions/addition> ;
     rim:inRegister gp:register ;
     rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;

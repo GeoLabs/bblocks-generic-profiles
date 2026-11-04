@@ -109,9 +109,9 @@ Implementation Profile -> Implementation (instance level).
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> a gp:ProcessConcept ;
-    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/index.html> ;
-            dcterms:title "SAGA 7.3.0 tool libraries, category Terrain Analysis" ],
-        [ dcterms:title "Wilson, J.P., Gallant, J.C. (2000): Terrain Analysis: Principles and Applications (cited by SAGA's Topographic Position Index tool)" ] ;
+    dcterms:source [ dcterms:title "Wilson, J.P., Gallant, J.C. (2000): Terrain Analysis: Principles and Applications (cited by SAGA's Topographic Position Index tool)" ],
+        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/index.html> ;
+            dcterms:title "SAGA 7.3.0 tool libraries, category Terrain Analysis" ] ;
     skos:definition "Operations deriving terrain attributes from an elevation model: local surface derivatives (slope, aspect, curvature), neighbourhood indices (terrain ruggedness, topographic position) and illumination (hillshading) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1). A kind of raster coverage processing: an elevation model is a single-band raster whose values are elevations." ;
     skos:inScheme gp:concept ;
     skos:prefLabel "Terrain Analysis" ;

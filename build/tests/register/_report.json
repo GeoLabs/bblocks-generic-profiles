@@ -2,7 +2,7 @@
   "title": "Validation report for generic-profiles.register - Generic Process Profiles register (ISO 19135:2026)",
   "bblockName": "Generic Process Profiles register (ISO 19135:2026)",
   "bblockId": "generic-profiles.register",
-  "generated": "2026-11-04T19:04:03.849601+00:00",
+  "generated": "2026-11-04T22:48:32.938010+00:00",
   "result": true,
   "items": [
     {
@@ -42,12 +42,224 @@
           "entries": [
             {
               "isError": false,
-              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - /github/workspace/_sources/register/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl"
+              "message": "Error processing closure source ../data-type/string-uuid/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uuid/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-iri-reference/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-iri-reference/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/triangle/ontology.ttl: [Errno 2] No such file or directory: '/data-type/triangle/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri-template/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri-template/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/feature/ontology.ttl: [Errno 2] No such file or directory: '/data-type/feature/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/linear-ring/ontology.ttl: [Errno 2] No such file or directory: '/data-type/linear-ring/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-relative-json-pointer/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-relative-json-pointer/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri-reference/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri-reference/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-duration/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-duration/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/point/ontology.ttl: [Errno 2] No such file or directory: '/data-type/point/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/elevation-model/ontology.ttl: [Errno 2] No such file or directory: '/data-type/elevation-model/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-password/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-password/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster-single-band/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster-single-band/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-hostname/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-hostname/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-curve/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-curve/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/feature-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/feature-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-catalog/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-catalog/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/tin/ontology.ttl: [Errno 2] No such file or directory: '/data-type/tin/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/polyhedral-surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/polyhedral-surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-polygon/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-polygon/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/geometry-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/geometry-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/polygon/ontology.ttl: [Errno 2] No such file or directory: '/data-type/polygon/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/bounding-box/ontology.ttl: [Errno 2] No such file or directory: '/data-type/bounding-box/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/table/ontology.ttl: [Errno 2] No such file or directory: '/data-type/table/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/boolean/ontology.ttl: [Errno 2] No such file or directory: '/data-type/boolean/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/number/ontology.ttl: [Errno 2] No such file or directory: '/data-type/number/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/line-string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/line-string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-idn-hostname/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-idn-hostname/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/curve/ontology.ttl: [Errno 2] No such file or directory: '/data-type/curve/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-item-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-item-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-idn-email/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-idn-email/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-ipv6/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-ipv6/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-item/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-item/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-json-pointer/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-json-pointer/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-date-time/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-date-time/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-time/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-time/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-point/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-point/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-ipv4/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-ipv4/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-line-string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-line-string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster-multi-band/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster-multi-band/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/geometry/ontology.ttl: [Errno 2] No such file or directory: '/data-type/geometry/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../vocabulary/data.ttl: [Errno 2] No such file or directory: '/vocabulary/data.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/line/ontology.ttl: [Errno 2] No such file or directory: '/data-type/line/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/point-cloud/ontology.ttl: [Errno 2] No such file or directory: '/data-type/point-cloud/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-date/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-date/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-email/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-email/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-iri/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-iri/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date-time/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-hostname/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-polygon/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-time/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/build/annotated/vocabulary/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-duration/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-line-string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-json-pointer/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri-reference/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-curve/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/line-string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-point/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-email/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/point/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/elevation-model/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/data.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/polyhedral-surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv6/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/tin/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-reference/ontology.ttl\n - /github/workspace/_sources/register/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-email/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-catalog/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/linear-ring/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv4/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/table/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/bounding-box/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/boolean/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-hostname/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uuid/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/line/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/point-cloud/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/curve/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-password/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-relative-json-pointer/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/number/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-single-band/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/polygon/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/triangle/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-multi-band/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-template/ontology.ttl"
             },
             {
               "op": "shacl-report",
               "shaclFile": "_sources/register/shapes.shacl",
-              "graph": "@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition> ;\n            sh:resultMessage \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n            sh:resultPath rim:hasAction ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n                    sh:minCount 1 ;\n                    sh:path rim:hasAction ;\n                    sh:qualifiedMinCount 1 ;\n                    sh:qualifiedValueShape [ sh:property [ sh:minCount 1 ;\n                                    sh:path rim:proposer ],\n                                [ sh:hasValue rim:additionAction ;\n                                    sh:path rim:actionType ] ] ] ] .\n\n",
+              "graph": "@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition> ;\n            sh:resultMessage \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n            sh:resultPath rim:hasAction ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n                    sh:minCount 1 ;\n                    sh:path rim:hasAction ;\n                    sh:qualifiedMinCount 1 ;\n                    sh:qualifiedValueShape [ sh:property [ sh:hasValue rim:additionAction ;\n                                    sh:path rim:actionType ],\n                                [ sh:minCount 1 ;\n                                    sh:path rim:proposer ] ] ] ] .\n\n",
               "isError": true,
               "message": "Validation result for _sources/register/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in QualifiedValueShapeConstraintComponent (http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:message Literal(\"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:hasAction ; sh:qualifiedMinCount Literal(\"1\", datatype=xsd:integer) ; sh:qualifiedValueShape [ sh:property [ sh:hasValue rim:additionAction ; sh:path rim:actionType ], [ sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:proposer ] ] ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>\n  \tResult Path: rim:hasAction\n  \tMessage: An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\n  "
             },
@@ -57,20 +269,7 @@
                 "gp:GenericProfileShape": {
                   "nodes": []
                 },
-                "gp:GenericProfileItemClassShape": {
-                  "nodes": [
-                    "gpic:generic-profile"
-                  ]
-                },
-                "gp:ProcessConceptItemClassShape": {
-                  "nodes": [
-                    "gpic:process-concept"
-                  ]
-                },
-                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
-                  "nodes": []
-                },
-                "gp:ImplementationProfileShape": {
+                "gp:AdditionProposalShape": {
                   "nodes": [
                     "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>"
                   ]
@@ -78,9 +277,25 @@
                 "gp:ProcessConceptShape": {
                   "nodes": []
                 },
-                "gp:AdditionProposalShape": {
+                "gp:DataTypeReferenceShape": {
+                  "nodes": []
+                },
+                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "gp:ProcessConceptItemClassShape": {
+                  "nodes": [
+                    "gpic:process-concept"
+                  ]
+                },
+                "gp:ImplementationProfileShape": {
                   "nodes": [
                     "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>"
+                  ]
+                },
+                "gp:GenericProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:generic-profile"
                   ]
                 },
                 "gp:ImplementationProfileItemClassShape": {
@@ -90,7 +305,38 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: *none*\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>\n - Shape gp:ProcessConceptShape: *none*\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: *none*\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>\n - Shape gp:ProcessConceptShape: *none*\n - Shape gp:DataTypeReferenceShape: *none*\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl",
+              "focusNodes": {
+                "dt:RegisterShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-data-types/def/register>"
+                  ]
+                },
+                "dt:DataTypeVersionShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeItemShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeVersionShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeShape": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl:\n - Shape dt:RegisterShape: <https://geolabs.github.io/bblocks-data-types/def/register>\n - Shape dt:DataTypeVersionShape: *none*\n - Shape dt:DataTypeItemShape: *none*\n - Shape dt:DataTypeVersionShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape dt:DataTypeShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -102,31 +348,16 @@
             {
               "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
               "focusNodes": {
-                "rim:RegisterSpecificationShape": {
-                  "nodes": []
-                },
-                "rim:RegisterItemClassShape": {
-                  "nodes": []
-                },
                 "rim:RegisterItemShape": {
                   "nodes": []
                 },
-                "rim:TextShape": {
-                  "nodes": []
-                },
-                "rim:ConceptVersionShape": {
-                  "nodes": []
-                },
-                "rim:RegisterShape": {
-                  "nodes": []
-                },
-                "rim:CommitmentShape": {
+                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 "rim:TextShape/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "rim:ConceptShape": {
+                "rim:ConceptVersionShape": {
                   "nodes": []
                 },
                 "rim:RegisterActionShape": {
@@ -134,12 +365,27 @@
                     "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition/actions/addition>"
                   ]
                 },
-                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
+                "rim:RegisterShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemClassShape": {
+                  "nodes": []
+                },
+                "rim:TextShape": {
+                  "nodes": []
+                },
+                "rim:RegisterSpecificationShape": {
+                  "nodes": []
+                },
+                "rim:ConceptShape": {
+                  "nodes": []
+                },
+                "rim:CommitmentShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:RegisterItemClassShape: *none*\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterShape: *none*\n - Shape rim:CommitmentShape: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:RegisterActionShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition/actions/addition>\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterActionShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition/actions/addition>\n - Shape rim:RegisterShape: *none*\n - Shape rim:RegisterItemClassShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:CommitmentShape: *none*\n"
             }
           ]
         }
@@ -182,12 +428,224 @@
           "entries": [
             {
               "isError": false,
-              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - /github/workspace/_sources/register/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl"
+              "message": "Error processing closure source ../data-type/string-uuid/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uuid/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-iri-reference/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-iri-reference/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/triangle/ontology.ttl: [Errno 2] No such file or directory: '/data-type/triangle/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri-template/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri-template/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/feature/ontology.ttl: [Errno 2] No such file or directory: '/data-type/feature/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/linear-ring/ontology.ttl: [Errno 2] No such file or directory: '/data-type/linear-ring/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-relative-json-pointer/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-relative-json-pointer/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri-reference/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri-reference/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-duration/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-duration/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/point/ontology.ttl: [Errno 2] No such file or directory: '/data-type/point/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/elevation-model/ontology.ttl: [Errno 2] No such file or directory: '/data-type/elevation-model/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-password/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-password/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster-single-band/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster-single-band/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-hostname/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-hostname/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-curve/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-curve/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/feature-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/feature-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-catalog/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-catalog/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/tin/ontology.ttl: [Errno 2] No such file or directory: '/data-type/tin/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/polyhedral-surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/polyhedral-surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-polygon/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-polygon/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/geometry-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/geometry-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/polygon/ontology.ttl: [Errno 2] No such file or directory: '/data-type/polygon/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/bounding-box/ontology.ttl: [Errno 2] No such file or directory: '/data-type/bounding-box/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/table/ontology.ttl: [Errno 2] No such file or directory: '/data-type/table/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/boolean/ontology.ttl: [Errno 2] No such file or directory: '/data-type/boolean/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/number/ontology.ttl: [Errno 2] No such file or directory: '/data-type/number/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/line-string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/line-string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-idn-hostname/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-idn-hostname/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/curve/ontology.ttl: [Errno 2] No such file or directory: '/data-type/curve/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-item-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-item-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-idn-email/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-idn-email/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-ipv6/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-ipv6/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-item/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-item/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-json-pointer/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-json-pointer/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-date-time/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-date-time/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-time/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-time/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-point/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-point/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-ipv4/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-ipv4/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-line-string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-line-string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster-multi-band/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster-multi-band/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/geometry/ontology.ttl: [Errno 2] No such file or directory: '/data-type/geometry/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../vocabulary/data.ttl: [Errno 2] No such file or directory: '/vocabulary/data.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/line/ontology.ttl: [Errno 2] No such file or directory: '/data-type/line/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/point-cloud/ontology.ttl: [Errno 2] No such file or directory: '/data-type/point-cloud/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-date/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-date/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-email/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-email/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-iri/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-iri/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date-time/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-hostname/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-polygon/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-time/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/build/annotated/vocabulary/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-duration/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-line-string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-json-pointer/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri-reference/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-curve/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/line-string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-point/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-email/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/point/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/elevation-model/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/data.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/polyhedral-surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv6/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/tin/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-reference/ontology.ttl\n - /github/workspace/_sources/register/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-email/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-catalog/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/linear-ring/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv4/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/table/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/bounding-box/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/boolean/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-hostname/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uuid/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/line/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/point-cloud/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/curve/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-password/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-relative-json-pointer/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/number/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-single-band/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/polygon/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/triangle/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-multi-band/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-template/ontology.ttl"
             },
             {
               "op": "shacl-report",
               "shaclFile": "_sources/register/shapes.shacl",
-              "graph": "@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added> ;\n            sh:resultMessage \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n            sh:resultPath rim:hasAction ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n                    sh:minCount 1 ;\n                    sh:path rim:hasAction ;\n                    sh:qualifiedMinCount 1 ;\n                    sh:qualifiedValueShape [ sh:property [ sh:minCount 1 ;\n                                    sh:path rim:proposer ],\n                                [ sh:hasValue rim:additionAction ;\n                                    sh:path rim:actionType ] ] ] ] .\n\n",
+              "graph": "@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added> ;\n            sh:resultMessage \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n            sh:resultPath rim:hasAction ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n                    sh:minCount 1 ;\n                    sh:path rim:hasAction ;\n                    sh:qualifiedMinCount 1 ;\n                    sh:qualifiedValueShape [ sh:property [ sh:hasValue rim:additionAction ;\n                                    sh:path rim:actionType ],\n                                [ sh:minCount 1 ;\n                                    sh:path rim:proposer ] ] ] ] .\n\n",
               "isError": true,
               "message": "Validation result for _sources/register/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:message Literal(\"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:hasAction ; sh:qualifiedMinCount Literal(\"1\", datatype=xsd:integer) ; sh:qualifiedValueShape [ sh:property [ sh:hasValue rim:additionAction ; sh:path rim:actionType ], [ sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:proposer ] ] ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>\n  \tResult Path: rim:hasAction\n  \tMessage: An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\n  "
             },
@@ -197,20 +655,7 @@
                 "gp:GenericProfileShape": {
                   "nodes": []
                 },
-                "gp:GenericProfileItemClassShape": {
-                  "nodes": [
-                    "gpic:generic-profile"
-                  ]
-                },
-                "gp:ProcessConceptItemClassShape": {
-                  "nodes": [
-                    "gpic:process-concept"
-                  ]
-                },
-                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
-                  "nodes": []
-                },
-                "gp:ImplementationProfileShape": {
+                "gp:AdditionProposalShape": {
                   "nodes": [
                     "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>"
                   ]
@@ -218,9 +663,25 @@
                 "gp:ProcessConceptShape": {
                   "nodes": []
                 },
-                "gp:AdditionProposalShape": {
+                "gp:DataTypeReferenceShape": {
+                  "nodes": []
+                },
+                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "gp:ProcessConceptItemClassShape": {
+                  "nodes": [
+                    "gpic:process-concept"
+                  ]
+                },
+                "gp:ImplementationProfileShape": {
                   "nodes": [
                     "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>"
+                  ]
+                },
+                "gp:GenericProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:generic-profile"
                   ]
                 },
                 "gp:ImplementationProfileItemClassShape": {
@@ -230,7 +691,38 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: *none*\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>\n - Shape gp:ProcessConceptShape: *none*\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: *none*\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>\n - Shape gp:ProcessConceptShape: *none*\n - Shape gp:DataTypeReferenceShape: *none*\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl",
+              "focusNodes": {
+                "dt:RegisterShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-data-types/def/register>"
+                  ]
+                },
+                "dt:DataTypeVersionShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeItemShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeVersionShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeShape": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl:\n - Shape dt:RegisterShape: <https://geolabs.github.io/bblocks-data-types/def/register>\n - Shape dt:DataTypeVersionShape: *none*\n - Shape dt:DataTypeItemShape: *none*\n - Shape dt:DataTypeVersionShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape dt:DataTypeShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -242,42 +734,42 @@
             {
               "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
               "focusNodes": {
-                "rim:RegisterSpecificationShape": {
-                  "nodes": []
-                },
-                "rim:RegisterItemClassShape": {
-                  "nodes": []
-                },
                 "rim:RegisterItemShape": {
                   "nodes": []
                 },
-                "rim:TextShape": {
-                  "nodes": []
-                },
-                "rim:ConceptVersionShape": {
-                  "nodes": []
-                },
-                "rim:RegisterShape": {
-                  "nodes": []
-                },
-                "rim:CommitmentShape": {
+                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 "rim:TextShape/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "rim:ConceptShape": {
+                "rim:ConceptVersionShape": {
                   "nodes": []
                 },
                 "rim:RegisterActionShape": {
                   "nodes": []
                 },
-                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
+                "rim:RegisterShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemClassShape": {
+                  "nodes": []
+                },
+                "rim:TextShape": {
+                  "nodes": []
+                },
+                "rim:RegisterSpecificationShape": {
+                  "nodes": []
+                },
+                "rim:ConceptShape": {
+                  "nodes": []
+                },
+                "rim:CommitmentShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:RegisterItemClassShape: *none*\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterShape: *none*\n - Shape rim:CommitmentShape: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:RegisterActionShape: *none*\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterActionShape: *none*\n - Shape rim:RegisterShape: *none*\n - Shape rim:RegisterItemClassShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:CommitmentShape: *none*\n"
             }
           ]
         }
@@ -320,14 +812,226 @@
           "entries": [
             {
               "isError": false,
-              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - /github/workspace/_sources/register/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl"
+              "message": "Error processing closure source ../data-type/string-uuid/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uuid/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-iri-reference/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-iri-reference/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/triangle/ontology.ttl: [Errno 2] No such file or directory: '/data-type/triangle/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri-template/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri-template/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/feature/ontology.ttl: [Errno 2] No such file or directory: '/data-type/feature/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/linear-ring/ontology.ttl: [Errno 2] No such file or directory: '/data-type/linear-ring/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-relative-json-pointer/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-relative-json-pointer/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri-reference/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri-reference/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-duration/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-duration/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/point/ontology.ttl: [Errno 2] No such file or directory: '/data-type/point/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/elevation-model/ontology.ttl: [Errno 2] No such file or directory: '/data-type/elevation-model/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-password/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-password/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster-single-band/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster-single-band/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-hostname/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-hostname/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-curve/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-curve/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/feature-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/feature-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-catalog/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-catalog/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/tin/ontology.ttl: [Errno 2] No such file or directory: '/data-type/tin/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/polyhedral-surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/polyhedral-surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-polygon/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-polygon/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/geometry-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/geometry-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/polygon/ontology.ttl: [Errno 2] No such file or directory: '/data-type/polygon/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/bounding-box/ontology.ttl: [Errno 2] No such file or directory: '/data-type/bounding-box/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/table/ontology.ttl: [Errno 2] No such file or directory: '/data-type/table/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/boolean/ontology.ttl: [Errno 2] No such file or directory: '/data-type/boolean/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/number/ontology.ttl: [Errno 2] No such file or directory: '/data-type/number/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/line-string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/line-string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-idn-hostname/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-idn-hostname/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/curve/ontology.ttl: [Errno 2] No such file or directory: '/data-type/curve/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-item-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-item-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-idn-email/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-idn-email/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-ipv6/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-ipv6/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-item/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-item/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-json-pointer/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-json-pointer/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-date-time/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-date-time/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-time/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-time/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-point/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-point/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-ipv4/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-ipv4/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-line-string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-line-string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster-multi-band/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster-multi-band/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/geometry/ontology.ttl: [Errno 2] No such file or directory: '/data-type/geometry/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../vocabulary/data.ttl: [Errno 2] No such file or directory: '/vocabulary/data.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/line/ontology.ttl: [Errno 2] No such file or directory: '/data-type/line/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/point-cloud/ontology.ttl: [Errno 2] No such file or directory: '/data-type/point-cloud/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-date/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-date/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-email/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-email/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-iri/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-iri/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date-time/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-hostname/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-polygon/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-time/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/build/annotated/vocabulary/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-duration/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-line-string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-json-pointer/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri-reference/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-curve/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/line-string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-point/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-email/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/point/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/elevation-model/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/data.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/polyhedral-surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv6/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/tin/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-reference/ontology.ttl\n - /github/workspace/_sources/register/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-email/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-catalog/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/linear-ring/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv4/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/table/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/bounding-box/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/boolean/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-hostname/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uuid/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/line/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/point-cloud/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/curve/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-password/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-relative-json-pointer/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/number/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-single-band/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/polygon/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/triangle/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-multi-band/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-template/ontology.ttl"
             },
             {
               "op": "shacl-report",
               "shaclFile": "_sources/register/shapes.shacl",
-              "graph": "@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"An Implementation Profile must refine exactly one Generic Profile.\" ;\n            sh:resultPath gp:refinesGenericProfile ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:message \"An Implementation Profile must refine exactly one Generic Profile.\" ;\n                    sh:minCount 1 ;\n                    sh:nodeKind sh:IRI ;\n                    sh:path gp:refinesGenericProfile ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n            sh:resultPath rim:hasAction ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n                    sh:minCount 1 ;\n                    sh:path rim:hasAction ;\n                    sh:qualifiedMinCount 1 ;\n                    sh:qualifiedValueShape [ sh:property [ sh:minCount 1 ;\n                                    sh:path rim:proposer ],\n                                [ sh:hasValue rim:additionAction ;\n                                    sh:path rim:actionType ] ] ] ] .\n\n",
+              "graph": "@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n            sh:resultPath rim:hasAction ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n                    sh:minCount 1 ;\n                    sh:path rim:hasAction ;\n                    sh:qualifiedMinCount 1 ;\n                    sh:qualifiedValueShape [ sh:property [ sh:hasValue rim:additionAction ;\n                                    sh:path rim:actionType ],\n                                [ sh:minCount 1 ;\n                                    sh:path rim:proposer ] ] ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"An Implementation Profile must refine exactly one Generic Profile.\" ;\n            sh:resultPath gp:refinesGenericProfile ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:message \"An Implementation Profile must refine exactly one Generic Profile.\" ;\n                    sh:minCount 1 ;\n                    sh:nodeKind sh:IRI ;\n                    sh:path gp:refinesGenericProfile ] ] .\n\n",
               "isError": true,
-              "message": "Validation result for _sources/register/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"An Implementation Profile must refine exactly one Generic Profile.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path gp:refinesGenericProfile ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n  \tResult Path: gp:refinesGenericProfile\n  \tMessage: An Implementation Profile must refine exactly one Generic Profile.\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:message Literal(\"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:hasAction ; sh:qualifiedMinCount Literal(\"1\", datatype=xsd:integer) ; sh:qualifiedValueShape [ sh:property [ sh:hasValue rim:additionAction ; sh:path rim:actionType ], [ sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:proposer ] ] ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n  \tResult Path: rim:hasAction\n  \tMessage: An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\n  "
+              "message": "Validation result for _sources/register/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:message Literal(\"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:hasAction ; sh:qualifiedMinCount Literal(\"1\", datatype=xsd:integer) ; sh:qualifiedValueShape [ sh:property [ sh:hasValue rim:additionAction ; sh:path rim:actionType ], [ sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:proposer ] ] ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n  \tResult Path: rim:hasAction\n  \tMessage: An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"An Implementation Profile must refine exactly one Generic Profile.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path gp:refinesGenericProfile ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n  \tResult Path: gp:refinesGenericProfile\n  \tMessage: An Implementation Profile must refine exactly one Generic Profile.\n  "
             },
             {
               "shaclFile": "_sources/register/shapes.shacl",
@@ -335,20 +1039,7 @@
                 "gp:GenericProfileShape": {
                   "nodes": []
                 },
-                "gp:GenericProfileItemClassShape": {
-                  "nodes": [
-                    "gpic:generic-profile"
-                  ]
-                },
-                "gp:ProcessConceptItemClassShape": {
-                  "nodes": [
-                    "gpic:process-concept"
-                  ]
-                },
-                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
-                  "nodes": []
-                },
-                "gp:ImplementationProfileShape": {
+                "gp:AdditionProposalShape": {
                   "nodes": [
                     "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>"
                   ]
@@ -356,9 +1047,25 @@
                 "gp:ProcessConceptShape": {
                   "nodes": []
                 },
-                "gp:AdditionProposalShape": {
+                "gp:DataTypeReferenceShape": {
+                  "nodes": []
+                },
+                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "gp:ProcessConceptItemClassShape": {
+                  "nodes": [
+                    "gpic:process-concept"
+                  ]
+                },
+                "gp:ImplementationProfileShape": {
                   "nodes": [
                     "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>"
+                  ]
+                },
+                "gp:GenericProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:generic-profile"
                   ]
                 },
                 "gp:ImplementationProfileItemClassShape": {
@@ -368,54 +1075,85 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: *none*\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n - Shape gp:ProcessConceptShape: *none*\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: *none*\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n - Shape gp:ProcessConceptShape: *none*\n - Shape gp:DataTypeReferenceShape: *none*\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl",
+              "focusNodes": {
+                "dt:RegisterShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-data-types/def/register>"
+                  ]
+                },
+                "dt:DataTypeVersionShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeItemShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeVersionShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeShape": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl:\n - Shape dt:RegisterShape: <https://geolabs.github.io/bblocks-data-types/def/register>\n - Shape dt:DataTypeVersionShape: *none*\n - Shape dt:DataTypeItemShape: *none*\n - Shape dt:DataTypeVersionShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape dt:DataTypeShape: *none*\n"
             },
             {
               "op": "shacl-report",
               "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
-              "graph": "@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"Less than 1 values on <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>->rim:validityStatus\" ;\n            sh:resultPath rim:validityStatus ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:class rim:ValidityStatus ;\n                    sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path rim:validityStatus ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"Less than 1 values on <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>->rim:publicationStatus\" ;\n            sh:resultPath rim:publicationStatus ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:class rim:PublicationStatus ;\n                    sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path rim:publicationStatus ] ] .\n\n",
+              "graph": "@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"Less than 1 values on <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>->rim:publicationStatus\" ;\n            sh:resultPath rim:publicationStatus ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:class rim:PublicationStatus ;\n                    sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path rim:publicationStatus ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"Less than 1 values on <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>->rim:validityStatus\" ;\n            sh:resultPath rim:validityStatus ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:class rim:ValidityStatus ;\n                    sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path rim:validityStatus ] ] .\n\n",
               "isError": true,
               "message": "Validation result for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:class rim:ValidityStatus ; sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:validityStatus ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n  \tResult Path: rim:validityStatus\n  \tMessage: Less than 1 values on <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>->rim:validityStatus\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:class rim:PublicationStatus ; sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:publicationStatus ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n  \tResult Path: rim:publicationStatus\n  \tMessage: Less than 1 values on <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>->rim:publicationStatus\n  "
             },
             {
               "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
               "focusNodes": {
-                "rim:RegisterSpecificationShape": {
-                  "nodes": []
-                },
-                "rim:RegisterItemClassShape": {
-                  "nodes": []
-                },
                 "rim:RegisterItemShape": {
                   "nodes": []
                 },
-                "rim:TextShape": {
-                  "nodes": []
-                },
-                "rim:ConceptVersionShape": {
-                  "nodes": []
-                },
-                "rim:RegisterShape": {
-                  "nodes": []
-                },
-                "rim:CommitmentShape": {
+                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 "rim:TextShape/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "rim:ConceptShape": {
+                "rim:ConceptVersionShape": {
                   "nodes": []
                 },
                 "rim:RegisterActionShape": {
                   "nodes": []
                 },
-                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
+                "rim:RegisterShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemClassShape": {
+                  "nodes": []
+                },
+                "rim:TextShape": {
+                  "nodes": []
+                },
+                "rim:RegisterSpecificationShape": {
+                  "nodes": []
+                },
+                "rim:ConceptShape": {
+                  "nodes": []
+                },
+                "rim:CommitmentShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:RegisterItemClassShape: *none*\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterShape: *none*\n - Shape rim:CommitmentShape: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:RegisterActionShape: *none*\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterActionShape: *none*\n - Shape rim:RegisterShape: *none*\n - Shape rim:RegisterItemClassShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:CommitmentShape: *none*\n"
             }
           ]
         }
@@ -467,7 +1205,219 @@
           "entries": [
             {
               "isError": false,
-              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - /github/workspace/_sources/register/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl"
+              "message": "Error processing closure source ../data-type/string-uuid/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uuid/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-iri-reference/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-iri-reference/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/triangle/ontology.ttl: [Errno 2] No such file or directory: '/data-type/triangle/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri-template/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri-template/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/feature/ontology.ttl: [Errno 2] No such file or directory: '/data-type/feature/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/linear-ring/ontology.ttl: [Errno 2] No such file or directory: '/data-type/linear-ring/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-relative-json-pointer/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-relative-json-pointer/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri-reference/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri-reference/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-duration/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-duration/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/point/ontology.ttl: [Errno 2] No such file or directory: '/data-type/point/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/elevation-model/ontology.ttl: [Errno 2] No such file or directory: '/data-type/elevation-model/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-password/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-password/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster-single-band/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster-single-band/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-hostname/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-hostname/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-curve/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-curve/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/feature-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/feature-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-catalog/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-catalog/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/tin/ontology.ttl: [Errno 2] No such file or directory: '/data-type/tin/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/polyhedral-surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/polyhedral-surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-polygon/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-polygon/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/geometry-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/geometry-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/polygon/ontology.ttl: [Errno 2] No such file or directory: '/data-type/polygon/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/bounding-box/ontology.ttl: [Errno 2] No such file or directory: '/data-type/bounding-box/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/table/ontology.ttl: [Errno 2] No such file or directory: '/data-type/table/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/boolean/ontology.ttl: [Errno 2] No such file or directory: '/data-type/boolean/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/number/ontology.ttl: [Errno 2] No such file or directory: '/data-type/number/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/line-string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/line-string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-idn-hostname/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-idn-hostname/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-uri/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-uri/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/curve/ontology.ttl: [Errno 2] No such file or directory: '/data-type/curve/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-item-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-item-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-idn-email/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-idn-email/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-ipv6/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-ipv6/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-item/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-item/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-json-pointer/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-json-pointer/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-date-time/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-date-time/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-time/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-time/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-point/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-point/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-ipv4/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-ipv4/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-line-string/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-line-string/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/raster-multi-band/ontology.ttl: [Errno 2] No such file or directory: '/data-type/raster-multi-band/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/geometry/ontology.ttl: [Errno 2] No such file or directory: '/data-type/geometry/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../vocabulary/data.ttl: [Errno 2] No such file or directory: '/vocabulary/data.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/stac-collection/ontology.ttl: [Errno 2] No such file or directory: '/data-type/stac-collection/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/line/ontology.ttl: [Errno 2] No such file or directory: '/data-type/line/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/point-cloud/ontology.ttl: [Errno 2] No such file or directory: '/data-type/point-cloud/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-date/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-date/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-email/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-email/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/multi-surface/ontology.ttl: [Errno 2] No such file or directory: '/data-type/multi-surface/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Error processing closure source ../data-type/string-iri/ontology.ttl: [Errno 2] No such file or directory: '/data-type/string-iri/ontology.ttl' - SHACL validation will run against an incomplete closure graph"
+            },
+            {
+              "isError": false,
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date-time/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-hostname/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-polygon/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-time/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/build/annotated/vocabulary/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-duration/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-line-string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-json-pointer/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri-reference/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-curve/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/line-string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-point/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/feature/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-idn-email/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/point/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/elevation-model/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/data.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/polyhedral-surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv6/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/tin/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-reference/ontology.ttl\n - /github/workspace/_sources/register/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-email/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-catalog/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/linear-ring/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-ipv4/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/table/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/bounding-box/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/geometry/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/multi-surface/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/boolean/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-date/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-hostname/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-iri/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uuid/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/line/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/point-cloud/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/curve/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-password/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-relative-json-pointer/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/number/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-single-band/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/polygon/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/triangle/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/raster-multi-band/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/stac-item-collection/ontology.ttl\n - https://geolabs.github.io/bblocks-data-types/_sources/data-type/string-uri-template/ontology.ttl"
             },
             {
               "op": "shacl-report",
@@ -484,22 +1434,11 @@
                     "<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>"
                   ]
                 },
-                "gp:GenericProfileItemClassShape": {
+                "gp:AdditionProposalShape": {
                   "nodes": [
-                    "gpic:generic-profile"
-                  ]
-                },
-                "gp:ProcessConceptItemClassShape": {
-                  "nodes": [
-                    "gpic:process-concept"
-                  ]
-                },
-                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
-                  "nodes": []
-                },
-                "gp:ImplementationProfileShape": {
-                  "nodes": [
-                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>"
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>",
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>",
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>"
                   ]
                 },
                 "gp:ProcessConceptShape": {
@@ -507,11 +1446,25 @@
                     "<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>"
                   ]
                 },
-                "gp:AdditionProposalShape": {
+                "gp:DataTypeReferenceShape": {
+                  "nodes": []
+                },
+                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "gp:ProcessConceptItemClassShape": {
                   "nodes": [
-                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>",
-                    "<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>",
-                    "<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>"
+                    "gpic:process-concept"
+                  ]
+                },
+                "gp:ImplementationProfileShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>"
+                  ]
+                },
+                "gp:GenericProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:generic-profile"
                   ]
                 },
                 "gp:ImplementationProfileItemClassShape": {
@@ -521,7 +1474,38 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>\n - Shape gp:ProcessConceptShape: <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>,<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>,<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>,<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>,<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>\n - Shape gp:ProcessConceptShape: <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>\n - Shape gp:DataTypeReferenceShape: *none*\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl",
+              "focusNodes": {
+                "dt:RegisterShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-data-types/def/register>"
+                  ]
+                },
+                "dt:DataTypeVersionShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeItemShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeVersionShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "dt:DataTypeShape": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl:\n - Shape dt:RegisterShape: <https://geolabs.github.io/bblocks-data-types/def/register>\n - Shape dt:DataTypeVersionShape: *none*\n - Shape dt:DataTypeItemShape: *none*\n - Shape dt:DataTypeVersionShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape dt:DataTypeShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -533,52 +1517,52 @@
             {
               "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
               "focusNodes": {
-                "rim:RegisterSpecificationShape": {
-                  "nodes": []
-                },
-                "rim:RegisterItemClassShape": {
-                  "nodes": [
-                    "gpic:process-concept",
-                    "gpic:implementation-profile",
-                    "gpic:generic-profile"
-                  ]
-                },
                 "rim:RegisterItemShape": {
                   "nodes": []
                 },
-                "rim:TextShape": {
+                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "rim:TextShape/sh:or/rdf:first": {
                   "nodes": []
                 },
                 "rim:ConceptVersionShape": {
                   "nodes": []
+                },
+                "rim:RegisterActionShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition>",
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition>",
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition>"
+                  ]
                 },
                 "rim:RegisterShape": {
                   "nodes": [
                     "gp:register"
                   ]
                 },
-                "rim:CommitmentShape": {
+                "rim:RegisterItemClassShape": {
+                  "nodes": [
+                    "gpic:implementation-profile",
+                    "gpic:process-concept",
+                    "gpic:generic-profile"
+                  ]
+                },
+                "rim:TextShape": {
                   "nodes": []
                 },
-                "rim:TextShape/sh:or/rdf:first": {
+                "rim:RegisterSpecificationShape": {
                   "nodes": []
                 },
                 "rim:ConceptShape": {
                   "nodes": []
                 },
-                "rim:RegisterActionShape": {
-                  "nodes": [
-                    "<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition>",
-                    "<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition>",
-                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition>"
-                  ]
-                },
-                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
+                "rim:CommitmentShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:RegisterItemClassShape: gpic:process-concept,gpic:implementation-profile,gpic:generic-profile\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterShape: gp:register\n - Shape rim:CommitmentShape: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:RegisterActionShape: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition>,<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition>,<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition>\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterActionShape: <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition>,<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition>,<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition>\n - Shape rim:RegisterShape: gp:register\n - Shape rim:RegisterItemClassShape: gpic:implementation-profile,gpic:process-concept,gpic:generic-profile\n - Shape rim:TextShape: *none*\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:CommitmentShape: *none*\n"
             }
           ]
         }

@@ -3,7 +3,7 @@
   "name": "Generic Process Profiles",
   "abstract": "A general-purpose, engine- and format-agnostic vocabulary of Generic Profiles, independent of\nany one project. A Generic Profile gives one or more related operations an abstract I/O\nsignature (named roles and abstract types, no format, no size limit) -- e.g. every binary\nboolean spatial predicate (Intersects, Contains, Within, Touches, Crosses, Equals, Disjoint)\ntakes two Geometry inputs and returns one Boolean, and is one Generic Profile, not seven.\nImplementation Profiles (concrete, deployable processes binding a Generic Profile to real\nformats) are not part of this register; they live wherever the implementation itself is\nprofiled (e.g. `ospd.process-profiles.*` for OSPD's CWL- and OGC-API-Processes-sourced profiles)\nand link back here via their own `implementsGenericProfile` property.\n",
   "description": "Produced by GeoLabs, first grounded in the 12 spatial predicates and set operations of OGC\nSimple Feature Access - Common Architecture (06-103r4) as a worked example: every one of them\nshares one of a small number of I/O shapes, so the Generic Profile layer stays small (3 profiles\ncover all 12 here). SQL/MM Spatial (ISO/IEC 13249-3) binds the same operations to SQL (the\n`ST_Geometry` type, `ST_Intersects`-style function names) and real deployed processes bind them\nfurther still (e.g. to GML 3.1.0 Polygon) -- both are concrete bindings, not part of this\nregister; they are profiled as Implementation Profiles in whichever register profiles the\nconcrete process (e.g. `ospd.process-profiles.*`), linked back here by `implementsGenericProfile`.\nNot limited to spatial operations -- any domain with standardised abstract operations and several\nindependent bindings is a candidate.\n",
-  "modified": "2026-11-04T19:03:43.344215",
+  "modified": "2026-11-04T22:48:05.413570",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"c1af50a182c92d7ab055f34158d5605167dfe786",
@@ -43,6 +43,7 @@
         "bblocks://ogc.rim.schemas.register-item-class"
       ],
       "dependsOn": [
+        "bblocks://data-types.vocabulary",
         "bblocks://ogc.rim.schemas.register",
         "bblocks://ogc.rim.schemas.register-item",
         "bblocks://ogc.rim.schemas.register-item-class"
@@ -50,6 +51,9 @@
       "shaclShapes": {
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+        ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
         ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
@@ -87,13 +91,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/register/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/register/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/register/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/register/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -137,6 +141,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -154,13 +161,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/concept/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/concept/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -213,6 +220,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -230,13 +240,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/concept/point-cloud-processing/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/point-cloud-processing/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/concept/point-cloud-processing/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/point-cloud-processing/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -282,6 +292,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -299,13 +312,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/concept/raster-coverage-processing/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/raster-coverage-processing/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/concept/raster-coverage-processing/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/raster-coverage-processing/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -357,6 +370,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -374,13 +390,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/concept/terrain-analysis/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/terrain-analysis/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/concept/terrain-analysis/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/terrain-analysis/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -435,6 +451,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -452,13 +471,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/concept/vector-geometry-processing/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/vector-geometry-processing/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/concept/vector-geometry-processing/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/concept/vector-geometry-processing/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -504,6 +523,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -521,13 +543,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -574,6 +596,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -591,13 +616,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/analytical-hillshading/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/analytical-hillshading/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/analytical-hillshading/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/analytical-hillshading/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -644,6 +669,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -661,13 +689,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/binary-spatial-operation/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/binary-spatial-operation/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/binary-spatial-operation/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/binary-spatial-operation/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -714,6 +742,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -731,13 +762,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/binary-spatial-predicate/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/binary-spatial-predicate/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/binary-spatial-predicate/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/binary-spatial-predicate/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -784,6 +815,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -801,13 +835,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/geometry-buffer/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/geometry-buffer/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/geometry-buffer/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/geometry-buffer/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -854,6 +888,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -871,13 +908,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/geometry-measure/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/geometry-measure/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/geometry-measure/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/geometry-measure/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -924,6 +961,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -941,13 +981,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/point-cloud-rasterization/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/point-cloud-rasterization/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/point-cloud-rasterization/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/point-cloud-rasterization/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -994,6 +1034,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1011,13 +1054,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/point-cloud-thinning/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/point-cloud-thinning/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/point-cloud-thinning/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/point-cloud-thinning/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1064,6 +1107,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1081,13 +1127,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/point-cloud-to-features/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/point-cloud-to-features/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/point-cloud-to-features/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/point-cloud-to-features/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1134,6 +1180,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1151,13 +1200,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/radiometric-index/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/radiometric-index/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/radiometric-index/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/radiometric-index/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1204,6 +1253,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1221,13 +1273,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/raster-band-math/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-band-math/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/raster-band-math/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-band-math/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1278,6 +1330,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1295,13 +1350,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/raster-crop/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-crop/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/raster-crop/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-crop/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1348,6 +1403,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1365,13 +1423,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/raster-extent/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-extent/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/raster-extent/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-extent/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1418,6 +1476,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1435,13 +1496,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/raster-format-conversion/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-format-conversion/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/raster-format-conversion/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-format-conversion/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1488,6 +1549,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1505,13 +1569,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/raster-reprojection/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-reprojection/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/raster-reprojection/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/raster-reprojection/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1558,6 +1622,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1575,13 +1642,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/terrain-derivative/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/terrain-derivative/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/terrain-derivative/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/terrain-derivative/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1628,6 +1695,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1645,13 +1715,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/unary-geometry-operation/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/unary-geometry-operation/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/unary-geometry-operation/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/unary-geometry-operation/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1698,6 +1768,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1715,13 +1788,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/unary-spatial-predicate/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/unary-spatial-predicate/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/generic-profile/unary-spatial-predicate/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/generic-profile/unary-spatial-predicate/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1767,6 +1840,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1784,13 +1860,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1841,6 +1917,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1858,13 +1937,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/analytical-hillshading/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/analytical-hillshading/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/analytical-hillshading/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/analytical-hillshading/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1918,6 +1997,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -1935,13 +2017,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/area/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/area/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/area/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/area/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1991,6 +2073,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2008,13 +2093,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/buffer/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/buffer/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/buffer/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/buffer/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2068,6 +2153,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2085,13 +2173,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/centroid/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/centroid/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/centroid/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/centroid/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2141,6 +2229,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2158,13 +2249,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/contains/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/contains/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/contains/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/contains/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2218,6 +2309,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2235,13 +2329,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/convex-hull/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/convex-hull/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/convex-hull/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/convex-hull/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2291,6 +2385,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2308,13 +2405,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/crosses/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/crosses/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/crosses/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/crosses/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2364,6 +2461,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2381,13 +2481,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/difference/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/difference/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/difference/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/difference/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2437,6 +2537,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2454,13 +2557,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/disjoint/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/disjoint/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/disjoint/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/disjoint/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2510,6 +2613,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2527,13 +2633,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/equals/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/equals/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/equals/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/equals/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2587,6 +2693,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2604,13 +2713,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/geometry-extent/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/geometry-extent/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/geometry-extent/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/geometry-extent/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2660,6 +2769,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2677,13 +2789,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/intersection/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/intersection/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/intersection/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/intersection/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2733,6 +2845,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2750,13 +2865,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/intersects/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/intersects/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/intersects/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/intersects/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2810,6 +2925,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2827,13 +2945,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/is-simple/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/is-simple/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/is-simple/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/is-simple/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2884,6 +3002,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2901,13 +3022,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/point-cloud-thinning/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/point-cloud-thinning/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/point-cloud-thinning/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/point-cloud-thinning/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2958,6 +3079,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -2975,13 +3099,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/point-cloud-to-grid/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/point-cloud-to-grid/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/point-cloud-to-grid/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/point-cloud-to-grid/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3032,6 +3156,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3049,13 +3176,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/point-cloud-to-shapes/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/point-cloud-to-shapes/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/point-cloud-to-shapes/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/point-cloud-to-shapes/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3106,6 +3233,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3123,13 +3253,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/radiometric-index/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/radiometric-index/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/radiometric-index/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/radiometric-index/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3180,6 +3310,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3197,13 +3330,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/raster-band-math/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-band-math/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-band-math/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-band-math/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3258,6 +3391,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3275,13 +3411,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/raster-band-math-multiband/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-band-math-multiband/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-band-math-multiband/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-band-math-multiband/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3341,6 +3477,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3358,13 +3497,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/raster-crop/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-crop/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-crop/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-crop/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3415,6 +3554,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3432,13 +3574,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/raster-extent/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-extent/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-extent/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-extent/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3489,6 +3631,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3506,13 +3651,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/raster-format-conversion/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-format-conversion/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-format-conversion/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-format-conversion/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3563,6 +3708,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3580,13 +3728,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/raster-reprojection/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-reprojection/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/raster-reprojection/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/raster-reprojection/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3640,6 +3788,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3657,13 +3808,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/slope/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/slope/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/slope/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/slope/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3713,6 +3864,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3730,13 +3884,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/symdifference/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/symdifference/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/symdifference/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/symdifference/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3790,6 +3944,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3807,13 +3964,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/terrain-ruggedness-index/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/terrain-ruggedness-index/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/terrain-ruggedness-index/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/terrain-ruggedness-index/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3867,6 +4024,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3884,13 +4044,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/topographic-position-index/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/topographic-position-index/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/topographic-position-index/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/topographic-position-index/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3940,6 +4100,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -3957,13 +4120,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/touches/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/touches/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/touches/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/touches/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -4013,6 +4176,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -4030,13 +4196,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/union/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/union/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/union/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/union/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -4086,6 +4252,9 @@
         "generic-profiles.register": [
           "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
         ],
+        "data-types.vocabulary": [
+          "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+        ],
         "ogc.rim.core-ontology": [
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
@@ -4103,13 +4272,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/implementation-profile/within/",
       "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/within/index.md"
-        },
         "json-full": {
           "mediatype": "application/json",
           "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/implementation-profile/within/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/implementation-profile/within/index.md"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
