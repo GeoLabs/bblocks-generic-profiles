@@ -7,24 +7,38 @@
     "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
     "id": "@id",
     "type": "@type",
-    "GenericProfile": "skos:Concept",
+    "GenericProfile": "gp:GenericProfile",
     "prefLabel": "skos:prefLabel",
     "definition": "skos:definition",
-    "inScheme": { "@id": "skos:inScheme", "@type": "@id" },
-    "status": "gp:status",
-    "broader": { "@id": "skos:broader", "@type": "@id" },
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "broader": {
+      "@id": "skos:broader",
+      "@type": "@id"
+    },
     "keywords": "proc:keywords",
     "metadata": {
       "@id": "proc:metadata",
       "@context": {
         "title": "dct:title",
-        "role": { "@id": "proc:role", "@type": "@id" },
-        "href": { "@id": "proc:href", "@type": "@id" }
+        "role": {
+          "@id": "proc:role",
+          "@type": "@id"
+        },
+        "href": {
+          "@id": "proc:href",
+          "@type": "@id"
+        }
       }
     },
     "source": "dct:source",
     "title": "dct:title",
-    "link": { "@id": "dct:references", "@type": "@id" },
+    "link": {
+      "@id": "dct:references",
+      "@type": "@id"
+    },
     "clause": "gp:clause",
     "inputs": {
       "@id": "gp:inputs",
@@ -33,13 +47,22 @@
         "title": "dct:title",
         "description": "dct:description",
         "keywords": "proc:keywords",
-        "dataType": { "@id": "dct:type", "@type": "@id" },
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "metadata": {
           "@id": "proc:metadata",
           "@context": {
             "title": "dct:title",
-            "role": { "@id": "proc:role", "@type": "@id" },
-            "href": { "@id": "proc:href", "@type": "@id" }
+            "role": {
+              "@id": "proc:role",
+              "@type": "@id"
+            },
+            "href": {
+              "@id": "proc:href",
+              "@type": "@id"
+            }
           }
         },
         "minOccurs": "proc:minOccurs",
@@ -53,13 +76,22 @@
         "title": "dct:title",
         "description": "dct:description",
         "keywords": "proc:keywords",
-        "dataType": { "@id": "dct:type", "@type": "@id" },
+        "dataType": {
+          "@id": "dct:type",
+          "@type": "@id"
+        },
         "metadata": {
           "@id": "proc:metadata",
           "@context": {
             "title": "dct:title",
-            "role": { "@id": "proc:role", "@type": "@id" },
-            "href": { "@id": "proc:href", "@type": "@id" }
+            "role": {
+              "@id": "proc:role",
+              "@type": "@id"
+            },
+            "href": {
+              "@id": "proc:href",
+              "@type": "@id"
+            }
           }
         }
       }

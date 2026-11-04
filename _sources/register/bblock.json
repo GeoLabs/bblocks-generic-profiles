@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Generic Process Profiles register (ISO 19135:2026)",
+  "abstract": "This register described with the Registered Item Model (ISO 19135:2026): one rim:Register, three rim:RegisterItemClasses (Process Concept, Generic Profile, Implementation Profile) and the three owl:Classes, each a sub-class of rim:RegisterItem, that every entry of the corresponding tier is typed with. A profile of ogc.rim.schemas.register-item-class, following the same pattern as that register's own activity-type profile.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-26T00:00:00Z",
+  "dateOfLastChange": "2026-10-26",
+  "version": "0.1",
+  "itemClass": "model",
+  "register": "generic-profiles",
+  "isProfileOf": [
+    "ogc.rim.schemas.register-item-class"
+  ],
+  "dependsOn": [
+    "ogc.rim.schemas.register",
+    "ogc.rim.schemas.register-item-class",
+    "ogc.rim.schemas.register-item"
+  ],
+  "shaclShapes": [
+    "shapes.shacl"
+  ],
+  "scope": "dev",
+  "tags": ["register", "ISO 19135", "governance", "WPS"],
+  "sources": [
+    {
+      "title": "ISO 19135:2026, Geographic information — Registration and register governance",
+      "link": "https://www.iso.org/standard/86261.html"
+    },
+    {
+      "title": "Registered Item Model (OGC Building Block)",
+      "link": "https://ogcincubator.github.io/registered-item-model/"
+    },
+    {
+      "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, §7.5 Process profiles",
+      "link": "https://docs.ogc.org/is/14-065/14-065.html"
+    }
+  ],
+  "maturity": "development",
+  "highlighted": true,
+  "group": "Register"
+}

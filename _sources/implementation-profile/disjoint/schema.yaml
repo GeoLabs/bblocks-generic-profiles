@@ -85,8 +85,8 @@ allOf:
     properties:
       inputs:
         properties:
-          geometry1: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint/inputs/geometry1"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry"}}}
-          geometry2: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint/inputs/geometry2"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry"}}}
+          geometry1: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint/inputs/geometry1"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}}}
+          geometry2: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint/inputs/geometry2"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/boolean"}}}

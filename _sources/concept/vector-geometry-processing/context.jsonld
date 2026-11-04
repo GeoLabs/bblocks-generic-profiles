@@ -6,15 +6,23 @@
     "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
     "id": "@id",
     "type": "@type",
-    "Concept": "skos:Concept",
+    "ProcessConcept": "gp:ProcessConcept",
     "prefLabel": "skos:prefLabel",
     "definition": "skos:definition",
-    "inScheme": { "@id": "skos:inScheme", "@type": "@id" },
-    "status": "gp:status",
-    "narrower": { "@id": "skos:narrower", "@type": "@id" },
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "narrower": {
+      "@id": "skos:narrower",
+      "@type": "@id"
+    },
     "source": "dct:source",
     "title": "dct:title",
-    "link": { "@id": "dct:references", "@type": "@id" },
+    "link": {
+      "@id": "dct:references",
+      "@type": "@id"
+    },
     "clause": "gp:clause"
   }
 }

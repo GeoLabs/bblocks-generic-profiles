@@ -71,7 +71,7 @@ allOf:
     properties:
       inputs:
         properties:
-          elevation: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/inputs/elevation"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model"}}}
+          elevation: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/inputs/elevation"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model"}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"}}}

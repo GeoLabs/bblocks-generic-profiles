@@ -1,0 +1,22 @@
+# Must fail: the entry has an action, but it is an addition with no proposer -- the qualified
+# shape of gp:AdditionProposalShape must reject it, not just the plain "has an action" count.
+@prefix gp:   <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gpic: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/> .
+@prefix rim:  <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>
+    a gp:ImplementationProfile ;
+    skos:prefLabel "Anonymous addition" ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition"^^xsd:anyURI ;
+    rim:itemClass gpic:implementation-profile ;
+    rim:inRegister gp:register ;
+    rim:validityStatus rim:invalid ;
+    rim:publicationStatus rim:published ;
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition/actions/addition> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition/actions/addition>
+    a rim:RegisterAction ;
+    rim:actionType rim:additionAction .

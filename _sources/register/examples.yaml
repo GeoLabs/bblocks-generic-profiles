@@ -1,0 +1,90 @@
+prefixes:
+  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gpic: https://geolabs.github.io/bblocks-generic-profiles/def/item-class/
+  rim: https://w3id.org/ogc/rim/
+  skos: http://www.w3.org/2004/02/skos/core#
+  dct: http://purl.org/dc/terms/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  prov: http://www.w3.org/ns/prov#
+
+examples:
+  - title: One chain of this register as ISO 19135:2026 register items
+    content: |
+      The register, its three item classes and one item per tier -- the real chain
+      *Vector Geometry Processing* (Process Concept) -> *Binary spatial predicate* (Generic
+      Profile) -> *Intersects* (Implementation Profile) -- reduced to the register-model
+      properties only. The full entries, with their WPS Table 21 `inputs`/`outputs`, are the JSON
+      examples of `generic-profiles.concept.vector-geometry-processing`,
+      `generic-profiles.generic-profile.binary-spatial-predicate` and
+      `generic-profiles.implementation-profile.intersects`; their JSON-LD context maps them onto
+      exactly these triples.
+    snippets:
+      - language: turtle
+        code: |
+          gp:register a rim:Register ;
+              dct:title "Generic Process Profiles"@en .
+
+          gpic:process-concept a rim:RegisterItemClass ;
+              dct:title "Process Concept"@en ;
+              rim:definedIn gp:register .
+
+          gpic:generic-profile a rim:RegisterItemClass ;
+              dct:title "Generic Profile"@en ;
+              rim:definedIn gp:register .
+
+          gpic:implementation-profile a rim:RegisterItemClass ;
+              dct:title "Implementation Profile"@en ;
+              rim:definedIn gp:register .
+
+          <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>
+              a gp:ProcessConcept ;
+              skos:prefLabel "Vector Geometry Processing" ;
+              rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"^^xsd:anyURI ;
+              rim:itemClass gpic:process-concept ;
+              rim:inRegister gp:register ;
+              rim:validityStatus rim:invalid ;
+              rim:publicationStatus rim:published ;
+              rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition> .
+
+          <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition>
+              a rim:RegisterAction ;
+              rim:actionType rim:additionAction ;
+              rim:proposer gp:geolabs ;
+              rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+              prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .
+
+          <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>
+              a gp:GenericProfile ;
+              skos:prefLabel "Binary spatial predicate" ;
+              skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+              rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"^^xsd:anyURI ;
+              rim:itemClass gpic:generic-profile ;
+              rim:inRegister gp:register ;
+              rim:validityStatus rim:invalid ;
+              rim:publicationStatus rim:published ;
+              rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition> .
+
+          <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition>
+              a rim:RegisterAction ;
+              rim:actionType rim:additionAction ;
+              rim:proposer gp:geolabs ;
+              rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+              prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .
+
+          <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>
+              a gp:ImplementationProfile ;
+              skos:prefLabel "Intersects" ;
+              gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+              rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects"^^xsd:anyURI ;
+              rim:itemClass gpic:implementation-profile ;
+              rim:inRegister gp:register ;
+              rim:validityStatus rim:invalid ;
+              rim:publicationStatus rim:published ;
+              rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition> .
+
+          <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition>
+              a rim:RegisterAction ;
+              rim:actionType rim:additionAction ;
+              rim:proposer gp:geolabs ;
+              rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects> ;
+              prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .

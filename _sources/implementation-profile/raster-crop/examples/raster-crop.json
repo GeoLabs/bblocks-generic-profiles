@@ -4,7 +4,19 @@
   "prefLabel": "Raster crop",
   "definition": "Extracts the pixels of a raster coverage that fall within a region of interest.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop",
   "keywords": [
     "raster",
@@ -28,7 +40,7 @@
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -48,7 +60,7 @@
     },
     "areaOfInterest": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/inputs/areaOfInterest",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/bounding-box",
       "schema": {
         "$ref": "https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/bbox/schema.json"
       },
@@ -68,7 +80,7 @@
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-crop/outputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",

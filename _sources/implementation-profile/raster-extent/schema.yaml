@@ -71,7 +71,7 @@ allOf:
     properties:
       inputs:
         properties:
-          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster"}}}
+          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/surface"}}}

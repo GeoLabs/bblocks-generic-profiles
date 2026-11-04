@@ -4,7 +4,19 @@
   "prefLabel": "Example Implementation Profile (placeholder, not a real operation)",
   "definition": "Illustrates the shape of an Implementation Profile entry only. Real ones are each their own building block -- see generic-profiles.implementation-profile.intersects, .buffer and the other siblings.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
   "keywords": [
     "vector",
@@ -28,7 +40,7 @@
   "inputs": {
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -48,7 +60,7 @@
     },
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -70,7 +82,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/boolean",
       "keywords": [
         "boolean"
       ],

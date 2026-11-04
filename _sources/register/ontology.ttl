@@ -1,0 +1,147 @@
+@prefix gp:   <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gpic: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/> .
+@prefix rim:  <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+#################################################################
+# Ontology metadata
+#
+# A profile of the Registered Item Model (ISO 19135:2026) for this
+# register. It adds nothing to the register model itself: it names the
+# register, its three item classes, and the three classes of item --
+# one per tier of OGC 14-065 WPS 2.0.2 §7.5 held here -- as sub-classes
+# of rim:RegisterItem, so that the base rim:RegisterItemShape applies to
+# every entry. Follows the pattern of the Registered Item Model's own
+# activity-type profile.
+#################################################################
+
+gp: a owl:Ontology ;
+    owl:imports rim: ;
+    dct:title "Generic Process Profiles register" ;
+    dct:description "Registered Item Model profile of the GeoLabs generic-profiles register: Process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5) as ISO 19135:2026 register items." ;
+    dct:creator "GeoLabs SARL" ;
+    dct:license <https://www.apache.org/licenses/LICENSE-2.0> .
+
+#################################################################
+# The register
+#
+# A "content register" in ISO 19135:2026 terms: items carry their own
+# name and definition (skos:prefLabel / skos:definition), there is no
+# separate concept plane yet. Whether Process Concepts should instead
+# live in a concept plane (rim:Concept / rim:ConceptVersion realised by
+# the Generic Profiles) is an open question, not a decision taken here.
+#################################################################
+
+gp:register a rim:Register ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/register"^^xsd:anyURI ;
+    rim:functionalIdentifier "https://geolabs.github.io/bblocks-generic-profiles/"^^xsd:anyURI ;
+    dct:title "Generic Process Profiles"@en ;
+    dct:description "A general-purpose, engine- and format-agnostic vocabulary of process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5), published as an OGC Building Blocks register."@en ;
+    rim:registerOwner gp:geolabs ;
+    rim:registerManager gp:geolabs ;
+    rim:runsOn gp:registerSystem .
+
+gp:geolabs a prov:Organization ;
+    rdfs:label "GeoLabs SARL" ;
+    rdfs:seeAlso <https://www.geolabs.fr/> .
+
+# The register system is the OGC Building Blocks pipeline (bblocks-postprocess + GitHub
+# Pages), kept distinct from the register itself as ISO 19135:2026 requires.
+gp:registerSystem a rim:RegisterSystem ;
+    rdfs:label "OGC Building Blocks register (bblocks-postprocess, GitHub Pages)" ;
+    rdfs:seeAlso <https://github.com/GeoLabs/bblocks-generic-profiles/> .
+
+#################################################################
+# Item classes -- the unit validation rules attach to (ISO 19135:2026)
+#################################################################
+
+gpic:process-concept a rim:RegisterItemClass ;
+    rdfs:isDefinedBy gp: ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept"^^xsd:anyURI ;
+    dct:title "Process Concept"@en ;
+    dct:description "WPS 2.0.2 §7.5.1: high-level documentation about a general group of processes; no input, output, format or implementation. Items of this class are gp:ProcessConcept instances."@en ;
+    rim:definedIn gp:register ;
+    rim:validatedBy gp:ProcessConceptShape .
+
+gpic:generic-profile a rim:RegisterItemClass ;
+    rdfs:isDefinedBy gp: ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile"^^xsd:anyURI ;
+    dct:title "Generic Profile"@en ;
+    dct:description "WPS 2.0.2 §7.5.2: the abstract signature (named inputs/outputs, multiplicity, abstract data type) of one or more operations; no data format. Items of this class are gp:GenericProfile instances."@en ;
+    rim:definedIn gp:register ;
+    rim:validatedBy gp:GenericProfileShape .
+
+gpic:implementation-profile a rim:RegisterItemClass ;
+    rdfs:isDefinedBy gp: ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile"^^xsd:anyURI ;
+    dct:title "Implementation Profile"@en ;
+    dct:description "WPS 2.0.2 §7.5.3: a Generic Profile bound to standard data formats, implementable by multiple providers; not any one deployment. Items of this class are gp:ImplementationProfile instances."@en ;
+    rim:definedIn gp:register ;
+    rim:validatedBy gp:ImplementationProfileShape .
+
+#################################################################
+# Item types -- what the JSON `type` of each tier maps to
+#
+# Each is both a rim:RegisterItem (so the base shape applies) and a
+# skos:Concept (what the three tiers were already typed as before this
+# profile existed, and what skos:prefLabel / skos:definition /
+# skos:inScheme / skos:broader on them presuppose).
+#################################################################
+
+gp:ProcessConcept a owl:Class ;
+    rdfs:subClassOf rim:RegisterItem , skos:Concept ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:label "Process Concept" ;
+    rdfs:comment "A register item of item class gpic:process-concept (OGC 14-065 WPS 2.0.2 §7.5.1)." .
+
+gp:GenericProfile a owl:Class ;
+    rdfs:subClassOf rim:RegisterItem , skos:Concept ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:label "Generic Profile" ;
+    rdfs:comment "A register item of item class gpic:generic-profile (OGC 14-065 WPS 2.0.2 §7.5.2)." .
+
+gp:ImplementationProfile a owl:Class ;
+    rdfs:subClassOf rim:RegisterItem , skos:Concept ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:label "Implementation Profile" ;
+    rdfs:comment "A register item of item class gpic:implementation-profile (OGC 14-065 WPS 2.0.2 §7.5.3)." .
+
+#################################################################
+# Relations between items
+#
+# ISO 19135:2026 makes relations extensible as sub-properties of
+# rim:relatedItem. The tier-to-tier links this register already had are
+# declared as such; skos:broader (Generic Profile -> Process Concept) is
+# left as is, since asserting a sub-property axiom on SKOS's own term is
+# not this ontology's place -- the same link is also carried by the WPS
+# Table 22 `metadata` reference on the item.
+#################################################################
+
+gp:refinesGenericProfile a owl:ObjectProperty ;
+    rdfs:subPropertyOf rim:relatedItem ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:label "refines Generic Profile" ;
+    rdfs:comment "Relates an Implementation Profile to the Generic Profile whose signature it binds to formats (WPS 2.0.2 §7.5.3, Table 21)." ;
+    rdfs:domain gp:ImplementationProfile ;
+    rdfs:range gp:GenericProfile .
+
+
+#################################################################
+# Entry into the register: a proposed addition
+#
+# Every entry carries one rim:RegisterAction of type rim:additionAction,
+# proposed (rim:proposer) by gp:geolabs, at the date the entry's building
+# block declares as its addition (dateTimeAddition). No control-body
+# decision has been recorded, so entries are rim:invalid (not in force)
+# and rim:published (visible): the state of a proposed addition awaiting
+# a decision, expressed with the ISO 19135:2026 pair rather than a
+# status of our own. A later decision is a further rim:RegisterAction
+# (publish / invalidation / supersession), not a change of this one.
+# gp:AdditionProposalShape (shapes.shacl) requires the addition and its
+# proposer on every entry.
+#################################################################

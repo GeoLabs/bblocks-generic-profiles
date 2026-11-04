@@ -85,8 +85,8 @@ allOf:
     properties:
       inputs:
         properties:
-          geometry: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/geometry"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry"}}}
-          distance: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/distance"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number"}}}
+          geometry: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/geometry"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}}}
+          distance: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/inputs/distance"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/number"}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/surface"}}}

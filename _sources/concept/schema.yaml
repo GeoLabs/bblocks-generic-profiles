@@ -6,34 +6,39 @@ description: >-
   definitions to document their relation to a common principle." Deliberately carries no I/O, no
   format, no CWL: each generic-profiles.generic-profile.* entry declares the Concept(s) it belongs
   to (e.g. vector geometry processing, raster coverage processing) as its `broader` concept.
-type: object
-required: [id, type, prefLabel, definition, inScheme, status, source]
-properties:
-  id:
-    type: string
-    format: uri
-  type:
-    const: Concept
-  prefLabel:
-    type: string
-  definition:
-    type: string
-  inScheme:
-    type: string
-    format: uri
-  status:
-    type: string
-    enum: [submitted, valid, invalid, superseded, retired]
-  source:
-    type: array
-    minItems: 1
-    items:
-      type: object
-      required: [title]
-      properties:
-        title: {type: string}
-        link: {type: string, format: uri}
-        clause: {type: string}
-  narrower:
-    type: array
-    items: {type: string, format: uri}
+allOf:
+  - $ref: bblocks://ogc.rim.schemas.register-item
+  - type: object
+    required: [id, type, prefLabel, definition, inScheme, source,
+               itemClass, inRegister, hasAction]
+    properties:
+      id:
+        type: string
+        format: uri
+      type:
+        const: ProcessConcept
+      prefLabel:
+        type: string
+      definition:
+        type: string
+      inScheme:
+        type: string
+        format: uri
+      # Pinned per tier; the rest of the ISO 19135:2026 required core comes from rim.registered-item.
+      itemClass:
+        const: https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept
+      inRegister:
+        const: https://geolabs.github.io/bblocks-generic-profiles/def/register
+      source:
+        type: array
+        minItems: 1
+        items:
+          type: object
+          required: [title]
+          properties:
+            title: {type: string}
+            link: {type: string, format: uri}
+            clause: {type: string}
+      narrower:
+        type: array
+        items: {type: string, format: uri}

@@ -7,5 +7,5 @@ allOf:
   - type: object
     properties:
       id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"}
-      type: {const: Concept}
+      type: {const: ProcessConcept}
       prefLabel: {const: "Raster Coverage Processing"}

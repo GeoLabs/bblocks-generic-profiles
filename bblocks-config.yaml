@@ -53,6 +53,18 @@ imports:
   # whose types (e.g. eoap.cct.bbox) are for CWL inputs/outputs crossing into OGC API - Processes
   # - Part 2: Deploy, Replace, Undeploy, a different vocabulary layer (2026-10-01).
   - https://geolabs.github.io/bblocks-ogcapi-processes/build/register.json
+  # Registered Item Model (ISO 19135:2026) -- this register's governance layer: every Concept,
+  # Generic Profile and Implementation Profile is a rim:RegisterItem of one of three
+  # rim:RegisterItemClasses (generic-profiles.register), and each tier's base schema allOf-references
+  # ogc.rim.schemas.register-item (the model's JSON binding, contributed by GeoLabs, published
+  # upstream since 2026-10-28).
+  - https://ogcincubator.github.io/registered-item-model/build/register.json
+  # Data types (ISO 19135:2026 concept plane): every `dataType` IRI of a Generic or Implementation
+  # Profile input/output is a concept of this register (data-types.data-type.*).
+  - https://geolabs.github.io/bblocks-data-types/build/register.json
+  # Activity-type register (profiles of the Registered Item Model): an Implementation Profile is
+  # linked to the activity type it is a type of (generic-profiles.register, `activityType`).
+  - https://geonovum-labs.github.io/activity-type-register/build/register.json
 
 schema-oas30-downcompile: False
 

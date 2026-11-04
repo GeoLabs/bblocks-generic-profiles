@@ -49,133 +49,138 @@ description: >-
     Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output` (Table 21 allows any value here,
     O; the register keeps outputs symmetric with inputs); `keywords` Extend (E); `schema`
     Declare (D).
-type: object
-required: [id, type, prefLabel, definition, inScheme, status, refinesGenericProfile, keywords, metadata, inputs, outputs]
-properties:
-  id:
-    type: string
-    format: uri
-  type:
-    const: ImplementationProfile
-  prefLabel:
-    type: string
-  definition:
-    type: string
-  inScheme:
-    type: string
-    format: uri
-  status:
-    type: string
-    enum: [submitted, valid, invalid, superseded, retired]
-  refinesGenericProfile:
-    description: The single Generic Profile (generic-profiles.generic-profile.*) this Implementation Profile refines.
-    type: string
-    format: uri
-  keywords:
-    description: Table 21 Process.Keywords (E) -- the Generic Profile's keywords plus this operation's own.
-    type: array
-    minItems: 1
-    items: {type: string}
-  metadata:
-    description: >-
-      Table 21 Process.Metadata (E, footnote a): the Generic Profile's references (Table 22
-      `concept`) plus a Table 22 `generic` reference to the Generic Profile.
-    type: array
-    items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
-    allOf:
-      - contains:
+allOf:
+  - $ref: bblocks://ogc.rim.schemas.register-item
+  - type: object
+    required: [id, type, prefLabel, definition, inScheme, refinesGenericProfile, keywords, metadata, inputs, outputs,
+               itemClass, inRegister, hasAction]
+    properties:
+      id:
+        type: string
+        format: uri
+      type:
+        const: ImplementationProfile
+      prefLabel:
+        type: string
+      definition:
+        type: string
+      inScheme:
+        type: string
+        format: uri
+      # Pinned per tier; the rest of the ISO 19135:2026 required core comes from rim.registered-item.
+      itemClass:
+        const: https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile
+      inRegister:
+        const: https://geolabs.github.io/bblocks-generic-profiles/def/register
+      refinesGenericProfile:
+        description: The single Generic Profile (generic-profiles.generic-profile.*) this Implementation Profile refines.
+        type: string
+        format: uri
+      keywords:
+        description: Table 21 Process.Keywords (E) -- the Generic Profile's keywords plus this operation's own.
+        type: array
+        minItems: 1
+        items: {type: string}
+      metadata:
+        description: >-
+          Table 21 Process.Metadata (E, footnote a): the Generic Profile's references (Table 22
+          `concept`) plus a Table 22 `generic` reference to the Generic Profile.
+        type: array
+        items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+        allOf:
+          - contains:
+              type: object
+              required: [role, href]
+              properties:
+                role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"}
+          - contains:
+              type: object
+              required: [role, href]
+              properties:
+                role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"}
+      inputs:
+        description: >-
+          Keyed by the same input names as the Generic Profile's own `inputs` (Identifier/Title/
+          Abstract Inherited, not repeated). `schema` is Table 21's Data format (D); `maxOccurs`,
+          when present, Restricts (R, footnote c) the Generic Profile's own value; `keywords` Extend
+          (E) the Generic Profile's; `metadata` Extends (E, footnote a) its superior-profile
+          references.
+        type: object
+        additionalProperties:
           type: object
-          required: [role, href]
+          required: [id, dataType, keywords, metadata]
           properties:
-            role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"}
-      - contains:
+            dataType:
+              description: >-
+                What kind of data this input is, as a concept of the bblocks-data-types
+                register (`https://geolabs.github.io/bblocks-data-types/def/data-type/...`).
+                The Generic Profile's, or a narrower one (`skos:broader` chain): e.g. a band-count or a
+                geometry-type restriction.
+              type: string
+              format: uri
+            id:
+              description: This input's own IRI, `<profile id>/inputs/<name>` -- what a lower tier's
+                metadata `href` points at.
+              type: string
+              format: uri
+            schema: {}
+            minOccurs:
+              description: >-
+                Restricts the Generic Profile's minimum, down to 0 (the input becomes optional),
+                never above it. A deliberate departure from Table 21 footnote c ("shall not modify
+                the minimum cardinality"): a Generic Profile keeps `minOccurs: 1` and lower tiers,
+                down to a real implementation, may make the input optional (e.g. `Gdal_Warp`'s
+                `t_srs`, absent meaning no reprojection).
+              type: integer
+              minimum: 0
+            maxOccurs:
+              oneOf:
+                - type: integer
+                - const: unbounded
+            keywords: {type: array, minItems: 1, items: {type: string}}
+            metadata:
+              type: array
+              items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+              contains:
+                type: object
+                required: [role, href]
+                properties:
+                  role: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"}
+      outputs:
+        description: Keyed by the same output names as the Generic Profile's own `outputs`.
+        type: object
+        additionalProperties:
           type: object
-          required: [role, href]
+          required: [id, dataType, keywords, metadata]
           properties:
-            role: {const: "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"}
-  inputs:
-    description: >-
-      Keyed by the same input names as the Generic Profile's own `inputs` (Identifier/Title/
-      Abstract Inherited, not repeated). `schema` is Table 21's Data format (D); `maxOccurs`,
-      when present, Restricts (R, footnote c) the Generic Profile's own value; `keywords` Extend
-      (E) the Generic Profile's; `metadata` Extends (E, footnote a) its superior-profile
-      references.
-    type: object
-    additionalProperties:
-      type: object
-      required: [id, dataType, keywords, metadata]
-      properties:
-        dataType:
-          description: >-
-            What kind of data this input is, as a concept of the generic-profiles.data-type
-            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
-            The Generic Profile's, or a narrower one (`skos:broader` chain): e.g. a band-count or a
-            geometry-type restriction.
-          type: string
-          format: uri
-        id:
-          description: This input's own IRI, `<profile id>/inputs/<name>` -- what a lower tier's
-            metadata `href` points at.
-          type: string
-          format: uri
-        schema: {}
-        minOccurs:
-          description: >-
-            Restricts the Generic Profile's minimum, down to 0 (the input becomes optional),
-            never above it. A deliberate departure from Table 21 footnote c ("shall not modify
-            the minimum cardinality"): a Generic Profile keeps `minOccurs: 1` and lower tiers,
-            down to a real implementation, may make the input optional (e.g. `Gdal_Warp`'s
-            `t_srs`, absent meaning no reprojection).
-          type: integer
-          minimum: 0
-        maxOccurs:
-          oneOf:
-            - type: integer
-            - const: unbounded
-        keywords: {type: array, minItems: 1, items: {type: string}}
-        metadata:
-          type: array
-          items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
-          contains:
-            type: object
-            required: [role, href]
-            properties:
-              role: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"}
-  outputs:
-    description: Keyed by the same output names as the Generic Profile's own `outputs`.
-    type: object
-    additionalProperties:
-      type: object
-      required: [id, dataType, keywords, metadata]
-      properties:
-        dataType:
-          description: >-
-            What kind of data this output is, as a concept of the generic-profiles.data-type
-            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
-            The Generic Profile's, or a narrower one (`skos:broader` chain): e.g. a band-count or a
-            geometry-type restriction.
-          type: string
-          format: uri
-        id:
-          description: This output's own IRI, `<profile id>/outputs/<name>` -- what a lower tier's
-            metadata `href` points at.
-          type: string
-          format: uri
-        schema: {}
-        keywords: {type: array, minItems: 1, items: {type: string}}
-        metadata:
-          type: array
-          items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
-          contains:
-            type: object
-            required: [role, href]
-            properties:
-              role: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output"}
-  source:
-    type: array
-    items:
-      type: object
-      required: [title]
-      properties:
-        title: {type: string}
-        link: {type: string, format: uri}
+            dataType:
+              description: >-
+                What kind of data this output is, as a concept of the bblocks-data-types
+                register (`https://geolabs.github.io/bblocks-data-types/def/data-type/...`).
+                The Generic Profile's, or a narrower one (`skos:broader` chain): e.g. a band-count or a
+                geometry-type restriction.
+              type: string
+              format: uri
+            id:
+              description: This output's own IRI, `<profile id>/outputs/<name>` -- what a lower tier's
+                metadata `href` points at.
+              type: string
+              format: uri
+            schema: {}
+            keywords: {type: array, minItems: 1, items: {type: string}}
+            metadata:
+              type: array
+              items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+              contains:
+                type: object
+                required: [role, href]
+                properties:
+                  role: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output"}
+      source:
+        type: array
+        items:
+          type: object
+          required: [title]
+          properties:
+            title: {type: string}
+            link: {type: string, format: uri}

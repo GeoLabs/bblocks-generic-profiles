@@ -4,7 +4,19 @@
   "prefLabel": "Point cloud thinning",
   "definition": "Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-08T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
   ],
@@ -22,7 +34,7 @@
   "inputs": {
     "points": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud",
       "title": "Point cloud",
       "description": "the input point cloud",
       "keywords": [
@@ -31,7 +43,7 @@
     },
     "percentage": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/number",
       "title": "Number",
       "description": "the share of points to keep, in percent",
       "keywords": [
@@ -42,7 +54,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud",
       "title": "Point cloud",
       "description": "the thinned point cloud",
       "keywords": [

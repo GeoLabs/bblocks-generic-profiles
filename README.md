@@ -95,7 +95,7 @@ to **Point Cloud Processing**. Point clouds are declared as LAS
 ## Data types
 
 Every Generic and Implementation Profile input/output carries a `dataType`, a concept of the
-[data type vocabulary](_sources/data-type/) (`generic-profiles.data-type`): raster, single- or
+[data types register](https://geolabs.github.io/bblocks-data-types/) (`data-types.vocabulary`): raster, single- or
 multi-band, elevation model, geometry and its point/curve/surface kinds, feature collection, point
 cloud, TIN, table, bounding box, number, string, boolean. It is the kind of data, not its encoding
 (an Implementation Profile's `schema`), so it is not the "Data format" Table 21 denies the Generic
@@ -199,6 +199,7 @@ confirmed.
 
 | Identifier | Tier |
 |---|---|
+| `generic-profiles.register` | The register itself as an ISO 19135:2026 `rim:Register`, with its three item classes |
 | `generic-profiles.concept` | Concept (shared shape only, illustrative example) |
 | `generic-profiles.concept.vector-geometry-processing` | Concept |
 | `generic-profiles.generic-profile` | Generic Profile (shared shape only, illustrative example) |
@@ -240,7 +241,6 @@ confirmed.
 | `generic-profiles.implementation-profile.raster-crop` | Implementation Profile |
 | `generic-profiles.implementation-profile.raster-format-conversion` | Implementation Profile |
 | `generic-profiles.implementation-profile.raster-extent` | Implementation Profile |
-| `generic-profiles.data-type` | Data type vocabulary |
 | `generic-profiles.concept.terrain-analysis` | Concept |
 | `generic-profiles.concept.point-cloud-processing` | Concept |
 | `generic-profiles.generic-profile.terrain-derivative` | Generic Profile |
@@ -265,11 +265,72 @@ placeholder example, never a real operation — see [docs/ARCHITECTURE.md](docs/
 why that distinction matters (an earlier draft of this register got it wrong, using real SQL/MM
 operations as "examples" of the shared schema instead of giving each its own building block).
 
+## This register as an ISO 19135:2026 register
+
+The register also describes itself with the
+[Registered Item Model](https://ogcincubator.github.io/registered-item-model/) (ISO 19135:2026,
+*Registration and register governance*), through one extra block,
+[`generic-profiles.register`](_sources/register/) -- a profile of
+`ogc.rim.schemas.register-item-class`, built like that register's own `activity-type`
+profile. It adds no content to the three tiers; it names them in the model's terms:
+
+- one `rim:Register` (`.../def/register`) and three `rim:RegisterItemClass`es
+  (`.../def/item-class/process-concept`, `generic-profile`, `implementation-profile`);
+- three `owl:Class`es, `gp:ProcessConcept` / `gp:GenericProfile` / `gp:ImplementationProfile`,
+  each `rdfs:subClassOf rim:RegisterItem` **and** `skos:Concept` -- what the JSON `type` of each
+  tier (`ProcessConcept`, `GenericProfile`, `ImplementationProfile`) maps to; the Concept tier's
+  `type` was renamed from `Concept`, which the model's own context already binds to `rim:Concept`;
+- `gp:refinesGenericProfile rdfs:subPropertyOf rim:relatedItem`;
+- on every entry, the ISO 19135:2026 required core: `objectIdentifier` (its own `id`),
+  `itemClass`, `inRegister`, `validityStatus`, `publicationStatus`, and one `hasAction` recording
+  the entry's *addition* (below). Each tier's base schema is an `allOf` of
+  `bblocks://ogc.rim.schemas.register-item` plus the tier's own properties: the
+  model's schema requires and types the core, the model's JSON-LD context maps it onto `rim:*`
+  (`"valid"` -> `rim:valid`), and this register's contexts declare no `rim:` term of their own --
+  only `itemClass` and `inRegister` are pinned per tier.
+
+### How each entry enters the register
+
+There is no `status` field. ISO 19135:2026 drops the 2015 edition's single lifecycle list
+(`submitted`/`valid`/`invalid`/`superseded`/`retired`) in favour of two independent concerns plus
+actions, so every entry instead records:
+
+- one `hasAction` of type `addition` (`rim:additionAction`), whose `proposer` is GeoLabs
+  (`.../def/geolabs`, the register's owner and manager), `startedAtTime` the building block's own
+  `dateTimeAddition`, and `appliesTo` the entry -- a proposed addition, not yet decided;
+- `validityStatus: invalid` + `publicationStatus: published` -- visible here, not in force, since
+  no control-body decision has been recorded. A later decision is a further `rim:RegisterAction`
+  (publish, invalidation, supersession) added beside the first, never an edit of it.
+
+`gp:AdditionProposalShape` enforces this: `_sources/register/tests/item-without-addition-fail.ttl`
+(no action) and `addition-without-proposer-fail.ttl` (addition without a proposer) are both
+rejected (both an unqualified and a qualified count are needed, because pyshacl 0.21.0 does not
+raise `sh:qualifiedMinCount` on a path with no values). `invalid` as the reading of "proposed,
+awaiting a decision", and whether a proposal should be modelled further, are open questions for
+the model's authors.
+
+What the build checks, per entry (`build-local/tests/report.json`, 57/57): `generic-profiles.register`'s
+own shapes (item class and register pinned per tier, tier-to-tier link present, the addition
+recorded) **and** the model's base `rim:RegisterItemShape`, which applies to our items through the
+ontology closure.
+
+Two things are deliberately not claimed, and one is open -- see the block's
+[`description.md`](_sources/register/description.md):
+
+- it is a *content register* (no concept plane: each item carries its own `prefLabel`/
+  `definition`); whether Process Concepts should rather be `rim:Concept`s that Generic Profiles
+  `rim:realizes` is an open question;
+- the `allOf` needs the model's JSON binding -- a `register-item` schema that does not pin `type`
+  to `"rim:RegisterItem"`, and a context that maps the `rim:*` terms. Both were contributed by
+  GeoLabs and are now part of the published model
+  ([ogcincubator/registered-item-model](https://github.com/ogcincubator/registered-item-model),
+  imported here by URL), so `./build.sh` needs no local mapping.
+
 ## Band count: modelled by data type, not by field list
 
 `raster-band-math`'s two Implementation Profiles differ in whether the output raster is fixed to
 one band or may have several (`OTB.BandMath`/muParser vs. `OTB.BandMathX`/muParserX). Since
-2026-10-08 that is stated, and checked, with the [data type vocabulary](_sources/data-type/):
+2026-10-08 that is stated, and checked, with the [data types register](https://geolabs.github.io/bblocks-data-types/):
 `raster-band-math`'s output is `raster-single-band`, a narrower type than the Generic Profile's
 `raster`, while `raster-band-math-multiband`'s stays `raster` (BandMathX may output one band or
 several). An elevation model is likewise `elevation-model`, a narrower `raster-single-band`.

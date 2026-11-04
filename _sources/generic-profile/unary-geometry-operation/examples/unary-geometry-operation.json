@@ -4,7 +4,19 @@
   "prefLabel": "Unary geometry operation",
   "definition": "Derives a new geometry from a single input geometry. One Geometry input, one Geometry output. Covers operations that differ only in what they compute (bounding envelope, centroid, convex hull), not in signature -- the same principle `binary-spatial-predicate` and `binary-spatial-operation` already use for their own several operations.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-06T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
   ],
@@ -23,7 +35,7 @@
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "title": "Geometry",
       "description": "the input geometry",
       "keywords": [
@@ -34,7 +46,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "title": "Geometry",
       "description": "the derived geometry",
       "keywords": [

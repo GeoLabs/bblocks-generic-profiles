@@ -1,0 +1,79 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix gp:   <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gpic: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/> .
+@prefix rim:  <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Constrained-profile shapes. Every gp:ProcessConcept / gp:GenericProfile /
+# gp:ImplementationProfile is a rim:RegisterItem (ontology.ttl), so the base
+# rim:RegisterItemShape -- object identifier, item class, validity and
+# publication status -- continues to apply through the ontology closure.
+# These shapes only pin, per tier, which item class and which register the
+# item belongs to, and that the tier-to-tier link is present, in both
+# directions (item -> class, class -> items), as the Registered Item
+# Model's own activity-type profile does.
+#
+# Cross-item references (skos:broader, gp:refinesGenericProfile) are checked
+# as IRIs, not with sh:class: each entry is validated on its own, so the
+# referenced item's type is not in the data graph.
+
+gp:ProcessConceptShape a sh:NodeShape ;
+    sh:targetClass gp:ProcessConcept ;
+    sh:property [ sh:path rim:itemClass ;  sh:hasValue gpic:process-concept ;
+                  sh:message "A Process Concept's rim:itemClass must be gpic:process-concept." ] ;
+    sh:property [ sh:path rim:inRegister ; sh:hasValue gp:register ;
+                  sh:message "A Process Concept must be in gp:register." ] ;
+    sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ] .
+
+gp:GenericProfileShape a sh:NodeShape ;
+    sh:targetClass gp:GenericProfile ;
+    sh:property [ sh:path rim:itemClass ;  sh:hasValue gpic:generic-profile ;
+                  sh:message "A Generic Profile's rim:itemClass must be gpic:generic-profile." ] ;
+    sh:property [ sh:path rim:inRegister ; sh:hasValue gp:register ;
+                  sh:message "A Generic Profile must be in gp:register." ] ;
+    sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ] ;
+    sh:property [ sh:path skos:broader ;   sh:nodeKind sh:IRI ; sh:minCount 1 ;
+                  sh:message "A Generic Profile must name at least one Process Concept (skos:broader)." ] .
+
+gp:ImplementationProfileShape a sh:NodeShape ;
+    sh:targetClass gp:ImplementationProfile ;
+    sh:property [ sh:path rim:itemClass ;  sh:hasValue gpic:implementation-profile ;
+                  sh:message "An Implementation Profile's rim:itemClass must be gpic:implementation-profile." ] ;
+    sh:property [ sh:path rim:inRegister ; sh:hasValue gp:register ;
+                  sh:message "An Implementation Profile must be in gp:register." ] ;
+    sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ] ;
+    sh:property [ sh:path gp:refinesGenericProfile ; sh:nodeKind sh:IRI ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:message "An Implementation Profile must refine exactly one Generic Profile." ] .
+
+# Class -> items: anything claiming one of these item classes must be of the matching type.
+
+gp:ProcessConceptItemClassShape a sh:NodeShape ;
+    sh:targetNode gpic:process-concept ;
+    sh:property [ sh:path [ sh:inversePath rim:itemClass ] ; sh:class gp:ProcessConcept ;
+                  sh:message "Every item of item class gpic:process-concept must be a gp:ProcessConcept." ] .
+
+gp:GenericProfileItemClassShape a sh:NodeShape ;
+    sh:targetNode gpic:generic-profile ;
+    sh:property [ sh:path [ sh:inversePath rim:itemClass ] ; sh:class gp:GenericProfile ;
+                  sh:message "Every item of item class gpic:generic-profile must be a gp:GenericProfile." ] .
+
+gp:ImplementationProfileItemClassShape a sh:NodeShape ;
+    sh:targetNode gpic:implementation-profile ;
+    sh:property [ sh:path [ sh:inversePath rim:itemClass ] ; sh:class gp:ImplementationProfile ;
+                  sh:message "Every item of item class gpic:implementation-profile must be a gp:ImplementationProfile." ] .
+
+# Every entry records its entry into the register: at least one rim:additionAction, with a proposer.
+gp:AdditionProposalShape a sh:NodeShape ;
+    sh:targetClass gp:ProcessConcept , gp:GenericProfile , gp:ImplementationProfile ;
+    sh:property [
+        sh:path rim:hasAction ;
+        sh:qualifiedValueShape [
+            sh:property [ sh:path rim:actionType ; sh:hasValue rim:additionAction ] ,
+                        [ sh:path rim:proposer ;   sh:minCount 1 ]
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:minCount 1 ;
+        sh:message "An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer."
+    ] .

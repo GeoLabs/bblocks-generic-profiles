@@ -70,7 +70,7 @@ allOf:
     properties:
       inputs:
         properties:
-          points: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud"}}}
+          points: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud"}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/feature-collection"}}}

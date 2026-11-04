@@ -50,7 +50,7 @@ Point clouds (broader: [`point-cloud-processing`](../concept/point-cloud-process
 - [`point-cloud-to-features`](point-cloud-to-features/) -- one point cloud in, one feature collection out
 
 Each input/output also names its kind of data with `dataType`, a concept of
-[`generic-profiles.data-type`](../data-type/).
+the [data types register](https://geolabs.github.io/bblocks-data-types/) (`data-types.vocabulary`).
 
 A Generic Profile declares a signature "for *a* process" (WPS's own wording, singular) -- but
 several distinct operations sharing the identical shape are still modelled as **one** Generic

@@ -4,7 +4,19 @@
   "prefLabel": "Geometry extent",
   "definition": "Computes the minimum bounding rectangle of a set of input geometries, as a geometry.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-01T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation",
   "keywords": [
     "vector",
@@ -28,7 +40,7 @@
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/inputs/geometry",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -50,7 +62,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/surface",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",

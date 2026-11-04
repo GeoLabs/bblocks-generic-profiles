@@ -71,7 +71,7 @@ allOf:
     properties:
       inputs:
         properties:
-          geometry: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/inputs/geometry"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface"}}}
+          geometry: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/inputs/geometry"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/surface"}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/number"}}}

@@ -71,7 +71,7 @@ allOf:
     properties:
       inputs:
         properties:
-          geometry: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/inputs/geometry"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry"}}}
+          geometry: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/inputs/geometry"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/convex-hull/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}}}

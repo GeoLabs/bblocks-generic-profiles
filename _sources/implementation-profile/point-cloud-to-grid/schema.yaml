@@ -83,8 +83,8 @@ allOf:
     properties:
       inputs:
         properties:
-          points: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/points"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud"}}}
-          cellSize: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/cellSize"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number"}}}
+          points: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/points"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud"}}}
+          cellSize: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/cellSize"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/number"}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"}}}
