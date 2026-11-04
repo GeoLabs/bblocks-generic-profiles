@@ -77,3 +77,16 @@ gp:AdditionProposalShape a sh:NodeShape ;
         sh:minCount 1 ;
         sh:message "An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer."
     ] .
+
+# Every input and output names its kind of data with `dataType` (dct:type). It must be a
+# dt:DataType concept of the bblocks-data-types register. The ontology of every published data
+# type is a data resource of data-types.vocabulary, which this block depends on, so it is in the
+# SHACL closure and the referenced concept's type is known here, unlike the other cross-item
+# references above.
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dt:  <https://geolabs.github.io/bblocks-data-types/def/> .
+
+gp:DataTypeReferenceShape a sh:NodeShape ;
+    sh:targetSubjectsOf dct:type ;
+    sh:property [ sh:path dct:type ; sh:class dt:DataType ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:message "An input or output's dataType must be a dt:DataType concept of the bblocks-data-types register." ] .

@@ -14,13 +14,19 @@
   "dependsOn": [
     "ogc.rim.schemas.register",
     "ogc.rim.schemas.register-item-class",
-    "ogc.rim.schemas.register-item"
+    "ogc.rim.schemas.register-item",
+    "data-types.vocabulary"
   ],
   "shaclShapes": [
     "shapes.shacl"
   ],
   "scope": "dev",
-  "tags": ["register", "ISO 19135", "governance", "WPS"],
+  "tags": [
+    "register",
+    "ISO 19135",
+    "governance",
+    "WPS"
+  ],
   "sources": [
     {
       "title": "ISO 19135:2026, Geographic information — Registration and register governance",
