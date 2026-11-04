@@ -110,6 +110,10 @@
         "@id": "prof:isProfileOf",
         "@type": "@id"
       },
+      "isDescribedBy": {
+        "@id": "http://www.iana.org/assignments/relation/describedby",
+        "@type": "@id"
+      },
       "hasFormat": {
         "@id": "dct:hasFormat",
         "@type": "@id"
@@ -213,12 +217,12 @@
   "name": "Building Blocks - Generic Process Profiles",
   "abstract": "A general-purpose, engine- and format-agnostic vocabulary of Generic Profiles, independent of\nany one project. A Generic Profile gives one or more related operations an abstract I/O\nsignature (named roles and abstract types, no format, no size limit) -- e.g. every binary\nboolean spatial predicate (Intersects, Contains, Within, Touches, Crosses, Equals, Disjoint)\ntakes two Geometry inputs and returns one Boolean, and is one Generic Profile, not seven.\nImplementation Profiles (concrete, deployable processes binding a Generic Profile to real\nformats) are not part of this register; they live wherever the implementation itself is\nprofiled (e.g. `ospd.process-profiles.*` for OSPD's CWL- and OGC-API-Processes-sourced profiles)\nand link back here via their own `implementsGenericProfile` property.\n",
   "description": "Produced by GeoLabs, first grounded in the 12 spatial predicates and set operations of OGC\nSimple Feature Access - Common Architecture (06-103r4) as a worked example: every one of them\nshares one of a small number of I/O shapes, so the Generic Profile layer stays small (3 profiles\ncover all 12 here). SQL/MM Spatial (ISO/IEC 13249-3) binds the same operations to SQL (the\n`ST_Geometry` type, `ST_Intersects`-style function names) and real deployed processes bind them\nfurther still (e.g. to GML 3.1.0 Polygon) -- both are concrete bindings, not part of this\nregister; they are profiled as Implementation Profiles in whichever register profiles the\nconcrete process (e.g. `ospd.process-profiles.*`), linked back here by `implementsGenericProfile`.\nNot limited to spatial operations -- any domain with standardised abstract operations and several\nindependent bindings is a candidate.\n",
-  "modified": "2026-10-09T10:07:42.045109",
+  "modified": "2026-11-04T19:03:43.344215",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"d25453cad0e4972e6a638db3dca636f023f9397a",
-      "shortCommitId": "\"d25453",
-      "date": "2026-10-08T14:02:00+00:00\""
+      "commitId": "\"c1af50a182c92d7ab055f34158d5605167dfe786",
+      "shortCommitId": "\"c1af50",
+      "date": "2026-11-04T12:47:53+00:00\""
     }
   },
   "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
@@ -232,7 +236,10 @@
   "validationReportJson": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/report.json",
   "imports": [
     "https://opengeospatial.github.io/bblocks/register.json",
-    "https://geolabs.github.io/bblocks-ogcapi-processes/build/register.json"
+    "https://geolabs.github.io/bblocks-ogcapi-processes/build/register.json",
+    "https://ogcincubator.github.io/registered-item-model/build/register.json",
+    "https://geolabs.github.io/bblocks-data-types/build/register.json",
+    "https://geonovum-labs.github.io/activity-type-register/build/register.json"
   ],
   "remoteCacheDir": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/_cache",
   "links": [
@@ -263,17 +270,126 @@
   "skos:prefLabel": "Building Blocks - Generic Process Profiles",
   "hasConcepts": [
     {
+      "itemIdentifier": "generic-profiles.register",
+      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+      "name": "Generic Process Profiles register (ISO 19135:2026)",
+      "abstract": "This register described with the Registered Item Model (ISO 19135:2026): one rim:Register, three rim:RegisterItemClasses (Process Concept, Generic Profile, Implementation Profile) and the three owl:Classes, each a sub-class of rim:RegisterItem, that every entry of the corresponding tier is typed with. A profile of ogc.rim.schemas.register-item-class, following the same pattern as that register's own activity-type profile.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-10-26T00:00:00Z",
+      "dateOfLastChange": "2026-11-04",
+      "version": "0.1",
+      "itemClass": "model",
+      "register": "generic-profiles",
+      "isProfileOf": [
+        "bblocks://ogc.rim.schemas.register-item-class"
+      ],
+      "dependsOn": [
+        "bblocks://ogc.rim.schemas.register",
+        "bblocks://ogc.rim.schemas.register-item",
+        "bblocks://ogc.rim.schemas.register-item-class"
+      ],
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
+      "scope": "dev",
+      "tags": [
+        "register",
+        "ISO 19135",
+        "governance",
+        "WPS"
+      ],
+      "sources": [
+        {
+          "title": "ISO 19135:2026, Geographic information \u2014 Registration and register governance",
+          "link": "https://www.iso.org/standard/86261.html"
+        },
+        {
+          "title": "Registered Item Model (OGC Building Block)",
+          "link": "https://ogcincubator.github.io/registered-item-model/"
+        },
+        {
+          "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, \u00a77.5 Process profiles",
+          "link": "https://docs.ogc.org/is/14-065/14-065.html"
+        }
+      ],
+      "maturity": "development",
+      "highlighted": true,
+      "group": "Register",
+      "license": {
+        "name": "Apache-2.0"
+      },
+      "ontology": {
+        "prof:hasArtifact": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/register/ontology.ttl",
+        "prof:hasRole": "role:specification",
+        "dct:format": "text/turtle",
+        "dct:conformsTo": "http://www.w3.org/2002/07/owl#Ontology"
+      },
+      "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/register/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/register/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/register/index.json"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.register"
+        }
+      },
+      "@id": "bblocks://generic-profiles.register",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "Generic Process Profiles register (ISO 19135:2026)",
+      "ldContext": null,
+      "schema": null,
+      "openAPIDocument": null,
+      "rdfData": [],
+      "isDescribedBy": null,
+      "skos:topConceptOf": {
+        "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
+      }
+    },
+    {
       "itemIdentifier": "generic-profiles.concept",
       "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
       "name": "Process Concept",
       "abstract": "The shape every Process Concept shares: high-level documentation about a general group of processes, no input, no output, no format, no implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1). Each real Concept (generic-profiles.concept.*) is its own building block that allOf-references this one -- this block is not itself a catalogue, only the common shape plus one illustrative example.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
-      "dependsOn": null,
+      "dependsOn": [
+        "bblocks://generic-profiles.register",
+        "bblocks://ogc.rim.schemas.register-item"
+      ],
       "scope": "dev",
       "tags": [
         "concept",
@@ -296,7 +412,26 @@
       "maturity": "development",
       "highlighted": true,
       "group": "Concepts",
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -345,100 +480,7 @@
       "ontology": null,
       "rdfData": [],
       "isProfileOf": null,
-      "skos:topConceptOf": {
-        "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
-      }
-    },
-    {
-      "itemIdentifier": "generic-profiles.data-type",
-      "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
-      "name": "Data types",
-      "abstract": "Reference vocabulary of the kinds of data process profile inputs and outputs carry (raster, single- or multi-band, elevation model, geometry by type, feature collection, point cloud, TIN, table, bounding box, literals).",
-      "status": "under-development",
-      "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
-      "version": "0.1",
-      "itemClass": "schema",
-      "register": "generic-profiles",
-      "sources": [
-        {
-          "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
-          "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
-        },
-        {
-          "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
-          "link": "https://www.ogc.org/standards/sfa/"
-        },
-        {
-          "title": "OGC 17-030r1 LAS Specification 1.4 OGC Community Standard",
-          "link": "https://www.ogc.org/standards/las/"
-        }
-      ],
-      "scope": "dev",
-      "tags": [
-        "data type",
-        "SKOS",
-        "vocabulary"
-      ],
-      "sourceSchema": "https://geolabs.github.io/bblocks-generic-profiles/_sources/data-type/schema.yaml",
-      "ldContext": {
-        "prof:hasArtifact": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/data-type/context.jsonld",
-        "prof:hasRole": "role:mapping",
-        "dct:format": "application/ld+json",
-        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
-      },
-      "maturity": "development",
-      "group": "Data types",
-      "shaclShapes": null,
-      "license": {
-        "name": "Apache-2.0"
-      },
-      "schema": [
-        {
-          "prof:hasArtifact": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/data-type/schema.yaml",
-          "prof:hasRole": "role:schema",
-          "dct:format": "application/yaml",
-          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
-        },
-        {
-          "prof:hasArtifact": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/data-type/schema.json",
-          "prof:hasRole": "role:schema",
-          "dct:format": "application/json",
-          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
-        }
-      ],
-      "sourceLdContext": "https://geolabs.github.io/bblocks-generic-profiles/_sources/data-type/context.jsonld",
-      "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/data-type/resolvedProperties.json",
-      "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/data-type/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/data-type/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/markdown/data-type/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/generateddocs/json-full/data-type/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://geolabs.github.io/bblocks-generic-profiles/bblock/generic-profiles.data-type"
-        }
-      },
-      "@id": "bblocks://generic-profiles.data-type",
-      "@type": [
-        "bblocks:Schema",
-        "skos:Concept",
-        "dcat:Dataset",
-        "bblocks:BBlock"
-      ],
-      "skos:prefLabel": "Data types",
-      "openAPIDocument": null,
-      "ontology": null,
-      "rdfData": [],
-      "dependsOn": null,
-      "isProfileOf": null,
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -450,7 +492,7 @@
       "abstract": "Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
@@ -489,7 +531,26 @@
       "isProfileOf": [
         "bblocks://generic-profiles.concept"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -537,6 +598,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -548,7 +610,7 @@
       "abstract": "Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, deriving a new raster from one or more others via a mathematical expression or a named radiometric index, cropping a coverage to a region of interest, or converting a coverage to another encoding -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
@@ -580,7 +642,26 @@
       "isProfileOf": [
         "bblocks://generic-profiles.concept"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -628,6 +709,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -639,7 +721,7 @@
       "abstract": "Operations deriving terrain attributes from an elevation model: local surface derivatives (slope, aspect, curvature), neighbourhood indices (terrain ruggedness, topographic position) and illumination (hillshading) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1). A kind of raster coverage processing: an elevation model is a single-band raster whose values are elevations.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
@@ -677,7 +759,26 @@
       "isProfileOf": [
         "bblocks://generic-profiles.concept"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -725,6 +826,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -736,7 +838,7 @@
       "abstract": "General group covering operations on vector geometries: testing spatial relationships between two geometries, deriving a new geometry from one or two others, and measuring a geometry's own properties -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
@@ -777,7 +879,26 @@
       "isProfileOf": [
         "bblocks://generic-profiles.concept"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -825,6 +946,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -836,13 +958,15 @@
       "abstract": "The shape every Generic Profile shares: the abstract interface of one process, declaring a signature for its inputs and outputs (OGC 14-065 WPS 2.0.2 \u00a77.5.2), linked to its Process Concept by `broader`. Each real Generic Profile (generic-profiles.generic-profile.*) is its own building block that allOf-references this one -- this block is not itself a catalogue, only the common shape plus one illustrative example.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
         "bblocks://generic-profiles.concept",
-        "bblocks://ogc.api.processes.v1.schemas.metadata"
+        "bblocks://generic-profiles.register",
+        "bblocks://ogc.api.processes.v1.schemas.metadata",
+        "bblocks://ogc.rim.schemas.register-item"
       ],
       "scope": "dev",
       "tags": [
@@ -866,7 +990,26 @@
       "maturity": "development",
       "highlighted": true,
       "group": "Generic Profiles",
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -915,6 +1058,7 @@
       "ontology": null,
       "rdfData": [],
       "isProfileOf": null,
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -926,11 +1070,12 @@
       "abstract": "Computes how the terrain is lit by a light source. One elevation model and the light source's azimuth and altitude in, one single-band raster out.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.terrain-analysis",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -958,7 +1103,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.terrain-analysis"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -1006,6 +1170,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -1017,11 +1182,12 @@
       "abstract": "Computes a new geometry from the point-set relationship of two input geometries. Shared I/O shape of the SQL/MM set-operation family: two Geometry inputs, one Geometry output.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.vector-geometry-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -1049,7 +1215,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.vector-geometry-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -1097,6 +1282,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -1108,11 +1294,12 @@
       "abstract": "Tests a boolean spatial relationship between two geometries. Shared I/O shape of every SQL/MM DE-9IM-family predicate: two Geometry inputs, one Boolean output, no side effect.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.vector-geometry-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -1140,7 +1327,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.vector-geometry-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -1188,6 +1394,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -1199,11 +1406,12 @@
       "abstract": "Computes a new geometry from one input geometry and a scalar distance. A different shape from binary-spatial-operation: one Geometry, one Number, not two Geometries.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.vector-geometry-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -1231,7 +1439,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.vector-geometry-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -1279,6 +1506,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -1290,11 +1518,12 @@
       "abstract": "Computes a scalar measurement of a single geometry. One Geometry input, one Number output.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-06T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.vector-geometry-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -1322,7 +1551,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.vector-geometry-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -1370,6 +1618,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -1381,11 +1630,12 @@
       "abstract": "Converts a point cloud to a raster on a grid of a given cell size. One point cloud and one cell size in, one raster out.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.point-cloud-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -1413,7 +1663,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.point-cloud-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -1461,6 +1730,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -1472,11 +1742,12 @@
       "abstract": "Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.point-cloud-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -1504,7 +1775,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.point-cloud-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -1552,6 +1842,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -1563,11 +1854,12 @@
       "abstract": "Converts a point cloud to a feature collection. One point cloud in, one feature collection out.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.point-cloud-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -1595,7 +1887,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.point-cloud-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -1643,6 +1954,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -1654,11 +1966,12 @@
       "abstract": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral bands of one or more input rasters. One or more Raster inputs, the name(s) of the index/indices to compute, one Raster output (one band per selected index).",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.raster-coverage-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -1686,7 +1999,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.raster-coverage-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -1734,6 +2066,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -1745,11 +2078,12 @@
       "abstract": "Derives a new raster from one or more input rasters via a user-supplied mathematical expression evaluated per pixel. One or more Raster inputs, an expression, one Raster output -- the output's band structure (one band or several) is not part of this signature, see its Implementation Profiles.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.raster-coverage-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -1777,7 +2111,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.raster-coverage-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -1825,6 +2178,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -1836,11 +2190,12 @@
       "abstract": "Crops a raster coverage to a region of interest. One Raster input, a bounding box, one Raster output covering only that area.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.raster-coverage-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -1872,7 +2227,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.raster-coverage-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -1920,6 +2294,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -1931,11 +2306,12 @@
       "abstract": "Computes the bounding envelope of a raster coverage, returned as a geometry (a rectangular polygon in the coverage's CRS). One Raster input, one Geometry output.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-01T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.raster-coverage-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -1963,7 +2339,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.raster-coverage-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -2011,6 +2406,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -2022,11 +2418,12 @@
       "abstract": "Converts a raster coverage from one encoding to another, without changing its content. One Raster input, a target format, one Raster output in the new encoding.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.raster-coverage-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -2054,7 +2451,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.raster-coverage-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -2102,6 +2518,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -2113,11 +2530,12 @@
       "abstract": "Reprojects a raster coverage to another coordinate reference system, preserving its content. One Raster input, a target CRS, one Raster output in the new CRS.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.raster-coverage-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -2145,7 +2563,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.raster-coverage-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -2193,6 +2630,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -2204,11 +2642,12 @@
       "abstract": "Derives one terrain attribute, as a single-band raster, from an elevation model. One elevation model input, one single-band raster output. Covers operations that differ only in the attribute computed (slope, aspect, curvature, terrain ruggedness, topographic position), not in signature.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.terrain-analysis",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -2236,7 +2675,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.terrain-analysis"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -2284,6 +2742,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -2295,11 +2754,12 @@
       "abstract": "Derives a new geometry from a single input geometry. One Geometry input, one Geometry output. Covers operations that differ only in what they compute (bounding envelope, centroid, convex hull), not in signature -- the same principle `binary-spatial-predicate` and `binary-spatial-operation` already use for their own several operations.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-06T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.vector-geometry-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -2327,7 +2787,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.vector-geometry-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -2375,6 +2854,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -2386,11 +2866,12 @@
       "abstract": "Tests a boolean property of a single geometry. One Geometry input, one Boolean output -- the one-input counterpart to `binary-spatial-predicate`'s two.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-06T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.concept.vector-geometry-processing",
         "bblocks://generic-profiles.generic-profile"
       ],
       "sources": [
@@ -2418,7 +2899,26 @@
         "bblocks://generic-profiles.generic-profile",
         "bblocks://generic-profiles.concept.vector-geometry-processing"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -2466,6 +2966,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -2477,13 +2978,15 @@
       "abstract": "The shape every Implementation Profile shares: a specific named operation refining one Generic Profile, adding the standard data exchange formats it is commonly expressed in (OGC 14-065 WPS 2.0.2 \u00a77.5.3). Each real Implementation Profile (generic-profiles.implementation-profile.*) is its own building block that allOf-references this one.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
         "bblocks://generic-profiles.generic-profile",
-        "bblocks://ogc.api.processes.v1.schemas.metadata"
+        "bblocks://generic-profiles.register",
+        "bblocks://ogc.api.processes.v1.schemas.metadata",
+        "bblocks://ogc.rim.schemas.register-item"
       ],
       "scope": "dev",
       "tags": [
@@ -2507,7 +3010,26 @@
       "maturity": "development",
       "highlighted": true,
       "group": "Implementation Profiles",
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -2556,6 +3078,7 @@
       "ontology": null,
       "rdfData": [],
       "isProfileOf": null,
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -2567,11 +3090,12 @@
       "abstract": "For each cell, the angle at which light coming from the position of the light source hits the terrain surface (SAGA's standard method).",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.analytical-hillshading",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -2603,7 +3127,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.analytical-hillshading"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -2651,6 +3194,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -2662,11 +3206,12 @@
       "abstract": "The area of this Surface, as measured in the spatial reference system of this Surface.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-06T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.geometry-measure",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -2701,7 +3246,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.geometry-measure"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -2749,6 +3313,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -2760,11 +3325,12 @@
       "abstract": "Returns a geometric object representing all points whose distance from this geometric object is less than or equal to a given distance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.geometry-buffer",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -2795,7 +3361,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.geometry-buffer"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -2843,6 +3428,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -2854,11 +3440,12 @@
       "abstract": "The mathematical centroid for this Surface as a Point. The result is not guaranteed to be on this Surface.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-06T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.unary-geometry-operation",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -2893,7 +3480,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.unary-geometry-operation"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -2941,6 +3547,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -2952,11 +3559,12 @@
       "abstract": "Returns TRUE if this geometric object spatially contains anotherGeometry (no point of anotherGeometry lies outside this geometric object, and at least one point of the interior of anotherGeometry lies in the interior of this geometric object).",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.binary-spatial-predicate",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -2987,7 +3595,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.binary-spatial-predicate"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -3035,6 +3662,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -3046,11 +3674,12 @@
       "abstract": "Returns a geometry that represents the convex hull of this Geometry.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-06T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.unary-geometry-operation",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -3085,7 +3714,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.unary-geometry-operation"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -3133,6 +3781,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -3144,11 +3793,12 @@
       "abstract": "Returns TRUE if this geometric object 'spatially crosses' anotherGeometry: the intersection results in a geometry of dimension one less than the maximum dimension of the two source geometries, and the intersection set is interior to both.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.binary-spatial-predicate",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -3179,7 +3829,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.binary-spatial-predicate"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -3227,6 +3896,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -3238,11 +3908,12 @@
       "abstract": "Returns a geometric object representing the point set difference of this geometric object with anotherGeometry.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.binary-spatial-operation",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -3273,7 +3944,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.binary-spatial-operation"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -3321,6 +4011,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -3332,11 +4023,12 @@
       "abstract": "Returns TRUE if this geometric object is spatially disjoint from anotherGeometry (they share no point). Equivalent to the negation of Intersects.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.binary-spatial-predicate",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -3367,7 +4059,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.binary-spatial-predicate"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -3415,6 +4126,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -3426,11 +4138,12 @@
       "abstract": "Returns TRUE if this geometric object is spatially equal to anotherGeometry (same point set), independent of vertex order or representation.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.binary-spatial-predicate",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -3461,7 +4174,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.binary-spatial-predicate"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -3509,6 +4241,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -3520,11 +4253,12 @@
       "abstract": "Computes the minimum bounding rectangle of a set of input geometries, as a geometry.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-01T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.unary-geometry-operation",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -3559,7 +4293,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.unary-geometry-operation"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -3607,6 +4360,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -3618,11 +4372,12 @@
       "abstract": "Returns a geometric object representing the point set intersection of this geometric object with anotherGeometry.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.binary-spatial-operation",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -3653,7 +4408,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.binary-spatial-operation"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -3701,6 +4475,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -3712,11 +4487,12 @@
       "abstract": "Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share at least one point). Equivalent to the negation of Disjoint.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.binary-spatial-predicate",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -3747,7 +4523,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.binary-spatial-predicate"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -3795,6 +4590,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -3806,11 +4602,12 @@
       "abstract": "Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection or self tangency.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-06T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.unary-spatial-predicate",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -3845,7 +4642,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.unary-spatial-predicate"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -3893,6 +4709,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -3904,11 +4721,12 @@
       "abstract": "Reduces the number of points to the given percentage by sequential point removal, which suits points stored in chronological order best.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.point-cloud-thinning",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -3940,7 +4758,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.point-cloud-thinning"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -3988,6 +4825,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -3999,11 +4837,12 @@
       "abstract": "Writes one value per grid cell from the points falling in it -- by default the z value of the first point -- as a single-band raster.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.point-cloud-rasterization",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -4035,7 +4874,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.point-cloud-rasterization"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -4083,6 +4941,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -4094,11 +4953,12 @@
       "abstract": "Converts a point cloud to a SAGA shapes layer of points, i.e. a feature collection.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.point-cloud-to-features",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -4130,7 +4990,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.point-cloud-to-features"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -4178,6 +5057,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -4189,11 +5069,12 @@
       "abstract": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.radiometric-index",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -4225,7 +5106,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.radiometric-index"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -4273,6 +5173,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -4284,11 +5185,12 @@
       "abstract": "Evaluates a user-supplied mathematical expression per pixel across one or more input rasters, producing a monoband output raster.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.raster-band-math",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -4320,7 +5222,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.raster-band-math"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -4368,6 +5289,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -4379,11 +5301,12 @@
       "abstract": "Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.raster-band-math",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -4419,7 +5342,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.raster-band-math"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -4467,6 +5409,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -4478,11 +5421,12 @@
       "abstract": "Extracts the pixels of a raster coverage that fall within a region of interest. `areaOfInterest`'s `schema` $refs `ogc.api.processes.v1.schemas.bbox` directly (OGC API - Processes Part 1 Core's own bbox type), not a bespoke format string.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.raster-crop",
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://ogc.api.processes.v1.schemas.bbox"
       ],
@@ -4523,7 +5467,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.raster-crop"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -4571,6 +5534,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -4582,11 +5546,12 @@
       "abstract": "Computes the bounding envelope of a raster coverage, as a vector polygon.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-01T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.raster-extent",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -4618,7 +5583,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.raster-extent"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -4666,6 +5650,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -4677,11 +5662,12 @@
       "abstract": "Re-encodes a raster coverage into another raster format, without altering its content.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.raster-format-conversion",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -4713,7 +5699,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.raster-format-conversion"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -4761,6 +5766,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -4772,11 +5778,12 @@
       "abstract": "Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.raster-reprojection",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -4808,7 +5815,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.raster-reprojection"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -4856,6 +5882,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -4867,11 +5894,12 @@
       "abstract": "The slope gradient of an elevation model at each cell, from a local fit of the surface (SAGA's default method: the 9 parameter 2nd order polynom of Zevenbergen & Thorne 1987).",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.terrain-derivative",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -4906,7 +5934,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.terrain-derivative"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -4954,6 +6001,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -4965,11 +6013,12 @@
       "abstract": "Returns a geometric object representing the point set symmetric difference of this geometric object with anotherGeometry.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.binary-spatial-operation",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -5000,7 +6049,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.binary-spatial-operation"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -5048,6 +6116,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -5059,11 +6128,12 @@
       "abstract": "The terrain ruggedness index (TRI) of Riley et al. (1999): how much the elevation of each cell differs from that of its neighbourhood.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.terrain-derivative",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -5098,7 +6168,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.terrain-derivative"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -5146,6 +6235,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -5157,11 +6247,12 @@
       "abstract": "The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-08T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.terrain-derivative",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -5196,7 +6287,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.terrain-derivative"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -5244,6 +6354,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -5255,11 +6366,12 @@
       "abstract": "Returns TRUE if the only points in common between this geometric object and anotherGeometry lie in the union of their boundaries: at least one boundary point in common, but no interior points in common.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.binary-spatial-predicate",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -5290,7 +6402,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.binary-spatial-predicate"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -5338,6 +6469,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -5349,11 +6481,12 @@
       "abstract": "Returns a geometric object representing the point set union of this geometric object with anotherGeometry.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.binary-spatial-operation",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -5384,7 +6517,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.binary-spatial-operation"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -5432,6 +6584,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -5443,11 +6596,12 @@
       "abstract": "Returns TRUE if this geometric object is spatially within anotherGeometry. The converse of Contains.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-30T00:00:00Z",
-      "dateOfLastChange": "2026-10-09",
+      "dateOfLastChange": "2026-11-04",
       "version": "0.1",
       "itemClass": "schema",
       "register": "generic-profiles",
       "dependsOn": [
+        "bblocks://generic-profiles.generic-profile.binary-spatial-predicate",
         "bblocks://generic-profiles.implementation-profile"
       ],
       "sources": [
@@ -5478,7 +6632,26 @@
         "bblocks://generic-profiles.implementation-profile",
         "bblocks://generic-profiles.generic-profile.binary-spatial-predicate"
       ],
-      "shaclShapes": null,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://generic-profiles.register",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.rim.core-ontology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
       "license": {
         "name": "Apache-2.0"
       },
@@ -5526,6 +6699,7 @@
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
+      "isDescribedBy": null,
       "skos:topConceptOf": {
         "@id": "https://geolabs.github.io/bblocks-generic-profiles/"
       }
@@ -5533,10 +6707,10 @@
   ],
   "skos:hasTopConcept": [
     {
-      "@id": "bblocks://generic-profiles.concept"
+      "@id": "bblocks://generic-profiles.register"
     },
     {
-      "@id": "bblocks://generic-profiles.data-type"
+      "@id": "bblocks://generic-profiles.concept"
     },
     {
       "@id": "bblocks://generic-profiles.concept.point-cloud-processing"

@@ -60,7 +60,7 @@
                   "x-jsonld-id": "@id"
                 },
                 "dataType": {
-                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
                 }
@@ -77,7 +77,7 @@
                   "x-jsonld-id": "@id"
                 },
                 "dataType": {
-                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
                 }
@@ -100,7 +100,7 @@
                   "x-jsonld-id": "@id"
                 },
                 "dataType": {
-                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean",
+                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/boolean",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
                 }
@@ -114,13 +114,12 @@
     }
   ],
   "x-jsonld-extra-terms": {
-    "GenericProfile": "http://www.w3.org/2004/02/skos/core#Concept",
+    "GenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/GenericProfile",
     "definition": "http://www.w3.org/2004/02/skos/core#definition",
     "inScheme": {
       "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#inScheme",
       "x-jsonld-type": "@id"
     },
-    "status": "https://geolabs.github.io/bblocks-generic-profiles/def/status",
     "broader": {
       "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#broader",
       "x-jsonld-type": "@id"
@@ -135,9 +134,15 @@
     "clause": "https://geolabs.github.io/bblocks-generic-profiles/def/clause"
   },
   "x-jsonld-prefixes": {
-    "skos": "http://www.w3.org/2004/02/skos/core#",
     "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
     "proc": "https://w3id.org/ogc/api/processes/",
     "dct": "http://purl.org/dc/terms/"
+  },
+  "x-bblocks-metadata": {
+    "itemIdentifier": "generic-profiles.generic-profile.binary-spatial-predicate",
+    "register": "https://geolabs.github.io/bblocks-generic-profiles/build/register.json",
+    "version": "0.1",
+    "dateOfLastChange": "2026-11-04"
   }
 }

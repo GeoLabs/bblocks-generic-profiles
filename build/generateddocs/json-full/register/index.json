@@ -1,0 +1,97 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.register",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Generic Process Profiles register (ISO 19135:2026)",
+  "abstract": "This register described with the Registered Item Model (ISO 19135:2026): one rim:Register, three rim:RegisterItemClasses (Process Concept, Generic Profile, Implementation Profile) and the three owl:Classes, each a sub-class of rim:RegisterItem, that every entry of the corresponding tier is typed with. A profile of ogc.rim.schemas.register-item-class, following the same pattern as that register's own activity-type profile.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-26T00:00:00Z",
+  "dateOfLastChange": "2026-11-04",
+  "version": "0.1",
+  "itemClass": "model",
+  "register": "generic-profiles",
+  "isProfileOf": [
+    "ogc.rim.schemas.register-item-class"
+  ],
+  "dependsOn": [
+    "ogc.rim.schemas.register",
+    "ogc.rim.schemas.register-item",
+    "ogc.rim.schemas.register-item-class"
+  ],
+  "shaclShapes": {
+    "generic-profiles.register": [
+      "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+    ],
+    "ogc.rim.core-ontology": [
+      "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+    ]
+  },
+  "scope": "dev",
+  "tags": [
+    "register",
+    "ISO 19135",
+    "governance",
+    "WPS"
+  ],
+  "sources": [
+    {
+      "title": "ISO 19135:2026, Geographic information \u2014 Registration and register governance",
+      "link": "https://www.iso.org/standard/86261.html"
+    },
+    {
+      "title": "Registered Item Model (OGC Building Block)",
+      "link": "https://ogcincubator.github.io/registered-item-model/"
+    },
+    {
+      "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, \u00a77.5 Process profiles",
+      "link": "https://docs.ogc.org/is/14-065/14-065.html"
+    }
+  ],
+  "maturity": "development",
+  "highlighted": true,
+  "group": "Register",
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "ontology": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/register/ontology.ttl",
+  "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/register/",
+  "description": "This register, described with the [Registered Item Model](https://ogcincubator.github.io/registered-item-model/)\n(ISO 19135:2026) -- a profile of `ogc.rim.schemas.register-item-class`, built the\nsame way as that register's own `activity-type` profile.\n\n## What it adds\n\nNothing to the register model, and nothing to the three tiers' own content: it names what was\nalready there in ISO 19135:2026 terms, so that this register's management metadata joins the\nsame graph as any other register mapped onto the model.\n\n| ISO 19135:2026 | Here | IRI |\n|---|---|---|\n| `rim:Register` | this register | `https://geolabs.github.io/bblocks-generic-profiles/def/register` |\n| `rim:RegisterItemClass` | Process Concept | `.../def/item-class/process-concept` |\n| `rim:RegisterItemClass` | Generic Profile | `.../def/item-class/generic-profile` |\n| `rim:RegisterItemClass` | Implementation Profile | `.../def/item-class/implementation-profile` |\n| `rim:RegisterItem` sub-class | `gp:ProcessConcept` -- what a Concept entry's JSON `type: ProcessConcept` maps to | `.../def/ProcessConcept` |\n| `rim:RegisterItem` sub-class | `gp:GenericProfile` -- JSON `type: GenericProfile` | `.../def/GenericProfile` |\n| `rim:RegisterItem` sub-class | `gp:ImplementationProfile` -- JSON `type: ImplementationProfile` | `.../def/ImplementationProfile` |\n| `rim:relatedItem` sub-property | `gp:refinesGenericProfile` (Implementation Profile -> Generic Profile) | |\n\nThe three item types remain `skos:Concept`s as well (that is what they were typed as before this\nblock existed, and what `prefLabel`/`definition`/`inScheme`/`broader` presuppose), so nothing\nthat consumed the SKOS view changes.\n\nEvery entry of the three tiers carries, in its JSON, the ISO 19135:2026 required core --\n`objectIdentifier` (its own IRI), `itemClass`, `inRegister`, `validityStatus`,\n`publicationStatus`. Each tier's base schema is an `allOf` of\n`bblocks://ogc.rim.schemas.register-item` (which requires and types that core and\nsupplies the JSON-LD mapping of every `rim:*` term, including `\"valid\"` -> `rim:valid`) plus the\ntier's own properties, of which only `itemClass` and `inRegister` are pinned per tier. This\nregister's contexts therefore declare no `rim:` term of their own. The base `rim:RegisterItemShape`\nthen applies to every entry through the ontology closure (`gp:ProcessConcept rdfs:subClassOf\nrim:RegisterItem`, etc.), and `shapes.shacl` here only adds the per-tier item class / register\npins and the presence of the tier-to-tier link.\n\nThe Concept tier's JSON `type` is `ProcessConcept`, not `Concept`: the inherited context already\nbinds `Concept` to `rim:Concept` (the model's concept-plane class), and the assembled context\nwould otherwise carry two meanings for one term.\n\n## Activity-type register is not this register's tier 3\n\nThis register contains provider-independent Implementation Profiles (tier 3). The process types\nthat classify real execution records belong with the deployable process profiles (tier 4), in\n`bblocks-process-profiles`. There, `ospd.process-profiles.process-type` already supplies the IRI\nthat provenance `Activity` records carry as their `activityType`. It is the natural place to align\nthose process types with the Registered Item Model's `acttype:ActivityType`; this register does not\nassert a speculative cross-link.\n\n## Entry into the register: a proposed addition, not a status\n\nEntries used to carry a `status` from the ISO 19135-1:**2015** list (`submitted`, `valid`,\n`invalid`, `superseded`, `retired`). It is gone: ISO 19135:2026 replaces that single list with two\nindependent concerns (validity, publication), makes supersession a relation, and records how an\nitem came to be in the register as a `rim:RegisterAction`. Every entry now carries:\n\n- `hasAction`: one action of type `addition` (`rim:additionAction`), whose `proposer` is\n  `https://geolabs.github.io/bblocks-generic-profiles/def/geolabs` (the register's owner and\n  manager), `startedAtTime` the `dateTimeAddition` its building block declares, and `appliesTo` the\n  entry itself. The action's own IRI is `<entry id>/actions/addition`;\n- `validityStatus: invalid` and `publicationStatus: published`: no control-body decision has been\n  recorded, so the entry is visible but not in force.\n\n`gp:AdditionProposalShape` rejects an entry with no action at all\n(`tests/item-without-addition-fail.ttl`) and one whose addition has no proposer\n(`tests/addition-without-proposer-fail.ttl`; the plain count and the qualified count are both\nneeded, because pyshacl 0.21.0 does not raise `sh:qualifiedMinCount` on a path with no values). A later decision is a further `rim:RegisterAction`\n(publish, invalidation, supersession) added next to the first, not an edit of it.\n\nWhat is asserted and what is not: the date is the building block's own declared `dateTimeAddition`\n(2026-09-30 to 2026-10-08), which does not match the date of the entry's first commit in this\nrepository (2026-10-07 to 2026-10-09, all 55 differ, some in each direction): the declared date is\nkept, the git date is not claimed. `invalid` is a reading of \"proposed, awaiting a decision\", not\nsomething the model states -- to settle with the model's authors.\n\n## Two deliberate limits\n\n- **Content register, no concept plane.** ISO 19135:2026 lets a register separate meaning\n  (`rim:Concept`/`rim:ConceptVersion`) from representation (`rim:RegisterItem`). Here all three\n  tiers are register items with their own `prefLabel`/`definition` -- the lightest conformant\n  register type. Whether Process Concepts should rather be the concept plane that Generic\n  Profiles `rim:realizes` is left open; the current choice is the one that claims least.\n- **Depends on the model's JSON binding.** The `allOf` above needs the Registered Item Model's\n  `register-item` schema not to pin `type` to `\"rim:RegisterItem\"` and its context to map the\n  `rim:*` terms. Both were contributed by GeoLabs (2026-10-26) and are part of the published model\n  at [ogcincubator/registered-item-model](https://github.com/ogcincubator/registered-item-model)\n  since 2026-10-28; this register imports it by URL.\n\n## Register position\n\nGovernance layer over all four tiers' first three (OGC 14-065 WPS 2.0.2 \u00a77.5): Concept ->\nGeneric Profile -> Implementation Profile. Implementations (instance level) live in\n`bblocks-process-profiles` and are not items of this register.\n",
+  "examples": [
+    {
+      "title": "One chain of this register as ISO 19135:2026 register items",
+      "content": "The register, its three item classes and one item per tier -- the real chain\n*Vector Geometry Processing* (Process Concept) -> *Binary spatial predicate* (Generic\nProfile) -> *Intersects* (Implementation Profile) -- reduced to the register-model\nproperties only. The full entries, with their WPS Table 21 `inputs`/`outputs`, are the JSON\nexamples of `generic-profiles.concept.vector-geometry-processing`,\n`generic-profiles.generic-profile.binary-spatial-predicate` and\n`generic-profiles.implementation-profile.intersects`; their JSON-LD context maps them onto\nexactly these triples.\n",
+      "snippets": [
+        {
+          "language": "turtle",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/register/example_1_1.ttl",
+          "sizeBytes": 3590,
+          "code": "gp:register a rim:Register ;\n    dct:title \"Generic Process Profiles\"@en .\n\ngpic:process-concept a rim:RegisterItemClass ;\n    dct:title \"Process Concept\"@en ;\n    rim:definedIn gp:register .\n\ngpic:generic-profile a rim:RegisterItemClass ;\n    dct:title \"Generic Profile\"@en ;\n    rim:definedIn gp:register .\n\ngpic:implementation-profile a rim:RegisterItemClass ;\n    dct:title \"Implementation Profile\"@en ;\n    rim:definedIn gp:register .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>\n    a gp:ProcessConcept ;\n    skos:prefLabel \"Vector Geometry Processing\" ;\n    rim:objectIdentifier \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing\"^^xsd:anyURI ;\n    rim:itemClass gpic:process-concept ;\n    rim:inRegister gp:register ;\n    rim:validityStatus rim:invalid ;\n    rim:publicationStatus rim:published ;\n    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition>\n    a rim:RegisterAction ;\n    rim:actionType rim:additionAction ;\n    rim:proposer gp:geolabs ;\n    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;\n    prov:startedAtTime \"2026-09-30T00:00:00Z\"^^xsd:dateTime .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>\n    a gp:GenericProfile ;\n    skos:prefLabel \"Binary spatial predicate\" ;\n    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;\n    rim:objectIdentifier \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate\"^^xsd:anyURI ;\n    rim:itemClass gpic:generic-profile ;\n    rim:inRegister gp:register ;\n    rim:validityStatus rim:invalid ;\n    rim:publicationStatus rim:published ;\n    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition>\n    a rim:RegisterAction ;\n    rim:actionType rim:additionAction ;\n    rim:proposer gp:geolabs ;\n    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;\n    prov:startedAtTime \"2026-09-30T00:00:00Z\"^^xsd:dateTime .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>\n    a gp:ImplementationProfile ;\n    skos:prefLabel \"Intersects\" ;\n    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;\n    rim:objectIdentifier \"https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects\"^^xsd:anyURI ;\n    rim:itemClass gpic:implementation-profile ;\n    rim:inRegister gp:register ;\n    rim:validityStatus rim:invalid ;\n    rim:publicationStatus rim:published ;\n    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition>\n    a rim:RegisterAction ;\n    rim:actionType rim:additionAction ;\n    rim:proposer gp:geolabs ;\n    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects> ;\n    prov:startedAtTime \"2026-09-30T00:00:00Z\"^^xsd:dateTime .\n"
+        }
+      ],
+      "prefixes": {
+        "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+        "gpic": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/",
+        "rim": "https://w3id.org/ogc/rim/",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "dct": "http://purl.org/dc/terms/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "prov": "http://www.w3.org/ns/prov#"
+      }
+    }
+  ],
+  "examplePrefixes": {
+    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gpic": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/",
+    "rim": "https://w3id.org/ogc/rim/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dct": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "annotatedSchema": null,
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/register"
+}

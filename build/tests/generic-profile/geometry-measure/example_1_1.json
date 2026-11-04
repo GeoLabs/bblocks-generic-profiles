@@ -4,7 +4,19 @@
   "prefLabel": "Geometry measure",
   "definition": "Computes a scalar measurement of a single geometry. One Geometry input, one Number output.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-06T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
   ],
@@ -23,7 +35,7 @@
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/inputs/geometry",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "title": "Geometry",
       "description": "the input geometry",
       "keywords": [
@@ -34,7 +46,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/number",
       "title": "Number",
       "description": "the computed measurement",
       "keywords": [

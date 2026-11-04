@@ -1,0 +1,87 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gpic: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gp:ProcessConcept a owl:Class ;
+    rdfs:label "Process Concept" ;
+    rdfs:comment "A register item of item class gpic:process-concept (OGC 14-065 WPS 2.0.2 §7.5.1)." ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:subClassOf skos:Concept,
+        rim:RegisterItem .
+
+gpic:generic-profile a rim:RegisterItemClass ;
+    dct:description "WPS 2.0.2 §7.5.2: the abstract signature (named inputs/outputs, multiplicity, abstract data type) of one or more operations; no data format. Items of this class are gp:GenericProfile instances."@en ;
+    dct:title "Generic Profile"@en ;
+    rdfs:isDefinedBy gp: ;
+    rim:definedIn gp:register ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile"^^xsd:anyURI ;
+    rim:validatedBy gp:GenericProfileShape .
+
+gpic:implementation-profile a rim:RegisterItemClass ;
+    dct:description "WPS 2.0.2 §7.5.3: a Generic Profile bound to standard data formats, implementable by multiple providers; not any one deployment. Items of this class are gp:ImplementationProfile instances."@en ;
+    dct:title "Implementation Profile"@en ;
+    rdfs:isDefinedBy gp: ;
+    rim:definedIn gp:register ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile"^^xsd:anyURI ;
+    rim:validatedBy gp:ImplementationProfileShape .
+
+gpic:process-concept a rim:RegisterItemClass ;
+    dct:description "WPS 2.0.2 §7.5.1: high-level documentation about a general group of processes; no input, output, format or implementation. Items of this class are gp:ProcessConcept instances."@en ;
+    dct:title "Process Concept"@en ;
+    rdfs:isDefinedBy gp: ;
+    rim:definedIn gp:register ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept"^^xsd:anyURI ;
+    rim:validatedBy gp:ProcessConceptShape .
+
+gp:refinesGenericProfile a owl:ObjectProperty ;
+    rdfs:label "refines Generic Profile" ;
+    rdfs:comment "Relates an Implementation Profile to the Generic Profile whose signature it binds to formats (WPS 2.0.2 §7.5.3, Table 21)." ;
+    rdfs:domain gp:ImplementationProfile ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:range gp:GenericProfile ;
+    rdfs:subPropertyOf rim:relatedItem .
+
+gp:GenericProfile a owl:Class ;
+    rdfs:label "Generic Profile" ;
+    rdfs:comment "A register item of item class gpic:generic-profile (OGC 14-065 WPS 2.0.2 §7.5.2)." ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:subClassOf skos:Concept,
+        rim:RegisterItem .
+
+gp:ImplementationProfile a owl:Class ;
+    rdfs:label "Implementation Profile" ;
+    rdfs:comment "A register item of item class gpic:implementation-profile (OGC 14-065 WPS 2.0.2 §7.5.3)." ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:subClassOf skos:Concept,
+        rim:RegisterItem .
+
+gp:registerSystem a rim:RegisterSystem ;
+    rdfs:label "OGC Building Blocks register (bblocks-postprocess, GitHub Pages)" ;
+    rdfs:seeAlso <https://github.com/GeoLabs/bblocks-generic-profiles/> .
+
+gp:geolabs a prov:Organization ;
+    rdfs:label "GeoLabs SARL" ;
+    rdfs:seeAlso <https://www.geolabs.fr/> .
+
+gp:register a rim:Register ;
+    dct:description "A general-purpose, engine- and format-agnostic vocabulary of process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5), published as an OGC Building Blocks register."@en ;
+    dct:title "Generic Process Profiles"@en ;
+    rim:functionalIdentifier "https://geolabs.github.io/bblocks-generic-profiles/"^^xsd:anyURI ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/register"^^xsd:anyURI ;
+    rim:registerManager gp:geolabs ;
+    rim:registerOwner gp:geolabs ;
+    rim:runsOn gp:registerSystem .
+
+gp: a owl:Ontology ;
+    dct:creator "GeoLabs SARL" ;
+    dct:description "Registered Item Model profile of the GeoLabs generic-profiles register: Process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5) as ISO 19135:2026 register items." ;
+    dct:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+    dct:title "Generic Process Profiles register" ;
+    owl:imports rim: .
+

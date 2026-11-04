@@ -5,7 +5,19 @@
   "prefLabel": "Analytical hillshading",
   "definition": "Computes how the terrain is lit by a light source. One elevation model and the light source's azimuth and altitude in, one single-band raster out.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-08T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
   ],
@@ -26,7 +38,7 @@
   "inputs": {
     "elevation": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/elevation",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model",
       "title": "Elevation model",
       "description": "the elevation model",
       "keywords": [
@@ -35,7 +47,7 @@
     },
     "azimuth": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/azimuth",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/number",
       "title": "Number",
       "description": "the light source's direction, in degrees clockwise from north",
       "keywords": [
@@ -44,7 +56,7 @@
     },
     "altitude": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/altitude",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/number",
       "title": "Number",
       "description": "the light source's height above the horizon, in degrees",
       "keywords": [
@@ -55,7 +67,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
       "title": "Raster",
       "description": "the shaded relief",
       "keywords": [

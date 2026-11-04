@@ -5,7 +5,19 @@
   "prefLabel": "Geometry buffer",
   "definition": "Computes a new geometry from one input geometry and a scalar distance. A different shape from binary-spatial-operation: one Geometry, one Number, not two Geometries.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
   ],
@@ -25,7 +37,7 @@
   "inputs": {
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/inputs/geometry",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "title": "Geometry",
       "description": "the input geometry",
       "keywords": [
@@ -34,7 +46,7 @@
     },
     "distance": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/inputs/distance",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/number",
       "title": "Number",
       "description": "the buffer distance",
       "keywords": [
@@ -45,7 +57,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "title": "Geometry",
       "description": "the buffered geometry",
       "keywords": [

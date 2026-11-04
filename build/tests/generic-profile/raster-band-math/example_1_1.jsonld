@@ -5,7 +5,19 @@
   "prefLabel": "Raster band math",
   "definition": "Derives a new raster from one or more input rasters via a user-supplied mathematical expression evaluated per pixel. One or more Raster inputs, an expression, one Raster output -- the output's band structure (one band or several) is not part of this signature, see its Implementation Profiles.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
   ],
@@ -24,7 +36,7 @@
   "inputs": {
     "rasters": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "title": "Raster",
       "description": "the input raster band(s)/image(s)",
       "keywords": [
@@ -34,7 +46,7 @@
     },
     "expression": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
       "title": "String",
       "description": "the per-pixel mathematical expression",
       "keywords": [
@@ -45,7 +57,7 @@
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "title": "Raster",
       "description": "the resulting raster",
       "keywords": [

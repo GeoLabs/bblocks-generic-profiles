@@ -1,53 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
 @prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> a skos:Concept ;
-    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Centroid" ],
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> a gp:ImplementationProfile ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
+            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Centroid()" ],
         [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Centroid> ;
             dcterms:title "ZOO-Project Geonovum testbed -- Centroid: Computes the centroid of a polygon." ],
-        [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
-            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Centroid()" ] ;
+        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Centroid" ] ;
     skos:definition "The mathematical centroid for this Surface as a Point. The result is not guaranteed to be on this Surface." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Centroid" ;
     gp:inputs [ ns2:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/inputs/geometry> ] ;
-    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/outputs/result> ] ;
+    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation> ;
-    gp:status "submitted" ;
     proc:keywords "Centroid",
         "ST_Centroid",
         "derived geometry",
         "geometry",
         "vector" ;
-    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Generic Profile: Unary geometry operation" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
+    proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation" ],
+        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/inputs/geometry> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/surface> ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-10-06T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/inputs/geometry> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/surface> ;
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- input `geometry`" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry> ;
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns3:string ;
-            ns3:contentMediaType "text/xml" ;
-            ns3:description "GML" ] .
+    proc:schema [ a ns1:string ;
+            dcterms:description "GML" ;
+            ns1:contentMediaType "text/xml" ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point> ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/point> ;
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- output `result`" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/outputs/result> ;
+            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns3:string ;
-            ns3:contentMediaType "text/xml" ;
-            ns3:description "GML" ] .
+    proc:schema [ a ns1:string ;
+            dcterms:description "GML" ;
+            ns1:contentMediaType "text/xml" ] .
 

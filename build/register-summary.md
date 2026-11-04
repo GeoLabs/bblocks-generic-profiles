@@ -25,17 +25,17 @@ independent bindings is a candidate.
 
 ## Building Blocks
 
+### `generic-profiles.register` — Generic Process Profiles register (ISO 19135:2026)
+
+**Type:** model
+
+This register described with the Registered Item Model (ISO 19135:2026): one rim:Register, three rim:RegisterItemClasses (Process Concept, Generic Profile, Implementation Profile) and the three owl:Classes, each a sub-class of rim:RegisterItem, that every entry of the corresponding tier is typed with. A profile of ogc.rim.schemas.register-item-class, following the same pattern as that register's own activity-type profile.
+
 ### `generic-profiles.concept` — Process Concept
 
 **Type:** schema
 
 The shape every Process Concept shares: high-level documentation about a general group of processes, no input, no output, no format, no implementation (OGC 14-065 WPS 2.0.2 §7.5.1). Each real Concept (generic-profiles.concept.*) is its own building block that allOf-references this one -- this block is not itself a catalogue, only the common shape plus one illustrative example.
-
-### `generic-profiles.data-type` — Data types
-
-**Type:** schema
-
-Reference vocabulary of the kinds of data process profile inputs and outputs carry (raster, single- or multi-band, elevation model, geometry by type, feature collection, point cloud, TIN, table, bounding box, literals).
 
 ### `generic-profiles.concept.point-cloud-processing` — Process Concept: Point Cloud Processing
 

@@ -1,0 +1,48 @@
+Validation report for generic-profiles.register - Generic Process Profiles register (ISO 19135:2026)
+Generated 2026-11-04T19:04:03.849521+00:00
+=== Files ===
+Using example_1_1.ttl from examples
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== Turtle ===
+Prefixes are defined for gp, gpic, rim, skos, dct, xsd, prov
+=== End Turtle ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/register/ontology.ttl
+ - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl
+Validation result for _sources/register/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/register/shapes.shacl:
+ - Shape gp:GenericProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>
+ - Shape gp:GenericProfileItemClassShape: gpic:generic-profile
+ - Shape gp:ProcessConceptItemClassShape: gpic:process-concept
+ - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*
+ - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>
+ - Shape gp:ProcessConceptShape: <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>
+ - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>,<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>,<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>
+ - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile
+
+Validation result for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:
+ - Shape rim:RegisterSpecificationShape: *none*
+ - Shape rim:RegisterItemClassShape: gpic:process-concept,gpic:implementation-profile,gpic:generic-profile
+ - Shape rim:RegisterItemShape: *none*
+ - Shape rim:TextShape: *none*
+ - Shape rim:ConceptVersionShape: *none*
+ - Shape rim:RegisterShape: gp:register
+ - Shape rim:CommitmentShape: *none*
+ - Shape rim:TextShape/sh:or/rdf:first: *none*
+ - Shape rim:ConceptShape: *none*
+ - Shape rim:RegisterActionShape: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition>,<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition>,<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition>
+ - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*
+
+=== End SHACL ===
+

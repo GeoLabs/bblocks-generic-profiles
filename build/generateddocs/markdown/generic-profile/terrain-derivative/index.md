@@ -47,7 +47,19 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Terrain derivative",
   "definition": "Derives one terrain attribute, as a single-band raster, from an elevation model. One elevation model input, one single-band raster output. Covers operations that differ only in the attribute computed (slope, aspect, curvature, terrain ruggedness, topographic position), not in signature.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-08T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
   ],
@@ -67,7 +79,7 @@ Implementation Profile -> Implementation (instance level).
   "inputs": {
     "elevation": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model",
       "title": "Elevation model",
       "description": "the elevation model",
       "keywords": [
@@ -78,7 +90,7 @@ Implementation Profile -> Implementation (instance level).
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
       "title": "Raster",
       "description": "the derived terrain attribute",
       "keywords": [
@@ -99,7 +111,19 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Terrain derivative",
   "definition": "Derives one terrain attribute, as a single-band raster, from an elevation model. One elevation model input, one single-band raster output. Covers operations that differ only in the attribute computed (slope, aspect, curvature, terrain ruggedness, topographic position), not in signature.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-08T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
   ],
@@ -119,7 +143,7 @@ Implementation Profile -> Implementation (instance level).
   "inputs": {
     "elevation": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model",
       "title": "Elevation model",
       "description": "the elevation model",
       "keywords": [
@@ -130,7 +154,7 @@ Implementation Profile -> Implementation (instance level).
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
       "title": "Raster",
       "description": "the derived terrain attribute",
       "keywords": [
@@ -148,32 +172,45 @@ Implementation Profile -> Implementation (instance level).
 @prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
 @prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> a skos:Concept ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> a gp:GenericProfile ;
     skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
     skos:definition "Derives one terrain attribute, as a single-band raster, from an elevation model. One elevation model input, one single-band raster output. Covers operations that differ only in the attribute computed (slope, aspect, curvature, terrain ruggedness, topographic position), not in signature." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Terrain derivative" ;
     gp:inputs [ ns1:elevation <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation> ] ;
     gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result> ] ;
-    gp:status "submitted" ;
     proc:keywords "derivative",
         "elevation",
         "raster",
         "terrain" ;
     proc:metadata [ dcterms:title "Process Concept: Terrain Analysis" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> ;
+    rim:proposer gp:geolabs .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation> dcterms:description "the elevation model" ;
     dcterms:title "Elevation model" ;
-    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model> ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model> ;
     proc:keywords "elevation" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result> dcterms:description "the derived terrain attribute" ;
     dcterms:title "Raster" ;
-    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band> ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band> ;
     proc:keywords "raster" .
 
 
@@ -224,7 +261,7 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
@@ -240,18 +277,17 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
 x-jsonld-extra-terms:
-  GenericProfile: http://www.w3.org/2004/02/skos/core#Concept
+  GenericProfile: https://geolabs.github.io/bblocks-generic-profiles/def/GenericProfile
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
     x-jsonld-type: '@id'
-  status: https://geolabs.github.io/bblocks-generic-profiles/def/status
   broader:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#broader
     x-jsonld-type: '@id'
@@ -263,10 +299,15 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause
 x-jsonld-prefixes:
-  skos: http://www.w3.org/2004/02/skos/core#
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  skos: http://www.w3.org/2004/02/skos/core#
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.generic-profile.terrain-derivative
+  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-04'
 
 ```
 
@@ -281,16 +322,177 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "GenericProfile": "skos:Concept",
-    "id": "@id",
-    "type": "@type",
+    "Register": "rim:Register",
+    "RegisterSystem": "rim:RegisterSystem",
+    "RegisterSpecification": "rim:RegisterSpecification",
+    "RegisterItemClass": "rim:RegisterItemClass",
+    "RegisterItem": "rim:RegisterItem",
+    "RegisterAction": "rim:RegisterAction",
+    "Concept": "rim:Concept",
+    "ConceptVersion": "rim:ConceptVersion",
+    "ConceptSystem": "rim:ConceptSystem",
+    "Commitment": "rim:Commitment",
+    "Agent": "prov:Agent",
+    "Organization": "prov:Organization",
+    "Person": "prov:Person",
+    "label": "rdfs:label",
     "prefLabel": "skos:prefLabel",
     "definition": "skos:definition",
     "inScheme": {
       "@id": "skos:inScheme",
       "@type": "@id"
     },
-    "status": "gp:status",
+    "runsOn": {
+      "@id": "rim:runsOn",
+      "@type": "@id"
+    },
+    "hasSpecification": {
+      "@id": "rim:hasSpecification",
+      "@type": "@id"
+    },
+    "definesSubstantiveChange": "rim:definesSubstantiveChange",
+    "registerOwner": {
+      "@id": "rim:registerOwner",
+      "@type": "@id"
+    },
+    "registerManager": {
+      "@id": "rim:registerManager",
+      "@type": "@id"
+    },
+    "controlBody": {
+      "@id": "rim:controlBody",
+      "@type": "@id"
+    },
+    "registerSystemManager": {
+      "@id": "rim:registerSystemManager",
+      "@type": "@id"
+    },
+    "registerUser": {
+      "@id": "rim:registerUser",
+      "@type": "@id"
+    },
+    "hasCommitment": {
+      "@id": "rim:hasCommitment",
+      "@type": "@id"
+    },
+    "commitmentCategory": {
+      "@id": "rim:commitmentCategory",
+      "@type": "@vocab"
+    },
+    "access": "rim:accessCommitment",
+    "persistence": "rim:persistenceCommitment",
+    "transparency": "rim:transparencyCommitment",
+    "definedIn": {
+      "@id": "rim:definedIn",
+      "@type": "@id"
+    },
+    "validatedBy": {
+      "@id": "rim:validatedBy",
+      "@type": "@id"
+    },
+    "versionOf": {
+      "@id": "rim:versionOf",
+      "@type": "@id"
+    },
+    "version": "rim:version",
+    "valid": "rim:valid",
+    "invalid": "rim:invalid",
+    "published": "rim:published",
+    "unpublished": "rim:unpublished",
+    "appliesTo": {
+      "@id": "rim:appliesTo",
+      "@type": "@id"
+    },
+    "proposer": {
+      "@id": "rim:proposer",
+      "@type": "@id"
+    },
+    "actionType": {
+      "@id": "rim:actionType",
+      "@type": "@vocab"
+    },
+    "addition": "rim:additionAction",
+    "publish": "rim:publishAction",
+    "unpublish": "rim:unpublishAction",
+    "invalidation": "rim:invalidationAction",
+    "supersession": "rim:supersessionAction",
+    "redaction": "rim:redactionAction",
+    "deletion": "rim:deletionAction",
+    "changeClassification": {
+      "@id": "rim:changeClassification",
+      "@type": "@vocab"
+    },
+    "substantive": "rim:substantiveChange",
+    "clarifying": "rim:clarifyingChange",
+    "correctional": "rim:correctionalChange",
+    "startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "id": "@id",
+    "type": "@type",
+    "objectIdentifier": {
+      "@id": "rim:objectIdentifier",
+      "@type": "xsd:anyURI"
+    },
+    "functionalIdentifier": {
+      "@id": "rim:functionalIdentifier",
+      "@type": "xsd:anyURI"
+    },
+    "itemClass": {
+      "@id": "rim:itemClass",
+      "@type": "@id"
+    },
+    "inRegister": {
+      "@id": "rim:inRegister",
+      "@type": "@id"
+    },
+    "realizes": {
+      "@id": "rim:realizes",
+      "@type": "@id"
+    },
+    "validityStatus": {
+      "@id": "rim:validityStatus",
+      "@type": "@vocab"
+    },
+    "publicationStatus": {
+      "@id": "rim:publicationStatus",
+      "@type": "@vocab"
+    },
+    "isRedacted": {
+      "@id": "rim:isRedacted",
+      "@type": "xsd:boolean"
+    },
+    "isDeleted": {
+      "@id": "rim:isDeleted",
+      "@type": "xsd:boolean"
+    },
+    "title": "dct:title",
+    "description": "dct:description",
+    "relatedItem": {
+      "@id": "rim:relatedItem",
+      "@type": "@id"
+    },
+    "supersededBy": {
+      "@id": "rim:supersededBy",
+      "@type": "@id"
+    },
+    "supersedes": {
+      "@id": "rim:supersedes",
+      "@type": "@id"
+    },
+    "hasAction": {
+      "@id": "rim:hasAction",
+      "@type": "@id"
+    },
     "broader": {
       "@id": "skos:broader",
       "@type": "@id"
@@ -298,10 +500,6 @@ Links to the schema:
     "keywords": "proc:keywords",
     "metadata": {
       "@context": {
-        "href": {
-          "@id": "proc:href",
-          "@type": "@id"
-        },
         "role": {
           "@id": "proc:role",
           "@type": "@id"
@@ -317,7 +515,6 @@ Links to the schema:
           "@id": "dct:type",
           "@type": "@id"
         },
-        "description": "dct:description",
         "minOccurs": "proc:minOccurs",
         "maxOccurs": "proc:maxOccurs"
       },
@@ -329,21 +526,24 @@ Links to the schema:
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
-        },
-        "description": "dct:description"
+        }
       },
       "@id": "gp:outputs"
     },
-    "title": "dct:title",
+    "GenericProfile": "gp:GenericProfile",
     "link": {
       "@id": "dct:references",
       "@type": "@id"
     },
     "clause": "gp:clause",
+    "rim": "https://w3id.org/ogc/rim/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dct": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
     "proc": "https://w3id.org/ogc/api/processes/",
-    "dct": "http://purl.org/dc/terms/",
     "@version": 1.1
   }
 }

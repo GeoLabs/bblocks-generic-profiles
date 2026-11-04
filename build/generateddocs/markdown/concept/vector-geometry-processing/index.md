@@ -55,11 +55,23 @@ not part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-pro
 ```json
 {
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing",
-  "type": "Concept",
+  "type": "ProcessConcept",
   "prefLabel": "Vector Geometry Processing",
   "definition": "Operations on vector geometries: testing a spatial relationship between two geometries, deriving a new geometry from one or two others, or measuring a property of a geometry. Covers the spatial predicates, set operations and measures of OGC Simple Feature Access - Common Architecture (06-103r4) and its harmonized-with-SQL predecessor, Simple Features Specification For SQL Revision 1.1 (99-049), independent of any specific operation's own input/output signature.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "source": [
     {
       "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
@@ -78,11 +90,23 @@ not part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-pro
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/vector-geometry-processing/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing",
-  "type": "Concept",
+  "type": "ProcessConcept",
   "prefLabel": "Vector Geometry Processing",
   "definition": "Operations on vector geometries: testing a spatial relationship between two geometries, deriving a new geometry from one or two others, or measuring a property of a geometry. Covers the spatial predicates, set operations and measures of OGC Simple Feature Access - Common Architecture (06-103r4) and its harmonized-with-SQL predecessor, Simple Features Specification For SQL Revision 1.1 (99-049), independent of any specific operation's own input/output signature.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "source": [
     {
       "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
@@ -99,16 +123,30 @@ not part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-pro
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> a skos:Concept ;
-    dcterms:source [ dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1" ],
-        [ dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ;
-            gp:clause "§6.1" ] ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> a gp:ProcessConcept ;
+    dcterms:source [ dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ;
+            gp:clause "§6.1" ],
+        [ dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1" ] ;
     skos:definition "Operations on vector geometries: testing a spatial relationship between two geometries, deriving a new geometry from one or two others, or measuring a property of a geometry. Covers the spatial predicates, set operations and measures of OGC Simple Feature Access - Common Architecture (06-103r4) and its harmonized-with-SQL predecessor, Simple Features Specification For SQL Revision 1.1 (99-049), independent of any specific operation's own input/output signature." ;
     skos:inScheme gp:concept ;
     skos:prefLabel "Vector Geometry Processing" ;
-    gp:status "submitted" .
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+    rim:proposer gp:geolabs .
 
 
 ```
@@ -127,18 +165,17 @@ allOf:
       const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing
       x-jsonld-id: '@id'
     type:
-      const: Concept
+      const: ProcessConcept
       x-jsonld-id: '@type'
     prefLabel:
       const: Vector Geometry Processing
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
 x-jsonld-extra-terms:
-  Concept: http://www.w3.org/2004/02/skos/core#Concept
+  ProcessConcept: https://geolabs.github.io/bblocks-generic-profiles/def/ProcessConcept
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
     x-jsonld-type: '@id'
-  status: https://geolabs.github.io/bblocks-generic-profiles/def/status
   narrower:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#narrower
     x-jsonld-type: '@id'
@@ -149,9 +186,14 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause
 x-jsonld-prefixes:
-  skos: http://www.w3.org/2004/02/skos/core#
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  skos: http://www.w3.org/2004/02/skos/core#
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.concept.vector-geometry-processing
+  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-04'
 
 ```
 
@@ -166,30 +208,195 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "Concept": "skos:Concept",
-    "id": "@id",
-    "type": "@type",
+    "Register": "rim:Register",
+    "RegisterSystem": "rim:RegisterSystem",
+    "RegisterSpecification": "rim:RegisterSpecification",
+    "RegisterItemClass": "rim:RegisterItemClass",
+    "RegisterItem": "rim:RegisterItem",
+    "RegisterAction": "rim:RegisterAction",
+    "Concept": "rim:Concept",
+    "ConceptVersion": "rim:ConceptVersion",
+    "ConceptSystem": "rim:ConceptSystem",
+    "Commitment": "rim:Commitment",
+    "Agent": "prov:Agent",
+    "Organization": "prov:Organization",
+    "Person": "prov:Person",
+    "label": "rdfs:label",
     "prefLabel": "skos:prefLabel",
     "definition": "skos:definition",
     "inScheme": {
       "@id": "skos:inScheme",
       "@type": "@id"
     },
-    "status": "gp:status",
+    "runsOn": {
+      "@id": "rim:runsOn",
+      "@type": "@id"
+    },
+    "hasSpecification": {
+      "@id": "rim:hasSpecification",
+      "@type": "@id"
+    },
+    "definesSubstantiveChange": "rim:definesSubstantiveChange",
+    "registerOwner": {
+      "@id": "rim:registerOwner",
+      "@type": "@id"
+    },
+    "registerManager": {
+      "@id": "rim:registerManager",
+      "@type": "@id"
+    },
+    "controlBody": {
+      "@id": "rim:controlBody",
+      "@type": "@id"
+    },
+    "registerSystemManager": {
+      "@id": "rim:registerSystemManager",
+      "@type": "@id"
+    },
+    "registerUser": {
+      "@id": "rim:registerUser",
+      "@type": "@id"
+    },
+    "hasCommitment": {
+      "@id": "rim:hasCommitment",
+      "@type": "@id"
+    },
+    "commitmentCategory": {
+      "@id": "rim:commitmentCategory",
+      "@type": "@vocab"
+    },
+    "access": "rim:accessCommitment",
+    "persistence": "rim:persistenceCommitment",
+    "transparency": "rim:transparencyCommitment",
+    "definedIn": {
+      "@id": "rim:definedIn",
+      "@type": "@id"
+    },
+    "validatedBy": {
+      "@id": "rim:validatedBy",
+      "@type": "@id"
+    },
+    "versionOf": {
+      "@id": "rim:versionOf",
+      "@type": "@id"
+    },
+    "version": "rim:version",
+    "valid": "rim:valid",
+    "invalid": "rim:invalid",
+    "published": "rim:published",
+    "unpublished": "rim:unpublished",
+    "appliesTo": {
+      "@id": "rim:appliesTo",
+      "@type": "@id"
+    },
+    "proposer": {
+      "@id": "rim:proposer",
+      "@type": "@id"
+    },
+    "actionType": {
+      "@id": "rim:actionType",
+      "@type": "@vocab"
+    },
+    "addition": "rim:additionAction",
+    "publish": "rim:publishAction",
+    "unpublish": "rim:unpublishAction",
+    "invalidation": "rim:invalidationAction",
+    "supersession": "rim:supersessionAction",
+    "redaction": "rim:redactionAction",
+    "deletion": "rim:deletionAction",
+    "changeClassification": {
+      "@id": "rim:changeClassification",
+      "@type": "@vocab"
+    },
+    "substantive": "rim:substantiveChange",
+    "clarifying": "rim:clarifyingChange",
+    "correctional": "rim:correctionalChange",
+    "startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "id": "@id",
+    "type": "@type",
+    "objectIdentifier": {
+      "@id": "rim:objectIdentifier",
+      "@type": "xsd:anyURI"
+    },
+    "functionalIdentifier": {
+      "@id": "rim:functionalIdentifier",
+      "@type": "xsd:anyURI"
+    },
+    "itemClass": {
+      "@id": "rim:itemClass",
+      "@type": "@id"
+    },
+    "inRegister": {
+      "@id": "rim:inRegister",
+      "@type": "@id"
+    },
+    "realizes": {
+      "@id": "rim:realizes",
+      "@type": "@id"
+    },
+    "validityStatus": {
+      "@id": "rim:validityStatus",
+      "@type": "@vocab"
+    },
+    "publicationStatus": {
+      "@id": "rim:publicationStatus",
+      "@type": "@vocab"
+    },
+    "isRedacted": {
+      "@id": "rim:isRedacted",
+      "@type": "xsd:boolean"
+    },
+    "isDeleted": {
+      "@id": "rim:isDeleted",
+      "@type": "xsd:boolean"
+    },
+    "title": "dct:title",
+    "description": "dct:description",
+    "relatedItem": {
+      "@id": "rim:relatedItem",
+      "@type": "@id"
+    },
+    "supersededBy": {
+      "@id": "rim:supersededBy",
+      "@type": "@id"
+    },
+    "supersedes": {
+      "@id": "rim:supersedes",
+      "@type": "@id"
+    },
+    "hasAction": {
+      "@id": "rim:hasAction",
+      "@type": "@id"
+    },
     "source": "dct:source",
     "narrower": {
       "@id": "skos:narrower",
       "@type": "@id"
     },
-    "title": "dct:title",
+    "ProcessConcept": "gp:ProcessConcept",
     "link": {
       "@id": "dct:references",
       "@type": "@id"
     },
     "clause": "gp:clause",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "rim": "https://w3id.org/ogc/rim/",
+    "prov": "http://www.w3.org/ns/prov#",
     "dct": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
     "@version": 1.1
   }
 }

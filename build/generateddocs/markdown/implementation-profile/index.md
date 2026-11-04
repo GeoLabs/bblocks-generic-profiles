@@ -140,7 +140,19 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "prefLabel": "Example Implementation Profile (placeholder, not a real operation)",
   "definition": "Illustrates the shape of an Implementation Profile entry only. Real ones are each their own building block -- see generic-profiles.implementation-profile.intersects, .buffer and the other siblings.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
   "keywords": [
     "vector",
@@ -164,7 +176,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "inputs": {
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -184,7 +196,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     },
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -206,7 +218,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/boolean",
       "keywords": [
         "boolean"
       ],
@@ -232,7 +244,19 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "prefLabel": "Example Implementation Profile (placeholder, not a real operation)",
   "definition": "Illustrates the shape of an Implementation Profile entry only. Real ones are each their own building block -- see generic-profiles.implementation-profile.intersects, .buffer and the other siblings.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
   "keywords": [
     "vector",
@@ -256,7 +280,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "inputs": {
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -276,7 +300,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     },
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -298,7 +322,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/boolean",
       "keywords": [
         "boolean"
       ],
@@ -318,57 +342,67 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns3: <https://w3id.org/ogc/api/schema/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile> a skos:Concept ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile> a gp:ImplementationProfile ;
     skos:definition "Illustrates the shape of an Implementation Profile entry only. Real ones are each their own building block -- see generic-profiles.implementation-profile.intersects, .buffer and the other siblings." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Example Implementation Profile (placeholder, not a real operation)" ;
-    gp:inputs [ ns2:geometry1 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> ;
-            ns2:geometry2 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> ] ;
-    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> ] ;
+    gp:inputs [ ns1:geometry1 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> ;
+            ns1:geometry2 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
-    gp:status "submitted" ;
     proc:keywords "example",
         "geometry",
         "predicate",
         "spatial relation",
         "vector" ;
-    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Generic Profile: Binary spatial predicate" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] .
+    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ],
+        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile> ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry1`" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1> ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
-            ns1:contentMediaType "text/xml" ;
-            ns1:description "GML" ] .
+    proc:schema [ a ns3:string ;
+            dcterms:description "GML" ;
+            ns3:contentMediaType "text/xml" ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/geometry> ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
     proc:keywords "GML",
         "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry2`" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2> ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
-            ns1:contentMediaType "text/xml" ;
-            ns1:description "GML" ] .
+    proc:schema [ a ns3:string ;
+            dcterms:description "GML" ;
+            ns3:contentMediaType "text/xml" ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/boolean> ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/boolean> ;
     proc:keywords "boolean" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- output `result`" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result> ;
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
 
 
@@ -424,250 +458,236 @@ description: "Process Implementation Profile (OGC 14-065 WPS 2.0.2 \xA77.5.3): \
   the corresponding\n  Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output`
   (Table 21 allows any value here,\n  O; the register keeps outputs symmetric with
   inputs); `keywords` Extend (E); `schema`\n  Declare (D)."
-type: object
-required:
-- id
-- type
-- prefLabel
-- definition
-- inScheme
-- status
-- refinesGenericProfile
-- keywords
-- metadata
-- inputs
-- outputs
-properties:
-  id:
-    type: string
-    format: uri
-    x-jsonld-id: '@id'
-  type:
-    const: ImplementationProfile
-    x-jsonld-id: '@type'
-  prefLabel:
-    type: string
-    x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
-  definition:
-    type: string
-    x-jsonld-id: http://www.w3.org/2004/02/skos/core#definition
-  inScheme:
-    type: string
-    format: uri
-    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
-    x-jsonld-type: '@id'
-  status:
-    type: string
-    enum:
-    - submitted
-    - valid
-    - invalid
-    - superseded
-    - retired
-    x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/status
-  refinesGenericProfile:
-    description: The single Generic Profile (generic-profiles.generic-profile.*) this
-      Implementation Profile refines.
-    type: string
-    format: uri
-    x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
-    x-jsonld-type: '@id'
-  keywords:
-    description: Table 21 Process.Keywords (E) -- the Generic Profile's keywords plus
-      this operation's own.
-    type: array
-    minItems: 1
-    items:
+allOf:
+- $ref: https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+- type: object
+  required:
+  - id
+  - type
+  - prefLabel
+  - definition
+  - inScheme
+  - refinesGenericProfile
+  - keywords
+  - metadata
+  - inputs
+  - outputs
+  - itemClass
+  - inRegister
+  - hasAction
+  properties:
+    id:
       type: string
-    x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
-  metadata:
-    description: 'Table 21 Process.Metadata (E, footnote a): the Generic Profile''s
-      references (Table 22 `concept`) plus a Table 22 `generic` reference to the Generic
-      Profile.'
-    type: array
-    items:
-      $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
-    allOf:
-    - contains:
+      format: uri
+      x-jsonld-id: '@id'
+    type:
+      const: ImplementationProfile
+      x-jsonld-id: '@type'
+    prefLabel:
+      type: string
+      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
+    definition:
+      type: string
+      x-jsonld-id: http://www.w3.org/2004/02/skos/core#definition
+    inScheme:
+      type: string
+      format: uri
+      x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
+      x-jsonld-type: '@id'
+    itemClass:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile
+    inRegister:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/register
+    refinesGenericProfile:
+      description: The single Generic Profile (generic-profiles.generic-profile.*)
+        this Implementation Profile refines.
+      type: string
+      format: uri
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
+      x-jsonld-type: '@id'
+    keywords:
+      description: Table 21 Process.Keywords (E) -- the Generic Profile's keywords
+        plus this operation's own.
+      type: array
+      minItems: 1
+      items:
+        type: string
+      x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+    metadata:
+      description: 'Table 21 Process.Metadata (E, footnote a): the Generic Profile''s
+        references (Table 22 `concept`) plus a Table 22 `generic` reference to the
+        Generic Profile.'
+      type: array
+      items:
+        $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+      allOf:
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
+      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+    inputs:
+      description: Keyed by the same input names as the Generic Profile's own `inputs`
+        (Identifier/Title/ Abstract Inherited, not repeated). `schema` is Table 21's
+        Data format (D); `maxOccurs`, when present, Restricts (R, footnote c) the
+        Generic Profile's own value; `keywords` Extend (E) the Generic Profile's;
+        `metadata` Extends (E, footnote a) its superior-profile references.
+      type: object
+      additionalProperties:
         type: object
         required:
-        - role
-        - href
+        - id
+        - dataType
+        - keywords
+        - metadata
         properties:
-          role:
-            const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
-    - contains:
+          dataType:
+            description: 'What kind of data this input is, as a concept of the bblocks-data-types
+              register (`https://geolabs.github.io/bblocks-data-types/def/data-type/...`).
+              The Generic Profile''s, or a narrower one (`skos:broader` chain): e.g.
+              a band-count or a geometry-type restriction.'
+            type: string
+            format: uri
+            x-jsonld-id: http://purl.org/dc/terms/type
+            x-jsonld-type: '@id'
+          id:
+            description: This input's own IRI, `<profile id>/inputs/<name>` -- what
+              a lower tier's metadata `href` points at.
+            type: string
+            format: uri
+            x-jsonld-id: '@id'
+          schema:
+            x-jsonld-id: https://w3id.org/ogc/api/processes/schema
+            x-jsonld-vocab: https://w3id.org/ogc/api/schema/
+          minOccurs:
+            description: 'Restricts the Generic Profile''s minimum, down to 0 (the
+              input becomes optional), never above it. A deliberate departure from
+              Table 21 footnote c ("shall not modify the minimum cardinality"): a
+              Generic Profile keeps `minOccurs: 1` and lower tiers, down to a real
+              implementation, may make the input optional (e.g. `Gdal_Warp`''s `t_srs`,
+              absent meaning no reprojection).'
+            type: integer
+            minimum: 0
+          maxOccurs:
+            oneOf:
+            - type: integer
+            - const: unbounded
+            x-jsonld-id: https://w3id.org/ogc/api/processes/maxOccurs
+          keywords:
+            type: array
+            minItems: 1
+            items:
+              type: string
+            x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+          metadata:
+            type: array
+            items:
+              $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+            contains:
+              type: object
+              required:
+              - role
+              - href
+              properties:
+                role:
+                  const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                  x-jsonld-id: https://w3id.org/ogc/api/processes/role
+                  x-jsonld-type: '@id'
+            x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+    outputs:
+      description: Keyed by the same output names as the Generic Profile's own `outputs`.
+      type: object
+      additionalProperties:
         type: object
         required:
-        - role
-        - href
+        - id
+        - dataType
+        - keywords
+        - metadata
         properties:
-          role:
-            const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
-    x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-    x-jsonld-extra-terms:
-      title: http://purl.org/dc/terms/title
-      role:
-        x-jsonld-id: https://w3id.org/ogc/api/processes/role
-        x-jsonld-type: '@id'
-      href:
-        x-jsonld-id: https://w3id.org/ogc/api/processes/href
-        x-jsonld-type: '@id'
-  inputs:
-    description: Keyed by the same input names as the Generic Profile's own `inputs`
-      (Identifier/Title/ Abstract Inherited, not repeated). `schema` is Table 21's
-      Data format (D); `maxOccurs`, when present, Restricts (R, footnote c) the Generic
-      Profile's own value; `keywords` Extend (E) the Generic Profile's; `metadata`
-      Extends (E, footnote a) its superior-profile references.
-    type: object
-    additionalProperties:
-      type: object
-      required:
-      - id
-      - dataType
-      - keywords
-      - metadata
-      properties:
-        dataType:
-          description: 'What kind of data this input is, as a concept of the generic-profiles.data-type
-            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
-            The Generic Profile''s, or a narrower one (`skos:broader` chain): e.g.
-            a band-count or a geometry-type restriction.'
-          type: string
-          format: uri
-          x-jsonld-id: http://purl.org/dc/terms/type
-          x-jsonld-type: '@id'
-        id:
-          description: This input's own IRI, `<profile id>/inputs/<name>` -- what
-            a lower tier's metadata `href` points at.
-          type: string
-          format: uri
-          x-jsonld-id: '@id'
-        schema:
-          x-jsonld-id: https://w3id.org/ogc/api/processes/schema
-          x-jsonld-vocab: https://w3id.org/ogc/api/schema/
-        minOccurs:
-          description: 'Restricts the Generic Profile''s minimum, down to 0 (the input
-            becomes optional), never above it. A deliberate departure from Table 21
-            footnote c ("shall not modify the minimum cardinality"): a Generic Profile
-            keeps `minOccurs: 1` and lower tiers, down to a real implementation, may
-            make the input optional (e.g. `Gdal_Warp`''s `t_srs`, absent meaning no
-            reprojection).'
-          type: integer
-          minimum: 0
-        maxOccurs:
-          oneOf:
-          - type: integer
-          - const: unbounded
-          x-jsonld-id: https://w3id.org/ogc/api/processes/maxOccurs
-        keywords:
-          type: array
-          minItems: 1
-          items:
+          dataType:
+            description: 'What kind of data this output is, as a concept of the bblocks-data-types
+              register (`https://geolabs.github.io/bblocks-data-types/def/data-type/...`).
+              The Generic Profile''s, or a narrower one (`skos:broader` chain): e.g.
+              a band-count or a geometry-type restriction.'
             type: string
-          x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
-        metadata:
-          type: array
-          items:
-            $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
-          contains:
-            type: object
-            required:
-            - role
-            - href
-            properties:
-              role:
-                const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
-                x-jsonld-id: https://w3id.org/ogc/api/processes/role
-                x-jsonld-type: '@id'
-          x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-          x-jsonld-extra-terms:
-            title: http://purl.org/dc/terms/title
-            href:
-              x-jsonld-id: https://w3id.org/ogc/api/processes/href
-              x-jsonld-type: '@id'
-    x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-    x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
-  outputs:
-    description: Keyed by the same output names as the Generic Profile's own `outputs`.
-    type: object
-    additionalProperties:
-      type: object
-      required:
-      - id
-      - dataType
-      - keywords
-      - metadata
-      properties:
-        dataType:
-          description: 'What kind of data this output is, as a concept of the generic-profiles.data-type
-            vocabulary (`https://geolabs.github.io/bblocks-generic-profiles/def/data-type/...`).
-            The Generic Profile''s, or a narrower one (`skos:broader` chain): e.g.
-            a band-count or a geometry-type restriction.'
-          type: string
-          format: uri
-          x-jsonld-id: http://purl.org/dc/terms/type
-          x-jsonld-type: '@id'
-        id:
-          description: This output's own IRI, `<profile id>/outputs/<name>` -- what
-            a lower tier's metadata `href` points at.
-          type: string
-          format: uri
-          x-jsonld-id: '@id'
-        schema:
-          x-jsonld-id: https://w3id.org/ogc/api/processes/schema
-          x-jsonld-vocab: https://w3id.org/ogc/api/schema/
-        keywords:
-          type: array
-          minItems: 1
-          items:
+            format: uri
+            x-jsonld-id: http://purl.org/dc/terms/type
+            x-jsonld-type: '@id'
+          id:
+            description: This output's own IRI, `<profile id>/outputs/<name>` -- what
+              a lower tier's metadata `href` points at.
             type: string
-          x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
-        metadata:
-          type: array
-          items:
-            $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
-          contains:
-            type: object
-            required:
-            - role
-            - href
-            properties:
-              role:
-                const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
-                x-jsonld-id: https://w3id.org/ogc/api/processes/role
-                x-jsonld-type: '@id'
-          x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-          x-jsonld-extra-terms:
-            title: http://purl.org/dc/terms/title
-            href:
-              x-jsonld-id: https://w3id.org/ogc/api/processes/href
-              x-jsonld-type: '@id'
-    x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-    x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
-  source:
-    type: array
-    items:
-      type: object
-      required:
-      - title
-      properties:
-        title:
-          type: string
-          x-jsonld-id: http://purl.org/dc/terms/title
-        link:
-          type: string
-          format: uri
-          x-jsonld-id: http://purl.org/dc/terms/references
-          x-jsonld-type: '@id'
-    x-jsonld-id: http://purl.org/dc/terms/source
+            format: uri
+            x-jsonld-id: '@id'
+          schema:
+            x-jsonld-id: https://w3id.org/ogc/api/processes/schema
+            x-jsonld-vocab: https://w3id.org/ogc/api/schema/
+          keywords:
+            type: array
+            minItems: 1
+            items:
+              type: string
+            x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+          metadata:
+            type: array
+            items:
+              $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+            contains:
+              type: object
+              required:
+              - role
+              - href
+              properties:
+                role:
+                  const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                  x-jsonld-id: https://w3id.org/ogc/api/processes/role
+                  x-jsonld-type: '@id'
+            x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+    source:
+      type: array
+      items:
+        type: object
+        required:
+        - title
+        properties:
+          title:
+            type: string
+            x-jsonld-id: http://purl.org/dc/terms/title
+          link:
+            type: string
+            format: uri
+            x-jsonld-id: http://purl.org/dc/terms/references
+            x-jsonld-type: '@id'
+      x-jsonld-id: http://purl.org/dc/terms/source
 x-jsonld-extra-terms:
-  ImplementationProfile: http://www.w3.org/2004/02/skos/core#Concept
+  ImplementationProfile: https://geolabs.github.io/bblocks-generic-profiles/def/ImplementationProfile
 x-jsonld-prefixes:
-  skos: http://www.w3.org/2004/02/skos/core#
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  skos: http://www.w3.org/2004/02/skos/core#
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.implementation-profile
+  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-04'
 
 ```
 
@@ -682,35 +702,183 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "ImplementationProfile": "skos:Concept",
-    "id": "@id",
-    "type": "@type",
+    "Register": "rim:Register",
+    "RegisterSystem": "rim:RegisterSystem",
+    "RegisterSpecification": "rim:RegisterSpecification",
+    "RegisterItemClass": "rim:RegisterItemClass",
+    "RegisterItem": "rim:RegisterItem",
+    "RegisterAction": "rim:RegisterAction",
+    "Concept": "rim:Concept",
+    "ConceptVersion": "rim:ConceptVersion",
+    "ConceptSystem": "rim:ConceptSystem",
+    "Commitment": "rim:Commitment",
+    "Agent": "prov:Agent",
+    "Organization": "prov:Organization",
+    "Person": "prov:Person",
+    "label": "rdfs:label",
     "prefLabel": "skos:prefLabel",
     "definition": "skos:definition",
     "inScheme": {
       "@id": "skos:inScheme",
       "@type": "@id"
     },
-    "status": "gp:status",
+    "runsOn": {
+      "@id": "rim:runsOn",
+      "@type": "@id"
+    },
+    "hasSpecification": {
+      "@id": "rim:hasSpecification",
+      "@type": "@id"
+    },
+    "definesSubstantiveChange": "rim:definesSubstantiveChange",
+    "registerOwner": {
+      "@id": "rim:registerOwner",
+      "@type": "@id"
+    },
+    "registerManager": {
+      "@id": "rim:registerManager",
+      "@type": "@id"
+    },
+    "controlBody": {
+      "@id": "rim:controlBody",
+      "@type": "@id"
+    },
+    "registerSystemManager": {
+      "@id": "rim:registerSystemManager",
+      "@type": "@id"
+    },
+    "registerUser": {
+      "@id": "rim:registerUser",
+      "@type": "@id"
+    },
+    "hasCommitment": {
+      "@id": "rim:hasCommitment",
+      "@type": "@id"
+    },
+    "commitmentCategory": {
+      "@id": "rim:commitmentCategory",
+      "@type": "@vocab"
+    },
+    "access": "rim:accessCommitment",
+    "persistence": "rim:persistenceCommitment",
+    "transparency": "rim:transparencyCommitment",
+    "definedIn": {
+      "@id": "rim:definedIn",
+      "@type": "@id"
+    },
+    "validatedBy": {
+      "@id": "rim:validatedBy",
+      "@type": "@id"
+    },
+    "versionOf": {
+      "@id": "rim:versionOf",
+      "@type": "@id"
+    },
+    "version": "rim:version",
+    "valid": "rim:valid",
+    "invalid": "rim:invalid",
+    "published": "rim:published",
+    "unpublished": "rim:unpublished",
+    "appliesTo": {
+      "@id": "rim:appliesTo",
+      "@type": "@id"
+    },
+    "proposer": {
+      "@id": "rim:proposer",
+      "@type": "@id"
+    },
+    "actionType": {
+      "@id": "rim:actionType",
+      "@type": "@vocab"
+    },
+    "addition": "rim:additionAction",
+    "publish": "rim:publishAction",
+    "unpublish": "rim:unpublishAction",
+    "invalidation": "rim:invalidationAction",
+    "supersession": "rim:supersessionAction",
+    "redaction": "rim:redactionAction",
+    "deletion": "rim:deletionAction",
+    "changeClassification": {
+      "@id": "rim:changeClassification",
+      "@type": "@vocab"
+    },
+    "substantive": "rim:substantiveChange",
+    "clarifying": "rim:clarifyingChange",
+    "correctional": "rim:correctionalChange",
+    "startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "id": "@id",
+    "type": "@type",
+    "objectIdentifier": {
+      "@id": "rim:objectIdentifier",
+      "@type": "xsd:anyURI"
+    },
+    "functionalIdentifier": {
+      "@id": "rim:functionalIdentifier",
+      "@type": "xsd:anyURI"
+    },
+    "itemClass": {
+      "@id": "rim:itemClass",
+      "@type": "@id"
+    },
+    "inRegister": {
+      "@id": "rim:inRegister",
+      "@type": "@id"
+    },
+    "realizes": {
+      "@id": "rim:realizes",
+      "@type": "@id"
+    },
+    "validityStatus": {
+      "@id": "rim:validityStatus",
+      "@type": "@vocab"
+    },
+    "publicationStatus": {
+      "@id": "rim:publicationStatus",
+      "@type": "@vocab"
+    },
+    "isRedacted": {
+      "@id": "rim:isRedacted",
+      "@type": "xsd:boolean"
+    },
+    "isDeleted": {
+      "@id": "rim:isDeleted",
+      "@type": "xsd:boolean"
+    },
+    "title": "dct:title",
+    "description": "dct:description",
+    "relatedItem": {
+      "@id": "rim:relatedItem",
+      "@type": "@id"
+    },
+    "supersededBy": {
+      "@id": "rim:supersededBy",
+      "@type": "@id"
+    },
+    "supersedes": {
+      "@id": "rim:supersedes",
+      "@type": "@id"
+    },
+    "hasAction": {
+      "@id": "rim:hasAction",
+      "@type": "@id"
+    },
     "refinesGenericProfile": {
       "@id": "gp:refinesGenericProfile",
       "@type": "@id"
     },
     "keywords": "proc:keywords",
-    "metadata": {
-      "@context": {
-        "href": {
-          "@id": "proc:href",
-          "@type": "@id"
-        },
-        "role": {
-          "@id": "proc:role",
-          "@type": "@id"
-        },
-        "title": "dct:title"
-      },
-      "@id": "proc:metadata"
-    },
+    "metadata": "proc:metadata",
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
@@ -724,7 +892,16 @@ Links to the schema:
           },
           "@id": "proc:schema"
         },
-        "maxOccurs": "proc:maxOccurs"
+        "maxOccurs": "proc:maxOccurs",
+        "metadata": {
+          "@context": {
+            "role": {
+              "@id": "proc:role",
+              "@type": "@id"
+            }
+          },
+          "@id": "proc:metadata"
+        }
       },
       "@id": "gp:inputs"
     },
@@ -740,13 +917,21 @@ Links to the schema:
             "@vocab": "https://w3id.org/ogc/api/schema/"
           },
           "@id": "proc:schema"
+        },
+        "metadata": {
+          "@context": {
+            "role": {
+              "@id": "proc:role",
+              "@type": "@id"
+            }
+          },
+          "@id": "proc:metadata"
         }
       },
       "@id": "gp:outputs"
     },
     "source": {
       "@context": {
-        "title": "dct:title",
         "link": {
           "@id": "dct:references",
           "@type": "@id"
@@ -754,10 +939,15 @@ Links to the schema:
       },
       "@id": "dct:source"
     },
+    "ImplementationProfile": "gp:ImplementationProfile",
+    "rim": "https://w3id.org/ogc/rim/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dct": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
     "proc": "https://w3id.org/ogc/api/processes/",
-    "dct": "http://purl.org/dc/terms/",
     "@version": 1.1
   }
 }

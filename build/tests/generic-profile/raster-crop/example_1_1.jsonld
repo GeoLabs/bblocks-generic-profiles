@@ -5,7 +5,19 @@
   "prefLabel": "Raster crop",
   "definition": "Crops a raster coverage to a region of interest. One Raster input, an area of interest, one Raster output covering only that area.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
   ],
@@ -24,7 +36,7 @@
   "inputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "title": "Raster",
       "description": "the input raster coverage",
       "keywords": [
@@ -33,7 +45,7 @@
     },
     "areaOfInterest": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/bounding-box",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/bounding-box",
       "title": "Bounding box",
       "description": "the region of interest to crop to",
       "keywords": [
@@ -44,7 +56,7 @@
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "title": "Raster",
       "description": "the cropped raster coverage",
       "keywords": [

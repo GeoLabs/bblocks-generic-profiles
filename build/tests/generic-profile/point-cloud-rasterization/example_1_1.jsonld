@@ -5,7 +5,19 @@
   "prefLabel": "Point cloud rasterization",
   "definition": "Converts a point cloud to a raster on a grid of a given cell size. One point cloud and one cell size in, one raster out.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-08T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
   ],
@@ -24,7 +36,7 @@
   "inputs": {
     "points": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/points",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud",
       "title": "Point cloud",
       "description": "the input point cloud",
       "keywords": [
@@ -33,7 +45,7 @@
     },
     "cellSize": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/cellSize",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/number",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/number",
       "title": "Number",
       "description": "the cell size of the output grid",
       "keywords": [
@@ -44,7 +56,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "title": "Raster",
       "description": "the point cloud's attribute(s) on the grid",
       "keywords": [

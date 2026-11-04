@@ -1,8 +1,11 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> a skos:Concept ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> a gp:ProcessConcept ;
     dcterms:source [ dcterms:title "ISO 19123-1:2023 Geographic information -- Schema for coverage geometry and functions -- Part 1: Fundamentals" ],
         [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
             dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
@@ -10,5 +13,16 @@
     skos:inScheme gp:concept ;
     skos:narrower <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
     skos:prefLabel "Raster Coverage Processing" ;
-    gp:status "submitted" .
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+    rim:proposer gp:geolabs .
 

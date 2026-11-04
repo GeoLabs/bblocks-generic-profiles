@@ -5,7 +5,19 @@
   "prefLabel": "Topographic position index",
   "definition": "The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-08T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
   "keywords": [
     "terrain",
@@ -30,7 +42,7 @@
   "inputs": {
     "elevation": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/inputs/elevation",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/elevation-model",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -53,7 +65,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster-single-band",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",

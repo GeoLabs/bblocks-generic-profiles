@@ -1,8 +1,11 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> a skos:Concept ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> a gp:ProcessConcept ;
     dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html> ;
             dcterms:title "SAGA 7.3.0 tool library Shapes - Point Clouds" ],
         [ dcterms:references <https://www.ogc.org/standards/las/> ;
@@ -10,5 +13,16 @@
     skos:definition "Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1)." ;
     skos:inScheme gp:concept ;
     skos:prefLabel "Point Cloud Processing" ;
-    gp:status "submitted" .
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
+    rim:proposer gp:geolabs .
 

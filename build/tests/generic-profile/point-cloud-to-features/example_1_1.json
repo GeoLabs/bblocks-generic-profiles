@@ -4,7 +4,19 @@
   "prefLabel": "Point cloud to features",
   "definition": "Converts a point cloud to a feature collection. One point cloud in, one feature collection out.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-08T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
   ],
@@ -23,7 +35,7 @@
   "inputs": {
     "points": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud",
       "title": "Point cloud",
       "description": "the input point cloud",
       "keywords": [
@@ -34,7 +46,7 @@
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/feature-collection",
       "title": "Feature collection",
       "description": "one feature per point, its attributes as feature attributes",
       "keywords": [

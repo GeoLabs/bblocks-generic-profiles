@@ -48,7 +48,19 @@ the ZOO-Project Geonovum testbed.
   "prefLabel": "Point cloud to shapes",
   "definition": "Converts a point cloud to a SAGA shapes layer of points, i.e. a feature collection.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-08T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features",
   "keywords": [
     "point cloud",
@@ -72,7 +84,7 @@ the ZOO-Project Geonovum testbed.
   "inputs": {
     "points": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -95,7 +107,7 @@ the ZOO-Project Geonovum testbed.
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/feature-collection",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -137,7 +149,19 @@ the ZOO-Project Geonovum testbed.
   "prefLabel": "Point cloud to shapes",
   "definition": "Converts a point cloud to a SAGA shapes layer of points, i.e. a feature collection.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-08T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features",
   "keywords": [
     "point cloud",
@@ -161,7 +185,7 @@ the ZOO-Project Geonovum testbed.
   "inputs": {
     "points": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud",
       "schema": {
         "type": "string",
         "contentEncoding": "base64",
@@ -184,7 +208,7 @@ the ZOO-Project Geonovum testbed.
   "outputs": {
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/feature-collection",
       "schema": {
         "type": "string",
         "contentMediaType": "text/xml",
@@ -220,56 +244,66 @@ the ZOO-Project Geonovum testbed.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> a skos:Concept ;
-    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_5.html> ;
-            dcterms:title "SAGA 7.3.0 -- Point Cloud to Shapes" ],
-        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.5> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.5: Point Cloud to Shapes" ] ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> a gp:ImplementationProfile ;
+    dcterms:source [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.5> ;
+            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.5: Point Cloud to Shapes" ],
+        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_5.html> ;
+            dcterms:title "SAGA 7.3.0 -- Point Cloud to Shapes" ] ;
     skos:definition "Converts a point cloud to a SAGA shapes layer of points, i.e. a feature collection." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Point cloud to shapes" ;
-    gp:inputs [ ns2:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> ] ;
+    gp:inputs [ ns1:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> ] ;
     gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features> ;
-    gp:status "submitted" ;
     proc:keywords "Point Cloud to Shapes",
         "conversion",
         "feature collection",
         "point cloud",
         "pointcloud_tools" ;
-    proc:metadata [ dcterms:title "Generic Profile: Point cloud to features" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-        [ dcterms:title "Process Concept: Point Cloud Processing" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+    proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ],
+        [ dcterms:title "Generic Profile: Point cloud to features" ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud> ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud> ;
     proc:keywords "LAS",
         "point cloud" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud to features -- input `points`" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points> ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "application/vnd.las" ;
-            ns1:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ] .
+    proc:schema [ a ns2:string ;
+            dcterms:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ;
+            ns2:contentEncoding "base64" ;
+            ns2:contentMediaType "application/vnd.las" ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection> ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/feature-collection> ;
     proc:keywords "GML",
         "feature collection" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud to features -- output `result`" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result> ;
+            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns1:string ;
-            ns1:contentMediaType "text/xml" ;
-            ns1:description "GML" ] .
+    proc:schema [ a ns2:string ;
+            dcterms:description "GML" ;
+            ns2:contentMediaType "text/xml" ] .
 
 
 ```
@@ -396,7 +430,7 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/point-cloud
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
@@ -412,28 +446,32 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/feature-collection
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/feature-collection
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
 x-jsonld-extra-terms:
-  ImplementationProfile: http://www.w3.org/2004/02/skos/core#Concept
+  ImplementationProfile: https://geolabs.github.io/bblocks-generic-profiles/def/ImplementationProfile
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
     x-jsonld-type: '@id'
-  status: https://geolabs.github.io/bblocks-generic-profiles/def/status
   source: http://purl.org/dc/terms/source
   title: http://purl.org/dc/terms/title
   link:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
 x-jsonld-prefixes:
-  skos: http://www.w3.org/2004/02/skos/core#
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  skos: http://www.w3.org/2004/02/skos/core#
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.implementation-profile.point-cloud-to-shapes
+  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-04'
 
 ```
 
@@ -448,34 +486,183 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "ImplementationProfile": "skos:Concept",
-    "id": "@id",
-    "type": "@type",
+    "Register": "rim:Register",
+    "RegisterSystem": "rim:RegisterSystem",
+    "RegisterSpecification": "rim:RegisterSpecification",
+    "RegisterItemClass": "rim:RegisterItemClass",
+    "RegisterItem": "rim:RegisterItem",
+    "RegisterAction": "rim:RegisterAction",
+    "Concept": "rim:Concept",
+    "ConceptVersion": "rim:ConceptVersion",
+    "ConceptSystem": "rim:ConceptSystem",
+    "Commitment": "rim:Commitment",
+    "Agent": "prov:Agent",
+    "Organization": "prov:Organization",
+    "Person": "prov:Person",
+    "label": "rdfs:label",
     "prefLabel": "skos:prefLabel",
     "definition": "skos:definition",
     "inScheme": {
       "@id": "skos:inScheme",
       "@type": "@id"
     },
-    "status": "gp:status",
+    "runsOn": {
+      "@id": "rim:runsOn",
+      "@type": "@id"
+    },
+    "hasSpecification": {
+      "@id": "rim:hasSpecification",
+      "@type": "@id"
+    },
+    "definesSubstantiveChange": "rim:definesSubstantiveChange",
+    "registerOwner": {
+      "@id": "rim:registerOwner",
+      "@type": "@id"
+    },
+    "registerManager": {
+      "@id": "rim:registerManager",
+      "@type": "@id"
+    },
+    "controlBody": {
+      "@id": "rim:controlBody",
+      "@type": "@id"
+    },
+    "registerSystemManager": {
+      "@id": "rim:registerSystemManager",
+      "@type": "@id"
+    },
+    "registerUser": {
+      "@id": "rim:registerUser",
+      "@type": "@id"
+    },
+    "hasCommitment": {
+      "@id": "rim:hasCommitment",
+      "@type": "@id"
+    },
+    "commitmentCategory": {
+      "@id": "rim:commitmentCategory",
+      "@type": "@vocab"
+    },
+    "access": "rim:accessCommitment",
+    "persistence": "rim:persistenceCommitment",
+    "transparency": "rim:transparencyCommitment",
+    "definedIn": {
+      "@id": "rim:definedIn",
+      "@type": "@id"
+    },
+    "validatedBy": {
+      "@id": "rim:validatedBy",
+      "@type": "@id"
+    },
+    "versionOf": {
+      "@id": "rim:versionOf",
+      "@type": "@id"
+    },
+    "version": "rim:version",
+    "valid": "rim:valid",
+    "invalid": "rim:invalid",
+    "published": "rim:published",
+    "unpublished": "rim:unpublished",
+    "appliesTo": {
+      "@id": "rim:appliesTo",
+      "@type": "@id"
+    },
+    "proposer": {
+      "@id": "rim:proposer",
+      "@type": "@id"
+    },
+    "actionType": {
+      "@id": "rim:actionType",
+      "@type": "@vocab"
+    },
+    "addition": "rim:additionAction",
+    "publish": "rim:publishAction",
+    "unpublish": "rim:unpublishAction",
+    "invalidation": "rim:invalidationAction",
+    "supersession": "rim:supersessionAction",
+    "redaction": "rim:redactionAction",
+    "deletion": "rim:deletionAction",
+    "changeClassification": {
+      "@id": "rim:changeClassification",
+      "@type": "@vocab"
+    },
+    "substantive": "rim:substantiveChange",
+    "clarifying": "rim:clarifyingChange",
+    "correctional": "rim:correctionalChange",
+    "startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "id": "@id",
+    "type": "@type",
+    "objectIdentifier": {
+      "@id": "rim:objectIdentifier",
+      "@type": "xsd:anyURI"
+    },
+    "functionalIdentifier": {
+      "@id": "rim:functionalIdentifier",
+      "@type": "xsd:anyURI"
+    },
+    "itemClass": {
+      "@id": "rim:itemClass",
+      "@type": "@id"
+    },
+    "inRegister": {
+      "@id": "rim:inRegister",
+      "@type": "@id"
+    },
+    "realizes": {
+      "@id": "rim:realizes",
+      "@type": "@id"
+    },
+    "validityStatus": {
+      "@id": "rim:validityStatus",
+      "@type": "@vocab"
+    },
+    "publicationStatus": {
+      "@id": "rim:publicationStatus",
+      "@type": "@vocab"
+    },
+    "isRedacted": {
+      "@id": "rim:isRedacted",
+      "@type": "xsd:boolean"
+    },
+    "isDeleted": {
+      "@id": "rim:isDeleted",
+      "@type": "xsd:boolean"
+    },
+    "title": "dct:title",
+    "description": "dct:description",
+    "relatedItem": {
+      "@id": "rim:relatedItem",
+      "@type": "@id"
+    },
+    "supersededBy": {
+      "@id": "rim:supersededBy",
+      "@type": "@id"
+    },
+    "supersedes": {
+      "@id": "rim:supersedes",
+      "@type": "@id"
+    },
+    "hasAction": {
+      "@id": "rim:hasAction",
+      "@type": "@id"
+    },
     "refinesGenericProfile": {
       "@id": "gp:refinesGenericProfile",
       "@type": "@id"
     },
     "keywords": "proc:keywords",
-    "metadata": {
-      "@context": {
-        "role": {
-          "@id": "proc:role",
-          "@type": "@id"
-        },
-        "href": {
-          "@id": "proc:href",
-          "@type": "@id"
-        }
-      },
-      "@id": "proc:metadata"
-    },
+    "metadata": "proc:metadata",
     "inputs": {
       "@context": {
         "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
@@ -489,7 +676,16 @@ Links to the schema:
           },
           "@id": "proc:schema"
         },
-        "maxOccurs": "proc:maxOccurs"
+        "maxOccurs": "proc:maxOccurs",
+        "metadata": {
+          "@context": {
+            "role": {
+              "@id": "proc:role",
+              "@type": "@id"
+            }
+          },
+          "@id": "proc:metadata"
+        }
       },
       "@id": "gp:inputs"
     },
@@ -505,20 +701,33 @@ Links to the schema:
             "@vocab": "https://w3id.org/ogc/api/schema/"
           },
           "@id": "proc:schema"
+        },
+        "metadata": {
+          "@context": {
+            "role": {
+              "@id": "proc:role",
+              "@type": "@id"
+            }
+          },
+          "@id": "proc:metadata"
         }
       },
       "@id": "gp:outputs"
     },
     "source": "dct:source",
-    "title": "dct:title",
+    "ImplementationProfile": "gp:ImplementationProfile",
     "link": {
       "@id": "dct:references",
       "@type": "@id"
     },
+    "rim": "https://w3id.org/ogc/rim/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dct": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
     "proc": "https://w3id.org/ogc/api/processes/",
-    "dct": "http://purl.org/dc/terms/",
     "@version": 1.1
   }
 }

@@ -1,0 +1,594 @@
+{
+  "title": "Validation report for generic-profiles.register - Generic Process Profiles register (ISO 19135:2026)",
+  "bblockName": "Generic Process Profiles register (ISO 19135:2026)",
+  "bblockId": "generic-profiles.register",
+  "generated": "2026-11-04T19:04:03.849601+00:00",
+  "result": true,
+  "items": [
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/register/tests/addition-without-proposer-fail.ttl",
+        "url": "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/tests/addition-without-proposer-fail.ttl",
+        "language": "ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using addition-without-proposer-fail.ttl from test resources"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - /github/workspace/_sources/register/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/register/shapes.shacl",
+              "graph": "@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition> ;\n            sh:resultMessage \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n            sh:resultPath rim:hasAction ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:QualifiedMinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n                    sh:minCount 1 ;\n                    sh:path rim:hasAction ;\n                    sh:qualifiedMinCount 1 ;\n                    sh:qualifiedValueShape [ sh:property [ sh:minCount 1 ;\n                                    sh:path rim:proposer ],\n                                [ sh:hasValue rim:additionAction ;\n                                    sh:path rim:actionType ] ] ] ] .\n\n",
+              "isError": true,
+              "message": "Validation result for _sources/register/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in QualifiedValueShapeConstraintComponent (http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:message Literal(\"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:hasAction ; sh:qualifiedMinCount Literal(\"1\", datatype=xsd:integer) ; sh:qualifiedValueShape [ sh:property [ sh:hasValue rim:additionAction ; sh:path rim:actionType ], [ sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:proposer ] ] ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>\n  \tResult Path: rim:hasAction\n  \tMessage: An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\n  "
+            },
+            {
+              "shaclFile": "_sources/register/shapes.shacl",
+              "focusNodes": {
+                "gp:GenericProfileShape": {
+                  "nodes": []
+                },
+                "gp:GenericProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:generic-profile"
+                  ]
+                },
+                "gp:ProcessConceptItemClassShape": {
+                  "nodes": [
+                    "gpic:process-concept"
+                  ]
+                },
+                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "gp:ImplementationProfileShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>"
+                  ]
+                },
+                "gp:ProcessConceptShape": {
+                  "nodes": []
+                },
+                "gp:AdditionProposalShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>"
+                  ]
+                },
+                "gp:ImplementationProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:implementation-profile"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: *none*\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>\n - Shape gp:ProcessConceptShape: *none*\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition>\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
+              "focusNodes": {
+                "rim:RegisterSpecificationShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemClassShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemShape": {
+                  "nodes": []
+                },
+                "rim:TextShape": {
+                  "nodes": []
+                },
+                "rim:ConceptVersionShape": {
+                  "nodes": []
+                },
+                "rim:RegisterShape": {
+                  "nodes": []
+                },
+                "rim:CommitmentShape": {
+                  "nodes": []
+                },
+                "rim:TextShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "rim:ConceptShape": {
+                  "nodes": []
+                },
+                "rim:RegisterActionShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition/actions/addition>"
+                  ]
+                },
+                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:RegisterItemClassShape: *none*\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterShape: *none*\n - Shape rim:CommitmentShape: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:RegisterActionShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/anonymous-addition/actions/addition>\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/register/tests/item-without-addition-fail.ttl",
+        "url": "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/tests/item-without-addition-fail.ttl",
+        "language": "ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using item-without-addition-fail.ttl from test resources"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - /github/workspace/_sources/register/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/register/shapes.shacl",
+              "graph": "@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added> ;\n            sh:resultMessage \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n            sh:resultPath rim:hasAction ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n                    sh:minCount 1 ;\n                    sh:path rim:hasAction ;\n                    sh:qualifiedMinCount 1 ;\n                    sh:qualifiedValueShape [ sh:property [ sh:minCount 1 ;\n                                    sh:path rim:proposer ],\n                                [ sh:hasValue rim:additionAction ;\n                                    sh:path rim:actionType ] ] ] ] .\n\n",
+              "isError": true,
+              "message": "Validation result for _sources/register/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:message Literal(\"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:hasAction ; sh:qualifiedMinCount Literal(\"1\", datatype=xsd:integer) ; sh:qualifiedValueShape [ sh:property [ sh:hasValue rim:additionAction ; sh:path rim:actionType ], [ sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:proposer ] ] ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>\n  \tResult Path: rim:hasAction\n  \tMessage: An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\n  "
+            },
+            {
+              "shaclFile": "_sources/register/shapes.shacl",
+              "focusNodes": {
+                "gp:GenericProfileShape": {
+                  "nodes": []
+                },
+                "gp:GenericProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:generic-profile"
+                  ]
+                },
+                "gp:ProcessConceptItemClassShape": {
+                  "nodes": [
+                    "gpic:process-concept"
+                  ]
+                },
+                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "gp:ImplementationProfileShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>"
+                  ]
+                },
+                "gp:ProcessConceptShape": {
+                  "nodes": []
+                },
+                "gp:AdditionProposalShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>"
+                  ]
+                },
+                "gp:ImplementationProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:implementation-profile"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: *none*\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>\n - Shape gp:ProcessConceptShape: *none*\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/never-added>\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
+              "focusNodes": {
+                "rim:RegisterSpecificationShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemClassShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemShape": {
+                  "nodes": []
+                },
+                "rim:TextShape": {
+                  "nodes": []
+                },
+                "rim:ConceptVersionShape": {
+                  "nodes": []
+                },
+                "rim:RegisterShape": {
+                  "nodes": []
+                },
+                "rim:CommitmentShape": {
+                  "nodes": []
+                },
+                "rim:TextShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "rim:ConceptShape": {
+                  "nodes": []
+                },
+                "rim:RegisterActionShape": {
+                  "nodes": []
+                },
+                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:RegisterItemClassShape: *none*\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterShape: *none*\n - Shape rim:CommitmentShape: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:RegisterActionShape: *none*\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/register/tests/item-without-status-fail.ttl",
+        "url": "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/tests/item-without-status-fail.ttl",
+        "language": "ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using item-without-status-fail.ttl from test resources"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - /github/workspace/_sources/register/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/register/shapes.shacl",
+              "graph": "@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"An Implementation Profile must refine exactly one Generic Profile.\" ;\n            sh:resultPath gp:refinesGenericProfile ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:message \"An Implementation Profile must refine exactly one Generic Profile.\" ;\n                    sh:minCount 1 ;\n                    sh:nodeKind sh:IRI ;\n                    sh:path gp:refinesGenericProfile ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n            sh:resultPath rim:hasAction ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:message \"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\" ;\n                    sh:minCount 1 ;\n                    sh:path rim:hasAction ;\n                    sh:qualifiedMinCount 1 ;\n                    sh:qualifiedValueShape [ sh:property [ sh:minCount 1 ;\n                                    sh:path rim:proposer ],\n                                [ sh:hasValue rim:additionAction ;\n                                    sh:path rim:actionType ] ] ] ] .\n\n",
+              "isError": true,
+              "message": "Validation result for _sources/register/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:message Literal(\"An Implementation Profile must refine exactly one Generic Profile.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:nodeKind sh:IRI ; sh:path gp:refinesGenericProfile ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n  \tResult Path: gp:refinesGenericProfile\n  \tMessage: An Implementation Profile must refine exactly one Generic Profile.\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:message Literal(\"An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\") ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:hasAction ; sh:qualifiedMinCount Literal(\"1\", datatype=xsd:integer) ; sh:qualifiedValueShape [ sh:property [ sh:hasValue rim:additionAction ; sh:path rim:actionType ], [ sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:proposer ] ] ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n  \tResult Path: rim:hasAction\n  \tMessage: An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer.\n  "
+            },
+            {
+              "shaclFile": "_sources/register/shapes.shacl",
+              "focusNodes": {
+                "gp:GenericProfileShape": {
+                  "nodes": []
+                },
+                "gp:GenericProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:generic-profile"
+                  ]
+                },
+                "gp:ProcessConceptItemClassShape": {
+                  "nodes": [
+                    "gpic:process-concept"
+                  ]
+                },
+                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "gp:ImplementationProfileShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>"
+                  ]
+                },
+                "gp:ProcessConceptShape": {
+                  "nodes": []
+                },
+                "gp:AdditionProposalShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>"
+                  ]
+                },
+                "gp:ImplementationProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:implementation-profile"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: *none*\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n - Shape gp:ProcessConceptShape: *none*\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
+              "graph": "@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"Less than 1 values on <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>->rim:validityStatus\" ;\n            sh:resultPath rim:validityStatus ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:class rim:ValidityStatus ;\n                    sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path rim:validityStatus ] ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed> ;\n            sh:resultMessage \"Less than 1 values on <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>->rim:publicationStatus\" ;\n            sh:resultPath rim:publicationStatus ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:class rim:PublicationStatus ;\n                    sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path rim:publicationStatus ] ] .\n\n",
+              "isError": true,
+              "message": "Validation result for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:class rim:ValidityStatus ; sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:validityStatus ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n  \tResult Path: rim:validityStatus\n  \tMessage: Less than 1 values on <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>->rim:validityStatus\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:class rim:PublicationStatus ; sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path rim:publicationStatus ]\n  \tFocus Node: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>\n  \tResult Path: rim:publicationStatus\n  \tMessage: Less than 1 values on <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>->rim:publicationStatus\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
+              "focusNodes": {
+                "rim:RegisterSpecificationShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemClassShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemShape": {
+                  "nodes": []
+                },
+                "rim:TextShape": {
+                  "nodes": []
+                },
+                "rim:ConceptVersionShape": {
+                  "nodes": []
+                },
+                "rim:RegisterShape": {
+                  "nodes": []
+                },
+                "rim:CommitmentShape": {
+                  "nodes": []
+                },
+                "rim:TextShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "rim:ConceptShape": {
+                  "nodes": []
+                },
+                "rim:RegisterActionShape": {
+                  "nodes": []
+                },
+                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:RegisterItemClassShape: *none*\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterShape: *none*\n - Shape rim:CommitmentShape: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:RegisterActionShape: *none*\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/register/example_1_1.ttl",
+        "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/register/example_1_1.ttl",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "text/turtle"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_1.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_1.ttl",
+              "size": 52,
+              "isError": false,
+              "message": "Output Turtle example_1_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Prefixes are defined for gp, gpic, rim, skos, dct, xsd, prov"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - /github/workspace/_sources/register/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/register/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/register/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/register/shapes.shacl",
+              "focusNodes": {
+                "gp:GenericProfileShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>"
+                  ]
+                },
+                "gp:GenericProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:generic-profile"
+                  ]
+                },
+                "gp:ProcessConceptItemClassShape": {
+                  "nodes": [
+                    "gpic:process-concept"
+                  ]
+                },
+                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "gp:ImplementationProfileShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>"
+                  ]
+                },
+                "gp:ProcessConceptShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>"
+                  ]
+                },
+                "gp:AdditionProposalShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>",
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>",
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>"
+                  ]
+                },
+                "gp:ImplementationProfileItemClassShape": {
+                  "nodes": [
+                    "gpic:implementation-profile"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>\n - Shape gp:GenericProfileItemClassShape: gpic:generic-profile\n - Shape gp:ProcessConceptItemClassShape: gpic:process-concept\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>\n - Shape gp:ProcessConceptShape: <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>,<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>,<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>\n - Shape gp:ImplementationProfileItemClassShape: gpic:implementation-profile\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
+              "focusNodes": {
+                "rim:RegisterSpecificationShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemClassShape": {
+                  "nodes": [
+                    "gpic:process-concept",
+                    "gpic:implementation-profile",
+                    "gpic:generic-profile"
+                  ]
+                },
+                "rim:RegisterItemShape": {
+                  "nodes": []
+                },
+                "rim:TextShape": {
+                  "nodes": []
+                },
+                "rim:ConceptVersionShape": {
+                  "nodes": []
+                },
+                "rim:RegisterShape": {
+                  "nodes": [
+                    "gp:register"
+                  ]
+                },
+                "rim:CommitmentShape": {
+                  "nodes": []
+                },
+                "rim:TextShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "rim:ConceptShape": {
+                  "nodes": []
+                },
+                "rim:RegisterActionShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition>",
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition>",
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition>"
+                  ]
+                },
+                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:RegisterItemClassShape: gpic:process-concept,gpic:implementation-profile,gpic:generic-profile\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterShape: gp:register\n - Shape rim:CommitmentShape: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:RegisterActionShape: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition>,<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition>,<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition>\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0
+  }
+}

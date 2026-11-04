@@ -1,5 +1,5 @@
 Validation report for generic-profiles.generic-profile.raster-format-conversion - Generic Profile: Raster format conversion
-Generated 2026-10-09T10:07:59.561752+00:00
+Generated 2026-11-04T19:04:10.398827+00:00
 === Files ===
 Using examples/raster-format-conversion.json from examples
 JSON-LD context is present - uplifting
@@ -10,4 +10,41 @@ Output Turtle example_1_1.ttl created
 === JSON Schema ===
 Validation passed
 === End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/register/ontology.ttl
+ - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl
+Validation result for _sources/register/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/register/shapes.shacl:
+ - Shape gp:GenericProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion>
+ - Shape gp:GenericProfileItemClassShape: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile>
+ - Shape gp:ProcessConceptItemClassShape: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept>
+ - Shape gp:ImplementationProfileShape: *none*
+ - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*
+ - Shape gp:ProcessConceptShape: *none*
+ - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion>
+ - Shape gp:ImplementationProfileItemClassShape: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile>
+
+Validation result for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:
+ - Shape rim:RegisterSpecificationShape: *none*
+ - Shape rim:TextShape/sh:or/rdf:first: *none*
+ - Shape rim:RegisterItemClassShape: *none*
+ - Shape rim:RegisterItemShape: *none*
+ - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape rim:TextShape: *none*
+ - Shape rim:ConceptVersionShape: *none*
+ - Shape rim:RegisterShape: *none*
+ - Shape rim:CommitmentShape: *none*
+ - Shape rim:ConceptShape: *none*
+ - Shape rim:RegisterActionShape: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/actions/addition>
+
+=== End SHACL ===
 

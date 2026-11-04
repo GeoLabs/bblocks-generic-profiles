@@ -1,10 +1,22 @@
 {
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis",
-  "type": "Concept",
+  "type": "ProcessConcept",
   "prefLabel": "Terrain Analysis",
   "definition": "Operations deriving terrain attributes from an elevation model: local surface derivatives (slope, aspect, curvature), neighbourhood indices (terrain ruggedness, topographic position) and illumination (hillshading) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1). A kind of raster coverage processing: an elevation model is a single-band raster whose values are elevations.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-10-08T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "source": [
     {
       "title": "SAGA 7.3.0 tool libraries, category Terrain Analysis",

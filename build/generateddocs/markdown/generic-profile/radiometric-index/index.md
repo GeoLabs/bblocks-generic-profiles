@@ -43,7 +43,19 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Radiometric index",
   "definition": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral bands of one or more input rasters. One or more Raster inputs, the name(s) of the index/indices to compute, one Raster output (one band per selected index).",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
   ],
@@ -62,7 +74,7 @@ Implementation Profile -> Implementation (instance level).
   "inputs": {
     "rasters": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "title": "Raster",
       "description": "the input spectral band(s)",
       "keywords": [
@@ -72,7 +84,7 @@ Implementation Profile -> Implementation (instance level).
     },
     "index": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
       "title": "String",
       "description": "the name of the radiometric index (or indices) to compute",
       "keywords": [
@@ -84,7 +96,7 @@ Implementation Profile -> Implementation (instance level).
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "title": "Raster",
       "description": "the resulting raster (one band per selected index)",
       "keywords": [
@@ -105,7 +117,19 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Radiometric index",
   "definition": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral bands of one or more input rasters. One or more Raster inputs, the name(s) of the index/indices to compute, one Raster output (one band per selected index).",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "broader": [
     "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
   ],
@@ -124,7 +148,7 @@ Implementation Profile -> Implementation (instance level).
   "inputs": {
     "rasters": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "title": "Raster",
       "description": "the input spectral band(s)",
       "keywords": [
@@ -134,7 +158,7 @@ Implementation Profile -> Implementation (instance level).
     },
     "index": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
       "title": "String",
       "description": "the name of the radiometric index (or indices) to compute",
       "keywords": [
@@ -146,7 +170,7 @@ Implementation Profile -> Implementation (instance level).
   "outputs": {
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "title": "Raster",
       "description": "the resulting raster (one band per selected index)",
       "keywords": [
@@ -164,9 +188,12 @@ Implementation Profile -> Implementation (instance level).
 @prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
 @prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> a skos:Concept ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> a gp:GenericProfile ;
     skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
     skos:definition "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral bands of one or more input rasters. One or more Raster inputs, the name(s) of the index/indices to compute, one Raster output (one band per selected index)." ;
     skos:inScheme gp:generic-profile ;
@@ -174,29 +201,39 @@ Implementation Profile -> Implementation (instance level).
     gp:inputs [ ns1:index <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index> ;
             ns1:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters> ] ;
     gp:outputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster> ] ;
-    gp:status "submitted" ;
     proc:keywords "coverage",
         "radiometric index",
         "raster" ;
     proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] .
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> ;
+    rim:proposer gp:geolabs .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index> dcterms:description "the name of the radiometric index (or indices) to compute" ;
     dcterms:title "String" ;
-    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string> ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/string> ;
     proc:keywords "radiometric index" ;
     proc:maxOccurs "unbounded" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters> dcterms:description "the input spectral band(s)" ;
     dcterms:title "Raster" ;
-    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
     proc:keywords "raster" ;
     proc:maxOccurs "unbounded" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster> dcterms:description "the resulting raster (one band per selected index)" ;
     dcterms:title "Raster" ;
-    dcterms:type <https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster> ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
     proc:keywords "raster" .
 
 
@@ -247,7 +284,7 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
         index:
@@ -259,7 +296,7 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/string
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/string
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
@@ -275,18 +312,17 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/data-type/raster
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
 x-jsonld-extra-terms:
-  GenericProfile: http://www.w3.org/2004/02/skos/core#Concept
+  GenericProfile: https://geolabs.github.io/bblocks-generic-profiles/def/GenericProfile
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
     x-jsonld-type: '@id'
-  status: https://geolabs.github.io/bblocks-generic-profiles/def/status
   broader:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#broader
     x-jsonld-type: '@id'
@@ -298,10 +334,15 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause
 x-jsonld-prefixes:
-  skos: http://www.w3.org/2004/02/skos/core#
   gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  skos: http://www.w3.org/2004/02/skos/core#
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.generic-profile.radiometric-index
+  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-04'
 
 ```
 
@@ -316,16 +357,177 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "GenericProfile": "skos:Concept",
-    "id": "@id",
-    "type": "@type",
+    "Register": "rim:Register",
+    "RegisterSystem": "rim:RegisterSystem",
+    "RegisterSpecification": "rim:RegisterSpecification",
+    "RegisterItemClass": "rim:RegisterItemClass",
+    "RegisterItem": "rim:RegisterItem",
+    "RegisterAction": "rim:RegisterAction",
+    "Concept": "rim:Concept",
+    "ConceptVersion": "rim:ConceptVersion",
+    "ConceptSystem": "rim:ConceptSystem",
+    "Commitment": "rim:Commitment",
+    "Agent": "prov:Agent",
+    "Organization": "prov:Organization",
+    "Person": "prov:Person",
+    "label": "rdfs:label",
     "prefLabel": "skos:prefLabel",
     "definition": "skos:definition",
     "inScheme": {
       "@id": "skos:inScheme",
       "@type": "@id"
     },
-    "status": "gp:status",
+    "runsOn": {
+      "@id": "rim:runsOn",
+      "@type": "@id"
+    },
+    "hasSpecification": {
+      "@id": "rim:hasSpecification",
+      "@type": "@id"
+    },
+    "definesSubstantiveChange": "rim:definesSubstantiveChange",
+    "registerOwner": {
+      "@id": "rim:registerOwner",
+      "@type": "@id"
+    },
+    "registerManager": {
+      "@id": "rim:registerManager",
+      "@type": "@id"
+    },
+    "controlBody": {
+      "@id": "rim:controlBody",
+      "@type": "@id"
+    },
+    "registerSystemManager": {
+      "@id": "rim:registerSystemManager",
+      "@type": "@id"
+    },
+    "registerUser": {
+      "@id": "rim:registerUser",
+      "@type": "@id"
+    },
+    "hasCommitment": {
+      "@id": "rim:hasCommitment",
+      "@type": "@id"
+    },
+    "commitmentCategory": {
+      "@id": "rim:commitmentCategory",
+      "@type": "@vocab"
+    },
+    "access": "rim:accessCommitment",
+    "persistence": "rim:persistenceCommitment",
+    "transparency": "rim:transparencyCommitment",
+    "definedIn": {
+      "@id": "rim:definedIn",
+      "@type": "@id"
+    },
+    "validatedBy": {
+      "@id": "rim:validatedBy",
+      "@type": "@id"
+    },
+    "versionOf": {
+      "@id": "rim:versionOf",
+      "@type": "@id"
+    },
+    "version": "rim:version",
+    "valid": "rim:valid",
+    "invalid": "rim:invalid",
+    "published": "rim:published",
+    "unpublished": "rim:unpublished",
+    "appliesTo": {
+      "@id": "rim:appliesTo",
+      "@type": "@id"
+    },
+    "proposer": {
+      "@id": "rim:proposer",
+      "@type": "@id"
+    },
+    "actionType": {
+      "@id": "rim:actionType",
+      "@type": "@vocab"
+    },
+    "addition": "rim:additionAction",
+    "publish": "rim:publishAction",
+    "unpublish": "rim:unpublishAction",
+    "invalidation": "rim:invalidationAction",
+    "supersession": "rim:supersessionAction",
+    "redaction": "rim:redactionAction",
+    "deletion": "rim:deletionAction",
+    "changeClassification": {
+      "@id": "rim:changeClassification",
+      "@type": "@vocab"
+    },
+    "substantive": "rim:substantiveChange",
+    "clarifying": "rim:clarifyingChange",
+    "correctional": "rim:correctionalChange",
+    "startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "id": "@id",
+    "type": "@type",
+    "objectIdentifier": {
+      "@id": "rim:objectIdentifier",
+      "@type": "xsd:anyURI"
+    },
+    "functionalIdentifier": {
+      "@id": "rim:functionalIdentifier",
+      "@type": "xsd:anyURI"
+    },
+    "itemClass": {
+      "@id": "rim:itemClass",
+      "@type": "@id"
+    },
+    "inRegister": {
+      "@id": "rim:inRegister",
+      "@type": "@id"
+    },
+    "realizes": {
+      "@id": "rim:realizes",
+      "@type": "@id"
+    },
+    "validityStatus": {
+      "@id": "rim:validityStatus",
+      "@type": "@vocab"
+    },
+    "publicationStatus": {
+      "@id": "rim:publicationStatus",
+      "@type": "@vocab"
+    },
+    "isRedacted": {
+      "@id": "rim:isRedacted",
+      "@type": "xsd:boolean"
+    },
+    "isDeleted": {
+      "@id": "rim:isDeleted",
+      "@type": "xsd:boolean"
+    },
+    "title": "dct:title",
+    "description": "dct:description",
+    "relatedItem": {
+      "@id": "rim:relatedItem",
+      "@type": "@id"
+    },
+    "supersededBy": {
+      "@id": "rim:supersededBy",
+      "@type": "@id"
+    },
+    "supersedes": {
+      "@id": "rim:supersedes",
+      "@type": "@id"
+    },
+    "hasAction": {
+      "@id": "rim:hasAction",
+      "@type": "@id"
+    },
     "broader": {
       "@id": "skos:broader",
       "@type": "@id"
@@ -333,10 +535,6 @@ Links to the schema:
     "keywords": "proc:keywords",
     "metadata": {
       "@context": {
-        "href": {
-          "@id": "proc:href",
-          "@type": "@id"
-        },
         "role": {
           "@id": "proc:role",
           "@type": "@id"
@@ -352,7 +550,6 @@ Links to the schema:
           "@id": "dct:type",
           "@type": "@id"
         },
-        "description": "dct:description",
         "minOccurs": "proc:minOccurs",
         "maxOccurs": "proc:maxOccurs"
       },
@@ -364,21 +561,24 @@ Links to the schema:
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
-        },
-        "description": "dct:description"
+        }
       },
       "@id": "gp:outputs"
     },
-    "title": "dct:title",
+    "GenericProfile": "gp:GenericProfile",
     "link": {
       "@id": "dct:references",
       "@type": "@id"
     },
     "clause": "gp:clause",
+    "rim": "https://w3id.org/ogc/rim/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dct": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
     "proc": "https://w3id.org/ogc/api/processes/",
-    "dct": "http://purl.org/dc/terms/",
     "@version": 1.1
   }
 }

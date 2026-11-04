@@ -2,7 +2,7 @@
   "title": "Validation report for generic-profiles.implementation-profile.intersection - Implementation Profile: Intersection",
   "bblockName": "Implementation Profile: Intersection",
   "bblockId": "generic-profiles.implementation-profile.intersection",
-  "generated": "2026-10-09T10:08:00.580891+00:00",
+  "generated": "2026-11-04T19:04:16.651773+00:00",
   "result": true,
   "items": [
     {
@@ -40,7 +40,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 63,
+              "size": 69,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }
@@ -55,6 +55,113 @@
               "result": true,
               "isError": false,
               "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - /github/workspace/_sources/register/ontology.ttl\n - https://ogcincubator.github.io/registered-item-model/build/annotated/rim/core-ontology/ontology.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/register/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/register/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/register/shapes.shacl",
+              "focusNodes": {
+                "gp:GenericProfileShape": {
+                  "nodes": []
+                },
+                "gp:GenericProfileItemClassShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile>"
+                  ]
+                },
+                "gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape": {
+                  "nodes": []
+                },
+                "gp:ProcessConceptItemClassShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept>"
+                  ]
+                },
+                "gp:ImplementationProfileShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection>"
+                  ]
+                },
+                "gp:ProcessConceptShape": {
+                  "nodes": []
+                },
+                "gp:AdditionProposalShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection>"
+                  ]
+                },
+                "gp:ImplementationProfileItemClassShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile>"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/register/shapes.shacl:\n - Shape gp:GenericProfileShape: *none*\n - Shape gp:GenericProfileItemClassShape: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile>\n - Shape gp:AdditionProposalShape/sh:property/sh:qualifiedValueShape: *none*\n - Shape gp:ProcessConceptItemClassShape: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept>\n - Shape gp:ImplementationProfileShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection>\n - Shape gp:ProcessConceptShape: *none*\n - Shape gp:AdditionProposalShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection>\n - Shape gp:ImplementationProfileItemClassShape: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile>\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl",
+              "focusNodes": {
+                "rim:RegisterSpecificationShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemClassShape": {
+                  "nodes": []
+                },
+                "rim:RegisterItemShape": {
+                  "nodes": []
+                },
+                "rim:TextShape": {
+                  "nodes": []
+                },
+                "rim:TextShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "rim:ConceptVersionShape": {
+                  "nodes": []
+                },
+                "rim:RegisterShape": {
+                  "nodes": []
+                },
+                "rim:CommitmentShape": {
+                  "nodes": []
+                },
+                "rim:ConceptShape": {
+                  "nodes": []
+                },
+                "rim:RegisterActionShape": {
+                  "nodes": [
+                    "<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/actions/addition>"
+                  ]
+                },
+                "rim:TextShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:\n - Shape rim:RegisterSpecificationShape: *none*\n - Shape rim:RegisterItemClassShape: *none*\n - Shape rim:RegisterItemShape: *none*\n - Shape rim:TextShape: *none*\n - Shape rim:TextShape/sh:or/rdf:first: *none*\n - Shape rim:ConceptVersionShape: *none*\n - Shape rim:RegisterShape: *none*\n - Shape rim:CommitmentShape: *none*\n - Shape rim:ConceptShape: *none*\n - Shape rim:RegisterActionShape: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/actions/addition>\n - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*\n"
             }
           ]
         }

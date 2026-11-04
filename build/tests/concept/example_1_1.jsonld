@@ -1,11 +1,23 @@
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept",
-  "type": "Concept",
+  "type": "ProcessConcept",
   "prefLabel": "Example Concept (placeholder, not a real vocabulary entry)",
   "definition": "Illustrates the shape of a Concept entry only. Real Concepts are each their own building block -- see generic-profiles.concept.vector-geometry-processing for actual vocabulary content.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "source": [
     {
       "title": "Placeholder -- not a real citation",

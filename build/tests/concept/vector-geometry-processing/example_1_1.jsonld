@@ -1,11 +1,23 @@
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/vector-geometry-processing/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing",
-  "type": "Concept",
+  "type": "ProcessConcept",
   "prefLabel": "Vector Geometry Processing",
   "definition": "Operations on vector geometries: testing a spatial relationship between two geometries, deriving a new geometry from one or two others, or measuring a property of a geometry. Covers the spatial predicates, set operations and measures of OGC Simple Feature Access - Common Architecture (06-103r4) and its harmonized-with-SQL predecessor, Simple Features Specification For SQL Revision 1.1 (99-049), independent of any specific operation's own input/output signature.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
-  "status": "submitted",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-09-30T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+  },
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
   "source": [
     {
       "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture",
