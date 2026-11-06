@@ -130,8 +130,8 @@ No answer is needed unless you disagree.
 - `rim:affectedProperty` has range `rdf:property`; `rdf:Property` looks intended.
 - `activity-types-schema/context.jsonld` declares `rim` as `https://w3id.org/ogc/rim#`, while the
   ontology uses `https://w3id.org/ogc/rim/`.
-- The ATR JSON examples pass SHACL, but `rim:RegisterItemShape` has no focus node in the report, so the
-  shape checks nothing. Those examples also use `itemClass: rim:RegisterItemClass`, and `buffer.json`
+- The ATR JSON examples pass SHACL with an empty focus list for `rim:RegisterItemShape`. We found that list
+  unreliable, so we cannot say whether the shape ran. Those examples also use `itemClass: rim:RegisterItemClass`, and `buffer.json`
   uses plain strings such as `point` for entity types.
 - The ATR `abstract` in `bblocks-config.yaml` describes "Generic Profiles". That text comes from our
   register and may not be intended.
