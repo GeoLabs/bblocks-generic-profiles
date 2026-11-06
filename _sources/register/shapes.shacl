@@ -78,15 +78,35 @@ gp:AdditionProposalShape a sh:NodeShape ;
         sh:message "An entry must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer."
     ] .
 
-# Every input and output names its kind of data with `dataType` (dct:type). It must be a
-# dt:DataType concept of the bblocks-data-types register. The ontology of every published data
-# type is a data resource of data-types.vocabulary, which this block depends on, so it is in the
-# SHACL closure and the referenced concept's type is known here, unlike the other cross-item
-# references above.
+# Every input and output of a Generic or Implementation Profile names its kind of data with
+# `dataType` (dct:type). It must be a dt:DataType concept of the bblocks-data-types register. An
+# input or output is the value of a role under gp:inputs / gp:outputs, and the role is a free name,
+# so a SPARQL target is the way to reach it. That target is SHACL-AF: pyshacl honours it in advanced
+# mode, as bblocks-postprocess runs it, and ignores it otherwise. sh:targetSubjectsOf dct:type is too
+# wide: at tier 4 the `type: application/json` of a processDescription link maps to dct:type as well.
+# It is also too narrow: it never reaches an input with no dataType, which this target does.
+#
+# This covers tiers 2 and 3 only. Tier 4 inputs and outputs sit under proc:inputs / proc:outputs,
+# where this target selects nothing, so a dataType at tier 4 is not checked here. To be handled in
+# phase 4 of the tier separation, when tier 4 carries dataType.
+#
+# sh:class needs the concept's rdf:type, which reaches this block through data-types.vocabulary:
+# its `resources` give each data type's ontology by absolute URL, and they load. Its `shaclClosures`
+# list the same files by relative path, and those 53 sources fail at import, as non-blocking
+# messages in the build report. tests/input-datatype-not-a-concept-fail.ttl and its control
+# tests/link-media-type-in-dct-type.ttl show that the check works with what loads.
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dt:  <https://geolabs.github.io/bblocks-data-types/def/> .
 
 gp:DataTypeReferenceShape a sh:NodeShape ;
-    sh:targetSubjectsOf dct:type ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            SELECT ?this WHERE {
+                ?profile <https://geolabs.github.io/bblocks-generic-profiles/def/inputs> | <https://geolabs.github.io/bblocks-generic-profiles/def/outputs> ?roles .
+                ?roles ?role ?this .
+            }
+        """
+    ] ;
     sh:property [ sh:path dct:type ; sh:class dt:DataType ; sh:minCount 1 ; sh:maxCount 1 ;
                   sh:message "An input or output's dataType must be a dt:DataType concept of the bblocks-data-types register." ] .
