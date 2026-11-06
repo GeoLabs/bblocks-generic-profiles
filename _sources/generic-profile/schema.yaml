@@ -6,21 +6,23 @@ description: >-
   share one Generic Profile and differ only at Implementation Profile; `broader` links it to the
   Process Concept (generic-profiles.concept.*) documenting the general group it belongs to.
 
-  Implementation Profiles and Implementations (instance level) -- concrete, deployable processes
-  binding a Generic Profile to real formats -- are not part of this register; they live wherever
-  the implementation itself is profiled (e.g. `ospd.process-profiles.sqlmm.*`) and link back here
-  via their own `implementsProfile` property. This register does not cross-reference them.
+  Implementation Profiles (generic-profiles.implementation-profile.*) refine a Generic Profile
+  with the formats it supports. Implementations (instance level) -- concrete, deployable processes
+  -- are not part of this register; they live wherever the implementation itself is profiled (e.g.
+  `ospd.process-profiles.sqlmm.*`) and link back here via their own `implementsProfile` property.
+  This register does not cross-reference them.
 
   `inputs`/`outputs` use a subset of OGC API - Processes - Part 1: Core's own
   `InputDescription`/`OutputDescription` structure (`title`, `description`, `keywords`,
-  `minOccurs`/`maxOccurs`) rather than a custom vocabulary invented for this register: this
+  `minOccurs`/`maxOccurs`), plus `dataType`, rather than a custom vocabulary invented for this register: this
   project already imports and uses that structure at Implementation (instance level)
   (`ogc.api.processes.v1.schemas.*`), so reusing it here makes all four tiers structurally, not
-  just conceptually, consistent. There is deliberately no type/format property at this tier:
+  just conceptually, consistent. A format is deliberately forbidden at this tier:
   [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32) gives
-  Generic Profile no "Data format" row at all (only Implementation Profile does, "D") -- what
-  WPS §7.5.2 calls a "signature" is the existence, naming and multiplicity of inputs/outputs,
-  conveyed here in `title`/`description` prose, not a machine-checked abstract type.
+  Generic Profile no "Data format" row at all (only Implementation Profile does, "D"). `dataType`
+  is not a format: it is a concept of the bblocks-data-types register, the kind of data a role
+  takes, not its encoding. What WPS §7.5.2 calls a "signature" is the existence, naming,
+  `dataType` and multiplicity of inputs/outputs; `title`/`description` explain them in prose.
 
   This tier is where Table 21 Declares (D) every property it lists for the Process, its Inputs
   and its Outputs -- including `keywords` (Process, Input, Output) and `metadata` (Input,
@@ -87,9 +89,9 @@ allOf:
             clause: {type: string}
       inputs:
         description: >-
-          Keyed by role name. A subset of OGC API - Processes Part 1 Core's own InputDescription:
-          `title`/`description` carry the "signature" informally, `minOccurs`/`maxOccurs` are the one
-          machine-checkable property this tier actually has (Table 21: Input.Multiplicity, D).
+          Keyed by role name. A subset of OGC API - Processes Part 1 Core's own InputDescription, plus
+          `dataType`: `title`/`description` explain the role in prose; `dataType` and
+          `minOccurs`/`maxOccurs` (Table 21: Input.Multiplicity, D) are its machine-checkable properties.
         type: object
         minProperties: 1
         additionalProperties:

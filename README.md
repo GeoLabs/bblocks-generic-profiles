@@ -138,12 +138,14 @@ own `InputDescription`/`OutputDescription`/`schema` structure -- the same struct
 project's Implementation (instance level) tier already uses (`ogc.api.processes.v1.schemas.*`),
 so all four tiers are now structurally, not just conceptually, consistent:
 
-- **Generic Profile** `inputs`/`outputs` carry `title`, `description`, `keywords`, `metadata`
-  and (inputs only) `minOccurs`/`maxOccurs` -- and *nothing else*. Table 21 gives Generic Profile no "Data format"
-  row at all (only Implementation Profile does, "D"), so there is no type/format property at
-  this tier either, regardless of what WPS §7.5.2's "signature" evokes informally; what WPS calls
-  a signature is conveyed here in `title`/`description` prose plus `minOccurs`/`maxOccurs`
-  (Table 21: Input.Multiplicity, D), not a machine-checked abstract type.
+- **Generic Profile** `inputs`/`outputs` carry `dataType`, `title`, `description`, `keywords`,
+  `metadata` and (inputs only) `minOccurs`/`maxOccurs` -- and *nothing else*. Table 21 gives Generic
+  Profile no "Data format" row at all (only Implementation Profile does, "D"), so a format stays
+  forbidden at this tier, regardless of what WPS §7.5.2's "signature" evokes informally. `dataType`
+  is not a format: it is a concept, the kind of data a role takes (see "Data types" above). What
+  WPS calls a signature is conveyed here by the named roles, their `dataType` and
+  `minOccurs`/`maxOccurs` (Table 21: Input.Multiplicity, D), which the build checks, with
+  `title`/`description` explaining them in prose.
 - **Implementation Profile** `inputs`/`outputs` carry a real `schema` (OGC API - Processes' own
   `schema` property: a full JSON Schema / OpenAPI Schema Object) for Table 21's Data format (D),
   and `maxOccurs` (a real Restrict of the Generic Profile's own value, footnote c: *"Implementation
