@@ -64,9 +64,6 @@ imports:
   # Data types (ISO 19135:2026 concept plane): every `dataType` IRI of a Generic or Implementation
   # Profile input/output is a concept of this register (data-types.data-type.*).
   - https://geolabs.github.io/bblocks-data-types/build/register.json
-  # Activity-type register (profiles of the Registered Item Model): an Implementation Profile is
-  # linked to the activity type it is a type of (generic-profiles.register, `activityType`).
-  - https://geonovum-labs.github.io/activity-type-register/build/register.json
 
 schema-oas30-downcompile: False
 

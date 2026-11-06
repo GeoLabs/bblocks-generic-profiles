@@ -81,7 +81,7 @@ repository is changed by this note.
 - `bblocks-process-profiles`: `_sources/process-type/`, `scripts/generate.py` (`process_type_entry` and provenance `activityType`).
 - Registered Item Model: <https://ogcincubator.github.io/registered-item-model/>
   (`_sources/core-ontology/shapes.shacl`).
-- Activity-type register: <https://geonovum-labs.github.io/activity-type-register/>
+- Activity-type register: <https://ogcincubator.github.io/activity-type-register/>
   (`_sources/activity-types/{ontology.ttl,shapes.shacl}`,
   `_sources/geoprocessing-activity-types/shapes.shacl`).
 - Worked integration: <https://geonovum-labs.github.io/ospd-dtaas-register/>.
