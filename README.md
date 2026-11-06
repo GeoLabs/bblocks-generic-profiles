@@ -1,7 +1,8 @@
 # bblocks-generic-profiles
 
-OGC Building Blocks register holding a general-purpose, engine- and format-agnostic vocabulary of
-process Concepts, Generic Profiles and Implementation Profiles, independent of any one project.
+OGC Building Blocks register holding a general-purpose, provider-independent vocabulary of process
+Concepts, Generic Profiles and Implementation Profiles, independent of any one project. Formats
+appear at the Implementation Profile tier only.
 Identifier prefix: `generic-profiles.`
 
 Built with the [OGC Building Blocks template](https://github.com/opengeospatial/bblocks-template)

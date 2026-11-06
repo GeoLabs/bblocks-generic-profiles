@@ -41,7 +41,7 @@ gp:register a rim:Register ;
     rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/register"^^xsd:anyURI ;
     rim:functionalIdentifier "https://geolabs.github.io/bblocks-generic-profiles/"^^xsd:anyURI ;
     dct:title "Generic Process Profiles"@en ;
-    dct:description "A general-purpose, engine- and format-agnostic vocabulary of process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5), published as an OGC Building Blocks register."@en ;
+    dct:description "A general-purpose, provider-independent vocabulary of process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5), published as an OGC Building Blocks register."@en ;
     rim:registerOwner gp:geolabs ;
     rim:registerManager gp:geolabs ;
     rim:runsOn gp:registerSystem .

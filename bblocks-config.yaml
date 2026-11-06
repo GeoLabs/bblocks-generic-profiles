@@ -6,25 +6,27 @@ identifier-prefix: generic-profiles.
 name: Generic Process Profiles
 
 abstract: |
-  A general-purpose, engine- and format-agnostic vocabulary of Generic Profiles, independent of
-  any one project. A Generic Profile gives one or more related operations an abstract I/O
-  signature (named roles and abstract types, no format, no size limit) -- e.g. every binary
-  boolean spatial predicate (Intersects, Contains, Within, Touches, Crosses, Equals, Disjoint)
-  takes two Geometry inputs and returns one Boolean, and is one Generic Profile, not seven.
-  Implementation Profiles (concrete, deployable processes binding a Generic Profile to real
-  formats) are not part of this register; they live wherever the implementation itself is
-  profiled (e.g. `ospd.process-profiles.*` for OSPD's CWL- and OGC-API-Processes-sourced profiles)
-  and link back here via their own `implementsGenericProfile` property.
+  A general-purpose, provider-independent vocabulary of process Concepts, Generic Profiles and
+  Implementation Profiles, the first three tiers of OGC 14-065 WPS 2.0.2 §7.5, independent of any
+  one project. The tiers differ in what they may carry: a Process Concept documents a general group
+  of processes, with no input or output; a Generic Profile gives one or more related operations an
+  abstract I/O signature (named roles, `dataType` concepts, multiplicity; no format, no size limit),
+  e.g. every binary boolean spatial predicate (Intersects, Contains, Within, Touches, Crosses,
+  Equals, Disjoint) takes two geometry inputs and returns one boolean, and is one Generic Profile,
+  not seven; an Implementation Profile refines one Generic Profile with the exchange formats it
+  supports, for any provider to implement. Real deployed or deployable processes, the fourth tier,
+  are not part of this register; they live wherever the implementation itself is profiled (e.g.
+  `ospd.process-profiles.*` for OSPD's CWL- and OGC-API-Processes-sourced profiles) and link back
+  here via their own `implementsProfile` property.
 
 description: |
-  Produced by GeoLabs, first grounded in the 12 spatial predicates and set operations of OGC
-  Simple Feature Access - Common Architecture (06-103r4) as a worked example: every one of them
-  shares one of a small number of I/O shapes, so the Generic Profile layer stays small (3 profiles
-  cover all 12 here). SQL/MM Spatial (ISO/IEC 13249-3) binds the same operations to SQL (the
-  `ST_Geometry` type, `ST_Intersects`-style function names) and real deployed processes bind them
-  further still (e.g. to GML 3.1.0 Polygon) -- both are concrete bindings, not part of this
-  register; they are profiled as Implementation Profiles in whichever register profiles the
-  concrete process (e.g. `ospd.process-profiles.*`), linked back here by `implementsGenericProfile`.
+  Produced by GeoLabs, first grounded in the spatial predicates and set operations of OGC Simple
+  Feature Access - Common Architecture (06-103r4) as a worked example: they share a small number of
+  I/O shapes, so the Generic Profile layer stays small. SQL/MM Spatial (ISO/IEC 13249-3) binds the
+  same operations to SQL (the `ST_Geometry` type, `ST_Intersects`-style function names) and is
+  profiled here, at the Implementation Profile tier; real deployed processes bind them further
+  still (e.g. to GML 3.1.0 Polygon) and are profiled in whichever register profiles the concrete
+  process (e.g. `ospd.process-profiles.*`), linked back here by `implementsProfile`.
   Not limited to spatial operations -- any domain with standardised abstract operations and several
   independent bindings is a candidate.
 
