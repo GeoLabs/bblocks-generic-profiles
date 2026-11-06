@@ -38,6 +38,25 @@ The Concept tier's JSON `type` is `ProcessConcept`, not `Concept`: the inherited
 binds `Concept` to `rim:Concept` (the model's concept-plane class), and the assembled context
 would otherwise carry two meanings for one term.
 
+## Register specification
+
+`gp:specification` (`ontology.ttl`), linked from `gp:register` by `rim:hasSpecification`, is this
+register's `rim:RegisterSpecification`: scope, register type, roles, identifier and version rules,
+eligibility, and what counts as a substantive change. GeoLabs SARL is the control body for now, with
+the stated intention of delegating that role to the OGC or to an OSPD working group.
+
+`rim:definesSubstantiveChange` reads:
+
+> A change is substantive when a register user may have to change their data, profiles or processes because of it, or when it changes what an item means. Any other change to an existing item is clarifying.
+
+The version rule (a substantive change creates a new item or version, a clarifying change keeps
+them) is specific to this project's registers and does not come from ISO 19135. The rule for
+proposals is what applies to every item today:
+
+> While an item is a proposal, with no control-body decision recorded, it is amended in place, with a classified `rim:RegisterAction`. The substantive rule applies once it has been accepted.
+
+The criteria for proposers other than GeoLabs have not been set.
+
 ## Activity-type register is not this register's tier 3
 
 This register contains provider-independent Implementation Profiles (tier 3). The process types
@@ -75,11 +94,10 @@ something the model states -- to settle with the model's authors.
 
 ## Two deliberate limits
 
-- **Content register, no concept plane.** ISO 19135:2026 lets a register separate meaning
-  (`rim:Concept`/`rim:ConceptVersion`) from representation (`rim:RegisterItem`). Here all three
-  tiers are register items with their own `prefLabel`/`definition` -- the lightest conformant
-  register type. Whether Process Concepts should rather be the concept plane that Generic
-  Profiles `rim:realizes` is left open; the current choice is the one that claims least.
+- **Content register, no concept plane.** The Registered Item Model lets a register separate
+  meaning (`rim:Concept`/`rim:ConceptVersion`) from representation (`rim:RegisterItem`). Here all
+  three tiers are register items with their own `prefLabel`/`definition`. The specification records
+  this choice, to be reviewed if a concept plane of operations is created later.
 - **Depends on the model's JSON binding.** The `allOf` above needs the Registered Item Model's
   `register-item` schema not to pin `type` to `"rim:RegisterItem"` and its context to map the
   `rim:*` terms. Both were contributed by GeoLabs (2026-10-26) and are part of the published model

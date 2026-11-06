@@ -1,0 +1,7 @@
+# Must fail: a register specification with no title. rim:RegisterSpecificationShape is the only
+# shape that can reject it.
+@prefix rim: <https://w3id.org/ogc/rim/> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/specification-without-title>
+    a rim:RegisterSpecification ;
+    rim:definesSubstantiveChange "Any change." .

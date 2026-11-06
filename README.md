@@ -288,6 +288,10 @@ profile. It adds no content to the three tiers; it names them in the model's ter
   (`"valid"` -> `rim:valid`), and this register's contexts declare no `rim:` term of their own --
   only `itemClass` and `inRegister` are pinned per tier.
 
+`gp:specification`, the register's `rim:RegisterSpecification`, states its scope, roles, identifier
+and version rules, eligibility and definition of a substantive change. GeoLabs SARL is the control
+body for now, and intends to delegate that role to the OGC or to an OSPD working group.
+
 ### How each entry enters the register
 
 There is no `status` field. ISO 19135:2026 drops the 2015 edition's single lifecycle list
@@ -317,8 +321,8 @@ Two things are deliberately not claimed, and one is open -- see the block's
 [`description.md`](_sources/register/description.md):
 
 - it is a *content register* (no concept plane: each item carries its own `prefLabel`/
-  `definition`); whether Process Concepts should rather be `rim:Concept`s that Generic Profiles
-  `rim:realizes` is an open question;
+  `definition`), as `gp:specification` records, to be reviewed if a concept plane of operations is
+  created later;
 - the `allOf` needs the model's JSON binding -- a `register-item` schema that does not pin `type`
   to `"rim:RegisterItem"`, and a context that maps the `rim:*` terms. Both were contributed by
   GeoLabs and are now part of the published model
