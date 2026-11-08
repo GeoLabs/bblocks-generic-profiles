@@ -55,6 +55,13 @@ proposals is what applies to every item today:
 
 > While an item is a proposal, with no control-body decision recorded, it is amended in place, with a classified `rim:RegisterAction`. The substantive rule applies once it has been accepted.
 
+The classified action of that rule has the type `gp:amendmentAction`, defined by this
+specification: an in-place change to a proposal, with no control-body decision recorded, always
+classified `clarifying` or `substantive`. The Registered Item Model has no such type and lets a
+register specification define one; this type is specific to this register and will be replaced if
+the model defines one. No shape enforces the classification of such an action: the model's
+`rim:RegisterActionShape` only limits it to one.
+
 The criteria for proposers other than GeoLabs have not been set.
 
 ## Activity-type register is not this register's tier 3
