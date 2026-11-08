@@ -1,6 +1,6 @@
 # Questions for the Registered Item Model and Activity Type Register maintainers
 
-Status: draft, 2026-11-05. Not sent.
+Status: draft, 2026-11-05, question 12 added 2026-11-08. Not sent.
 
 GeoLabs maintains `bblocks-generic-profiles`, a register of process profiles based on the WPS 2.0.2
 tiers (OGC 14-065 §7.5). We want to integrate the Activity Type Register (ATR) without breaking the
@@ -122,6 +122,16 @@ The ATR and RIM `register.json` files respond on both `geonovum-labs.github.io` 
 
 `https://w3id.org/ogc/rim/` and `https://w3id.org/ogc/rim/activity-type/ActivityType` returned 404 on
 2026-11-05. Is that redirect planned?
+
+## Register actions
+
+### 12. Which action type amends a proposal in place?
+
+The model has no action type for amending a proposal in place, before any control-body decision. We
+therefore define `gp:amendmentAction` in our register specification, as `core-ontology/skos.ttl`
+line 47 allows ("a register may define further action types in its register specification"), and
+always classify such an action `clarifying` or `substantive`. Will the model provide a common type
+for this, and under which IRI? We would replace ours with it.
 
 ## Possible defects
 
