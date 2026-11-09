@@ -69,6 +69,12 @@ crossing into OGC API - Processes - Part 2: Deploy, Replace, Undeploy, not used 
 shape again (pixel offset/size, a circle, a reference image/vector) -- none of them a bbox or an
 encoded geometry either, and not modelled here.
 
+This is a real format gap, not a missing declaration: the testbed process `OTB.ExtractROI` takes
+the area as four numbers (`mode.extent.ulx`, `uly`, `lrx`, `lry`) with a unit
+(`mode.extent.unit`: `pxl`, `phy` or `lonlat`), not as a bbox object, so it serves no media type of
+the format `ogcapi-processes-bbox` (`application/json`, inferred) and `areaOfInterest` stays unbound
+at tier 4.
+
 Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32), a specific deployment may *Extend* (E, footnote d) this minimal default with additional formats it happens to support -- this tier intentionally does not pre-empt that.
 
 ## Relations
@@ -93,3 +99,4 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 - `operation-sources-2026-11-09`, clarifying
 - `representation-2026-11-09`, substantive
 - `tools-2026-11-09`, clarifying
+- `bbox-gap-2026-11-09`, clarifying
