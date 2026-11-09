@@ -45,11 +45,14 @@ footnote d). For rasters, the Geonovum testbed's SAGA also serves ESRI ASCII gri
 ## Register position
 
 Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Generic Profile ->
-**Implementation Profile** -> Implementation (instance level). The fourth tier is not part of this
-register: deployed processes are profiled in `bblocks-process-profiles`, and name this profile with
-`implementsProfile`. Tools, hosts and testbeds are recorded there; this item carries none as
-keyword or source (decision D4). The sections above keep the tools and testbed that its defaults
-were grounded in.
+**Implementation Profile** -> Implementation (instance level). The fourth tier is not part of
+this register: see [`ospd.process-profiles.terrain.slope`](https://github.com/GeoLabs/bblocks-process-profiles/tree/master/_sources/terrain/slope)
+in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum testbed
+(<https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.0>).
+
+That process names this profile with `implementsProfile`. Tools, hosts and testbeds are
+recorded there; this item carries none as keyword or source (decision D4). The sections
+above keep the tools and testbed that its defaults were grounded in.
 
 ## Changes
 
@@ -59,3 +62,4 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 - `operation-sources-2026-11-09`, clarifying
 - `representation-2026-11-09`, substantive
 - `tools-2026-11-09`, clarifying
+- `sections-restored-2026-11-09`, clarifying

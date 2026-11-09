@@ -73,9 +73,9 @@ the output RangeType) is a real modelling task of its own, not a one-line schema
 left as an open point for a future revision rather than bolted on here provisionally. The band
 count itself is structurally enforced: since the data type `raster-single-band` was added
 (declared 2026-10-08; first used here in commit `1ec787b`, 2026-10-09), `raster-band-math`'s output
-has the dataType `raster-single-band` and this profile's keeps `raster`, each pinned by its
-`schema.yaml` and checked by `gp:DataTypeReferenceShape`. What stays in prose only is which bands
-the output has.
+has the dataType `raster-single-band` and this profile's keeps `raster`, each pinned by the `const`
+of the profile's `schema.yaml` (`gp:DataTypeReferenceShape` only checks that a dataType is a
+`dt:DataType`). What stays in prose only is which bands the output has.
 
 ## Data formats
 
@@ -99,11 +99,14 @@ Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-06
 ## Register position
 
 Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Generic Profile ->
-**Implementation Profile** -> Implementation (instance level). The fourth tier is not part of this
-register: deployed processes are profiled in `bblocks-process-profiles`, and name this profile with
-`implementsProfile`. Tools, hosts and testbeds are recorded there; this item carries none as
-keyword or source (decision D4). The sections above keep the tools and testbed that its defaults
-were grounded in.
+**Implementation Profile** -> Implementation (instance level). The fourth tier is not part of
+this register: see [`ospd.process-profiles.raster.band-math-multiband`](https://github.com/GeoLabs/bblocks-process-profiles/tree/master/_sources/raster/band-math-multiband)
+in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum testbed
+(<https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/OTB.BandMathX>).
+
+That process names this profile with `implementsProfile`. Tools, hosts and testbeds are
+recorded there; this item carries none as keyword or source (decision D4). The sections
+above keep the tools and testbed that its defaults were grounded in.
 
 ## Changes
 
@@ -115,3 +118,5 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 - `tools-2026-11-09`, clarifying
 - `data-type-2026-11-09`, substantive
 - `band-count-2026-11-09`, clarifying
+- `band-count-correction-2026-11-09`, clarifying
+- `sections-restored-2026-11-09`, clarifying

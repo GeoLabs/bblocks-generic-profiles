@@ -62,15 +62,23 @@ Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-06
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.raster-band-math`](../../generic-profile/raster-band-math/)
 - `activityType`: [`generic-profiles.activity-type.raster-band-math`](../../activity-type/raster-band-math/)
+- Sibling of [`raster-band-math-multiband`](../raster-band-math-multiband/) (`OTB.BandMathX`/
+  muParserX, may produce several bands): both refine the same Generic Profile, since the
+  distinction between them is a band-count/format detail, not a signature difference -- see the
+  sibling's "Open question" section for how that distinction is expressed (by the output dataType,
+  `raster-single-band` here) and what is not expressed yet (which bands).
 
 ## Register position
 
 Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Generic Profile ->
-**Implementation Profile** -> Implementation (instance level). The fourth tier is not part of this
-register: deployed processes are profiled in `bblocks-process-profiles`, and name this profile with
-`implementsProfile`. Tools, hosts and testbeds are recorded there; this item carries none as
-keyword or source (decision D4). The sections above keep the tools and testbed that its defaults
-were grounded in.
+**Implementation Profile** -> Implementation (instance level). The fourth tier is not part of
+this register: see [`ospd.process-profiles.raster.band-math`](https://github.com/GeoLabs/bblocks-process-profiles/tree/master/_sources/raster/band-math)
+in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum testbed
+(<https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/OTB.BandMath>).
+
+That process names this profile with `implementsProfile`. Tools, hosts and testbeds are
+recorded there; this item carries none as keyword or source (decision D4). The sections
+above keep the tools and testbed that its defaults were grounded in.
 
 ## Changes
 
@@ -81,3 +89,4 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 - `representation-2026-11-09`, substantive
 - `tools-2026-11-09`, clarifying
 - `data-type-2026-11-09`, substantive
+- `sections-restored-2026-11-09`, clarifying
