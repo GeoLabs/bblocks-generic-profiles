@@ -2,6 +2,13 @@
 
 Status: design note, 2026-10-30. Records why the proposed tier-3 link was removed and why the process-type entries in `bblocks-process-profiles` are the natural integration point for `acttype:ActivityType`. Statements about other registers were checked against their published sources.
 
+Update, 2026-11-09: decisions D3 and D4 reinstate the link, on a different target. The reason an
+Implementation Profile cannot be an activity type (below) still holds. Instead, this register now
+holds one `acttype:ActivityType` item per operation, distinct from the profile, and each
+Implementation Profile points to it with `gp:activityType`. The sections "Why a direct tier-3 link
+was withdrawn" and "The better integration point" describe the state before that decision. How the
+tier-4 process types relate to these items is decision D8, still open.
+
 ## The two notions
 
 | | Implementation Profile (`bblocks-generic-profiles`) | Activity type (`activity-type-register`) |

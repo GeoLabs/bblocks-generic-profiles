@@ -64,14 +64,24 @@ the model defines one. No shape enforces the classification of such an action: t
 
 The criteria for proposers other than GeoLabs have not been set.
 
-## Activity-type register is not this register's tier 3
+## Activity types: the meaning of each operation
 
-This register contains provider-independent Implementation Profiles (tier 3). The process types
-that classify real execution records belong with the deployable process profiles (tier 4), in
-`bblocks-process-profiles`. There, `ospd.process-profiles.process-type` already supplies the IRI
-that provenance `Activity` records carry as their `activityType`. It is the natural place to align
-those process types with the Registered Item Model's `acttype:ActivityType`; this register does not
-assert a speculative cross-link.
+An Implementation Profile is not an activity type: `rim:RegisterItemShape` allows one item class per
+item, and `gpic:implementation-profile` and `acttype:activityTypeItemClass` are two
+(`docs/implementation-profile-vs-activity-type.md`). The meaning of an operation is therefore held by
+a separate item of this register, one per operation (decision D3, 2026-11-05):
+`generic-profiles.activity-type.*`, typed `acttype:ActivityType`, of the Activity Type Register's item
+class, in `gp:register`. It carries the operation's definition, the standards that define it (Simple
+Feature Access, SQL/MM `ST_*` names, WCPS, the literature of terrain indices) and its illustrations.
+
+Each Implementation Profile links to it with `activityType` (`gp:activityType`, a sub-property of
+`rim:relatedItem`, exactly one IRI). The Implementation Profile keeps the signature, the
+representations and domain keywords (decision D4).
+
+The process types of deployed processes (tier 4, `ospd.process-profiles.process-type` in
+`bblocks-process-profiles`) are activity types too. How they relate to these items, and how a run is
+typed, is not settled here: it waits for the answers of the model maintainers
+(`docs/questions-for-rim-atr-maintainers.md`, decision D8).
 
 ## Entry into the register: a proposed addition, not a status
 
