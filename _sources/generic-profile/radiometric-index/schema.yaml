@@ -22,7 +22,7 @@ allOf:
       inputs:
         properties:
           rasters: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}}}
-          index: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/string"}}}
+          index: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index"}}}
       outputs:
         properties:
           raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}}}

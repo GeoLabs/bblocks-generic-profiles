@@ -18,7 +18,7 @@ format, D; decision D6):
 | Role | Data type | Representation |
 |---|---|---|
 | input `rasters` (minOccurs 1, maxOccurs unbounded) | `raster` | [`raster-geotiff`](https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff) (Raster as GeoTIFF) |
-| input `expression` | `string` | -- |
+| input `expression` | `expression` | -- |
 | output `raster` | `raster` | [`raster-geotiff`](https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff) (Raster as GeoTIFF) |
 
 The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
@@ -59,3 +59,4 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 - `operation-sources-2026-11-09`, clarifying
 - `representation-2026-11-09`, substantive
 - `tools-2026-11-09`, clarifying
+- `data-type-2026-11-09`, substantive
