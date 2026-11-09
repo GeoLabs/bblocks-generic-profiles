@@ -83,6 +83,15 @@ coverage described as a feature, as `geoproc:GeoprocessingActivityType` says),
 Is a class bridge from a concept to a GeoSPARQL class the recommended way to be more precise? GeoSPARQL
 has no raster class: is `geo:Feature` the right parent for a raster, and for a point cloud?
 
+Two points of this choice go beyond what your sources state:
+
+- Point clouds are typed `geo:Feature`. The geoproc text names "coverages described as features" but
+  says nothing of point clouds.
+- We use GeoSPARQL classes directly as entity types, whereas the ATR defines an entity type as "a type
+  of prov:Entity" and the NDVI example makes its types sub-classes of both `geo:Feature` and
+  `prov:Entity`. `geo:Geometry` or `geo:Feature` used directly are not declared sub-classes of
+  `prov:Entity`. Is that acceptable, or should a register declare its own entity classes?
+
 ## Questions on the Registered Item Model
 
 ### 6. What is the cardinality of `rim:realizes`?
