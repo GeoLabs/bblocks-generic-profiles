@@ -117,7 +117,9 @@ something the model states -- to settle with the model's authors.
 - **Content register, no concept plane.** The Registered Item Model lets a register separate
   meaning (`rim:Concept`/`rim:ConceptVersion`) from representation (`rim:RegisterItem`). Here all
   three tiers are register items with their own `prefLabel`/`definition`. The specification records
-  this choice, to be reviewed if a concept plane of operations is created later.
+  this choice, to be reviewed if a concept plane of operations is created later. The activity types
+  live here pending decision D8; the register stays a content register meanwhile, to be reviewed
+  with the maintainers' answers.
 - **Depends on the model's JSON binding.** The `allOf` above needs the Registered Item Model's
   `register-item` schema not to pin `type` to `"rim:RegisterItem"` and its context to map the
   `rim:*` terms. Both were contributed by GeoLabs (2026-10-26) and are part of the published model
