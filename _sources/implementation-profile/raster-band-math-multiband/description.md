@@ -70,10 +70,12 @@ on the output, not a cardinality.
 **This register does not yet model a RangeType-like structure.** Adding one properly (field
 names, per-field data types, and how a process declares what it contributes to or restricts in
 the output RangeType) is a real modelling task of its own, not a one-line schema addition, and is
-left as an open point for a future revision rather than bolted on here provisionally. For now,
-the distinction between this Implementation Profile and `raster-band-math` is documented only in
-prose (their respective `description.md` and `prefLabel`/`definition`), not structurally
-enforced in `schema` or any other schema property.
+left as an open point for a future revision rather than bolted on here provisionally. The band
+count itself is structurally enforced: since the data type `raster-single-band` was added
+(declared 2026-10-08; first used here in commit `1ec787b`, 2026-10-09), `raster-band-math`'s output
+has the dataType `raster-single-band` and this profile's keeps `raster`, each pinned by its
+`schema.yaml` and checked by `gp:DataTypeReferenceShape`. What stays in prose only is which bands
+the output has.
 
 ## Data formats
 
@@ -112,3 +114,4 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 - `representation-2026-11-09`, substantive
 - `tools-2026-11-09`, clarifying
 - `data-type-2026-11-09`, substantive
+- `band-count-2026-11-09`, clarifying
