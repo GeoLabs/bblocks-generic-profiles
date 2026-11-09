@@ -9,8 +9,7 @@
   "itemClass": "schema",
   "register": "generic-profiles",
   "dependsOn": [
-    "generic-profiles.implementation-profile",
-    "ogc.api.processes.v1.schemas.bbox"
+    "generic-profiles.implementation-profile"
   ],
   "scope": "dev",
   "tags": [
