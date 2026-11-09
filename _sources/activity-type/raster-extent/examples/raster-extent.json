@@ -20,6 +20,7 @@
     "startedAtTime": "2026-11-09T00:00:00Z",
     "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-extent"
   },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
   "generatedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
   "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
   "source": [

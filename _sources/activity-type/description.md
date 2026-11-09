@@ -26,14 +26,25 @@ There are 31 activity types, one per Implementation Profile. The items are gener
 `scripts/activity_types.py` from `scripts/activity-types.yaml`; the item class IRI is written from one
 constant of that script, because the upstream branch `model-tweaks` renames it.
 
-## Geoprocessing or not
+## Geoprocessing: all 31
 
-18 activity types use or generate geometries. They are sub-classes of
-`geoproc:GeoprocessingActivityType` and declare `geo:Geometry` as used or generated entity type, as
-in the tested pattern. The other 13 work on rasters, point clouds, feature collections or bounding
-boxes. GeoSPARQL has no raster class, and how a data type of `bblocks-data-types` becomes an entity
-type is question 5 to the maintainers, not answered (decision D8, open). They are direct sub-classes
-of `acttype:ActivityType` and declare no entity type until then.
+All 31 activity types are sub-classes of `geoproc:GeoprocessingActivityType` (decision of
+2026-11-09). The geoproc shapes require at least one used or generated entity type that is, or
+specialises, a GeoSPARQL 1.1 spatial class (`geo:SpatialObject`, `geo:Feature`, `geo:Geometry`,
+`geo:SpatialObjectCollection`, `geo:FeatureCollection`, `geo:GeometryCollection`). The class is
+chosen directly per kind of role, not derived from the data types of `bblocks-data-types`:
+
+| Kind of role (data type) | Entity type | Why |
+|---|---|---|
+| `geometry`, `surface`, `point` | `geo:Geometry` | a geometry, as in the tested pattern |
+| `bounding-box` | `geo:Geometry` | GeoSPARQL 1.1 (OGC 22-047r1, 8.4.3) gives `geo:hasBoundingBox` the range `geo:Geometry` ; not used today: `raster-crop`, the only operation with a bounding box, declares one used entity type (the ATR JSON schema allows one), `geo:Feature` for its raster |
+| `raster`, `raster-single-band`, `elevation-model` | `geo:Feature` | a coverage described as a feature, the reading `geoproc:GeoprocessingActivityType` states; the ATR NDVI example makes its rasters sub-classes of `geo:Feature` |
+| `point-cloud` | `geo:Feature` | a point cloud dataset, described as a feature like a coverage |
+| `feature-collection` | `geo:FeatureCollection` | a collection of features |
+| number, boolean, expression, CRS, format identifier, radiometric index | none | not spatial data |
+
+How a data type of `bblocks-data-types` becomes an entity type (a class bridge) is question 5 to the
+maintainers and stays open (decision D8).
 
 ## What is not settled here
 

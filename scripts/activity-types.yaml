@@ -3,13 +3,19 @@
 # _sources/activity-type/<key>/ from this file; edit here, then regenerate.
 #
 # key: the operation, the same name as its Implementation Profile.
-# parent: geoprocessing (rdfs:subClassOf geoproc:GeoprocessingActivityType) or activity
-#   (rdfs:subClassOf acttype:ActivityType). geoprocessing only where a spatial entity type can be
-#   declared as tested in docs/questions-for-rim-atr-maintainers.md: geo:Geometry for a geometry,
-#   surface or point role. Rasters, point clouds, feature collections and bounding boxes have no
-#   such entity type until the maintainers answer question 5 (decision D8, open), so their
-#   operations stay direct sub-classes of acttype:ActivityType, with no entity type.
-# usedEntityType / generatedEntityType: classes, from the roles of the Implementation Profile.
+# parent: geoprocessing, for all 31 (rdfs:subClassOf geoproc:GeoprocessingActivityType, decision of
+#   2026-11-09): geoproc requires at least one used or generated entity type that is, or
+#   specialises, a GeoSPARQL 1.1 spatial class.
+# usedEntityType / generatedEntityType: a GeoSPARQL class chosen per kind of role, directly, with no
+#   bridge from the data-types concepts (that bridge is question 5 to the maintainers, still open):
+#   geometry, surface, point -> geo:Geometry; bounding-box -> geo:Geometry (the range of
+#   geo:hasBoundingBox); raster, raster-single-band, elevation-model -> geo:Feature (a coverage
+#   described as a feature, as geoproc:GeoprocessingActivityType says and the ATR NDVI example does);
+#   point-cloud -> geo:Feature (a point cloud dataset, described as a feature like a coverage);
+#   feature-collection -> geo:FeatureCollection. Number, boolean and the other non-spatial roles get
+#   none. The ATR JSON schema allows one value per property: raster-crop, which uses a raster and a
+#   bounding box, declares geo:Feature only (its raster); the bounding-box rule is used by no other
+#   operation today.
 # altLabel: the SQL/MM name of the operation, where there is one.
 # sources: the standards and literature that define the operation. Tools and deployments are not
 #   sources of an operation: they are at tier 4 (bblocks-process-profiles).
@@ -18,7 +24,11 @@
   prefLabel: Analytical hillshading
   definition: For each cell, the angle at which light coming from the position of the light source hits
     the terrain surface.
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
 - key: area
   prefLabel: Area
   altLabel:
@@ -246,21 +256,37 @@
   prefLabel: Point cloud thinning (simple)
   definition: Reduces the number of points to the given percentage by sequential point removal, which
     suits points stored in chronological order best.
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
 - key: point-cloud-to-grid
   prefLabel: Point cloud to grid
   definition: Writes one value per grid cell from the points falling in it -- by default the z value of
     the first point -- as a single-band raster.
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
 - key: point-cloud-to-shapes
   prefLabel: Point cloud to shapes
   definition: Converts a point cloud to a feature collection of points.
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:FeatureCollection
 - key: radiometric-index
   prefLabel: Radiometric index
   definition: Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant
     spectral channels of the input raster(s).
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
   sources:
   - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
     link: https://www.ogc.org/standards/wcps/
@@ -268,7 +294,11 @@
   prefLabel: Raster band math (multi-band output)
   definition: Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across
     one or more input rasters, producing an output raster with one or more bands.
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
   sources:
   - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
     link: https://www.ogc.org/standards/wcps/
@@ -278,14 +308,22 @@
   prefLabel: Raster band math
   definition: Evaluates a user-supplied mathematical expression per pixel across one or more input rasters,
     producing a monoband output raster.
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
   sources:
   - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
     link: https://www.ogc.org/standards/wcps/
 - key: raster-crop
   prefLabel: Raster crop
   definition: Extracts the pixels of a raster coverage that fall within a region of interest.
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
   sources:
   - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
     link: https://www.ogc.org/standards/wcps/
@@ -293,6 +331,8 @@
   prefLabel: Raster extent
   definition: Computes the bounding envelope of a raster coverage, as a vector polygon.
   parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
   generatedEntityType:
   - geo:Geometry
   sources:
@@ -301,7 +341,11 @@
 - key: raster-format-conversion
   prefLabel: Raster format conversion
   definition: Re-encodes a raster coverage into another raster format, without altering its content.
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
   sources:
   - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
     link: https://www.ogc.org/standards/wcps/
@@ -309,7 +353,11 @@
   prefLabel: Raster reprojection
   definition: Reprojects a raster coverage to another coordinate reference system, resampling pixel values
     as needed, preserving the coverage's content.
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
   sources:
   - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
     link: https://www.ogc.org/standards/wcps/
@@ -317,7 +365,11 @@
   prefLabel: Slope
   definition: The slope gradient of an elevation model at each cell, from a local fit of the surface by
     the 9 parameter 2nd order polynom of Zevenbergen & Thorne (1987).
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
   sources:
   - title: 'Zevenbergen, L.W., Thorne, C.R. (1987): Quantitative analysis of land surface topography.
       Earth Surface Processes and Landforms, 12: 47-56'
@@ -343,7 +395,11 @@
   prefLabel: Terrain ruggedness index
   definition: 'The terrain ruggedness index (TRI) of Riley et al. (1999): how much the elevation of each
     cell differs from that of its neighbourhood.'
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
   sources:
   - title: 'Riley, S.J., De Gloria, S.D., Elliot, R. (1999): A Terrain Ruggedness that Quantifies Topographic
       Heterogeneity. Intermountain Journal of Science, Vol.5, No.1-4, pp.23-27'
@@ -351,7 +407,11 @@
   prefLabel: Topographic position index
   definition: 'The topographic position index (TPI) of Guisan et al. (1999): the difference between the
     elevation of each cell and the mean elevation of its neighbourhood.'
-  parent: activity
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
   sources:
   - title: 'Guisan, A., Weiss, S.B., Weiss, A.D. (1999): GLM versus CCA spatial modeling of plant species
       distribution. Plant Ecology 143: 107-122'

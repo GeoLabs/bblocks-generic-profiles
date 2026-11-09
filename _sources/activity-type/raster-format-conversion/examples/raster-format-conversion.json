@@ -6,7 +6,7 @@
   ],
   "prefLabel": "Raster format conversion",
   "definition": "Re-encodes a raster coverage into another raster format, without altering its content.",
-  "subClassOf": "https://w3id.org/ogc/rim/activity-type/ActivityType",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-format-conversion",
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
@@ -20,6 +20,8 @@
     "startedAtTime": "2026-11-09T00:00:00Z",
     "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-format-conversion"
   },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
   "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
   "source": [
     {

@@ -10,4 +10,4 @@ allOf:
     prefLabel:
       const: Point cloud to shapes
     subClassOf:
-      const: https://w3id.org/ogc/rim/activity-type/ActivityType
+      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType

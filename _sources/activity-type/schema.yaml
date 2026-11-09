@@ -33,11 +33,9 @@ allOf:
       description: What the operation does. No tool, format or deployment.
       type: string
     subClassOf:
-      description: geoproc:GeoprocessingActivityType where a spatial entity type is declared, otherwise
-        acttype:ActivityType.
-      enum:
-      - https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
-      - https://w3id.org/ogc/rim/activity-type/ActivityType
+      description: Every activity type of this register is a geoprocessing activity type, with at least
+        one GeoSPARQL spatial used or generated entity type (geoproc shapes).
+      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
     itemClass:
       description: Written by scripts/activity_types.py from its constant ATR_ITEM_CLASS.
       const: https://w3id.org/ogc/rim/activity-type/activityTypeItemClass

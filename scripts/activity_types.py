@@ -21,9 +21,9 @@ BASE = ROOT / "_sources" / "activity-type"
 
 ACTTYPE_NS = "https://w3id.org/ogc/rim/activity-type/"
 ATR_ITEM_CLASS = ACTTYPE_NS + "activityTypeItemClass"
+# Every activity type of this register is a geoprocessing activity type (decision of 2026-11-09).
 PARENTS = {
     "geoprocessing": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
-    "activity": ACTTYPE_NS + "ActivityType",
 }
 PREFIXES = {"geo:": "http://www.opengis.net/ont/geosparql#", "prov:": "http://www.w3.org/ns/prov#"}
 GP = "https://geolabs.github.io/bblocks-generic-profiles/def/"
@@ -76,8 +76,10 @@ def item(op):
     })
     for key in ("usedEntityType", "generatedEntityType"):
         values = [expand(v) for v in op.get(key, [])]
+        # The ATR JSON schema (activity-types-schema) types each of these as one IRI.
+        assert len(values) <= 1, f"{op['key']}: one {key} at most"
         if values:
-            entry[key] = values[0] if len(values) == 1 else values
+            entry[key] = values[0]
     entry["associatedAgentType"] = PREFIXES["prov:"] + "SoftwareAgent"
     if op.get("sources"):
         entry["source"] = op["sources"]
@@ -135,18 +137,12 @@ def description(op):
     parts += ["## The item", "",
               f"`{iri}` is an `acttype:ActivityType` item of this register (`gp:register`), of the "
               "Activity Type Register's item class, and an OWL class, sub-class of "
-              + ("`geoproc:GeoprocessingActivityType`." if op["parent"] == "geoprocessing"
-                 else "`acttype:ActivityType`."), ""]
-    if op["parent"] == "geoprocessing":
-        parts += ["Its activities use or generate geometries: "
-                  + "; ".join(f"`{k}` {', '.join('`' + v + '`' for v in op[k])}"
-                              for k in ("usedEntityType", "generatedEntityType") if op.get(k)) + ".", ""]
-    else:
-        parts += ["It declares no used or generated entity type, and is not a geoprocessing activity type "
-                  "yet: its data are rasters, point clouds, feature collections or bounding boxes, and how a "
-                  "data type of this project becomes an entity type waits for the answer of the model "
-                  "maintainers (`docs/questions-for-rim-atr-maintainers.md`, question 5; decision D8, open).",
-                  ""]
+              "`geoproc:GeoprocessingActivityType`.", ""]
+    parts += ["Its activities use or generate spatial data, declared with GeoSPARQL 1.1 classes: "
+              + "; ".join(f"`{k}` {', '.join('`' + v + '`' for v in op[k])}"
+                          for k in ("usedEntityType", "generatedEntityType") if op.get(k)) + ". "
+              "The class is chosen per kind of role (see `scripts/activity-types.yaml`); how a data type of "
+              "`bblocks-data-types` maps to an entity type is still open (decision D8, question 5).", ""]
     parts += ["The run of an activity of this type is not typed here (decision D8, open).", ""]
     if op.get("sources"):
         parts += ["## Sources", ""]

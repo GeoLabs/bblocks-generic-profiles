@@ -74,8 +74,14 @@ profile of yours?
 `rim:Concept` individuals, so using one directly fails validation. Declaring it as a class with
 `rdfs:subClassOf geo:Feature` conforms, as in your NDVI example.
 
-Is that the recommended bridge? GeoSPARQL has no raster class: is `geo:Feature` the right parent for a
-raster?
+What we do now: every activity type of our register is a geoprocessing activity type, and declares a
+GeoSPARQL class directly, chosen per kind of data, with no link to our data type concepts:
+`geo:Geometry` for geometries and bounding boxes, `geo:Feature` for rasters and point clouds (a
+coverage described as a feature, as `geoproc:GeoprocessingActivityType` says),
+`geo:FeatureCollection` for feature collections.
+
+Is a class bridge from a concept to a GeoSPARQL class the recommended way to be more precise? GeoSPARQL
+has no raster class: is `geo:Feature` the right parent for a raster, and for a point cloud?
 
 ## Questions on the Registered Item Model
 
@@ -120,13 +126,12 @@ It renames `acttype:activityTypeItemClass` to `acttype:ActivityTypeItemClass`. P
 The ATR and RIM `register.json` files respond on both `geonovum-labs.github.io` and
 `ogcincubator.github.io`. Will the first stay available? Is `ogcincubator` the one to import?
 
-The ATR `register.json` published on `ogcincubator.github.io` still imports the model from
-`geonovum-labs.github.io`. A register that imports both the model and the ATR from `ogcincubator`
-therefore resolves every `ogc.rim.*` block to the `geonovum-labs` copy: the transitive import is
-loaded last and replaces the direct one. We observed this in a build of our register on 2026-11-09
-(annotated `$ref`s and SHACL sources). The two copies differ little today (`rim:affectedProperty` is
-missing from the `geonovum-labs` ontology; the shapes are identical). Could the published ATR be
-rebuilt against `ogcincubator`?
+The ATR sources (`0c52c0e`: `bblocks-config.yaml` and `build/register.json`) import the model from
+`ogcincubator.github.io`. The `register.json` served on `ogcincubator.github.io/activity-type-register`
+on 2026-11-09 (last modified 2026-11-04 10:27 GMT) still imports it from `geonovum-labs.github.io`: the
+deployment looks older than the sources. In a build, that transitive import is loaded last and
+replaces our direct `ogcincubator` import for every `ogc.rim.*` block; we map it back locally for
+now. Could the published ATR be redeployed from current master?
 
 `https://w3id.org/ogc/rim/` and `https://w3id.org/ogc/rim/activity-type/ActivityType` returned 404 on
 2026-11-05. Is that redirect planned?
