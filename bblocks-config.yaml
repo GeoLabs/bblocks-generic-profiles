@@ -48,12 +48,9 @@ keywords:
 
 imports:
   - default
-  # OGC API - Processes - Part 1: Core schemas. Implementation Profile's `schema` property (Table
-  # 21 Data format) is a subset of this vocabulary's own InputDescription/OutputDescription/Schema
-  # structure, and can $ref a real shared type's own published schema directly (e.g.
-  # ogc.api.processes.v1.schemas.bbox for raster-crop's areaOfInterest) -- not bblocks-eoap-cct,
-  # whose types (e.g. eoap.cct.bbox) are for CWL inputs/outputs crossing into OGC API - Processes
-  # - Part 2: Deploy, Replace, Undeploy, a different vocabulary layer (2026-10-01).
+  # OGC API - Processes - Part 1: Core schemas: the Table 22 `metadata` structure every tier uses
+  # (ogc.api.processes.v1.schemas.metadata). Formats are no longer copied as `schema` at tier 3: an
+  # Implementation Profile names representations of bblocks-data-formats (decision D6, 2026-11-09).
   - https://geolabs.github.io/bblocks-ogcapi-processes/build/register.json
   # Registered Item Model (ISO 19135:2026) -- this register's governance layer: every Concept,
   # Generic Profile and Implementation Profile is a rim:RegisterItem of one of three
@@ -64,6 +61,10 @@ imports:
   # Data types (ISO 19135:2026 concept plane): every `dataType` IRI of a Generic or Implementation
   # Profile input/output is a concept of this register (data-types.data-type.*).
   - https://geolabs.github.io/bblocks-data-types/build/register.json
+  # Data formats (content plane, decision D6): every `representation` IRI of an Implementation
+  # Profile input/output is a df:Representation of this register (data-formats.representation.*),
+  # which realizes a version of the role's data type and points to a df:Format.
+  - https://geolabs.github.io/bblocks-data-formats/build/register.json
   # Activity Type Register: each operation's meaning is an acttype:ActivityType item of this
   # register (generic-profiles.activity-type.*), and each Implementation Profile links to it with
   # `activityType`, a sub-property of rim:relatedItem. Imported from ogcincubator, not

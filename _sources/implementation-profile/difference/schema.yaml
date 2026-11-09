@@ -86,8 +86,8 @@ allOf:
     properties:
       inputs:
         properties:
-          geometry1: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry1"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}}}
-          geometry2: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry2"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}}}
+          geometry1: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry1"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/geometry-gml"]}}}
+          geometry2: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry2"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/geometry-gml"]}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}}}
+          result: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/geometry-gml"]}}}

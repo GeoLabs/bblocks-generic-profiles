@@ -1,0 +1,32 @@
+# Must fail: a geometry role whose representation realizes the raster data type. Only the SPARQL constraint of gp:RepresentationReferenceShape can reject it.
+@prefix gp:   <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gpic: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/> .
+@prefix rim:  <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix dt:   <https://geolabs.github.io/bblocks-data-types/def/data-type/> .
+@prefix rep:  <https://w3id.org/geolabs-ospd/data-formats/representation/> .
+@prefix role: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-representation-of-another-data-type> a gp:ImplementationProfile ;
+    skos:prefLabel "Fixture" ;
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop> ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-crop> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-representation-of-another-data-type"^^xsd:anyURI ;
+    rim:itemClass gpic:implementation-profile ;
+    rim:inRegister gp:register ;
+    rim:validityStatus rim:invalid ;
+    rim:publicationStatus rim:published ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-representation-of-another-data-type/actions/addition> ;
+    gp:inputs [ role:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-representation-of-another-data-type/inputs/geometry> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-representation-of-another-data-type/actions/addition> a rim:RegisterAction ;
+    rim:actionType rim:additionAction ;
+    rim:proposer gp:geolabs ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-representation-of-another-data-type> ;
+    prov:startedAtTime "2026-11-09T00:00:00Z"^^xsd:dateTime .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-representation-of-another-data-type/inputs/geometry> dct:title "geometry" ; dct:type dt:geometry ; gp:representation rep:raster-geotiff .

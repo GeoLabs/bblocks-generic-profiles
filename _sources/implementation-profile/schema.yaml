@@ -5,32 +5,24 @@ description: >-
   specific named operation (Intersects, Buffer, ...), `refinesGenericProfile` to exactly one
   Generic Profile (the shared abstract I/O shape).
 
-  `inputs`/`outputs` use OGC API - Processes - Part 1: Core's own `schema` property (a full JSON
-  Schema / OpenAPI Schema Object) for Table 21's Data format (D), instead of a custom format
-  vocabulary: this project already imports and uses the same `schema` property at Implementation
-  (instance level), so a real deployment's processDescription and this tier's declared default
-  are now directly comparable JSON, not a bespoke string next to real JSON. `maxOccurs`, when
-  present, Restricts (R, footnote c: "Implementation profiles may restrict the maximum
-  cardinality of a superior generic profile... They shall not modify the minimum cardinality")
-  the Generic Profile's own value -- a real integer (or `unbounded`), not free text. Only
-  inputs/outputs that carry spatial/raster/bbox data need a `schema` entry; a plain parameter
-  (an expression, a CRS code, a distance) has none to declare.
+  `inputs`/`outputs` name Table 21's Data format (D) by reference: `representation`, one or more
+  IRIs of representations of the bblocks-data-formats register (decision D6, 2026-11-05). A
+  representation realizes a version of a data type of bblocks-data-types and points to one format
+  (GML, GeoTIFF, LAS, the OGC API - Processes bbox, ...). The JSON Schema that a real deployment
+  serves stays at the Implementation (instance level), as its processDescription's `schema`; it is
+  not copied here. `maxOccurs`, when present, Restricts (R, footnote c: "Implementation profiles may
+  restrict the maximum cardinality of a superior generic profile... They shall not modify the
+  minimum cardinality") the Generic Profile's own value -- a real integer (or `unbounded`), not
+  free text. Only inputs/outputs that carry spatial, raster, point cloud or bbox data have a
+  representation; a plain parameter (an expression, a CRS, a distance) has none to declare.
 
-  Keep the declared `schema` minimal and deliberately not exhaustive (one format is often enough:
-  GML for vector geometry data, GeoTIFF for raster, OGC API - Processes' own `bbox` schema for a
-  bounding box). Per Table 21, Implementation (instance level) may *Extend* this (footnote d:
-  "Implementations may... support additional data exchange formats") -- a specific deployment is
-  free to support more than this tier's minimal default, so this tier should not try to pre-empt
-  every format a future deployment might add. See each Implementation Profile's own
-  `description.md` for whether its default is grounded in a real deployment's processDescription
-  or left as the vocabulary's own minimal baseline.
+  Keep the declared representations minimal and deliberately not exhaustive (one is often enough).
+  Per Table 21, Implementation (instance level) may *Extend* this (footnote d: "Implementations
+  may... support additional data exchange formats").
 
-  A `schema` may `$ref` a real shared type's own published schema directly -- e.g.
-  `ogc.api.processes.v1.schemas.bbox` for a bounding box, the same OGC API - Processes - Part 1:
-  Core type this register's Implementation (instance level) processDescriptions already use.
-  `eoap.cct.*` types (bblocks-eoap-cct) are a *different* vocabulary, for typing CWL
-  inputs/outputs passed to OGC API - Processes - Part 2: Deploy, Replace, Undeploy, not for
-  describing an OGC API - Processes processDescription's own `schema` -- not used here.
+  The meaning of the operation is not here: it is the activity type that `activityType` points to
+  (generic-profiles.activity-type.*, decisions D3 and D4). No tool, host or testbed is named at this
+  tier.
 
   The rest of Table 21 at this tier, as each real Implementation Profile's own `schema.yaml`
   enforces it against its Generic Profile:
@@ -44,10 +36,10 @@ description: >-
     `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input` -- footnote a, at the level of the input; `keywords` Extend (E);
     Identifier/Title/Abstract Inherit (I), so not repeated; `maxOccurs` Restrict (R); `minOccurs`
     may be restricted down to 0 (a register choice beyond Table 21, footnote c forbidding it);
-    `schema` Declare (D).
+    `representation` Declare (D).
   - Output: every Generic Profile output is listed too; `metadata` references the corresponding
     Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output` (Table 21 allows any value here,
-    O; the register keeps outputs symmetric with inputs); `keywords` Extend (E); `schema`
+    O; the register keeps outputs symmetric with inputs); `keywords` Extend (E); `representation`
     Declare (D).
 allOf:
   - $ref: bblocks://ogc.rim.schemas.register-item
@@ -109,7 +101,7 @@ allOf:
       inputs:
         description: >-
           Keyed by the same input names as the Generic Profile's own `inputs` (Identifier/Title/
-          Abstract Inherited, not repeated). `schema` is Table 21's Data format (D); `maxOccurs`,
+          Abstract Inherited, not repeated). `representation` is Table 21's Data format (D); `maxOccurs`,
           when present, Restricts (R, footnote c) the Generic Profile's own value; `keywords` Extend
           (E) the Generic Profile's; `metadata` Extends (E, footnote a) its superior-profile
           references.
@@ -117,6 +109,7 @@ allOf:
         additionalProperties:
           type: object
           required: [id, dataType, keywords, metadata]
+          not: {required: [schema]}
           properties:
             dataType:
               description: >-
@@ -131,7 +124,19 @@ allOf:
                 metadata `href` points at.
               type: string
               format: uri
-            schema: {}
+            representation:
+              description: >-
+                Table 21 Data format (D), by reference (decision D6): one or more representations of
+                the bblocks-data-formats register
+                (`https://w3id.org/geolabs-ospd/data-formats/representation/...`), each realizing a
+                version of this role's dataType, or of a broader one, and pointing to one format. No
+                copied schema: the schema stays at the Implementation (instance level), as served.
+              type: array
+              minItems: 1
+              items:
+                type: string
+                format: uri
+                pattern: ^https://w3id\.org/geolabs-ospd/data-formats/representation/[a-z0-9-]+$
             minOccurs:
               description: >-
                 Restricts the Generic Profile's minimum, down to 0 (the input becomes optional),
@@ -160,6 +165,7 @@ allOf:
         additionalProperties:
           type: object
           required: [id, dataType, keywords, metadata]
+          not: {required: [schema]}
           properties:
             dataType:
               description: >-
@@ -174,7 +180,19 @@ allOf:
                 metadata `href` points at.
               type: string
               format: uri
-            schema: {}
+            representation:
+              description: >-
+                Table 21 Data format (D), by reference (decision D6): one or more representations of
+                the bblocks-data-formats register
+                (`https://w3id.org/geolabs-ospd/data-formats/representation/...`), each realizing a
+                version of this role's dataType, or of a broader one, and pointing to one format. No
+                copied schema: the schema stays at the Implementation (instance level), as served.
+              type: array
+              minItems: 1
+              items:
+                type: string
+                format: uri
+                pattern: ^https://w3id\.org/geolabs-ospd/data-formats/representation/[a-z0-9-]+$
             keywords: {type: array, minItems: 1, items: {type: string}}
             metadata:
               type: array

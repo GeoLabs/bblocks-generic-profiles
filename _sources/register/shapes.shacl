@@ -116,3 +116,50 @@ gp:DataTypeReferenceShape a sh:NodeShape ;
     ] ;
     sh:property [ sh:path dct:type ; sh:class dt:DataType ; sh:minCount 1 ; sh:maxCount 1 ;
                   sh:message "An input or output's dataType must be a dt:DataType concept of the bblocks-data-types register." ] .
+
+# Decision D6: an input or output of a Generic or Implementation Profile carries no copied schema,
+# and an Implementation Profile names its format by representation. Same target as
+# gp:DataTypeReferenceShape: the inputs and outputs of tiers 2 and 3 (tier 4 sits under
+# proc:inputs / proc:outputs, where `schema` stays).
+#
+# - proc:schema: none. A Generic Profile carries no format; an Implementation Profile carries
+#   representations instead.
+# - gp:representation: a df:Representation of the data-formats register, whose type reaches this
+#   block through data-formats.vocabulary, as the data types do through data-types.vocabulary.
+# - the representation realizes a version of the role's dataType, or of a broader data type
+#   (skos:broader*): a GeoTIFF raster may carry a single-band raster, not a geometry.
+#
+# tests/representation-*-fail.ttl, tests/role-with-schema-fail.ttl and their control
+# tests/representation-control.ttl show each constraint rejecting an otherwise valid item.
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix df:   <https://w3id.org/geolabs-ospd/data-formats/> .
+
+gp:RepresentationReferenceShape a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            SELECT ?this WHERE {
+                ?profile <https://geolabs.github.io/bblocks-generic-profiles/def/inputs> | <https://geolabs.github.io/bblocks-generic-profiles/def/outputs> ?roles .
+                ?roles ?role ?this .
+            }
+        """
+    ] ;
+    sh:property [ sh:path proc:schema ; sh:maxCount 0 ;
+                  sh:message "An input or output of a Generic or Implementation Profile carries no schema: a format is named by representation, at tier 3 only." ] ;
+    sh:property [ sh:path gp:representation ; sh:nodeKind sh:IRI ; sh:class df:Representation ;
+                  sh:message "A representation must be a df:Representation of the bblocks-data-formats register." ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A representation must realize a version of the role's dataType, or of a broader data type." ;
+        sh:select """
+            SELECT $this ?value WHERE {
+                $this <https://geolabs.github.io/bblocks-generic-profiles/def/representation> ?value .
+                $this <http://purl.org/dc/terms/type> ?dataType .
+                FILTER NOT EXISTS {
+                    ?value <https://w3id.org/ogc/rim/realizes> ?version .
+                    ?version <https://w3id.org/ogc/rim/versionOf> ?concept .
+                    ?dataType <http://www.w3.org/2004/02/skos/core#broader>* ?concept .
+                }
+            }
+        """
+    ] .

@@ -45,12 +45,12 @@ Generic Profile (generated from it by `scripts/apply_table21_keywords_metadata.p
 | Input Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile input's |
 | Input Metadata | D | **E/O** ᵃ | E/O ᵃ | `metadata` must reference the corresponding Generic Profile input (`generic-input`, below) |
 | Input Multiplicity | D | **R** ᶜ | E ᵈ | only where declared: `maxOccurs` ≤ the Generic Profile's; `minOccurs` between 0 and the Generic Profile's -- making an input optional is allowed, a register choice beyond footnote c; no declaration means the default, exactly one |
-| Input Data format | -- | **D** | E ᵈ | `schema` |
+| Input Data format | -- | **D** | E ᵈ | `representation`: IRIs of representations of `bblocks-data-formats` (decision D6) |
 | Output (the set itself) | | | E ᵇ | every Generic Profile output must be listed (`required`) |
 | Output Identifier, Title, Abstract | D | **I** | I | as for inputs |
 | Output Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile output's |
 | Output Metadata | D | **O** | O | `metadata` references the corresponding Generic Profile output (`generic-output`): a register choice, Table 21 leaves it free |
-| Output Data format | -- | **D** | E ᵈ | `schema` |
+| Output Data format | -- | **D** | E ᵈ | `representation`, as for inputs |
 
 ᵃ *"The list of metadata references to superior process profiles shall be extended.
 Documentation metadata may be overridden."* The references are Table 5 Metadata structures
@@ -85,23 +85,24 @@ Profile (a Process Concept has no inputs), `generic-input` here, and `generic-in
 `ospd.process-profiles.sqlmm.area`'s `processDescription.inherited.json`. On the process: `concept`
 at Generic Profile, `concept` + `generic` here, all three at the instance level.
 
-`schema` -- OGC API - Processes Part 1 Core's own property, a full JSON Schema / OpenAPI Schema
-Object, able to `$ref` a real shared type's own published schema (e.g.
-`ogc.api.processes.v1.schemas.bbox`) -- is Table 21's Data format. Every input/output is listed,
-but only those that carry spatial/raster/bbox data have a `schema`; a plain `String`/`Number`/
-`Boolean` parameter (an expression, a CRS code, a distance) has no format to declare.
+`representation` is Table 21's Data format (decision D6, 2026-11-05): one or more IRIs of
+representations of the [`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats)
+register (`https://w3id.org/geolabs-ospd/data-formats/representation/...`). A representation
+realizes a version of a data type of `bblocks-data-types` and points to one format, which carries
+the specification, the media types observed and, where there is one, a JSON Schema fragment. Until
+2026-11-09 this tier copied a JSON Schema into a `schema` property instead; that schema stays at the
+Implementation (instance level), as the deployed process serves it. `gp:RepresentationReferenceShape`
+rejects a `schema` on an input or output of tiers 2 and 3, a representation that is not a
+`df:Representation`, and one that realizes neither the role's data type nor a broader one. Only
+inputs/outputs that carry spatial, raster, point cloud or bbox data have a representation; a plain
+parameter (an expression, a CRS, a distance) has none.
 
-**The declared default is kept deliberately minimal** -- one format per data-carrying role (GML
-for vector geometry, GeoTIFF for raster), not an exhaustive list of everything a deployment might
-ever support. Table 21's own inheritance rule for this tier is `E` (Extend) at Implementation
-(instance level): *"Implementations may allow more or larger input datasets than the
-implementation profile, or support additional data exchange formats"* (footnote d) -- a
-deployment is free to go beyond this tier's minimal default, so this tier should not try to
-pre-empt every format a future deployment might add. Where this minimal default happens to be
-grounded in a real deployment's own processDescription (the vector operations' GML, most of the
-raster operations' GeoTIFF), that grounding is cited in each Implementation Profile's own
-`description.md` -- where it is not (`Gdal_Warp`/`Gdal_Translate`'s DSN-typed inputs expose no
-format structurally at all), that is also stated explicitly rather than implied.
+**The declared representations are kept deliberately minimal** -- one per data-carrying role (GML
+for vector geometry, GeoTIFF for raster, LAS for point clouds, the OGC API - Processes bbox for a
+bounding box), not an exhaustive list. Table 21's own inheritance rule for this tier is `E`
+(Extend) at Implementation (instance level): *"Implementations may allow more or larger input
+datasets than the implementation profile, or support additional data exchange formats"*
+(footnote d).
 
 `maxOccurs`, when present, Restricts (footnote c: *"Implementation profiles may restrict the
 maximum cardinality of a superior generic profile... They shall not modify the minimum

@@ -22,6 +22,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/representation-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/points -> point-cloud-las (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"application/vnd.las\", \"description\": \"LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type\"}); outputs/result -> feature-collection-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}).",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes",
@@ -54,12 +64,9 @@
     "points": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud",
-      "schema": {
-        "type": "string",
-        "contentEncoding": "base64",
-        "contentMediaType": "application/vnd.las",
-        "description": "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type"
-      },
+      "representation": [
+        "https://w3id.org/geolabs-ospd/data-formats/representation/point-cloud-las"
+      ],
       "keywords": [
         "point cloud",
         "LAS"
@@ -77,11 +84,9 @@
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/feature-collection",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs-ospd/data-formats/representation/feature-collection-gml"
+      ],
       "keywords": [
         "feature collection",
         "GML"

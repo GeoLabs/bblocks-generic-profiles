@@ -170,6 +170,16 @@ gp:activityType a owl:ObjectProperty ;
     rdfs:domain gp:ImplementationProfile ;
     rdfs:range <https://w3id.org/ogc/rim/activity-type/ActivityType> .
 
+# Decision D6 (2026-11-05): an Implementation Profile input or output names its exchange format by
+# reference, not by a copied JSON Schema: one or more representations of the data-formats register,
+# each realizing a version of the role's data type and pointing to one format. The schema itself
+# stays at tier 4, as the deployed process serves it.
+gp:representation a owl:ObjectProperty ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:label "representation" ;
+    rdfs:comment "Relates an input or output of an Implementation Profile to a representation (df:Representation) of the data-formats register in which it is exchanged: Table 21 Data format (D) of OGC 14-065 WPS 2.0.2, by IRI." ;
+    rdfs:range <https://w3id.org/geolabs-ospd/data-formats/Representation> .
+
 
 #################################################################
 # Entry into the register: a proposed addition

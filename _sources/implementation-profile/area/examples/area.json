@@ -32,6 +32,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/representation-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/geometry -> surface-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}). The schema {\"type\": \"number\"} of outputs/result is removed, as for every other number role: it declared no format, and no representation of a number exists.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area",
@@ -63,11 +73,9 @@
     "geometry": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/inputs/geometry",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/surface",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs-ospd/data-formats/representation/surface-gml"
+      ],
       "keywords": [
         "geometry",
         "GML"
@@ -85,10 +93,6 @@
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/outputs/result",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/number",
-      "schema": {
-        "type": "number",
-        "description": "a plain number"
-      },
       "keywords": [
         "number"
       ],
