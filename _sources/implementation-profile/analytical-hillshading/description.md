@@ -25,6 +25,21 @@ format, D; decision D6):
 The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
 2.0.2 §7.5.4 Table 21, footnote d).
 
+## Data
+
+- input `elevation`: `elevation-model`, GeoTIFF
+- input `azimuth`: `number`, no format to declare
+- input `altitude`: `number`, no format to declare
+- output `result`: `raster-single-band`, GeoTIFF
+
+The declared format is a minimal default; a real implementation may support others (Table 21,
+footnote d). For rasters, the Geonovum testbed's SAGA also serves ESRI ASCII grids, ENVI and PNG.
+
+## Source
+
+- [SAGA 7.3.0 -- Analytical Hillshading](https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_lighting_0.html)
+- [ZOO-Project Geonovum testbed -- SAGA.ta_lighting.0: Analytical Hillshading](https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_lighting.0)
+
 ## Relations
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.analytical-hillshading`](../../generic-profile/analytical-hillshading/)
@@ -35,7 +50,9 @@ The representations are a minimal default: a deployment may support more formats
 Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Generic Profile ->
 **Implementation Profile** -> Implementation (instance level). The fourth tier is not part of this
 register: deployed processes are profiled in `bblocks-process-profiles`, and name this profile with
-`implementsProfile`. Tools, hosts and testbeds are recorded there, not here.
+`implementsProfile`. Tools, hosts and testbeds are recorded there; this item carries none as
+keyword or source (decision D4). The sections above keep the tools and testbed that its defaults
+were grounded in.
 
 ## Changes
 

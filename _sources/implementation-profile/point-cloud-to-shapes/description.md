@@ -23,6 +23,19 @@ format, D; decision D6):
 The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
 2.0.2 §7.5.4 Table 21, footnote d).
 
+## Data
+
+- input `points`: `point-cloud`, LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type
+- output `result`: `feature-collection`, GML
+
+The declared format is a minimal default; a real implementation may support others (Table 21,
+footnote d). For point clouds, it labels LAS `application/x-ogc-lasf`, not the IANA-registered `application/vnd.las` declared here. For shapes, it also serves KML.
+
+## Source
+
+- [SAGA 7.3.0 -- Point Cloud to Shapes](https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_5.html)
+- [ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.5: Point Cloud to Shapes](https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.5)
+
 ## Relations
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.point-cloud-to-features`](../../generic-profile/point-cloud-to-features/)
@@ -33,7 +46,9 @@ The representations are a minimal default: a deployment may support more formats
 Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Generic Profile ->
 **Implementation Profile** -> Implementation (instance level). The fourth tier is not part of this
 register: deployed processes are profiled in `bblocks-process-profiles`, and name this profile with
-`implementsProfile`. Tools, hosts and testbeds are recorded there, not here.
+`implementsProfile`. Tools, hosts and testbeds are recorded there; this item carries none as
+keyword or source (decision D4). The sections above keep the tools and testbed that its defaults
+were grounded in.
 
 ## Changes
 

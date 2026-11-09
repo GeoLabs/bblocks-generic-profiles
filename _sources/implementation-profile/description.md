@@ -12,17 +12,20 @@ illustrative. The real Implementation Profiles are each their own building block
 operation, each `allOf`-referencing this one and adding its own `const`-pinned
 `id`/`prefLabel`/`refinesGenericProfile` --
 
-- 17 vector operations (Intersects, Contains, Buffer, Centroid, Convex hull, Area, Is simple,
-  Geometry extent, ...), whose geometries are bound to GML;
-- 7 raster/coverage operations (Raster reprojection, Raster band math, Raster band math
-  (multi-band output), Radiometric index, Raster crop, Raster format conversion, Raster extent),
-  whose rasters are bound to GeoTIFF;
+- 17 vector operations: 15 bound to SQL/MM (Intersects, Contains, Buffer, Centroid, Convex hull,
+  Area, Is simple, ...), plus Geometry extent, bound to SAGA GIS (`SAGA.shapes_tools.19`, no
+  SQL/MM `ST_Envelope` process exists on this testbed);
+- 7 raster/coverage operations bound to GDAL/OTB (Raster reprojection, Raster band math, Raster
+  band math (multi-band output), Radiometric index, Raster crop, Raster format conversion,
+  Raster extent).
 - 4 terrain operations and 3 point cloud operations, bound to GeoTIFF and LAS.
 
 The meaning of each operation, and the standards that define it (Simple Feature Access, SQL/MM,
 WCPS, the literature of terrain indices), are its activity type, `activityType`
-(`generic-profiles.activity-type.*`, decisions D3 and D4). No tool, host or testbed is named at this
-tier: the processes that implement a profile, and the tools behind them, are profiled in
+(`generic-profiles.activity-type.*`, decisions D3 and D4). An Implementation Profile item carries no
+tool, host or testbed keyword or source (D4); the texts above and in each profile's `description.md`
+still name the tools its defaults were grounded in. The processes that implement a profile, and the
+tools behind them, are profiled in
 `bblocks-process-profiles`.
 
 Three of the vector operations (Centroid, Convex hull, Geometry extent) share one Generic
@@ -30,7 +33,7 @@ Profile, `unary-geometry-operation` (Geometry -> Geometry); Is simple refines
 `unary-spatial-predicate` (Geometry -> Boolean); Area refines `geometry-measure`
 (Geometry -> Number). Centroid, Convex hull, Is simple and Area (2026-10-06) are grounded in
 [OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1](https://www.ogc.org/standards/sfs/),
-the harmonized-with-SQL predecessor to 06-103r4 that the other SQL/MM-bound operations below
+the harmonized-with-SQL predecessor to 06-103r4 that the other SQL/MM-bound operations above
 already use.
 
 ## What Table 21 asks this tier to carry, and how each row is enforced
@@ -103,20 +106,26 @@ rejects a `schema` on an input or output of tiers 2 and 3, a representation that
 inputs/outputs that carry spatial, raster, point cloud or bbox data have a representation; a plain
 parameter (an expression, a CRS, a distance) has none.
 
-**The declared representations are kept deliberately minimal** -- one per data-carrying role (GML
-for vector geometry, GeoTIFF for raster, LAS for point clouds, the OGC API - Processes bbox for a
-bounding box), not an exhaustive list. Table 21's own inheritance rule for this tier is `E`
-(Extend) at Implementation (instance level): *"Implementations may allow more or larger input
-datasets than the implementation profile, or support additional data exchange formats"*
-(footnote d).
+**The declared default is kept deliberately minimal** -- one format per data-carrying role (GML
+for vector geometry, GeoTIFF for raster), not an exhaustive list of everything a deployment might
+ever support. Table 21's own inheritance rule for this tier is `E` (Extend) at Implementation
+(instance level): *"Implementations may allow more or larger input datasets than the
+implementation profile, or support additional data exchange formats"* (footnote d) -- a
+deployment is free to go beyond this tier's minimal default, so this tier should not try to
+pre-empt every format a future deployment might add. Where this minimal default happens to be
+grounded in a real deployment's own processDescription (the vector operations' GML, most of the
+raster operations' GeoTIFF), that grounding is cited in each Implementation Profile's own
+`description.md` -- where it is not (`Gdal_Warp`/`Gdal_Translate`'s DSN-typed inputs expose no
+format structurally at all), that is also stated explicitly rather than implied.
 
 `maxOccurs`, when present, Restricts (footnote c: *"Implementation profiles may restrict the
 maximum cardinality of a superior generic profile... They shall not modify the minimum
 cardinality"*) the Generic Profile's own `maxOccurs` for one input -- a real integer (or
 `unbounded`), the same property OGC API - Processes' own `InputDescription` uses, not free text.
-E.g. Radiometric index restricts the Generic Profile's `maxOccurs: unbounded` on `rasters` down
-to `1`; Raster band math leaves it `unbounded` -- a cap a real implementation applies is recorded at
-the instance level (`bblocks-process-profiles`), not at this tier. A cardinality is written only where there is one: an input without `minOccurs`/`maxOccurs`
+E.g. `OTB.RadiometricIndices`' own `in` input is a single image, restricting the Generic
+Profile's `maxOccurs: unbounded` down to `1`; `OTB.BandMath`/`OTB.BandMathX`'s `il` input is a
+list, left `maxOccurs: unbounded` here -- a cap a real implementation applies is recorded at the
+instance level (`bblocks-process-profiles`), not at this tier. A cardinality is written only where there is one: an input without `minOccurs`/`maxOccurs`
 has the OGC API - Processes default, exactly one, and no rule is generated for it.
 
 ## Register position
