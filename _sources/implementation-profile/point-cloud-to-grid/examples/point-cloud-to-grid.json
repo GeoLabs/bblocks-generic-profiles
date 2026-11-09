@@ -2,22 +2,35 @@
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid",
   "type": "ImplementationProfile",
   "prefLabel": "Point cloud to grid",
-  "definition": "Writes one value per grid cell from the points falling in it -- by default the z value of the first point -- as a single-band raster.",
+  "definition": "Implementation Profile of the operation Point cloud to grid, whose meaning is its activity type (activityType): the signature of the Generic Profile Point cloud rasterization, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-08T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-10-08T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-to-grid, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Writes one value per grid cell from the points falling in it -- by default the z value of the first point -- as a single-band raster.\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-to-grid",
   "keywords": [
     "point cloud",
     "raster",

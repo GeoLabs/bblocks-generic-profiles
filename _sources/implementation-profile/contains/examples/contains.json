@@ -2,29 +2,51 @@
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains",
   "type": "ImplementationProfile",
   "prefLabel": "Contains",
-  "definition": "Returns TRUE if this geometric object spatially contains anotherGeometry (no point of anotherGeometry lies outside this geometric object, and at least one point of the interior of anotherGeometry lies in the interior of this geometric object).",
+  "definition": "Implementation Profile of the operation Contains, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial predicate, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/contains, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns TRUE if this geometric object spatially contains anotherGeometry (no point of anotherGeometry lies outside this geometric object, and at least one point of the interior of anotherGeometry lies in the interior of this geometric object).\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The keyword ST_Contains becomes an altLabel of the activity type; the sources defining the operation move to the activity type: OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.19; ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.11 ST_Contains; the illustration of the operation moves to the activity type.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/contains",
   "keywords": [
     "vector",
     "geometry",
     "spatial relation",
     "predicate",
-    "Contains",
-    "ST_Contains"
+    "Contains"
   ],
   "metadata": [
     {
@@ -95,14 +117,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.19",
-      "link": "https://www.ogc.org/standards/sfa/"
-    },
-    {
-      "title": "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.11 ST_Contains"
-    }
-  ]
+  }
 }

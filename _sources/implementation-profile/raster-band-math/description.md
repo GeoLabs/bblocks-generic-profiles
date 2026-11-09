@@ -1,6 +1,10 @@
 Implementation Profile: **Raster band math**.
 
-> Evaluates a user-supplied mathematical expression per pixel across one or more input rasters, producing a monoband output raster.
+> Implementation Profile of the operation Raster band math, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.raster-band-math`](../../activity-type/raster-band-math/) (`activityType`), not this profile.
 
 ## Source
 

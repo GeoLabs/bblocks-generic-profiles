@@ -1,0 +1,29 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Topographic position index",
+  "definition": "The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.",
+  "subClassOf": "https://w3id.org/ogc/rim/activity-type/ActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-09T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index"
+  },
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "Guisan, A., Weiss, S.B., Weiss, A.D. (1999): GLM versus CCA spatial modeling of plant species distribution. Plant Ecology 143: 107-122"
+    }
+  ]
+}

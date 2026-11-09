@@ -1,6 +1,10 @@
 Implementation Profile: **Area**.
 
-> The area of this Surface, as measured in the spatial reference system of this Surface.
+> Implementation Profile of the operation Area, whose meaning is its activity type (activityType): the signature of the Generic Profile Geometry measure, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.area`](../../activity-type/area/) (`activityType`), not this profile.
 
 ## Source
 

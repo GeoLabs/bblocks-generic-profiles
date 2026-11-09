@@ -1,6 +1,10 @@
 Implementation Profile: **Radiometric index**.
 
-> Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).
+> Implementation Profile of the operation Radiometric index, whose meaning is its activity type (activityType): the signature of the Generic Profile Radiometric index, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.radiometric-index`](../../activity-type/radiometric-index/) (`activityType`), not this profile.
 
 ## Source
 

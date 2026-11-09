@@ -1,6 +1,10 @@
 Implementation Profile: **Equals**.
 
-> Returns TRUE if this geometric object is spatially equal to anotherGeometry (same point set), independent of vertex order or representation.
+> Implementation Profile of the operation Equals, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial predicate, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.equals`](../../activity-type/equals/) (`activityType`), not this profile.
 
 ## Source
 
@@ -17,12 +21,6 @@ concrete SQL binding an Implementation Profile is specifically meant to add (OGC
   prefix SQL/MM adds. SQL/MM is why this tier exists at all: it is, precisely, an implementation
   profile of Simple Feature Access for SQL -- the same abstract operation, bound to one concrete
   language and type system, still not any one vendor's specific deployment of it.
-
-## Illustration
-
-![ST_Equals](assets/st_equals.png)
-
-Source: [PostGIS Workshop -- Spatial Relationships](https://postgis.net/workshops/postgis-intro/spatial_relationships.html), © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).
 
 ## Data formats
 

@@ -1,6 +1,10 @@
 Implementation Profile: **Geometry extent**.
 
-> Computes the minimum bounding rectangle of a set of input geometries, as a geometry.
+> Implementation Profile of the operation Geometry extent, whose meaning is its activity type (activityType): the signature of the Generic Profile Unary geometry operation, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.geometry-extent`](../../activity-type/geometry-extent/) (`activityType`), not this profile.
 
 ## Source
 

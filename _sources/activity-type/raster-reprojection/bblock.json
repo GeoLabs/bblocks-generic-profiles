@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Activity type: Raster reprojection",
+  "abstract": "Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-09T00:00:00Z",
+  "dateOfLastChange": "2026-11-09",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.activity-type"
+  ],
+  "isProfileOf": [
+    "generic-profiles.activity-type"
+  ],
+  "scope": "dev",
+  "tags": [
+    "activity type",
+    "operation",
+    "Raster reprojection"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Activity Types",
+  "sources": [
+    {
+      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
+      "link": "https://www.ogc.org/standards/wcps/"
+    }
+  ]
+}

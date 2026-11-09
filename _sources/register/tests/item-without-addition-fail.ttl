@@ -14,4 +14,5 @@
     rim:inRegister gp:register ;
     rim:validityStatus rim:invalid ;
     rim:publicationStatus rim:published ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> .
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects> .

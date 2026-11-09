@@ -1,6 +1,10 @@
 Implementation Profile: **Point cloud to shapes**.
 
-> Converts a point cloud to a SAGA shapes layer of points, i.e. a feature collection.
+> Implementation Profile of the operation Point cloud to shapes, whose meaning is its activity type (activityType): the signature of the Generic Profile Point cloud to features, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.point-cloud-to-shapes`](../../activity-type/point-cloud-to-shapes/) (`activityType`), not this profile.
 
 ## Data
 

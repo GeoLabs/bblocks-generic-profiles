@@ -52,8 +52,8 @@ description: >-
 allOf:
   - $ref: bblocks://ogc.rim.schemas.register-item
   - type: object
-    required: [id, type, prefLabel, definition, inScheme, refinesGenericProfile, keywords, metadata, inputs, outputs,
-               itemClass, inRegister, hasAction]
+    required: [id, type, prefLabel, definition, inScheme, refinesGenericProfile, activityType, keywords, metadata,
+               inputs, outputs, itemClass, inRegister, hasAction]
     properties:
       id:
         type: string
@@ -76,6 +76,14 @@ allOf:
         description: The single Generic Profile (generic-profiles.generic-profile.*) this Implementation Profile refines.
         type: string
         format: uri
+      activityType:
+        description: >-
+          The activity type (generic-profiles.activity-type.*) that holds the meaning of the operation
+          this Implementation Profile binds to formats (decisions D3 and D4). gp:activityType, a
+          sub-property of rim:relatedItem.
+        type: string
+        format: uri
+        pattern: ^https://geolabs\.github\.io/bblocks-generic-profiles/def/activity-type/[a-z0-9-]+$
       keywords:
         description: Table 21 Process.Keywords (E) -- the Generic Profile's keywords plus this operation's own.
         type: array

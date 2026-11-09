@@ -1,10 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
   "name": "Implementation Profile: Geometry extent",
-  "abstract": "Computes the minimum bounding rectangle of a set of input geometries, as a geometry.",
+  "abstract": "Implementation Profile of the operation Geometry extent, whose meaning is its activity type (activityType): the signature of the Generic Profile Unary geometry operation, bound to data exchange formats.",
   "status": "under-development",
   "dateTimeAddition": "2026-10-01T00:00:00Z",
-  "dateOfLastChange": "2026-10-01",
+  "dateOfLastChange": "2026-11-09",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",
@@ -12,13 +12,6 @@
     "generic-profiles.implementation-profile"
   ],
   "sources": [
-    {
-      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture (Envelope)",
-      "link": "https://www.ogc.org/standards/sfa/"
-    },
-    {
-      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Envelope"
-    },
     {
       "title": "SAGA GIS -- Get Shapes Extents (shapes_tools)",
       "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/shapes_tools_19.html"

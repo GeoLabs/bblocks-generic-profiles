@@ -1,10 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
   "name": "Implementation Profile: Is simple",
-  "abstract": "Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection or self tangency.",
+  "abstract": "Implementation Profile of the operation Is simple, whose meaning is its activity type (activityType): the signature of the Generic Profile Unary spatial predicate, bound to data exchange formats.",
   "status": "under-development",
   "dateTimeAddition": "2026-10-06T00:00:00Z",
-  "dateOfLastChange": "2026-10-06",
+  "dateOfLastChange": "2026-11-09",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",
@@ -12,13 +12,6 @@
     "generic-profiles.implementation-profile"
   ],
   "sources": [
-    {
-      "title": "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, \u00a72.1.1.1 IsSimple()",
-      "link": "https://www.ogc.org/standards/sfs/"
-    },
-    {
-      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_IsSimple"
-    },
     {
       "title": "ZOO-Project Geonovum testbed -- IsSimple: IsSimple test.",
       "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/IsSimple"

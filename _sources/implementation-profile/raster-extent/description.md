@@ -1,6 +1,10 @@
 Implementation Profile: **Raster extent**.
 
-> Computes the bounding envelope of a raster coverage, as a vector polygon.
+> Implementation Profile of the operation Raster extent, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster extent, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.raster-extent`](../../activity-type/raster-extent/) (`activityType`), not this profile.
 
 ## Source
 

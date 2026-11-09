@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Activity type: Intersection",
+  "abstract": "Returns a geometric object representing the point set intersection of this geometric object with anotherGeometry.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-09T00:00:00Z",
+  "dateOfLastChange": "2026-11-09",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.activity-type"
+  ],
+  "isProfileOf": [
+    "generic-profiles.activity-type"
+  ],
+  "scope": "dev",
+  "tags": [
+    "activity type",
+    "operation",
+    "Intersection"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Activity Types",
+  "sources": [
+    {
+      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.24",
+      "link": "https://www.ogc.org/standards/sfa/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.25 ST_Intersection"
+    }
+  ]
+}

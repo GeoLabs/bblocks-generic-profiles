@@ -1,6 +1,10 @@
 Implementation Profile: **Raster reprojection**.
 
-> Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content.
+> Implementation Profile of the operation Raster reprojection, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster reprojection, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.raster-reprojection`](../../activity-type/raster-reprojection/) (`activityType`), not this profile.
 
 ## Source
 

@@ -1,6 +1,10 @@
 Implementation Profile: **Centroid**.
 
-> The mathematical centroid for this Surface as a Point. The result is not guaranteed to be on this Surface.
+> Implementation Profile of the operation Centroid, whose meaning is its activity type (activityType): the signature of the Generic Profile Unary geometry operation, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.centroid`](../../activity-type/centroid/) (`activityType`), not this profile.
 
 ## Source
 

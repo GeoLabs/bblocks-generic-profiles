@@ -1,6 +1,10 @@
 Implementation Profile: **Point cloud to grid**.
 
-> Writes one value per grid cell from the points falling in it -- by default the z value of the first point -- as a single-band raster.
+> Implementation Profile of the operation Point cloud to grid, whose meaning is its activity type (activityType): the signature of the Generic Profile Point cloud rasterization, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.point-cloud-to-grid`](../../activity-type/point-cloud-to-grid/) (`activityType`), not this profile.
 
 ## Data
 

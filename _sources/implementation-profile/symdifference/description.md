@@ -1,6 +1,10 @@
 Implementation Profile: **Symmetric difference**.
 
-> Returns a geometric object representing the point set symmetric difference of this geometric object with anotherGeometry.
+> Implementation Profile of the operation Symmetric difference, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial set operation, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.symdifference`](../../activity-type/symdifference/) (`activityType`), not this profile.
 
 ## Source
 
@@ -17,10 +21,6 @@ concrete SQL binding an Implementation Profile is specifically meant to add (OGC
   prefix SQL/MM adds. SQL/MM is why this tier exists at all: it is, precisely, an implementation
   profile of Simple Feature Access for SQL -- the same abstract operation, bound to one concrete
   language and type system, still not any one vendor's specific deployment of it.
-
-## Illustration
-
-No PostGIS workshop illustration exists for this operation. Same gap as `difference`: PostGIS's workshop chapter on geometry-returning functions does not cover `ST_SymDifference` at all, so there is no matching illustration to reuse here.
 
 ## Data formats
 

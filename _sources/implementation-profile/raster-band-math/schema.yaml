@@ -10,6 +10,7 @@ allOf:
       type: {const: ImplementationProfile}
       prefLabel: {const: "Raster band math"}
       refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"}
+      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math"}
       # Table 21 against raster-band-math: keywords Extend (E), metadata Extend
       # (E, footnote a: Table 22 references on the process, input/output-level ones below),
       # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,

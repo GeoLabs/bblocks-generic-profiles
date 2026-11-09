@@ -2,22 +2,45 @@
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent",
   "type": "ImplementationProfile",
   "prefLabel": "Geometry extent",
-  "definition": "Computes the minimum bounding rectangle of a set of input geometries, as a geometry.",
+  "definition": "Implementation Profile of the operation Geometry extent, whose meaning is its activity type (activityType): the signature of the Generic Profile Unary geometry operation, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-01T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-10-01T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/geometry-extent, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Computes the minimum bounding rectangle of a set of input geometries, as a geometry.\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The sources defining the operation move to the activity type: OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture (Envelope); ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Envelope.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/geometry-extent",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/geometry-extent",
   "keywords": [
     "vector",
     "geometry",
@@ -82,13 +105,6 @@
     }
   },
   "source": [
-    {
-      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture (Envelope)",
-      "link": "https://www.ogc.org/standards/sfa/"
-    },
-    {
-      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Envelope"
-    },
     {
       "title": "SAGA GIS -- Get Shapes Extents (shapes_tools)",
       "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/shapes_tools_19.html"

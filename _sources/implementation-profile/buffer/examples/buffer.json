@@ -2,29 +2,51 @@
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer",
   "type": "ImplementationProfile",
   "prefLabel": "Buffer",
-  "definition": "Returns a geometric object representing all points whose distance from this geometric object is less than or equal to a given distance.",
+  "definition": "Implementation Profile of the operation Buffer, whose meaning is its activity type (activityType): the signature of the Generic Profile Geometry buffer, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns a geometric object representing all points whose distance from this geometric object is less than or equal to a given distance.\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The keyword ST_Buffer becomes an altLabel of the activity type; the sources defining the operation move to the activity type: OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.23; ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.5 ST_Buffer; the illustration of the operation moves to the activity type.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/buffer",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-buffer",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer",
   "keywords": [
     "vector",
     "geometry",
     "spatial analysis",
     "buffer",
-    "Buffer",
-    "ST_Buffer"
+    "Buffer"
   ],
   "metadata": [
     {
@@ -95,14 +117,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.23",
-      "link": "https://www.ogc.org/standards/sfa/"
-    },
-    {
-      "title": "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.5 ST_Buffer"
-    }
-  ]
+  }
 }

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Activity type",
+  "abstract": "The shape every activity type of this register shares: the meaning of one operation, as an acttype:ActivityType item of the Activity Type Register's item class, held in gp:register. One per operation, distinct from the Implementation Profile that points to it with activityType.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-09T00:00:00Z",
+  "dateOfLastChange": "2026-11-09",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "isProfileOf": ["ogc.register.schemas.activity-types-schema"],
+  "dependsOn": [
+    "ogc.register.schemas.activity-types-schema",
+    "ogc.register.activity-types",
+    "ogc.register.geoprocessing-activity-types",
+    "generic-profiles.register"
+  ],
+  "scope": "dev",
+  "tags": ["activity type", "operation", "register", "ISO 19135"],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "shaclShapes": ["shapes.shacl"],
+  "sources": [
+    {
+      "title": "Activity Type Register",
+      "link": "https://ogcincubator.github.io/activity-type-register/"
+    },
+    {
+      "title": "W3C PROV-O: The PROV Ontology",
+      "link": "https://www.w3.org/TR/prov-o/"
+    }
+  ],
+  "maturity": "development",
+  "highlighted": true,
+  "group": "Activity Types"
+}

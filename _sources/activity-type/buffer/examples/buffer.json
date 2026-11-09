@@ -1,0 +1,38 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Buffer",
+  "altLabel": [
+    "ST_Buffer"
+  ],
+  "definition": "Returns a geometric object representing all points whose distance from this geometric object is less than or equal to a given distance.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-09T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.23",
+      "link": "https://www.ogc.org/standards/sfa/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.5 ST_Buffer"
+    }
+  ]
+}

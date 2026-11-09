@@ -18,6 +18,7 @@
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects",
   "keywords": [
     "vector",
     "geometry",

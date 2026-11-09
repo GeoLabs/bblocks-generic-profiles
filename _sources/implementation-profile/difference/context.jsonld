@@ -18,6 +18,10 @@
       "@id": "gp:refinesGenericProfile",
       "@type": "@id"
     },
+    "activityType": {
+      "@id": "gp:activityType",
+      "@type": "@id"
+    },
     "keywords": "proc:keywords",
     "metadata": {
       "@id": "proc:metadata",

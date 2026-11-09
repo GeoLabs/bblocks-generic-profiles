@@ -1,24 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
   "name": "Implementation Profile: Intersects",
-  "abstract": "Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share at least one point). Equivalent to the negation of Disjoint.",
+  "abstract": "Implementation Profile of the operation Intersects, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial predicate, bound to data exchange formats.",
   "status": "under-development",
   "dateTimeAddition": "2026-09-30T00:00:00Z",
-  "dateOfLastChange": "2026-09-30",
+  "dateOfLastChange": "2026-11-09",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",
   "dependsOn": [
     "generic-profiles.implementation-profile"
-  ],
-  "sources": [
-    {
-      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.15",
-      "link": "https://www.ogc.org/standards/sfa/"
-    },
-    {
-      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.24 ST_Intersects"
-    }
   ],
   "scope": "dev",
   "tags": [

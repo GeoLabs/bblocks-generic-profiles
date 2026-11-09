@@ -1,0 +1,29 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/slope",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Slope",
+  "definition": "The slope gradient of an elevation model at each cell, from a local fit of the surface by the 9 parameter 2nd order polynom of Zevenbergen & Thorne (1987).",
+  "subClassOf": "https://w3id.org/ogc/rim/activity-type/ActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/slope",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/slope/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-09T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/slope"
+  },
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "Zevenbergen, L.W., Thorne, C.R. (1987): Quantitative analysis of land surface topography. Earth Surface Processes and Landforms, 12: 47-56"
+    }
+  ]
+}

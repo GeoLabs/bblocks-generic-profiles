@@ -1,6 +1,10 @@
 Implementation Profile: **Point cloud thinning (simple)**.
 
-> Reduces the number of points to the given percentage by sequential point removal, which suits points stored in chronological order best.
+> Implementation Profile of the operation Point cloud thinning (simple), whose meaning is its activity type (activityType): the signature of the Generic Profile Point cloud thinning, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.point-cloud-thinning`](../../activity-type/point-cloud-thinning/) (`activityType`), not this profile.
 
 ## Data
 

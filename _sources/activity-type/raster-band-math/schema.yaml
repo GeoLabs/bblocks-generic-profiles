@@ -1,0 +1,13 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: The activity type "Raster band math" -- see generic-profiles.activity-type for the shape
+  every activity type of this register shares.
+allOf:
+- $ref: bblocks://generic-profiles.activity-type
+- type: object
+  properties:
+    id:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math
+    prefLabel:
+      const: Raster band math
+    subClassOf:
+      const: https://w3id.org/ogc/rim/activity-type/ActivityType

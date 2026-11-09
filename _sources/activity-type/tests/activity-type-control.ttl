@@ -1,0 +1,30 @@
+# Must pass: the control of the -fail fixtures here.
+@prefix gp:      <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
+@prefix geoproc: <https://w3id.org/ogc/rim/geoprocessing/> .
+@prefix geo:     <http://www.opengis.net/ont/geosparql#> .
+@prefix rim:     <https://w3id.org/ogc/rim/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/fixture-activity-type-control> a acttype:ActivityType , owl:Class ;
+    skos:prefLabel "Fixture"@en ;
+    skos:definition "An operation used only to test the shapes."@en ;
+    rdfs:subClassOf geoproc:GeoprocessingActivityType ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/fixture-activity-type-control"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/ogc/rim/activity-type/activityTypeItemClass> ;
+    rim:inRegister gp:register ;
+    rim:validityStatus rim:invalid ;
+    rim:publicationStatus rim:published ;
+    acttype:usedEntityType geo:Geometry ;
+    acttype:associatedAgentType prov:SoftwareAgent ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/fixture-activity-type-control/actions/addition> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/fixture-activity-type-control/actions/addition> a rim:RegisterAction ;
+    rim:actionType rim:additionAction ;
+    rim:proposer gp:geolabs ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/fixture-activity-type-control> ;
+    prov:startedAtTime "2026-11-09T00:00:00Z"^^xsd:dateTime .

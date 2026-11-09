@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Activity type: Convex hull",
+  "abstract": "Returns a geometry that represents the convex hull of this Geometry.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-09T00:00:00Z",
+  "dateOfLastChange": "2026-11-09",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.activity-type"
+  ],
+  "isProfileOf": [
+    "generic-profiles.activity-type"
+  ],
+  "scope": "dev",
+  "tags": [
+    "activity type",
+    "operation",
+    "Convex hull"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Activity Types",
+  "sources": [
+    {
+      "title": "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.1.3 ConvexHull()",
+      "link": "https://www.ogc.org/standards/sfs/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_ConvexHull"
+    }
+  ]
+}

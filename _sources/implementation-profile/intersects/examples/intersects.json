@@ -2,29 +2,51 @@
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects",
   "type": "ImplementationProfile",
   "prefLabel": "Intersects",
-  "definition": "Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share at least one point). Equivalent to the negation of Disjoint.",
+  "definition": "Implementation Profile of the operation Intersects, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial predicate, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share at least one point). Equivalent to the negation of Disjoint.\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The keyword ST_Intersects becomes an altLabel of the activity type; the sources defining the operation move to the activity type: OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.15; ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.24 ST_Intersects; the illustration of the operation moves to the activity type.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects",
   "keywords": [
     "vector",
     "geometry",
     "spatial relation",
     "predicate",
-    "Intersects",
-    "ST_Intersects"
+    "Intersects"
   ],
   "metadata": [
     {
@@ -95,14 +117,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.15",
-      "link": "https://www.ogc.org/standards/sfa/"
-    },
-    {
-      "title": "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.24 ST_Intersects"
-    }
-  ]
+  }
 }

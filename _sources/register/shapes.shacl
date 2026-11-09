@@ -45,7 +45,13 @@ gp:ImplementationProfileShape a sh:NodeShape ;
                   sh:message "An Implementation Profile must be in gp:register." ] ;
     sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ] ;
     sh:property [ sh:path gp:refinesGenericProfile ; sh:nodeKind sh:IRI ; sh:minCount 1 ; sh:maxCount 1 ;
-                  sh:message "An Implementation Profile must refine exactly one Generic Profile." ] .
+                  sh:message "An Implementation Profile must refine exactly one Generic Profile." ] ;
+    # Decision D4: exactly one activity type of this register, which holds the meaning of the
+    # operation. Checked as an IRI under this register's activity-type namespace, as the other
+    # cross-item links: the activity type is not in the profile's data graph.
+    sh:property [ sh:path gp:activityType ; sh:nodeKind sh:IRI ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:pattern "^https://geolabs\\.github\\.io/bblocks-generic-profiles/def/activity-type/[a-z0-9-]+$" ;
+                  sh:message "An Implementation Profile must point to exactly one activity type of this register (activityType)." ] .
 
 # Class -> items: anything claiming one of these item classes must be of the matching type.
 

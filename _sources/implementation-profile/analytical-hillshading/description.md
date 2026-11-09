@@ -1,6 +1,10 @@
 Implementation Profile: **Analytical hillshading**.
 
-> For each cell, the angle at which light coming from the position of the light source hits the terrain surface (SAGA's standard method).
+> Implementation Profile of the operation Analytical hillshading, whose meaning is its activity type (activityType): the signature of the Generic Profile Analytical hillshading, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.analytical-hillshading`](../../activity-type/analytical-hillshading/) (`activityType`), not this profile.
 
 ## Data
 

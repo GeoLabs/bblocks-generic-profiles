@@ -1,6 +1,10 @@
 Implementation Profile: **Raster crop**.
 
-> Extracts the pixels of a raster coverage that fall within a region of interest.
+> Implementation Profile of the operation Raster crop, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster crop, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.raster-crop`](../../activity-type/raster-crop/) (`activityType`), not this profile.
 
 ## Source
 

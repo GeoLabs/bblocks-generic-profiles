@@ -9,6 +9,7 @@ allOf:
       type: {const: ImplementationProfile}
       prefLabel: {const: "Point cloud thinning (simple)"}
       refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning"}
+      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-thinning"}
       # Table 21 against point-cloud-thinning: keywords Extend (E), metadata Extend
       # (E, footnote a: Table 22 references on the process, input/output-level ones below),
       # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,

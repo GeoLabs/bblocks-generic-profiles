@@ -11,6 +11,7 @@
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/input-without-datatype> a gp:ImplementationProfile ;
     skos:prefLabel "Fixture" ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects> ;
     rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/input-without-datatype"^^xsd:anyURI ;
     rim:itemClass gpic:implementation-profile ;
     rim:inRegister gp:register ;

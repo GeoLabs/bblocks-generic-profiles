@@ -1,6 +1,10 @@
 Implementation Profile: **Raster format conversion**.
 
-> Re-encodes a raster coverage into another raster format, without altering its content.
+> Implementation Profile of the operation Raster format conversion, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster format conversion, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.raster-format-conversion`](../../activity-type/raster-format-conversion/) (`activityType`), not this profile.
 
 ## Source
 

@@ -1,6 +1,10 @@
 Implementation Profile: **Topographic position index**.
 
-> The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.
+> Implementation Profile of the operation Topographic position index, whose meaning is its activity type (activityType): the signature of the Generic Profile Terrain derivative, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.topographic-position-index`](../../activity-type/topographic-position-index/) (`activityType`), not this profile.
 
 ## Data
 

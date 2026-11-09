@@ -2,29 +2,51 @@
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/union",
   "type": "ImplementationProfile",
   "prefLabel": "Union",
-  "definition": "Returns a geometric object representing the point set union of this geometric object with anotherGeometry.",
+  "definition": "Implementation Profile of the operation Union, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial set operation, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/union/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/union"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/union/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/union"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/union/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/union, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns a geometric object representing the point set union of this geometric object with anotherGeometry.\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/union"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/union/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The keyword ST_Union becomes an altLabel of the activity type; the sources defining the operation move to the activity type: OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.25; ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.53 ST_Union; the illustration of the operation moves to the activity type.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/union"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/union",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/union",
   "keywords": [
     "vector",
     "geometry",
     "spatial analysis",
     "set operation",
-    "Union",
-    "ST_Union"
+    "Union"
   ],
   "metadata": [
     {
@@ -101,14 +123,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.25",
-      "link": "https://www.ogc.org/standards/sfa/"
-    },
-    {
-      "title": "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.53 ST_Union"
-    }
-  ]
+  }
 }

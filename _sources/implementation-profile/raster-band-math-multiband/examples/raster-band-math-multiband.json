@@ -2,22 +2,45 @@
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband",
   "type": "ImplementationProfile",
   "prefLabel": "Raster band math (multi-band output)",
-  "definition": "Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.",
+  "definition": "Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The sources defining the operation move to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard; OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband",
   "keywords": [
     "raster",
     "coverage",
@@ -101,16 +124,8 @@
   },
   "source": [
     {
-      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
-      "link": "https://www.ogc.org/standards/wcps/"
-    },
-    {
       "title": "OTB BandMathX -- Performs mathematical operations on several multiband images, outputting a mono- or multi-band image",
       "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMathX.html"
-    },
-    {
-      "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
-      "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
     }
   ]
 }

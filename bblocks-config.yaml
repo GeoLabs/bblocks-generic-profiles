@@ -68,7 +68,8 @@ imports:
   # register (generic-profiles.activity-type.*), and each Implementation Profile links to it with
   # `activityType`, a sub-property of rim:relatedItem. Imported from ogcincubator, not
   # geonovum-labs. Its published register.json still imports the Registered Item Model from
-  # geonovum-labs.github.io, upstream of this register.
+  # geonovum-labs.github.io, upstream of this register; that transitive import is loaded last and
+  # replaces the ogcincubator one above for every ogc.rim.* block (observed in a build, 2026-11-09).
   - https://ogcincubator.github.io/activity-type-register/build/register.json
 
 schema-oas30-downcompile: False

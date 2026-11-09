@@ -10,6 +10,7 @@ allOf:
       type: {const: ImplementationProfile}
       prefLabel: {const: "Is simple"}
       refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"}
+      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/is-simple"}
       # Table 21 against unary-spatial-predicate: keywords Extend (E), metadata Extend
       # (E, footnote a: Table 22 references on the process, input/output-level ones below),
       # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,

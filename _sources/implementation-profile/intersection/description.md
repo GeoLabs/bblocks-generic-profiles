@@ -1,6 +1,10 @@
 Implementation Profile: **Intersection**.
 
-> Returns a geometric object representing the point set intersection of this geometric object with anotherGeometry.
+> Implementation Profile of the operation Intersection, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial set operation, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.intersection`](../../activity-type/intersection/) (`activityType`), not this profile.
 
 ## Source
 
@@ -17,12 +21,6 @@ concrete SQL binding an Implementation Profile is specifically meant to add (OGC
   prefix SQL/MM adds. SQL/MM is why this tier exists at all: it is, precisely, an implementation
   profile of Simple Feature Access for SQL -- the same abstract operation, bound to one concrete
   language and type system, still not any one vendor's specific deployment of it.
-
-## Illustration
-
-![ST_Intersection](assets/intersection.jpg)
-
-Source: [PostGIS Workshop -- Geometry Returning Functions](https://postgis.net/workshops/postgis-intro/geometry_returning.html), © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).
 
 ## Data formats
 

@@ -1,0 +1,57 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: 'An activity type of this register: the meaning of one operation, as an acttype:ActivityType
+  item (Activity Type Register) held in gp:register, and an OWL class. One per operation (decision D3);
+  the Implementation Profile of the operation points to it with `activityType`.'
+allOf:
+- $ref: bblocks://ogc.register.schemas.activity-types-schema
+- type: object
+  required:
+  - id
+  - type
+  - prefLabel
+  - definition
+  - subClassOf
+  - objectIdentifier
+  - itemClass
+  - inRegister
+  - validityStatus
+  - publicationStatus
+  - hasAction
+  properties:
+    type:
+      const:
+      - ActivityType
+      - Class
+    prefLabel:
+      type: string
+    altLabel:
+      description: Other names of the operation, e.g. its SQL/MM function name.
+      type: array
+      items:
+        type: string
+    definition:
+      description: What the operation does. No tool, format or deployment.
+      type: string
+    subClassOf:
+      description: geoproc:GeoprocessingActivityType where a spatial entity type is declared, otherwise
+        acttype:ActivityType.
+      enum:
+      - https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
+      - https://w3id.org/ogc/rim/activity-type/ActivityType
+    itemClass:
+      description: Written by scripts/activity_types.py from its constant ATR_ITEM_CLASS.
+      const: https://w3id.org/ogc/rim/activity-type/activityTypeItemClass
+    inRegister:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/register
+    source:
+      type: array
+      items:
+        type: object
+        required:
+        - title
+        properties:
+          title:
+            type: string
+          link:
+            type: string
+            format: uri

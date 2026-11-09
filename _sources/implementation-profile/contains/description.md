@@ -1,6 +1,10 @@
 Implementation Profile: **Contains**.
 
-> Returns TRUE if this geometric object spatially contains anotherGeometry (no point of anotherGeometry lies outside this geometric object, and at least one point of the interior of anotherGeometry lies in the interior of this geometric object).
+> Implementation Profile of the operation Contains, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial predicate, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.contains`](../../activity-type/contains/) (`activityType`), not this profile.
 
 ## Source
 
@@ -17,14 +21,6 @@ concrete SQL binding an Implementation Profile is specifically meant to add (OGC
   prefix SQL/MM adds. SQL/MM is why this tier exists at all: it is, precisely, an implementation
   profile of Simple Feature Access for SQL -- the same abstract operation, bound to one concrete
   language and type system, still not any one vendor's specific deployment of it.
-
-## Illustration
-
-![ST_Within](assets/st_within.png)
-
-This diagram illustrates `ST_Within`, not `ST_Contains` directly -- PostGIS's own workshop does not give `ST_Contains` a separate figure, since the two predicates are logical inverses of one another (reading the diagram the other way around, with the roles of the two geometries swapped, illustrates `Contains`).
-
-Source: [PostGIS Workshop -- Spatial Relationships](https://postgis.net/workshops/postgis-intro/spatial_relationships.html), © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).
 
 ## Data formats
 

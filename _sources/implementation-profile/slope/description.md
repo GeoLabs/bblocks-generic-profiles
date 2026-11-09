@@ -1,6 +1,10 @@
 Implementation Profile: **Slope**.
 
-> The slope gradient of an elevation model at each cell, from a local fit of the surface (SAGA's default method: the 9 parameter 2nd order polynom of Zevenbergen & Thorne 1987).
+> Implementation Profile of the operation Slope, whose meaning is its activity type (activityType): the signature of the Generic Profile Terrain derivative, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.slope`](../../activity-type/slope/) (`activityType`), not this profile.
 
 ## Data
 

@@ -1,6 +1,10 @@
 Implementation Profile: **Terrain ruggedness index**.
 
-> The terrain ruggedness index (TRI) of Riley et al. (1999): how much the elevation of each cell differs from that of its neighbourhood.
+> Implementation Profile of the operation Terrain ruggedness index, whose meaning is its activity type (activityType): the signature of the Generic Profile Terrain derivative, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.terrain-ruggedness-index`](../../activity-type/terrain-ruggedness-index/) (`activityType`), not this profile.
 
 ## Data
 

@@ -18,6 +18,8 @@ same graph as any other register mapped onto the model.
 | `rim:RegisterItem` sub-class | `gp:GenericProfile` -- JSON `type: GenericProfile` | `.../def/GenericProfile` |
 | `rim:RegisterItem` sub-class | `gp:ImplementationProfile` -- JSON `type: ImplementationProfile` | `.../def/ImplementationProfile` |
 | `rim:relatedItem` sub-property | `gp:refinesGenericProfile` (Implementation Profile -> Generic Profile) | |
+| `rim:relatedItem` sub-property | `gp:activityType` (Implementation Profile -> activity type) | |
+| `acttype:ActivityType` (Activity Type Register) | the meaning of one operation, `generic-profiles.activity-type.*`, item class `acttype:activityTypeItemClass` | `.../def/activity-type/<operation>` |
 
 The three item types remain `skos:Concept`s as well (that is what they were typed as before this
 block existed, and what `prefLabel`/`definition`/`inScheme`/`broader` presuppose), so nothing

@@ -1,0 +1,24 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-to-grid",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Point cloud to grid",
+  "definition": "Writes one value per grid cell from the points falling in it -- by default the z value of the first point -- as a single-band raster.",
+  "subClassOf": "https://w3id.org/ogc/rim/activity-type/ActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-to-grid",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-to-grid/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-09T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-to-grid"
+  },
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent"
+}

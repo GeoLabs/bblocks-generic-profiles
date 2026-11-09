@@ -1,6 +1,6 @@
 # Questions for the Registered Item Model and Activity Type Register maintainers
 
-Status: draft, 2026-11-05, question 12 added 2026-11-08. Not sent.
+Status: draft, 2026-11-05, question 12 added 2026-11-08, question 11 extended 2026-11-09. Not sent.
 
 GeoLabs maintains `bblocks-generic-profiles`, a register of process profiles based on the WPS 2.0.2
 tiers (OGC 14-065 §7.5). We want to integrate the Activity Type Register (ATR) without breaking the
@@ -119,6 +119,14 @@ It renames `acttype:activityTypeItemClass` to `acttype:ActivityTypeItemClass`. P
 
 The ATR and RIM `register.json` files respond on both `geonovum-labs.github.io` and
 `ogcincubator.github.io`. Will the first stay available? Is `ogcincubator` the one to import?
+
+The ATR `register.json` published on `ogcincubator.github.io` still imports the model from
+`geonovum-labs.github.io`. A register that imports both the model and the ATR from `ogcincubator`
+therefore resolves every `ogc.rim.*` block to the `geonovum-labs` copy: the transitive import is
+loaded last and replaces the direct one. We observed this in a build of our register on 2026-11-09
+(annotated `$ref`s and SHACL sources). The two copies differ little today (`rim:affectedProperty` is
+missing from the `geonovum-labs` ontology; the shapes are identical). Could the published ATR be
+rebuilt against `ogcincubator`?
 
 `https://w3id.org/ogc/rim/` and `https://w3id.org/ogc/rim/activity-type/ActivityType` returned 404 on
 2026-11-05. Is that redirect planned?

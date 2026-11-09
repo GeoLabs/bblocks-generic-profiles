@@ -1,0 +1,5 @@
+- title: Equals
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/
+  snippets:
+  - language: json
+    ref: examples/equals.json

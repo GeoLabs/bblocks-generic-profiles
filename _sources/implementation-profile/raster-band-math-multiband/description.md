@@ -1,6 +1,10 @@
 Implementation Profile: **Raster band math (multi-band output)**.
 
-> Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.
+> Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.raster-band-math-multiband`](../../activity-type/raster-band-math-multiband/) (`activityType`), not this profile.
 
 ## Source
 

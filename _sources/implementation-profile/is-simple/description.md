@@ -1,6 +1,10 @@
 Implementation Profile: **Is simple**.
 
-> Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection or self tangency.
+> Implementation Profile of the operation Is simple, whose meaning is its activity type (activityType): the signature of the Generic Profile Unary spatial predicate, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.is-simple`](../../activity-type/is-simple/) (`activityType`), not this profile.
 
 ## Source
 

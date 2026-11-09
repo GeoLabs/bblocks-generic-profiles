@@ -1,0 +1,414 @@
+# One activity type per operation (decision D3, 2026-11-05): the meaning of the operation that an
+# Implementation Profile binds to representations. scripts/activity_types.py generates
+# _sources/activity-type/<key>/ from this file; edit here, then regenerate.
+#
+# key: the operation, the same name as its Implementation Profile.
+# parent: geoprocessing (rdfs:subClassOf geoproc:GeoprocessingActivityType) or activity
+#   (rdfs:subClassOf acttype:ActivityType). geoprocessing only where a spatial entity type can be
+#   declared as tested in docs/questions-for-rim-atr-maintainers.md: geo:Geometry for a geometry,
+#   surface or point role. Rasters, point clouds, feature collections and bounding boxes have no
+#   such entity type until the maintainers answer question 5 (decision D8, open), so their
+#   operations stay direct sub-classes of acttype:ActivityType, with no entity type.
+# usedEntityType / generatedEntityType: classes, from the roles of the Implementation Profile.
+# altLabel: the SQL/MM name of the operation, where there is one.
+# sources: the standards and literature that define the operation. Tools and deployments are not
+#   sources of an operation: they are at tier 4 (bblocks-process-profiles).
+# illustration: Markdown, with images under the block's assets/.
+- key: analytical-hillshading
+  prefLabel: Analytical hillshading
+  definition: For each cell, the angle at which light coming from the position of the light source hits
+    the terrain surface.
+  parent: activity
+- key: area
+  prefLabel: Area
+  altLabel:
+  - ST_Area
+  definition: The area of this Surface, as measured in the spatial reference system of this Surface.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  sources:
+  - title: OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Area()
+    link: https://www.ogc.org/standards/sfs/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area'
+- key: buffer
+  prefLabel: Buffer
+  altLabel:
+  - ST_Buffer
+  definition: Returns a geometric object representing all points whose distance from this geometric object
+    is less than or equal to a given distance.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.23'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.5 ST_Buffer'
+  illustration: '![ST_Buffer](assets/st_buffer.png)
+
+
+    Source: [PostGIS Workshop -- Geometry Returning Functions](https://postgis.net/workshops/postgis-intro/geometry_returning.html),
+    © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).'
+- key: centroid
+  prefLabel: Centroid
+  altLabel:
+  - ST_Centroid
+  definition: The mathematical centroid for this Surface as a Point. The result is not guaranteed to be
+    on this Surface.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Geometry
+  sources:
+  - title: OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Centroid()
+    link: https://www.ogc.org/standards/sfs/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Centroid'
+- key: contains
+  prefLabel: Contains
+  altLabel:
+  - ST_Contains
+  definition: Returns TRUE if this geometric object spatially contains anotherGeometry (no point of anotherGeometry
+    lies outside this geometric object, and at least one point of the interior of anotherGeometry lies
+    in the interior of this geometric object).
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.19'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.11 ST_Contains'
+  illustration: '![ST_Within](assets/st_within.png)
+
+
+    This diagram illustrates `ST_Within`, not `ST_Contains` directly -- PostGIS''s own workshop does not
+    give `ST_Contains` a separate figure, since the two predicates are logical inverses of one another
+    (reading the diagram the other way around, with the roles of the two geometries swapped, illustrates
+    `Contains`).
+
+
+    Source: [PostGIS Workshop -- Spatial Relationships](https://postgis.net/workshops/postgis-intro/spatial_relationships.html),
+    © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).'
+- key: convex-hull
+  prefLabel: Convex hull
+  altLabel:
+  - ST_ConvexHull
+  definition: Returns a geometry that represents the convex hull of this Geometry.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Geometry
+  sources:
+  - title: OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.1.3 ConvexHull()
+    link: https://www.ogc.org/standards/sfs/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_ConvexHull'
+- key: crosses
+  prefLabel: Crosses
+  altLabel:
+  - ST_Crosses
+  definition: 'Returns TRUE if this geometric object ''spatially crosses'' anotherGeometry: the intersection
+    results in a geometry of dimension one less than the maximum dimension of the two source geometries,
+    and the intersection set is interior to both.'
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.17'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.12 ST_Crosses'
+  illustration: '![ST_Crosses](assets/st_crosses.png)
+
+
+    Source: [PostGIS Workshop -- Spatial Relationships](https://postgis.net/workshops/postgis-intro/spatial_relationships.html),
+    © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).'
+- key: difference
+  prefLabel: Difference
+  altLabel:
+  - ST_Difference
+  definition: Returns a geometric object representing the point set difference of this geometric object
+    with anotherGeometry.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.26'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.13 ST_Difference'
+  illustration: No PostGIS workshop illustration exists for this operation. PostGIS's own workshop chapter
+    on geometry-returning functions (<https://postgis.net/workshops/postgis-intro/geometry_returning.html>)
+    covers `ST_Centroid`, `ST_Buffer`, `ST_Intersection` and `ST_Union` with a diagram each, but not `ST_Difference`
+    -- there is no matching illustration to reuse here.
+- key: disjoint
+  prefLabel: Disjoint
+  altLabel:
+  - ST_Disjoint
+  definition: Returns TRUE if this geometric object is spatially disjoint from anotherGeometry (they share
+    no point). Equivalent to the negation of Intersects.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.16'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.14 ST_Disjoint'
+  illustration: '![ST_Disjoint](assets/st_disjoint.png)
+
+
+    Source: [PostGIS Workshop -- Spatial Relationships](https://postgis.net/workshops/postgis-intro/spatial_relationships.html),
+    © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).'
+- key: equals
+  prefLabel: Equals
+  altLabel:
+  - ST_Equals
+  definition: Returns TRUE if this geometric object is spatially equal to anotherGeometry (same point
+    set), independent of vertex order or representation.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.14'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.16 ST_Equals'
+  illustration: '![ST_Equals](assets/st_equals.png)
+
+
+    Source: [PostGIS Workshop -- Spatial Relationships](https://postgis.net/workshops/postgis-intro/spatial_relationships.html),
+    © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).'
+- key: geometry-extent
+  prefLabel: Geometry extent
+  definition: Computes the minimum bounding rectangle of a set of input geometries, as a geometry.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture (Envelope)'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Envelope'
+- key: intersection
+  prefLabel: Intersection
+  altLabel:
+  - ST_Intersection
+  definition: Returns a geometric object representing the point set intersection of this geometric object
+    with anotherGeometry.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.24'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.25 ST_Intersection'
+  illustration: '![ST_Intersection](assets/intersection.jpg)
+
+
+    Source: [PostGIS Workshop -- Geometry Returning Functions](https://postgis.net/workshops/postgis-intro/geometry_returning.html),
+    © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).'
+- key: intersects
+  prefLabel: Intersects
+  altLabel:
+  - ST_Intersects
+  definition: Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share
+    at least one point). Equivalent to the negation of Disjoint.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.15'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.24 ST_Intersects'
+  illustration: '![ST_Intersects](assets/st_intersects.png)
+
+
+    Source: [PostGIS Workshop -- Spatial Relationships](https://postgis.net/workshops/postgis-intro/spatial_relationships.html),
+    © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).'
+- key: is-simple
+  prefLabel: Is simple
+  altLabel:
+  - ST_IsSimple
+  definition: Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection
+    or self tangency.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  sources:
+  - title: OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.1.1 IsSimple()
+    link: https://www.ogc.org/standards/sfs/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_IsSimple'
+- key: point-cloud-thinning
+  prefLabel: Point cloud thinning (simple)
+  definition: Reduces the number of points to the given percentage by sequential point removal, which
+    suits points stored in chronological order best.
+  parent: activity
+- key: point-cloud-to-grid
+  prefLabel: Point cloud to grid
+  definition: Writes one value per grid cell from the points falling in it -- by default the z value of
+    the first point -- as a single-band raster.
+  parent: activity
+- key: point-cloud-to-shapes
+  prefLabel: Point cloud to shapes
+  definition: Converts a point cloud to a feature collection of points.
+  parent: activity
+- key: radiometric-index
+  prefLabel: Radiometric index
+  definition: Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant
+    spectral channels of the input raster(s).
+  parent: activity
+  sources:
+  - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
+    link: https://www.ogc.org/standards/wcps/
+- key: raster-band-math-multiband
+  prefLabel: Raster band math (multi-band output)
+  definition: Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across
+    one or more input rasters, producing an output raster with one or more bands.
+  parent: activity
+  sources:
+  - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
+    link: https://www.ogc.org/standards/wcps/
+  - title: OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType
+    link: https://docs.ogc.org/is/09-146r8/09-146r8.html
+- key: raster-band-math
+  prefLabel: Raster band math
+  definition: Evaluates a user-supplied mathematical expression per pixel across one or more input rasters,
+    producing a monoband output raster.
+  parent: activity
+  sources:
+  - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
+    link: https://www.ogc.org/standards/wcps/
+- key: raster-crop
+  prefLabel: Raster crop
+  definition: Extracts the pixels of a raster coverage that fall within a region of interest.
+  parent: activity
+  sources:
+  - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
+    link: https://www.ogc.org/standards/wcps/
+- key: raster-extent
+  prefLabel: Raster extent
+  definition: Computes the bounding envelope of a raster coverage, as a vector polygon.
+  parent: geoprocessing
+  generatedEntityType:
+  - geo:Geometry
+  sources:
+  - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
+    link: https://www.ogc.org/standards/wcps/
+- key: raster-format-conversion
+  prefLabel: Raster format conversion
+  definition: Re-encodes a raster coverage into another raster format, without altering its content.
+  parent: activity
+  sources:
+  - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
+    link: https://www.ogc.org/standards/wcps/
+- key: raster-reprojection
+  prefLabel: Raster reprojection
+  definition: Reprojects a raster coverage to another coordinate reference system, resampling pixel values
+    as needed, preserving the coverage's content.
+  parent: activity
+  sources:
+  - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
+    link: https://www.ogc.org/standards/wcps/
+- key: slope
+  prefLabel: Slope
+  definition: The slope gradient of an elevation model at each cell, from a local fit of the surface by
+    the 9 parameter 2nd order polynom of Zevenbergen & Thorne (1987).
+  parent: activity
+  sources:
+  - title: 'Zevenbergen, L.W., Thorne, C.R. (1987): Quantitative analysis of land surface topography.
+      Earth Surface Processes and Landforms, 12: 47-56'
+- key: symdifference
+  prefLabel: Symmetric difference
+  altLabel:
+  - ST_SymDifference
+  definition: Returns a geometric object representing the point set symmetric difference of this geometric
+    object with anotherGeometry.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.27'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.48 ST_SymDifference'
+  illustration: 'No PostGIS workshop illustration exists for this operation. Same gap as `difference`:
+    PostGIS''s workshop chapter on geometry-returning functions does not cover `ST_SymDifference` at all,
+    so there is no matching illustration to reuse here.'
+- key: terrain-ruggedness-index
+  prefLabel: Terrain ruggedness index
+  definition: 'The terrain ruggedness index (TRI) of Riley et al. (1999): how much the elevation of each
+    cell differs from that of its neighbourhood.'
+  parent: activity
+  sources:
+  - title: 'Riley, S.J., De Gloria, S.D., Elliot, R. (1999): A Terrain Ruggedness that Quantifies Topographic
+      Heterogeneity. Intermountain Journal of Science, Vol.5, No.1-4, pp.23-27'
+- key: topographic-position-index
+  prefLabel: Topographic position index
+  definition: 'The topographic position index (TPI) of Guisan et al. (1999): the difference between the
+    elevation of each cell and the mean elevation of its neighbourhood.'
+  parent: activity
+  sources:
+  - title: 'Guisan, A., Weiss, S.B., Weiss, A.D. (1999): GLM versus CCA spatial modeling of plant species
+      distribution. Plant Ecology 143: 107-122'
+- key: touches
+  prefLabel: Touches
+  altLabel:
+  - ST_Touches
+  definition: 'Returns TRUE if the only points in common between this geometric object and anotherGeometry
+    lie in the union of their boundaries: at least one boundary point in common, but no interior points
+    in common.'
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.20'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.49 ST_Touches'
+  illustration: '![ST_Touches](assets/st_touches.png)
+
+
+    Source: [PostGIS Workshop -- Spatial Relationships](https://postgis.net/workshops/postgis-intro/spatial_relationships.html),
+    © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).'
+- key: union
+  prefLabel: Union
+  altLabel:
+  - ST_Union
+  definition: Returns a geometric object representing the point set union of this geometric object with
+    anotherGeometry.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.25'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.53 ST_Union'
+  illustration: '![ST_Union](assets/union.jpg)
+
+
+    Source: [PostGIS Workshop -- Geometry Returning Functions](https://postgis.net/workshops/postgis-intro/geometry_returning.html),
+    © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).'
+- key: within
+  prefLabel: Within
+  altLabel:
+  - ST_Within
+  definition: Returns TRUE if this geometric object is spatially within anotherGeometry. The converse
+    of Contains.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  sources:
+  - title: 'OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.18'
+    link: https://www.ogc.org/standards/sfa/
+  - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.51 ST_Within'
+  illustration: '![ST_Within](assets/st_within.png)
+
+
+    Source: [PostGIS Workshop -- Spatial Relationships](https://postgis.net/workshops/postgis-intro/spatial_relationships.html),
+    © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).'

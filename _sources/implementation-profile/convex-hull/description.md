@@ -1,6 +1,10 @@
 Implementation Profile: **Convex hull**.
 
-> Returns a geometry that represents the convex hull of this Geometry.
+> Implementation Profile of the operation Convex hull, whose meaning is its activity type (activityType): the signature of the Generic Profile Unary geometry operation, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.convex-hull`](../../activity-type/convex-hull/) (`activityType`), not this profile.
 
 ## Source
 
