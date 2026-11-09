@@ -133,6 +133,18 @@ line 47 allows ("a register may define further action types in its register spec
 always classify such an action `clarifying` or `substantive`. Will the model provide a common type
 for this, and under which IRI? We would replace ours with it.
 
+### 13. In which direction does `rim:supersedes` point?
+
+`rim:supersedes` and `rim:supersededBy` both go from `rim:RegisterItem` to `rim:RegisterItem`, with no
+comment and no `owl:inverseOf`. We read `A rim:supersedes B` as "A replaces B", from the label.
+
+We need it across registers. Our data types register withdraws 19 string formats that now live as
+format items in a separate formats register, which depends on it. `rim:supersededBy` from the withdrawn
+item fails `rim:RegisterItemShape`, because the target is not typed in the data types graph, and that
+register must not depend on the formats one. We therefore put `rim:supersedes` on the new format item.
+
+Is our reading of the direction right? Could the two properties be declared inverse of each other?
+
 ## Possible defects
 
 No answer is needed unless you disagree.
