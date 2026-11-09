@@ -142,8 +142,8 @@ allOf:
                 Restricts the Generic Profile's minimum, down to 0 (the input becomes optional),
                 never above it. A deliberate departure from Table 21 footnote c ("shall not modify
                 the minimum cardinality"): a Generic Profile keeps `minOccurs: 1` and lower tiers,
-                down to a real implementation, may make the input optional (e.g. `Gdal_Warp`'s
-                `t_srs`, absent meaning no reprojection).
+                down to a real implementation, may make the input optional (e.g. a target CRS whose
+                absence means no reprojection).
               type: integer
               minimum: 0
             maxOccurs:

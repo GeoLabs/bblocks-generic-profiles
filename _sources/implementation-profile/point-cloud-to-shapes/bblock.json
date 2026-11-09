@@ -11,16 +11,6 @@
   "dependsOn": [
     "generic-profiles.implementation-profile"
   ],
-  "sources": [
-    {
-      "title": "SAGA 7.3.0 -- Point Cloud to Shapes",
-      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_5.html"
-    },
-    {
-      "title": "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.5: Point Cloud to Shapes",
-      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.5"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",

@@ -11,12 +11,6 @@
   "dependsOn": [
     "generic-profiles.implementation-profile"
   ],
-  "sources": [
-    {
-      "title": "OTB BandMathX -- Performs mathematical operations on several multiband images, outputting a mono- or multi-band image",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMathX.html"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",

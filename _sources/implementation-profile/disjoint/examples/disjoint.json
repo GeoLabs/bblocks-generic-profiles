@@ -42,6 +42,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: 2 format keywords removed from inputs and outputs (inputs/geometry1: GML; inputs/geometry2: GML); description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint",
@@ -78,8 +88,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/geometry-gml"
       ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -96,8 +105,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/geometry-gml"
       ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {

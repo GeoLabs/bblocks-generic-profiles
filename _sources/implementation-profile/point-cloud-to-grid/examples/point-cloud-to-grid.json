@@ -32,6 +32,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: Point Cloud to Grid, pointcloud_tools; 2 format keywords removed from inputs and outputs (inputs/points: LAS; outputs/result: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Point Cloud to Grid <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_4.html>; ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.4: Point Cloud to Grid <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.4>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid",
@@ -44,9 +54,7 @@
   "keywords": [
     "point cloud",
     "raster",
-    "rasterization",
-    "Point Cloud to Grid",
-    "pointcloud_tools"
+    "rasterization"
   ],
   "metadata": [
     {
@@ -68,8 +76,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/point-cloud-las"
       ],
       "keywords": [
-        "point cloud",
-        "LAS"
+        "point cloud"
       ],
       "metadata": [
         {
@@ -102,8 +109,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/raster-single-band-geotiff"
       ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -113,15 +119,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "SAGA 7.3.0 -- Point Cloud to Grid",
-      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_4.html"
-    },
-    {
-      "title": "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.4: Point Cloud to Grid",
-      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.4"
-    }
-  ]
+  }
 }

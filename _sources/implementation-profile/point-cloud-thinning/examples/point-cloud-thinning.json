@@ -32,6 +32,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: Point Cloud Thinning, pointcloud_tools; 2 format keywords removed from inputs and outputs (inputs/points: LAS; outputs/result: LAS); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Point Cloud Thinning (Simple) <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_9.html>; ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.9: Point Cloud Thinning (Simple) <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.9>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning",
@@ -43,9 +53,7 @@
   "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-thinning",
   "keywords": [
     "point cloud",
-    "thinning",
-    "Point Cloud Thinning",
-    "pointcloud_tools"
+    "thinning"
   ],
   "metadata": [
     {
@@ -67,8 +75,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/point-cloud-las"
       ],
       "keywords": [
-        "point cloud",
-        "LAS"
+        "point cloud"
       ],
       "metadata": [
         {
@@ -101,8 +108,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/point-cloud-las"
       ],
       "keywords": [
-        "point cloud",
-        "LAS"
+        "point cloud"
       ],
       "metadata": [
         {
@@ -112,15 +118,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "SAGA 7.3.0 -- Point Cloud Thinning (Simple)",
-      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_9.html"
-    },
-    {
-      "title": "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.9: Point Cloud Thinning (Simple)",
-      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.9"
-    }
-  ]
+  }
 }

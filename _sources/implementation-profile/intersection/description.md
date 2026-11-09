@@ -4,38 +4,43 @@ Implementation Profile: **Intersection**.
 
 ## Activity type
 
-The meaning of the operation -- its definition, the standards that define it and its illustration -- is the activity type [`generic-profiles.activity-type.intersection`](../../activity-type/intersection/) (`activityType`), not this profile.
+The meaning of the operation -- its definition, the standards that define it and its illustration --
+is the activity type [`generic-profiles.activity-type.intersection`](../../activity-type/intersection/), to which this
+profile points with `activityType` (decisions D3 and D4).
 
-## Source
+## Signature and representations
 
-Two standards define this operation at different levels -- the abstract semantics, and the
-concrete SQL binding an Implementation Profile is specifically meant to add (OGC 14-065 WPS 2.0.2
-§7.5.3, "down to the supported data exchange formats"):
+The signature of the Generic Profile [Binary spatial set operation](../../generic-profile/binary-spatial-operation/), with each data-carrying
+input and output bound to a representation of the
+[`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats) register (Table 21 Data
+format, D; decision D6):
 
-- [OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture](https://www.ogc.org/standards/sfa/), §6.1.24 -- the
-  operation's abstract definition (this is what [its Concept](../../concept/vector-geometry-processing/)
-  and [Generic Profile](../../generic-profile/binary-spatial-operation/) are grounded in too).
-- ISO/IEC 13249-3:2016 *SQL multimedia and application packages -- Part 3: Spatial*, §5.1.25 ST_Intersection
-  -- the same operation bound to SQL: the `ST_Geometry` type and the `ST_Intersection` function name,
-  of which this Implementation Profile's `prefLabel` (`Intersection`) is the SFA name without the `ST_`
-  prefix SQL/MM adds. SQL/MM is why this tier exists at all: it is, precisely, an implementation
-  profile of Simple Feature Access for SQL -- the same abstract operation, bound to one concrete
-  language and type system, still not any one vendor's specific deployment of it.
+| Role | Data type | Representation |
+|---|---|---|
+| input `geometry1` | `geometry` | [`geometry-gml`](https://w3id.org/geolabs-ospd/data-formats/representation/geometry-gml) (Geometry as GML) |
+| input `geometry2` | `geometry` | [`geometry-gml`](https://w3id.org/geolabs-ospd/data-formats/representation/geometry-gml) (Geometry as GML) |
+| output `result` | `geometry` | [`geometry-gml`](https://w3id.org/geolabs-ospd/data-formats/representation/geometry-gml) (Geometry as GML) |
 
-## Data formats
-
-`geometry1`, `geometry2`, `result`: GML -- the register's minimal default (Table 21, D: Declare), grounded in the real ZOO-Project Geonovum testbed, whose SQL/MM processes expose geometries as `text/xml` (GML) only, never WKT or GeoJSON (checked across `Intersects`, `Buffer`, `Intersection`).
-
-Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32), a specific deployment may *Extend* (E, footnote d) this minimal default with additional formats it happens to support -- this tier intentionally does not pre-empt that.
+The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
+2.0.2 §7.5.4 Table 21, footnote d).
 
 ## Relations
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.binary-spatial-operation`](../../generic-profile/binary-spatial-operation/)
+- `activityType`: [`generic-profiles.activity-type.intersection`](../../activity-type/intersection/)
 
 ## Register position
 
 Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Generic Profile ->
-**Implementation Profile** -> Implementation (instance level). The fourth tier is not part of
-this register: see [`ospd.process-profiles.sqlmm.intersection`](https://github.com/GeoLabs/bblocks-process-profiles/tree/master/_sources/sqlmm/intersection)
-in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum testbed
-(<https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Intersection>), which matches this tier's own minimal default (GML), specialised to one concrete version and root element, GML 3.1.0 Polygon.
+**Implementation Profile** -> Implementation (instance level). The fourth tier is not part of this
+register: deployed processes are profiled in `bblocks-process-profiles`, and name this profile with
+`implementsProfile`. Tools, hosts and testbeds are recorded there, not here.
+
+## Changes
+
+A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
+
+- `meaning-2026-11-09`, substantive
+- `operation-sources-2026-11-09`, clarifying
+- `representation-2026-11-09`, substantive
+- `tools-2026-11-09`, clarifying

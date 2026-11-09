@@ -42,6 +42,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: GDAL, gdalwarp; 2 format keywords removed from inputs and outputs (inputs/raster: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): GDAL gdalwarp -- Image mosaicing, reprojection and warping utility <https://gdal.org/programs/gdalwarp.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection",
@@ -54,9 +64,7 @@
   "keywords": [
     "raster",
     "coverage",
-    "reprojection",
-    "GDAL",
-    "gdalwarp"
+    "reprojection"
   ],
   "metadata": [
     {
@@ -78,8 +86,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"
       ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -112,8 +119,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"
       ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -123,11 +129,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "GDAL gdalwarp -- Image mosaicing, reprojection and warping utility",
-      "link": "https://gdal.org/programs/gdalwarp.html"
-    }
-  ]
+  }
 }

@@ -42,6 +42,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: 1 format keywords removed from inputs and outputs (inputs/geometry: GML); sources removed (tools, testbed, the bbox schema now in the representation's format): ZOO-Project Geonovum testbed -- IsSimple: IsSimple test. <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/IsSimple>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple",
@@ -77,8 +87,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/geometry-gml"
       ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -104,11 +113,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "ZOO-Project Geonovum testbed -- IsSimple: IsSimple test.",
-      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/IsSimple"
-    }
-  ]
+  }
 }

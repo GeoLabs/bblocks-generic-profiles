@@ -11,12 +11,6 @@
   "dependsOn": [
     "generic-profiles.implementation-profile"
   ],
-  "sources": [
-    {
-      "title": "OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",

@@ -11,12 +11,6 @@
   "dependsOn": [
     "generic-profiles.implementation-profile"
   ],
-  "sources": [
-    {
-      "title": "ZOO-Project Geonovum testbed -- ConvexHull: Compute convex hull.",
-      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/ConvexHull"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",

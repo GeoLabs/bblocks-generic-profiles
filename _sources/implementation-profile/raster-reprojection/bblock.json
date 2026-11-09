@@ -11,12 +11,6 @@
   "dependsOn": [
     "generic-profiles.implementation-profile"
   ],
-  "sources": [
-    {
-      "title": "GDAL gdalwarp -- Image mosaicing, reprojection and warping utility",
-      "link": "https://gdal.org/programs/gdalwarp.html"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",

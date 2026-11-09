@@ -42,6 +42,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: OTB, BandMathX; 2 format keywords removed from inputs and outputs (inputs/rasters: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB BandMathX -- Performs mathematical operations on several multiband images, outputting a mono- or multi-band image <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMathX.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband",
@@ -55,8 +65,6 @@
     "raster",
     "coverage",
     "band math",
-    "OTB",
-    "BandMathX",
     "multi-band"
   ],
   "metadata": [
@@ -80,8 +88,7 @@
       ],
       "maxOccurs": "unbounded",
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -114,8 +121,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"
       ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -125,11 +131,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OTB BandMathX -- Performs mathematical operations on several multiband images, outputting a mono- or multi-band image",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMathX.html"
-    }
-  ]
+  }
 }

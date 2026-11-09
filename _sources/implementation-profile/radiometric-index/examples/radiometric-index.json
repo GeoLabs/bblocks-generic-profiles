@@ -42,6 +42,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: OTB, RadiometricIndices; 2 format keywords removed from inputs and outputs (inputs/rasters: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image <https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index",
@@ -54,9 +64,7 @@
   "keywords": [
     "raster",
     "coverage",
-    "radiometric index",
-    "OTB",
-    "RadiometricIndices"
+    "radiometric index"
   ],
   "metadata": [
     {
@@ -79,8 +87,7 @@
       ],
       "maxOccurs": 1,
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -113,8 +120,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"
       ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -124,11 +130,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html"
-    }
-  ]
+  }
 }

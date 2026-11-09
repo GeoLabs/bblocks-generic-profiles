@@ -32,6 +32,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: ta_lighting; 2 format keywords removed from inputs and outputs (inputs/elevation: GeoTIFF; outputs/result: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Analytical Hillshading <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_lighting_0.html>; ZOO-Project Geonovum testbed -- SAGA.ta_lighting.0: Analytical Hillshading <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_lighting.0>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading",
@@ -47,8 +57,7 @@
     "raster",
     "illumination",
     "hillshade",
-    "Hillshade",
-    "ta_lighting"
+    "Hillshade"
   ],
   "metadata": [
     {
@@ -70,8 +79,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/elevation-model-geotiff"
       ],
       "keywords": [
-        "elevation",
-        "GeoTIFF"
+        "elevation"
       ],
       "metadata": [
         {
@@ -118,8 +126,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/raster-single-band-geotiff"
       ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -129,15 +136,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "SAGA 7.3.0 -- Analytical Hillshading",
-      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_lighting_0.html"
-    },
-    {
-      "title": "ZOO-Project Geonovum testbed -- SAGA.ta_lighting.0: Analytical Hillshading",
-      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_lighting.0"
-    }
-  ]
+  }
 }

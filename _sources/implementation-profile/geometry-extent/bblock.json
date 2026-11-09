@@ -11,12 +11,6 @@
   "dependsOn": [
     "generic-profiles.implementation-profile"
   ],
-  "sources": [
-    {
-      "title": "SAGA GIS -- Get Shapes Extents (shapes_tools)",
-      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/shapes_tools_19.html"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",

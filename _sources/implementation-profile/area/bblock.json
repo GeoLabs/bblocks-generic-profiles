@@ -11,12 +11,6 @@
   "dependsOn": [
     "generic-profiles.implementation-profile"
   ],
-  "sources": [
-    {
-      "title": "ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry.",
-      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",

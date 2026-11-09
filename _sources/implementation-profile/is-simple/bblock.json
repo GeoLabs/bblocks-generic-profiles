@@ -11,12 +11,6 @@
   "dependsOn": [
     "generic-profiles.implementation-profile"
   ],
-  "sources": [
-    {
-      "title": "ZOO-Project Geonovum testbed -- IsSimple: IsSimple test.",
-      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/IsSimple"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",

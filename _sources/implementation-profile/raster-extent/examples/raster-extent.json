@@ -42,6 +42,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: OTB, ImageEnvelope; 2 format keywords removed from inputs and outputs (inputs/raster: GeoTIFF; outputs/result: GML); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB ImageEnvelope -- Build a vector data containing the image envelope polygon <https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent",
@@ -54,9 +64,7 @@
   "keywords": [
     "raster",
     "coverage",
-    "extent",
-    "OTB",
-    "ImageEnvelope"
+    "extent"
   ],
   "metadata": [
     {
@@ -78,8 +86,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"
       ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -98,8 +105,7 @@
         "https://w3id.org/geolabs-ospd/data-formats/representation/surface-gml"
       ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -109,11 +115,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OTB ImageEnvelope -- Build a vector data containing the image envelope polygon",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html"
-    }
-  ]
+  }
 }

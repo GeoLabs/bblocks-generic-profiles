@@ -43,9 +43,9 @@ Profiles cover seventeen Implementation Profiles here:
 | [`binary-spatial-predicate`](_sources/generic-profile/binary-spatial-predicate/) | Geometry, Geometry -> Boolean | `intersects`, `disjoint`, `contains`, `within`, `touches`, `crosses`, `equals` |
 | [`binary-spatial-operation`](_sources/generic-profile/binary-spatial-operation/) | Geometry, Geometry -> Geometry | `intersection`, `union`, `difference`, `symdifference` |
 | [`geometry-buffer`](_sources/generic-profile/geometry-buffer/) | Geometry, Number -> Geometry | `buffer` |
-| [`unary-geometry-operation`](_sources/generic-profile/unary-geometry-operation/) | Geometry -> Geometry | `geometry-extent` (SAGA GIS `Get Shapes Extents` -- no SQL/MM `ST_Envelope` process exists on this testbed), `centroid` (SQL/MM `ST_Centroid`), `convex-hull` (SQL/MM `ST_ConvexHull`) |
-| [`unary-spatial-predicate`](_sources/generic-profile/unary-spatial-predicate/) | Geometry -> Boolean | `is-simple` (SQL/MM `ST_IsSimple`) |
-| [`geometry-measure`](_sources/generic-profile/geometry-measure/) | Geometry -> Number | `area` (SQL/MM `ST_Area`) |
+| [`unary-geometry-operation`](_sources/generic-profile/unary-geometry-operation/) | Geometry -> Geometry | `geometry-extent`, `centroid`, `convex-hull` |
+| [`unary-spatial-predicate`](_sources/generic-profile/unary-spatial-predicate/) | Geometry -> Boolean | `is-simple` |
+| [`geometry-measure`](_sources/generic-profile/geometry-measure/) | Geometry -> Number | `area` |
 
 All seventeen `broader`/refine back to one Process Concept, **Vector Geometry Processing**.
 `centroid`, `convex-hull`, `is-simple` and `area` (2026-10-06) are grounded in
@@ -62,12 +62,12 @@ do — same relation (`broader`, `refinesGenericProfile`, `isProfileOf`) through
 
 | Generic Profile | Signature | Implementation Profile(s) |
 |---|---|---|
-| [`raster-reprojection`](_sources/generic-profile/raster-reprojection/) | Raster, CRS -> Raster | `raster-reprojection` (GDAL `gdalwarp`) |
-| [`raster-band-math`](_sources/generic-profile/raster-band-math/) | Raster+, Expression -> Raster | `raster-band-math` (OTB `BandMath`, muParser, fixed to one band), `raster-band-math-multiband` (OTB `BandMathX`, muParserX, may produce several bands) |
-| [`radiometric-index`](_sources/generic-profile/radiometric-index/) | Raster+, IndexName+ -> Raster | `radiometric-index` (OTB `RadiometricIndices`) |
-| [`raster-crop`](_sources/generic-profile/raster-crop/) | Raster, BoundingBox -> Raster | `raster-crop` (OTB `ExtractROI`) |
-| [`raster-format-conversion`](_sources/generic-profile/raster-format-conversion/) | Raster, Format -> Raster | `raster-format-conversion` (GDAL `gdal_translate`) |
-| [`raster-extent`](_sources/generic-profile/raster-extent/) | Raster -> Geometry | `raster-extent` (OTB `ImageEnvelope`) |
+| [`raster-reprojection`](_sources/generic-profile/raster-reprojection/) | Raster, CRS -> Raster | `raster-reprojection` |
+| [`raster-band-math`](_sources/generic-profile/raster-band-math/) | Raster+, Expression -> Raster | `raster-band-math` (fixed to one band), `raster-band-math-multiband` (may produce several bands) |
+| [`radiometric-index`](_sources/generic-profile/radiometric-index/) | Raster+, IndexName+ -> Raster | `radiometric-index` |
+| [`raster-crop`](_sources/generic-profile/raster-crop/) | Raster, BoundingBox -> Raster | `raster-crop` |
+| [`raster-format-conversion`](_sources/generic-profile/raster-format-conversion/) | Raster, Format -> Raster | `raster-format-conversion` |
+| [`raster-extent`](_sources/generic-profile/raster-extent/) | Raster -> Geometry | `raster-extent` |
 
 All six `broader`/refine back to one Process Concept, **Raster Coverage Processing**. Note that
 `raster-band-math`'s two Implementation Profiles have the *identical* signature above (band count
@@ -77,21 +77,22 @@ raster is still one Raster output value, not several. See
 [`raster-band-math`](_sources/generic-profile/raster-band-math/)'s own `description.md` ("Why one
 Generic Profile, not two") and the "Known limitation" section below.
 
-Two more families come from SAGA GIS 7.3.0 tools exposed by the Geonovum testbed, with data the
+Two more families, first observed on deployed processes (see `bblocks-process-profiles`), bring data the
 register did not have before: **elevation models** and **point clouds** (2026-10-08).
 
 | Generic Profile | Signature (data types) | Implementation Profile(s) |
 |---|---|---|
-| [`terrain-derivative`](_sources/generic-profile/terrain-derivative/) | elevation-model -> raster-single-band | `slope` (SAGA `ta_morphometry 0`), `terrain-ruggedness-index` (`ta_morphometry 16`), `topographic-position-index` (`ta_morphometry 18`) |
-| [`analytical-hillshading`](_sources/generic-profile/analytical-hillshading/) | elevation-model, number (azimuth), number (altitude) -> raster-single-band | `analytical-hillshading` (`ta_lighting 0`) |
-| [`point-cloud-rasterization`](_sources/generic-profile/point-cloud-rasterization/) | point-cloud, number (cell size) -> raster | `point-cloud-to-grid` (`pointcloud_tools 4`, output narrowed to raster-single-band) |
-| [`point-cloud-thinning`](_sources/generic-profile/point-cloud-thinning/) | point-cloud, number (percentage) -> point-cloud | `point-cloud-thinning` (`pointcloud_tools 9`) |
-| [`point-cloud-to-features`](_sources/generic-profile/point-cloud-to-features/) | point-cloud -> feature-collection | `point-cloud-to-shapes` (`pointcloud_tools 5`) |
+| [`terrain-derivative`](_sources/generic-profile/terrain-derivative/) | elevation-model -> raster-single-band | `slope`, `terrain-ruggedness-index`, `topographic-position-index` |
+| [`analytical-hillshading`](_sources/generic-profile/analytical-hillshading/) | elevation-model, number (azimuth), number (altitude) -> raster-single-band | `analytical-hillshading` |
+| [`point-cloud-rasterization`](_sources/generic-profile/point-cloud-rasterization/) | point-cloud, number (cell size) -> raster | `point-cloud-to-grid` (output narrowed to raster-single-band) |
+| [`point-cloud-thinning`](_sources/generic-profile/point-cloud-thinning/) | point-cloud, number (percentage) -> point-cloud | `point-cloud-thinning` |
+| [`point-cloud-to-features`](_sources/generic-profile/point-cloud-to-features/) | point-cloud -> feature-collection | `point-cloud-to-shapes` |
 
 The terrain ones `broader` to a new Concept, **Terrain Analysis**, itself listed as `narrower`
 than Raster Coverage Processing -- an elevation model is a single-band raster; the point cloud ones
-to **Point Cloud Processing**. Point clouds are declared as LAS
-([OGC 17-030r1](https://www.ogc.org/standards/las/), media type `application/vnd.las`).
+to **Point Cloud Processing**. Point clouds are represented as LAS
+([OGC 17-030r1](https://www.ogc.org/standards/las/)), the representation `point-cloud-las` of
+`bblocks-data-formats`.
 
 ## Data types
 
@@ -99,34 +100,30 @@ Every Generic and Implementation Profile input/output carries a `dataType`, a co
 [data types register](https://geolabs.github.io/bblocks-data-types/) (`data-types.vocabulary`): raster, single- or
 multi-band, elevation model, geometry and its point/curve/surface kinds, feature collection, point
 cloud, TIN, table, bounding box, number, string, boolean. It is the kind of data, not its encoding
-(an Implementation Profile's `schema`), so it is not the "Data format" Table 21 denies the Generic
+(an Implementation Profile's `representation`), so it is not the "Data format" Table 21 denies the Generic
 Profile. An Implementation Profile may narrow it along `broader`, and its schema pins the result --
 e.g. `centroid` takes a `surface` and returns a `point` (OGC 99-049 §2.1.9.1: Area and Centroid are
 Surface methods), `raster-band-math` returns a `raster-single-band`.
 
-## Why SQL/MM (and GDAL/OTB) matter here
+## Where the meaning of an operation lives: activity types
 
-Each Implementation Profile is grounded in *two* standards, not one, because they answer different
-questions (see each one's own `description.md` for the full citation):
+Since 2026-11-09 (decisions D3 and D4), the meaning of each operation is not carried by its
+Implementation Profile but by a separate item of this register, an activity type
+(`generic-profiles.activity-type.*`, `acttype:ActivityType` of the
+[Activity Type Register](https://ogcincubator.github.io/activity-type-register/)), one per operation.
+The Implementation Profile points to it with `activityType`. The activity type holds the definition,
+the standards that define the operation -- [OGC 06-103r4 Simple Feature Access](https://www.ogc.org/standards/sfa/)
+or [OGC 99-049](https://www.ogc.org/standards/sfs/) for vector operations, with the
+ISO/IEC 13249-3 SQL/MM name (`ST_Intersects`, ...) as `altLabel`;
+[OGC 08-068r2 WCPS](https://www.ogc.org/standards/wcps/) for raster operations; the literature of
+the terrain indices -- and the illustrations. An Implementation Profile cannot be its own activity
+type: `rim:RegisterItemShape` allows one item class per item
+([`docs/implementation-profile-vs-activity-type.md`](docs/implementation-profile-vs-activity-type.md)).
 
-- For vector operations: [OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture](https://www.ogc.org/standards/sfa/)
-  defines the operation abstractly (a UML method with no binding) — this is what the Concept and
-  Generic Profile are grounded in. **ISO/IEC 13249-3:2016 SQL/MM Spatial** binds the *same*
-  operation to SQL: a concrete type (`ST_Geometry`) and a concrete function name (`ST_Intersects`,
-  `ST_Buffer`, ...). SQL/MM is not a fifth tier and not a Concept — it is, precisely, *an*
-  Implementation Profile of Simple Feature Access, for one language and type system, and it is
-  exactly why this tier exists at all: a harmonised, well-defined computing process "that may be
-  implemented by multiple service providers" (WPS §7.5.3), not yet any one provider's actual
-  deployment.
-- For raster operations: ISO 19123-1:2023 *Schema for coverage geometry and functions* is the
-  abstract analogue of Simple Feature Access, and [OGC 08-068r2 WCPS](https://www.ogc.org/standards/wcps/)
-  is the OGC standards-track evidence that coverage processing operations (reprojection, band
-  math, cropping) are recognised, harmonised concepts. Unlike SQL/MM, **GDAL and OTB are not
-  themselves ISO/OGC standards** — they are the de facto, widely-deployed software bindings the
-  Geonovum testbed actually runs (`Gdal_Warp`, `OTB.BandMath`, `OTB.BandMathX`,
-  `OTB.RadiometricIndices`, `OTB.ExtractROI`, `Gdal_Translate`). Each raster Implementation
-  Profile's `description.md` states this asymmetry explicitly rather than overstating GDAL/OTB's
-  standards status to match SQL/MM's.
+Tools (GDAL, OTB, SAGA), hosts and testbeds are not named at tiers 1 to 3. The processes that
+implement a profile, and the tools behind them, are profiled in
+[`bblocks-process-profiles`](https://github.com/GeoLabs/bblocks-process-profiles), which links each
+of them to its Implementation Profile with `implementsProfile`.
 
 ## OGC API - Processes alignment: why `inputs`/`outputs` look the way they do
 
@@ -146,19 +143,16 @@ so all four tiers are now structurally, not just conceptually, consistent:
   WPS calls a signature is conveyed here by the named roles, their `dataType` and
   `minOccurs`/`maxOccurs` (Table 21: Input.Multiplicity, D), which the build checks, with
   `title`/`description` explaining them in prose.
-- **Implementation Profile** `inputs`/`outputs` carry a real `schema` (OGC API - Processes' own
-  `schema` property: a full JSON Schema / OpenAPI Schema Object) for Table 21's Data format (D),
-  and `maxOccurs` (a real Restrict of the Generic Profile's own value, footnote c: *"Implementation
-  profiles may restrict the maximum cardinality of a superior generic profile... They shall not
-  modify the minimum cardinality"*) instead of free text. A `schema` may `$ref` a real shared
-  type's own published schema directly -- `raster-crop`'s `areaOfInterest` `$ref`s
-  [`ogc.api.processes.v1.schemas.bbox`](https://geolabs.github.io/bblocks-ogcapi-processes/)
-  (OGC API - Processes - Part 1: Core's own bbox type, itself grounded in
-  [OGC 17-069r4](https://docs.ogc.org/is/17-069r4/17-069r4.html) §7.15.3's `bbox` parameter)
-  rather than naming a format with a bespoke string. `eoap.cct.*` types (bblocks-eoap-cct) are a
-  *different* vocabulary, for CWL inputs/outputs crossing into OGC API - Processes - Part 2:
-  Deploy, Replace, Undeploy -- not used here, since `schema` already models an OGC API - Processes
-  processDescription directly.
+- **Implementation Profile** `inputs`/`outputs` name Table 21's Data format (D) by reference:
+  `representation`, one or more IRIs of representations of
+  [`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats) (decision D6). A
+  representation realizes a version of the role's data type and points to a format; the JSON
+  Schema stays at the Implementation (instance level), as served. `raster-crop`'s `areaOfInterest`,
+  which `$ref`ed [`ogc.api.processes.v1.schemas.bbox`](https://geolabs.github.io/bblocks-ogcapi-processes/)
+  until 2026-11-09, now points to the representation `bounding-box-ogcapi-processes-bbox`, whose
+  format carries that `$ref`. `maxOccurs` is a real Restrict of the Generic Profile's own value
+  (footnote c: *"Implementation profiles may restrict the maximum cardinality of a superior generic
+  profile... They shall not modify the minimum cardinality"*), not free text.
 - **Keywords and Metadata** follow the rest of Table 21, also with OGC API - Processes' own
   `descriptionType` properties: `keywords` on the process and on every input/output (Declared by
   the Generic Profile, Extended by the Implementation Profile, whose schema requires it to
@@ -172,29 +166,20 @@ so all four tiers are now structurally, not just conceptually, consistent:
   to the corresponding input/output of a superior profile, with this register's roles
   `role/generic-input`/`-output` (and `role/implementation-input`/`-output` at the instance level,
   in `bblocks-process-profiles`). Every Generic Profile input and output is listed on its
-  Implementation Profiles, not only those that declare a `schema`.
+  Implementation Profiles, not only those that declare a `representation`.
 - **Every input/output description has its own IRI**, `<profile id>/inputs/<name>`
   (`/outputs/<name>`), carried as `id` and pinned by each building block's schema, so that a lower
   tier's metadata `href` -- e.g. a live process's `implementation` reference in
   `bblocks-process-profiles` -- names a node of this register's graph rather than nothing.
 
-The declared default is kept deliberately minimal -- **GML** for every vector geometry role,
-**GeoTIFF** for every raster role, not an exhaustive list. Table 21's own rule for this is `E`
-(Extend) at Implementation (instance level) (footnote d: *"Implementations may... support
-additional data exchange formats"*): a real deployment is free to go beyond this tier's default,
-so this tier should not try to guess every format a future deployment might add. Where grounded
-in a real processDescription this is stated (the SQL/MM testbed exposes geometries as
-`text/xml`=GML only; `OTB.BandMath`/`BandMathX`/`RadiometricIndices`/`ExtractROI` each expose
-exactly `image/tiff`, `image/jpeg`, `image/png`, of which GeoTIFF is the one georeferencing-capable
-member); where it is not (`Gdal_Warp`/`Gdal_Translate`'s DSN-typed inputs carry no format
-structurally at all on this testbed), that is stated too, rather than implied. `OTB.BandMath`/
-`BandMathX`'s own `il` input (a list) and `OTB.RadiometricIndices`' own `in` input (a single image, not a list) are the real
-evidence behind `raster-band-math`/`raster-band-math-multiband`'s `maxOccurs: unbounded` and
-`radiometric-index`'s `maxOccurs: 1`. A cardinality is written only where there is one: an input
-without `minOccurs`/`maxOccurs` has the OGC API - Processes default, exactly one. See
-[`implementation-profile/description.md`](_sources/implementation-profile/description.md) for the
-full Table 21 account, and each Implementation Profile's own `description.md` for its specific
-grounding.
+The declared representations are kept deliberately minimal -- GML for every vector geometry
+role, GeoTIFF for every raster role, LAS for point clouds -- not an exhaustive list. Table 21's own
+rule for this is `E` (Extend) at Implementation (instance level) (footnote d: *"Implementations
+may... support additional data exchange formats"*). What each deployed process actually serves is
+in its processDescription, in `bblocks-process-profiles`. A cardinality is written only where there
+is one: an input without `minOccurs`/`maxOccurs` has the OGC API - Processes default, exactly one.
+See [`implementation-profile/description.md`](_sources/implementation-profile/description.md) for
+the full Table 21 account.
 
 ## Building blocks
 
@@ -210,6 +195,8 @@ grounding.
 | `generic-profiles.generic-profile.unary-geometry-operation` | Generic Profile |
 | `generic-profiles.generic-profile.unary-spatial-predicate` | Generic Profile |
 | `generic-profiles.generic-profile.geometry-measure` | Generic Profile |
+| `generic-profiles.activity-type` | Activity type: the meaning of one operation (shared shape, shapes and tests) |
+| `generic-profiles.activity-type.<operation>` | Activity type, one per Implementation Profile, same name (31) |
 | `generic-profiles.implementation-profile` | Implementation Profile (shared shape only, illustrative example) |
 | `generic-profiles.implementation-profile.intersects` | Implementation Profile |
 | `generic-profiles.implementation-profile.disjoint` | Implementation Profile |
@@ -332,11 +319,10 @@ Two things are deliberately not claimed, and one is open -- see the block's
 ## Band count: modelled by data type, not by field list
 
 `raster-band-math`'s two Implementation Profiles differ in whether the output raster is fixed to
-one band or may have several (`OTB.BandMath`/muParser vs. `OTB.BandMathX`/muParserX). Since
+one band or may have several. Since
 2026-10-08 that is stated, and checked, with the [data types register](https://geolabs.github.io/bblocks-data-types/):
 `raster-band-math`'s output is `raster-single-band`, a narrower type than the Generic Profile's
-`raster`, while `raster-band-math-multiband`'s stays `raster` (BandMathX may output one band or
-several). An elevation model is likewise `elevation-model`, a narrower `raster-single-band`.
+`raster`, while `raster-band-math-multiband`'s stays `raster` (one band or several). An elevation model is likewise `elevation-model`, a narrower `raster-single-band`.
 
 What is still not modelled is the band *structure*: which bands, what they mean -- a coverage's
 **RangeType** ([OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1](https://docs.ogc.org/is/09-146r8/09-146r8.html)
@@ -354,12 +340,13 @@ geometry) -- a mismatch an earlier draft left visible rather than papered over. 
 `BoundingBox` abstract type (grounded in [OGC 17-069r4](https://docs.ogc.org/is/17-069r4/17-069r4.html)
 §7.15.3's `bbox` parameter) plus a `"BBOX"` `dataFormats` string, invented from scratch for this
 register. Once the register moved to reusing OGC API - Processes' own `InputDescription`/`schema`
-structure (above), both were superseded: `areaOfInterest`'s `schema` now `$ref`s
+structure (above), both were superseded: `areaOfInterest`'s `schema` `$ref`ed
 `ogc.api.processes.v1.schemas.bbox` directly -- OGC API - Processes - Part 1: Core's own,
-already-published bbox type, not a custom one. `eoap.cct.bbox` (bblocks-eoap-cct) was considered
+already-published bbox type, not a custom one. Since 2026-11-09 (decision D6) the role points to
+the representation `bounding-box-ogcapi-processes-bbox` of `bblocks-data-formats`, whose format
+carries that `$ref`. `eoap.cct.bbox` (bblocks-eoap-cct) was considered
 and set aside: it is a type for CWL inputs/outputs crossing into OGC API - Processes - Part 2, a
-different vocabulary layer from the `schema` property this tier's Implementation Profile actually
-models.
+different vocabulary layer.
 
 ## Not limited to spatial operations
 

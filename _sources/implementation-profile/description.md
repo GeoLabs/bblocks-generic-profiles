@@ -12,12 +12,18 @@ illustrative. The real Implementation Profiles are each their own building block
 operation, each `allOf`-referencing this one and adding its own `const`-pinned
 `id`/`prefLabel`/`refinesGenericProfile` --
 
-- 17 vector operations: 15 bound to SQL/MM (Intersects, Contains, Buffer, Centroid, Convex hull,
-  Area, Is simple, ...), plus Geometry extent, bound to SAGA GIS (`SAGA.shapes_tools.19`, no
-  SQL/MM `ST_Envelope` process exists on this testbed);
-- 7 raster/coverage operations bound to GDAL/OTB (Raster reprojection, Raster band math, Raster
-  band math (multi-band output), Radiometric index, Raster crop, Raster format conversion,
-  Raster extent).
+- 17 vector operations (Intersects, Contains, Buffer, Centroid, Convex hull, Area, Is simple,
+  Geometry extent, ...), whose geometries are bound to GML;
+- 7 raster/coverage operations (Raster reprojection, Raster band math, Raster band math
+  (multi-band output), Radiometric index, Raster crop, Raster format conversion, Raster extent),
+  whose rasters are bound to GeoTIFF;
+- 4 terrain operations and 3 point cloud operations, bound to GeoTIFF and LAS.
+
+The meaning of each operation, and the standards that define it (Simple Feature Access, SQL/MM,
+WCPS, the literature of terrain indices), are its activity type, `activityType`
+(`generic-profiles.activity-type.*`, decisions D3 and D4). No tool, host or testbed is named at this
+tier: the processes that implement a profile, and the tools behind them, are profiled in
+`bblocks-process-profiles`.
 
 Three of the vector operations (Centroid, Convex hull, Geometry extent) share one Generic
 Profile, `unary-geometry-operation` (Geometry -> Geometry); Is simple refines
@@ -108,10 +114,9 @@ datasets than the implementation profile, or support additional data exchange fo
 maximum cardinality of a superior generic profile... They shall not modify the minimum
 cardinality"*) the Generic Profile's own `maxOccurs` for one input -- a real integer (or
 `unbounded`), the same property OGC API - Processes' own `InputDescription` uses, not free text.
-E.g. `OTB.RadiometricIndices`' own `in` input is a single image, restricting the Generic
-Profile's `maxOccurs: unbounded` down to `1`; `OTB.BandMath`/`OTB.BandMathX`'s `il` input is a
-list, left `maxOccurs: unbounded` here -- a cap a real implementation applies is recorded at the
-instance level (`bblocks-process-profiles`), not at this tier. A cardinality is written only where there is one: an input without `minOccurs`/`maxOccurs`
+E.g. Radiometric index restricts the Generic Profile's `maxOccurs: unbounded` on `rasters` down
+to `1`; Raster band math leaves it `unbounded` -- a cap a real implementation applies is recorded at
+the instance level (`bblocks-process-profiles`), not at this tier. A cardinality is written only where there is one: an input without `minOccurs`/`maxOccurs`
 has the OGC API - Processes default, exactly one, and no rule is generated for it.
 
 ## Register position

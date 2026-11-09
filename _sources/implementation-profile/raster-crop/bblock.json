@@ -12,20 +12,6 @@
     "generic-profiles.implementation-profile",
     "ogc.api.processes.v1.schemas.bbox"
   ],
-  "sources": [
-    {
-      "title": "OTB ExtractROI -- Extracts a region of interest defined by the user",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_ExtractROI.html"
-    },
-    {
-      "title": "OGC 17-069r4 OGC API - Features - Part 1: Core, \u00a77.15.3 Parameter bbox",
-      "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
-    },
-    {
-      "title": "ogc.api.processes.v1.schemas.bbox -- bbox schema (OGC API - Processes - Part 1: Core)",
-      "link": "https://geolabs.github.io/bblocks-ogcapi-processes/"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",

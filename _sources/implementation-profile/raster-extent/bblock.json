@@ -11,12 +11,6 @@
   "dependsOn": [
     "generic-profiles.implementation-profile"
   ],
-  "sources": [
-    {
-      "title": "OTB ImageEnvelope -- Build a vector data containing the image envelope polygon",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",

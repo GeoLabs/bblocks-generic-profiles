@@ -11,16 +11,6 @@
   "dependsOn": [
     "generic-profiles.implementation-profile"
   ],
-  "sources": [
-    {
-      "title": "SAGA 7.3.0 -- Topographic Position Index (TPI)",
-      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry_18.html"
-    },
-    {
-      "title": "ZOO-Project Geonovum testbed -- SAGA.ta_morphometry.18: Topographic Position Index (TPI)",
-      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.18"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",

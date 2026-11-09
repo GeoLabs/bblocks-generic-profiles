@@ -11,16 +11,6 @@
   "dependsOn": [
     "generic-profiles.implementation-profile"
   ],
-  "sources": [
-    {
-      "title": "SAGA 7.3.0 -- Point Cloud to Grid",
-      "link": "https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_4.html"
-    },
-    {
-      "title": "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.4: Point Cloud to Grid",
-      "link": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.4"
-    }
-  ],
   "scope": "dev",
   "tags": [
     "implementation profile",
