@@ -1,10 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
   "name": "Process Concept: Raster Coverage Processing",
-  "abstract": "Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, deriving a new raster from one or more others via a mathematical expression or a named radiometric index, cropping a coverage to a region of interest, or converting a coverage to another encoding -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).",
+  "abstract": "Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, resampling it to another cell size, deriving a new raster from one or more others via a mathematical expression, a named radiometric index or a threshold, cropping a coverage to a region of interest, converting a coverage to another encoding, or depicting it as an image -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).",
   "status": "under-development",
   "dateTimeAddition": "2026-09-30T00:00:00Z",
-  "dateOfLastChange": "2026-09-30",
+  "dateOfLastChange": "2026-11-10",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",
