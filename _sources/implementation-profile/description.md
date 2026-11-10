@@ -67,7 +67,7 @@ Generic Profile (generated from it by `scripts/apply_table21_keywords_metadata.p
 
 ᵃ *"The list of metadata references to superior process profiles shall be extended.
 Documentation metadata may be overridden."* The references are Table 5 Metadata structures
-(`title`, `role`, `href` -- OGC API - Processes' own `ogc.api.processes.v1.schemas.metadata`)
+(`title`, `role`, `href` -- OGC API - Processes' own `ogc.api.processes.part1.v1.schemas.metadata`)
 whose `role` is a Table 22 identifier: `http://www.opengis.net/spec/wps/2.0/def/process-profile/`
 `concept`, `generic` or `implementation`. ᵇ additional optional inputs or supplementary outputs.
 ᶜ maximum only, never the minimum. ᵈ more or larger inputs, additional formats.

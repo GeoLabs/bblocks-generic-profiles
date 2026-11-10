@@ -52,7 +52,7 @@ follows this tier's general raster-input convention).
 `application/vnd.google-earth.kml+xml` (KML), `object` and `application/zip`; GML is kept as this
 tier's minimal baseline, consistent with every vector-typed output elsewhere in this register.
 Not the bbox representation (`bounding-box-ogcapi-processes-bbox`, whose format `$ref`s
-`ogc.api.processes.v1.schemas.bbox`) that [`raster-crop`](../raster-crop/)'s `areaOfInterest` uses -- this output is a real polygon, not a
+`ogc.api.processes.part1.v1.schemas.bbox`) that [`raster-crop`](../raster-crop/)'s `areaOfInterest` uses -- this output is a real polygon, not a
 plain numeric extent.
 
 Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32), a

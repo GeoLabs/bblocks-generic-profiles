@@ -23,7 +23,7 @@ takes four plain numbers, `mode.extent.ulx`/`uly`/`lrx`/`lry`, not an encoded ge
 reason for `bounding-box` rather than `geometry`. The second was a `BoundingBox` type invented for
 this register, which is no longer needed. The encoding lives at Implementation Profile, where
 `areaOfInterest`'s `schema` `$ref`s
-[`ogc.api.processes.v1.schemas.bbox`](https://geolabs.github.io/bblocks-ogcapi-processes/)
+[`ogc.api.processes.part1.v1.schemas.bbox`](https://geolabs.github.io/bblocks-ogcapi-processes/)
 directly -- OGC API - Processes - Part 1: Core's own bbox type (itself grounded in
 [OGC 17-069r4](https://docs.ogc.org/is/17-069r4/17-069r4.html) §7.15.3's `bbox` parameter).
 

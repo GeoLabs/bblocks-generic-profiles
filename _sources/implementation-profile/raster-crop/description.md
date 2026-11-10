@@ -43,7 +43,7 @@ concrete tool binding an Implementation Profile is specifically meant to add (OG
   process wraps directly.
 - [OGC 17-069r4 OGC API - Features - Part 1: Core](https://docs.ogc.org/is/17-069r4/17-069r4.html),
   §7.15.3 -- defines the `bbox` parameter (an array of 4 or 6 numbers) that
-  `ogc.api.processes.v1.schemas.bbox` (below) itself cites as its own source.
+  `ogc.api.processes.part1.v1.schemas.bbox` (below) itself cites as its own source.
 
 ## Data format
 
@@ -54,14 +54,14 @@ georeferencing-capable default).
 
 `areaOfInterest`: the representation `bounding-box-ogcapi-processes-bbox`, whose format
 `ogcapi-processes-bbox` (bblocks-data-formats) `$ref`s
-[`ogc.api.processes.v1.schemas.bbox`](https://geolabs.github.io/bblocks-ogcapi-processes/)'s own
+[`ogc.api.processes.part1.v1.schemas.bbox`](https://geolabs.github.io/bblocks-ogcapi-processes/)'s own
 published schema directly (until 2026-11-09 this role's own `schema` did) (`{bbox: [4 or 6 numbers], crs: CRS84|CRS84h}`) -- OGC API - Processes
 - Part 1: Core's own bbox type, not a bespoke format string, and grounded directly in
 `OTB.ExtractROI`'s own "extent" mode (`mode.extent.ulx`/`uly`/`lrx`/`lry`, four plain numbers).
 This Implementation Profile's Generic Profile originally typed `areaOfInterest` as `Geometry`,
 which did not match -- see [`raster-crop`](../../generic-profile/raster-crop/)'s own "Why
 `areaOfInterest` is `BoundingBox`, not `Geometry`" for that fix, now superseded in turn by
-reusing `ogc.api.processes.v1.schemas.bbox` directly rather than inventing a `BoundingBox`
+reusing `ogc.api.processes.part1.v1.schemas.bbox` directly rather than inventing a `BoundingBox`
 abstract type and a `"BBOX"` format string (see the repository README, "OGC API - Processes
 alignment"). `eoap.cct.bbox` (bblocks-eoap-cct) is a *different* type, for CWL inputs/outputs
 crossing into OGC API - Processes - Part 2: Deploy, Replace, Undeploy, not used here.

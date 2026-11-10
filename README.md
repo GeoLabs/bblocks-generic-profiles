@@ -176,7 +176,7 @@ of them to its Implementation Profile with `implementsProfile`.
 scratch to express it, both tiers reuse a subset of [OGC API - Processes - Part 1: Core](https://geolabs.github.io/bblocks-ogcapi-processes/)'s
 own `InputDescription`/`OutputDescription`/`schema` structure (since 2026-11-09, `schema` only at
 the Implementation (instance level); tier 3 names a `representation`) -- the same structure this
-project's Implementation (instance level) tier already uses (`ogc.api.processes.v1.schemas.*`),
+project's Implementation (instance level) tier already uses (`ogc.api.processes.part1.v1.schemas.*`),
 so all four tiers are now structurally, not just conceptually, consistent:
 
 - **Generic Profile** `inputs`/`outputs` carry `dataType`, `title`, `description`, `keywords`,
@@ -192,7 +192,7 @@ so all four tiers are now structurally, not just conceptually, consistent:
   [`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats) (decision D6). A
   representation realizes a version of the role's data type and points to a format; the JSON
   Schema stays at the Implementation (instance level), as served. `raster-crop`'s `areaOfInterest`,
-  which `$ref`ed [`ogc.api.processes.v1.schemas.bbox`](https://geolabs.github.io/bblocks-ogcapi-processes/)
+  which `$ref`ed [`ogc.api.processes.part1.v1.schemas.bbox`](https://geolabs.github.io/bblocks-ogcapi-processes/)
   until 2026-11-09, now points to the representation `bounding-box-ogcapi-processes-bbox`, whose
   format carries that `$ref`. `maxOccurs` is a real Restrict of the Generic Profile's own value
   (footnote c: *"Implementation profiles may restrict the maximum cardinality of a superior generic
@@ -203,7 +203,7 @@ so all four tiers are now structurally, not just conceptually, consistent:
   `descriptionType` properties: `keywords` on the process and on every input/output (Declared by
   the Generic Profile, Extended by the Implementation Profile, whose schema requires it to
   contain every Generic Profile keyword), and `metadata` as WPS Table 5 Metadata structures
-  (`title`/`role`/`href`, i.e. `ogc.api.processes.v1.schemas.metadata`). Footnote a ("the list
+  (`title`/`role`/`href`, i.e. `ogc.api.processes.part1.v1.schemas.metadata`). Footnote a ("the list
   of metadata references to superior process profiles shall be extended") is applied at the level
   each reference is about. On the process, references to whole profiles with the
   [Table 22](https://docs.ogc.org/is/14-065/14-065r1.html) roles: a Generic Profile references
@@ -409,7 +409,7 @@ geometry) -- a mismatch an earlier draft left visible rather than papered over. 
 §7.15.3's `bbox` parameter) plus a `"BBOX"` `dataFormats` string, invented from scratch for this
 register. Once the register moved to reusing OGC API - Processes' own `InputDescription`/`schema`
 structure (above), both were superseded: `areaOfInterest`'s `schema` `$ref`ed
-`ogc.api.processes.v1.schemas.bbox` directly -- OGC API - Processes - Part 1: Core's own,
+`ogc.api.processes.part1.v1.schemas.bbox` directly -- OGC API - Processes - Part 1: Core's own,
 already-published bbox type, not a custom one. Since 2026-11-09 (decision D6) the role points to
 the representation `bounding-box-ogcapi-processes-bbox` of `bblocks-data-formats`, whose format
 carries that `$ref`. `eoap.cct.bbox` (bblocks-eoap-cct) was considered

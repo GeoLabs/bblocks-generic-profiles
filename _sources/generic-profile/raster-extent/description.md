@@ -19,7 +19,7 @@ containing the image envelope polygon... you can set the polygon with more point
 parameter"* -- `OTB.ImageEnvelope` can even densify the polygon's edges to follow a reprojection
 curve, something four corner numbers cannot represent. This tier carries a concept, not a format
 (see the base schema's own note): the output's `dataType` is `geometry`, not `bounding-box`. The
-Implementation Profile's `schema` gives the format: it declares GML, not a `$ref` to `ogc.api.processes.v1.schemas.bbox` the way
+Implementation Profile's `schema` gives the format: it declares GML, not a `$ref` to `ogc.api.processes.part1.v1.schemas.bbox` the way
 [`raster-crop`](../raster-crop/)'s `areaOfInterest` does -- the two operations bind to genuinely
 different real parameters, a polygon here, four plain numbers there.
 

@@ -81,7 +81,7 @@ look similar ("a bounding box") but bind to genuinely different real parameters:
 `OTB.ImageEnvelope`/`SAGA.shapes_tools.19` both return an actual vector polygon. Neither
 distinction is carried by a format at this tier (a format is forbidden here, `dataType` is a
 concept, see the base schema's own note); the format lives at Implementation Profile, in each
-one's `schema` -- `areaOfInterest`'s `$ref`s `ogc.api.processes.v1.schemas.bbox`, the extent
+one's `schema` -- `areaOfInterest`'s `$ref`s `ogc.api.processes.part1.v1.schemas.bbox`, the extent
 operations' outputs declare GML -- see [`raster-crop`](raster-crop/)'s "`areaOfInterest` is a concept at this tier, not a format"
 and [`raster-extent`](raster-extent/)'s "Why the output is a Geometry, not a BoundingBox".
 

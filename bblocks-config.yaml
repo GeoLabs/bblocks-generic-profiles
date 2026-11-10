@@ -49,7 +49,7 @@ keywords:
 imports:
   - default
   # OGC API - Processes - Part 1: Core schemas: the Table 22 `metadata` structure every tier uses
-  # (ogc.api.processes.v1.schemas.metadata). Formats are no longer copied as `schema` at tier 3: an
+  # (ogc.api.processes.part1.v1.schemas.metadata). Formats are no longer copied as `schema` at tier 3: an
   # Implementation Profile names representations of bblocks-data-formats (decision D6, 2026-11-09).
   - https://geolabs.github.io/bblocks-ogcapi-processes/build/register.json
   # Registered Item Model (ISO 19135:2026) -- this register's governance layer: every Concept,

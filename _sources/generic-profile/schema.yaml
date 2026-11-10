@@ -16,7 +16,7 @@ description: >-
   `InputDescription`/`OutputDescription` structure (`title`, `description`, `keywords`,
   `minOccurs`/`maxOccurs`), plus `dataType`, rather than a custom vocabulary invented for this register: this
   project already imports and uses that structure at Implementation (instance level)
-  (`ogc.api.processes.v1.schemas.*`), so reusing it here makes all four tiers structurally, not
+  (`ogc.api.processes.part1.v1.schemas.*`), so reusing it here makes all four tiers structurally, not
   just conceptually, consistent. A format is deliberately forbidden at this tier:
   [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32) gives
   Generic Profile no "Data format" row at all (only Implementation Profile does, "D"). `dataType`
@@ -27,7 +27,7 @@ description: >-
   This tier is where Table 21 Declares (D) every property it lists for the Process, its Inputs
   and its Outputs -- including `keywords` (Process, Input, Output) and `metadata` (Input,
   Output), both taken from OGC API - Processes' own `descriptionType` (whose `metadata` item,
-  `ogc.api.processes.v1.schemas.metadata`, is WPS Table 5's Metadata structure: `title`, `role`,
+  `ogc.api.processes.part1.v1.schemas.metadata`, is WPS Table 5's Metadata structure: `title`, `role`,
   `href`). Profile-level references, with the Table 22 roles, are made once, on the process
   itself: here, to this Generic Profile's superior, its Process Concept
   (`http://www.opengis.net/spec/wps/2.0/def/process-profile/concept`) -- the list Table 21
@@ -72,7 +72,7 @@ allOf:
           Table 21 Process.Metadata (D): references to superior profiles, with Table 22 roles -- here
           the Process Concept(s) of `broader`.
         type: array
-        items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+        items: {$ref: bblocks://ogc.api.processes.part1.v1.schemas.metadata}
         contains:
           type: object
           required: [role, href]
@@ -119,7 +119,7 @@ allOf:
                 Table 21 Input.Metadata (D). References to the corresponding input of a superior
                 profile only; a Process Concept has no inputs, so normally empty at this tier.
               type: array
-              items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+              items: {$ref: bblocks://ogc.api.processes.part1.v1.schemas.metadata}
             minOccurs: {type: integer, default: 1}
             maxOccurs:
               default: 1
@@ -160,4 +160,4 @@ allOf:
                 Table 21 Output.Metadata (D, then O below: no footnote a). As for inputs, normally
                 empty at this tier.
               type: array
-              items: {$ref: bblocks://ogc.api.processes.v1.schemas.metadata}
+              items: {$ref: bblocks://ogc.api.processes.part1.v1.schemas.metadata}
