@@ -8,6 +8,7 @@
 #   operation (radiometric-index: radiometric-index and radiometric-index-single-band).
 # added: the date of its addition, when not 2026-11-09.
 # note: a paragraph of the description, e.g. why a source is missing.
+# amendments: in-place amendments of the proposal (id, date, classification, description).
 # parent: geoprocessing, for all 36 (rdfs:subClassOf geoproc:GeoprocessingActivityType, decision of
 #   2026-11-09): geoproc requires at least one used or generated entity type that is, or
 #   specialises, a GeoSPARQL 1.1 spatial class.
@@ -348,6 +349,14 @@
   profiles:
   - radiometric-index
   - radiometric-index-single-band
+  amendments:
+  - id: relations-2026-11-10
+    date: '2026-11-10'
+    classification: clarifying
+    description: The Relations text of this activity type now names the two Implementation Profiles
+      that point to it with activityType, radiometric-index and radiometric-index-single-band (added
+      2026-11-10), instead of one. The definition, parent class and entity types are unchanged.
+      Classified clarifying, a documentary text.
   definition: Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant
     spectral channels of the input raster(s).
   parent: geoprocessing

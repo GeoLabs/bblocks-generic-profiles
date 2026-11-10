@@ -74,6 +74,19 @@ def item(op):
             "appliesTo": iri,
         },
     })
+    if op.get("amendments"):
+        # In-place amendments of the proposal (gp:amendmentAction, always classified), after its
+        # addition, as on the profiles of this register.
+        entry["hasAction"] = [entry["hasAction"]] + [{
+            "id": f"{iri}/actions/{a['id']}",
+            "type": "RegisterAction",
+            "actionType": GP + "amendmentAction",
+            "changeClassification": a["classification"],
+            "description": " ".join(a["description"].split()),
+            "proposer": GEOLABS,
+            "startedAtTime": f"{a['date']}T00:00:00Z",
+            "appliesTo": iri,
+        } for a in op["amendments"]]
     for key in ("usedEntityType", "generatedEntityType"):
         values = [expand(v) for v in op.get(key, [])]
         # The ATR JSON schema (activity-types-schema) types each of these as one IRI.

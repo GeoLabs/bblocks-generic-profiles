@@ -22,6 +22,16 @@
       "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/relations-2026-11-10",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The Relations text of this Generic Profile now lists two refining Implementation Profiles, radiometric-index and radiometric-index-single-band (added 2026-11-10), instead of one. The signature is unchanged. Classified clarifying, a documentary text.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
     }
   ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index",
