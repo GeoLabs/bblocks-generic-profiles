@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Generic Profile: Band retrieval",
+  "abstract": "Retrieves one band of an Earth observation product as a raster, over the whole product or over an area of interest. A product, a band identifier and an optional bounding box in, one Raster out.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-10T00:00:00Z",
+  "dateOfLastChange": "2026-11-10",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.generic-profile"
+  ],
+  "sources": [
+    {
+      "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, §7.5.2 Generic Process Profile",
+      "link": "https://docs.ogc.org/is/14-065/14-065.html"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "generic profile",
+    "SKOS",
+    "Band retrieval"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Generic Profiles",
+  "isProfileOf": [
+    "generic-profiles.generic-profile",
+    "generic-profiles.concept.data-discovery-and-access"
+  ]
+}

@@ -35,6 +35,9 @@ Raster/coverage (broader: [`raster-coverage-processing`](../concept/raster-cover
 - [`raster-crop`](raster-crop/) -- one Raster and a bounding box in, one Raster out
 - [`raster-format-conversion`](raster-format-conversion/) -- one Raster and a target format in, one Raster out
 - [`raster-extent`](raster-extent/) -- one Raster in, one Geometry out (bounding envelope)
+- [`raster-resampling`](raster-resampling/) -- one Raster and a grid resolution in, one Raster out
+- [`raster-thresholding`](raster-thresholding/) -- one single-band Raster in, one binary mask out
+- [`raster-rendering`](raster-rendering/) -- one Raster and a colour map in, one rendered image out
 
 Terrain analysis (broader: [`terrain-analysis`](../concept/terrain-analysis/)):
 
@@ -48,6 +51,11 @@ Point clouds (broader: [`point-cloud-processing`](../concept/point-cloud-process
 - [`point-cloud-rasterization`](point-cloud-rasterization/) -- one point cloud and a cell size in, one raster out
 - [`point-cloud-thinning`](point-cloud-thinning/) -- one point cloud and a percentage in, one point cloud out
 - [`point-cloud-to-features`](point-cloud-to-features/) -- one point cloud in, one feature collection out
+
+Data discovery and access (broader: [`data-discovery-and-access`](../concept/data-discovery-and-access/), 2026-11-10):
+
+- [`product-selection`](product-selection/) -- an area of interest, a time interval and a collection in, the selected products out
+- [`band-retrieval`](band-retrieval/) -- a product, a band identifier and an optional bounding box in, one Raster out
 
 Each input/output also names its kind of data with `dataType`, a concept of
 the [data types register](https://geolabs.github.io/bblocks-data-types/) (`data-types.vocabulary`).

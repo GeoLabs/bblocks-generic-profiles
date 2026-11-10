@@ -1,0 +1,30 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Generic Profile "Raster resampling" -- see generic-profiles.generic-profile for the general
+  shape every Generic Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.generic-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling"}
+      type: {const: GenericProfile}
+      prefLabel: {const: "Raster resampling"}
+  - type: object
+    properties:
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+      inputs:
+        required: [raster, resolution]
+        properties:
+          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}}}
+          resolution: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/resolution"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/grid-resolution"}}}
+      outputs:
+        required: [raster]
+        properties:
+          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}}}

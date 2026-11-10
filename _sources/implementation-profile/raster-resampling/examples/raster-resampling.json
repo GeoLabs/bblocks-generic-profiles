@@ -1,0 +1,93 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling",
+  "type": "ImplementationProfile",
+  "prefLabel": "Raster resampling",
+  "definition": "Implementation Profile of the operation Raster resampling, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster resampling, bound to data exchange formats.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling"
+    }
+  ],
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-resampling",
+  "keywords": [
+    "raster",
+    "coverage",
+    "resampling"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    },
+    {
+      "title": "Generic Profile: Raster resampling",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling"
+    }
+  ],
+  "inputs": {
+    "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "representation": [
+        "https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"
+      ],
+      "keywords": [
+        "raster"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Raster resampling -- input `raster`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/raster"
+        }
+      ]
+    },
+    "resolution": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/inputs/resolution",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/grid-resolution",
+      "keywords": [
+        "grid resolution"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Raster resampling -- input `resolution`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/resolution"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "representation": [
+        "https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"
+      ],
+      "keywords": [
+        "raster"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Raster resampling -- output `raster`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/outputs/raster"
+        }
+      ]
+    }
+  }
+}

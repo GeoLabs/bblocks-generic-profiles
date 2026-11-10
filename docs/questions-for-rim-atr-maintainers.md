@@ -92,6 +92,20 @@ Two points of this choice go beyond what your sources state:
   `prov:Entity`. `geo:Geometry` or `geo:Feature` used directly are not declared sub-classes of
   `prov:Entity`. Is that acceptable, or should a register declare its own entity classes?
 
+Two operations added on 2026-11-10 fit `geoproc:` less well, and we would like your view on both:
+
+- Product selection (`activity-type/product-selection`) searches a catalogue of Earth observation
+  products by area, time and collection. It passes the geoproc shapes through its area of interest
+  (`geo:Geometry`), and the search is a spatial query (a footprint intersects an area), but nothing
+  geographic is computed or produced: it reads metadata records and may return references (URLs) to
+  the products, which are not spatial values. We declare `geo:Feature`, the type of the products the
+  references designate, as its generated entity type. Is there, or should there be, a parent for
+  discovery and access activities outside geoprocessing? Our register specification requires every
+  activity type to be a geoprocessing one, so using another parent would also change it.
+- Raster rendering (`activity-type/raster-rendering`) depicts a raster as an image. Its output is a
+  picture, not georeferenced in general, so it declares a used entity type (`geo:Feature`) and no
+  generated one. Is a geoprocessing activity type with no spatial generated entity type acceptable?
+
 ## Questions on the Registered Item Model
 
 ### 6. What is the cardinality of `rim:realizes`?

@@ -1,0 +1,5 @@
+- title: Band retrieval
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/
+  snippets:
+  - language: json
+    ref: examples/band-retrieval.json

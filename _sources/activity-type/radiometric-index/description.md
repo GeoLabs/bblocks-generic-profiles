@@ -16,4 +16,4 @@ The run of an activity of this type is not typed here (decision D8, open).
 
 ## Profiles of this operation
 
-The Implementation Profile [`generic-profiles.implementation-profile.radiometric-index`](../../implementation-profile/radiometric-index/) points here with `activityType`. It holds the signature and the representations; this item holds the meaning.
+The Implementation Profiles [`generic-profiles.implementation-profile.radiometric-index`](../../implementation-profile/radiometric-index/), [`generic-profiles.implementation-profile.radiometric-index-single-band`](../../implementation-profile/radiometric-index-single-band/) point here with `activityType`: the same operation, bound to different representations or cardinalities. They hold the signature and the representations; this item holds the meaning.

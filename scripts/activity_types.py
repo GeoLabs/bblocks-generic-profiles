@@ -70,7 +70,7 @@ def item(op):
             "type": "RegisterAction",
             "actionType": "addition",
             "proposer": GEOLABS,
-            "startedAtTime": ADDED + "T00:00:00Z",
+            "startedAtTime": op.get("added", ADDED) + "T00:00:00Z",
             "appliesTo": iri,
         },
     })
@@ -92,8 +92,8 @@ def bblock(op):
         "name": f"Activity type: {op['prefLabel']}",
         "abstract": " ".join(op["definition"].split()),
         "status": "under-development",
-        "dateTimeAddition": ADDED + "T00:00:00Z",
-        "dateOfLastChange": ADDED,
+        "dateTimeAddition": op.get("added", ADDED) + "T00:00:00Z",
+        "dateOfLastChange": op.get("added", ADDED),
         "version": "0.1",
         "itemClass": "schema",
         "register": "generic-profiles",
@@ -149,12 +149,23 @@ def description(op):
         for s in op["sources"]:
             parts.append(f"- [{s['title']}]({s['link']})" if s.get("link") else f"- {s['title']}")
         parts.append("")
+    if op.get("note"):
+        parts += ["## Notes", "", " ".join(op["note"].split()), ""]
     if op.get("illustration"):
         parts += ["## Illustration", "", op["illustration"], ""]
-    parts += ["## Profiles of this operation", "",
-              f"The Implementation Profile [`generic-profiles.implementation-profile.{op['key']}`]"
-              f"(../../implementation-profile/{op['key']}/) points here with `activityType`. It holds the "
-              "signature and the representations; this item holds the meaning.", ""]
+    # One activity type per operation (decision D3); several Implementation Profiles may point to it
+    # (decision C4 of 2026-11-10). `profiles` lists them; by default, the one named like the operation.
+    profiles = op.get("profiles", [op["key"]])
+    links = ", ".join(f"[`generic-profiles.implementation-profile.{p}`](../../implementation-profile/{p}/)"
+                      for p in profiles)
+    if len(profiles) == 1:
+        text = (f"The Implementation Profile {links} points here with `activityType`. It holds the "
+                "signature and the representations; this item holds the meaning.")
+    else:
+        text = (f"The Implementation Profiles {links} point here with `activityType`: the same operation, bound "
+                "to different representations or cardinalities. They hold the signature and the representations; "
+                "this item holds the meaning.")
+    parts += ["## Profiles of this operation", "", text, ""]
     return "\n".join(parts)
 
 

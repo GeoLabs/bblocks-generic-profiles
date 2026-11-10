@@ -1,0 +1,90 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Implementation Profile "Raster rendering" -- see generic-profiles.implementation-profile for
+  the general shape every Implementation Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.implementation-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering"}
+      type: {const: ImplementationProfile}
+      prefLabel: {const: "Raster rendering"}
+      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering"}
+      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering"}
+      # Table 21 against raster-rendering: keywords Extend (E), metadata Extend (E, footnote a), input
+      # minOccurs/maxOccurs where declared: at most the Generic Profile's (minOccurs may be 0, maxOccurs Restrict (R)).
+      keywords:
+        allOf:
+        - contains: {const: raster}
+        - contains: {const: rendering}
+        - contains: {const: colour map}
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering'}
+      inputs:
+        type: object
+        required: [raster, colourMap]
+        properties:
+          raster:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: raster}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/raster'}
+          colourMap:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: colour map}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/colourMap'}
+      outputs:
+        type: object
+        required: [image]
+        properties:
+          image:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: image}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/outputs/image'}
+  - type: object
+    properties:
+      inputs:
+        properties:
+          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"]}}}
+          colourMap: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/inputs/colourMap"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/colour-map"}}}
+      outputs:
+        properties:
+          image: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/outputs/image"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/rendered-image"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/rendered-image-png"]}}}

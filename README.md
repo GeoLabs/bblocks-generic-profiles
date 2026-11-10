@@ -68,8 +68,15 @@ do — same relation (`broader`, `refinesGenericProfile`, `isProfileOf`) through
 | [`raster-crop`](_sources/generic-profile/raster-crop/) | Raster, BoundingBox -> Raster | `raster-crop` (OTB `ExtractROI`) |
 | [`raster-format-conversion`](_sources/generic-profile/raster-format-conversion/) | Raster, Format -> Raster | `raster-format-conversion` (GDAL `gdal_translate`) |
 | [`raster-extent`](_sources/generic-profile/raster-extent/) | Raster -> Geometry | `raster-extent` (OTB `ImageEnvelope`) |
+| [`raster-resampling`](_sources/generic-profile/raster-resampling/) | Raster, GridResolution -> Raster | `raster-resampling` (added 2026-11-10) |
+| [`raster-thresholding`](_sources/generic-profile/raster-thresholding/) | Raster (single band) -> BinaryMask | `otsu-thresholding` (added 2026-11-10) |
+| [`raster-rendering`](_sources/generic-profile/raster-rendering/) | Raster, ColourMap -> RenderedImage | `raster-rendering` (added 2026-11-10) |
 
-All six `broader`/refine back to one Process Concept, **Raster Coverage Processing**. Note that
+All nine `broader`/refine back to one Process Concept, **Raster Coverage Processing**, whose
+definition was extended on 2026-11-10 (an amendment classified substantive) to resampling,
+thresholding and rendering. `radiometric-index` also refines to a second Implementation Profile,
+`radiometric-index-single-band` (separate single-band rasters in, one single-band raster per index
+out, the index optional; added 2026-11-10); both point to the same activity type. Note that
 `raster-band-math`'s two Implementation Profiles have the *identical* signature above (band count
 is not part of it) — an earlier draft of this register modelled band count as two separate
 Generic Profiles using `cardinality: one-or-many` on the output, which was wrong: a multi-band
@@ -92,6 +99,18 @@ The terrain ones `broader` to a new Concept, **Terrain Analysis**, itself listed
 than Raster Coverage Processing -- an elevation model is a single-band raster; the point cloud ones
 to **Point Cloud Processing**. Point clouds are declared as LAS
 ([OGC 17-030r1](https://www.ogc.org/standards/las/), media type `application/vnd.las`).
+
+A fourth Process Concept, **Data Discovery and Access** (2026-11-10), groups operations that find
+or deliver data rather than compute from it, for the OSPD processes that search a catalogue or
+download a band:
+
+| Generic Profile | Signature (data types) | Implementation Profile(s) |
+|---|---|---|
+| [`product-selection`](_sources/generic-profile/product-selection/) | geometry, time-interval, collection-identifier -> eo-product | `product-selection` (area as GeoJSON, products as STAC Items) |
+| [`band-retrieval`](_sources/generic-profile/band-retrieval/) | eo-product, band-identifier, bounding-box (optional) -> raster | `band-retrieval` (product as STAC Item, raster as GeoTIFF) |
+
+No Implementation Profile binds band retrieval to SAFE packages and JPEG 2000 bands: the SAFE format
+has no media type, and the rule that every format has one is kept (decision C8 of 2026-11-10).
 
 ## Data types
 
@@ -232,7 +251,7 @@ grounding.
 | `generic-profiles.generic-profile.unary-spatial-predicate` | Generic Profile |
 | `generic-profiles.generic-profile.geometry-measure` | Generic Profile |
 | `generic-profiles.activity-type` | Activity type: the meaning of one operation (shared shape, shapes and tests) |
-| `generic-profiles.activity-type.<operation>` | Activity type, one per Implementation Profile, same name (31) |
+| `generic-profiles.activity-type.<operation>` | Activity type, one per operation (36); 37 Implementation Profiles point to them, two to `radiometric-index` |
 | `generic-profiles.implementation-profile` | Implementation Profile (shared shape only, illustrative example) |
 | `generic-profiles.implementation-profile.intersects` | Implementation Profile |
 | `generic-profiles.implementation-profile.disjoint` | Implementation Profile |
@@ -265,6 +284,13 @@ grounding.
 | `generic-profiles.implementation-profile.raster-crop` | Implementation Profile |
 | `generic-profiles.implementation-profile.raster-format-conversion` | Implementation Profile |
 | `generic-profiles.implementation-profile.raster-extent` | Implementation Profile |
+| `generic-profiles.generic-profile.raster-resampling` | Generic Profile |
+| `generic-profiles.generic-profile.raster-thresholding` | Generic Profile |
+| `generic-profiles.generic-profile.raster-rendering` | Generic Profile |
+| `generic-profiles.implementation-profile.radiometric-index-single-band` | Implementation Profile |
+| `generic-profiles.implementation-profile.raster-resampling` | Implementation Profile |
+| `generic-profiles.implementation-profile.otsu-thresholding` | Implementation Profile |
+| `generic-profiles.implementation-profile.raster-rendering` | Implementation Profile |
 | `generic-profiles.concept.terrain-analysis` | Concept |
 | `generic-profiles.concept.point-cloud-processing` | Concept |
 | `generic-profiles.generic-profile.terrain-derivative` | Generic Profile |
@@ -279,6 +305,11 @@ grounding.
 | `generic-profiles.implementation-profile.point-cloud-to-grid` | Implementation Profile |
 | `generic-profiles.implementation-profile.point-cloud-thinning` | Implementation Profile |
 | `generic-profiles.implementation-profile.point-cloud-to-shapes` | Implementation Profile |
+| `generic-profiles.concept.data-discovery-and-access` | Concept |
+| `generic-profiles.generic-profile.product-selection` | Generic Profile |
+| `generic-profiles.generic-profile.band-retrieval` | Generic Profile |
+| `generic-profiles.implementation-profile.product-selection` | Implementation Profile |
+| `generic-profiles.implementation-profile.band-retrieval` | Implementation Profile |
 
 The three base blocks (`generic-profiles.concept`, `generic-profiles.generic-profile`,
 `generic-profiles.implementation-profile`) are the shape every real entry of that tier shares —

@@ -1,0 +1,104 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Implementation Profile "Band retrieval" -- see generic-profiles.implementation-profile for
+  the general shape every Implementation Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.implementation-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval"}
+      type: {const: ImplementationProfile}
+      prefLabel: {const: "Band retrieval"}
+      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval"}
+      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/band-retrieval"}
+      # Table 21 against band-retrieval: keywords Extend (E), metadata Extend (E, footnote a), input
+      # minOccurs/maxOccurs where declared: at most the Generic Profile's (minOccurs may be 0, maxOccurs Restrict (R)).
+      keywords:
+        allOf:
+        - contains: {const: product}
+        - contains: {const: band}
+        - contains: {const: retrieval}
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access'}
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval'}
+      inputs:
+        type: object
+        required: [product, band, areaOfInterest]
+        properties:
+          product:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: product}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/product'}
+          band:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: band}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/band'}
+          areaOfInterest:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: bounding box}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/areaOfInterest'}
+      outputs:
+        type: object
+        required: [raster]
+        properties:
+          raster:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: raster}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/outputs/raster'}
+  - type: object
+    properties:
+      inputs:
+        properties:
+          product: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/product"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/eo-product-stac-item"]}}}
+          band: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/band"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/band-identifier"}}}
+          areaOfInterest: {required: [id, dataType, representation, minOccurs], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/areaOfInterest"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/bounding-box"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/bounding-box-ogcapi-processes-bbox"]}, minOccurs: {const: 0}}}
+      outputs:
+        properties:
+          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"]}}}

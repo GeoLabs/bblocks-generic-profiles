@@ -2,8 +2,13 @@
 # Implementation Profile binds to representations. scripts/activity_types.py generates
 # _sources/activity-type/<key>/ from this file; edit here, then regenerate.
 #
-# key: the operation, the same name as its Implementation Profile.
-# parent: geoprocessing, for all 31 (rdfs:subClassOf geoproc:GeoprocessingActivityType, decision of
+# key: the operation. One activity type per operation (decision D3); several Implementation Profiles may
+#   point to it (decision C4 of 2026-11-10).
+# profiles: the Implementation Profiles that point to it, when they are not just the one named like the
+#   operation (radiometric-index: radiometric-index and radiometric-index-single-band).
+# added: the date of its addition, when not 2026-11-09.
+# note: a paragraph of the description, e.g. why a source is missing.
+# parent: geoprocessing, for all 36 (rdfs:subClassOf geoproc:GeoprocessingActivityType, decision of
 #   2026-11-09): geoproc requires at least one used or generated entity type that is, or
 #   specialises, a GeoSPARQL 1.1 spatial class.
 # usedEntityType / generatedEntityType: a GeoSPARQL class chosen per kind of role, directly, with no
@@ -12,10 +17,12 @@
 #   geo:hasBoundingBox); raster, raster-single-band, elevation-model -> geo:Feature (a coverage
 #   described as a feature, as geoproc:GeoprocessingActivityType says and the ATR NDVI example does);
 #   point-cloud -> geo:Feature (a point cloud dataset, described as a feature like a coverage);
-#   feature-collection -> geo:FeatureCollection. Number, boolean and the other non-spatial roles get
-#   none. The ATR JSON schema allows one value per property: raster-crop, which uses a raster and a
-#   bounding box, declares geo:Feature only (its raster); the bounding-box rule is used by no other
-#   operation today.
+#   feature-collection -> geo:FeatureCollection; binary-mask -> geo:Feature (a raster); eo-product ->
+#   geo:Feature (a product, described by a record with a footprint). Number, boolean, rendered-image
+#   (a picture, not georeferenced in general) and the other non-spatial roles get none. The ATR JSON
+#   schema allows one value per property: raster-crop and band-retrieval, which use a raster or a
+#   product and a bounding box, declare geo:Feature only; product-selection, whose spatial input is
+#   its area of interest, declares geo:Geometry as used type.
 # altLabel: the SQL/MM name of the operation, where there is one.
 # sources: the standards and literature that define the operation. Tools and deployments are not
 #   sources of an operation: they are at tier 4 (bblocks-process-profiles).
@@ -41,6 +48,24 @@
   - title: OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Area()
     link: https://www.ogc.org/standards/sfs/
   - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area'
+- key: band-retrieval
+  added: '2026-11-10'
+  prefLabel: Band retrieval
+  definition: Retrieves one band, one range component, of an Earth observation product as a raster, over
+    the whole product or over an area of interest, with the values the product provides, possibly converted
+    to physical units by the scale and offset the product declares.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
+  sources:
+  - title: OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, §1 Scope
+      (retrieval of selected range components of a coverage)
+    link: https://portal.ogc.org/files/12-040
+  - title: OGC 09-110r4 WCS 2.0 Interface Standard - Core, version 2.0.1, §4.5 (coverage) trimming and §8.4.1
+      GetCoverage request (domain subsetting)
+    link: https://portal.ogc.org/files/09-110r4
 - key: buffer
   prefLabel: Buffer
   altLabel:
@@ -252,6 +277,21 @@
   - title: OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.1.1 IsSimple()
     link: https://www.ogc.org/standards/sfs/
   - title: 'ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_IsSimple'
+- key: otsu-thresholding
+  added: '2026-11-10'
+  prefLabel: Otsu thresholding
+  definition: Divides the cells of a single-band raster into two classes at the threshold computed from the
+    histogram of the cell values by Otsu's method, which maximises the variance between the two classes,
+    and returns the cells of the upper class as a binary mask.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
+  note: The method is the one of N. Otsu, A Threshold Selection Method from Gray-Level Histograms, IEEE
+    Transactions on Systems, Man, and Cybernetics 9(1), 1979, 62-66, DOI 10.1109/TSMC.1979.4310076 (record
+    checked on Crossref on 2026-11-10). Its text is not openly available and was not read, so it is not
+    given as a source.
 - key: point-cloud-thinning
   prefLabel: Point cloud thinning (simple)
   definition: Reduces the number of points to the given percentage by sequential point removal, which
@@ -278,10 +318,50 @@
   - geo:Feature
   generatedEntityType:
   - geo:FeatureCollection
+- key: product-selection
+  added: '2026-11-10'
+  prefLabel: Product selection
+  definition: Selects, from a catalogue of Earth observation products, those of a collection whose footprint
+    intersects an area of interest and whose acquisition time falls within a time interval, possibly
+    filtered further on their metadata, such as their cloud cover.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Feature
+  sources:
+  - title: OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, §1 Scope and the parameters for the
+      discovery of products (parentIdentifier, cloudCover)
+    link: https://docs.ogc.org/is/13-026r9/13-026r9.html
+  - title: 'OGC 17-069r4 OGC API - Features - Part 1: Core, §7.15.3 Parameter bbox and §7.15.4 Parameter
+      datetime'
+    link: https://docs.ogc.org/is/17-069r4/17-069r4.html
+  - title: STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and
+      collections
+    link: https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md
+  note: It passes the geoprocessing shapes through its area of interest, and the search is a spatial query (a
+    footprint intersects an area), but nothing geographic is computed or produced; the products may be
+    returned as references. Whether a parent for discovery and access outside geoprocessing should be used is
+    asked to the maintainers (question 5, decision C10 of 2026-11-10).
 - key: radiometric-index
   prefLabel: Radiometric index
+  profiles:
+  - radiometric-index
+  - radiometric-index-single-band
   definition: Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant
     spectral channels of the input raster(s).
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
+  sources:
+  - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
+    link: https://www.ogc.org/standards/wcps/
+- key: raster-band-math
+  prefLabel: Raster band math
+  definition: Evaluates a user-supplied mathematical expression per pixel across one or more input rasters,
+    producing a monoband output raster.
   parent: geoprocessing
   usedEntityType:
   - geo:Feature
@@ -304,18 +384,6 @@
     link: https://www.ogc.org/standards/wcps/
   - title: OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType
     link: https://docs.ogc.org/is/09-146r8/09-146r8.html
-- key: raster-band-math
-  prefLabel: Raster band math
-  definition: Evaluates a user-supplied mathematical expression per pixel across one or more input rasters,
-    producing a monoband output raster.
-  parent: geoprocessing
-  usedEntityType:
-  - geo:Feature
-  generatedEntityType:
-  - geo:Feature
-  sources:
-  - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
-    link: https://www.ogc.org/standards/wcps/
 - key: raster-crop
   prefLabel: Raster crop
   definition: Extracts the pixels of a raster coverage that fall within a region of interest.
@@ -349,6 +417,20 @@
   sources:
   - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
     link: https://www.ogc.org/standards/wcps/
+- key: raster-rendering
+  added: '2026-11-10'
+  prefLabel: Raster rendering
+  definition: Depicts a raster as an image for viewing, giving each cell a colour from a colour map that
+    associates values, or classes of values, with colours.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  sources:
+  - title: OGC 05-077r4 Symbology Encoding Implementation Specification 1.1.0, §11.5 Raster Symbolizer
+      (ColorMap with the Categorize or Interpolate function)
+    link: https://portal.ogc.org/files/05-077r4
+  note: No generated entity type is declared. The image holds colours, not values, and is not georeferenced in
+    general; no GeoSPARQL class applies to it.
 - key: raster-reprojection
   prefLabel: Raster reprojection
   definition: Reprojects a raster coverage to another coordinate reference system, resampling pixel values
@@ -361,6 +443,21 @@
   sources:
   - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
     link: https://www.ogc.org/standards/wcps/
+- key: raster-resampling
+  added: '2026-11-10'
+  prefLabel: Raster resampling
+  definition: Changes the cell size of a raster coverage, or its number of cells along each axis, over the
+    same extent and in the same coordinate reference system, computing each new cell value from the input
+    cells by an interpolation method.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
+  sources:
+  - title: OGC 12-039 Web Coverage Service Interface Standard - Scaling Extension 1.0, §4.1 Scaling (of a grid
+      coverage)
+    link: https://portal.ogc.org/files/12-039
 - key: slope
   prefLabel: Slope
   definition: The slope gradient of an elevation model at each cell, from a local fit of the surface by

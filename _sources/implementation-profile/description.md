@@ -19,6 +19,10 @@ operation, each `allOf`-referencing this one and adding its own `const`-pinned
   band math (multi-band output), Radiometric index, Raster crop, Raster format conversion,
   Raster extent).
 - 4 terrain operations and 3 point cloud operations, bound to GeoTIFF and LAS.
+- 6 profiles added on 2026-11-10 for the OSPD processes that were not attached: Radiometric index
+  (single-band rasters), Raster resampling, Otsu thresholding and Raster rendering (raster), Product
+  selection and Band retrieval (data discovery and access), bound to GeoTIFF, GeoJSON, STAC Item and
+  PNG. Radiometric index and Radiometric index (single-band rasters) share one activity type.
 
 The meaning of each operation, and the standards that define it (Simple Feature Access, SQL/MM,
 WCPS, the literature of terrain indices), are its activity type, `activityType`

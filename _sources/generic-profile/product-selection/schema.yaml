@@ -1,0 +1,31 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Generic Profile "Product selection" -- see generic-profiles.generic-profile for the general
+  shape every Generic Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.generic-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection"}
+      type: {const: GenericProfile}
+      prefLabel: {const: "Product selection"}
+  - type: object
+    properties:
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access'}
+      inputs:
+        required: [areaOfInterest, timeInterval, collection]
+        properties:
+          areaOfInterest: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/areaOfInterest"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}}}
+          timeInterval: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/timeInterval"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/time-interval"}}}
+          collection: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/collection"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/collection-identifier"}}}
+      outputs:
+        required: [products]
+        properties:
+          products: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/outputs/products"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product"}}}

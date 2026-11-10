@@ -1,0 +1,5 @@
+- title: Radiometric index (single-band rasters)
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/
+  snippets:
+  - language: json
+    ref: examples/radiometric-index-single-band.json

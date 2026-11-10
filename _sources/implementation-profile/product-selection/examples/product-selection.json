@@ -1,0 +1,107 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection",
+  "type": "ImplementationProfile",
+  "prefLabel": "Product selection",
+  "definition": "Implementation Profile of the operation Product selection, whose meaning is its activity type (activityType): the signature of the Generic Profile Product selection, bound to data exchange formats.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection"
+    }
+  ],
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection",
+  "keywords": [
+    "product",
+    "selection",
+    "catalogue"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Data Discovery and Access",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"
+    },
+    {
+      "title": "Generic Profile: Product selection",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection"
+    }
+  ],
+  "inputs": {
+    "areaOfInterest": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/areaOfInterest",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "representation": [
+        "https://w3id.org/geolabs-ospd/data-formats/representation/geometry-geojson"
+      ],
+      "keywords": [
+        "area of interest"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Product selection -- input `areaOfInterest`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/areaOfInterest"
+        }
+      ]
+    },
+    "timeInterval": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/timeInterval",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/time-interval",
+      "keywords": [
+        "time interval"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Product selection -- input `timeInterval`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/timeInterval"
+        }
+      ]
+    },
+    "collection": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/collection",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/collection-identifier",
+      "keywords": [
+        "collection"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Product selection -- input `collection`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/collection"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "products": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/outputs/products",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product",
+      "representation": [
+        "https://w3id.org/geolabs-ospd/data-formats/representation/eo-product-stac-item"
+      ],
+      "keywords": [
+        "product"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Product selection -- output `products`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/outputs/products"
+        }
+      ]
+    }
+  }
+}

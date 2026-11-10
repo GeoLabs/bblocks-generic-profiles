@@ -1,0 +1,77 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection",
+  "type": "GenericProfile",
+  "prefLabel": "Product selection",
+  "definition": "Selects, from a catalogue, the products of a collection whose footprint intersects an area of interest and whose acquisition time falls within a time interval. An area of interest, a time interval and a collection in, the selected products out.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection"
+    }
+  ],
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"
+  ],
+  "keywords": [
+    "product",
+    "selection",
+    "catalogue"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Data Discovery and Access",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"
+    }
+  ],
+  "inputs": {
+    "areaOfInterest": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/areaOfInterest",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "title": "Geometry",
+      "description": "the area the footprint of each product must intersect",
+      "keywords": [
+        "area of interest"
+      ]
+    },
+    "timeInterval": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/timeInterval",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/time-interval",
+      "title": "Time interval",
+      "description": "the period in which each product was acquired",
+      "keywords": [
+        "time interval"
+      ]
+    },
+    "collection": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/collection",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/collection-identifier",
+      "title": "Collection identifier",
+      "description": "the collection the products belong to",
+      "keywords": [
+        "collection"
+      ]
+    }
+  },
+  "outputs": {
+    "products": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/outputs/products",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product",
+      "title": "Earth observation product",
+      "description": "the selected products",
+      "keywords": [
+        "product"
+      ]
+    }
+  }
+}

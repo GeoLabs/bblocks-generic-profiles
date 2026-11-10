@@ -1,0 +1,30 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Generic Profile "Raster rendering" -- see generic-profiles.generic-profile for the general
+  shape every Generic Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.generic-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering"}
+      type: {const: GenericProfile}
+      prefLabel: {const: "Raster rendering"}
+  - type: object
+    properties:
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+      inputs:
+        required: [raster, colourMap]
+        properties:
+          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}}}
+          colourMap: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/colourMap"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/colour-map"}}}
+      outputs:
+        required: [image]
+        properties:
+          image: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/outputs/image"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/rendered-image"}}}

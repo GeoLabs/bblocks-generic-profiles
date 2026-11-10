@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Activity type: Raster resampling",
+  "abstract": "Changes the cell size of a raster coverage, or its number of cells along each axis, over the same extent and in the same coordinate reference system, computing each new cell value from the input cells by an interpolation method.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-10T00:00:00Z",
+  "dateOfLastChange": "2026-11-10",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.activity-type"
+  ],
+  "isProfileOf": [
+    "generic-profiles.activity-type"
+  ],
+  "scope": "dev",
+  "tags": [
+    "activity type",
+    "operation",
+    "Raster resampling"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Activity Types",
+  "sources": [
+    {
+      "title": "OGC 12-039 Web Coverage Service Interface Standard - Scaling Extension 1.0, §4.1 Scaling (of a grid coverage)",
+      "link": "https://portal.ogc.org/files/12-039"
+    }
+  ]
+}

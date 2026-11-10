@@ -1,0 +1,68 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling",
+  "type": "GenericProfile",
+  "prefLabel": "Raster resampling",
+  "definition": "Changes the cell size of a raster coverage over the same extent and in the same coordinate reference system. One Raster input, a target grid resolution, one Raster output on the new grid.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling"
+    }
+  ],
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+  ],
+  "keywords": [
+    "raster",
+    "coverage",
+    "resampling"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    }
+  ],
+  "inputs": {
+    "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "title": "Raster",
+      "description": "the input raster coverage",
+      "keywords": [
+        "raster"
+      ]
+    },
+    "resolution": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/resolution",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/grid-resolution",
+      "title": "Grid resolution",
+      "description": "the cell size of the output grid, along each of its axes",
+      "keywords": [
+        "grid resolution"
+      ]
+    }
+  },
+  "outputs": {
+    "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "title": "Raster",
+      "description": "the resampled raster coverage",
+      "keywords": [
+        "raster"
+      ]
+    }
+  }
+}

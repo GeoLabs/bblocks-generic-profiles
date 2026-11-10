@@ -1,0 +1,76 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Implementation Profile "Otsu thresholding" -- see generic-profiles.implementation-profile for
+  the general shape every Implementation Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.implementation-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding"}
+      type: {const: ImplementationProfile}
+      prefLabel: {const: "Otsu thresholding"}
+      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding"}
+      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/otsu-thresholding"}
+      # Table 21 against raster-thresholding: keywords Extend (E), metadata Extend (E, footnote a), input
+      # minOccurs/maxOccurs where declared: at most the Generic Profile's (minOccurs may be 0, maxOccurs Restrict (R)).
+      keywords:
+        allOf:
+        - contains: {const: raster}
+        - contains: {const: coverage}
+        - contains: {const: thresholding}
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding'}
+      inputs:
+        type: object
+        required: [raster]
+        properties:
+          raster:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: raster}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/inputs/raster'}
+      outputs:
+        type: object
+        required: [mask]
+        properties:
+          mask:
+            properties:
+              keywords:
+                allOf:
+                - contains: {const: mask}
+              metadata:
+                allOf:
+                - contains:
+                    type: object
+                    required: [role, href]
+                    properties:
+                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
+                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/outputs/mask'}
+  - type: object
+    properties:
+      inputs:
+        properties:
+          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/raster-single-band-geotiff"]}}}
+      outputs:
+        properties:
+          mask: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding/outputs/mask"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/binary-mask"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/raster-single-band-geotiff"]}}}
