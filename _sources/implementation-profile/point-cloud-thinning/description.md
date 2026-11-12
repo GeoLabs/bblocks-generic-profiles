@@ -17,9 +17,9 @@ format, D; decision D6):
 
 | Role | Data type | Representation |
 |---|---|---|
-| input `points` | `point-cloud` | [`point-cloud-las`](https://w3id.org/geolabs-ospd/data-formats/representation/point-cloud-las) (Point cloud as LAS) |
+| input `points` | `point-cloud` | [`point-cloud-las`](https://w3id.org/geolabs/ospd/data-formats/representation/point-cloud-las) (Point cloud as LAS) |
 | input `percentage` | `number` | -- |
-| output `result` | `point-cloud` | [`point-cloud-las`](https://w3id.org/geolabs-ospd/data-formats/representation/point-cloud-las) (Point cloud as LAS) |
+| output `result` | `point-cloud` | [`point-cloud-las`](https://w3id.org/geolabs/ospd/data-formats/representation/point-cloud-las) (Point cloud as LAS) |
 
 The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
 2.0.2 §7.5.4 Table 21, footnote d).

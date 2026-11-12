@@ -94,7 +94,7 @@
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/inputs/geometry",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/surface",
       "representation": [
-        "https://w3id.org/geolabs-ospd/data-formats/representation/surface-gml"
+        "https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml"
       ],
       "keywords": [
         "geometry"

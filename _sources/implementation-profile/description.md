@@ -100,7 +100,7 @@ at Generic Profile, `concept` + `generic` here, all three at the instance level.
 
 `representation` is Table 21's Data format (decision D6, 2026-11-05): one or more IRIs of
 representations of the [`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats)
-register (`https://w3id.org/geolabs-ospd/data-formats/representation/...`). A representation
+register (`https://w3id.org/geolabs/ospd/data-formats/representation/...`). A representation
 realizes a version of a data type of `bblocks-data-types` and points to one format, which carries
 the specification, the media types observed and, where there is one, a JSON Schema fragment. Until
 2026-11-09 this tier copied a JSON Schema into a `schema` property instead; that schema stays at the

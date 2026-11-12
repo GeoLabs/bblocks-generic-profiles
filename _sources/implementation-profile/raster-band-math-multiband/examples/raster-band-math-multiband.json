@@ -124,7 +124,7 @@
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/rasters",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "representation": [
-        "https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
       ],
       "maxOccurs": "unbounded",
       "keywords": [
@@ -158,7 +158,7 @@
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/outputs/raster",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
       "representation": [
-        "https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
       ],
       "keywords": [
         "raster"

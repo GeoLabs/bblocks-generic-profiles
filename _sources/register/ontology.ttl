@@ -178,7 +178,7 @@ gp:representation a owl:ObjectProperty ;
     rdfs:isDefinedBy gp: ;
     rdfs:label "representation" ;
     rdfs:comment "Relates an input or output of an Implementation Profile to a representation (df:Representation) of the data-formats register in which it is exchanged: Table 21 Data format (D) of OGC 14-065 WPS 2.0.2, by IRI." ;
-    rdfs:range <https://w3id.org/geolabs-ospd/data-formats/Representation> .
+    rdfs:range <https://w3id.org/geolabs/ospd/data-formats/Representation> .
 
 
 #################################################################

@@ -132,7 +132,7 @@ gp:DataTypeReferenceShape a sh:NodeShape ;
 # tests/representation-*-fail.ttl, tests/role-with-schema-fail.ttl and their control
 # tests/representation-control.ttl show each constraint rejecting an otherwise valid item.
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
-@prefix df:   <https://w3id.org/geolabs-ospd/data-formats/> .
+@prefix df:   <https://w3id.org/geolabs/ospd/data-formats/> .
 
 gp:RepresentationReferenceShape a sh:NodeShape ;
     sh:target [

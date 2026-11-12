@@ -128,7 +128,7 @@ allOf:
               description: >-
                 Table 21 Data format (D), by reference (decision D6): one or more representations of
                 the bblocks-data-formats register
-                (`https://w3id.org/geolabs-ospd/data-formats/representation/...`), each realizing a
+                (`https://w3id.org/geolabs/ospd/data-formats/representation/...`), each realizing a
                 version of this role's dataType, or of a broader one, and pointing to one format. No
                 copied schema: the schema stays at the Implementation (instance level), as served.
               type: array
@@ -136,7 +136,7 @@ allOf:
               items:
                 type: string
                 format: uri
-                pattern: ^https://w3id\.org/geolabs-ospd/data-formats/representation/[a-z0-9-]+$
+                pattern: ^https://w3id\.org/geolabs/ospd/data-formats/representation/[a-z0-9-]+$
             minOccurs:
               description: >-
                 Restricts the Generic Profile's minimum, down to 0 (the input becomes optional),
@@ -184,7 +184,7 @@ allOf:
               description: >-
                 Table 21 Data format (D), by reference (decision D6): one or more representations of
                 the bblocks-data-formats register
-                (`https://w3id.org/geolabs-ospd/data-formats/representation/...`), each realizing a
+                (`https://w3id.org/geolabs/ospd/data-formats/representation/...`), each realizing a
                 version of this role's dataType, or of a broader one, and pointing to one format. No
                 copied schema: the schema stays at the Implementation (instance level), as served.
               type: array
@@ -192,7 +192,7 @@ allOf:
               items:
                 type: string
                 format: uri
-                pattern: ^https://w3id\.org/geolabs-ospd/data-formats/representation/[a-z0-9-]+$
+                pattern: ^https://w3id\.org/geolabs/ospd/data-formats/representation/[a-z0-9-]+$
             keywords: {type: array, minItems: 1, items: {type: string}}
             metadata:
               type: array

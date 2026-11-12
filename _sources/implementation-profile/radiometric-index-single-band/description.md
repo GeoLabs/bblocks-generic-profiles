@@ -17,9 +17,9 @@ format, D; decision D6):
 
 | Role | Data type | Cardinality | Representation |
 |---|---|---|---|
-| input `rasters` | `raster-single-band` | maxOccurs unbounded | [`raster-single-band-geotiff`](https://w3id.org/geolabs-ospd/data-formats/representation/raster-single-band-geotiff) (Single-band raster as GeoTIFF) |
+| input `rasters` | `raster-single-band` | maxOccurs unbounded | [`raster-single-band-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff) (Single-band raster as GeoTIFF) |
 | input `index` | `radiometric-index` | minOccurs 0, maxOccurs unbounded | none (a parameter) |
-| output `raster` | `raster-single-band` | -- | [`raster-single-band-geotiff`](https://w3id.org/geolabs-ospd/data-formats/representation/raster-single-band-geotiff) (Single-band raster as GeoTIFF) |
+| output `raster` | `raster-single-band` | -- | [`raster-single-band-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff) (Single-band raster as GeoTIFF) |
 
 The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
 2.0.2 §7.5.4 Table 21, footnote d).

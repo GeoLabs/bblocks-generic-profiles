@@ -83,8 +83,8 @@ allOf:
     properties:
       inputs:
         properties:
-          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"]}}}
+          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"]}}}
           colourMap: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/inputs/colourMap"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/colour-map"}}}
       outputs:
         properties:
-          image: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/outputs/image"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/rendered-image"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/rendered-image-png"]}}}
+          image: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/outputs/image"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/rendered-image"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/rendered-image-png"]}}}

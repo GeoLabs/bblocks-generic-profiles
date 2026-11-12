@@ -17,7 +17,7 @@ format, D; decision D6):
 
 | Role | Data type | Representation |
 |---|---|---|
-| input `geometry` | `surface` | [`surface-gml`](https://w3id.org/geolabs-ospd/data-formats/representation/surface-gml) (Surface as GML) |
+| input `geometry` | `surface` | [`surface-gml`](https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml) (Surface as GML) |
 | output `result` | `number` | -- |
 
 The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS

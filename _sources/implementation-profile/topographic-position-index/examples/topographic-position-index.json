@@ -95,7 +95,7 @@
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/inputs/elevation",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model",
       "representation": [
-        "https://w3id.org/geolabs-ospd/data-formats/representation/elevation-model-geotiff"
+        "https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff"
       ],
       "keywords": [
         "elevation"
@@ -114,7 +114,7 @@
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/outputs/result",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
       "representation": [
-        "https://w3id.org/geolabs-ospd/data-formats/representation/raster-single-band-geotiff"
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"
       ],
       "keywords": [
         "raster"

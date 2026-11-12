@@ -17,9 +17,9 @@ format, D; decision D6):
 
 | Role | Data type | Cardinality | Representation |
 |---|---|---|---|
-| input `raster` | `raster` | exactly one | [`raster-geotiff`](https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff) (Raster as GeoTIFF) |
+| input `raster` | `raster` | exactly one | [`raster-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff) (Raster as GeoTIFF) |
 | input `colourMap` | `colour-map` | exactly one | none (a parameter) |
-| output `image` | `rendered-image` | -- | [`rendered-image-png`](https://w3id.org/geolabs-ospd/data-formats/representation/rendered-image-png) (Rendered image as PNG) |
+| output `image` | `rendered-image` | -- | [`rendered-image-png`](https://w3id.org/geolabs/ospd/data-formats/representation/rendered-image-png) (Rendered image as PNG) |
 
 The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
 2.0.2 §7.5.4 Table 21, footnote d).

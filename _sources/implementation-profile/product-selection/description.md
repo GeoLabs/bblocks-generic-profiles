@@ -17,10 +17,10 @@ format, D; decision D6):
 
 | Role | Data type | Cardinality | Representation |
 |---|---|---|---|
-| input `areaOfInterest` | `geometry` | exactly one | [`geometry-geojson`](https://w3id.org/geolabs-ospd/data-formats/representation/geometry-geojson) (Geometry as GeoJSON) |
+| input `areaOfInterest` | `geometry` | exactly one | [`geometry-geojson`](https://w3id.org/geolabs/ospd/data-formats/representation/geometry-geojson) (Geometry as GeoJSON) |
 | input `timeInterval` | `time-interval` | exactly one | none (a parameter) |
 | input `collection` | `collection-identifier` | exactly one | none (a parameter) |
-| output `products` | `eo-product` | -- | [`eo-product-stac-item`](https://w3id.org/geolabs-ospd/data-formats/representation/eo-product-stac-item) (Earth observation product as STAC Item) |
+| output `products` | `eo-product` | -- | [`eo-product-stac-item`](https://w3id.org/geolabs/ospd/data-formats/representation/eo-product-stac-item) (Earth observation product as STAC Item) |
 
 The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
 2.0.2 §7.5.4 Table 21, footnote d).

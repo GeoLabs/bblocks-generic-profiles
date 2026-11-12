@@ -8,7 +8,7 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix dt:   <https://geolabs.github.io/bblocks-data-types/def/data-type/> .
-@prefix rep:  <https://w3id.org/geolabs-ospd/data-formats/representation/> .
+@prefix rep:  <https://w3id.org/geolabs/ospd/data-formats/representation/> .
 @prefix role: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-representation-not-a-representation> a gp:ImplementationProfile ;
@@ -29,4 +29,4 @@
     rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-representation-not-a-representation> ;
     prov:startedAtTime "2026-11-09T00:00:00Z"^^xsd:dateTime .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-representation-not-a-representation/inputs/geometry> dct:title "geometry" ; dct:type dt:geometry ; gp:representation <https://w3id.org/geolabs-ospd/data-formats/format/gml> .
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-representation-not-a-representation/inputs/geometry> dct:title "geometry" ; dct:type dt:geometry ; gp:representation <https://w3id.org/geolabs/ospd/data-formats/format/gml> .

@@ -83,8 +83,8 @@ allOf:
     properties:
       inputs:
         properties:
-          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"]}}}
+          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"]}}}
           resolution: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/inputs/resolution"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/grid-resolution"}}}
       outputs:
         properties:
-          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs-ospd/data-formats/representation/raster-geotiff"]}}}
+          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"]}}}
