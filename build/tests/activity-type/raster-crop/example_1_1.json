@@ -1,0 +1,32 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-crop",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Raster crop",
+  "definition": "Extracts the pixels of a raster coverage that fall within a region of interest.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-crop",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-crop/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-09T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-crop"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
+      "link": "https://www.ogc.org/standards/wcps/"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "The Concept \"Data Discovery and Access\" -- see generic-profiles.concept for the general shape every Concept shares.",
+  "allOf": [
+    {
+      "$ref": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access",
+          "x-jsonld-id": "@id"
+        },
+        "type": {
+          "const": "ProcessConcept",
+          "x-jsonld-id": "@type"
+        },
+        "prefLabel": {
+          "const": "Data Discovery and Access",
+          "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        }
+      }
+    }
+  ],
+  "x-jsonld-extra-terms": {
+    "ProcessConcept": "https://geolabs.github.io/bblocks-generic-profiles/def/ProcessConcept",
+    "definition": "http://www.w3.org/2004/02/skos/core#definition",
+    "inScheme": {
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#inScheme",
+      "x-jsonld-type": "@id"
+    },
+    "narrower": {
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#narrower",
+      "x-jsonld-type": "@id"
+    },
+    "source": "http://purl.org/dc/terms/source",
+    "title": "http://purl.org/dc/terms/title",
+    "link": {
+      "x-jsonld-id": "http://purl.org/dc/terms/references",
+      "x-jsonld-type": "@id"
+    },
+    "clause": "https://geolabs.github.io/bblocks-generic-profiles/def/clause"
+  },
+  "x-jsonld-prefixes": {
+    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "x-bblocks-metadata": {
+    "itemIdentifier": "generic-profiles.concept.data-discovery-and-access",
+    "register": "https://geolabs.github.io/bblocks-generic-profiles/build/register.json",
+    "version": "0.1",
+    "dateOfLastChange": "2026-11-12"
+  }
+}

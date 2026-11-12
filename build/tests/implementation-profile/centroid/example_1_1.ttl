@@ -2,38 +2,11 @@
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns3: <https://w3id.org/ogc/api/schema/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Centroid" ],
-        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Centroid> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- Centroid: Computes the centroid of a polygon." ],
-        [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
-            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Centroid()" ] ;
-    skos:definition "The mathematical centroid for this Surface as a Point. The result is not guaranteed to be on this Surface." ;
-    skos:inScheme gp:implementation-profile ;
-    skos:prefLabel "Centroid" ;
-    gp:inputs [ ns1:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/inputs/geometry> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/outputs/result> ] ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation> ;
-    proc:keywords "Centroid",
-        "ST_Centroid",
-        "derived geometry",
-        "geometry",
-        "vector" ;
-    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
-        [ dcterms:title "Generic Profile: Unary geometry operation" ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/addition> ;
-    rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-10-06T00:00:00+00:00"^^xsd:dateTime ;
@@ -41,23 +14,83 @@
     rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> ;
     rim:proposer gp:geolabs .
 
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/meaning-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/centroid, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The mathematical centroid for this Surface as a Point. The result is not guaranteed to be on this Surface.\"" ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The keyword ST_Centroid becomes an altLabel of the activity type; the sources defining the operation move to the activity type: OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Centroid(); ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Centroid." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/representation-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/geometry -> surface-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}); outputs/result -> point-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"})." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/tools-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Decision D4: 2 format keywords removed from inputs and outputs (inputs/geometry: GML; outputs/result: GML); sources removed (tools, testbed, the bbox schema now in the representation's format): ZOO-Project Geonovum testbed -- Centroid: Computes the centroid of a polygon. <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Centroid>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/inputs/geometry> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/surface> ;
-    proc:keywords "GML",
-        "geometry" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml> ;
+    proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- input `geometry`" ;
             ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/inputs/geometry" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns3:string ;
-            dcterms:description "GML" ;
-            ns3:contentMediaType "text/xml" ] .
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/point> ;
-    proc:keywords "GML",
-        "geometry" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/point-gml> ;
+    proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- output `result`" ;
             ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation/outputs/result" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns3:string ;
-            dcterms:description "GML" ;
-            ns3:contentMediaType "text/xml" ] .
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid> a gp:ImplementationProfile ;
+    skos:definition "Implementation Profile of the operation Centroid, whose meaning is its activity type (activityType): the signature of the Generic Profile Unary geometry operation, bound to data exchange formats." ;
+    skos:inScheme gp:implementation-profile ;
+    skos:prefLabel "Centroid" ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/centroid> ;
+    gp:inputs [ ns1:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/inputs/geometry> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/outputs/result> ] ;
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-geometry-operation> ;
+    proc:keywords "Centroid",
+        "derived geometry",
+        "geometry",
+        "vector" ;
+    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
+        [ dcterms:title "Generic Profile: Unary geometry operation" ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/addition>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/meaning-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/operation-sources-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/representation-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/sections-restored-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid/actions/tools-2026-11-09> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/centroid"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 

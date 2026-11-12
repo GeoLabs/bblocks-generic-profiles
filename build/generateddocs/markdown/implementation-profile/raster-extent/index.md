@@ -3,7 +3,7 @@
 
 `generic-profiles.implementation-profile.raster-extent` *v0.1*
 
-Computes the bounding envelope of a raster coverage, as a vector polygon.
+Implementation Profile of the operation Raster extent, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster extent, bound to data exchange formats.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 
@@ -11,7 +11,28 @@ Computes the bounding envelope of a raster coverage, as a vector polygon.
 
 Implementation Profile: **Raster extent**.
 
-> Computes the bounding envelope of a raster coverage, as a vector polygon.
+> Implementation Profile of the operation Raster extent, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster extent, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration --
+is the activity type [`generic-profiles.activity-type.raster-extent`](../../activity-type/raster-extent/), to which this
+profile points with `activityType` (decisions D3 and D4).
+
+## Signature and representations
+
+The signature of the Generic Profile [Raster extent](../../generic-profile/raster-extent/), with each data-carrying
+input and output bound to a representation of the
+[`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats) register (Table 21 Data
+format, D; decision D6):
+
+| Role | Data type | Representation |
+|---|---|---|
+| input `raster` | `raster` | [`raster-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff) (Raster as GeoTIFF) |
+| output `result` | `surface` | [`surface-gml`](https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml) (Surface as GML) |
+
+The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
+2.0.2 §7.5.4 Table 21, footnote d).
 
 ## Source
 
@@ -30,18 +51,19 @@ Implementation Profile: **Raster extent**.
 
 ## Data format
 
-`raster`: a `schema` of `{type: string, contentEncoding: base64, contentMediaType: image/tiff}`
-(GeoTIFF) -- the register's minimal default (Table 21, D: Declare), consistent with every other
+`raster`: the representation `raster-geotiff` (GeoTIFF; until 2026-11-09 a `schema` of
+`{type: string, contentEncoding: base64, contentMediaType: image/tiff}`) -- the register's minimal default (Table 21, D: Declare), consistent with every other
 raster Implementation Profile in this register (not grounded in `OTB.ImageEnvelope`'s own `in`
 the same way `OTB.BandMath`'s `il` is -- its schema was not individually re-checked here, GeoTIFF
 follows this tier's general raster-input convention).
 
-`result`: a `schema` of `{type: string, contentMediaType: text/xml}` (GML) -- grounded in
+`result`: the representation `surface-gml` (GML; until 2026-11-09 a `schema` of
+`{type: string, contentMediaType: text/xml}`) -- grounded in
 `OTB.ImageEnvelope`'s own `out`, which declares `text/xml` (GML),
 `application/vnd.google-earth.kml+xml` (KML), `object` and `application/zip`; GML is kept as this
 tier's minimal baseline, consistent with every vector-typed output elsewhere in this register.
-Not a `$ref` to `ogc.api.processes.v1.schemas.bbox` the way
-[`raster-crop`](../raster-crop/)'s `areaOfInterest` is -- this output is a real polygon, not a
+Not the bbox representation (`bounding-box-ogcapi-processes-bbox`, whose format `$ref`s
+`ogc.api.processes.part1.v1.schemas.bbox`) that [`raster-crop`](../raster-crop/)'s `areaOfInterest` uses -- this output is a real polygon, not a
 plain numeric extent.
 
 Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32), a
@@ -51,14 +73,29 @@ does not pre-empt that.
 ## Relations
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.raster-extent`](../../generic-profile/raster-extent/)
+- `activityType`: [`generic-profiles.activity-type.raster-extent`](../../activity-type/raster-extent/)
 
 ## Register position
 
 Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Generic Profile ->
 **Implementation Profile** -> Implementation (instance level). The fourth tier is not part of
-this register: see `ospd.process-profiles.raster.extent` in `bblocks-process-profiles` -- a real
-process of the ZOO-Project Geonovum testbed
+this register: see [`ospd.process-profiles.raster.extent`](https://github.com/GeoLabs/bblocks-process-profiles/tree/master/_sources/raster/extent)
+in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum testbed
 (<https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/OTB.ImageEnvelope>).
+
+That process names this profile with `implementsProfile`. Tools, hosts and testbeds are
+recorded there; this item carries none as keyword or source (decision D4). The sections
+above keep the tools and testbed that its defaults were grounded in.
+
+## Changes
+
+A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
+
+- `meaning-2026-11-09`, substantive
+- `operation-sources-2026-11-09`, clarifying
+- `representation-2026-11-09`, substantive
+- `tools-2026-11-09`, clarifying
+- `sections-restored-2026-11-09`, clarifying
 
 ## Examples
 
@@ -69,28 +106,79 @@ process of the ZOO-Project Geonovum testbed
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent",
   "type": "ImplementationProfile",
   "prefLabel": "Raster extent",
-  "definition": "Computes the bounding envelope of a raster coverage, as a vector polygon.",
+  "definition": "Implementation Profile of the operation Raster extent, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster extent, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-01T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-10-01T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-extent, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Computes the bounding envelope of a raster coverage, as a vector polygon.\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The source defining the operation moves to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/representation-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/result -> surface-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}).",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: OTB, ImageEnvelope; 2 format keywords removed from inputs and outputs (inputs/raster: GeoTIFF; outputs/result: GML); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB ImageEnvelope -- Build a vector data containing the image envelope polygon <https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/sections-restored-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-extent",
   "keywords": [
     "raster",
     "coverage",
-    "extent",
-    "OTB",
-    "ImageEnvelope"
+    "extent"
   ],
   "metadata": [
     {
@@ -108,15 +196,11 @@ process of the ZOO-Project Geonovum testbed
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
-      "schema": {
-        "type": "string",
-        "contentEncoding": "base64",
-        "contentMediaType": "image/tiff",
-        "description": "GeoTIFF"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
+      ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -131,14 +215,11 @@ process of the ZOO-Project Geonovum testbed
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/surface",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml"
+      ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -148,17 +229,7 @@ process of the ZOO-Project Geonovum testbed
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
-      "link": "https://www.ogc.org/standards/wcps/"
-    },
-    {
-      "title": "OTB ImageEnvelope -- Build a vector data containing the image envelope polygon",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html"
-    }
-  ]
+  }
 }
 
 ```
@@ -170,28 +241,79 @@ process of the ZOO-Project Geonovum testbed
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent",
   "type": "ImplementationProfile",
   "prefLabel": "Raster extent",
-  "definition": "Computes the bounding envelope of a raster coverage, as a vector polygon.",
+  "definition": "Implementation Profile of the operation Raster extent, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster extent, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-01T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-10-01T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-extent, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Computes the bounding envelope of a raster coverage, as a vector polygon.\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The source defining the operation moves to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/representation-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/result -> surface-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}).",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: OTB, ImageEnvelope; 2 format keywords removed from inputs and outputs (inputs/raster: GeoTIFF; outputs/result: GML); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB ImageEnvelope -- Build a vector data containing the image envelope polygon <https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/sections-restored-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-extent",
   "keywords": [
     "raster",
     "coverage",
-    "extent",
-    "OTB",
-    "ImageEnvelope"
+    "extent"
   ],
   "metadata": [
     {
@@ -209,15 +331,11 @@ process of the ZOO-Project Geonovum testbed
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
-      "schema": {
-        "type": "string",
-        "contentEncoding": "base64",
-        "contentMediaType": "image/tiff",
-        "description": "GeoTIFF"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
+      ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -232,14 +350,11 @@ process of the ZOO-Project Geonovum testbed
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/surface",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml"
+      ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -249,17 +364,7 @@ process of the ZOO-Project Geonovum testbed
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
-      "link": "https://www.ogc.org/standards/wcps/"
-    },
-    {
-      "title": "OTB ImageEnvelope -- Build a vector data containing the image envelope polygon",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html"
-    }
-  ]
+  }
 }
 ```
 
@@ -268,38 +373,12 @@ process of the ZOO-Project Geonovum testbed
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html> ;
-            dcterms:title "OTB ImageEnvelope -- Build a vector data containing the image envelope polygon" ],
-        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
-    skos:definition "Computes the bounding envelope of a raster coverage, as a vector polygon." ;
-    skos:inScheme gp:implementation-profile ;
-    skos:prefLabel "Raster extent" ;
-    gp:inputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster> ] ;
-    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result> ] ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> ;
-    proc:keywords "ImageEnvelope",
-        "OTB",
-        "coverage",
-        "extent",
-        "raster" ;
-    proc:metadata [ dcterms:title "Generic Profile: Raster extent" ],
-        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/addition> ;
-    rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
@@ -307,26 +386,84 @@ process of the ZOO-Project Geonovum testbed
     rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> ;
     rim:proposer gp:geolabs .
 
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/meaning-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-extent, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Computes the bounding envelope of a raster coverage, as a vector polygon.\"" ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The source defining the operation moves to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/representation-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/result -> surface-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"})." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/tools-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Decision D4: tool keywords removed: OTB, ImageEnvelope; 2 format keywords removed from inputs and outputs (inputs/raster: GeoTIFF; outputs/result: GML); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB ImageEnvelope -- Build a vector data containing the image envelope polygon <https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
-    proc:keywords "GeoTIFF",
-        "raster" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
+    proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster extent -- input `raster`" ;
             ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns2:string ;
-            dcterms:description "GeoTIFF" ;
-            ns2:contentEncoding "base64" ;
-            ns2:contentMediaType "image/tiff" ] .
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/surface> ;
-    proc:keywords "GML",
-        "geometry" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml> ;
+    proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster extent -- output `result`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns2:string ;
-            dcterms:description "GML" ;
-            ns2:contentMediaType "text/xml" ] .
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> a gp:ImplementationProfile ;
+    skos:definition "Implementation Profile of the operation Raster extent, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster extent, bound to data exchange formats." ;
+    skos:inScheme gp:implementation-profile ;
+    skos:prefLabel "Raster extent" ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-extent> ;
+    gp:inputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result> ] ;
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> ;
+    proc:keywords "coverage",
+        "extent",
+        "raster" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
+        [ dcterms:title "Generic Profile: Raster extent" ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/addition>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/meaning-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/operation-sources-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/representation-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/sections-restored-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/actions/tools-2026-11-09> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 
 
 ```
@@ -353,6 +490,10 @@ allOf:
     refinesGenericProfile:
       const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
+      x-jsonld-type: '@id'
+    activityType:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-extent
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/activityType
       x-jsonld-type: '@id'
     keywords:
       allOf:
@@ -448,6 +589,7 @@ allOf:
           required:
           - id
           - dataType
+          - representation
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster
@@ -455,6 +597,11 @@ allOf:
             dataType:
               const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster
               x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+            representation:
+              const:
+              - https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff
+              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
@@ -464,6 +611,7 @@ allOf:
           required:
           - id
           - dataType
+          - representation
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result
@@ -471,6 +619,11 @@ allOf:
             dataType:
               const: https://geolabs.github.io/bblocks-data-types/def/data-type/surface
               x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+            representation:
+              const:
+              - https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml
+              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
@@ -494,7 +647,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.raster-extent
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'
 
 ```
 
@@ -684,6 +837,10 @@ Links to the schema:
       "@id": "gp:refinesGenericProfile",
       "@type": "@id"
     },
+    "activityType": {
+      "@id": "gp:activityType",
+      "@type": "@id"
+    },
     "keywords": "proc:keywords",
     "metadata": "proc:metadata",
     "inputs": {
@@ -693,11 +850,9 @@ Links to the schema:
           "@id": "dct:type",
           "@type": "@id"
         },
-        "schema": {
-          "@context": {
-            "@vocab": "https://w3id.org/ogc/api/schema/"
-          },
-          "@id": "proc:schema"
+        "representation": {
+          "@id": "gp:representation",
+          "@type": "@id"
         },
         "maxOccurs": "proc:maxOccurs",
         "metadata": {
@@ -719,11 +874,9 @@ Links to the schema:
           "@id": "dct:type",
           "@type": "@id"
         },
-        "schema": {
-          "@context": {
-            "@vocab": "https://w3id.org/ogc/api/schema/"
-          },
-          "@id": "proc:schema"
+        "representation": {
+          "@id": "gp:representation",
+          "@type": "@id"
         },
         "metadata": {
           "@context": {
@@ -759,10 +912,6 @@ Links to the schema:
 You can find the full JSON-LD context here:
 [context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-extent/context.jsonld)
 
-## Sources
-
-* [OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard](https://www.ogc.org/standards/wcps/)
-* [OTB ImageEnvelope -- Build a vector data containing the image envelope polygon](https://www.orfeo-toolbox.org/CookBook/Applications/app_ImageEnvelope.html)
 
 # For developers
 

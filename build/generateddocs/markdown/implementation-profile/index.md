@@ -29,13 +29,26 @@ operation, each `allOf`-referencing this one and adding its own `const`-pinned
 - 7 raster/coverage operations bound to GDAL/OTB (Raster reprojection, Raster band math, Raster
   band math (multi-band output), Radiometric index, Raster crop, Raster format conversion,
   Raster extent).
+- 4 terrain operations and 3 point cloud operations, bound to GeoTIFF and LAS.
+- 6 profiles added on 2026-11-10 for the OSPD processes that were not attached: Radiometric index
+  (single-band rasters), Raster resampling, Otsu thresholding and Raster rendering (raster), Product
+  selection and Band retrieval (data discovery and access), bound to GeoTIFF, GeoJSON, STAC Item and
+  PNG. Radiometric index and Radiometric index (single-band rasters) share one activity type.
+
+The meaning of each operation, and the standards that define it (Simple Feature Access, SQL/MM,
+WCPS, the literature of terrain indices), are its activity type, `activityType`
+(`generic-profiles.activity-type.*`, decisions D3 and D4). An Implementation Profile item carries no
+tool, host or testbed keyword or source (D4); the texts above and in each profile's `description.md`
+still name the tools its defaults were grounded in. The processes that implement a profile, and the
+tools behind them, are profiled in
+`bblocks-process-profiles`.
 
 Three of the vector operations (Centroid, Convex hull, Geometry extent) share one Generic
 Profile, `unary-geometry-operation` (Geometry -> Geometry); Is simple refines
 `unary-spatial-predicate` (Geometry -> Boolean); Area refines `geometry-measure`
 (Geometry -> Number). Centroid, Convex hull, Is simple and Area (2026-10-06) are grounded in
 [OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1](https://www.ogc.org/standards/sfs/),
-the harmonized-with-SQL predecessor to 06-103r4 that the other SQL/MM-bound operations below
+the harmonized-with-SQL predecessor to 06-103r4 that the other SQL/MM-bound operations above
 already use.
 
 ## What Table 21 asks this tier to carry, and how each row is enforced
@@ -56,16 +69,16 @@ Generic Profile (generated from it by `scripts/apply_table21_keywords_metadata.p
 | Input Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile input's |
 | Input Metadata | D | **E/O** ᵃ | E/O ᵃ | `metadata` must reference the corresponding Generic Profile input (`generic-input`, below) |
 | Input Multiplicity | D | **R** ᶜ | E ᵈ | only where declared: `maxOccurs` ≤ the Generic Profile's; `minOccurs` between 0 and the Generic Profile's -- making an input optional is allowed, a register choice beyond footnote c; no declaration means the default, exactly one |
-| Input Data format | -- | **D** | E ᵈ | `schema` |
+| Input Data format | -- | **D** | E ᵈ | `representation`: IRIs of representations of `bblocks-data-formats` (decision D6) |
 | Output (the set itself) | | | E ᵇ | every Generic Profile output must be listed (`required`) |
 | Output Identifier, Title, Abstract | D | **I** | I | as for inputs |
 | Output Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile output's |
 | Output Metadata | D | **O** | O | `metadata` references the corresponding Generic Profile output (`generic-output`): a register choice, Table 21 leaves it free |
-| Output Data format | -- | **D** | E ᵈ | `schema` |
+| Output Data format | -- | **D** | E ᵈ | `representation`, as for inputs |
 
 ᵃ *"The list of metadata references to superior process profiles shall be extended.
 Documentation metadata may be overridden."* The references are Table 5 Metadata structures
-(`title`, `role`, `href` -- OGC API - Processes' own `ogc.api.processes.v1.schemas.metadata`)
+(`title`, `role`, `href` -- OGC API - Processes' own `ogc.api.processes.part1.v1.schemas.metadata`)
 whose `role` is a Table 22 identifier: `http://www.opengis.net/spec/wps/2.0/def/process-profile/`
 `concept`, `generic` or `implementation`. ᵇ additional optional inputs or supplementary outputs.
 ᶜ maximum only, never the minimum. ᵈ more or larger inputs, additional formats.
@@ -96,11 +109,17 @@ Profile (a Process Concept has no inputs), `generic-input` here, and `generic-in
 `ospd.process-profiles.sqlmm.area`'s `processDescription.inherited.json`. On the process: `concept`
 at Generic Profile, `concept` + `generic` here, all three at the instance level.
 
-`schema` -- OGC API - Processes Part 1 Core's own property, a full JSON Schema / OpenAPI Schema
-Object, able to `$ref` a real shared type's own published schema (e.g.
-`ogc.api.processes.v1.schemas.bbox`) -- is Table 21's Data format. Every input/output is listed,
-but only those that carry spatial/raster/bbox data have a `schema`; a plain `String`/`Number`/
-`Boolean` parameter (an expression, a CRS code, a distance) has no format to declare.
+`representation` is Table 21's Data format (decision D6, 2026-11-05): one or more IRIs of
+representations of the [`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats)
+register (`https://w3id.org/geolabs/ospd/data-formats/representation/...`). A representation
+realizes a version of a data type of `bblocks-data-types` and points to one format, which carries
+the specification, the media types observed and, where there is one, a JSON Schema fragment. Until
+2026-11-09 this tier copied a JSON Schema into a `schema` property instead; that schema stays at the
+Implementation (instance level), as the deployed process serves it. `gp:RepresentationReferenceShape`
+rejects a `schema` on an input or output of tiers 2 and 3, a representation that is not a
+`df:Representation`, and one that realizes neither the role's data type nor a broader one. Only
+inputs/outputs that carry spatial, raster, point cloud or bbox data have a representation; a plain
+parameter (an expression, a CRS, a distance) has none.
 
 **The declared default is kept deliberately minimal** -- one format per data-carrying role (GML
 for vector geometry, GeoTIFF for raster), not an exhaustive list of everything a deployment might
@@ -154,6 +173,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects",
   "keywords": [
     "vector",
     "geometry",
@@ -177,14 +197,11 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+      ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -197,14 +214,11 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+      ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -258,6 +272,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects",
   "keywords": [
     "vector",
     "geometry",
@@ -281,14 +296,11 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+      ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -301,14 +313,11 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+      ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -343,8 +352,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
 @prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -355,9 +363,10 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     skos:definition "Illustrates the shape of an Implementation Profile entry only. Real ones are each their own building block -- see generic-profiles.implementation-profile.intersects, .buffer and the other siblings." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Example Implementation Profile (placeholder, not a real operation)" ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects> ;
     gp:inputs [ ns1:geometry1 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> ;
             ns1:geometry2 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> ] ;
-    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> ] ;
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
     proc:keywords "example",
         "geometry",
@@ -380,29 +389,23 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     rim:proposer gp:geolabs .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
-    proc:keywords "GML",
-        "geometry" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
+    proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry1`" ;
             ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns2:string ;
-            dcterms:description "GML" ;
-            ns2:contentMediaType "text/xml" ] .
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
-    proc:keywords "GML",
-        "geometry" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
+    proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry2`" ;
             ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns2:string ;
-            dcterms:description "GML" ;
-            ns2:contentMediaType "text/xml" ] .
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/boolean> ;
     proc:keywords "boolean" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- output `result`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result" ;
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
 
 
@@ -416,48 +419,40 @@ description: "Process Implementation Profile (OGC 14-065 WPS 2.0.2 \xA77.5.3): \
   profiles cover all descriptive elements of a process down to the supported data
   exchange formats.\" One per specific named operation (Intersects, Buffer, ...),
   `refinesGenericProfile` to exactly one Generic Profile (the shared abstract I/O
-  shape).\n`inputs`/`outputs` use OGC API - Processes - Part 1: Core's own `schema`
-  property (a full JSON Schema / OpenAPI Schema Object) for Table 21's Data format
-  (D), instead of a custom format vocabulary: this project already imports and uses
-  the same `schema` property at Implementation (instance level), so a real deployment's
-  processDescription and this tier's declared default are now directly comparable
-  JSON, not a bespoke string next to real JSON. `maxOccurs`, when present, Restricts
-  (R, footnote c: \"Implementation profiles may restrict the maximum cardinality of
-  a superior generic profile... They shall not modify the minimum cardinality\") the
-  Generic Profile's own value -- a real integer (or `unbounded`), not free text. Only
-  inputs/outputs that carry spatial/raster/bbox data need a `schema` entry; a plain
-  parameter (an expression, a CRS code, a distance) has none to declare.\nKeep the
-  declared `schema` minimal and deliberately not exhaustive (one format is often enough:
-  GML for vector geometry data, GeoTIFF for raster, OGC API - Processes' own `bbox`
-  schema for a bounding box). Per Table 21, Implementation (instance level) may *Extend*
-  this (footnote d: \"Implementations may... support additional data exchange formats\")
-  -- a specific deployment is free to support more than this tier's minimal default,
-  so this tier should not try to pre-empt every format a future deployment might add.
-  See each Implementation Profile's own `description.md` for whether its default is
-  grounded in a real deployment's processDescription or left as the vocabulary's own
-  minimal baseline.\nA `schema` may `$ref` a real shared type's own published schema
-  directly -- e.g. `ogc.api.processes.v1.schemas.bbox` for a bounding box, the same
-  OGC API - Processes - Part 1: Core type this register's Implementation (instance
-  level) processDescriptions already use. `eoap.cct.*` types (bblocks-eoap-cct) are
-  a *different* vocabulary, for typing CWL inputs/outputs passed to OGC API - Processes
-  - Part 2: Deploy, Replace, Undeploy, not for describing an OGC API - Processes processDescription's
-  own `schema` -- not used here.\nThe rest of Table 21 at this tier, as each real
-  Implementation Profile's own `schema.yaml` enforces it against its Generic Profile:
-  - Process: `keywords` Extend (E) -- must contain every Generic Profile keyword;\n
-  \ `id`/`prefLabel`/`definition` Override (O); `metadata` Extends (E, footnote a:
-  \"the list of\n  metadata references to superior process profiles shall be extended\")
-  the Generic Profile's\n  list -- its Table 22 `concept` reference -- with a `generic`
-  one to the Generic Profile\n  itself. Profile-level references are made here only,
-  never repeated on inputs/outputs.\n- Input: every Generic Profile input is listed.
-  Its `metadata` references the corresponding\n  Generic Profile input (`<Generic
-  Profile id>/inputs/<name>`) with this register's role\n  `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input`
-  -- footnote a, at the level of the input; `keywords` Extend (E);\n  Identifier/Title/Abstract
+  shape).\n`inputs`/`outputs` name Table 21's Data format (D) by reference: `representation`,
+  one or more IRIs of representations of the bblocks-data-formats register (decision
+  D6, 2026-11-05). A representation realizes a version of a data type of bblocks-data-types
+  and points to one format (GML, GeoTIFF, LAS, the OGC API - Processes bbox, ...).
+  The JSON Schema that a real deployment serves stays at the Implementation (instance
+  level), as its processDescription's `schema`; it is not copied here. `maxOccurs`,
+  when present, Restricts (R, footnote c: \"Implementation profiles may restrict the
+  maximum cardinality of a superior generic profile... They shall not modify the minimum
+  cardinality\") the Generic Profile's own value -- a real integer (or `unbounded`),
+  not free text. Only inputs/outputs that carry spatial, raster, point cloud or bbox
+  data have a representation; a plain parameter (an expression, a CRS, a distance)
+  has none to declare.\nKeep the declared representations minimal and deliberately
+  not exhaustive (one is often enough). Per Table 21, Implementation (instance level)
+  may *Extend* this (footnote d: \"Implementations may... support additional data
+  exchange formats\").\nThe meaning of the operation is not here: it is the activity
+  type that `activityType` points to (generic-profiles.activity-type.*, decisions
+  D3 and D4). No tool, host or testbed is named at this tier.\nThe rest of Table 21
+  at this tier, as each real Implementation Profile's own `schema.yaml` enforces it
+  against its Generic Profile: - Process: `keywords` Extend (E) -- must contain every
+  Generic Profile keyword;\n  `id`/`prefLabel`/`definition` Override (O); `metadata`
+  Extends (E, footnote a: \"the list of\n  metadata references to superior process
+  profiles shall be extended\") the Generic Profile's\n  list -- its Table 22 `concept`
+  reference -- with a `generic` one to the Generic Profile\n  itself. Profile-level
+  references are made here only, never repeated on inputs/outputs.\n- Input: every
+  Generic Profile input is listed. Its `metadata` references the corresponding\n  Generic
+  Profile input (`<Generic Profile id>/inputs/<name>`) with this register's role\n
+  \ `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input` --
+  footnote a, at the level of the input; `keywords` Extend (E);\n  Identifier/Title/Abstract
   Inherit (I), so not repeated; `maxOccurs` Restrict (R); `minOccurs`\n  may be restricted
-  down to 0 (a register choice beyond Table 21, footnote c forbidding it);\n  `schema`
+  down to 0 (a register choice beyond Table 21, footnote c forbidding it);\n  `representation`
   Declare (D).\n- Output: every Generic Profile output is listed too; `metadata` references
   the corresponding\n  Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output`
   (Table 21 allows any value here,\n  O; the register keeps outputs symmetric with
-  inputs); `keywords` Extend (E); `schema`\n  Declare (D)."
+  inputs); `keywords` Extend (E); `representation`\n  Declare (D)."
 allOf:
 - $ref: https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
 - type: object
@@ -468,6 +463,7 @@ allOf:
   - definition
   - inScheme
   - refinesGenericProfile
+  - activityType
   - keywords
   - metadata
   - inputs
@@ -505,6 +501,15 @@ allOf:
       format: uri
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
       x-jsonld-type: '@id'
+    activityType:
+      description: The activity type (generic-profiles.activity-type.*) that holds
+        the meaning of the operation this Implementation Profile binds to formats
+        (decisions D3 and D4). gp:activityType, a sub-property of rim:relatedItem.
+      type: string
+      format: uri
+      pattern: ^https://geolabs\.github\.io/bblocks-generic-profiles/def/activity-type/[a-z0-9-]+$
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/activityType
+      x-jsonld-type: '@id'
     keywords:
       description: Table 21 Process.Keywords (E) -- the Generic Profile's keywords
         plus this operation's own.
@@ -519,7 +524,7 @@ allOf:
         Generic Profile.'
       type: array
       items:
-        $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+        $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
       allOf:
       - contains:
           type: object
@@ -540,9 +545,9 @@ allOf:
       x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       description: Keyed by the same input names as the Generic Profile's own `inputs`
-        (Identifier/Title/ Abstract Inherited, not repeated). `schema` is Table 21's
-        Data format (D); `maxOccurs`, when present, Restricts (R, footnote c) the
-        Generic Profile's own value; `keywords` Extend (E) the Generic Profile's;
+        (Identifier/Title/ Abstract Inherited, not repeated). `representation` is
+        Table 21's Data format (D); `maxOccurs`, when present, Restricts (R, footnote
+        c) the Generic Profile's own value; `keywords` Extend (E) the Generic Profile's;
         `metadata` Extends (E, footnote a) its superior-profile references.
       type: object
       additionalProperties:
@@ -552,6 +557,9 @@ allOf:
         - dataType
         - keywords
         - metadata
+        not:
+          required:
+          - schema
         properties:
           dataType:
             description: 'What kind of data this input is, as a concept of the bblocks-data-types
@@ -568,16 +576,27 @@ allOf:
             type: string
             format: uri
             x-jsonld-id: '@id'
-          schema:
-            x-jsonld-id: https://w3id.org/ogc/api/processes/schema
-            x-jsonld-vocab: https://w3id.org/ogc/api/schema/
+          representation:
+            description: 'Table 21 Data format (D), by reference (decision D6): one
+              or more representations of the bblocks-data-formats register (`https://w3id.org/geolabs/ospd/data-formats/representation/...`),
+              each realizing a version of this role''s dataType, or of a broader one,
+              and pointing to one format. No copied schema: the schema stays at the
+              Implementation (instance level), as served.'
+            type: array
+            minItems: 1
+            items:
+              type: string
+              format: uri
+              pattern: ^https://w3id\.org/geolabs/ospd/data-formats/representation/[a-z0-9-]+$
+            x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+            x-jsonld-type: '@id'
           minOccurs:
             description: 'Restricts the Generic Profile''s minimum, down to 0 (the
               input becomes optional), never above it. A deliberate departure from
               Table 21 footnote c ("shall not modify the minimum cardinality"): a
               Generic Profile keeps `minOccurs: 1` and lower tiers, down to a real
-              implementation, may make the input optional (e.g. `Gdal_Warp`''s `t_srs`,
-              absent meaning no reprojection).'
+              implementation, may make the input optional (e.g. a target CRS whose
+              absence means no reprojection).'
             type: integer
             minimum: 0
           maxOccurs:
@@ -594,7 +613,7 @@ allOf:
           metadata:
             type: array
             items:
-              $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+              $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
             contains:
               type: object
               required:
@@ -618,6 +637,9 @@ allOf:
         - dataType
         - keywords
         - metadata
+        not:
+          required:
+          - schema
         properties:
           dataType:
             description: 'What kind of data this output is, as a concept of the bblocks-data-types
@@ -634,9 +656,20 @@ allOf:
             type: string
             format: uri
             x-jsonld-id: '@id'
-          schema:
-            x-jsonld-id: https://w3id.org/ogc/api/processes/schema
-            x-jsonld-vocab: https://w3id.org/ogc/api/schema/
+          representation:
+            description: 'Table 21 Data format (D), by reference (decision D6): one
+              or more representations of the bblocks-data-formats register (`https://w3id.org/geolabs/ospd/data-formats/representation/...`),
+              each realizing a version of this role''s dataType, or of a broader one,
+              and pointing to one format. No copied schema: the schema stays at the
+              Implementation (instance level), as served.'
+            type: array
+            minItems: 1
+            items:
+              type: string
+              format: uri
+              pattern: ^https://w3id\.org/geolabs/ospd/data-formats/representation/[a-z0-9-]+$
+            x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+            x-jsonld-type: '@id'
           keywords:
             type: array
             minItems: 1
@@ -646,7 +679,7 @@ allOf:
           metadata:
             type: array
             items:
-              $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+              $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
             contains:
               type: object
               required:
@@ -687,7 +720,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'
 
 ```
 
@@ -877,6 +910,10 @@ Links to the schema:
       "@id": "gp:refinesGenericProfile",
       "@type": "@id"
     },
+    "activityType": {
+      "@id": "gp:activityType",
+      "@type": "@id"
+    },
     "keywords": "proc:keywords",
     "metadata": "proc:metadata",
     "inputs": {
@@ -886,11 +923,9 @@ Links to the schema:
           "@id": "dct:type",
           "@type": "@id"
         },
-        "schema": {
-          "@context": {
-            "@vocab": "https://w3id.org/ogc/api/schema/"
-          },
-          "@id": "proc:schema"
+        "representation": {
+          "@id": "gp:representation",
+          "@type": "@id"
         },
         "maxOccurs": "proc:maxOccurs",
         "metadata": {
@@ -912,11 +947,9 @@ Links to the schema:
           "@id": "dct:type",
           "@type": "@id"
         },
-        "schema": {
-          "@context": {
-            "@vocab": "https://w3id.org/ogc/api/schema/"
-          },
-          "@id": "proc:schema"
+        "representation": {
+          "@id": "gp:representation",
+          "@type": "@id"
         },
         "metadata": {
           "@context": {

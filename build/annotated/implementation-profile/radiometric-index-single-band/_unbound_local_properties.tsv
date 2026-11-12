@@ -1,0 +1,13 @@
+path
+/metadata/role
+/metadata/href
+/inputs/rasters
+/inputs/rasters/metadata/role
+/inputs/rasters/metadata/href
+/inputs/index
+/inputs/index/metadata/role
+/inputs/index/metadata/href
+/outputs/raster
+/outputs/raster/metadata/role
+/outputs/raster/metadata/href
+/inputs/index/minOccurs

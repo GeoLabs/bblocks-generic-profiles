@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "The Generic Profile \"Band retrieval\" -- see generic-profiles.generic-profile for the general shape every Generic Profile shares.",
+  "allOf": [
+    {
+      "$ref": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval",
+          "x-jsonld-id": "@id"
+        },
+        "type": {
+          "const": "GenericProfile",
+          "x-jsonld-id": "@type"
+        },
+        "prefLabel": {
+          "const": "Band retrieval",
+          "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "allOf": [
+            {
+              "contains": {
+                "type": "object",
+                "required": [
+                  "role",
+                  "href"
+                ],
+                "properties": {
+                  "role": {
+                    "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"
+                  },
+                  "href": {
+                    "const": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"
+                  }
+                }
+              }
+            }
+          ],
+          "x-jsonld-id": "https://w3id.org/ogc/api/processes/metadata"
+        },
+        "inputs": {
+          "required": [
+            "product",
+            "band",
+            "areaOfInterest"
+          ],
+          "properties": {
+            "product": {
+              "required": [
+                "id",
+                "dataType"
+              ],
+              "properties": {
+                "id": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/product",
+                  "x-jsonld-id": "@id"
+                },
+                "dataType": {
+                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product",
+                  "x-jsonld-id": "http://purl.org/dc/terms/type",
+                  "x-jsonld-type": "@id"
+                }
+              }
+            },
+            "band": {
+              "required": [
+                "id",
+                "dataType"
+              ],
+              "properties": {
+                "id": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/band",
+                  "x-jsonld-id": "@id"
+                },
+                "dataType": {
+                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/band-identifier",
+                  "x-jsonld-id": "http://purl.org/dc/terms/type",
+                  "x-jsonld-type": "@id"
+                }
+              }
+            },
+            "areaOfInterest": {
+              "required": [
+                "id",
+                "dataType",
+                "minOccurs"
+              ],
+              "properties": {
+                "id": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/areaOfInterest",
+                  "x-jsonld-id": "@id"
+                },
+                "dataType": {
+                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/bounding-box",
+                  "x-jsonld-id": "http://purl.org/dc/terms/type",
+                  "x-jsonld-type": "@id"
+                },
+                "minOccurs": {
+                  "const": 0,
+                  "x-jsonld-id": "https://w3id.org/ogc/api/processes/minOccurs"
+                }
+              }
+            }
+          },
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/inputs",
+          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/"
+        },
+        "outputs": {
+          "required": [
+            "raster"
+          ],
+          "properties": {
+            "raster": {
+              "required": [
+                "id",
+                "dataType"
+              ],
+              "properties": {
+                "id": {
+                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/outputs/raster",
+                  "x-jsonld-id": "@id"
+                },
+                "dataType": {
+                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+                  "x-jsonld-id": "http://purl.org/dc/terms/type",
+                  "x-jsonld-type": "@id"
+                }
+              }
+            }
+          },
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/outputs",
+          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/"
+        }
+      }
+    }
+  ],
+  "x-jsonld-extra-terms": {
+    "GenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/GenericProfile",
+    "definition": "http://www.w3.org/2004/02/skos/core#definition",
+    "inScheme": {
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#inScheme",
+      "x-jsonld-type": "@id"
+    },
+    "broader": {
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#broader",
+      "x-jsonld-type": "@id"
+    },
+    "keywords": "https://w3id.org/ogc/api/processes/keywords",
+    "source": "http://purl.org/dc/terms/source",
+    "title": "http://purl.org/dc/terms/title",
+    "link": {
+      "x-jsonld-id": "http://purl.org/dc/terms/references",
+      "x-jsonld-type": "@id"
+    },
+    "clause": "https://geolabs.github.io/bblocks-generic-profiles/def/clause"
+  },
+  "x-jsonld-prefixes": {
+    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "proc": "https://w3id.org/ogc/api/processes/",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "x-bblocks-metadata": {
+    "itemIdentifier": "generic-profiles.generic-profile.band-retrieval",
+    "register": "https://geolabs.github.io/bblocks-generic-profiles/build/register.json",
+    "version": "0.1",
+    "dateOfLastChange": "2026-11-12"
+  }
+}

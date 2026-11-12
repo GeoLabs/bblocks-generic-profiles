@@ -1,0 +1,36 @@
+@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/union> a owl:Class,
+        acttype:ActivityType ;
+    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.53 ST_Union" ],
+        [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.25" ] ;
+    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    skos:altLabel "ST_Union" ;
+    skos:definition "Returns a geometric object representing the point set union of this geometric object with anotherGeometry." ;
+    skos:prefLabel "Union" ;
+    acttype:associatedAgentType prov:SoftwareAgent ;
+    acttype:generatedEntityType geo:Geometry ;
+    acttype:usedEntityType geo:Geometry ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/union/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass acttype:activityTypeItemClass ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/union"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/union/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/union> ;
+    rim:proposer gp:geolabs .
+

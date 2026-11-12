@@ -25,6 +25,11 @@
           "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile",
           "x-jsonld-type": "@id"
         },
+        "activityType": {
+          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersection",
+          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/activityType",
+          "x-jsonld-type": "@id"
+        },
         "keywords": {
           "allOf": [
             {
@@ -228,7 +233,8 @@
             "geometry1": {
               "required": [
                 "id",
-                "dataType"
+                "dataType",
+                "representation"
               ],
               "properties": {
                 "id": {
@@ -239,13 +245,21 @@
                   "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
+                },
+                "representation": {
+                  "const": [
+                    "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+                  ],
+                  "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/representation",
+                  "x-jsonld-type": "@id"
                 }
               }
             },
             "geometry2": {
               "required": [
                 "id",
-                "dataType"
+                "dataType",
+                "representation"
               ],
               "properties": {
                 "id": {
@@ -255,6 +269,13 @@
                 "dataType": {
                   "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
+                  "x-jsonld-type": "@id"
+                },
+                "representation": {
+                  "const": [
+                    "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+                  ],
+                  "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/representation",
                   "x-jsonld-type": "@id"
                 }
               }
@@ -268,7 +289,8 @@
             "result": {
               "required": [
                 "id",
-                "dataType"
+                "dataType",
+                "representation"
               ],
               "properties": {
                 "id": {
@@ -278,6 +300,13 @@
                 "dataType": {
                   "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
+                  "x-jsonld-type": "@id"
+                },
+                "representation": {
+                  "const": [
+                    "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+                  ],
+                  "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/representation",
                   "x-jsonld-type": "@id"
                 }
               }
@@ -313,6 +342,6 @@
     "itemIdentifier": "generic-profiles.implementation-profile.intersection",
     "register": "https://geolabs.github.io/bblocks-generic-profiles/build/register.json",
     "version": "0.1",
-    "dateOfLastChange": "2026-11-04"
+    "dateOfLastChange": "2026-11-12"
   }
 }

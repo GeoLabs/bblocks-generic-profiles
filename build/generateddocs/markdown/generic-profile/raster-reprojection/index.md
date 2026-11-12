@@ -43,14 +43,26 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Raster reprojection",
   "definition": "Reprojects a raster coverage to another coordinate reference system, preserving its content. One Raster input, a target CRS, one Raster output in the new CRS.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/data-type-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The dataType of input `targetCRS` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system, created for this role in the data-types register. Its title \"String\" becomes \"Coordinate reference system\".",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
@@ -83,8 +95,8 @@ Implementation Profile -> Implementation (instance level).
     },
     "targetCRS": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
-      "title": "String",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system",
+      "title": "Coordinate reference system",
       "description": "the target coordinate reference system identifier",
       "keywords": [
         "CRS"
@@ -115,14 +127,26 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Raster reprojection",
   "definition": "Reprojects a raster coverage to another coordinate reference system, preserving its content. One Raster input, a target CRS, one Raster output in the new CRS.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/data-type-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The dataType of input `targetCRS` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system, created for this role in the data-types register. Its title \"String\" becomes \"Coordinate reference system\".",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
@@ -155,8 +179,8 @@ Implementation Profile -> Implementation (instance level).
     },
     "targetCRS": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
-      "title": "String",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system",
+      "title": "Coordinate reference system",
       "description": "the target coordinate reference system identifier",
       "keywords": [
         "CRS"
@@ -189,6 +213,35 @@ Implementation Profile -> Implementation (instance level).
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/data-type-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The dataType of input `targetCRS` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system, created for this role in the data-types register. Its title \"String\" becomes \"Coordinate reference system\"." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster> dcterms:description "the input raster coverage" ;
+    dcterms:title "Raster" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
+    proc:keywords "raster" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS> dcterms:description "the target coordinate reference system identifier" ;
+    dcterms:title "Coordinate reference system" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system> ;
+    proc:keywords "CRS" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster> dcterms:description "the reprojected raster coverage" ;
+    dcterms:title "Raster" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
+    proc:keywords "raster" .
+
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> a gp:GenericProfile ;
     skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
     skos:definition "Reprojects a raster coverage to another coordinate reference system, preserving its content. One Raster input, a target CRS, one Raster output in the new CRS." ;
@@ -202,33 +255,13 @@ Implementation Profile -> Implementation (instance level).
         "reprojection" ;
     proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/addition> ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/addition>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/data-type-2026-11-09> ;
     rim:inRegister gp:register ;
     rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
     rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/actions/addition> a rim:RegisterAction ;
-    prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
-    rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> ;
-    rim:proposer gp:geolabs .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster> dcterms:description "the input raster coverage" ;
-    dcterms:title "Raster" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
-    proc:keywords "raster" .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS> dcterms:description "the target coordinate reference system identifier" ;
-    dcterms:title "String" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/string> ;
-    proc:keywords "CRS" .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster> dcterms:description "the reprojected raster coverage" ;
-    dcterms:title "Raster" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
-    proc:keywords "raster" .
 
 
 ```
@@ -290,7 +323,7 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/string
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
@@ -336,7 +369,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.raster-reprojection
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'
 
 ```
 

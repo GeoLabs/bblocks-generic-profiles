@@ -2,29 +2,81 @@
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection",
   "type": "ImplementationProfile",
   "prefLabel": "Intersection",
-  "definition": "Returns a geometric object representing the point set intersection of this geometric object with anotherGeometry.",
+  "definition": "Implementation Profile of the operation Intersection, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial set operation, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersection, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns a geometric object representing the point set intersection of this geometric object with anotherGeometry.\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The keyword ST_Intersection becomes an altLabel of the activity type; the sources defining the operation move to the activity type: OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.24; ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.25 ST_Intersection; the illustration of the operation moves to the activity type.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/actions/representation-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/geometry1 -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}); inputs/geometry2 -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}); outputs/result -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}).",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: 3 format keywords removed from inputs and outputs (inputs/geometry1: GML; inputs/geometry2: GML; outputs/result: GML); description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/actions/sections-restored-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersection",
   "keywords": [
     "vector",
     "geometry",
     "spatial analysis",
     "set operation",
-    "Intersection",
-    "ST_Intersection"
+    "Intersection"
   ],
   "metadata": [
     {
@@ -42,14 +94,11 @@
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/inputs/geometry1",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+      ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -62,14 +111,11 @@
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/inputs/geometry2",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+      ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -84,14 +130,11 @@
     "result": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersection/outputs/result",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+      ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -101,14 +144,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.24",
-      "link": "https://www.ogc.org/standards/sfa/"
-    },
-    {
-      "title": "ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.25 ST_Intersection"
-    }
-  ]
+  }
 }

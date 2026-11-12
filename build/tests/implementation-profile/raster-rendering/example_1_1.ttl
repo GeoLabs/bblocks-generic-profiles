@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering> a gp:ImplementationProfile ;
+    skos:definition "Implementation Profile of the operation Raster rendering, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster rendering, bound to data exchange formats." ;
+    skos:inScheme gp:implementation-profile ;
+    skos:prefLabel "Raster rendering" ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering> ;
+    gp:inputs [ ns1:colourMap <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/inputs/colourMap> ;
+            ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/inputs/raster> ] ;
+    gp:outputs [ ns2:image <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/outputs/image> ] ;
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering> ;
+    proc:keywords "colour map",
+        "raster",
+        "rendering" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster rendering" ],
+        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering> ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/inputs/colourMap> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/colour-map> ;
+    proc:keywords "colour map" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster rendering -- input `colourMap`" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/colourMap" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/inputs/raster> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
+    proc:keywords "raster" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster rendering -- input `raster`" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/raster" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/outputs/image> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/rendered-image> ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/rendered-image-png> ;
+    proc:keywords "image" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster rendering -- output `image`" ;
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/outputs/image" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+

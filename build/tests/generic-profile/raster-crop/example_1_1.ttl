@@ -8,30 +8,17 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop> a gp:GenericProfile ;
-    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-    skos:definition "Crops a raster coverage to a region of interest. One Raster input, an area of interest, one Raster output covering only that area." ;
-    skos:inScheme gp:generic-profile ;
-    skos:prefLabel "Raster crop" ;
-    gp:inputs [ ns2:areaOfInterest <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest> ;
-            ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster> ] ;
-    gp:outputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster> ] ;
-    proc:keywords "coverage",
-        "crop",
-        "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/actions/addition> ;
-    rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
-
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop> ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/actions/clarification-2026-11-06> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-06T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop> ;
+    rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest> dcterms:description "the region of interest to crop to" ;
@@ -48,4 +35,25 @@
     dcterms:title "Raster" ;
     dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
     proc:keywords "raster" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop> a gp:GenericProfile ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+    skos:definition "Crops a raster coverage to a region of interest. One Raster input, an area of interest, one Raster output covering only that area." ;
+    skos:inScheme gp:generic-profile ;
+    skos:prefLabel "Raster crop" ;
+    gp:inputs [ ns2:areaOfInterest <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/areaOfInterest> ;
+            ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/inputs/raster> ] ;
+    gp:outputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/outputs/raster> ] ;
+    proc:keywords "coverage",
+        "crop",
+        "raster" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/actions/addition>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop/actions/clarification-2026-11-06> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-crop"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 

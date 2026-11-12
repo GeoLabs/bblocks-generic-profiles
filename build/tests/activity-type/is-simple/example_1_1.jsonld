@@ -1,0 +1,38 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/is-simple/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/is-simple",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Is simple",
+  "altLabel": [
+    "ST_IsSimple"
+  ],
+  "definition": "Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection or self tangency.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/is-simple",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/is-simple/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-09T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/is-simple"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, \u00a72.1.1.1 IsSimple()",
+      "link": "https://www.ogc.org/standards/sfs/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_IsSimple"
+    }
+  ]
+}

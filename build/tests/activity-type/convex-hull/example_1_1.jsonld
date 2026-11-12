@@ -1,0 +1,39 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/convex-hull/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/convex-hull",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Convex hull",
+  "altLabel": [
+    "ST_ConvexHull"
+  ],
+  "definition": "Returns a geometry that represents the convex hull of this Geometry.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/convex-hull",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/convex-hull/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-09T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/convex-hull"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, \u00a72.1.1.3 ConvexHull()",
+      "link": "https://www.ogc.org/standards/sfs/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_ConvexHull"
+    }
+  ]
+}

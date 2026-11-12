@@ -1,0 +1,34 @@
+@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection> a owl:Class,
+        acttype:ActivityType ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
+    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    skos:definition "Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content." ;
+    skos:prefLabel "Raster reprojection" ;
+    acttype:associatedAgentType prov:SoftwareAgent ;
+    acttype:generatedEntityType geo:Feature ;
+    acttype:usedEntityType geo:Feature ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass acttype:activityTypeItemClass ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection> ;
+    rim:proposer gp:geolabs .
+

@@ -1,0 +1,69 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-rendering/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering",
+  "type": "GenericProfile",
+  "prefLabel": "Raster rendering",
+  "definition": "Depicts a raster as an image for viewing, by giving each cell a colour from a colour map. One Raster and a colour map in, one rendered image out.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering"
+    }
+  ],
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+  ],
+  "keywords": [
+    "raster",
+    "rendering",
+    "colour map"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    }
+  ],
+  "inputs": {
+    "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "title": "Raster",
+      "description": "the raster to depict",
+      "keywords": [
+        "raster"
+      ]
+    },
+    "colourMap": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/colourMap",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/colour-map",
+      "title": "Colour map",
+      "description": "the colours given to the values of the raster",
+      "keywords": [
+        "colour map"
+      ]
+    }
+  },
+  "outputs": {
+    "image": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/outputs/image",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/rendered-image",
+      "title": "Rendered image",
+      "description": "the rendering of the raster",
+      "keywords": [
+        "image"
+      ]
+    }
+  }
+}

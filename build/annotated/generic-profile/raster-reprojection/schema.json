@@ -77,7 +77,7 @@
                   "x-jsonld-id": "@id"
                 },
                 "dataType": {
-                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
+                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
                 }
@@ -143,6 +143,6 @@
     "itemIdentifier": "generic-profiles.generic-profile.raster-reprojection",
     "register": "https://geolabs.github.io/bblocks-generic-profiles/build/register.json",
     "version": "0.1",
-    "dateOfLastChange": "2026-11-04"
+    "dateOfLastChange": "2026-11-12"
   }
 }

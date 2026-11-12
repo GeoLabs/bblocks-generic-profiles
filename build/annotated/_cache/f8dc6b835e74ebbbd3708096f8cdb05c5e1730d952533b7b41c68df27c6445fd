@@ -3,20 +3,20 @@
   "name": "Activity Type Register",
   "abstract": "A general-purpose, engine- and format-agnostic vocabulary of Generic Profiles, \nindependent of any one project. \nA Generic Profile gives one or more related operations an abstract I/O signature (named roles and abstract types, no format, no size limit)\n",
   "description": "The profiles in this register are implemented as classes of the Registered Item Model, which lives in a separate [register](https://ogcincubator.github.io/registered-item-model/). \nThe intent for this register is to be the genereric 'top level' register that federated registers can inherit from for specific activity profiles in the respective domains.\n",
-  "modified": "2026-11-04T09:15:22.969592",
+  "modified": "2026-11-12T11:51:21.318847",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"373c26d1cdf143759ae2c602c0713e98e6af6fc9",
-      "shortCommitId": "\"373c26",
-      "date": "2026-11-03T13:31:34+00:00\""
+      "commitId": "\"2deb5c60331691186d997e4f6ae9aab18b548ce5",
+      "shortCommitId": "\"2deb5c",
+      "date": "2026-11-09T12:20:47+00:00\""
     }
   },
-  "gitRepository": "https://github.com/Geonovum-labs/activity-type-register",
-  "gitHubRepository": "https://github.com/Geonovum-labs/activity-type-register/blob/master/",
-  "baseURL": "https://geonovum-labs.github.io/activity-type-register/",
-  "viewerURL": "https://geonovum-labs.github.io/activity-type-register/",
-  "validationReport": "https://geonovum-labs.github.io/activity-type-register/build/tests/report.html",
-  "validationReportJson": "https://geonovum-labs.github.io/activity-type-register/build/tests/report.json",
+  "gitRepository": "https://github.com/ogcincubator/activity-type-register",
+  "gitHubRepository": "https://github.com/ogcincubator/activity-type-register/blob/master/",
+  "baseURL": "https://ogcincubator.github.io/activity-type-register/",
+  "viewerURL": "https://ogcincubator.github.io/activity-type-register/",
+  "validationReport": "https://ogcincubator.github.io/activity-type-register/build/tests/report.html",
+  "validationReportJson": "https://ogcincubator.github.io/activity-type-register/build/tests/report.json",
   "imports": [
     "https://opengeospatial.github.io/bblocks/register.json",
     "https://ogcincubator.github.io/registered-item-model/build/register.json"
@@ -37,14 +37,15 @@
         "bblocks://ogc.rim.core-ontology"
       ],
       "dependsOn": [
-        "bblocks://ogc.model.cross-domain.prov"
+        "bblocks://ogc.model.cross-domain.prov",
+        "bblocks://ogc.rim.core-ontology"
       ],
       "concept": [
         "https://w3id.org/ogc/rim/activity-type/ActivityType"
       ],
       "shaclShapes": {
         "ogc.register.activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
         ],
         "ogc.model.cross-domain.prov": [
           "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
@@ -71,22 +72,22 @@
       ],
       "dateTimeAddition": "2026-09-23T00:00:00Z",
       "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/activity-types/ontology.ttl",
-      "sourceFiles": "https://geonovum-labs.github.io/activity-type-register/_sources/activity-types/",
+      "ontology": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/activity-types/ontology.ttl",
+      "sourceFiles": "https://ogcincubator.github.io/activity-type-register/_sources/activity-types/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/Geonovum-labs/activity-type-register/blob/master/build/tests/register/activity-types/",
+      "testOutputs": "https://github.com/ogcincubator/activity-type-register/blob/master/build/tests/register/activity-types/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/markdown/register/activity-types/index.md"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/markdown/register/activity-types/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/json-full/register/activity-types/index.json"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/json-full/register/activity-types/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://geonovum-labs.github.io/activity-type-register/bblock/ogc.register.activity-types"
+          "url": "https://ogcincubator.github.io/activity-type-register/bblock/ogc.register.activity-types"
         }
       }
     },
@@ -105,17 +106,18 @@
         "bblocks://ogc.register.activity-types"
       ],
       "dependsOn": [
-        "bblocks://ogc.model.cross-domain.geosparql"
+        "bblocks://ogc.model.cross-domain.geosparql",
+        "bblocks://ogc.register.activity-types"
       ],
       "concept": [
         "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType"
       ],
       "shaclShapes": {
         "ogc.register.geoprocessing-activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/geoprocessing-activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/geoprocessing-activity-types/shapes.shacl"
         ],
         "ogc.register.activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
         ],
         "ogc.model.cross-domain.prov": [
           "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
@@ -142,22 +144,22 @@
       ],
       "dateTimeAddition": "2026-09-23T00:00:00Z",
       "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/geoprocessing-activity-types/ontology.ttl",
-      "sourceFiles": "https://geonovum-labs.github.io/activity-type-register/_sources/geoprocessing-activity-types/",
+      "ontology": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/geoprocessing-activity-types/ontology.ttl",
+      "sourceFiles": "https://ogcincubator.github.io/activity-type-register/_sources/geoprocessing-activity-types/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/Geonovum-labs/activity-type-register/blob/master/build/tests/register/geoprocessing-activity-types/",
+      "testOutputs": "https://github.com/ogcincubator/activity-type-register/blob/master/build/tests/register/geoprocessing-activity-types/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/markdown/register/geoprocessing-activity-types/index.md"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/markdown/register/geoprocessing-activity-types/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/json-full/register/geoprocessing-activity-types/index.json"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/json-full/register/geoprocessing-activity-types/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://geonovum-labs.github.io/activity-type-register/bblock/ogc.register.geoprocessing-activity-types"
+          "url": "https://ogcincubator.github.io/activity-type-register/bblock/ogc.register.geoprocessing-activity-types"
         }
       }
     },
@@ -176,23 +178,24 @@
         "bblocks://ogc.register.geoprocessing-activity-types"
       ],
       "dependsOn": [
-        "bblocks://ogc.contrib.stac.extensions.mlm-ontology"
+        "bblocks://ogc.contrib.stac.extensions.mlm-ontology",
+        "bblocks://ogc.register.geoprocessing-activity-types"
       ],
       "concept": [
         "https://w3id.org/ogc/rim/ml-activity/STMLActivityType"
       ],
       "shaclShapes": {
         "ogc.register.st-ml-activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/st-ml-activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/st-ml-activity-types/shapes.shacl"
         ],
         "ogc.contrib.stac.extensions.mlm-ontology": [
           "https://ogcincubator.github.io/bblocks-stac/_sources/extensions/mlm-ontology/shapes.shacl"
         ],
         "ogc.register.geoprocessing-activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/geoprocessing-activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/geoprocessing-activity-types/shapes.shacl"
         ],
         "ogc.register.activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
         ],
         "ogc.model.cross-domain.prov": [
           "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
@@ -224,22 +227,22 @@
       ],
       "dateTimeAddition": "2026-09-17T00:00:00Z",
       "dateOfLastChange": "2026-11-04",
-      "ontology": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/st-ml-activity-types/ontology.ttl",
-      "sourceFiles": "https://geonovum-labs.github.io/activity-type-register/_sources/st-ml-activity-types/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/Geonovum-labs/activity-type-register/blob/master/build/tests/register/st-ml-activity-types/",
+      "ontology": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/st-ml-activity-types/ontology.ttl",
+      "sourceFiles": "https://ogcincubator.github.io/activity-type-register/_sources/st-ml-activity-types/",
+      "validationPassed": false,
+      "testOutputs": "https://github.com/ogcincubator/activity-type-register/blob/master/build/tests/register/st-ml-activity-types/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/markdown/register/st-ml-activity-types/index.md"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/markdown/register/st-ml-activity-types/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/json-full/register/st-ml-activity-types/index.json"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/json-full/register/st-ml-activity-types/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://geonovum-labs.github.io/activity-type-register/bblock/ogc.register.st-ml-activity-types"
+          "url": "https://ogcincubator.github.io/activity-type-register/bblock/ogc.register.st-ml-activity-types"
         }
       }
     },
@@ -286,7 +289,7 @@
       "dateOfLastChange": "2026-11-04",
       "shaclShapes": {
         "ogc.register.activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
         ],
         "ogc.model.cross-domain.prov": [
           "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
@@ -295,29 +298,29 @@
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ]
       },
-      "ldContext": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/activity-types-schema/context.jsonld",
+      "ldContext": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/activity-types-schema/context.jsonld",
       "schema": {
-        "application/yaml": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/activity-types-schema/schema.yaml",
-        "application/json": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/activity-types-schema/schema.json"
+        "application/yaml": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/activity-types-schema/schema.yaml",
+        "application/json": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/activity-types-schema/schema.json"
       },
-      "sourceSchema": "https://geonovum-labs.github.io/activity-type-register/_sources/schemas/activity-types-schema/schema.yaml",
-      "sourceLdContext": "https://geonovum-labs.github.io/activity-type-register/_sources/schemas/activity-types-schema/context.jsonld",
-      "resolvedSchemaProperties": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/activity-types-schema/resolvedProperties.json",
-      "sourceFiles": "https://geonovum-labs.github.io/activity-type-register/_sources/schemas/activity-types-schema/",
+      "sourceSchema": "https://ogcincubator.github.io/activity-type-register/_sources/schemas/activity-types-schema/schema.yaml",
+      "sourceLdContext": "https://ogcincubator.github.io/activity-type-register/_sources/schemas/activity-types-schema/context.jsonld",
+      "resolvedSchemaProperties": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/activity-types-schema/resolvedProperties.json",
+      "sourceFiles": "https://ogcincubator.github.io/activity-type-register/_sources/schemas/activity-types-schema/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/Geonovum-labs/activity-type-register/blob/master/build/tests/register/schemas/activity-types-schema/",
+      "testOutputs": "https://github.com/ogcincubator/activity-type-register/blob/master/build/tests/register/schemas/activity-types-schema/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/markdown/register/schemas/activity-types-schema/index.md"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/markdown/register/schemas/activity-types-schema/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/json-full/register/schemas/activity-types-schema/index.json"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/json-full/register/schemas/activity-types-schema/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://geonovum-labs.github.io/activity-type-register/bblock/ogc.register.schemas.activity-types-schema"
+          "url": "https://ogcincubator.github.io/activity-type-register/bblock/ogc.register.schemas.activity-types-schema"
         }
       }
     },
@@ -362,10 +365,10 @@
       "dateOfLastChange": "2026-11-04",
       "shaclShapes": {
         "ogc.register.geoprocessing-activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/geoprocessing-activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/geoprocessing-activity-types/shapes.shacl"
         ],
         "ogc.register.activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
         ],
         "ogc.model.cross-domain.prov": [
           "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
@@ -375,27 +378,27 @@
         ]
       },
       "schema": {
-        "application/yaml": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/geoprocessing-activity-types-schema/schema.yaml",
-        "application/json": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/geoprocessing-activity-types-schema/schema.json"
+        "application/yaml": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/geoprocessing-activity-types-schema/schema.yaml",
+        "application/json": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/geoprocessing-activity-types-schema/schema.json"
       },
-      "sourceSchema": "https://geonovum-labs.github.io/activity-type-register/_sources/schemas/geoprocessing-activity-types-schema/schema.yaml",
-      "ldContext": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/geoprocessing-activity-types-schema/context.jsonld",
-      "resolvedSchemaProperties": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/geoprocessing-activity-types-schema/resolvedProperties.json",
-      "sourceFiles": "https://geonovum-labs.github.io/activity-type-register/_sources/schemas/geoprocessing-activity-types-schema/",
+      "sourceSchema": "https://ogcincubator.github.io/activity-type-register/_sources/schemas/geoprocessing-activity-types-schema/schema.yaml",
+      "ldContext": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/geoprocessing-activity-types-schema/context.jsonld",
+      "resolvedSchemaProperties": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/geoprocessing-activity-types-schema/resolvedProperties.json",
+      "sourceFiles": "https://ogcincubator.github.io/activity-type-register/_sources/schemas/geoprocessing-activity-types-schema/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/Geonovum-labs/activity-type-register/blob/master/build/tests/register/schemas/geoprocessing-activity-types-schema/",
+      "testOutputs": "https://github.com/ogcincubator/activity-type-register/blob/master/build/tests/register/schemas/geoprocessing-activity-types-schema/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/markdown/register/schemas/geoprocessing-activity-types-schema/index.md"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/markdown/register/schemas/geoprocessing-activity-types-schema/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/json-full/register/schemas/geoprocessing-activity-types-schema/index.json"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/json-full/register/schemas/geoprocessing-activity-types-schema/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://geonovum-labs.github.io/activity-type-register/bblock/ogc.register.schemas.geoprocessing-activity-types-schema"
+          "url": "https://ogcincubator.github.io/activity-type-register/bblock/ogc.register.schemas.geoprocessing-activity-types-schema"
         }
       }
     },
@@ -445,10 +448,10 @@
       "dateOfLastChange": "2026-11-04",
       "shaclShapes": {
         "ogc.register.geoprocessing-activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/geoprocessing-activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/geoprocessing-activity-types/shapes.shacl"
         ],
         "ogc.register.activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
         ],
         "ogc.model.cross-domain.prov": [
           "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
@@ -457,54 +460,54 @@
           "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
         ],
         "ogc.register.st-ml-activity-types": [
-          "https://geonovum-labs.github.io/activity-type-register/_sources/st-ml-activity-types/shapes.shacl"
+          "https://ogcincubator.github.io/activity-type-register/_sources/st-ml-activity-types/shapes.shacl"
         ],
         "ogc.contrib.stac.extensions.mlm-ontology": [
           "https://ogcincubator.github.io/bblocks-stac/_sources/extensions/mlm-ontology/shapes.shacl"
         ]
       },
       "schema": {
-        "application/yaml": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/st-ml-activity-types-schema/schema.yaml",
-        "application/json": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/st-ml-activity-types-schema/schema.json"
+        "application/yaml": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/st-ml-activity-types-schema/schema.yaml",
+        "application/json": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/st-ml-activity-types-schema/schema.json"
       },
-      "sourceSchema": "https://geonovum-labs.github.io/activity-type-register/_sources/schemas/st-ml-activity-types-schema/schema.yaml",
-      "ldContext": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/st-ml-activity-types-schema/context.jsonld",
-      "resolvedSchemaProperties": "https://geonovum-labs.github.io/activity-type-register/build/annotated/register/schemas/st-ml-activity-types-schema/resolvedProperties.json",
-      "sourceFiles": "https://geonovum-labs.github.io/activity-type-register/_sources/schemas/st-ml-activity-types-schema/",
+      "sourceSchema": "https://ogcincubator.github.io/activity-type-register/_sources/schemas/st-ml-activity-types-schema/schema.yaml",
+      "ldContext": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/st-ml-activity-types-schema/context.jsonld",
+      "resolvedSchemaProperties": "https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/st-ml-activity-types-schema/resolvedProperties.json",
+      "sourceFiles": "https://ogcincubator.github.io/activity-type-register/_sources/schemas/st-ml-activity-types-schema/",
       "validationPassed": true,
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/markdown/register/schemas/st-ml-activity-types-schema/index.md"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/markdown/register/schemas/st-ml-activity-types-schema/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://geonovum-labs.github.io/activity-type-register/build/generateddocs/json-full/register/schemas/st-ml-activity-types-schema/index.json"
+          "url": "https://ogcincubator.github.io/activity-type-register/build/generateddocs/json-full/register/schemas/st-ml-activity-types-schema/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://geonovum-labs.github.io/activity-type-register/bblock/ogc.register.schemas.st-ml-activity-types-schema"
+          "url": "https://ogcincubator.github.io/activity-type-register/bblock/ogc.register.schemas.st-ml-activity-types-schema"
         }
       }
     }
   ],
-  "remoteCacheDir": "https://geonovum-labs.github.io/activity-type-register/build/annotated/_cache",
+  "remoteCacheDir": "https://ogcincubator.github.io/activity-type-register/build/annotated/_cache",
   "links": [
     {
       "rel": "self",
-      "href": "https://geonovum-labs.github.io/activity-type-register/build/register.json",
+      "href": "https://ogcincubator.github.io/activity-type-register/build/register.json",
       "type": "application/json",
       "title": "This Building Blocks Register in JSON format"
     },
     {
       "rel": "self",
-      "href": "https://geonovum-labs.github.io/activity-type-register/build/bblocks.ttl",
+      "href": "https://ogcincubator.github.io/activity-type-register/build/bblocks.ttl",
       "type": "text/turtle",
       "title": "This Building Blocks Register in RDF Turtle format"
     },
     {
       "rel": "self",
-      "href": "https://geonovum-labs.github.io/activity-type-register/build/bblocks.jsonld",
+      "href": "https://ogcincubator.github.io/activity-type-register/build/bblocks.jsonld",
       "type": "application/ld+json",
       "title": "This Building Blocks Register in JSON-LD format"
     }

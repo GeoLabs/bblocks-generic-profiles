@@ -1,0 +1,252 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: The Implementation Profile "Band retrieval" -- see generic-profiles.implementation-profile
+  for the general shape every Implementation Profile shares.
+allOf:
+- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+- type: object
+  properties:
+    id:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval
+      x-jsonld-id: '@id'
+    type:
+      const: ImplementationProfile
+      x-jsonld-id: '@type'
+    prefLabel:
+      const: Band retrieval
+      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
+    refinesGenericProfile:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
+      x-jsonld-type: '@id'
+    activityType:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/band-retrieval
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/activityType
+      x-jsonld-type: '@id'
+    keywords:
+      allOf:
+      - contains:
+          const: product
+      - contains:
+          const: band
+      - contains:
+          const: retrieval
+      x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+    metadata:
+      allOf:
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access
+      - contains:
+          type: object
+          required:
+          - role
+          - href
+          properties:
+            role:
+              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
+            href:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval
+      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+    inputs:
+      type: object
+      required:
+      - product
+      - band
+      - areaOfInterest
+      properties:
+        product:
+          properties:
+            keywords:
+              allOf:
+              - contains:
+                  const: product
+              x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+            metadata:
+              allOf:
+              - contains:
+                  type: object
+                  required:
+                  - role
+                  - href
+                  properties:
+                    role:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                    href:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/product
+              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+        band:
+          properties:
+            keywords:
+              allOf:
+              - contains:
+                  const: band
+              x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+            metadata:
+              allOf:
+              - contains:
+                  type: object
+                  required:
+                  - role
+                  - href
+                  properties:
+                    role:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                    href:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/band
+              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+        areaOfInterest:
+          properties:
+            keywords:
+              allOf:
+              - contains:
+                  const: bounding box
+              x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+            metadata:
+              allOf:
+              - contains:
+                  type: object
+                  required:
+                  - role
+                  - href
+                  properties:
+                    role:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                    href:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/areaOfInterest
+              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+    outputs:
+      type: object
+      required:
+      - raster
+      properties:
+        raster:
+          properties:
+            keywords:
+              allOf:
+              - contains:
+                  const: raster
+              x-jsonld-id: https://w3id.org/ogc/api/processes/keywords
+            metadata:
+              allOf:
+              - contains:
+                  type: object
+                  required:
+                  - role
+                  - href
+                  properties:
+                    role:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                    href:
+                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/outputs/raster
+              x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+- type: object
+  properties:
+    inputs:
+      properties:
+        product:
+          required:
+          - id
+          - dataType
+          - representation
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/product
+              x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+            representation:
+              const:
+              - https://w3id.org/geolabs/ospd/data-formats/representation/eo-product-stac-item
+              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+              x-jsonld-type: '@id'
+        band:
+          required:
+          - id
+          - dataType
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/band
+              x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/band-identifier
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+        areaOfInterest:
+          required:
+          - id
+          - dataType
+          - representation
+          - minOccurs
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/areaOfInterest
+              x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/bounding-box
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+            representation:
+              const:
+              - https://w3id.org/geolabs/ospd/data-formats/representation/bounding-box-ogcapi-processes-bbox
+              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+              x-jsonld-type: '@id'
+            minOccurs:
+              const: 0
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+    outputs:
+      properties:
+        raster:
+          required:
+          - id
+          - dataType
+          - representation
+          properties:
+            id:
+              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/outputs/raster
+              x-jsonld-id: '@id'
+            dataType:
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster
+              x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+            representation:
+              const:
+              - https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff
+              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+              x-jsonld-type: '@id'
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
+      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+x-jsonld-extra-terms:
+  ImplementationProfile: https://geolabs.github.io/bblocks-generic-profiles/def/ImplementationProfile
+  definition: http://www.w3.org/2004/02/skos/core#definition
+  inScheme:
+    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
+    x-jsonld-type: '@id'
+  source: http://purl.org/dc/terms/source
+  title: http://purl.org/dc/terms/title
+  link:
+    x-jsonld-id: http://purl.org/dc/terms/references
+    x-jsonld-type: '@id'
+x-jsonld-prefixes:
+  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  skos: http://www.w3.org/2004/02/skos/core#
+  proc: https://w3id.org/ogc/api/processes/
+  dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.implementation-profile.band-retrieval
+  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-12'

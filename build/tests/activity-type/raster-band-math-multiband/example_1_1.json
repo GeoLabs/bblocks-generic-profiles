@@ -1,0 +1,36 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Raster band math (multi-band output)",
+  "definition": "Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-09T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
+      "link": "https://www.ogc.org/standards/wcps/"
+    },
+    {
+      "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType",
+      "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
+    }
+  ]
+}

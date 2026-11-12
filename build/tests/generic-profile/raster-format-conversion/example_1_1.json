@@ -4,14 +4,26 @@
   "prefLabel": "Raster format conversion",
   "definition": "Converts a raster coverage from one encoding to another, without changing its content. One Raster input, a target format, one Raster output in the new encoding.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/actions/data-type-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The dataType of input `targetFormat` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/format-identifier, created for this role in the data-types register. Its title \"String\" becomes \"Format identifier\".",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
@@ -44,8 +56,8 @@
     },
     "targetFormat": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/inputs/targetFormat",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
-      "title": "String",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/format-identifier",
+      "title": "Format identifier",
       "description": "the target raster encoding",
       "keywords": [
         "format"

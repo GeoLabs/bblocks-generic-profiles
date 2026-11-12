@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling> a gp:GenericProfile ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+    skos:definition "Changes the cell size of a raster coverage over the same extent and in the same coordinate reference system. One Raster input, a target grid resolution, one Raster output on the new grid." ;
+    skos:inScheme gp:generic-profile ;
+    skos:prefLabel "Raster resampling" ;
+    gp:inputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/raster> ;
+            ns2:resolution <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/resolution> ] ;
+    gp:outputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/outputs/raster> ] ;
+    proc:keywords "coverage",
+        "raster",
+        "resampling" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling> ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/raster> dcterms:description "the input raster coverage" ;
+    dcterms:title "Raster" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
+    proc:keywords "raster" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/resolution> dcterms:description "the cell size of the output grid, along each of its axes" ;
+    dcterms:title "Grid resolution" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/grid-resolution> ;
+    proc:keywords "grid resolution" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/outputs/raster> dcterms:description "the resampled raster coverage" ;
+    dcterms:title "Raster" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
+    proc:keywords "raster" .
+

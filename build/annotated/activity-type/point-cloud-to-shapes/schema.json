@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "The activity type \"Point cloud to shapes\" -- see generic-profiles.activity-type for the shape every activity type of this register shares.",
+  "allOf": [
+    {
+      "$ref": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-to-shapes",
+          "x-jsonld-id": "@id"
+        },
+        "prefLabel": {
+          "const": "Point cloud to shapes",
+          "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        "subClassOf": {
+          "const": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+          "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+          "x-jsonld-type": "@id"
+        }
+      }
+    }
+  ],
+  "x-jsonld-extra-terms": {
+    "type": "@type",
+    "ActivityType": "https://w3id.org/ogc/rim/activity-type/ActivityType",
+    "Class": "http://www.w3.org/2002/07/owl#Class",
+    "altLabel": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "definition": "http://www.w3.org/2004/02/skos/core#definition",
+    "usedEntityType": {
+      "x-jsonld-id": "https://w3id.org/ogc/rim/activity-type/usedEntityType",
+      "x-jsonld-type": "@id"
+    },
+    "generatedEntityType": {
+      "x-jsonld-id": "https://w3id.org/ogc/rim/activity-type/generatedEntityType",
+      "x-jsonld-type": "@id"
+    },
+    "associatedAgentType": {
+      "x-jsonld-id": "https://w3id.org/ogc/rim/activity-type/associatedAgentType",
+      "x-jsonld-type": "@id"
+    },
+    "source": "http://purl.org/dc/terms/source",
+    "title": "http://purl.org/dc/terms/title",
+    "link": {
+      "x-jsonld-id": "http://purl.org/dc/terms/references",
+      "x-jsonld-type": "@id"
+    }
+  },
+  "x-jsonld-prefixes": {
+    "acttype": "https://w3id.org/ogc/rim/activity-type/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dct": "http://purl.org/dc/terms/",
+    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/"
+  },
+  "x-bblocks-metadata": {
+    "itemIdentifier": "generic-profiles.activity-type.point-cloud-to-shapes",
+    "register": "https://geolabs.github.io/bblocks-generic-profiles/build/register.json",
+    "version": "0.1",
+    "dateOfLastChange": "2026-11-12"
+  }
+}

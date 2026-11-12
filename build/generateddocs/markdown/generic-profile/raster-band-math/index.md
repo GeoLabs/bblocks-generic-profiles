@@ -62,14 +62,26 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Raster band math",
   "definition": "Derives a new raster from one or more input rasters via a user-supplied mathematical expression evaluated per pixel. One or more Raster inputs, an expression, one Raster output -- the output's band structure (one band or several) is not part of this signature, see its Implementation Profiles.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/data-type-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The dataType of input `expression` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/expression, created for this role in the data-types register. Its title \"String\" becomes \"Expression\".",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
@@ -103,8 +115,8 @@ Implementation Profile -> Implementation (instance level).
     },
     "expression": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
-      "title": "String",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/expression",
+      "title": "Expression",
       "description": "the per-pixel mathematical expression",
       "keywords": [
         "expression"
@@ -135,14 +147,26 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Raster band math",
   "definition": "Derives a new raster from one or more input rasters via a user-supplied mathematical expression evaluated per pixel. One or more Raster inputs, an expression, one Raster output -- the output's band structure (one band or several) is not part of this signature, see its Implementation Profiles.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/data-type-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The dataType of input `expression` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/expression, created for this role in the data-types register. Its title \"String\" becomes \"Expression\".",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
@@ -176,8 +200,8 @@ Implementation Profile -> Implementation (instance level).
     },
     "expression": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
-      "title": "String",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/expression",
+      "title": "Expression",
       "description": "the per-pixel mathematical expression",
       "keywords": [
         "expression"
@@ -202,33 +226,13 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math> a gp:GenericProfile ;
-    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-    skos:definition "Derives a new raster from one or more input rasters via a user-supplied mathematical expression evaluated per pixel. One or more Raster inputs, an expression, one Raster output -- the output's band structure (one band or several) is not part of this signature, see its Implementation Profiles." ;
-    skos:inScheme gp:generic-profile ;
-    skos:prefLabel "Raster band math" ;
-    gp:inputs [ ns1:expression <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression> ;
-            ns1:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters> ] ;
-    gp:outputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster> ] ;
-    proc:keywords "band math",
-        "coverage",
-        "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/addition> ;
-    rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
@@ -236,9 +240,17 @@ Implementation Profile -> Implementation (instance level).
     rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math> ;
     rim:proposer gp:geolabs .
 
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/data-type-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The dataType of input `expression` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/expression, created for this role in the data-types register. Its title \"String\" becomes \"Expression\"." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression> dcterms:description "the per-pixel mathematical expression" ;
-    dcterms:title "String" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/string> ;
+    dcterms:title "Expression" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/expression> ;
     proc:keywords "expression" .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters> dcterms:description "the input raster band(s)/image(s)" ;
@@ -251,6 +263,27 @@ Implementation Profile -> Implementation (instance level).
     dcterms:title "Raster" ;
     dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
     proc:keywords "raster" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math> a gp:GenericProfile ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+    skos:definition "Derives a new raster from one or more input rasters via a user-supplied mathematical expression evaluated per pixel. One or more Raster inputs, an expression, one Raster output -- the output's band structure (one band or several) is not part of this signature, see its Implementation Profiles." ;
+    skos:inScheme gp:generic-profile ;
+    skos:prefLabel "Raster band math" ;
+    gp:inputs [ ns2:expression <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression> ;
+            ns2:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters> ] ;
+    gp:outputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster> ] ;
+    proc:keywords "band math",
+        "coverage",
+        "raster" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/addition>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/actions/data-type-2026-11-09> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 
 
 ```
@@ -312,7 +345,7 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/string
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/expression
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
@@ -358,7 +391,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.raster-band-math
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'
 
 ```
 

@@ -18,6 +18,7 @@
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects",
   "keywords": [
     "vector",
     "geometry",
@@ -41,14 +42,11 @@
     "geometry1": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+      ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {
@@ -61,14 +59,11 @@
     "geometry2": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
-      "schema": {
-        "type": "string",
-        "contentMediaType": "text/xml",
-        "description": "GML"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
+      ],
       "keywords": [
-        "geometry",
-        "GML"
+        "geometry"
       ],
       "metadata": [
         {

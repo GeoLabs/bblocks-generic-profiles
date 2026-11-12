@@ -1,0 +1,113 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.activity-type.product-selection",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Activity type: Product selection",
+  "abstract": "Selects, from a catalogue of Earth observation products, those of a collection whose footprint intersects an area of interest and whose acquisition time falls within a time interval, possibly filtered further on their metadata, such as their cloud cover.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-10T00:00:00Z",
+  "dateOfLastChange": "2026-11-12",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.activity-type"
+  ],
+  "isProfileOf": [
+    "generic-profiles.activity-type"
+  ],
+  "scope": "dev",
+  "tags": [
+    "activity type",
+    "operation",
+    "Product selection"
+  ],
+  "sourceSchema": "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/product-selection/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/product-selection/context.jsonld",
+  "maturity": "development",
+  "group": "Activity Types",
+  "sources": [
+    {
+      "title": "OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, \u00a71 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)",
+      "link": "https://docs.ogc.org/is/13-026r9/13-026r9.html"
+    },
+    {
+      "title": "OGC 17-069r4 OGC API - Features - Part 1: Core, \u00a77.15.3 Parameter bbox and \u00a77.15.4 Parameter datetime",
+      "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+    },
+    {
+      "title": "STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and collections",
+      "link": "https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md"
+    }
+  ],
+  "shaclShapes": {
+    "generic-profiles.activity-type": [
+      "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/shapes.shacl"
+    ],
+    "generic-profiles.register": [
+      "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+    ],
+    "data-formats.vocabulary": [
+      "https://geolabs.github.io/bblocks-data-formats/_sources/vocabulary/shapes.shacl"
+    ],
+    "data-types.vocabulary": [
+      "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+    ],
+    "ogc.rim.core-ontology": [
+      "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+    ],
+    "ogc.register.activity-types": [
+      "https://ogcincubator.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
+    ],
+    "ogc.model.cross-domain.prov": [
+      "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+    ],
+    "ogc.register.geoprocessing-activity-types": [
+      "https://ogcincubator.github.io/activity-type-register/_sources/geoprocessing-activity-types/shapes.shacl"
+    ]
+  },
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/product-selection/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/product-selection/schema.json"
+  },
+  "sourceLdContext": "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/product-selection/context.jsonld",
+  "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/product-selection/resolvedProperties.json",
+  "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/product-selection/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/activity-type/product-selection/",
+  "description": "Activity type: **Product selection**.\n\n> Selects, from a catalogue of Earth observation products, those of a collection whose footprint intersects an area of interest and whose acquisition time falls within a time interval, possibly filtered further on their metadata, such as their cloud cover.\n\n## The item\n\n`https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection` is an `acttype:ActivityType` item of this register (`gp:register`), of the Activity Type Register's item class, and an OWL class, sub-class of `geoproc:GeoprocessingActivityType`.\n\nIts activities use or generate spatial data, declared with GeoSPARQL 1.1 classes: `usedEntityType` `geo:Geometry`; `generatedEntityType` `geo:Feature`. The class is chosen per kind of role (see `scripts/activity-types.yaml`); how a data type of `bblocks-data-types` maps to an entity type is still open (decision D8, question 5).\n\nThe run of an activity of this type is not typed here (decision D8, open).\n\n## Sources\n\n- [OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, \u00a71 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)](https://docs.ogc.org/is/13-026r9/13-026r9.html)\n- [OGC 17-069r4 OGC API - Features - Part 1: Core, \u00a77.15.3 Parameter bbox and \u00a77.15.4 Parameter datetime](https://docs.ogc.org/is/17-069r4/17-069r4.html)\n- [STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and collections](https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md)\n\n## Notes\n\nIt passes the geoprocessing shapes through its area of interest, and the search is a spatial query (a footprint intersects an area), but nothing geographic is computed or produced; the products may be returned as references. Whether a parent for discovery and access outside geoprocessing should be used is asked to the maintainers (question 5, decision C10 of 2026-11-10).\n\n## Profiles of this operation\n\nThe Implementation Profile [`generic-profiles.implementation-profile.product-selection`](../../implementation-profile/product-selection/) points here with `activityType`. It holds the signature and the representations; this item holds the meaning.\n",
+  "examples": [
+    {
+      "title": "Product selection",
+      "base-uri": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/product-selection/examples/product-selection.json",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/activity-type/product-selection/example_1_1.json",
+          "sizeBytes": 2225,
+          "code": "{\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection\",\n  \"type\": [\n    \"ActivityType\",\n    \"Class\"\n  ],\n  \"prefLabel\": \"Product selection\",\n  \"definition\": \"Selects, from a catalogue of Earth observation products, those of a collection whose footprint intersects an area of interest and whose acquisition time falls within a time interval, possibly filtered further on their metadata, such as their cloud cover.\",\n  \"subClassOf\": \"https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType\",\n  \"objectIdentifier\": \"https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection\",\n  \"itemClass\": \"https://w3id.org/ogc/rim/activity-type/activityTypeItemClass\",\n  \"inRegister\": \"https://geolabs.github.io/bblocks-generic-profiles/def/register\",\n  \"validityStatus\": \"invalid\",\n  \"publicationStatus\": \"published\",\n  \"hasAction\": {\n    \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection/actions/addition\",\n    \"type\": \"RegisterAction\",\n    \"actionType\": \"addition\",\n    \"proposer\": \"https://geolabs.github.io/bblocks-generic-profiles/def/geolabs\",\n    \"startedAtTime\": \"2026-11-10T00:00:00Z\",\n    \"appliesTo\": \"https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection\"\n  },\n  \"usedEntityType\": \"http://www.opengis.net/ont/geosparql#Geometry\",\n  \"generatedEntityType\": \"http://www.opengis.net/ont/geosparql#Feature\",\n  \"associatedAgentType\": \"http://www.w3.org/ns/prov#SoftwareAgent\",\n  \"source\": [\n    {\n      \"title\": \"OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, \u00a71 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)\",\n      \"link\": \"https://docs.ogc.org/is/13-026r9/13-026r9.html\"\n    },\n    {\n      \"title\": \"OGC 17-069r4 OGC API - Features - Part 1: Core, \u00a77.15.3 Parameter bbox and \u00a77.15.4 Parameter datetime\",\n      \"link\": \"https://docs.ogc.org/is/17-069r4/17-069r4.html\"\n    },\n    {\n      \"title\": \"STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and collections\",\n      \"link\": \"https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md\"\n    }\n  ]\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/activity-type/product-selection/example_1_1.jsonld",
+          "sizeBytes": 2367,
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/product-selection/context.jsonld\",\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection\",\n  \"type\": [\n    \"ActivityType\",\n    \"Class\"\n  ],\n  \"prefLabel\": \"Product selection\",\n  \"definition\": \"Selects, from a catalogue of Earth observation products, those of a collection whose footprint intersects an area of interest and whose acquisition time falls within a time interval, possibly filtered further on their metadata, such as their cloud cover.\",\n  \"subClassOf\": \"https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType\",\n  \"objectIdentifier\": \"https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection\",\n  \"itemClass\": \"https://w3id.org/ogc/rim/activity-type/activityTypeItemClass\",\n  \"inRegister\": \"https://geolabs.github.io/bblocks-generic-profiles/def/register\",\n  \"validityStatus\": \"invalid\",\n  \"publicationStatus\": \"published\",\n  \"hasAction\": {\n    \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection/actions/addition\",\n    \"type\": \"RegisterAction\",\n    \"actionType\": \"addition\",\n    \"proposer\": \"https://geolabs.github.io/bblocks-generic-profiles/def/geolabs\",\n    \"startedAtTime\": \"2026-11-10T00:00:00Z\",\n    \"appliesTo\": \"https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection\"\n  },\n  \"usedEntityType\": \"http://www.opengis.net/ont/geosparql#Geometry\",\n  \"generatedEntityType\": \"http://www.opengis.net/ont/geosparql#Feature\",\n  \"associatedAgentType\": \"http://www.w3.org/ns/prov#SoftwareAgent\",\n  \"source\": [\n    {\n      \"title\": \"OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, \\u00a71 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)\",\n      \"link\": \"https://docs.ogc.org/is/13-026r9/13-026r9.html\"\n    },\n    {\n      \"title\": \"OGC 17-069r4 OGC API - Features - Part 1: Core, \\u00a77.15.3 Parameter bbox and \\u00a77.15.4 Parameter datetime\",\n      \"link\": \"https://docs.ogc.org/is/17-069r4/17-069r4.html\"\n    },\n    {\n      \"title\": \"STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and collections\",\n      \"link\": \"https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md\"\n    }\n  ]\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/activity-type/product-selection/example_1_1.ttl",
+          "sizeBytes": 2753,
+          "code": "@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection> a owl:Class,\n        acttype:ActivityType ;\n    dcterms:source [ dcterms:references <https://docs.ogc.org/is/17-069r4/17-069r4.html> ;\n            dcterms:title \"OGC 17-069r4 OGC API - Features - Part 1: Core, \u00a77.15.3 Parameter bbox and \u00a77.15.4 Parameter datetime\" ],\n        [ dcterms:references <https://docs.ogc.org/is/13-026r9/13-026r9.html> ;\n            dcterms:title \"OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, \u00a71 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)\" ],\n        [ dcterms:references <https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md> ;\n            dcterms:title \"STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and collections\" ] ;\n    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;\n    skos:definition \"Selects, from a catalogue of Earth observation products, those of a collection whose footprint intersects an area of interest and whose acquisition time falls within a time interval, possibly filtered further on their metadata, such as their cloud cover.\" ;\n    skos:prefLabel \"Product selection\" ;\n    acttype:associatedAgentType prov:SoftwareAgent ;\n    acttype:generatedEntityType geo:Feature ;\n    acttype:usedEntityType geo:Geometry ;\n    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection/actions/addition> ;\n    rim:inRegister gp:register ;\n    rim:itemClass acttype:activityTypeItemClass ;\n    rim:objectIdentifier \"https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection\"^^xsd:anyURI ;\n    rim:publicationStatus rim:published ;\n    rim:validityStatus rim:invalid .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection/actions/addition> a rim:RegisterAction ;\n    prov:startedAtTime \"2026-11-10T00:00:00+00:00\"^^xsd:dateTime ;\n    rim:actionType rim:additionAction ;\n    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection> ;\n    rim:proposer gp:geolabs .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: The activity type \"Product selection\" -- see generic-profiles.activity-type\n  for the shape every activity type of this register shares.\nallOf:\n- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/schema.yaml\n- type: object\n  properties:\n    id:\n      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection\n      x-jsonld-id: '@id'\n    prefLabel:\n      const: Product selection\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel\n    subClassOf:\n      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType\n      x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#subClassOf\n      x-jsonld-type: '@id'\nx-jsonld-extra-terms:\n  type: '@type'\n  ActivityType: https://w3id.org/ogc/rim/activity-type/ActivityType\n  Class: http://www.w3.org/2002/07/owl#Class\n  altLabel: http://www.w3.org/2004/02/skos/core#altLabel\n  definition: http://www.w3.org/2004/02/skos/core#definition\n  usedEntityType:\n    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/usedEntityType\n    x-jsonld-type: '@id'\n  generatedEntityType:\n    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/generatedEntityType\n    x-jsonld-type: '@id'\n  associatedAgentType:\n    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/associatedAgentType\n    x-jsonld-type: '@id'\n  source: http://purl.org/dc/terms/source\n  title: http://purl.org/dc/terms/title\n  link:\n    x-jsonld-id: http://purl.org/dc/terms/references\n    x-jsonld-type: '@id'\nx-jsonld-prefixes:\n  acttype: https://w3id.org/ogc/rim/activity-type/\n  owl: http://www.w3.org/2002/07/owl#\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\n  skos: http://www.w3.org/2004/02/skos/core#\n  dct: http://purl.org/dc/terms/\n  gp: https://geolabs.github.io/bblocks-generic-profiles/def/\nx-bblocks-metadata:\n  itemIdentifier: generic-profiles.activity-type.product-selection\n  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-11-12'\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/activity-type/product-selection"
+}

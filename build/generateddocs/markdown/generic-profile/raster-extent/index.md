@@ -28,9 +28,9 @@ Generic Profile's real binding ([`OTB.ImageEnvelope`](../../implementation-profi
 produces an actual vector polygon (GML/KML), not four plain numbers: *"Build a vector data
 containing the image envelope polygon... you can set the polygon with more points with the `sr`
 parameter"* -- `OTB.ImageEnvelope` can even densify the polygon's edges to follow a reprojection
-curve, something four corner numbers cannot represent. This tier carries no type at all (see the
-base schema's own note), but the Implementation Profile's `schema` reflects this: it declares
-GML, not a `$ref` to `ogc.api.processes.v1.schemas.bbox` the way
+curve, something four corner numbers cannot represent. This tier carries a concept, not a format
+(see the base schema's own note): the output's `dataType` is `geometry`, not `bounding-box`. The
+Implementation Profile's `schema` gives the format: it declares GML, not a `$ref` to `ogc.api.processes.part1.v1.schemas.bbox` the way
 [`raster-crop`](../raster-crop/)'s `areaOfInterest` does -- the two operations bind to genuinely
 different real parameters, a polygon here, four plain numbers there.
 
@@ -56,14 +56,25 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Raster extent",
   "definition": "Computes the bounding envelope of a raster coverage, returned as a geometry (a rectangular polygon in the coverage's CRS). One Raster input, one Geometry output.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-01T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-10-01T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/clarification-2026-11-06",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-06T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
@@ -119,14 +130,25 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Raster extent",
   "definition": "Computes the bounding envelope of a raster coverage, returned as a geometry (a rectangular polygon in the coverage's CRS). One Raster input, one Geometry output.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-01T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-10-01T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/clarification-2026-11-06",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-06T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
@@ -176,37 +198,25 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> a gp:GenericProfile ;
-    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-    skos:definition "Computes the bounding envelope of a raster coverage, returned as a geometry (a rectangular polygon in the coverage's CRS). One Raster input, one Geometry output." ;
-    skos:inScheme gp:generic-profile ;
-    skos:prefLabel "Raster extent" ;
-    gp:inputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster> ] ;
-    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result> ] ;
-    proc:keywords "coverage",
-        "extent",
-        "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/addition> ;
-    rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
-
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/clarification-2026-11-06> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-06T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> ;
+    rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster> dcterms:description "the input raster coverage" ;
@@ -218,6 +228,26 @@ Implementation Profile -> Implementation (instance level).
     dcterms:title "Geometry" ;
     dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
     proc:keywords "geometry" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> a gp:GenericProfile ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+    skos:definition "Computes the bounding envelope of a raster coverage, returned as a geometry (a rectangular polygon in the coverage's CRS). One Raster input, one Geometry output." ;
+    skos:inScheme gp:generic-profile ;
+    skos:prefLabel "Raster extent" ;
+    gp:inputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result> ] ;
+    proc:keywords "coverage",
+        "extent",
+        "raster" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/addition>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/clarification-2026-11-06> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 
 
 ```
@@ -313,7 +343,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.raster-extent
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'
 
 ```
 

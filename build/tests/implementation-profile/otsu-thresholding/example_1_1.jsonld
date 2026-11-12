@@ -1,0 +1,80 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/otsu-thresholding/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding",
+  "type": "ImplementationProfile",
+  "prefLabel": "Otsu thresholding",
+  "definition": "Implementation Profile of the operation Otsu thresholding, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster thresholding, bound to data exchange formats.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding"
+    }
+  ],
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/otsu-thresholding",
+  "keywords": [
+    "raster",
+    "coverage",
+    "thresholding"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    },
+    {
+      "title": "Generic Profile: Raster thresholding",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding"
+    }
+  ],
+  "inputs": {
+    "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"
+      ],
+      "keywords": [
+        "raster"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Raster thresholding -- input `raster`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/inputs/raster"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "mask": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding/outputs/mask",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/binary-mask",
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"
+      ],
+      "keywords": [
+        "mask"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Raster thresholding -- output `mask`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/outputs/mask"
+        }
+      ]
+    }
+  }
+}

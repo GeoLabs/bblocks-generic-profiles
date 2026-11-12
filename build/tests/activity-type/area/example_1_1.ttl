@@ -1,0 +1,35 @@
+@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/area> a owl:Class,
+        acttype:ActivityType ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
+            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Area()" ],
+        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area" ] ;
+    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    skos:altLabel "ST_Area" ;
+    skos:definition "The area of this Surface, as measured in the spatial reference system of this Surface." ;
+    skos:prefLabel "Area" ;
+    acttype:associatedAgentType prov:SoftwareAgent ;
+    acttype:usedEntityType geo:Geometry ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/area/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass acttype:activityTypeItemClass ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/area"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/area/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/area> ;
+    rim:proposer gp:geolabs .
+

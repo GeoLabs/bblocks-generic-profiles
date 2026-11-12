@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection> a gp:GenericProfile ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access> ;
+    skos:definition "Selects, from a catalogue, the products of a collection whose footprint intersects an area of interest and whose acquisition time falls within a time interval. An area of interest, a time interval and a collection in, the selected products out." ;
+    skos:inScheme gp:generic-profile ;
+    skos:prefLabel "Product selection" ;
+    gp:inputs [ ns1:areaOfInterest <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/areaOfInterest> ;
+            ns1:collection <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/collection> ;
+            ns1:timeInterval <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/timeInterval> ] ;
+    gp:outputs [ ns2:products <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/outputs/products> ] ;
+    proc:keywords "catalogue",
+        "product",
+        "selection" ;
+    proc:metadata [ dcterms:title "Process Concept: Data Discovery and Access" ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection> ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/areaOfInterest> dcterms:description "the area the footprint of each product must intersect" ;
+    dcterms:title "Geometry" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
+    proc:keywords "area of interest" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/collection> dcterms:description "the collection the products belong to" ;
+    dcterms:title "Collection identifier" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/collection-identifier> ;
+    proc:keywords "collection" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/timeInterval> dcterms:description "the period in which each product was acquired" ;
+    dcterms:title "Time interval" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/time-interval> ;
+    proc:keywords "time interval" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/outputs/products> dcterms:description "the selected products" ;
+    dcterms:title "Earth observation product" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product> ;
+    proc:keywords "product" .
+

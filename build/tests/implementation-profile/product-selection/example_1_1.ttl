@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection> a gp:ImplementationProfile ;
+    skos:definition "Implementation Profile of the operation Product selection, whose meaning is its activity type (activityType): the signature of the Generic Profile Product selection, bound to data exchange formats." ;
+    skos:inScheme gp:implementation-profile ;
+    skos:prefLabel "Product selection" ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection> ;
+    gp:inputs [ ns1:areaOfInterest <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/areaOfInterest> ;
+            ns1:collection <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/collection> ;
+            ns1:timeInterval <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/timeInterval> ] ;
+    gp:outputs [ ns2:products <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/outputs/products> ] ;
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection> ;
+    proc:keywords "catalogue",
+        "product",
+        "selection" ;
+    proc:metadata [ dcterms:title "Generic Profile: Product selection" ],
+        [ dcterms:title "Process Concept: Data Discovery and Access" ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection> ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/areaOfInterest> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-geojson> ;
+    proc:keywords "area of interest" ;
+    proc:metadata [ dcterms:title "Generic Profile: Product selection -- input `areaOfInterest`" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/areaOfInterest" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/collection> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/collection-identifier> ;
+    proc:keywords "collection" ;
+    proc:metadata [ dcterms:title "Generic Profile: Product selection -- input `collection`" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/collection" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/timeInterval> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/time-interval> ;
+    proc:keywords "time interval" ;
+    proc:metadata [ dcterms:title "Generic Profile: Product selection -- input `timeInterval`" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/timeInterval" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/outputs/products> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product> ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/eo-product-stac-item> ;
+    proc:keywords "product" ;
+    proc:metadata [ dcterms:title "Generic Profile: Product selection -- output `products`" ;
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/outputs/products" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+

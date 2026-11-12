@@ -23,9 +23,9 @@ path	@id	schema
 /broader	http://www.w3.org/2004/02/skos/core#broader	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
 /keywords	https://w3id.org/ogc/api/processes/keywords	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
 /metadata	https://w3id.org/ogc/api/processes/metadata	/github/workspace/build/annotated/generic-profile/point-cloud-rasterization/schema.yaml
-/metadata/href		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+/metadata/title		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
 /metadata/role	https://w3id.org/ogc/api/processes/role	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
-/metadata/title		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+/metadata/href		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
 /source	http://purl.org/dc/terms/source	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
 /source/title	http://purl.org/dc/terms/title	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml
 /source/link	http://purl.org/dc/terms/references	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml

@@ -1,0 +1,27 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/analytical-hillshading/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/analytical-hillshading",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Analytical hillshading",
+  "definition": "For each cell, the angle at which light coming from the position of the light source hits the terrain surface.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/analytical-hillshading",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/analytical-hillshading/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-09T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/analytical-hillshading"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent"
+}

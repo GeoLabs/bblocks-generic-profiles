@@ -1,0 +1,87 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.activity-type",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Activity type",
+  "abstract": "The shape every activity type of this register shares: the meaning of one operation, as an acttype:ActivityType item of the Activity Type Register's item class, held in gp:register. One per operation, distinct from the Implementation Profile that points to it with activityType.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-09T00:00:00Z",
+  "dateOfLastChange": "2026-11-12",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "isProfileOf": [
+    "ogc.register.schemas.activity-types-schema"
+  ],
+  "dependsOn": [
+    "generic-profiles.register",
+    "ogc.register.activity-types",
+    "ogc.register.geoprocessing-activity-types",
+    "ogc.register.schemas.activity-types-schema"
+  ],
+  "scope": "dev",
+  "tags": [
+    "activity type",
+    "operation",
+    "register",
+    "ISO 19135"
+  ],
+  "sourceSchema": "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/context.jsonld",
+  "shaclShapes": {
+    "generic-profiles.activity-type": [
+      "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/shapes.shacl"
+    ],
+    "generic-profiles.register": [
+      "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+    ],
+    "data-formats.vocabulary": [
+      "https://geolabs.github.io/bblocks-data-formats/_sources/vocabulary/shapes.shacl"
+    ],
+    "data-types.vocabulary": [
+      "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+    ],
+    "ogc.rim.core-ontology": [
+      "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+    ],
+    "ogc.register.activity-types": [
+      "https://ogcincubator.github.io/activity-type-register/_sources/activity-types/shapes.shacl"
+    ],
+    "ogc.model.cross-domain.prov": [
+      "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+    ],
+    "ogc.register.geoprocessing-activity-types": [
+      "https://ogcincubator.github.io/activity-type-register/_sources/geoprocessing-activity-types/shapes.shacl"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Activity Type Register",
+      "link": "https://ogcincubator.github.io/activity-type-register/"
+    },
+    {
+      "title": "W3C PROV-O: The PROV Ontology",
+      "link": "https://www.w3.org/TR/prov-o/"
+    }
+  ],
+  "maturity": "development",
+  "highlighted": true,
+  "group": "Activity Types",
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/schema.json"
+  },
+  "sourceLdContext": "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/context.jsonld",
+  "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/resolvedProperties.json",
+  "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/activity-type/",
+  "description": "Activity type -- the shape every activity type of this register shares.\n\n## What an activity type holds here\n\nThe meaning of one operation: its name, its definition, the standards and literature that define\nit, and its illustrations (decision D3, 2026-11-05). It holds no input, output, format, tool or\ndeployment. Each one is a register item of this register (`gp:register`), typed\n`acttype:ActivityType` and of the Activity Type Register's item class, and an OWL class:\n\n```turtle\ngpat:intersects a acttype:ActivityType , owl:Class ;\n    rdfs:subClassOf geoproc:GeoprocessingActivityType ;\n    rim:inRegister gp:register ;\n    rim:itemClass acttype:activityTypeItemClass ;\n    acttype:usedEntityType geo:Geometry ;\n    acttype:associatedAgentType prov:SoftwareAgent .\n```\n\nThis is the pattern of `docs/questions-for-rim-atr-maintainers.md` (\"What we plan to do\"). The\nImplementation Profile of the operation is a different item, of a different item class, and points\nhere with `activityType` (`gp:activityType`, a sub-property of `rim:relatedItem`):\n`rim:RegisterItemShape` allows one item class per item, so a profile cannot be its own activity type\n(`docs/implementation-profile-vs-activity-type.md`).\n\nThere are 36 activity types, one per operation (decision D3). The 37 Implementation Profiles point to them;\ntwo point to the same one, `radiometric-index` (decision C4 of 2026-11-10). The items are generated by\n`scripts/activity_types.py` from `scripts/activity-types.yaml`; the item class IRI is written from one\nconstant of that script, because the upstream branch `model-tweaks` renames it.\n\n## Geoprocessing: all 36\n\nAll 36 activity types are sub-classes of `geoproc:GeoprocessingActivityType` (decision of\n2026-11-09). The geoproc shapes require at least one used or generated entity type that is, or\nspecialises, a GeoSPARQL 1.1 spatial class (`geo:SpatialObject`, `geo:Feature`, `geo:Geometry`,\n`geo:SpatialObjectCollection`, `geo:FeatureCollection`, `geo:GeometryCollection`). The class is\nchosen directly per kind of role, not derived from the data types of `bblocks-data-types`:\n\n| Kind of role (data type) | Entity type | Why |\n|---|---|---|\n| `geometry`, `surface`, `point` | `geo:Geometry` | a geometry, as in the tested pattern |\n| `bounding-box` | `geo:Geometry` | GeoSPARQL 1.1 (OGC 22-047r1, 8.4.3) gives `geo:hasBoundingBox` the range `geo:Geometry` ; not used today: `raster-crop` and `band-retrieval`, the operations with a bounding box, declare one used entity type (the ATR JSON schema allows one), `geo:Feature` for their raster or product |\n| `raster`, `raster-single-band`, `elevation-model`, `binary-mask` | `geo:Feature` | a coverage described as a feature, the reading `geoproc:GeoprocessingActivityType` states; the ATR NDVI example makes its rasters sub-classes of `geo:Feature` |\n| `point-cloud` | `geo:Feature` | a point cloud dataset, described as a feature like a coverage |\n| `feature-collection` | `geo:FeatureCollection` | a collection of features |\n| `eo-product` | `geo:Feature` | a product, described by a record with a footprint (band-retrieval, product-selection) |\n| number, boolean, expression, CRS, format identifier, radiometric index, band identifier, grid resolution, time interval, collection identifier, colour map | none | not spatial data |\n| `rendered-image` | none | a picture, not georeferenced in general: raster-rendering declares a used entity type only |\n\nHow a data type of `bblocks-data-types` becomes an entity type (a class bridge) is question 5 to the\nmaintainers and stays open (decision D8).\n\n## What is not settled here\n\nDecision D8 is open. Nothing here says how a run of one of these operations is typed (`rdf:type` or\n`prov:type`), whether `acttype:ActivityType` specialises `prov:Activity`, or how a tier-4 process type\nof `bblocks-process-profiles` relates to these items.\n\n## Validation\n\n`shapes.shacl` adds, for every activity type: `gp:register`, a `skos:prefLabel`, a `skos:definition`,\nthe `owl:Class` type and a proposed addition. The Activity Type Register's shapes and\n`rim:RegisterItemShape` apply through `dependsOn`. `tests/` holds one failing fixture per constraint\nand a control.\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: 'An activity type of this register: the meaning of one operation, as\n  an acttype:ActivityType item (Activity Type Register) held in gp:register, and an\n  OWL class. One per operation (decision D3); the Implementation Profile of the operation\n  points to it with `activityType`.'\nallOf:\n- $ref: https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/activity-types-schema/schema.yaml\n- type: object\n  required:\n  - id\n  - type\n  - prefLabel\n  - definition\n  - subClassOf\n  - objectIdentifier\n  - itemClass\n  - inRegister\n  - validityStatus\n  - publicationStatus\n  - hasAction\n  properties:\n    type:\n      const:\n      - ActivityType\n      - Class\n      x-jsonld-id: '@type'\n    prefLabel:\n      type: string\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel\n    altLabel:\n      description: Other names of the operation, e.g. its SQL/MM function name.\n      type: array\n      items:\n        type: string\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#altLabel\n    definition:\n      description: What the operation does. No tool, format or deployment.\n      type: string\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#definition\n    subClassOf:\n      description: Every activity type of this register is a geoprocessing activity\n        type, with at least one GeoSPARQL spatial used or generated entity type (geoproc\n        shapes).\n      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType\n      x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#subClassOf\n      x-jsonld-type: '@id'\n    itemClass:\n      description: Written by scripts/activity_types.py from its constant ATR_ITEM_CLASS.\n      const: https://w3id.org/ogc/rim/activity-type/activityTypeItemClass\n    inRegister:\n      const: https://geolabs.github.io/bblocks-generic-profiles/def/register\n    source:\n      type: array\n      items:\n        type: object\n        required:\n        - title\n        properties:\n          title:\n            type: string\n            x-jsonld-id: http://purl.org/dc/terms/title\n          link:\n            type: string\n            format: uri\n            x-jsonld-id: http://purl.org/dc/terms/references\n            x-jsonld-type: '@id'\n      x-jsonld-id: http://purl.org/dc/terms/source\nx-jsonld-extra-terms:\n  id: '@id'\n  ActivityType: https://w3id.org/ogc/rim/activity-type/ActivityType\n  Class: http://www.w3.org/2002/07/owl#Class\n  usedEntityType:\n    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/usedEntityType\n    x-jsonld-type: '@id'\n  generatedEntityType:\n    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/generatedEntityType\n    x-jsonld-type: '@id'\n  associatedAgentType:\n    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/associatedAgentType\n    x-jsonld-type: '@id'\nx-jsonld-prefixes:\n  acttype: https://w3id.org/ogc/rim/activity-type/\n  owl: http://www.w3.org/2002/07/owl#\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\n  skos: http://www.w3.org/2004/02/skos/core#\n  dct: http://purl.org/dc/terms/\n  gp: https://geolabs.github.io/bblocks-generic-profiles/def/\nx-bblocks-metadata:\n  itemIdentifier: generic-profiles.activity-type\n  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-11-12'\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/activity-type"
+}

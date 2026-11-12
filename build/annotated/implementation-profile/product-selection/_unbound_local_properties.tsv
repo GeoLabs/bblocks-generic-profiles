@@ -1,0 +1,15 @@
+path
+/metadata/role
+/metadata/href
+/inputs/areaOfInterest
+/inputs/areaOfInterest/metadata/role
+/inputs/areaOfInterest/metadata/href
+/inputs/timeInterval
+/inputs/timeInterval/metadata/role
+/inputs/timeInterval/metadata/href
+/inputs/collection
+/inputs/collection/metadata/role
+/inputs/collection/metadata/href
+/outputs/products
+/outputs/products/metadata/role
+/outputs/products/metadata/href

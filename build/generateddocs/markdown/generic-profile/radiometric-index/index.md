@@ -24,8 +24,9 @@ Generic Profile: **Radiometric index**.
 ## Relations
 
 - `broader`: [`generic-profiles.concept.raster-coverage-processing`](../../concept/raster-coverage-processing/)
-- Refined by (1 Implementation Profile):
+- Refined by (2 Implementation Profiles):
 - [`radiometric-index`](../../implementation-profile/radiometric-index/)
+- [`radiometric-index-single-band`](../../implementation-profile/radiometric-index-single-band/) (added 2026-11-10)
 
 ## Register position
 
@@ -43,14 +44,36 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Radiometric index",
   "definition": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral bands of one or more input rasters. One or more Raster inputs, the name(s) of the index/indices to compute, one Raster output (one band per selected index).",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/data-type-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The dataType of input `index` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index, created for this role in the data-types register. Its title \"String\" becomes \"Radiometric index\".",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/relations-2026-11-10",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The Relations text of this Generic Profile now lists two refining Implementation Profiles, radiometric-index and radiometric-index-single-band (added 2026-11-10), instead of one. The signature is unchanged. Classified clarifying, a documentary text.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
@@ -84,8 +107,8 @@ Implementation Profile -> Implementation (instance level).
     },
     "index": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
-      "title": "String",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index",
+      "title": "Radiometric index",
       "description": "the name of the radiometric index (or indices) to compute",
       "keywords": [
         "radiometric index"
@@ -117,14 +140,36 @@ Implementation Profile -> Implementation (instance level).
   "prefLabel": "Radiometric index",
   "definition": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral bands of one or more input rasters. One or more Raster inputs, the name(s) of the index/indices to compute, one Raster output (one band per selected index).",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/data-type-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The dataType of input `index` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index, created for this role in the data-types register. Its title \"String\" becomes \"Radiometric index\".",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/relations-2026-11-10",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The Relations text of this Generic Profile now lists two refining Implementation Profiles, radiometric-index and radiometric-index-single-band (added 2026-11-10), instead of one. The signature is unchanged. Classified clarifying, a documentary text.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
@@ -158,8 +203,8 @@ Implementation Profile -> Implementation (instance level).
     },
     "index": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
-      "title": "String",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index",
+      "title": "Radiometric index",
       "description": "the name of the radiometric index (or indices) to compute",
       "keywords": [
         "radiometric index"
@@ -185,33 +230,13 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> a gp:GenericProfile ;
-    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-    skos:definition "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral bands of one or more input rasters. One or more Raster inputs, the name(s) of the index/indices to compute, one Raster output (one band per selected index)." ;
-    skos:inScheme gp:generic-profile ;
-    skos:prefLabel "Radiometric index" ;
-    gp:inputs [ ns2:index <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index> ;
-            ns2:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters> ] ;
-    gp:outputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster> ] ;
-    proc:keywords "coverage",
-        "radiometric index",
-        "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/addition> ;
-    rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
@@ -219,9 +244,25 @@ Implementation Profile -> Implementation (instance level).
     rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> ;
     rim:proposer gp:geolabs .
 
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/data-type-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The dataType of input `index` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index, created for this role in the data-types register. Its title \"String\" becomes \"Radiometric index\"." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/relations-2026-11-10> a rim:RegisterAction ;
+    dcterms:description "The Relations text of this Generic Profile now lists two refining Implementation Profiles, radiometric-index and radiometric-index-single-band (added 2026-11-10), instead of one. The signature is unchanged. Classified clarifying, a documentary text." ;
+    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index> dcterms:description "the name of the radiometric index (or indices) to compute" ;
-    dcterms:title "String" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/string> ;
+    dcterms:title "Radiometric index" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index> ;
     proc:keywords "radiometric index" ;
     proc:maxOccurs "unbounded" .
 
@@ -235,6 +276,28 @@ Implementation Profile -> Implementation (instance level).
     dcterms:title "Raster" ;
     dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
     proc:keywords "raster" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> a gp:GenericProfile ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
+    skos:definition "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral bands of one or more input rasters. One or more Raster inputs, the name(s) of the index/indices to compute, one Raster output (one band per selected index)." ;
+    skos:inScheme gp:generic-profile ;
+    skos:prefLabel "Radiometric index" ;
+    gp:inputs [ ns1:index <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index> ;
+            ns1:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters> ] ;
+    gp:outputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster> ] ;
+    proc:keywords "coverage",
+        "radiometric index",
+        "raster" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/addition>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/data-type-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/actions/relations-2026-11-10> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 
 
 ```
@@ -296,7 +359,7 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/string
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
@@ -342,7 +405,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.radiometric-index
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'
 
 ```
 

@@ -1,0 +1,37 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/band-retrieval/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/band-retrieval",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Band retrieval",
+  "definition": "Retrieves one band, one range component, of an Earth observation product as a raster, over the whole product or over an area of interest, with the values the product provides, possibly converted to physical units by the scale and offset the product declares.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/band-retrieval",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/band-retrieval/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-10T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/band-retrieval"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, \u00a71 Scope (retrieval of selected range components of a coverage)",
+      "link": "https://portal.ogc.org/files/12-040"
+    },
+    {
+      "title": "OGC 09-110r4 WCS 2.0 Interface Standard - Core, version 2.0.1, \u00a74.5 (coverage) trimming and \u00a78.4.1 GetCoverage request (domain subsetting)",
+      "link": "https://portal.ogc.org/files/09-110r4"
+    }
+  ]
+}

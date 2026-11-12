@@ -1,0 +1,40 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Product selection",
+  "definition": "Selects, from a catalogue of Earth observation products, those of a collection whose footprint intersects an area of interest and whose acquisition time falls within a time interval, possibly filtered further on their metadata, such as their cloud cover.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-10T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, \u00a71 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)",
+      "link": "https://docs.ogc.org/is/13-026r9/13-026r9.html"
+    },
+    {
+      "title": "OGC 17-069r4 OGC API - Features - Part 1: Core, \u00a77.15.3 Parameter bbox and \u00a77.15.4 Parameter datetime",
+      "link": "https://docs.ogc.org/is/17-069r4/17-069r4.html"
+    },
+    {
+      "title": "STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and collections",
+      "link": "https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md"
+    }
+  ]
+}

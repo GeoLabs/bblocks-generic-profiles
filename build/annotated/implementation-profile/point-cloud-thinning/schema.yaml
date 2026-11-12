@@ -18,6 +18,10 @@ allOf:
       const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
       x-jsonld-type: '@id'
+    activityType:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-thinning
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/activityType
+      x-jsonld-type: '@id'
     keywords:
       allOf:
       - contains:
@@ -131,6 +135,7 @@ allOf:
           required:
           - id
           - dataType
+          - representation
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/points
@@ -138,6 +143,11 @@ allOf:
             dataType:
               const: https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud
               x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+            representation:
+              const:
+              - https://w3id.org/geolabs/ospd/data-formats/representation/point-cloud-las
+              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
               x-jsonld-type: '@id'
         percentage:
           required:
@@ -159,6 +169,7 @@ allOf:
           required:
           - id
           - dataType
+          - representation
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/outputs/result
@@ -166,6 +177,11 @@ allOf:
             dataType:
               const: https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud
               x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+            representation:
+              const:
+              - https://w3id.org/geolabs/ospd/data-formats/representation/point-cloud-las
+              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
@@ -189,4 +205,4 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.point-cloud-thinning
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'

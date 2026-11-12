@@ -1,0 +1,27 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/otsu-thresholding/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/otsu-thresholding",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Otsu thresholding",
+  "definition": "Divides the cells of a single-band raster into two classes at the threshold computed from the histogram of the cell values by Otsu's method, which maximises the variance between the two classes, and returns the cells of the upper class as a binary mask.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/otsu-thresholding",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/otsu-thresholding/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-10T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/otsu-thresholding"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent"
+}

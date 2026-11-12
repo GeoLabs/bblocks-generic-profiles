@@ -1,0 +1,36 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/geometry-extent/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/geometry-extent",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Geometry extent",
+  "definition": "Computes the minimum bounding rectangle of a set of input geometries, as a geometry.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/geometry-extent",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/geometry-extent/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-09T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/geometry-extent"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture (Envelope)",
+      "link": "https://www.ogc.org/standards/sfa/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Envelope"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 
 `generic-profiles.implementation-profile.radiometric-index` *v0.1*
 
-Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).
+Implementation Profile of the operation Radiometric index, whose meaning is its activity type (activityType): the signature of the Generic Profile Radiometric index, bound to data exchange formats.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 
@@ -11,7 +11,29 @@ Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the 
 
 Implementation Profile: **Radiometric index**.
 
-> Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).
+> Implementation Profile of the operation Radiometric index, whose meaning is its activity type (activityType): the signature of the Generic Profile Radiometric index, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration --
+is the activity type [`generic-profiles.activity-type.radiometric-index`](../../activity-type/radiometric-index/), to which this
+profile points with `activityType` (decisions D3 and D4).
+
+## Signature and representations
+
+The signature of the Generic Profile [Radiometric index](../../generic-profile/radiometric-index/), with each data-carrying
+input and output bound to a representation of the
+[`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats) register (Table 21 Data
+format, D; decision D6):
+
+| Role | Data type | Representation |
+|---|---|---|
+| input `rasters` (minOccurs 1, maxOccurs 1) | `raster` | [`raster-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff) (Raster as GeoTIFF) |
+| input `index` | `radiometric-index` | -- |
+| output `raster` | `raster` | [`raster-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff) (Raster as GeoTIFF) |
+
+The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
+2.0.2 §7.5.4 Table 21, footnote d).
 
 ## Source
 
@@ -50,14 +72,30 @@ Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-06
 ## Relations
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.radiometric-index`](../../generic-profile/radiometric-index/)
+- `activityType`: [`generic-profiles.activity-type.radiometric-index`](../../activity-type/radiometric-index/)
 
 ## Register position
 
 Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Generic Profile ->
 **Implementation Profile** -> Implementation (instance level). The fourth tier is not part of
-this register: see `ospd.process-profiles.*` in `bblocks-process-profiles` -- real processes of
-the ZOO-Project Geonovum testbed
+this register: see [`ospd.process-profiles.raster.radiometric-index`](https://github.com/GeoLabs/bblocks-process-profiles/tree/master/_sources/raster/radiometric-index)
+in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum testbed
 (<https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/OTB.RadiometricIndices>).
+
+That process names this profile with `implementsProfile`. Tools, hosts and testbeds are
+recorded there; this item carries none as keyword or source (decision D4). The sections
+above keep the tools and testbed that its defaults were grounded in.
+
+## Changes
+
+A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
+
+- `meaning-2026-11-09`, substantive
+- `operation-sources-2026-11-09`, clarifying
+- `representation-2026-11-09`, substantive
+- `tools-2026-11-09`, clarifying
+- `data-type-2026-11-09`, substantive
+- `sections-restored-2026-11-09`, clarifying
 
 ## Examples
 
@@ -68,28 +106,89 @@ the ZOO-Project Geonovum testbed
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index",
   "type": "ImplementationProfile",
   "prefLabel": "Radiometric index",
-  "definition": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).",
+  "definition": "Implementation Profile of the operation Radiometric index, whose meaning is its activity type (activityType): the signature of the Generic Profile Radiometric index, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/radiometric-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The source defining the operation moves to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/representation-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/rasters -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}).",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: OTB, RadiometricIndices; 2 format keywords removed from inputs and outputs (inputs/rasters: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image <https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/data-type-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The dataType of input `index` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index, created for this role in the data-types register.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/sections-restored-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/radiometric-index",
   "keywords": [
     "raster",
     "coverage",
-    "radiometric index",
-    "OTB",
-    "RadiometricIndices"
+    "radiometric index"
   ],
   "metadata": [
     {
@@ -107,16 +206,12 @@ the ZOO-Project Geonovum testbed
     "rasters": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/rasters",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
-      "schema": {
-        "type": "string",
-        "contentEncoding": "base64",
-        "contentMediaType": "image/tiff",
-        "description": "GeoTIFF"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
+      ],
       "maxOccurs": 1,
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -128,7 +223,7 @@ the ZOO-Project Geonovum testbed
     },
     "index": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/index",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index",
       "keywords": [
         "radiometric index"
       ],
@@ -145,15 +240,11 @@ the ZOO-Project Geonovum testbed
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/outputs/raster",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
-      "schema": {
-        "type": "string",
-        "contentEncoding": "base64",
-        "contentMediaType": "image/tiff",
-        "description": "GeoTIFF"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
+      ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -163,17 +254,7 @@ the ZOO-Project Geonovum testbed
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
-      "link": "https://www.ogc.org/standards/wcps/"
-    },
-    {
-      "title": "OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html"
-    }
-  ]
+  }
 }
 
 ```
@@ -185,28 +266,89 @@ the ZOO-Project Geonovum testbed
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index",
   "type": "ImplementationProfile",
   "prefLabel": "Radiometric index",
-  "definition": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).",
+  "definition": "Implementation Profile of the operation Radiometric index, whose meaning is its activity type (activityType): the signature of the Generic Profile Radiometric index, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/radiometric-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The source defining the operation moves to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/representation-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/rasters -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}).",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: OTB, RadiometricIndices; 2 format keywords removed from inputs and outputs (inputs/rasters: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image <https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/data-type-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The dataType of input `index` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index, created for this role in the data-types register.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/sections-restored-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/radiometric-index",
   "keywords": [
     "raster",
     "coverage",
-    "radiometric index",
-    "OTB",
-    "RadiometricIndices"
+    "radiometric index"
   ],
   "metadata": [
     {
@@ -224,16 +366,12 @@ the ZOO-Project Geonovum testbed
     "rasters": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/rasters",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
-      "schema": {
-        "type": "string",
-        "contentEncoding": "base64",
-        "contentMediaType": "image/tiff",
-        "description": "GeoTIFF"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
+      ],
       "maxOccurs": 1,
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -245,7 +383,7 @@ the ZOO-Project Geonovum testbed
     },
     "index": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/index",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index",
       "keywords": [
         "radiometric index"
       ],
@@ -262,15 +400,11 @@ the ZOO-Project Geonovum testbed
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/outputs/raster",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
-      "schema": {
-        "type": "string",
-        "contentEncoding": "base64",
-        "contentMediaType": "image/tiff",
-        "description": "GeoTIFF"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
+      ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -280,17 +414,7 @@ the ZOO-Project Geonovum testbed
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
-      "link": "https://www.ogc.org/standards/wcps/"
-    },
-    {
-      "title": "OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html"
-    }
-  ]
+  }
 }
 ```
 
@@ -298,40 +422,13 @@ the ZOO-Project Geonovum testbed
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html> ;
-            dcterms:title "OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image" ],
-        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
-    skos:definition "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s)." ;
-    skos:inScheme gp:implementation-profile ;
-    skos:prefLabel "Radiometric index" ;
-    gp:inputs [ ns2:index <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/index> ;
-            ns2:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/rasters> ] ;
-    gp:outputs [ ns3:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/outputs/raster> ] ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> ;
-    proc:keywords "OTB",
-        "RadiometricIndices",
-        "coverage",
-        "radiometric index",
-        "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
-        [ dcterms:title "Generic Profile: Radiometric index" ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/addition> ;
-    rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
@@ -339,34 +436,101 @@ the ZOO-Project Geonovum testbed
     rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/index> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/string> ;
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/data-type-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The dataType of input `index` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index, created for this role in the data-types register." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/meaning-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/radiometric-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).\"" ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The source defining the operation moves to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/representation-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/rasters -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"})." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/tools-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Decision D4: tool keywords removed: OTB, RadiometricIndices; 2 format keywords removed from inputs and outputs (inputs/rasters: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image <https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/index> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index> ;
     proc:keywords "radiometric index" ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- input `index`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/rasters> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
-    proc:keywords "GeoTIFF",
-        "raster" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
+    proc:keywords "raster" ;
     proc:maxOccurs 1 ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- input `rasters`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
-            dcterms:description "GeoTIFF" ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "image/tiff" ] .
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/outputs/raster> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
-    proc:keywords "GeoTIFF",
-        "raster" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
+    proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- output `raster`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns1:string ;
-            dcterms:description "GeoTIFF" ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "image/tiff" ] .
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> a gp:ImplementationProfile ;
+    skos:definition "Implementation Profile of the operation Radiometric index, whose meaning is its activity type (activityType): the signature of the Generic Profile Radiometric index, bound to data exchange formats." ;
+    skos:inScheme gp:implementation-profile ;
+    skos:prefLabel "Radiometric index" ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/radiometric-index> ;
+    gp:inputs [ ns1:index <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/index> ;
+            ns1:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/rasters> ] ;
+    gp:outputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/outputs/raster> ] ;
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> ;
+    proc:keywords "coverage",
+        "radiometric index",
+        "raster" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
+        [ dcterms:title "Generic Profile: Radiometric index" ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/addition>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/data-type-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/meaning-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/operation-sources-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/representation-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/sections-restored-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/actions/tools-2026-11-09> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 
 
 ```
@@ -393,6 +557,10 @@ allOf:
     refinesGenericProfile:
       const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
+      x-jsonld-type: '@id'
+    activityType:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/radiometric-index
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/activityType
       x-jsonld-type: '@id'
     keywords:
       allOf:
@@ -509,6 +677,7 @@ allOf:
           required:
           - id
           - dataType
+          - representation
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/rasters
@@ -516,6 +685,11 @@ allOf:
             dataType:
               const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster
               x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+            representation:
+              const:
+              - https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff
+              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
               x-jsonld-type: '@id'
         index:
           required:
@@ -526,7 +700,7 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/index
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/string
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
@@ -537,6 +711,7 @@ allOf:
           required:
           - id
           - dataType
+          - representation
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/outputs/raster
@@ -544,6 +719,11 @@ allOf:
             dataType:
               const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster
               x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+            representation:
+              const:
+              - https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff
+              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
@@ -567,7 +747,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.radiometric-index
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'
 
 ```
 
@@ -757,6 +937,10 @@ Links to the schema:
       "@id": "gp:refinesGenericProfile",
       "@type": "@id"
     },
+    "activityType": {
+      "@id": "gp:activityType",
+      "@type": "@id"
+    },
     "keywords": "proc:keywords",
     "metadata": "proc:metadata",
     "inputs": {
@@ -766,11 +950,9 @@ Links to the schema:
           "@id": "dct:type",
           "@type": "@id"
         },
-        "schema": {
-          "@context": {
-            "@vocab": "https://w3id.org/ogc/api/schema/"
-          },
-          "@id": "proc:schema"
+        "representation": {
+          "@id": "gp:representation",
+          "@type": "@id"
         },
         "maxOccurs": "proc:maxOccurs",
         "metadata": {
@@ -792,11 +974,9 @@ Links to the schema:
           "@id": "dct:type",
           "@type": "@id"
         },
-        "schema": {
-          "@context": {
-            "@vocab": "https://w3id.org/ogc/api/schema/"
-          },
-          "@id": "proc:schema"
+        "representation": {
+          "@id": "gp:representation",
+          "@type": "@id"
         },
         "metadata": {
           "@context": {
@@ -832,10 +1012,6 @@ Links to the schema:
 You can find the full JSON-LD context here:
 [context.jsonld](https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/radiometric-index/context.jsonld)
 
-## Sources
-
-* [OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard](https://www.ogc.org/standards/wcps/)
-* [OTB RadiometricIndices -- Computes radiometric indices from the relevant channels of the input image](https://www.orfeo-toolbox.org/CookBook/Applications/app_RadiometricIndices.html)
 
 # For developers
 

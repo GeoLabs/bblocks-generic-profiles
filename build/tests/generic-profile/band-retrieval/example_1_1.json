@@ -1,0 +1,78 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval",
+  "type": "GenericProfile",
+  "prefLabel": "Band retrieval",
+  "definition": "Retrieves one band of an Earth observation product as a raster, over the whole product or over an area of interest. A product, a band identifier and an optional bounding box in, one Raster out.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval"
+    }
+  ],
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"
+  ],
+  "keywords": [
+    "product",
+    "band",
+    "retrieval"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Data Discovery and Access",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"
+    }
+  ],
+  "inputs": {
+    "product": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/product",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product",
+      "title": "Earth observation product",
+      "description": "the product the band belongs to",
+      "keywords": [
+        "product"
+      ]
+    },
+    "band": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/band",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/band-identifier",
+      "title": "Band identifier",
+      "description": "the band to retrieve",
+      "keywords": [
+        "band"
+      ]
+    },
+    "areaOfInterest": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/areaOfInterest",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/bounding-box",
+      "title": "Bounding box",
+      "description": "the area to retrieve; the whole product when absent",
+      "keywords": [
+        "bounding box"
+      ],
+      "minOccurs": 0
+    }
+  },
+  "outputs": {
+    "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "title": "Raster",
+      "description": "the retrieved band",
+      "keywords": [
+        "raster"
+      ]
+    }
+  }
+}

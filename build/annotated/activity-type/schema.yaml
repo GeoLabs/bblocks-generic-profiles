@@ -1,0 +1,92 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: 'An activity type of this register: the meaning of one operation, as
+  an acttype:ActivityType item (Activity Type Register) held in gp:register, and an
+  OWL class. One per operation (decision D3); the Implementation Profile of the operation
+  points to it with `activityType`.'
+allOf:
+- $ref: https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/activity-types-schema/schema.yaml
+- type: object
+  required:
+  - id
+  - type
+  - prefLabel
+  - definition
+  - subClassOf
+  - objectIdentifier
+  - itemClass
+  - inRegister
+  - validityStatus
+  - publicationStatus
+  - hasAction
+  properties:
+    type:
+      const:
+      - ActivityType
+      - Class
+      x-jsonld-id: '@type'
+    prefLabel:
+      type: string
+      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
+    altLabel:
+      description: Other names of the operation, e.g. its SQL/MM function name.
+      type: array
+      items:
+        type: string
+      x-jsonld-id: http://www.w3.org/2004/02/skos/core#altLabel
+    definition:
+      description: What the operation does. No tool, format or deployment.
+      type: string
+      x-jsonld-id: http://www.w3.org/2004/02/skos/core#definition
+    subClassOf:
+      description: Every activity type of this register is a geoprocessing activity
+        type, with at least one GeoSPARQL spatial used or generated entity type (geoproc
+        shapes).
+      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
+      x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#subClassOf
+      x-jsonld-type: '@id'
+    itemClass:
+      description: Written by scripts/activity_types.py from its constant ATR_ITEM_CLASS.
+      const: https://w3id.org/ogc/rim/activity-type/activityTypeItemClass
+    inRegister:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/register
+    source:
+      type: array
+      items:
+        type: object
+        required:
+        - title
+        properties:
+          title:
+            type: string
+            x-jsonld-id: http://purl.org/dc/terms/title
+          link:
+            type: string
+            format: uri
+            x-jsonld-id: http://purl.org/dc/terms/references
+            x-jsonld-type: '@id'
+      x-jsonld-id: http://purl.org/dc/terms/source
+x-jsonld-extra-terms:
+  id: '@id'
+  ActivityType: https://w3id.org/ogc/rim/activity-type/ActivityType
+  Class: http://www.w3.org/2002/07/owl#Class
+  usedEntityType:
+    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/usedEntityType
+    x-jsonld-type: '@id'
+  generatedEntityType:
+    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/generatedEntityType
+    x-jsonld-type: '@id'
+  associatedAgentType:
+    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/associatedAgentType
+    x-jsonld-type: '@id'
+x-jsonld-prefixes:
+  acttype: https://w3id.org/ogc/rim/activity-type/
+  owl: http://www.w3.org/2002/07/owl#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  skos: http://www.w3.org/2004/02/skos/core#
+  dct: http://purl.org/dc/terms/
+  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+x-bblocks-metadata:
+  itemIdentifier: generic-profiles.activity-type
+  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-11-12'

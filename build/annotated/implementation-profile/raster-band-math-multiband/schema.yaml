@@ -19,6 +19,10 @@ allOf:
       const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
       x-jsonld-type: '@id'
+    activityType:
+      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband
+      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/activityType
+      x-jsonld-type: '@id'
     keywords:
       allOf:
       - contains:
@@ -134,6 +138,7 @@ allOf:
           required:
           - id
           - dataType
+          - representation
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/rasters
@@ -141,6 +146,11 @@ allOf:
             dataType:
               const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster
               x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+            representation:
+              const:
+              - https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff
+              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
               x-jsonld-type: '@id'
         expression:
           required:
@@ -151,7 +161,7 @@ allOf:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/expression
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/string
+              const: https://geolabs.github.io/bblocks-data-types/def/data-type/expression
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
@@ -162,6 +172,7 @@ allOf:
           required:
           - id
           - dataType
+          - representation
           properties:
             id:
               const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/outputs/raster
@@ -169,6 +180,11 @@ allOf:
             dataType:
               const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster
               x-jsonld-id: http://purl.org/dc/terms/type
+              x-jsonld-type: '@id'
+            representation:
+              const:
+              - https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff
+              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
               x-jsonld-type: '@id'
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
@@ -192,4 +208,4 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.raster-band-math-multiband
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'

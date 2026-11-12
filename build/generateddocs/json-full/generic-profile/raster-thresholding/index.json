@@ -1,0 +1,95 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.generic-profile.raster-thresholding",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Generic Profile: Raster thresholding",
+  "abstract": "Divides the cells of a single-band raster into two classes at a threshold that the operation determines from the raster's values, and returns the upper class as a binary mask. One single-band Raster input, one Binary mask output.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-10T00:00:00Z",
+  "dateOfLastChange": "2026-11-12",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.concept.raster-coverage-processing",
+    "generic-profiles.generic-profile"
+  ],
+  "sources": [
+    {
+      "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, \u00a77.5.2 Generic Process Profile",
+      "link": "https://docs.ogc.org/is/14-065/14-065.html"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "generic profile",
+    "SKOS",
+    "Raster thresholding"
+  ],
+  "sourceSchema": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/raster-thresholding/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-thresholding/context.jsonld",
+  "maturity": "development",
+  "group": "Generic Profiles",
+  "isProfileOf": [
+    "generic-profiles.generic-profile",
+    "generic-profiles.concept.raster-coverage-processing"
+  ],
+  "shaclShapes": {
+    "generic-profiles.register": [
+      "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+    ],
+    "data-formats.vocabulary": [
+      "https://geolabs.github.io/bblocks-data-formats/_sources/vocabulary/shapes.shacl"
+    ],
+    "data-types.vocabulary": [
+      "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+    ],
+    "ogc.rim.core-ontology": [
+      "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+    ]
+  },
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-thresholding/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-thresholding/schema.json"
+  },
+  "sourceLdContext": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/raster-thresholding/context.jsonld",
+  "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-thresholding/resolvedProperties.json",
+  "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/raster-thresholding/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/generic-profile/raster-thresholding/",
+  "description": "Generic Profile: **Raster thresholding**.\n\n> Divides the cells of a single-band raster into two classes at a threshold that the operation determines from the raster's values, and returns the upper class as a binary mask. One single-band Raster input, one Binary mask output.\n\n## Signature\n\n| Role | Data type | Cardinality | Meaning |\n|---|---|---|---|\n| input `raster` | [`raster-single-band`](https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band) | exactly one | the single-band raster to threshold |\n| output `mask` | [`binary-mask`](https://geolabs.github.io/bblocks-data-types/def/data-type/binary-mask) | exactly one | the cells of the upper class |\n\nEach data type is a concept of the [`bblocks-data-types`](https://github.com/GeoLabs/bblocks-data-types) register; this tier names no format ([OGC 14-065 WPS 2.0.2 \u00a77.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32) gives Generic Profile no Data format row). Outputs have no cardinality: Table 21 has no Output.Multiplicity row.\n\n## Source\n\n- [OGC 14-065 WPS 2.0.2](https://docs.ogc.org/is/14-065/14-065.html) \u00a77.5.2 -- what a Generic\n  Profile is. The meaning of the operation, and the standards that define it, are its activity type (see the Implementation Profile).\n\n## Relations\n\n- `broader`: [`generic-profiles.concept.raster-coverage-processing`](../../concept/raster-coverage-processing/)\n- Refined by (1 Implementation Profile):\n- [`otsu-thresholding`](../../implementation-profile/otsu-thresholding/)\n\n## Register position\n\nSecond tier of the four-tier model (OGC 14-065 WPS 2.0.2 \u00a77.5): Concept -> **Generic Profile** ->\nImplementation Profile -> Implementation (instance level). A proposal added on 2026-11-10 (decision of 2026-11-10, six new process profiles).\n",
+  "examples": [
+    {
+      "title": "Raster thresholding",
+      "base-uri": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://geolabs.github.io/bblocks-generic-profiles/_sources/generic-profile/raster-thresholding/examples/raster-thresholding.json",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/raster-thresholding/example_1_1.json",
+          "sizeBytes": 2587,
+          "code": "{\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding\",\n  \"type\": \"GenericProfile\",\n  \"prefLabel\": \"Raster thresholding\",\n  \"definition\": \"Divides the cells of a single-band raster into two classes at a threshold that the operation determines from the raster's values, and returns the upper class as a binary mask. One single-band Raster input, one Binary mask output.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile\",\n  \"hasAction\": [\n    {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/actions/addition\",\n      \"type\": \"RegisterAction\",\n      \"actionType\": \"addition\",\n      \"proposer\": \"https://geolabs.github.io/bblocks-generic-profiles/def/geolabs\",\n      \"startedAtTime\": \"2026-11-10T00:00:00Z\",\n      \"appliesTo\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding\"\n    }\n  ],\n  \"objectIdentifier\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding\",\n  \"itemClass\": \"https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile\",\n  \"inRegister\": \"https://geolabs.github.io/bblocks-generic-profiles/def/register\",\n  \"validityStatus\": \"invalid\",\n  \"publicationStatus\": \"published\",\n  \"broader\": [\n    \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing\"\n  ],\n  \"keywords\": [\n    \"raster\",\n    \"coverage\",\n    \"thresholding\"\n  ],\n  \"metadata\": [\n    {\n      \"title\": \"Process Concept: Raster Coverage Processing\",\n      \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\",\n      \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing\"\n    }\n  ],\n  \"inputs\": {\n    \"raster\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/inputs/raster\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band\",\n      \"title\": \"Raster (single band)\",\n      \"description\": \"the single-band raster to threshold\",\n      \"keywords\": [\n        \"raster\"\n      ]\n    }\n  },\n  \"outputs\": {\n    \"mask\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/outputs/mask\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-data-types/def/data-type/binary-mask\",\n      \"title\": \"Binary mask\",\n      \"description\": \"the cells of the upper class\",\n      \"keywords\": [\n        \"mask\"\n      ]\n    }\n  }\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/raster-thresholding/example_1_1.jsonld",
+          "sizeBytes": 2721,
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-thresholding/context.jsonld\",\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding\",\n  \"type\": \"GenericProfile\",\n  \"prefLabel\": \"Raster thresholding\",\n  \"definition\": \"Divides the cells of a single-band raster into two classes at a threshold that the operation determines from the raster's values, and returns the upper class as a binary mask. One single-band Raster input, one Binary mask output.\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile\",\n  \"hasAction\": [\n    {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/actions/addition\",\n      \"type\": \"RegisterAction\",\n      \"actionType\": \"addition\",\n      \"proposer\": \"https://geolabs.github.io/bblocks-generic-profiles/def/geolabs\",\n      \"startedAtTime\": \"2026-11-10T00:00:00Z\",\n      \"appliesTo\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding\"\n    }\n  ],\n  \"objectIdentifier\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding\",\n  \"itemClass\": \"https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile\",\n  \"inRegister\": \"https://geolabs.github.io/bblocks-generic-profiles/def/register\",\n  \"validityStatus\": \"invalid\",\n  \"publicationStatus\": \"published\",\n  \"broader\": [\n    \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing\"\n  ],\n  \"keywords\": [\n    \"raster\",\n    \"coverage\",\n    \"thresholding\"\n  ],\n  \"metadata\": [\n    {\n      \"title\": \"Process Concept: Raster Coverage Processing\",\n      \"role\": \"http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\",\n      \"href\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing\"\n    }\n  ],\n  \"inputs\": {\n    \"raster\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/inputs/raster\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band\",\n      \"title\": \"Raster (single band)\",\n      \"description\": \"the single-band raster to threshold\",\n      \"keywords\": [\n        \"raster\"\n      ]\n    }\n  },\n  \"outputs\": {\n    \"mask\": {\n      \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/outputs/mask\",\n      \"dataType\": \"https://geolabs.github.io/bblocks-data-types/def/data-type/binary-mask\",\n      \"title\": \"Binary mask\",\n      \"description\": \"the cells of the upper class\",\n      \"keywords\": [\n        \"mask\"\n      ]\n    }\n  }\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/generic-profile/raster-thresholding/example_1_1.ttl",
+          "sizeBytes": 3159,
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .\n@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .\n@prefix proc: <https://w3id.org/ogc/api/processes/> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding> a gp:GenericProfile ;\n    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;\n    skos:definition \"Divides the cells of a single-band raster into two classes at a threshold that the operation determines from the raster's values, and returns the upper class as a binary mask. One single-band Raster input, one Binary mask output.\" ;\n    skos:inScheme gp:generic-profile ;\n    skos:prefLabel \"Raster thresholding\" ;\n    gp:inputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/inputs/raster> ] ;\n    gp:outputs [ ns1:mask <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/outputs/mask> ] ;\n    proc:keywords \"coverage\",\n        \"raster\",\n        \"thresholding\" ;\n    proc:metadata [ dcterms:title \"Process Concept: Raster Coverage Processing\" ;\n            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;\n    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/actions/addition> ;\n    rim:inRegister gp:register ;\n    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;\n    rim:objectIdentifier \"https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding\"^^xsd:anyURI ;\n    rim:publicationStatus rim:published ;\n    rim:validityStatus rim:invalid .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/actions/addition> a rim:RegisterAction ;\n    prov:startedAtTime \"2026-11-10T00:00:00+00:00\"^^xsd:dateTime ;\n    rim:actionType rim:additionAction ;\n    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding> ;\n    rim:proposer gp:geolabs .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/inputs/raster> dcterms:description \"the single-band raster to threshold\" ;\n    dcterms:title \"Raster (single band)\" ;\n    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band> ;\n    proc:keywords \"raster\" .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/outputs/mask> dcterms:description \"the cells of the upper class\" ;\n    dcterms:title \"Binary mask\" ;\n    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/binary-mask> ;\n    proc:keywords \"mask\" .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: The Generic Profile \"Raster thresholding\" -- see generic-profiles.generic-profile\n  for the general shape every Generic Profile shares.\nallOf:\n- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/schema.yaml\n- type: object\n  properties:\n    id:\n      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding\n      x-jsonld-id: '@id'\n    type:\n      const: GenericProfile\n      x-jsonld-id: '@type'\n    prefLabel:\n      const: Raster thresholding\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel\n- type: object\n  properties:\n    metadata:\n      allOf:\n      - contains:\n          type: object\n          required:\n          - role\n          - href\n          properties:\n            role:\n              const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept\n            href:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing\n      x-jsonld-id: https://w3id.org/ogc/api/processes/metadata\n    inputs:\n      required:\n      - raster\n      properties:\n        raster:\n          required:\n          - id\n          - dataType\n          properties:\n            id:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/inputs/raster\n              x-jsonld-id: '@id'\n            dataType:\n              const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band\n              x-jsonld-id: http://purl.org/dc/terms/type\n              x-jsonld-type: '@id'\n      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs\n      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/\n    outputs:\n      required:\n      - mask\n      properties:\n        mask:\n          required:\n          - id\n          - dataType\n          properties:\n            id:\n              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/outputs/mask\n              x-jsonld-id: '@id'\n            dataType:\n              const: https://geolabs.github.io/bblocks-data-types/def/data-type/binary-mask\n              x-jsonld-id: http://purl.org/dc/terms/type\n              x-jsonld-type: '@id'\n      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs\n      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/\nx-jsonld-extra-terms:\n  GenericProfile: https://geolabs.github.io/bblocks-generic-profiles/def/GenericProfile\n  definition: http://www.w3.org/2004/02/skos/core#definition\n  inScheme:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme\n    x-jsonld-type: '@id'\n  broader:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#broader\n    x-jsonld-type: '@id'\n  keywords: https://w3id.org/ogc/api/processes/keywords\n  source: http://purl.org/dc/terms/source\n  title: http://purl.org/dc/terms/title\n  link:\n    x-jsonld-id: http://purl.org/dc/terms/references\n    x-jsonld-type: '@id'\n  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause\nx-jsonld-prefixes:\n  gp: https://geolabs.github.io/bblocks-generic-profiles/def/\n  skos: http://www.w3.org/2004/02/skos/core#\n  proc: https://w3id.org/ogc/api/processes/\n  dct: http://purl.org/dc/terms/\nx-bblocks-metadata:\n  itemIdentifier: generic-profiles.generic-profile.raster-thresholding\n  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-11-12'\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/generic-profile/raster-thresholding"
+}

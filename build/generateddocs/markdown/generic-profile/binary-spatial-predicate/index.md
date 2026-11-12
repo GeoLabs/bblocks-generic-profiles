@@ -343,7 +343,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.binary-spatial-predicate
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'
 
 ```
 

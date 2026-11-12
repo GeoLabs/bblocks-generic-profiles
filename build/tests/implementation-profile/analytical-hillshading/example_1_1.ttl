@@ -1,42 +1,12 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_lighting_0.html> ;
-            dcterms:title "SAGA 7.3.0 -- Analytical Hillshading" ],
-        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_lighting.0> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.ta_lighting.0: Analytical Hillshading" ] ;
-    skos:definition "For each cell, the angle at which light coming from the position of the light source hits the terrain surface (SAGA's standard method)." ;
-    skos:inScheme gp:implementation-profile ;
-    skos:prefLabel "Analytical hillshading" ;
-    gp:inputs [ ns2:altitude <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/altitude> ;
-            ns2:azimuth <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/azimuth> ;
-            ns2:elevation <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/elevation> ] ;
-    gp:outputs [ ns3:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/outputs/result> ] ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading> ;
-    proc:keywords "Hillshade",
-        "elevation",
-        "hillshade",
-        "illumination",
-        "raster",
-        "ta_lighting",
-        "terrain" ;
-    proc:metadata [ dcterms:title "Process Concept: Terrain Analysis" ],
-        [ dcterms:title "Generic Profile: Analytical hillshading" ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/addition> ;
-    rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
@@ -44,37 +14,90 @@
     rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading> ;
     rim:proposer gp:geolabs .
 
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/meaning-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/analytical-hillshading, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"For each cell, the angle at which light coming from the position of the light source hits the terrain surface (SAGA's standard method).\"" ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/representation-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/elevation -> elevation-model-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/result -> raster-single-band-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"})." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/tools-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Decision D4: tool keywords removed: ta_lighting; 2 format keywords removed from inputs and outputs (inputs/elevation: GeoTIFF; outputs/result: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Analytical Hillshading <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_lighting_0.html>; ZOO-Project Geonovum testbed -- SAGA.ta_lighting.0: Analytical Hillshading <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_lighting.0>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/altitude> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/number> ;
     proc:keywords "altitude" ;
     proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading -- input `altitude`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/altitude" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/altitude" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/azimuth> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/number> ;
     proc:keywords "azimuth" ;
     proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading -- input `azimuth`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/azimuth" ;
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/azimuth" ;
             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/elevation> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model> ;
-    proc:keywords "GeoTIFF",
-        "elevation" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff> ;
+    proc:keywords "elevation" ;
     proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading -- input `elevation`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/elevation" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
-            dcterms:description "GeoTIFF" ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "image/tiff" ] .
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/elevation" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band> ;
-    proc:keywords "GeoTIFF",
-        "raster" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff> ;
+    proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading -- output `result`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/outputs/result" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns1:string ;
-            dcterms:description "GeoTIFF" ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "image/tiff" ] .
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/outputs/result" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading> a gp:ImplementationProfile ;
+    skos:definition "Implementation Profile of the operation Analytical hillshading, whose meaning is its activity type (activityType): the signature of the Generic Profile Analytical hillshading, bound to data exchange formats." ;
+    skos:inScheme gp:implementation-profile ;
+    skos:prefLabel "Analytical hillshading" ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/analytical-hillshading> ;
+    gp:inputs [ ns1:altitude <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/altitude> ;
+            ns1:azimuth <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/azimuth> ;
+            ns1:elevation <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/elevation> ] ;
+    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/outputs/result> ] ;
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading> ;
+    proc:keywords "Hillshade",
+        "elevation",
+        "hillshade",
+        "illumination",
+        "raster",
+        "terrain" ;
+    proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading" ],
+        [ dcterms:title "Process Concept: Terrain Analysis" ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/addition>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/meaning-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/representation-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/sections-restored-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/actions/tools-2026-11-09> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 

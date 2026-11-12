@@ -1,0 +1,16 @@
+path
+/metadata/role
+/metadata/href
+/inputs/product
+/inputs/product/metadata/role
+/inputs/product/metadata/href
+/inputs/band
+/inputs/band/metadata/role
+/inputs/band/metadata/href
+/inputs/areaOfInterest
+/inputs/areaOfInterest/metadata/role
+/inputs/areaOfInterest/metadata/href
+/outputs/raster
+/outputs/raster/metadata/role
+/outputs/raster/metadata/href
+/inputs/areaOfInterest/minOccurs

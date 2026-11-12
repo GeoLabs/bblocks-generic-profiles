@@ -1,0 +1,31 @@
+@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-thinning> a owl:Class,
+        acttype:ActivityType ;
+    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    skos:definition "Reduces the number of points to the given percentage by sequential point removal, which suits points stored in chronological order best." ;
+    skos:prefLabel "Point cloud thinning (simple)" ;
+    acttype:associatedAgentType prov:SoftwareAgent ;
+    acttype:generatedEntityType geo:Feature ;
+    acttype:usedEntityType geo:Feature ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-thinning/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass acttype:activityTypeItemClass ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-thinning"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-thinning/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-thinning> ;
+    rim:proposer gp:geolabs .
+

@@ -1,0 +1,112 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/band-retrieval/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval",
+  "type": "ImplementationProfile",
+  "prefLabel": "Band retrieval",
+  "definition": "Implementation Profile of the operation Band retrieval, whose meaning is its activity type (activityType): the signature of the Generic Profile Band retrieval, bound to data exchange formats.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval"
+    }
+  ],
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/band-retrieval",
+  "keywords": [
+    "product",
+    "band",
+    "retrieval"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Data Discovery and Access",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"
+    },
+    {
+      "title": "Generic Profile: Band retrieval",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval"
+    }
+  ],
+  "inputs": {
+    "product": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/product",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product",
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/eo-product-stac-item"
+      ],
+      "keywords": [
+        "product"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Band retrieval -- input `product`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/product"
+        }
+      ]
+    },
+    "band": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/band",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/band-identifier",
+      "keywords": [
+        "band"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Band retrieval -- input `band`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/band"
+        }
+      ]
+    },
+    "areaOfInterest": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/areaOfInterest",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/bounding-box",
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/bounding-box-ogcapi-processes-bbox"
+      ],
+      "minOccurs": 0,
+      "keywords": [
+        "bounding box"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Band retrieval -- input `areaOfInterest`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/areaOfInterest"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/outputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
+      ],
+      "keywords": [
+        "raster"
+      ],
+      "metadata": [
+        {
+          "title": "Generic Profile: Band retrieval -- output `raster`",
+          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
+          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/outputs/raster"
+        }
+      ]
+    }
+  }
+}

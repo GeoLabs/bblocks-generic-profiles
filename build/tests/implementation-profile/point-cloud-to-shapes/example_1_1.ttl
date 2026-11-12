@@ -1,38 +1,12 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> a gp:ImplementationProfile ;
-    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_5.html> ;
-            dcterms:title "SAGA 7.3.0 -- Point Cloud to Shapes" ],
-        [ dcterms:references <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.5> ;
-            dcterms:title "ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.5: Point Cloud to Shapes" ] ;
-    skos:definition "Converts a point cloud to a SAGA shapes layer of points, i.e. a feature collection." ;
-    skos:inScheme gp:implementation-profile ;
-    skos:prefLabel "Point cloud to shapes" ;
-    gp:inputs [ ns3:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> ] ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features> ;
-    proc:keywords "Point Cloud to Shapes",
-        "conversion",
-        "feature collection",
-        "point cloud",
-        "pointcloud_tools" ;
-    proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ],
-        [ dcterms:title "Generic Profile: Point cloud to features" ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/addition> ;
-    rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
@@ -40,24 +14,73 @@
     rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> ;
     rim:proposer gp:geolabs .
 
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/meaning-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-to-shapes, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Converts a point cloud to a SAGA shapes layer of points, i.e. a feature collection.\"" ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/representation-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/points -> point-cloud-las (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"application/vnd.las\", \"description\": \"LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type\"}); outputs/result -> feature-collection-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"})." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/tools-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Decision D4: tool keywords removed: Point Cloud to Shapes, pointcloud_tools; 2 format keywords removed from inputs and outputs (inputs/points: LAS; outputs/result: GML); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Point Cloud to Shapes <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_5.html>; ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.5: Point Cloud to Shapes <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.5>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud> ;
-    proc:keywords "LAS",
-        "point cloud" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/point-cloud-las> ;
+    proc:keywords "point cloud" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud to features -- input `points`" ;
-            ns3:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-    proc:schema [ a ns1:string ;
-            dcterms:description "LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type" ;
-            ns1:contentEncoding "base64" ;
-            ns1:contentMediaType "application/vnd.las" ] .
+            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/feature-collection> ;
-    proc:keywords "GML",
-        "feature collection" ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/feature-collection-gml> ;
+    proc:keywords "feature collection" ;
     proc:metadata [ dcterms:title "Generic Profile: Point cloud to features -- output `result`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-    proc:schema [ a ns1:string ;
-            dcterms:description "GML" ;
-            ns1:contentMediaType "text/xml" ] .
+            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result" ;
+            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> a gp:ImplementationProfile ;
+    skos:definition "Implementation Profile of the operation Point cloud to shapes, whose meaning is its activity type (activityType): the signature of the Generic Profile Point cloud to features, bound to data exchange formats." ;
+    skos:inScheme gp:implementation-profile ;
+    skos:prefLabel "Point cloud to shapes" ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-to-shapes> ;
+    gp:inputs [ ns2:points <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points> ] ;
+    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result> ] ;
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features> ;
+    proc:keywords "conversion",
+        "feature collection",
+        "point cloud" ;
+    proc:metadata [ dcterms:title "Generic Profile: Point cloud to features" ],
+        [ dcterms:title "Process Concept: Point Cloud Processing" ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/addition>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/meaning-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/representation-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/sections-restored-2026-11-09>,
+        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/actions/tools-2026-11-09> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 

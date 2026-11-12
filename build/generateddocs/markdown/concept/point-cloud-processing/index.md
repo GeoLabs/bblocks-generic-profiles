@@ -110,10 +110,10 @@ Implementation Profile -> Implementation (instance level).
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> a gp:ProcessConcept ;
-    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html> ;
-            dcterms:title "SAGA 7.3.0 tool library Shapes - Point Clouds" ],
-        [ dcterms:references <https://www.ogc.org/standards/las/> ;
-            dcterms:title "OGC 17-030r1 LAS Specification 1.4 OGC Community Standard" ] ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/las/> ;
+            dcterms:title "OGC 17-030r1 LAS Specification 1.4 OGC Community Standard" ],
+        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html> ;
+            dcterms:title "SAGA 7.3.0 tool library Shapes - Point Clouds" ] ;
     skos:definition "Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1)." ;
     skos:inScheme gp:concept ;
     skos:prefLabel "Point Cloud Processing" ;
@@ -175,7 +175,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.concept.point-cloud-processing
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'
 
 ```
 

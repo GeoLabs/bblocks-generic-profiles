@@ -1,0 +1,80 @@
+path	@id	schema
+/id	@id	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/type	@type	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/objectIdentifier	https://w3id.org/ogc/rim/objectIdentifier	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/functionalIdentifier	https://w3id.org/ogc/rim/functionalIdentifier	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/itemClass	https://w3id.org/ogc/rim/itemClass	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/itemClass/_oneOf/1/id	@id	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/inRegister	https://w3id.org/ogc/rim/inRegister	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/realizes	https://w3id.org/ogc/rim/realizes	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/validityStatus	https://w3id.org/ogc/rim/validityStatus	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/publicationStatus	https://w3id.org/ogc/rim/publicationStatus	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/isRedacted	https://w3id.org/ogc/rim/isRedacted	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/isDeleted	https://w3id.org/ogc/rim/isDeleted	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/title	http://purl.org/dc/terms/title	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/description	http://purl.org/dc/terms/description	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/relatedItem	https://w3id.org/ogc/rim/relatedItem	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/supersededBy	https://w3id.org/ogc/rim/supersededBy	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/supersedes	https://w3id.org/ogc/rim/supersedes	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/hasAction	https://w3id.org/ogc/rim/hasAction	https://ogcincubator.github.io/registered-item-model/build/annotated/rim/schemas/register-item/schema.yaml
+/prefLabel	http://www.w3.org/2004/02/skos/core#prefLabel	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/definition	http://www.w3.org/2004/02/skos/core#definition	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/inScheme	http://www.w3.org/2004/02/skos/core#inScheme	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/refinesGenericProfile	https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/activityType	https://geolabs.github.io/bblocks-generic-profiles/def/activityType	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/metadata	https://w3id.org/ogc/api/processes/metadata	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/metadata/role		https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/metadata/title		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
+/metadata/href		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
+/inputs	https://geolabs.github.io/bblocks-generic-profiles/def/inputs	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/dataType	http://purl.org/dc/terms/type	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/inputs/id	@id	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/inputs/representation	https://geolabs.github.io/bblocks-generic-profiles/def/representation	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/inputs/minOccurs		https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/inputs/maxOccurs	https://w3id.org/ogc/api/processes/maxOccurs	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/inputs/keywords	https://w3id.org/ogc/api/processes/keywords	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/inputs/metadata	https://w3id.org/ogc/api/processes/metadata	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/inputs/metadata/role	https://w3id.org/ogc/api/processes/role	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/outputs	https://geolabs.github.io/bblocks-generic-profiles/def/outputs	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/outputs/dataType	http://purl.org/dc/terms/type	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/outputs/id	@id	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/outputs/representation	https://geolabs.github.io/bblocks-generic-profiles/def/representation	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/outputs/keywords	https://w3id.org/ogc/api/processes/keywords	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/outputs/metadata	https://w3id.org/ogc/api/processes/metadata	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/outputs/metadata/role	https://w3id.org/ogc/api/processes/role	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/source	http://purl.org/dc/terms/source	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/source/title	http://purl.org/dc/terms/title	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/source/link	http://purl.org/dc/terms/references	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/inputs/product		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/product/keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/product/metadata	https://w3id.org/ogc/api/processes/metadata	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/product/metadata/role		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/product/metadata/href		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/band		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/band/keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/band/metadata	https://w3id.org/ogc/api/processes/metadata	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/band/metadata/role		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/band/metadata/href		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/areaOfInterest		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/areaOfInterest/keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/areaOfInterest/metadata	https://w3id.org/ogc/api/processes/metadata	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/areaOfInterest/metadata/role		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/areaOfInterest/metadata/href		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/outputs/raster		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/outputs/raster/keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/outputs/raster/metadata	https://w3id.org/ogc/api/processes/metadata	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/outputs/raster/metadata/role		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/outputs/raster/metadata/href		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/product/id	@id	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/product/dataType	http://purl.org/dc/terms/type	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/product/representation	https://geolabs.github.io/bblocks-generic-profiles/def/representation	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/band/id	@id	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/band/dataType	http://purl.org/dc/terms/type	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/areaOfInterest/id	@id	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/areaOfInterest/dataType	http://purl.org/dc/terms/type	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/areaOfInterest/representation	https://geolabs.github.io/bblocks-generic-profiles/def/representation	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/inputs/areaOfInterest/minOccurs		/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/outputs/raster/id	@id	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/outputs/raster/dataType	http://purl.org/dc/terms/type	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml
+/outputs/raster/representation	https://geolabs.github.io/bblocks-generic-profiles/def/representation	/github/workspace/build/annotated/implementation-profile/band-retrieval/schema.yaml

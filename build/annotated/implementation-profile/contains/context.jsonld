@@ -175,6 +175,10 @@
       "@id": "gp:refinesGenericProfile",
       "@type": "@id"
     },
+    "activityType": {
+      "@id": "gp:activityType",
+      "@type": "@id"
+    },
     "keywords": "proc:keywords",
     "metadata": "proc:metadata",
     "inputs": {
@@ -184,11 +188,9 @@
           "@id": "dct:type",
           "@type": "@id"
         },
-        "schema": {
-          "@context": {
-            "@vocab": "https://w3id.org/ogc/api/schema/"
-          },
-          "@id": "proc:schema"
+        "representation": {
+          "@id": "gp:representation",
+          "@type": "@id"
         },
         "maxOccurs": "proc:maxOccurs",
         "metadata": {
@@ -210,11 +212,9 @@
           "@id": "dct:type",
           "@type": "@id"
         },
-        "schema": {
-          "@context": {
-            "@vocab": "https://w3id.org/ogc/api/schema/"
-          },
-          "@id": "proc:schema"
+        "representation": {
+          "@id": "gp:representation",
+          "@type": "@id"
         },
         "metadata": {
           "@context": {

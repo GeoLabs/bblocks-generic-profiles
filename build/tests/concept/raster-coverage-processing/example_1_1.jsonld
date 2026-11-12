@@ -3,16 +3,28 @@
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing",
   "type": "ProcessConcept",
   "prefLabel": "Raster Coverage Processing",
-  "definition": "Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, deriving a new raster from one or more others via a mathematical expression or a named radiometric index, cropping a coverage to a region of interest, or converting a coverage to another encoding -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).",
+  "definition": "Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, resampling it to another cell size, deriving a new raster from one or more others via a mathematical expression, a named radiometric index or a threshold, cropping a coverage to a region of interest, converting a coverage to another encoding, or depicting it as an image -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing/actions/scope-2026-11-10",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The definition extends the operations the concept covers to resampling (Generic Profile raster-resampling), thresholding (raster-thresholding) and depicting a raster as an image (raster-rendering), added the same day under this concept (decision C5 of 2026-11-10). It was: \"Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, deriving a new raster from one or more others via a mathematical expression or a named radiometric index, cropping a coverage to a region of interest, or converting a coverage to another encoding -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",

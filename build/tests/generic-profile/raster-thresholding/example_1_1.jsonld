@@ -1,0 +1,60 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-thresholding/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding",
+  "type": "GenericProfile",
+  "prefLabel": "Raster thresholding",
+  "definition": "Divides the cells of a single-band raster into two classes at a threshold that the operation determines from the raster's values, and returns the upper class as a binary mask. One single-band Raster input, one Binary mask output.",
+  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding"
+    }
+  ],
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding",
+  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "broader": [
+    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+  ],
+  "keywords": [
+    "raster",
+    "coverage",
+    "thresholding"
+  ],
+  "metadata": [
+    {
+      "title": "Process Concept: Raster Coverage Processing",
+      "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
+      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    }
+  ],
+  "inputs": {
+    "raster": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/inputs/raster",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
+      "title": "Raster (single band)",
+      "description": "the single-band raster to threshold",
+      "keywords": [
+        "raster"
+      ]
+    }
+  },
+  "outputs": {
+    "mask": {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/outputs/mask",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/binary-mask",
+      "title": "Binary mask",
+      "description": "the cells of the upper class",
+      "keywords": [
+        "mask"
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval> a gp:GenericProfile ;
+    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access> ;
+    skos:definition "Retrieves one band of an Earth observation product as a raster, over the whole product or over an area of interest. A product, a band identifier and an optional bounding box in, one Raster out." ;
+    skos:inScheme gp:generic-profile ;
+    skos:prefLabel "Band retrieval" ;
+    gp:inputs [ ns2:areaOfInterest <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/areaOfInterest> ;
+            ns2:band <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/band> ;
+            ns2:product <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/product> ] ;
+    gp:outputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/outputs/raster> ] ;
+    proc:keywords "band",
+        "product",
+        "retrieval" ;
+    proc:metadata [ dcterms:title "Process Concept: Data Discovery and Access" ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval> ;
+    rim:proposer gp:geolabs .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/areaOfInterest> dcterms:description "the area to retrieve; the whole product when absent" ;
+    dcterms:title "Bounding box" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/bounding-box> ;
+    proc:keywords "bounding box" ;
+    proc:minOccurs 0 .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/band> dcterms:description "the band to retrieve" ;
+    dcterms:title "Band identifier" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/band-identifier> ;
+    proc:keywords "band" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/product> dcterms:description "the product the band belongs to" ;
+    dcterms:title "Earth observation product" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product> ;
+    proc:keywords "product" .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/outputs/raster> dcterms:description "the retrieved band" ;
+    dcterms:title "Raster" ;
+    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
+    proc:keywords "raster" .
+

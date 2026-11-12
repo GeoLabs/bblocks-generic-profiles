@@ -1,0 +1,101 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.concept.data-discovery-and-access",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Process Concept: Data Discovery and Access",
+  "abstract": "Operations that find data products in catalogues and retrieve their data: selecting products by area, time and metadata, and retrieving bands or areas of a product, without computing new quantities from them -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-10T00:00:00Z",
+  "dateOfLastChange": "2026-11-12",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.concept"
+  ],
+  "sources": [
+    {
+      "title": "OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, \u00a77.5.1 Process Concept",
+      "link": "https://docs.ogc.org/is/14-065/14-065.html"
+    },
+    {
+      "title": "OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, \u00a71 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)",
+      "link": "https://docs.ogc.org/is/13-026r9/13-026r9.html"
+    },
+    {
+      "title": "OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, \u00a71 Scope",
+      "link": "https://portal.ogc.org/files/12-040"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "concept",
+    "SKOS",
+    "Data Discovery and Access"
+  ],
+  "sourceSchema": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/data-discovery-and-access/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/data-discovery-and-access/context.jsonld",
+  "maturity": "development",
+  "group": "Concepts",
+  "isProfileOf": [
+    "generic-profiles.concept"
+  ],
+  "shaclShapes": {
+    "generic-profiles.register": [
+      "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+    ],
+    "data-formats.vocabulary": [
+      "https://geolabs.github.io/bblocks-data-formats/_sources/vocabulary/shapes.shacl"
+    ],
+    "data-types.vocabulary": [
+      "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+    ],
+    "ogc.rim.core-ontology": [
+      "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+    ]
+  },
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/data-discovery-and-access/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/data-discovery-and-access/schema.json"
+  },
+  "sourceLdContext": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/data-discovery-and-access/context.jsonld",
+  "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/data-discovery-and-access/resolvedProperties.json",
+  "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/data-discovery-and-access/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/concept/data-discovery-and-access/",
+  "description": "Process Concept: **Data Discovery and Access**.\n\n> Operations that find data products in catalogues and retrieve their data: selecting products by area, time and metadata, and retrieving bands or areas of a product, without computing new quantities from them -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).\n\n## What it covers\n\nOperations whose purpose is to find data or to deliver it, not to compute new quantities from it: selecting the products of a collection by area, time and metadata, and retrieving a band, or an area, of one product. The four other Process Concepts of this register are defined by the data they process (vector geometries, rasters, elevation models, point clouds); this one by what it does with any of them. Added on 2026-11-10 for the OSPD processes that search a catalogue or download a band (decision of 2026-11-10).\n\n## Source\n\n- [OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, \u00a71 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)](https://docs.ogc.org/is/13-026r9/13-026r9.html)\n- [OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, \u00a71 Scope](https://portal.ogc.org/files/12-040)\n- [OGC 14-065 WPS 2.0.2 Interface Standard Corrigendum 2, \u00a77.5.1 Process Concept](https://docs.ogc.org/is/14-065/14-065.html) -- what a Process Concept is.\n\nBoth OGC standards were read on 2026-11-10: OpenSearch EO for selecting the products of a collection (`parentIdentifier`) with filters such as `cloudCover`, the Range Subsetting Extension of WCS for retrieving selected range components (bands) of a coverage.\n\n## Relations\n\n- Broader concept of (`broader`): [`product-selection`](../../generic-profile/product-selection/), [`band-retrieval`](../../generic-profile/band-retrieval/)\n\n## Register position\n\nTop tier of the four-tier model (OGC 14-065 WPS 2.0.2 \u00a77.5): **Concept** -> Generic Profile ->\nImplementation Profile -> Implementation (instance level).\n",
+  "examples": [
+    {
+      "title": "Data Discovery and Access",
+      "base-uri": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://geolabs.github.io/bblocks-generic-profiles/_sources/concept/data-discovery-and-access/examples/data-discovery-and-access.json",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/data-discovery-and-access/example_1_1.json",
+          "sizeBytes": 1818,
+          "code": "{\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access\",\n  \"type\": \"ProcessConcept\",\n  \"prefLabel\": \"Data Discovery and Access\",\n  \"definition\": \"Operations that find data products in catalogues and retrieve their data: selecting products by area, time and metadata, and retrieving bands or areas of a product, without computing new quantities from them -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept\",\n  \"hasAction\": {\n    \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access/actions/addition\",\n    \"type\": \"RegisterAction\",\n    \"actionType\": \"addition\",\n    \"proposer\": \"https://geolabs.github.io/bblocks-generic-profiles/def/geolabs\",\n    \"startedAtTime\": \"2026-11-10T00:00:00Z\",\n    \"appliesTo\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access\"\n  },\n  \"objectIdentifier\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access\",\n  \"itemClass\": \"https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept\",\n  \"inRegister\": \"https://geolabs.github.io/bblocks-generic-profiles/def/register\",\n  \"validityStatus\": \"invalid\",\n  \"publicationStatus\": \"published\",\n  \"source\": [\n    {\n      \"title\": \"OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, \u00a71 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)\",\n      \"link\": \"https://docs.ogc.org/is/13-026r9/13-026r9.html\"\n    },\n    {\n      \"title\": \"OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, \u00a71 Scope\",\n      \"link\": \"https://portal.ogc.org/files/12-040\"\n    }\n  ]\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/data-discovery-and-access/example_1_1.jsonld",
+          "sizeBytes": 1962,
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/data-discovery-and-access/context.jsonld\",\n  \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access\",\n  \"type\": \"ProcessConcept\",\n  \"prefLabel\": \"Data Discovery and Access\",\n  \"definition\": \"Operations that find data products in catalogues and retrieve their data: selecting products by area, time and metadata, and retrieving bands or areas of a product, without computing new quantities from them -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \\u00a77.5.1).\",\n  \"inScheme\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept\",\n  \"hasAction\": {\n    \"id\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access/actions/addition\",\n    \"type\": \"RegisterAction\",\n    \"actionType\": \"addition\",\n    \"proposer\": \"https://geolabs.github.io/bblocks-generic-profiles/def/geolabs\",\n    \"startedAtTime\": \"2026-11-10T00:00:00Z\",\n    \"appliesTo\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access\"\n  },\n  \"objectIdentifier\": \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access\",\n  \"itemClass\": \"https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept\",\n  \"inRegister\": \"https://geolabs.github.io/bblocks-generic-profiles/def/register\",\n  \"validityStatus\": \"invalid\",\n  \"publicationStatus\": \"published\",\n  \"source\": [\n    {\n      \"title\": \"OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, \\u00a71 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)\",\n      \"link\": \"https://docs.ogc.org/is/13-026r9/13-026r9.html\"\n    },\n    {\n      \"title\": \"OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, \\u00a71 Scope\",\n      \"link\": \"https://portal.ogc.org/files/12-040\"\n    }\n  ]\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/concept/data-discovery-and-access/example_1_1.ttl",
+          "sizeBytes": 2158,
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access> a gp:ProcessConcept ;\n    dcterms:source [ dcterms:references <https://docs.ogc.org/is/13-026r9/13-026r9.html> ;\n            dcterms:title \"OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, \u00a71 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)\" ],\n        [ dcterms:references <https://portal.ogc.org/files/12-040> ;\n            dcterms:title \"OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, \u00a71 Scope\" ] ;\n    skos:definition \"Operations that find data products in catalogues and retrieve their data: selecting products by area, time and metadata, and retrieving bands or areas of a product, without computing new quantities from them -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).\" ;\n    skos:inScheme gp:concept ;\n    skos:prefLabel \"Data Discovery and Access\" ;\n    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access/actions/addition> ;\n    rim:inRegister gp:register ;\n    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept> ;\n    rim:objectIdentifier \"https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access\"^^xsd:anyURI ;\n    rim:publicationStatus rim:published ;\n    rim:validityStatus rim:invalid .\n\n<https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access/actions/addition> a rim:RegisterAction ;\n    prov:startedAtTime \"2026-11-10T00:00:00+00:00\"^^xsd:dateTime ;\n    rim:actionType rim:additionAction ;\n    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access> ;\n    rim:proposer gp:geolabs .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: The Concept \"Data Discovery and Access\" -- see generic-profiles.concept\n  for the general shape every Concept shares.\nallOf:\n- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml\n- type: object\n  properties:\n    id:\n      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access\n      x-jsonld-id: '@id'\n    type:\n      const: ProcessConcept\n      x-jsonld-id: '@type'\n    prefLabel:\n      const: Data Discovery and Access\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel\nx-jsonld-extra-terms:\n  ProcessConcept: https://geolabs.github.io/bblocks-generic-profiles/def/ProcessConcept\n  definition: http://www.w3.org/2004/02/skos/core#definition\n  inScheme:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme\n    x-jsonld-type: '@id'\n  narrower:\n    x-jsonld-id: http://www.w3.org/2004/02/skos/core#narrower\n    x-jsonld-type: '@id'\n  source: http://purl.org/dc/terms/source\n  title: http://purl.org/dc/terms/title\n  link:\n    x-jsonld-id: http://purl.org/dc/terms/references\n    x-jsonld-type: '@id'\n  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause\nx-jsonld-prefixes:\n  gp: https://geolabs.github.io/bblocks-generic-profiles/def/\n  skos: http://www.w3.org/2004/02/skos/core#\n  dct: http://purl.org/dc/terms/\nx-bblocks-metadata:\n  itemIdentifier: generic-profiles.concept.data-discovery-and-access\n  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-11-12'\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/concept/data-discovery-and-access"
+}

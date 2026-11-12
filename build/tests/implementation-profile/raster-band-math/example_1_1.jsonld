@@ -3,28 +3,89 @@
   "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math",
   "type": "ImplementationProfile",
   "prefLabel": "Raster band math",
-  "definition": "Evaluates a user-supplied mathematical expression per pixel across one or more input rasters, producing a monoband output raster.",
+  "definition": "Implementation Profile of the operation Raster band math, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.",
   "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math"
-  },
+  "hasAction": [
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-09-30T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/actions/meaning-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Evaluates a user-supplied mathematical expression per pixel across one or more input rasters, producing a monoband output raster.\"",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/actions/operation-sources-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "The source defining the operation moves to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/actions/representation-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/rasters -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/raster -> raster-single-band-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}).",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/actions/tools-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Decision D4: tool keywords removed: OTB, BandMath; 2 format keywords removed from inputs and outputs (inputs/rasters: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB BandMath -- Outputs a monoband image from a mathematical operation on several multi-band images <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMath.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/actions/data-type-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "substantive",
+      "description": "The dataType of input `expression` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/expression, created for this role in the data-types register.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math"
+    },
+    {
+      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/actions/sections-restored-2026-11-09",
+      "type": "RegisterAction",
+      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "changeClassification": "clarifying",
+      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math"
+    }
+  ],
   "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math",
   "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
   "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math",
+  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math",
   "keywords": [
     "raster",
     "coverage",
-    "band math",
-    "OTB",
-    "BandMath"
+    "band math"
   ],
   "metadata": [
     {
@@ -42,16 +103,12 @@
     "rasters": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/inputs/rasters",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
-      "schema": {
-        "type": "string",
-        "contentEncoding": "base64",
-        "contentMediaType": "image/tiff",
-        "description": "GeoTIFF"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
+      ],
       "maxOccurs": "unbounded",
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -63,7 +120,7 @@
     },
     "expression": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/inputs/expression",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/string",
+      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/expression",
       "keywords": [
         "expression"
       ],
@@ -80,15 +137,11 @@
     "raster": {
       "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math/outputs/raster",
       "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
-      "schema": {
-        "type": "string",
-        "contentEncoding": "base64",
-        "contentMediaType": "image/tiff",
-        "description": "GeoTIFF"
-      },
+      "representation": [
+        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"
+      ],
       "keywords": [
-        "raster",
-        "GeoTIFF"
+        "raster"
       ],
       "metadata": [
         {
@@ -98,15 +151,5 @@
         }
       ]
     }
-  },
-  "source": [
-    {
-      "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
-      "link": "https://www.ogc.org/standards/wcps/"
-    },
-    {
-      "title": "OTB BandMath -- Outputs a monoband image from a mathematical operation on several multi-band images",
-      "link": "https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMath.html"
-    }
-  ]
+  }
 }

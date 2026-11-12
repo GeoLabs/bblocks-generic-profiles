@@ -1,0 +1,32 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-resampling",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Raster resampling",
+  "definition": "Changes the cell size of a raster coverage, or its number of cells along each axis, over the same extent and in the same coordinate reference system, computing each new cell value from the input cells by an interpolation method.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-resampling",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-resampling/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-10T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-resampling"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "OGC 12-039 Web Coverage Service Interface Standard - Scaling Extension 1.0, \u00a74.1 Scaling (of a grid coverage)",
+      "link": "https://portal.ogc.org/files/12-039"
+    }
+  ]
+}

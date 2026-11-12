@@ -46,6 +46,9 @@ Raster/coverage (broader: [`raster-coverage-processing`](../concept/raster-cover
 - [`raster-crop`](raster-crop/) -- one Raster and a bounding box in, one Raster out
 - [`raster-format-conversion`](raster-format-conversion/) -- one Raster and a target format in, one Raster out
 - [`raster-extent`](raster-extent/) -- one Raster in, one Geometry out (bounding envelope)
+- [`raster-resampling`](raster-resampling/) -- one Raster and a grid resolution in, one Raster out
+- [`raster-thresholding`](raster-thresholding/) -- one single-band Raster in, one binary mask out
+- [`raster-rendering`](raster-rendering/) -- one Raster and a colour map in, one rendered image out
 
 Terrain analysis (broader: [`terrain-analysis`](../concept/terrain-analysis/)):
 
@@ -59,6 +62,11 @@ Point clouds (broader: [`point-cloud-processing`](../concept/point-cloud-process
 - [`point-cloud-rasterization`](point-cloud-rasterization/) -- one point cloud and a cell size in, one raster out
 - [`point-cloud-thinning`](point-cloud-thinning/) -- one point cloud and a percentage in, one point cloud out
 - [`point-cloud-to-features`](point-cloud-to-features/) -- one point cloud in, one feature collection out
+
+Data discovery and access (broader: [`data-discovery-and-access`](../concept/data-discovery-and-access/), 2026-11-10):
+
+- [`product-selection`](product-selection/) -- an area of interest, a time interval and a collection in, the selected products out
+- [`band-retrieval`](band-retrieval/) -- a product, a band identifier and an optional bounding box in, one Raster out
 
 Each input/output also names its kind of data with `dataType`, a concept of
 the [data types register](https://geolabs.github.io/bblocks-data-types/) (`data-types.vocabulary`).
@@ -82,10 +90,10 @@ list, not yet modelled here).
 look similar ("a bounding box") but bind to genuinely different real parameters:
 `OTB.ExtractROI`'s "extent" mode takes four plain numbers, while
 `OTB.ImageEnvelope`/`SAGA.shapes_tools.19` both return an actual vector polygon. Neither
-distinction is carried at this tier any more (this tier has no type/format property at all, see
-the base schema's own note); it lives entirely at Implementation Profile, in each one's `schema`
--- `areaOfInterest`'s `$ref`s `ogc.api.processes.v1.schemas.bbox`, the extent operations' outputs
-declare GML -- see [`raster-crop`](raster-crop/)'s "`areaOfInterest` has no type at this tier"
+distinction is carried by a format at this tier (a format is forbidden here, `dataType` is a
+concept, see the base schema's own note); the format lives at Implementation Profile, in each
+one's `schema` -- `areaOfInterest`'s `$ref`s `ogc.api.processes.part1.v1.schemas.bbox`, the extent
+operations' outputs declare GML -- see [`raster-crop`](raster-crop/)'s "`areaOfInterest` is a concept at this tier, not a format"
 and [`raster-extent`](raster-extent/)'s "Why the output is a Geometry, not a BoundingBox".
 
 `unary-geometry-operation` is also where `geometry-extent` landed once it stopped being its own
@@ -228,8 +236,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -241,8 +249,8 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Illustrates the shape of a Generic Profile entry only. Real Generic Profiles are each their own building block -- see generic-profiles.generic-profile.binary-spatial-predicate, .geometry-buffer and the other siblings for actual signatures." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Example Generic Profile (placeholder, not a real signature)" ;
-    gp:inputs [ ns1:input1 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result> ] ;
+    gp:inputs [ ns2:input1 <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1> ] ;
+    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result> ] ;
     proc:keywords "example" ;
     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
@@ -282,28 +290,29 @@ description: "Generic Process Profile (OGC 14-065 WPS 2.0.2 \xA77.5.2): \"the ab
   shape (the seven binary spatial predicates, for instance) share one Generic Profile
   and differ only at Implementation Profile; `broader` links it to the Process Concept
   (generic-profiles.concept.*) documenting the general group it belongs to.\nImplementation
-  Profiles and Implementations (instance level) -- concrete, deployable processes
-  binding a Generic Profile to real formats -- are not part of this register; they
-  live wherever the implementation itself is profiled (e.g. `ospd.process-profiles.sqlmm.*`)
-  and link back here via their own `implementsProfile` property. This register does
-  not cross-reference them.\n`inputs`/`outputs` use a subset of OGC API - Processes
-  - Part 1: Core's own `InputDescription`/`OutputDescription` structure (`title`,
-  `description`, `keywords`, `minOccurs`/`maxOccurs`) rather than a custom vocabulary
-  invented for this register: this project already imports and uses that structure
-  at Implementation (instance level) (`ogc.api.processes.v1.schemas.*`), so reusing
-  it here makes all four tiers structurally, not just conceptually, consistent. There
-  is deliberately no type/format property at this tier: [OGC 14-065 WPS 2.0.2 \xA77.5.4
+  Profiles (generic-profiles.implementation-profile.*) refine a Generic Profile with
+  the formats it supports. Implementations (instance level) -- concrete, deployable
+  processes -- are not part of this register; they live wherever the implementation
+  itself is profiled (e.g. `ospd.process-profiles.sqlmm.*`) and link back here via
+  their own `implementsProfile` property. This register does not cross-reference them.\n`inputs`/`outputs`
+  use a subset of OGC API - Processes - Part 1: Core's own `InputDescription`/`OutputDescription`
+  structure (`title`, `description`, `keywords`, `minOccurs`/`maxOccurs`), plus `dataType`,
+  rather than a custom vocabulary invented for this register: this project already
+  imports and uses that structure at Implementation (instance level) (`ogc.api.processes.part1.v1.schemas.*`),
+  so reusing it here makes all four tiers structurally, not just conceptually, consistent.
+  A format is deliberately forbidden at this tier: [OGC 14-065 WPS 2.0.2 \xA77.5.4
   Table 21](https://docs.ogc.org/is/14-065/14-065.html#32) gives Generic Profile no
-  \"Data format\" row at all (only Implementation Profile does, \"D\") -- what WPS
-  \xA77.5.2 calls a \"signature\" is the existence, naming and multiplicity of inputs/outputs,
-  conveyed here in `title`/`description` prose, not a machine-checked abstract type.\nThis
-  tier is where Table 21 Declares (D) every property it lists for the Process, its
-  Inputs and its Outputs -- including `keywords` (Process, Input, Output) and `metadata`
-  (Input, Output), both taken from OGC API - Processes' own `descriptionType` (whose
-  `metadata` item, `ogc.api.processes.v1.schemas.metadata`, is WPS Table 5's Metadata
-  structure: `title`, `role`, `href`). Profile-level references, with the Table 22
-  roles, are made once, on the process itself: here, to this Generic Profile's superior,
-  its Process Concept (`http://www.opengis.net/spec/wps/2.0/def/process-profile/concept`)
+  \"Data format\" row at all (only Implementation Profile does, \"D\"). `dataType`
+  is not a format: it is a concept of the bblocks-data-types register, the kind of
+  data a role takes, not its encoding. What WPS \xA77.5.2 calls a \"signature\" is
+  the existence, naming, `dataType` and multiplicity of inputs/outputs; `title`/`description`
+  explain them in prose.\nThis tier is where Table 21 Declares (D) every property
+  it lists for the Process, its Inputs and its Outputs -- including `keywords` (Process,
+  Input, Output) and `metadata` (Input, Output), both taken from OGC API - Processes'
+  own `descriptionType` (whose `metadata` item, `ogc.api.processes.part1.v1.schemas.metadata`,
+  is WPS Table 5's Metadata structure: `title`, `role`, `href`). Profile-level references,
+  with the Table 22 roles, are made once, on the process itself: here, to this Generic
+  Profile's superior, its Process Concept (`http://www.opengis.net/spec/wps/2.0/def/process-profile/concept`)
   -- the list Table 21 footnote a requires the Implementation Profile to extend. An
   input's or output's own `metadata` only ever references the corresponding input/output
   of a superior profile; a Process Concept has none, so at this tier it is declared
@@ -371,7 +380,7 @@ allOf:
         with Table 22 roles -- here the Process Concept(s) of `broader`.'
       type: array
       items:
-        $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+        $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
       contains:
         type: object
         required:
@@ -404,9 +413,9 @@ allOf:
       x-jsonld-id: http://purl.org/dc/terms/source
     inputs:
       description: 'Keyed by role name. A subset of OGC API - Processes Part 1 Core''s
-        own InputDescription: `title`/`description` carry the "signature" informally,
-        `minOccurs`/`maxOccurs` are the one machine-checkable property this tier actually
-        has (Table 21: Input.Multiplicity, D).'
+        own InputDescription, plus `dataType`: `title`/`description` explain the role
+        in prose; `dataType` and `minOccurs`/`maxOccurs` (Table 21: Input.Multiplicity,
+        D) are its machine-checkable properties.'
       type: object
       minProperties: 1
       additionalProperties:
@@ -451,7 +460,7 @@ allOf:
               normally empty at this tier.
             type: array
             items:
-              $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+              $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
             x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
           minOccurs:
             type: integer
@@ -514,7 +523,7 @@ allOf:
               As for inputs, normally empty at this tier.'
             type: array
             items:
-              $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/metadata/schema.yaml
+              $ref: https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
             x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
       x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
       x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
@@ -529,7 +538,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-04'
+  dateOfLastChange: '2026-11-12'
 
 ```
 

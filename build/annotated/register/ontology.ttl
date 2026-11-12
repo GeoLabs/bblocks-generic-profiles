@@ -15,6 +15,20 @@ gp:ProcessConcept a owl:Class ;
     rdfs:subClassOf skos:Concept,
         rim:RegisterItem .
 
+gp:activityType a owl:ObjectProperty ;
+    rdfs:label "activity type" ;
+    rdfs:comment "Relates an Implementation Profile to the activity type that holds the meaning of its operation: definition, standards, illustrations." ;
+    rdfs:domain gp:ImplementationProfile ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:range <https://w3id.org/ogc/rim/activity-type/ActivityType> ;
+    rdfs:subPropertyOf rim:relatedItem .
+
+gp:amendmentAction a skos:Concept,
+        rim:RegisterActionType ;
+    rdfs:isDefinedBy gp: ;
+    skos:definition "An in-place change to a proposal, an item with no control-body decision recorded. Always classified, clarifying or substantive."@en ;
+    skos:prefLabel "amendment"@en .
+
 gpic:generic-profile a rim:RegisterItemClass ;
     dct:description "WPS 2.0.2 §7.5.2: the abstract signature (named inputs/outputs, multiplicity, abstract data type) of one or more operations; no data format. Items of this class are gp:GenericProfile instances."@en ;
     dct:title "Generic Profile"@en ;
@@ -47,16 +61,15 @@ gp:refinesGenericProfile a owl:ObjectProperty ;
     rdfs:range gp:GenericProfile ;
     rdfs:subPropertyOf rim:relatedItem .
 
+gp:representation a owl:ObjectProperty ;
+    rdfs:label "representation" ;
+    rdfs:comment "Relates an input or output of an Implementation Profile to a representation (df:Representation) of the data-formats register in which it is exchanged: Table 21 Data format (D) of OGC 14-065 WPS 2.0.2, by IRI." ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:range <https://w3id.org/geolabs/ospd/data-formats/Representation> .
+
 gp:GenericProfile a owl:Class ;
     rdfs:label "Generic Profile" ;
     rdfs:comment "A register item of item class gpic:generic-profile (OGC 14-065 WPS 2.0.2 §7.5.2)." ;
-    rdfs:isDefinedBy gp: ;
-    rdfs:subClassOf skos:Concept,
-        rim:RegisterItem .
-
-gp:ImplementationProfile a owl:Class ;
-    rdfs:label "Implementation Profile" ;
-    rdfs:comment "A register item of item class gpic:implementation-profile (OGC 14-065 WPS 2.0.2 §7.5.3)." ;
     rdfs:isDefinedBy gp: ;
     rdfs:subClassOf skos:Concept,
         rim:RegisterItem .
@@ -65,14 +78,36 @@ gp:registerSystem a rim:RegisterSystem ;
     rdfs:label "OGC Building Blocks register (bblocks-postprocess, GitHub Pages)" ;
     rdfs:seeAlso <https://github.com/GeoLabs/bblocks-generic-profiles/> .
 
+gp:specification a rim:RegisterSpecification ;
+    dct:description "Amendment. gp:amendmentAction is the action type of an in-place change to a proposal, an item with no control-body decision recorded. Such an action is always classified, clarifying or substantive: it is the classified rim:RegisterAction of the rule for proposals. This type is specific to this register and will be replaced if the Registered Item Model defines one."@en,
+        "Eligibility. An item is eligible for an item class if it carries what the class allows and nothing it excludes. Process Concept: the meaning of a group of operations, with no input, output, format or tool. Generic Profile: a signature in dataType concepts, with no format and no tool. Implementation Profile: a signature, representations, an activityType and domain keywords, with no tool, host or testbed. Existing items reach this state as amended proposals. Activity type: the meaning of one operation, its definition, the standards that define it and its illustrations, and the GeoSPARQL classes of the entities its activities use or generate, with no named role, format or tool; one per operation, of the item class of the Activity Type Register, a sub-class of geoproc:GeoprocessingActivityType with at least one GeoSPARQL spatial entity type. GeoLabs is the only proposer recorded so far; no criteria for other proposers have been set."@en,
+        "Identifiers. The object identifier of an item is its IRI, https://geolabs.github.io/bblocks-generic-profiles/def/<tier>/<name>, with <tier> one of concept, generic-profile, implementation-profile or activity-type. An object identifier never redirects; only a functional identifier may. The identifier of a published item changes only by an explicit decision."@en,
+        "Proposals. While an item is a proposal, with no control-body decision recorded, it is amended in place, with a classified `rim:RegisterAction`. The substantive rule applies once it has been accepted."@en,
+        "Register type. A content register, as the Registered Item Model uses the term: items carry their own name and definition, and there is no concept plane. To be reviewed if a concept plane of operations is created later. The activity types, one per operation, live in this register pending decision D8 on how the Activity Type Register is integrated; the register stays a content register meanwhile, to be reviewed with the answers of the Registered Item Model and Activity Type Register maintainers."@en,
+        "Roles. GeoLabs SARL is the register owner, the register manager and, for now, the control body. GeoLabs intends to delegate the control body role to the OGC or to an OSPD working group."@en,
+        "Scope. This register holds three item classes, the first three tiers of OGC 14-065 WPS 2.0.2 §7.5: Process Concept, Generic Profile and Implementation Profile. It also holds one activity type per operation (acttype:ActivityType, of the item class of the Activity Type Register): the meaning of the operation, to which its Implementation Profiles point with gp:activityType (decision D3): one or more per activity type. Real deployed or deployable processes, the Implementation (instance level), are not items of this register."@en,
+        "Versions. An addition is an action of type addition, with no classification. A substantive change creates a new item or a new version, linked by rim:supersededBy, with an action classified substantive. A clarifying change keeps the item and its version, with an action classified clarifying. The classification correctional is not available. An item is retired by unpublishing it, not by deleting it."@en,
+        "What is substantive here. Substantive: a role added or removed, a change of dataType, cardinality or representation. Clarifying: description, keywords, documentary links. For an activity type: substantive, a change of its parent class or of an entity type; clarifying, its label, a rewording of its definition with the same meaning, its sources."@en ;
+    dct:title "Generic Process Profiles register specification"@en ;
+    rim:definesSubstantiveChange "A change is substantive when a register user may have to change their data, profiles or processes because of it, or when it changes what an item means. Any other change to an existing item is clarifying." .
+
+gp:ImplementationProfile a owl:Class ;
+    rdfs:label "Implementation Profile" ;
+    rdfs:comment "A register item of item class gpic:implementation-profile (OGC 14-065 WPS 2.0.2 §7.5.3)." ;
+    rdfs:isDefinedBy gp: ;
+    rdfs:subClassOf skos:Concept,
+        rim:RegisterItem .
+
 gp:geolabs a prov:Organization ;
     rdfs:label "GeoLabs SARL" ;
     rdfs:seeAlso <https://www.geolabs.fr/> .
 
 gp:register a rim:Register ;
-    dct:description "A general-purpose, engine- and format-agnostic vocabulary of process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5), published as an OGC Building Blocks register."@en ;
+    dct:description "A general-purpose, provider-independent vocabulary of process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5), published as an OGC Building Blocks register."@en ;
     dct:title "Generic Process Profiles"@en ;
+    rim:controlBody gp:geolabs ;
     rim:functionalIdentifier "https://geolabs.github.io/bblocks-generic-profiles/"^^xsd:anyURI ;
+    rim:hasSpecification gp:specification ;
     rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/register"^^xsd:anyURI ;
     rim:registerManager gp:geolabs ;
     rim:registerOwner gp:geolabs ;

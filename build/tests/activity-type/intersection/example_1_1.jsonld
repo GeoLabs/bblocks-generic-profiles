@@ -1,0 +1,39 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/intersection/context.jsonld",
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersection",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Intersection",
+  "altLabel": [
+    "ST_Intersection"
+  ],
+  "definition": "Returns a geometric object representing the point set intersection of this geometric object with anotherGeometry.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersection",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersection/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-09T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersection"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.24",
+      "link": "https://www.ogc.org/standards/sfa/"
+    },
+    {
+      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.25 ST_Intersection"
+    }
+  ]
+}
