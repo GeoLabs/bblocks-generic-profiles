@@ -1,0 +1,24 @@
+# Must fail: activityType is an IRI outside the activity types of this register. Only gp:ImplementationProfileShape can reject it.
+@prefix gp:   <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gpic: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/> .
+@prefix rim:  <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-activity-type-outside-register> a gp:ImplementationProfile ;
+    skos:prefLabel "Fixture" ;
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+    gp:activityType <https://w3id.org/ogc/rim/activity-type/ActivityType> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-activity-type-outside-register"^^xsd:anyURI ;
+    rim:itemClass gpic:implementation-profile ;
+    rim:inRegister gp:register ;
+    rim:validityStatus rim:invalid ;
+    rim:publicationStatus rim:published ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-activity-type-outside-register/actions/addition> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-activity-type-outside-register/actions/addition> a rim:RegisterAction ;
+    rim:actionType rim:additionAction ;
+    rim:proposer gp:geolabs ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-activity-type-outside-register> ;
+    prov:startedAtTime "2026-11-09T00:00:00Z"^^xsd:dateTime .

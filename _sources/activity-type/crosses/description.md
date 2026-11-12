@@ -1,0 +1,28 @@
+Activity type: **Crosses**.
+
+> Returns TRUE if this geometric object 'spatially crosses' anotherGeometry: the intersection results in a geometry of dimension one less than the maximum dimension of the two source geometries, and the intersection set is interior to both.
+
+SQL/MM name: `ST_Crosses`.
+
+## The item
+
+`https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/crosses` is an `acttype:ActivityType` item of this register (`gp:register`), of the Activity Type Register's item class, and an OWL class, sub-class of `geoproc:GeoprocessingActivityType`.
+
+Its activities use or generate spatial data, declared with GeoSPARQL 1.1 classes: `usedEntityType` `geo:Geometry`. The class is chosen per kind of role (see `scripts/activity-types.yaml`); how a data type of `bblocks-data-types` maps to an entity type is still open (decision D8, question 5).
+
+The run of an activity of this type is not typed here (decision D8, open).
+
+## Sources
+
+- [OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.17](https://www.ogc.org/standards/sfa/)
+- ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.12 ST_Crosses
+
+## Illustration
+
+![ST_Crosses](assets/st_crosses.png)
+
+Source: [PostGIS Workshop -- Spatial Relationships](https://postgis.net/workshops/postgis-intro/spatial_relationships.html), © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).
+
+## Profiles of this operation
+
+The Implementation Profile [`generic-profiles.implementation-profile.crosses`](../../implementation-profile/crosses/) points here with `activityType`. It holds the signature and the representations; this item holds the meaning.

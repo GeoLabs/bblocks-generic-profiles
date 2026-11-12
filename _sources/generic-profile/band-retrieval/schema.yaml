@@ -1,0 +1,31 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: >-
+  The Generic Profile "Band retrieval" -- see generic-profiles.generic-profile for the general
+  shape every Generic Profile shares.
+allOf:
+  - $ref: bblocks://generic-profiles.generic-profile
+  - type: object
+    properties:
+      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval"}
+      type: {const: GenericProfile}
+      prefLabel: {const: "Band retrieval"}
+  - type: object
+    properties:
+      metadata:
+        allOf:
+        - contains:
+            type: object
+            required: [role, href]
+            properties:
+              role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
+              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access'}
+      inputs:
+        required: [product, band, areaOfInterest]
+        properties:
+          product: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/product"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product"}}}
+          band: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/band"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/band-identifier"}}}
+          areaOfInterest: {required: [id, dataType, minOccurs], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/areaOfInterest"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/bounding-box"}, minOccurs: {const: 0}}}
+      outputs:
+        required: [raster]
+        properties:
+          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}}}

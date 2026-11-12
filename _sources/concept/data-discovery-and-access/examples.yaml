@@ -1,0 +1,5 @@
+- title: Data Discovery and Access
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/concept/
+  snippets:
+  - language: json
+    ref: examples/data-discovery-and-access.json

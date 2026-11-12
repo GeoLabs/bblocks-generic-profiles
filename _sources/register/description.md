@@ -18,6 +18,9 @@ same graph as any other register mapped onto the model.
 | `rim:RegisterItem` sub-class | `gp:GenericProfile` -- JSON `type: GenericProfile` | `.../def/GenericProfile` |
 | `rim:RegisterItem` sub-class | `gp:ImplementationProfile` -- JSON `type: ImplementationProfile` | `.../def/ImplementationProfile` |
 | `rim:relatedItem` sub-property | `gp:refinesGenericProfile` (Implementation Profile -> Generic Profile) | |
+| `rim:relatedItem` sub-property | `gp:activityType` (Implementation Profile -> activity type) | |
+| (not a RIM relation) | `gp:representation` (Implementation Profile input/output -> `df:Representation` of `bblocks-data-formats`, decision D6) | |
+| `acttype:ActivityType` (Activity Type Register) | the meaning of one operation, `generic-profiles.activity-type.*`, item class `acttype:activityTypeItemClass` | `.../def/activity-type/<operation>` |
 
 The three item types remain `skos:Concept`s as well (that is what they were typed as before this
 block existed, and what `prefLabel`/`definition`/`inScheme`/`broader` presuppose), so nothing
@@ -38,14 +41,50 @@ The Concept tier's JSON `type` is `ProcessConcept`, not `Concept`: the inherited
 binds `Concept` to `rim:Concept` (the model's concept-plane class), and the assembled context
 would otherwise carry two meanings for one term.
 
-## Activity-type register is not this register's tier 3
+## Register specification
 
-This register contains provider-independent Implementation Profiles (tier 3). The process types
-that classify real execution records belong with the deployable process profiles (tier 4), in
-`bblocks-process-profiles`. There, `ospd.process-profiles.process-type` already supplies the IRI
-that provenance `Activity` records carry as their `activityType`. It is the natural place to align
-those process types with the Registered Item Model's `acttype:ActivityType`; this register does not
-assert a speculative cross-link.
+`gp:specification` (`ontology.ttl`), linked from `gp:register` by `rim:hasSpecification`, is this
+register's `rim:RegisterSpecification`: scope, register type, roles, identifier and version rules,
+eligibility, and what counts as a substantive change. GeoLabs SARL is the control body for now, with
+the stated intention of delegating that role to the OGC or to an OSPD working group.
+
+`rim:definesSubstantiveChange` reads:
+
+> A change is substantive when a register user may have to change their data, profiles or processes because of it, or when it changes what an item means. Any other change to an existing item is clarifying.
+
+The version rule (a substantive change creates a new item or version, a clarifying change keeps
+them) is specific to this project's registers and does not come from ISO 19135. The rule for
+proposals is what applies to every item today:
+
+> While an item is a proposal, with no control-body decision recorded, it is amended in place, with a classified `rim:RegisterAction`. The substantive rule applies once it has been accepted.
+
+The classified action of that rule has the type `gp:amendmentAction`, defined by this
+specification: an in-place change to a proposal, with no control-body decision recorded, always
+classified `clarifying` or `substantive`. The Registered Item Model has no such type and lets a
+register specification define one; this type is specific to this register and will be replaced if
+the model defines one. No shape enforces the classification of such an action: the model's
+`rim:RegisterActionShape` only limits it to one.
+
+The criteria for proposers other than GeoLabs have not been set.
+
+## Activity types: the meaning of each operation
+
+An Implementation Profile is not an activity type: `rim:RegisterItemShape` allows one item class per
+item, and `gpic:implementation-profile` and `acttype:activityTypeItemClass` are two
+(`docs/implementation-profile-vs-activity-type.md`). The meaning of an operation is therefore held by
+a separate item of this register, one per operation (decision D3, 2026-11-05):
+`generic-profiles.activity-type.*`, typed `acttype:ActivityType`, of the Activity Type Register's item
+class, in `gp:register`. It carries the operation's definition, the standards that define it (Simple
+Feature Access, SQL/MM `ST_*` names, WCPS, the literature of terrain indices) and its illustrations.
+
+Each Implementation Profile links to it with `activityType` (`gp:activityType`, a sub-property of
+`rim:relatedItem`, exactly one IRI). The Implementation Profile keeps the signature, the
+representations and domain keywords (decision D4).
+
+The process types of deployed processes (tier 4, `ospd.process-profiles.process-type` in
+`bblocks-process-profiles`) are activity types too. How they relate to these items, and how a run is
+typed, is not settled here: it waits for the answers of the model maintainers
+(`docs/questions-for-rim-atr-maintainers.md`, decision D8).
 
 ## Entry into the register: a proposed addition, not a status
 
@@ -75,11 +114,12 @@ something the model states -- to settle with the model's authors.
 
 ## Two deliberate limits
 
-- **Content register, no concept plane.** ISO 19135:2026 lets a register separate meaning
-  (`rim:Concept`/`rim:ConceptVersion`) from representation (`rim:RegisterItem`). Here all three
-  tiers are register items with their own `prefLabel`/`definition` -- the lightest conformant
-  register type. Whether Process Concepts should rather be the concept plane that Generic
-  Profiles `rim:realizes` is left open; the current choice is the one that claims least.
+- **Content register, no concept plane.** The Registered Item Model lets a register separate
+  meaning (`rim:Concept`/`rim:ConceptVersion`) from representation (`rim:RegisterItem`). Here all
+  three tiers are register items with their own `prefLabel`/`definition`. The specification records
+  this choice, to be reviewed if a concept plane of operations is created later. The activity types
+  live here pending decision D8; the register stays a content register meanwhile, to be reviewed
+  with the maintainers' answers.
 - **Depends on the model's JSON binding.** The `allOf` above needs the Registered Item Model's
   `register-item` schema not to pin `type` to `"rim:RegisterItem"` and its context to map the
   `rim:*` terms. Both were contributed by GeoLabs (2026-10-26) and are part of the published model

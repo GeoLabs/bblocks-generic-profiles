@@ -22,7 +22,7 @@ allOf:
       inputs:
         properties:
           rasters: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}}}
-          expression: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/string"}}}
+          expression: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/expression"}}}
       outputs:
         properties:
           raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}}}

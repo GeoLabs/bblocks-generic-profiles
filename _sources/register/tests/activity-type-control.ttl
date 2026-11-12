@@ -1,0 +1,24 @@
+# Must pass: the control of the activity-type-*-fail fixtures here, an Implementation Profile with one activity type of this register.
+@prefix gp:   <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gpic: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/> .
+@prefix rim:  <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-activity-type-control> a gp:ImplementationProfile ;
+    skos:prefLabel "Fixture" ;
+    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects> ;
+    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-activity-type-control"^^xsd:anyURI ;
+    rim:itemClass gpic:implementation-profile ;
+    rim:inRegister gp:register ;
+    rim:validityStatus rim:invalid ;
+    rim:publicationStatus rim:published ;
+    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-activity-type-control/actions/addition> .
+
+<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-activity-type-control/actions/addition> a rim:RegisterAction ;
+    rim:actionType rim:additionAction ;
+    rim:proposer gp:geolabs ;
+    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/fixture-activity-type-control> ;
+    prov:startedAtTime "2026-11-09T00:00:00Z"^^xsd:dateTime .

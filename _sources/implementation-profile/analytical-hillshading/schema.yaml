@@ -9,6 +9,7 @@ allOf:
       type: {const: ImplementationProfile}
       prefLabel: {const: "Analytical hillshading"}
       refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading"}
+      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/analytical-hillshading"}
       # Table 21 against analytical-hillshading: keywords Extend (E), metadata Extend
       # (E, footnote a: Table 22 references on the process, input/output-level ones below),
       # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,
@@ -98,9 +99,9 @@ allOf:
     properties:
       inputs:
         properties:
-          elevation: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/elevation"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model"}}}
+          elevation: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/elevation"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff"]}}}
           azimuth: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/azimuth"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/number"}}}
           altitude: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/altitude"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/number"}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"}}}
+          result: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"]}}}

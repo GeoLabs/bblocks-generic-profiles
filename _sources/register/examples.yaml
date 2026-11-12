@@ -8,6 +8,13 @@ prefixes:
   prov: http://www.w3.org/ns/prov#
 
 examples:
+  - title: The register, its item classes and its specification
+    content: |
+      The ontology of this block as published, validated here as data: this is what checks
+      `gp:register` and `gp:specification` against the model's shapes.
+    snippets:
+      - language: turtle
+        ref: ontology.ttl
   - title: One chain of this register as ISO 19135:2026 register items
     content: |
       The register, its three item classes and one item per tier -- the real chain
@@ -75,6 +82,7 @@ examples:
               a gp:ImplementationProfile ;
               skos:prefLabel "Intersects" ;
               gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+              gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects> ;
               rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects"^^xsd:anyURI ;
               rim:itemClass gpic:implementation-profile ;
               rim:inRegister gp:register ;

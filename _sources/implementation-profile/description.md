@@ -18,13 +18,26 @@ operation, each `allOf`-referencing this one and adding its own `const`-pinned
 - 7 raster/coverage operations bound to GDAL/OTB (Raster reprojection, Raster band math, Raster
   band math (multi-band output), Radiometric index, Raster crop, Raster format conversion,
   Raster extent).
+- 4 terrain operations and 3 point cloud operations, bound to GeoTIFF and LAS.
+- 6 profiles added on 2026-11-10 for the OSPD processes that were not attached: Radiometric index
+  (single-band rasters), Raster resampling, Otsu thresholding and Raster rendering (raster), Product
+  selection and Band retrieval (data discovery and access), bound to GeoTIFF, GeoJSON, STAC Item and
+  PNG. Radiometric index and Radiometric index (single-band rasters) share one activity type.
+
+The meaning of each operation, and the standards that define it (Simple Feature Access, SQL/MM,
+WCPS, the literature of terrain indices), are its activity type, `activityType`
+(`generic-profiles.activity-type.*`, decisions D3 and D4). An Implementation Profile item carries no
+tool, host or testbed keyword or source (D4); the texts above and in each profile's `description.md`
+still name the tools its defaults were grounded in. The processes that implement a profile, and the
+tools behind them, are profiled in
+`bblocks-process-profiles`.
 
 Three of the vector operations (Centroid, Convex hull, Geometry extent) share one Generic
 Profile, `unary-geometry-operation` (Geometry -> Geometry); Is simple refines
 `unary-spatial-predicate` (Geometry -> Boolean); Area refines `geometry-measure`
 (Geometry -> Number). Centroid, Convex hull, Is simple and Area (2026-10-06) are grounded in
 [OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1](https://www.ogc.org/standards/sfs/),
-the harmonized-with-SQL predecessor to 06-103r4 that the other SQL/MM-bound operations below
+the harmonized-with-SQL predecessor to 06-103r4 that the other SQL/MM-bound operations above
 already use.
 
 ## What Table 21 asks this tier to carry, and how each row is enforced
@@ -45,16 +58,16 @@ Generic Profile (generated from it by `scripts/apply_table21_keywords_metadata.p
 | Input Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile input's |
 | Input Metadata | D | **E/O** ᵃ | E/O ᵃ | `metadata` must reference the corresponding Generic Profile input (`generic-input`, below) |
 | Input Multiplicity | D | **R** ᶜ | E ᵈ | only where declared: `maxOccurs` ≤ the Generic Profile's; `minOccurs` between 0 and the Generic Profile's -- making an input optional is allowed, a register choice beyond footnote c; no declaration means the default, exactly one |
-| Input Data format | -- | **D** | E ᵈ | `schema` |
+| Input Data format | -- | **D** | E ᵈ | `representation`: IRIs of representations of `bblocks-data-formats` (decision D6) |
 | Output (the set itself) | | | E ᵇ | every Generic Profile output must be listed (`required`) |
 | Output Identifier, Title, Abstract | D | **I** | I | as for inputs |
 | Output Keywords | D | **E** | E | `keywords` must `contain` the Generic Profile output's |
 | Output Metadata | D | **O** | O | `metadata` references the corresponding Generic Profile output (`generic-output`): a register choice, Table 21 leaves it free |
-| Output Data format | -- | **D** | E ᵈ | `schema` |
+| Output Data format | -- | **D** | E ᵈ | `representation`, as for inputs |
 
 ᵃ *"The list of metadata references to superior process profiles shall be extended.
 Documentation metadata may be overridden."* The references are Table 5 Metadata structures
-(`title`, `role`, `href` -- OGC API - Processes' own `ogc.api.processes.v1.schemas.metadata`)
+(`title`, `role`, `href` -- OGC API - Processes' own `ogc.api.processes.part1.v1.schemas.metadata`)
 whose `role` is a Table 22 identifier: `http://www.opengis.net/spec/wps/2.0/def/process-profile/`
 `concept`, `generic` or `implementation`. ᵇ additional optional inputs or supplementary outputs.
 ᶜ maximum only, never the minimum. ᵈ more or larger inputs, additional formats.
@@ -85,11 +98,17 @@ Profile (a Process Concept has no inputs), `generic-input` here, and `generic-in
 `ospd.process-profiles.sqlmm.area`'s `processDescription.inherited.json`. On the process: `concept`
 at Generic Profile, `concept` + `generic` here, all three at the instance level.
 
-`schema` -- OGC API - Processes Part 1 Core's own property, a full JSON Schema / OpenAPI Schema
-Object, able to `$ref` a real shared type's own published schema (e.g.
-`ogc.api.processes.v1.schemas.bbox`) -- is Table 21's Data format. Every input/output is listed,
-but only those that carry spatial/raster/bbox data have a `schema`; a plain `String`/`Number`/
-`Boolean` parameter (an expression, a CRS code, a distance) has no format to declare.
+`representation` is Table 21's Data format (decision D6, 2026-11-05): one or more IRIs of
+representations of the [`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats)
+register (`https://w3id.org/geolabs/ospd/data-formats/representation/...`). A representation
+realizes a version of a data type of `bblocks-data-types` and points to one format, which carries
+the specification, the media types observed and, where there is one, a JSON Schema fragment. Until
+2026-11-09 this tier copied a JSON Schema into a `schema` property instead; that schema stays at the
+Implementation (instance level), as the deployed process serves it. `gp:RepresentationReferenceShape`
+rejects a `schema` on an input or output of tiers 2 and 3, a representation that is not a
+`df:Representation`, and one that realizes neither the role's data type nor a broader one. Only
+inputs/outputs that carry spatial, raster, point cloud or bbox data have a representation; a plain
+parameter (an expression, a CRS, a distance) has none.
 
 **The declared default is kept deliberately minimal** -- one format per data-carrying role (GML
 for vector geometry, GeoTIFF for raster), not an exhaustive list of everything a deployment might

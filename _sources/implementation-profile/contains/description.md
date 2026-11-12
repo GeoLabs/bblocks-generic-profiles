@@ -1,6 +1,28 @@
 Implementation Profile: **Contains**.
 
-> Returns TRUE if this geometric object spatially contains anotherGeometry (no point of anotherGeometry lies outside this geometric object, and at least one point of the interior of anotherGeometry lies in the interior of this geometric object).
+> Implementation Profile of the operation Contains, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial predicate, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration --
+is the activity type [`generic-profiles.activity-type.contains`](../../activity-type/contains/), to which this
+profile points with `activityType` (decisions D3 and D4).
+
+## Signature and representations
+
+The signature of the Generic Profile [Binary spatial predicate](../../generic-profile/binary-spatial-predicate/), with each data-carrying
+input and output bound to a representation of the
+[`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats) register (Table 21 Data
+format, D; decision D6):
+
+| Role | Data type | Representation |
+|---|---|---|
+| input `geometry1` | `geometry` | [`geometry-gml`](https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml) (Geometry as GML) |
+| input `geometry2` | `geometry` | [`geometry-gml`](https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml) (Geometry as GML) |
+| output `result` | `boolean` | -- |
+
+The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
+2.0.2 §7.5.4 Table 21, footnote d).
 
 ## Source
 
@@ -20,7 +42,7 @@ concrete SQL binding an Implementation Profile is specifically meant to add (OGC
 
 ## Illustration
 
-![ST_Within](assets/st_within.png)
+![ST_Within](../../activity-type/contains/assets/st_within.png)
 
 This diagram illustrates `ST_Within`, not `ST_Contains` directly -- PostGIS's own workshop does not give `ST_Contains` a separate figure, since the two predicates are logical inverses of one another (reading the diagram the other way around, with the roles of the two geometries swapped, illustrates `Contains`).
 
@@ -35,6 +57,7 @@ Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-06
 ## Relations
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.binary-spatial-predicate`](../../generic-profile/binary-spatial-predicate/)
+- `activityType`: [`generic-profiles.activity-type.contains`](../../activity-type/contains/)
 
 ## Register position
 
@@ -43,3 +66,17 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
 this register: see [`ospd.process-profiles.sqlmm.contains`](https://github.com/GeoLabs/bblocks-process-profiles/tree/master/_sources/sqlmm/contains)
 in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum testbed
 (<https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Contains>), which matches this tier's own minimal default (GML), specialised to one concrete version and root element, GML 3.1.0 Polygon.
+
+That process names this profile with `implementsProfile`. Tools, hosts and testbeds are
+recorded there; this item carries none as keyword or source (decision D4). The sections
+above keep the tools and testbed that its defaults were grounded in.
+
+## Changes
+
+A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
+
+- `meaning-2026-11-09`, substantive
+- `operation-sources-2026-11-09`, clarifying
+- `representation-2026-11-09`, substantive
+- `tools-2026-11-09`, clarifying
+- `sections-restored-2026-11-09`, clarifying

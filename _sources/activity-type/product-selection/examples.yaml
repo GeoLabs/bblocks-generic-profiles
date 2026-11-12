@@ -1,0 +1,5 @@
+- title: Product selection
+  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/
+  snippets:
+  - language: json
+    ref: examples/product-selection.json

@@ -1,0 +1,31 @@
+{
+  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Raster rendering",
+  "definition": "Depicts a raster as an image for viewing, giving each cell a colour from a colour map that associates values, or classes of values, with colours.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "startedAtTime": "2026-11-10T00:00:00Z",
+    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
+  "source": [
+    {
+      "title": "OGC 05-077r4 Symbology Encoding Implementation Specification 1.1.0, §11.5 Raster Symbolizer (ColorMap with the Categorize or Interpolate function)",
+      "link": "https://portal.ogc.org/files/05-077r4"
+    }
+  ]
+}

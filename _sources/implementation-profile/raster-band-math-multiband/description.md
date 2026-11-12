@@ -1,6 +1,28 @@
 Implementation Profile: **Raster band math (multi-band output)**.
 
-> Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.
+> Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration --
+is the activity type [`generic-profiles.activity-type.raster-band-math-multiband`](../../activity-type/raster-band-math-multiband/), to which this
+profile points with `activityType` (decisions D3 and D4).
+
+## Signature and representations
+
+The signature of the Generic Profile [Raster band math](../../generic-profile/raster-band-math/), with each data-carrying
+input and output bound to a representation of the
+[`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats) register (Table 21 Data
+format, D; decision D6):
+
+| Role | Data type | Representation |
+|---|---|---|
+| input `rasters` (minOccurs 1, maxOccurs unbounded) | `raster` | [`raster-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff) (Raster as GeoTIFF) |
+| input `expression` | `expression` | -- |
+| output `raster` | `raster` | [`raster-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff) (Raster as GeoTIFF) |
+
+The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
+2.0.2 §7.5.4 Table 21, footnote d).
 
 ## Source
 
@@ -48,10 +70,12 @@ on the output, not a cardinality.
 **This register does not yet model a RangeType-like structure.** Adding one properly (field
 names, per-field data types, and how a process declares what it contributes to or restricts in
 the output RangeType) is a real modelling task of its own, not a one-line schema addition, and is
-left as an open point for a future revision rather than bolted on here provisionally. For now,
-the distinction between this Implementation Profile and `raster-band-math` is documented only in
-prose (their respective `description.md` and `prefLabel`/`definition`), not structurally
-enforced in `schema` or any other schema property.
+left as an open point for a future revision rather than bolted on here provisionally. The band
+count itself is structurally enforced: since the data type `raster-single-band` was added
+(declared 2026-10-08; first used here in commit `1ec787b`, 2026-10-09), `raster-band-math`'s output
+has the dataType `raster-single-band` and this profile's keeps `raster`, each pinned by the `const`
+of the profile's `schema.yaml` (`gp:DataTypeReferenceShape` only checks that a dataType is a
+`dt:DataType`). What stays in prose only is which bands the output has.
 
 ## Data formats
 
@@ -70,11 +94,29 @@ Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-06
 ## Relations
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.raster-band-math`](../../generic-profile/raster-band-math/)
+- `activityType`: [`generic-profiles.activity-type.raster-band-math-multiband`](../../activity-type/raster-band-math-multiband/)
 
 ## Register position
 
 Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Generic Profile ->
 **Implementation Profile** -> Implementation (instance level). The fourth tier is not part of
-this register: see `ospd.process-profiles.raster.band-math-multiband` in
-`bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum testbed
+this register: see [`ospd.process-profiles.raster.band-math-multiband`](https://github.com/GeoLabs/bblocks-process-profiles/tree/master/_sources/raster/band-math-multiband)
+in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum testbed
 (<https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/OTB.BandMathX>).
+
+That process names this profile with `implementsProfile`. Tools, hosts and testbeds are
+recorded there; this item carries none as keyword or source (decision D4). The sections
+above keep the tools and testbed that its defaults were grounded in.
+
+## Changes
+
+A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
+
+- `meaning-2026-11-09`, substantive
+- `operation-sources-2026-11-09`, clarifying
+- `representation-2026-11-09`, substantive
+- `tools-2026-11-09`, clarifying
+- `data-type-2026-11-09`, substantive
+- `band-count-2026-11-09`, clarifying
+- `band-count-correction-2026-11-09`, clarifying
+- `sections-restored-2026-11-09`, clarifying

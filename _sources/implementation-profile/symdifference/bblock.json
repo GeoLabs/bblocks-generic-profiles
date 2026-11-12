@@ -1,24 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
   "name": "Implementation Profile: Symmetric difference",
-  "abstract": "Returns a geometric object representing the point set symmetric difference of this geometric object with anotherGeometry.",
+  "abstract": "Implementation Profile of the operation Symmetric difference, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial set operation, bound to data exchange formats.",
   "status": "under-development",
   "dateTimeAddition": "2026-09-30T00:00:00Z",
-  "dateOfLastChange": "2026-09-30",
+  "dateOfLastChange": "2026-11-09",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",
   "dependsOn": [
     "generic-profiles.implementation-profile"
-  ],
-  "sources": [
-    {
-      "title": "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.27",
-      "link": "https://www.ogc.org/standards/sfa/"
-    },
-    {
-      "title": "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.48 ST_SymDifference"
-    }
   ],
   "scope": "dev",
   "tags": [

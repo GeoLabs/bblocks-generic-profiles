@@ -1,9 +1,9 @@
 Process Concept: **Raster Coverage Processing**.
 
 > Operations on raster/coverage data: reprojecting a coverage to another coordinate reference
-> system, deriving a new raster from one or more others via a mathematical expression or a named
-> radiometric index, cropping a coverage to a region of interest, or converting a coverage to
-> another encoding.
+> system, resampling it to another cell size, deriving a new raster from one or more others via a
+> mathematical expression, a named radiometric index or a threshold, cropping a coverage to a
+> region of interest, converting a coverage to another encoding, or depicting it as an image.
 
 ## What a Process Concept is
 
@@ -20,8 +20,11 @@ different I/O shapes can still declare their kinship:
 [`raster-band-math`](../../generic-profile/raster-band-math/),
 [`radiometric-index`](../../generic-profile/radiometric-index/),
 [`raster-crop`](../../generic-profile/raster-crop/),
-[`raster-format-conversion`](../../generic-profile/raster-format-conversion/) and
-[`raster-extent`](../../generic-profile/raster-extent/) each declare this
+[`raster-format-conversion`](../../generic-profile/raster-format-conversion/),
+[`raster-extent`](../../generic-profile/raster-extent/),
+[`raster-resampling`](../../generic-profile/raster-resampling/),
+[`raster-thresholding`](../../generic-profile/raster-thresholding/) and
+[`raster-rendering`](../../generic-profile/raster-rendering/) each declare this
 Concept as their `broader`.
 
 Narrower concept: [`terrain-analysis`](../terrain-analysis/) -- an elevation model is a single-band
@@ -42,6 +45,13 @@ is grounded in Simple Feature Access and SQL/MM:
   below (GDAL and OTB, not WCPS, are what the Geonovum testbed actually runs), only as the
   standards-track evidence that these operations are recognised, harmonised processing concepts
   and not implementation-specific inventions.
+
+## Changes
+
+A proposal, amended in place on 2026-11-10 (`gp:amendmentAction`, `scope-2026-11-10`, classified
+substantive, decision C5): the definition now covers resampling, thresholding and depicting a raster
+as an image, the operations of three Generic Profiles added under this concept the same day. It
+changes what the concept covers; no identifier changes.
 
 ## Register position
 

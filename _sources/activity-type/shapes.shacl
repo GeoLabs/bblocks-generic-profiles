@@ -1,0 +1,38 @@
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix gp:      <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
+@prefix rim:     <https://w3id.org/ogc/rim/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+# What this register adds to an activity type. The Activity Type Register's shapes, inherited
+# through dependsOn, already require its item class and the acttype:ActivityType hierarchy
+# (acttype:ActivityTypeShape) and, for a sub-class of geoproc:GeoprocessingActivityType, a spatial
+# used or generated entity type (geoproc:GeoprocessingActivityTypesShape). rim:RegisterItemShape
+# applies through acttype:ActivityType rdfs:subClassOf rim:RegisterItem.
+#
+# These shapes are attached to generic-profiles.activity-type only, so they reach the activity
+# types of this register and not the process types of another register that imports it.
+# tests/ holds one fixture per constraint, each otherwise valid, and a control.
+gp:ActivityTypeShape a sh:NodeShape ;
+    sh:targetClass acttype:ActivityType ;
+    sh:property [ sh:path rim:inRegister ; sh:hasValue gp:register ;
+                  sh:message "An activity type of this register must be in gp:register." ] ;
+    sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ;
+                  sh:message "An activity type must have a skos:prefLabel." ] ;
+    sh:property [ sh:path skos:definition ; sh:minCount 1 ;
+                  sh:message "An activity type must define its operation (skos:definition)." ] ;
+    sh:property [ sh:path rdf:type ; sh:hasValue owl:Class ;
+                  sh:message "An activity type must be an owl:Class, so that a later process type can specialise it." ] ;
+    sh:property [
+        sh:path rim:hasAction ;
+        sh:qualifiedValueShape [
+            sh:property [ sh:path rim:actionType ; sh:hasValue rim:additionAction ] ,
+                        [ sh:path rim:proposer ;   sh:minCount 1 ]
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:minCount 1 ;
+        sh:message "An activity type must record its addition: a rim:hasAction of type rim:additionAction with a rim:proposer."
+    ] .

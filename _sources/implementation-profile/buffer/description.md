@@ -1,6 +1,28 @@
 Implementation Profile: **Buffer**.
 
-> Returns a geometric object representing all points whose distance from this geometric object is less than or equal to a given distance.
+> Implementation Profile of the operation Buffer, whose meaning is its activity type (activityType): the signature of the Generic Profile Geometry buffer, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration --
+is the activity type [`generic-profiles.activity-type.buffer`](../../activity-type/buffer/), to which this
+profile points with `activityType` (decisions D3 and D4).
+
+## Signature and representations
+
+The signature of the Generic Profile [Geometry buffer](../../generic-profile/geometry-buffer/), with each data-carrying
+input and output bound to a representation of the
+[`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats) register (Table 21 Data
+format, D; decision D6):
+
+| Role | Data type | Representation |
+|---|---|---|
+| input `geometry` | `geometry` | [`geometry-gml`](https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml) (Geometry as GML) |
+| input `distance` | `number` | -- |
+| output `result` | `surface` | [`surface-gml`](https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml) (Surface as GML) |
+
+The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
+2.0.2 §7.5.4 Table 21, footnote d).
 
 ## Source
 
@@ -20,7 +42,7 @@ concrete SQL binding an Implementation Profile is specifically meant to add (OGC
 
 ## Illustration
 
-![ST_Buffer](assets/st_buffer.png)
+![ST_Buffer](../../activity-type/buffer/assets/st_buffer.png)
 
 Source: [PostGIS Workshop -- Geometry Returning Functions](https://postgis.net/workshops/postgis-intro/geometry_returning.html), © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).
 
@@ -33,6 +55,7 @@ Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-06
 ## Relations
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.geometry-buffer`](../../generic-profile/geometry-buffer/)
+- `activityType`: [`generic-profiles.activity-type.buffer`](../../activity-type/buffer/)
 
 ## Register position
 
@@ -41,3 +64,17 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
 this register: see [`ospd.process-profiles.sqlmm.buffer`](https://github.com/GeoLabs/bblocks-process-profiles/tree/master/_sources/sqlmm/buffer)
 in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum testbed
 (<https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Buffer>), which matches this tier's own minimal default (GML), specialised to one concrete version and root element, GML 3.1.0 Polygon.
+
+That process names this profile with `implementsProfile`. Tools, hosts and testbeds are
+recorded there; this item carries none as keyword or source (decision D4). The sections
+above keep the tools and testbed that its defaults were grounded in.
+
+## Changes
+
+A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
+
+- `meaning-2026-11-09`, substantive
+- `operation-sources-2026-11-09`, clarifying
+- `representation-2026-11-09`, substantive
+- `tools-2026-11-09`, clarifying
+- `sections-restored-2026-11-09`, clarifying

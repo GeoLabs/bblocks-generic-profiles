@@ -1,6 +1,28 @@
 Implementation Profile: **Raster crop**.
 
-> Extracts the pixels of a raster coverage that fall within a region of interest.
+> Implementation Profile of the operation Raster crop, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster crop, bound to data exchange formats.
+
+## Activity type
+
+The meaning of the operation -- its definition, the standards that define it and its illustration --
+is the activity type [`generic-profiles.activity-type.raster-crop`](../../activity-type/raster-crop/), to which this
+profile points with `activityType` (decisions D3 and D4).
+
+## Signature and representations
+
+The signature of the Generic Profile [Raster crop](../../generic-profile/raster-crop/), with each data-carrying
+input and output bound to a representation of the
+[`bblocks-data-formats`](https://github.com/GeoLabs/bblocks-data-formats) register (Table 21 Data
+format, D; decision D6):
+
+| Role | Data type | Representation |
+|---|---|---|
+| input `raster` | `raster` | [`raster-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff) (Raster as GeoTIFF) |
+| input `areaOfInterest` | `bounding-box` | [`bounding-box-ogcapi-processes-bbox`](https://w3id.org/geolabs/ospd/data-formats/representation/bounding-box-ogcapi-processes-bbox) (Bounding box as OGC API - Processes bbox) |
+| output `raster` | `raster` | [`raster-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff) (Raster as GeoTIFF) |
+
+The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
+2.0.2 §7.5.4 Table 21, footnote d).
 
 ## Source
 
@@ -21,24 +43,25 @@ concrete tool binding an Implementation Profile is specifically meant to add (OG
   process wraps directly.
 - [OGC 17-069r4 OGC API - Features - Part 1: Core](https://docs.ogc.org/is/17-069r4/17-069r4.html),
   §7.15.3 -- defines the `bbox` parameter (an array of 4 or 6 numbers) that
-  `ogc.api.processes.v1.schemas.bbox` (below) itself cites as its own source.
+  `ogc.api.processes.part1.v1.schemas.bbox` (below) itself cites as its own source.
 
 ## Data format
 
-`raster` (input and output): a `schema` of `{type: string, contentEncoding: base64,
-contentMediaType: image/tiff}` (GeoTIFF) -- grounded in `OTB.ExtractROI`'s own processDescription
+`raster` (input and output): the representation `raster-geotiff` (GeoTIFF; until 2026-11-09 a
+`schema` of `{type: string, contentEncoding: base64, contentMediaType: image/tiff}`) -- grounded in `OTB.ExtractROI`'s own processDescription
 (`in`/`out` both declare `image/tiff`, `image/jpeg`, `image/png`; GeoTIFF kept as the
 georeferencing-capable default).
 
-`areaOfInterest`: a `schema` that `$ref`s
-[`ogc.api.processes.v1.schemas.bbox`](https://geolabs.github.io/bblocks-ogcapi-processes/)'s own
-published schema directly (`{bbox: [4 or 6 numbers], crs: CRS84|CRS84h}`) -- OGC API - Processes
+`areaOfInterest`: the representation `bounding-box-ogcapi-processes-bbox`, whose format
+`ogcapi-processes-bbox` (bblocks-data-formats) `$ref`s
+[`ogc.api.processes.part1.v1.schemas.bbox`](https://geolabs.github.io/bblocks-ogcapi-processes/)'s own
+published schema directly (until 2026-11-09 this role's own `schema` did) (`{bbox: [4 or 6 numbers], crs: CRS84|CRS84h}`) -- OGC API - Processes
 - Part 1: Core's own bbox type, not a bespoke format string, and grounded directly in
 `OTB.ExtractROI`'s own "extent" mode (`mode.extent.ulx`/`uly`/`lrx`/`lry`, four plain numbers).
 This Implementation Profile's Generic Profile originally typed `areaOfInterest` as `Geometry`,
 which did not match -- see [`raster-crop`](../../generic-profile/raster-crop/)'s own "Why
 `areaOfInterest` is `BoundingBox`, not `Geometry`" for that fix, now superseded in turn by
-reusing `ogc.api.processes.v1.schemas.bbox` directly rather than inventing a `BoundingBox`
+reusing `ogc.api.processes.part1.v1.schemas.bbox` directly rather than inventing a `BoundingBox`
 abstract type and a `"BBOX"` format string (see the repository README, "OGC API - Processes
 alignment"). `eoap.cct.bbox` (bblocks-eoap-cct) is a *different* type, for CWL inputs/outputs
 crossing into OGC API - Processes - Part 2: Deploy, Replace, Undeploy, not used here.
@@ -46,16 +69,38 @@ crossing into OGC API - Processes - Part 2: Deploy, Replace, Undeploy, not used 
 shape again (pixel offset/size, a circle, a reference image/vector) -- none of them a bbox or an
 encoded geometry either, and not modelled here.
 
+This is a real format gap, not a missing declaration: the testbed process `OTB.ExtractROI` takes
+the area as four numbers (`mode.extent.ulx`, `uly`, `lrx`, `lry`) with a unit
+(`mode.extent.unit`: `pxl`, `phy` or `lonlat`), not as a bbox object, so it serves no media type of
+the format `ogcapi-processes-bbox` (`application/json`, inferred) and `areaOfInterest` stays unbound
+at tier 4.
+
 Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32), a specific deployment may *Extend* (E, footnote d) this minimal default with additional formats it happens to support -- this tier intentionally does not pre-empt that.
 
 ## Relations
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.raster-crop`](../../generic-profile/raster-crop/)
+- `activityType`: [`generic-profiles.activity-type.raster-crop`](../../activity-type/raster-crop/)
 
 ## Register position
 
 Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Generic Profile ->
 **Implementation Profile** -> Implementation (instance level). The fourth tier is not part of
-this register: see `ospd.process-profiles.*` in `bblocks-process-profiles` -- real processes of
-the ZOO-Project Geonovum testbed
+this register: see [`ospd.process-profiles.raster.extract-roi`](https://github.com/GeoLabs/bblocks-process-profiles/tree/master/_sources/raster/extract-roi)
+in `bblocks-process-profiles` -- a real process of the ZOO-Project Geonovum testbed
 (<https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/OTB.ExtractROI>).
+
+That process names this profile with `implementsProfile`. Tools, hosts and testbeds are
+recorded there; this item carries none as keyword or source (decision D4). The sections
+above keep the tools and testbed that its defaults were grounded in.
+
+## Changes
+
+A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
+
+- `meaning-2026-11-09`, substantive
+- `operation-sources-2026-11-09`, clarifying
+- `representation-2026-11-09`, substantive
+- `tools-2026-11-09`, clarifying
+- `bbox-gap-2026-11-09`, clarifying
+- `sections-restored-2026-11-09`, clarifying

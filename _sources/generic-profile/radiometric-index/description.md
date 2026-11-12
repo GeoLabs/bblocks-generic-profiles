@@ -13,8 +13,9 @@ Generic Profile: **Radiometric index**.
 ## Relations
 
 - `broader`: [`generic-profiles.concept.raster-coverage-processing`](../../concept/raster-coverage-processing/)
-- Refined by (1 Implementation Profile):
+- Refined by (2 Implementation Profiles):
 - [`radiometric-index`](../../implementation-profile/radiometric-index/)
+- [`radiometric-index-single-band`](../../implementation-profile/radiometric-index-single-band/) (added 2026-11-10)
 
 ## Register position
 

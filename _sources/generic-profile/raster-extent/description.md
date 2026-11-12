@@ -17,9 +17,9 @@ Generic Profile's real binding ([`OTB.ImageEnvelope`](../../implementation-profi
 produces an actual vector polygon (GML/KML), not four plain numbers: *"Build a vector data
 containing the image envelope polygon... you can set the polygon with more points with the `sr`
 parameter"* -- `OTB.ImageEnvelope` can even densify the polygon's edges to follow a reprojection
-curve, something four corner numbers cannot represent. This tier carries no type at all (see the
-base schema's own note), but the Implementation Profile's `schema` reflects this: it declares
-GML, not a `$ref` to `ogc.api.processes.v1.schemas.bbox` the way
+curve, something four corner numbers cannot represent. This tier carries a concept, not a format
+(see the base schema's own note): the output's `dataType` is `geometry`, not `bounding-box`. The
+Implementation Profile's `schema` gives the format: it declares GML, not a `$ref` to `ogc.api.processes.part1.v1.schemas.bbox` the way
 [`raster-crop`](../raster-crop/)'s `areaOfInterest` does -- the two operations bind to genuinely
 different real parameters, a polygon here, four plain numbers there.
 

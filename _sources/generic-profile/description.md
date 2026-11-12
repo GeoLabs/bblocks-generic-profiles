@@ -35,6 +35,9 @@ Raster/coverage (broader: [`raster-coverage-processing`](../concept/raster-cover
 - [`raster-crop`](raster-crop/) -- one Raster and a bounding box in, one Raster out
 - [`raster-format-conversion`](raster-format-conversion/) -- one Raster and a target format in, one Raster out
 - [`raster-extent`](raster-extent/) -- one Raster in, one Geometry out (bounding envelope)
+- [`raster-resampling`](raster-resampling/) -- one Raster and a grid resolution in, one Raster out
+- [`raster-thresholding`](raster-thresholding/) -- one single-band Raster in, one binary mask out
+- [`raster-rendering`](raster-rendering/) -- one Raster and a colour map in, one rendered image out
 
 Terrain analysis (broader: [`terrain-analysis`](../concept/terrain-analysis/)):
 
@@ -48,6 +51,11 @@ Point clouds (broader: [`point-cloud-processing`](../concept/point-cloud-process
 - [`point-cloud-rasterization`](point-cloud-rasterization/) -- one point cloud and a cell size in, one raster out
 - [`point-cloud-thinning`](point-cloud-thinning/) -- one point cloud and a percentage in, one point cloud out
 - [`point-cloud-to-features`](point-cloud-to-features/) -- one point cloud in, one feature collection out
+
+Data discovery and access (broader: [`data-discovery-and-access`](../concept/data-discovery-and-access/), 2026-11-10):
+
+- [`product-selection`](product-selection/) -- an area of interest, a time interval and a collection in, the selected products out
+- [`band-retrieval`](band-retrieval/) -- a product, a band identifier and an optional bounding box in, one Raster out
 
 Each input/output also names its kind of data with `dataType`, a concept of
 the [data types register](https://geolabs.github.io/bblocks-data-types/) (`data-types.vocabulary`).
@@ -71,10 +79,10 @@ list, not yet modelled here).
 look similar ("a bounding box") but bind to genuinely different real parameters:
 `OTB.ExtractROI`'s "extent" mode takes four plain numbers, while
 `OTB.ImageEnvelope`/`SAGA.shapes_tools.19` both return an actual vector polygon. Neither
-distinction is carried at this tier any more (this tier has no type/format property at all, see
-the base schema's own note); it lives entirely at Implementation Profile, in each one's `schema`
--- `areaOfInterest`'s `$ref`s `ogc.api.processes.v1.schemas.bbox`, the extent operations' outputs
-declare GML -- see [`raster-crop`](raster-crop/)'s "`areaOfInterest` has no type at this tier"
+distinction is carried by a format at this tier (a format is forbidden here, `dataType` is a
+concept, see the base schema's own note); the format lives at Implementation Profile, in each
+one's `schema` -- `areaOfInterest`'s `$ref`s `ogc.api.processes.part1.v1.schemas.bbox`, the extent
+operations' outputs declare GML -- see [`raster-crop`](raster-crop/)'s "`areaOfInterest` is a concept at this tier, not a format"
 and [`raster-extent`](raster-extent/)'s "Why the output is a Geometry, not a BoundingBox".
 
 `unary-geometry-operation` is also where `geometry-extent` landed once it stopped being its own

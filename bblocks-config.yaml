@@ -6,25 +6,27 @@ identifier-prefix: generic-profiles.
 name: Generic Process Profiles
 
 abstract: |
-  A general-purpose, engine- and format-agnostic vocabulary of Generic Profiles, independent of
-  any one project. A Generic Profile gives one or more related operations an abstract I/O
-  signature (named roles and abstract types, no format, no size limit) -- e.g. every binary
-  boolean spatial predicate (Intersects, Contains, Within, Touches, Crosses, Equals, Disjoint)
-  takes two Geometry inputs and returns one Boolean, and is one Generic Profile, not seven.
-  Implementation Profiles (concrete, deployable processes binding a Generic Profile to real
-  formats) are not part of this register; they live wherever the implementation itself is
-  profiled (e.g. `ospd.process-profiles.*` for OSPD's CWL- and OGC-API-Processes-sourced profiles)
-  and link back here via their own `implementsGenericProfile` property.
+  A general-purpose, provider-independent vocabulary of process Concepts, Generic Profiles and
+  Implementation Profiles, the first three tiers of OGC 14-065 WPS 2.0.2 §7.5, independent of any
+  one project. The tiers differ in what they may carry: a Process Concept documents a general group
+  of processes, with no input or output; a Generic Profile gives one or more related operations an
+  abstract I/O signature (named roles, `dataType` concepts, multiplicity; no format, no size limit),
+  e.g. every binary boolean spatial predicate (Intersects, Contains, Within, Touches, Crosses,
+  Equals, Disjoint) takes two geometry inputs and returns one boolean, and is one Generic Profile,
+  not seven; an Implementation Profile refines one Generic Profile with the exchange formats it
+  supports, for any provider to implement. Real deployed or deployable processes, the fourth tier,
+  are not part of this register; they live wherever the implementation itself is profiled (e.g.
+  `ospd.process-profiles.*` for OSPD's CWL- and OGC-API-Processes-sourced profiles) and link back
+  here via their own `implementsProfile` property.
 
 description: |
-  Produced by GeoLabs, first grounded in the 12 spatial predicates and set operations of OGC
-  Simple Feature Access - Common Architecture (06-103r4) as a worked example: every one of them
-  shares one of a small number of I/O shapes, so the Generic Profile layer stays small (3 profiles
-  cover all 12 here). SQL/MM Spatial (ISO/IEC 13249-3) binds the same operations to SQL (the
-  `ST_Geometry` type, `ST_Intersects`-style function names) and real deployed processes bind them
-  further still (e.g. to GML 3.1.0 Polygon) -- both are concrete bindings, not part of this
-  register; they are profiled as Implementation Profiles in whichever register profiles the
-  concrete process (e.g. `ospd.process-profiles.*`), linked back here by `implementsGenericProfile`.
+  Produced by GeoLabs, first grounded in the spatial predicates and set operations of OGC Simple
+  Feature Access - Common Architecture (06-103r4) as a worked example: they share a small number of
+  I/O shapes, so the Generic Profile layer stays small. SQL/MM Spatial (ISO/IEC 13249-3) binds the
+  same operations to SQL (the `ST_Geometry` type, `ST_Intersects`-style function names) and is
+  profiled here, at the Implementation Profile tier; real deployed processes bind them further
+  still (e.g. to GML 3.1.0 Polygon) and are profiled in whichever register profiles the concrete
+  process (e.g. `ospd.process-profiles.*`), linked back here by `implementsProfile`.
   Not limited to spatial operations -- any domain with standardised abstract operations and several
   independent bindings is a candidate.
 
@@ -46,12 +48,9 @@ keywords:
 
 imports:
   - default
-  # OGC API - Processes - Part 1: Core schemas. Implementation Profile's `schema` property (Table
-  # 21 Data format) is a subset of this vocabulary's own InputDescription/OutputDescription/Schema
-  # structure, and can $ref a real shared type's own published schema directly (e.g.
-  # ogc.api.processes.v1.schemas.bbox for raster-crop's areaOfInterest) -- not bblocks-eoap-cct,
-  # whose types (e.g. eoap.cct.bbox) are for CWL inputs/outputs crossing into OGC API - Processes
-  # - Part 2: Deploy, Replace, Undeploy, a different vocabulary layer (2026-10-01).
+  # OGC API - Processes - Part 1: Core schemas: the Table 22 `metadata` structure every tier uses
+  # (ogc.api.processes.part1.v1.schemas.metadata). Formats are no longer copied as `schema` at tier 3: an
+  # Implementation Profile names representations of bblocks-data-formats (decision D6, 2026-11-09).
   - https://geolabs.github.io/bblocks-ogcapi-processes/build/register.json
   # Registered Item Model (ISO 19135:2026) -- this register's governance layer: every Concept,
   # Generic Profile and Implementation Profile is a rim:RegisterItem of one of three
@@ -62,9 +61,15 @@ imports:
   # Data types (ISO 19135:2026 concept plane): every `dataType` IRI of a Generic or Implementation
   # Profile input/output is a concept of this register (data-types.data-type.*).
   - https://geolabs.github.io/bblocks-data-types/build/register.json
-  # Activity-type register (profiles of the Registered Item Model): an Implementation Profile is
-  # linked to the activity type it is a type of (generic-profiles.register, `activityType`).
-  - https://geonovum-labs.github.io/activity-type-register/build/register.json
+  # Data formats (content plane, decision D6): every `representation` IRI of an Implementation
+  # Profile input/output is a df:Representation of this register (data-formats.representation.*),
+  # which realizes a version of the role's data type and points to a df:Format.
+  - https://geolabs.github.io/bblocks-data-formats/build/register.json
+  # Activity Type Register: each operation's meaning is an acttype:ActivityType item of this
+  # register (generic-profiles.activity-type.*), and each Implementation Profile links to it with
+  # `activityType`, a sub-property of rim:relatedItem. Imported from ogcincubator, not
+  # geonovum-labs.
+  - https://ogcincubator.github.io/activity-type-register/build/register.json
 
 schema-oas30-downcompile: False
 
