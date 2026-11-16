@@ -145,10 +145,10 @@ The Implementation Profile [`generic-profiles.implementation-profile.product-sel
         acttype:ActivityType ;
     dcterms:source [ dcterms:references <https://docs.ogc.org/is/17-069r4/17-069r4.html> ;
             dcterms:title "OGC 17-069r4 OGC API - Features - Part 1: Core, §7.15.3 Parameter bbox and §7.15.4 Parameter datetime" ],
-        [ dcterms:references <https://docs.ogc.org/is/13-026r9/13-026r9.html> ;
-            dcterms:title "OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, §1 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)" ],
         [ dcterms:references <https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md> ;
-            dcterms:title "STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and collections" ] ;
+            dcterms:title "STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and collections" ],
+        [ dcterms:references <https://docs.ogc.org/is/13-026r9/13-026r9.html> ;
+            dcterms:title "OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, §1 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)" ] ;
     rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
     skos:definition "Selects, from a catalogue of Earth observation products, those of a collection whose footprint intersects an area of interest and whose acquisition time falls within a time interval, possibly filtered further on their metadata, such as their cloud cover." ;
     skos:prefLabel "Product selection" ;
@@ -222,7 +222,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type.product-selection
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-12'
+  dateOfLastChange: '2026-11-16'
 
 ```
 

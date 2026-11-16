@@ -485,8 +485,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
         "predicate",
         "spatial relation",
         "vector" ;
-    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ],
-        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
+        [ dcterms:title "Generic Profile: Binary spatial predicate" ] ;
     rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/equals/actions/addition>,
         <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/equals/actions/meaning-2026-11-09>,
         <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/equals/actions/operation-sources-2026-11-09>,
@@ -716,7 +716,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.equals
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-12'
+  dateOfLastChange: '2026-11-16'
 
 ```
 

@@ -192,8 +192,8 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -205,9 +205,9 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
     skos:definition "Depicts a raster as an image for viewing, by giving each cell a colour from a colour map. One Raster and a colour map in, one rendered image out." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster rendering" ;
-    gp:inputs [ ns2:colourMap <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/colourMap> ;
-            ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/raster> ] ;
-    gp:outputs [ ns1:image <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/outputs/image> ] ;
+    gp:inputs [ ns1:colourMap <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/colourMap> ;
+            ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/raster> ] ;
+    gp:outputs [ ns2:image <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/outputs/image> ] ;
     proc:keywords "colour map",
         "raster",
         "rendering" ;
@@ -352,7 +352,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.raster-rendering
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-12'
+  dateOfLastChange: '2026-11-16'
 
 ```
 

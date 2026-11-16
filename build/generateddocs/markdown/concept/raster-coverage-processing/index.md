@@ -255,7 +255,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.concept.raster-coverage-processing
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-12'
+  dateOfLastChange: '2026-11-16'
 
 ```
 

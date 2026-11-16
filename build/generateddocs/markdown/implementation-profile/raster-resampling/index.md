@@ -276,8 +276,8 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     proc:keywords "coverage",
         "raster",
         "resampling" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
-        [ dcterms:title "Generic Profile: Raster resampling" ] ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster resampling" ],
+        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
     rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/actions/addition> ;
     rim:inRegister gp:register ;
     rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
@@ -526,7 +526,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.raster-resampling
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-12'
+  dateOfLastChange: '2026-11-16'
 
 ```
 

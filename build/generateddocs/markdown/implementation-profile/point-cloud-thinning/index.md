@@ -433,8 +433,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning> ;
     proc:keywords "point cloud",
         "thinning" ;
-    proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning" ],
-        [ dcterms:title "Process Concept: Point Cloud Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ],
+        [ dcterms:title "Generic Profile: Point cloud thinning" ] ;
     rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/actions/addition>,
         <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/actions/meaning-2026-11-09>,
         <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/actions/representation-2026-11-09>,
@@ -659,7 +659,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.point-cloud-thinning
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-12'
+  dateOfLastChange: '2026-11-16'
 
 ```
 

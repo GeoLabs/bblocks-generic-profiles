@@ -136,9 +136,9 @@ The Implementation Profile [`generic-profiles.implementation-profile.convex-hull
 
 <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/convex-hull> a owl:Class,
         acttype:ActivityType ;
-    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_ConvexHull" ],
-        [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
-            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.1.3 ConvexHull()" ] ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
+            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.1.3 ConvexHull()" ],
+        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_ConvexHull" ] ;
     rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
     skos:altLabel "ST_ConvexHull" ;
     skos:definition "Returns a geometry that represents the convex hull of this Geometry." ;
@@ -213,7 +213,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type.convex-hull
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-12'
+  dateOfLastChange: '2026-11-16'
 
 ```
 
