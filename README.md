@@ -436,9 +436,9 @@ container's `--clean` can occasionally race the bind mount and die with a `FileN
 `ENOENT` on a random building block's `context.jsonld` — rerun; it is not a register error, the
 same intermittent issue `bblocks-process-profiles` documents.
 
-Until `bblocks-data-types` and `bblocks-data-formats` are published, the build needs local
-url-mappings: see [`docs/LOCAL-BUILD.md`](docs/LOCAL-BUILD.md) and
-`bblocks-config-local.yml.example` (including the temporary mapping of the Registered Item Model).
+The build resolves `bblocks-data-types` and `bblocks-data-formats` from their published registers
+(since 2026-11-12). To test an upstream change before it is published, see
+[`docs/LOCAL-BUILD.md`](docs/LOCAL-BUILD.md) and `bblocks-config-local.yml.example`.
 
 All content under `_sources/` is hand-written (there is no CWL, no run record, nothing to
 generate from) — edit it directly — except the activity type items `_sources/activity-type/<operation>/`
