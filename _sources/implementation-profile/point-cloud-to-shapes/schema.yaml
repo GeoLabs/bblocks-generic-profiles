@@ -5,11 +5,11 @@ allOf:
   - $ref: bblocks://generic-profiles.implementation-profile
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-to-shapes"}
       type: {const: ImplementationProfile}
       prefLabel: {const: "Point cloud to shapes"}
-      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features"}
-      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/point-cloud-to-shapes"}
+      refinesGenericProfile: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-to-features"}
+      activityType: {const: "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-to-shapes"}
       # Table 21 against point-cloud-to-features: keywords Extend (E), metadata Extend
       # (E, footnote a: Table 22 references on the process, input/output-level ones below),
       # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,
@@ -26,13 +26,13 @@ allOf:
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing'}
         - contains:
             type: object
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-to-features'}
       inputs:
         type: object
         required: [points]
@@ -48,8 +48,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/inputs/points'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-to-features/inputs/points'}
       outputs:
         type: object
         required: [result]
@@ -65,13 +65,13 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features/outputs/result'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-to-features/outputs/result'}
   - type: object
     properties:
       inputs:
         properties:
-          points: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/inputs/points"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/point-cloud-las"]}}}
+          points: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-to-shapes/inputs/points"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/point-cloud-las"]}}}
       outputs:
         properties:
-          result: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/feature-collection"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/feature-collection-gml"]}}}
+          result: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-to-shapes/outputs/result"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/feature-collection"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/feature-collection-gml"]}}}

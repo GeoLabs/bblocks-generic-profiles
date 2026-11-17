@@ -6,9 +6,9 @@ Generic Profile: **Raster resampling**.
 
 | Role | Data type | Cardinality | Meaning |
 |---|---|---|---|
-| input `raster` | [`raster`](https://geolabs.github.io/bblocks-data-types/def/data-type/raster) | exactly one | the input raster coverage |
-| input `resolution` | [`grid-resolution`](https://geolabs.github.io/bblocks-data-types/def/data-type/grid-resolution) | exactly one | the cell size of the output grid, along each of its axes |
-| output `raster` | [`raster`](https://geolabs.github.io/bblocks-data-types/def/data-type/raster) | exactly one | the resampled raster coverage |
+| input `raster` | [`raster`](https://w3id.org/geolabs/ospd/data-types/data-type/raster) | exactly one | the input raster coverage |
+| input `resolution` | [`grid-resolution`](https://w3id.org/geolabs/ospd/data-types/data-type/grid-resolution) | exactly one | the cell size of the output grid, along each of its axes |
+| output `raster` | [`raster`](https://w3id.org/geolabs/ospd/data-types/data-type/raster) | exactly one | the resampled raster coverage |
 
 Each data type is a concept of the [`bblocks-data-types`](https://github.com/GeoLabs/bblocks-data-types) register; this tier names no format ([OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32) gives Generic Profile no Data format row). Outputs have no cardinality: Table 21 has no Output.Multiplicity row.
 

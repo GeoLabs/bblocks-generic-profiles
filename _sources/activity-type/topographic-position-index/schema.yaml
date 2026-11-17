@@ -6,7 +6,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index
     prefLabel:
       const: Topographic position index
     subClassOf:

@@ -83,10 +83,10 @@ profile. References are made at the level they are about:
 
 | Role | Meaning |
 |---|---|
-| `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input` | the `href` is the Generic Profile input this input refines |
-| `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output` | the same, for an output |
-| `https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input` | the `href` is one input of an Implementation Profile, which the referencing input implements |
-| `https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output` | the same, for an output |
+| `https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input` | the `href` is the Generic Profile input this input refines |
+| `https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output` | the same, for an output |
+| `https://w3id.org/geolabs/ospd/generic-profiles/role/implementation-input` | the `href` is one input of an Implementation Profile, which the referencing input implements |
+| `https://w3id.org/geolabs/ospd/generic-profiles/role/implementation-output` | the same, for an output |
 
 They are this register's own identifiers, not OGC ones: nothing is minted under
 `http://www.opengis.net/spec/wps/2.0/def/`, where OGC 14-065r1 defines only the three Table 22

@@ -1,5 +1,5 @@
 - title: Vector Geometry Processing
-  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/concept/
+  base-uri: https://w3id.org/geolabs/ospd/generic-profiles/concept/
   snippets:
   - language: json
     ref: examples/vector-geometry-processing.json

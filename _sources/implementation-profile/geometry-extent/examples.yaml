@@ -1,5 +1,5 @@
 - title: Geometry extent
-  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/
+  base-uri: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/
   snippets:
   - language: json
     ref: examples/geometry-extent.json

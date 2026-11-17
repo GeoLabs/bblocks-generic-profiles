@@ -1,26 +1,38 @@
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering",
   "type": "ImplementationProfile",
   "prefLabel": "Raster rendering",
   "definition": "Implementation Profile of the operation Raster rendering, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster rendering, bound to data exchange formats.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile",
   "hasAction": [
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/actions/addition",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering"
     }
   ],
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering",
-  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering",
+  "refinesGenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering",
+  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering",
   "keywords": [
     "raster",
     "rendering",
@@ -30,18 +42,18 @@
     {
       "title": "Process Concept: Raster Coverage Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     },
     {
       "title": "Generic Profile: Raster rendering",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering"
     }
   ],
   "inputs": {
     "raster": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/inputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/inputs/raster",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
       ],
@@ -51,30 +63,30 @@
       "metadata": [
         {
           "title": "Generic Profile: Raster rendering -- input `raster`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/raster"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering/inputs/raster"
         }
       ]
     },
     "colourMap": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/inputs/colourMap",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/colour-map",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/inputs/colourMap",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/colour-map",
       "keywords": [
         "colour map"
       ],
       "metadata": [
         {
           "title": "Generic Profile: Raster rendering -- input `colourMap`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/inputs/colourMap"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering/inputs/colourMap"
         }
       ]
     }
   },
   "outputs": {
     "image": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-rendering/outputs/image",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/rendered-image",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/outputs/image",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/rendered-image",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/rendered-image-png"
       ],
@@ -84,8 +96,8 @@
       "metadata": [
         {
           "title": "Generic Profile: Raster rendering -- output `image`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-rendering/outputs/image"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering/outputs/image"
         }
       ]
     }

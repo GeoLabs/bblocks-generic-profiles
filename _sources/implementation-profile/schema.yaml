@@ -33,12 +33,12 @@ description: >-
     itself. Profile-level references are made here only, never repeated on inputs/outputs.
   - Input: every Generic Profile input is listed. Its `metadata` references the corresponding
     Generic Profile input (`<Generic Profile id>/inputs/<name>`) with this register's role
-    `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input` -- footnote a, at the level of the input; `keywords` Extend (E);
+    `https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input` -- footnote a, at the level of the input; `keywords` Extend (E);
     Identifier/Title/Abstract Inherit (I), so not repeated; `maxOccurs` Restrict (R); `minOccurs`
     may be restricted down to 0 (a register choice beyond Table 21, footnote c forbidding it);
     `representation` Declare (D).
   - Output: every Generic Profile output is listed too; `metadata` references the corresponding
-    Generic Profile output with the role `https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output` (Table 21 allows any value here,
+    Generic Profile output with the role `https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output` (Table 21 allows any value here,
     O; the register keeps outputs symmetric with inputs); `keywords` Extend (E); `representation`
     Declare (D).
 allOf:
@@ -61,9 +61,9 @@ allOf:
         format: uri
       # Pinned per tier; the rest of the ISO 19135:2026 required core comes from rim.registered-item.
       itemClass:
-        const: https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile
+        const: https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile
       inRegister:
-        const: https://geolabs.github.io/bblocks-generic-profiles/def/register
+        const: https://w3id.org/geolabs/ospd/generic-profiles/register
       refinesGenericProfile:
         description: The single Generic Profile (generic-profiles.generic-profile.*) this Implementation Profile refines.
         type: string
@@ -75,7 +75,7 @@ allOf:
           sub-property of rim:relatedItem.
         type: string
         format: uri
-        pattern: ^https://geolabs\.github\.io/bblocks-generic-profiles/def/activity-type/[a-z0-9-]+$
+        pattern: ^https://w3id\.org/geolabs/ospd/generic-profiles/activity-type/[a-z0-9-]+$
       keywords:
         description: Table 21 Process.Keywords (E) -- the Generic Profile's keywords plus this operation's own.
         type: array
@@ -114,7 +114,7 @@ allOf:
             dataType:
               description: >-
                 What kind of data this input is, as a concept of the bblocks-data-types
-                register (`https://geolabs.github.io/bblocks-data-types/def/data-type/...`).
+                register (`https://w3id.org/geolabs/ospd/data-types/data-type/...`).
                 The Generic Profile's, or a narrower one (`skos:broader` chain): e.g. a band-count or a
                 geometry-type restriction.
               type: string
@@ -158,7 +158,7 @@ allOf:
                 type: object
                 required: [role, href]
                 properties:
-                  role: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"}
+                  role: {const: "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input"}
       outputs:
         description: Keyed by the same output names as the Generic Profile's own `outputs`.
         type: object
@@ -170,7 +170,7 @@ allOf:
             dataType:
               description: >-
                 What kind of data this output is, as a concept of the bblocks-data-types
-                register (`https://geolabs.github.io/bblocks-data-types/def/data-type/...`).
+                register (`https://w3id.org/geolabs/ospd/data-types/data-type/...`).
                 The Generic Profile's, or a narrower one (`skos:broader` chain): e.g. a band-count or a
                 geometry-type restriction.
               type: string
@@ -201,7 +201,7 @@ allOf:
                 type: object
                 required: [role, href]
                 properties:
-                  role: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output"}
+                  role: {const: "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output"}
       source:
         type: array
         items:

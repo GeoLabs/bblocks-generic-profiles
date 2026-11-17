@@ -1,5 +1,5 @@
 - title: Raster resampling
-  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/
+  base-uri: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/
   snippets:
   - language: json
     ref: examples/raster-resampling.json

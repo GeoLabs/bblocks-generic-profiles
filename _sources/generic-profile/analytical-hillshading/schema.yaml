@@ -5,7 +5,7 @@ allOf:
   - $ref: bblocks://generic-profiles.generic-profile
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading"}
       type: {const: GenericProfile}
       prefLabel: {const: "Analytical hillshading"}
   - type: object
@@ -17,12 +17,12 @@ allOf:
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis'}
       inputs:
         properties:
-          elevation: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/elevation"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model"}}}
-          azimuth: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/azimuth"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/number"}}}
-          altitude: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/altitude"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/number"}}}
+          elevation: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/elevation"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model"}}}
+          azimuth: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/azimuth"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/number"}}}
+          altitude: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/altitude"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/number"}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/outputs/result"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band"}}}

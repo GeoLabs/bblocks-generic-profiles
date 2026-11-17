@@ -1,5 +1,5 @@
 - title: Example Concept (illustrative shape only, not a real vocabulary entry)
-  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/concept/
+  base-uri: https://w3id.org/geolabs/ospd/generic-profiles/concept/
   snippets:
   - language: json
     ref: examples/example-concept.json

@@ -6,10 +6,10 @@ Generic Profile: **Product selection**.
 
 | Role | Data type | Cardinality | Meaning |
 |---|---|---|---|
-| input `areaOfInterest` | [`geometry`](https://geolabs.github.io/bblocks-data-types/def/data-type/geometry) | exactly one | the area the footprint of each product must intersect |
-| input `timeInterval` | [`time-interval`](https://geolabs.github.io/bblocks-data-types/def/data-type/time-interval) | exactly one | the period in which each product was acquired |
-| input `collection` | [`collection-identifier`](https://geolabs.github.io/bblocks-data-types/def/data-type/collection-identifier) | exactly one | the collection the products belong to |
-| output `products` | [`eo-product`](https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product) | exactly one | the selected products |
+| input `areaOfInterest` | [`geometry`](https://w3id.org/geolabs/ospd/data-types/data-type/geometry) | exactly one | the area the footprint of each product must intersect |
+| input `timeInterval` | [`time-interval`](https://w3id.org/geolabs/ospd/data-types/data-type/time-interval) | exactly one | the period in which each product was acquired |
+| input `collection` | [`collection-identifier`](https://w3id.org/geolabs/ospd/data-types/data-type/collection-identifier) | exactly one | the collection the products belong to |
+| output `products` | [`eo-product`](https://w3id.org/geolabs/ospd/data-types/data-type/eo-product) | exactly one | the selected products |
 
 Each data type is a concept of the [`bblocks-data-types`](https://github.com/GeoLabs/bblocks-data-types) register; this tier names no format ([OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32) gives Generic Profile no Data format row). Outputs have no cardinality: Table 21 has no Output.Multiplicity row.
 

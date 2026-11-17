@@ -17,8 +17,8 @@ tier-4 process types relate to these items is decision D8, still open.
 | Describes | a **kind of process** by its signature bound to standard formats, implementable by several providers | a **kind of process** by the PROV relations its activities have: what they use and generate, who runs them, which plan they follow |
 | Class | `gp:ProcessConcept` / `gp:GenericProfile` / `gp:ImplementationProfile`, each `rdfs:subClassOf rim:RegisterItem` and `skos:Concept` | `acttype:ActivityType rdfs:subClassOf rim:RegisterItem`; `geoproc:GeoprocessingActivityType rdfs:subClassOf acttype:ActivityType` |
 | Item class | `gpic:implementation-profile` (`.../def/item-class/implementation-profile`) | `acttype:activityTypeItemClass` |
-| Register | `https://geolabs.github.io/bblocks-generic-profiles/def/register`, owner/manager GeoLabs | the activity-type register (Geonovum-labs) |
-| Namespace | `gp: https://geolabs.github.io/bblocks-generic-profiles/def/` | `acttype: https://w3id.org/ogc/rim/activity-type/`, `geoproc: https://w3id.org/ogc/rim/geoprocessing/` |
+| Register | `https://w3id.org/geolabs/ospd/generic-profiles/register`, owner/manager GeoLabs | the activity-type register (Geonovum-labs) |
+| Namespace | `gp: https://w3id.org/geolabs/ospd/generic-profiles/` | `acttype: https://w3id.org/ogc/rim/activity-type/`, `geoproc: https://w3id.org/ogc/rim/geoprocessing/` |
 
 Both are `rim:RegisterItem`s of the same base model (ISO 19135:2026 via the Registered Item Model),
 each governed by its own register. Seen from a process, they look like two descriptions of the same

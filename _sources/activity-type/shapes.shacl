@@ -1,5 +1,5 @@
 @prefix sh:      <http://www.w3.org/ns/shacl#> .
-@prefix gp:      <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gp:      <https://w3id.org/geolabs/ospd/generic-profiles/> .
 @prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
 @prefix rim:     <https://w3id.org/ogc/rim/> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .

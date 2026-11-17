@@ -1,24 +1,24 @@
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile",
   "type": "ImplementationProfile",
   "prefLabel": "Example Implementation Profile (placeholder, not a real operation)",
   "definition": "Illustrates the shape of an Implementation Profile entry only. Real ones are each their own building block -- see generic-profiles.implementation-profile.intersects, .buffer and the other siblings.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile",
   "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/actions/addition",
+    "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
     "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile"
+    "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile"
   },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate",
-  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects",
+  "refinesGenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate",
+  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects",
   "keywords": [
     "vector",
     "geometry",
@@ -30,18 +30,18 @@
     {
       "title": "Process Concept: Vector Geometry Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
     },
     {
       "title": "Generic Profile: Binary spatial predicate",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate"
     }
   ],
   "inputs": {
     "geometry1": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry1",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/inputs/geometry1",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
       ],
@@ -51,14 +51,14 @@
       "metadata": [
         {
           "title": "Generic Profile: Binary spatial predicate -- input `geometry1`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry1"
         }
       ]
     },
     "geometry2": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/inputs/geometry2",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/inputs/geometry2",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
       ],
@@ -68,24 +68,24 @@
       "metadata": [
         {
           "title": "Generic Profile: Binary spatial predicate -- input `geometry2`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry2"
         }
       ]
     }
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/example-implementation-profile/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/boolean",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/boolean",
       "keywords": [
         "boolean"
       ],
       "metadata": [
         {
           "title": "Generic Profile: Binary spatial predicate -- output `result`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/outputs/result"
         }
       ]
     }

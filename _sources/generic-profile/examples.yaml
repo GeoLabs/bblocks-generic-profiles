@@ -1,5 +1,5 @@
 - title: Example Generic Profile (illustrative shape only, not a real signature)
-  base-uri: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/
+  base-uri: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/
   snippets:
   - language: json
     ref: examples/example-generic-profile.json
