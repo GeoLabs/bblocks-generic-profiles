@@ -18,7 +18,7 @@ format, D; decision D6):
 | Role | Data type | Cardinality | Representation |
 |---|---|---|---|
 | input `raster` | `raster-single-band` | exactly one | [`raster-single-band-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff) (Single-band raster as GeoTIFF) |
-| output `mask` | `binary-mask` | -- | [`raster-single-band-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff) (Single-band raster as GeoTIFF) |
+| output `mask` | `binary-mask` | -- | [`binary-mask-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/binary-mask-geotiff) (Binary mask as GeoTIFF) |
 
 The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
 2.0.2 §7.5.4 Table 21, footnote d).
