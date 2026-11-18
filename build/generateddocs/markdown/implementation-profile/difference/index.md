@@ -94,78 +94,90 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 #### json
 ```json
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference",
   "type": "ImplementationProfile",
   "prefLabel": "Difference",
   "definition": "Implementation Profile of the operation Difference, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial set operation, bound to data exchange formats.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile",
   "hasAction": [
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/addition",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/meaning-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/meaning-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
-      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/difference, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns a geometric object representing the point set difference of this geometric object with anotherGeometry.\"",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns a geometric object representing the point set difference of this geometric object with anotherGeometry.\"",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/operation-sources-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/operation-sources-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "The keyword ST_Difference becomes an altLabel of the activity type; the sources defining the operation move to the activity type: OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.26; ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.13 ST_Difference.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/representation-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/representation-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/geometry1 -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}); inputs/geometry2 -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}); outputs/result -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}).",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/tools-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/tools-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: 3 format keywords removed from inputs and outputs (inputs/geometry1: GML; inputs/geometry2: GML; outputs/result: GML); description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/sections-restored-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/sections-restored-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
-      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     }
   ],
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation",
-  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/difference",
+  "refinesGenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation",
+  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference",
   "keywords": [
     "vector",
     "geometry",
@@ -177,18 +189,18 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     {
       "title": "Process Concept: Vector Geometry Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
     },
     {
       "title": "Generic Profile: Binary spatial set operation",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation"
     }
   ],
   "inputs": {
     "geometry1": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry1",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/inputs/geometry1",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
       ],
@@ -198,14 +210,14 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Binary spatial set operation -- input `geometry1`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry1"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry1"
         }
       ]
     },
     "geometry2": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry2",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/inputs/geometry2",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
       ],
@@ -215,16 +227,16 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Binary spatial set operation -- input `geometry2`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry2"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry2"
         }
       ]
     }
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
       ],
@@ -234,8 +246,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Binary spatial set operation -- output `result`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/outputs/result"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/outputs/result"
         }
       ]
     }
@@ -248,78 +260,90 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```jsonld
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/difference/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference",
   "type": "ImplementationProfile",
   "prefLabel": "Difference",
   "definition": "Implementation Profile of the operation Difference, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial set operation, bound to data exchange formats.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile",
   "hasAction": [
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/addition",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/meaning-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/meaning-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
-      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/difference, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns a geometric object representing the point set difference of this geometric object with anotherGeometry.\"",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns a geometric object representing the point set difference of this geometric object with anotherGeometry.\"",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/operation-sources-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/operation-sources-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "The keyword ST_Difference becomes an altLabel of the activity type; the sources defining the operation move to the activity type: OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, \u00a76.1.26; ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, \u00a75.1.13 ST_Difference.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/representation-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/representation-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/geometry1 -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}); inputs/geometry2 -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}); outputs/result -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}).",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/tools-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/tools-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: 3 format keywords removed from inputs and outputs (inputs/geometry1: GML; inputs/geometry2: GML; outputs/result: GML); description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/sections-restored-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/sections-restored-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
-      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"
     }
   ],
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation",
-  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/difference",
+  "refinesGenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation",
+  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference",
   "keywords": [
     "vector",
     "geometry",
@@ -331,18 +355,18 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     {
       "title": "Process Concept: Vector Geometry Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
     },
     {
       "title": "Generic Profile: Binary spatial set operation",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation"
     }
   ],
   "inputs": {
     "geometry1": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry1",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/inputs/geometry1",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
       ],
@@ -352,14 +376,14 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Binary spatial set operation -- input `geometry1`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry1"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry1"
         }
       ]
     },
     "geometry2": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry2",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/inputs/geometry2",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
       ],
@@ -369,16 +393,16 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Binary spatial set operation -- input `geometry2`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry2"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry2"
         }
       ]
     }
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml"
       ],
@@ -388,8 +412,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Binary spatial set operation -- output `result`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/outputs/result"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/outputs/result"
         }
       ]
     }
@@ -400,91 +424,102 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/addition> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference> ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/meaning-2026-11-09> a rim:RegisterAction ;
-    dcterms:description "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/difference, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns a geometric object representing the point set difference of this geometric object with anotherGeometry.\"" ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/meaning-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns a geometric object representing the point set difference of this geometric object with anotherGeometry.\"" ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference> ;
     rim:changeClassification rim:substantiveChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The keyword ST_Difference becomes an altLabel of the activity type; the sources defining the operation move to the activity type: OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.26; ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.13 ST_Difference." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/representation-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/representation-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/geometry1 -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}); inputs/geometry2 -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}); outputs/result -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"})." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference> ;
     rim:changeClassification rim:substantiveChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
-    dcterms:description "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/tools-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/tools-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Decision D4: 3 format keywords removed from inputs and outputs (inputs/geometry1: GML; inputs/geometry2: GML; outputs/result: GML); description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry1> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/inputs/geometry1> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/geometry> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation -- input `geometry1`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry1" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry1" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry2> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/inputs/geometry2> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/geometry> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation -- input `geometry2`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry2" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry2" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/outputs/result> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/geometry> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation -- output `result`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/outputs/result" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/outputs/result" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference> a gp:ImplementationProfile ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference> a gp:ImplementationProfile ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference> ;
     skos:definition "Implementation Profile of the operation Difference, whose meaning is its activity type (activityType): the signature of the Generic Profile Binary spatial set operation, bound to data exchange formats." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Difference" ;
-    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/difference> ;
-    gp:inputs [ ns1:geometry1 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry1> ;
-            ns1:geometry2 <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry2> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/outputs/result> ] ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation> ;
+    gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference> ;
+    gp:inputs [ ns1:geometry1 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/inputs/geometry1> ;
+            ns1:geometry2 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/inputs/geometry2> ] ;
+    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/outputs/result> ] ;
+    gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation> ;
     proc:keywords "Difference",
         "geometry",
         "set operation",
@@ -492,15 +527,16 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
         "vector" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation" ],
         [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/addition>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/meaning-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/operation-sources-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/representation-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/sections-restored-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/actions/tools-2026-11-09> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/identifier-2026-11-17>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/meaning-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/operation-sources-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/representation-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/sections-restored-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/actions/tools-2026-11-09> ;
     rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
 
@@ -518,7 +554,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference
+      const: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference
       x-jsonld-id: '@id'
     type:
       const: ImplementationProfile
@@ -527,12 +563,12 @@ allOf:
       const: Difference
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
     refinesGenericProfile:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
+      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/refinesGenericProfile
       x-jsonld-type: '@id'
     activityType:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/difference
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/activityType
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/activityType
       x-jsonld-type: '@id'
     keywords:
       allOf:
@@ -556,7 +592,7 @@ allOf:
             role:
               const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
             href:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing
+              const: https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing
       - contains:
           type: object
           required:
@@ -566,7 +602,7 @@ allOf:
             role:
               const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
             href:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation
       x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       type: object
@@ -590,9 +626,9 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry1
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry1
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
         geometry2:
           properties:
@@ -610,12 +646,12 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/inputs/geometry2
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry2
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/inputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/
     outputs:
       type: object
       required:
@@ -637,12 +673,12 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-operation/outputs/result
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/outputs/result
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/outputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/
 - type: object
   properties:
     inputs:
@@ -654,16 +690,16 @@ allOf:
           - representation
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry1
+              const: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/inputs/geometry1
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/geometry
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/geometry
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
             representation:
               const:
               - https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml
-              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+              x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/representation
               x-jsonld-type: '@id'
         geometry2:
           required:
@@ -672,19 +708,19 @@ allOf:
           - representation
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/inputs/geometry2
+              const: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/inputs/geometry2
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/geometry
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/geometry
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
             representation:
               const:
               - https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml
-              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+              x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/representation
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/inputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/
     outputs:
       properties:
         result:
@@ -694,21 +730,21 @@ allOf:
           - representation
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/difference/outputs/result
+              const: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/difference/outputs/result
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/geometry
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/geometry
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
             representation:
               const:
               - https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml
-              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+              x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/representation
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/outputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/
 x-jsonld-extra-terms:
-  ImplementationProfile: https://geolabs.github.io/bblocks-generic-profiles/def/ImplementationProfile
+  ImplementationProfile: https://w3id.org/geolabs/ospd/generic-profiles/ImplementationProfile
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
@@ -718,8 +754,14 @@ x-jsonld-extra-terms:
   link:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
+  sameAs:
+    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs
+    x-jsonld-type: '@id'
+  affectedProperty:
+    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
-  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gp: https://w3id.org/geolabs/ospd/generic-profiles/
   skos: http://www.w3.org/2004/02/skos/core#
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
@@ -727,7 +769,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.difference
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-16'
+  dateOfLastChange: '2026-11-18'
 
 ```
 
@@ -925,7 +967,7 @@ Links to the schema:
     "metadata": "proc:metadata",
     "inputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -949,7 +991,7 @@ Links to the schema:
     },
     "outputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -972,6 +1014,14 @@ Links to the schema:
     },
     "source": "dct:source",
     "ImplementationProfile": "gp:ImplementationProfile",
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
     "link": {
       "@id": "dct:references",
       "@type": "@id"
@@ -982,7 +1032,7 @@ Links to the schema:
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "proc": "https://w3id.org/ogc/api/processes/",
     "@version": 1.1
   }

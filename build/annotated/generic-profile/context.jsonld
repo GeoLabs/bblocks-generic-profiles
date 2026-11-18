@@ -197,7 +197,7 @@
     },
     "inputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -209,7 +209,7 @@
     },
     "outputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -218,13 +218,21 @@
       "@id": "gp:outputs"
     },
     "GenericProfile": "gp:GenericProfile",
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
     "rim": "https://w3id.org/ogc/rim/",
     "prov": "http://www.w3.org/ns/prov#",
     "dct": "http://purl.org/dc/terms/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "proc": "https://w3id.org/ogc/api/processes/",
     "@version": 1.1
   }

@@ -9,7 +9,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection",
+          "const": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection",
           "x-jsonld-id": "@id"
         },
         "type": {
@@ -21,13 +21,13 @@
           "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#prefLabel"
         },
         "refinesGenericProfile": {
-          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection",
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile",
+          "const": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection",
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/refinesGenericProfile",
           "x-jsonld-type": "@id"
         },
         "activityType": {
-          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection",
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/activityType",
+          "const": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection",
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/activityType",
           "x-jsonld-type": "@id"
         },
         "keywords": {
@@ -64,7 +64,7 @@
                     "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"
                   },
                   "href": {
-                    "const": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"
+                    "const": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access"
                   }
                 }
               }
@@ -81,7 +81,7 @@
                     "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"
                   },
                   "href": {
-                    "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection"
+                    "const": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection"
                   }
                 }
               }
@@ -120,10 +120,10 @@
                         ],
                         "properties": {
                           "role": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input"
                           },
                           "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/areaOfInterest"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/inputs/areaOfInterest"
                           }
                         }
                       }
@@ -156,10 +156,10 @@
                         ],
                         "properties": {
                           "role": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input"
                           },
                           "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/timeInterval"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/inputs/timeInterval"
                           }
                         }
                       }
@@ -192,10 +192,10 @@
                         ],
                         "properties": {
                           "role": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input"
                           },
                           "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/collection"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/inputs/collection"
                           }
                         }
                       }
@@ -206,8 +206,8 @@
               }
             }
           },
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/inputs",
-          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/"
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/inputs",
+          "x-jsonld-vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/"
         },
         "outputs": {
           "type": "object",
@@ -238,10 +238,10 @@
                         ],
                         "properties": {
                           "role": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output"
                           },
                           "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/outputs/products"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/outputs/products"
                           }
                         }
                       }
@@ -252,8 +252,8 @@
               }
             }
           },
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/outputs",
-          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/"
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/outputs",
+          "x-jsonld-vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/"
         }
       }
     },
@@ -270,11 +270,11 @@
               ],
               "properties": {
                 "id": {
-                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/areaOfInterest",
+                  "const": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/inputs/areaOfInterest",
                   "x-jsonld-id": "@id"
                 },
                 "dataType": {
-                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+                  "const": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
                 },
@@ -282,7 +282,7 @@
                   "const": [
                     "https://w3id.org/geolabs/ospd/data-formats/representation/geometry-geojson"
                   ],
-                  "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/representation",
+                  "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/representation",
                   "x-jsonld-type": "@id"
                 }
               }
@@ -294,11 +294,11 @@
               ],
               "properties": {
                 "id": {
-                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/timeInterval",
+                  "const": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/inputs/timeInterval",
                   "x-jsonld-id": "@id"
                 },
                 "dataType": {
-                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/time-interval",
+                  "const": "https://w3id.org/geolabs/ospd/data-types/data-type/time-interval",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
                 }
@@ -311,19 +311,19 @@
               ],
               "properties": {
                 "id": {
-                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/collection",
+                  "const": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/inputs/collection",
                   "x-jsonld-id": "@id"
                 },
                 "dataType": {
-                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/collection-identifier",
+                  "const": "https://w3id.org/geolabs/ospd/data-types/data-type/collection-identifier",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
                 }
               }
             }
           },
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/inputs",
-          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/"
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/inputs",
+          "x-jsonld-vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/"
         },
         "outputs": {
           "properties": {
@@ -335,11 +335,11 @@
               ],
               "properties": {
                 "id": {
-                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/outputs/products",
+                  "const": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/outputs/products",
                   "x-jsonld-id": "@id"
                 },
                 "dataType": {
-                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product",
+                  "const": "https://w3id.org/geolabs/ospd/data-types/data-type/eo-product",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
                 },
@@ -347,20 +347,20 @@
                   "const": [
                     "https://w3id.org/geolabs/ospd/data-formats/representation/eo-product-stac-item"
                   ],
-                  "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/representation",
+                  "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/representation",
                   "x-jsonld-type": "@id"
                 }
               }
             }
           },
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/outputs",
-          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/"
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/outputs",
+          "x-jsonld-vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/"
         }
       }
     }
   ],
   "x-jsonld-extra-terms": {
-    "ImplementationProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/ImplementationProfile",
+    "ImplementationProfile": "https://w3id.org/geolabs/ospd/generic-profiles/ImplementationProfile",
     "definition": "http://www.w3.org/2004/02/skos/core#definition",
     "inScheme": {
       "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#inScheme",
@@ -371,10 +371,18 @@
     "link": {
       "x-jsonld-id": "http://purl.org/dc/terms/references",
       "x-jsonld-type": "@id"
+    },
+    "sameAs": {
+      "x-jsonld-id": "http://www.w3.org/2002/07/owl#sameAs",
+      "x-jsonld-type": "@id"
+    },
+    "affectedProperty": {
+      "x-jsonld-id": "https://w3id.org/ogc/rim/affectedProperty",
+      "x-jsonld-type": "@id"
     }
   },
   "x-jsonld-prefixes": {
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "proc": "https://w3id.org/ogc/api/processes/",
     "dct": "http://purl.org/dc/terms/"
@@ -383,6 +391,6 @@
     "itemIdentifier": "generic-profiles.implementation-profile.product-selection",
     "register": "https://geolabs.github.io/bblocks-generic-profiles/build/register.json",
     "version": "0.1",
-    "dateOfLastChange": "2026-11-16"
+    "dateOfLastChange": "2026-11-18"
   }
 }

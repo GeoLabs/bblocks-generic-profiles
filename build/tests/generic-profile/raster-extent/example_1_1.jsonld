@@ -1,36 +1,48 @@
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-extent/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent",
   "type": "GenericProfile",
   "prefLabel": "Raster extent",
   "definition": "Computes the bounding envelope of a raster coverage, returned as a geometry (a rectangular polygon in the coverage's CRS). One Raster input, one Geometry output.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile",
   "hasAction": [
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/addition",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-10-01T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/actions/clarification-2026-11-06",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/actions/clarification-2026-11-06",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-06T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent"
     }
   ],
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "broader": [
-    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
   ],
   "keywords": [
     "raster",
@@ -41,13 +53,13 @@
     {
       "title": "Process Concept: Raster Coverage Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     }
   ],
   "inputs": {
     "raster": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/inputs/raster",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
       "title": "Raster",
       "description": "the input raster coverage",
       "keywords": [
@@ -57,8 +69,8 @@
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "title": "Geometry",
       "description": "the raster's bounding envelope",
       "keywords": [

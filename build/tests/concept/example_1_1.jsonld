@@ -1,21 +1,21 @@
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept",
   "type": "ProcessConcept",
   "prefLabel": "Example Concept (placeholder, not a real vocabulary entry)",
   "definition": "Illustrates the shape of a Concept entry only. Real Concepts are each their own building block -- see generic-profiles.concept.vector-geometry-processing for actual vocabulary content.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/concept",
   "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept/actions/addition",
+    "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
     "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept"
+    "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept"
   },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/process-concept",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "source": [

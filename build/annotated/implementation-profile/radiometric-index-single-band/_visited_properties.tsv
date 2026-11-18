@@ -20,26 +20,26 @@ path	@id	schema
 /prefLabel	http://www.w3.org/2004/02/skos/core#prefLabel	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /definition	http://www.w3.org/2004/02/skos/core#definition	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /inScheme	http://www.w3.org/2004/02/skos/core#inScheme	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
-/refinesGenericProfile	https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
-/activityType	https://geolabs.github.io/bblocks-generic-profiles/def/activityType	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
+/refinesGenericProfile	https://w3id.org/geolabs/ospd/generic-profiles/refinesGenericProfile	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
+/activityType	https://w3id.org/geolabs/ospd/generic-profiles/activityType	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /keywords	https://w3id.org/ogc/api/processes/keywords	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /metadata	https://w3id.org/ogc/api/processes/metadata	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /metadata/role		https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /metadata/title		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
 /metadata/href		https://geolabs.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/part1/v1/schemas/metadata/schema.yaml
-/inputs	https://geolabs.github.io/bblocks-generic-profiles/def/inputs	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
+/inputs	https://w3id.org/geolabs/ospd/generic-profiles/inputs	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /inputs/dataType	http://purl.org/dc/terms/type	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /inputs/id	@id	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
-/inputs/representation	https://geolabs.github.io/bblocks-generic-profiles/def/representation	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/inputs/representation	https://w3id.org/geolabs/ospd/generic-profiles/representation	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /inputs/minOccurs		https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /inputs/maxOccurs	https://w3id.org/ogc/api/processes/maxOccurs	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /inputs/keywords	https://w3id.org/ogc/api/processes/keywords	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /inputs/metadata	https://w3id.org/ogc/api/processes/metadata	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /inputs/metadata/role	https://w3id.org/ogc/api/processes/role	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
-/outputs	https://geolabs.github.io/bblocks-generic-profiles/def/outputs	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
+/outputs	https://w3id.org/geolabs/ospd/generic-profiles/outputs	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /outputs/dataType	http://purl.org/dc/terms/type	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /outputs/id	@id	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
-/outputs/representation	https://geolabs.github.io/bblocks-generic-profiles/def/representation	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
+/outputs/representation	https://w3id.org/geolabs/ospd/generic-profiles/representation	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /outputs/keywords	https://w3id.org/ogc/api/processes/keywords	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /outputs/metadata	https://w3id.org/ogc/api/processes/metadata	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
 /outputs/metadata/role	https://w3id.org/ogc/api/processes/role	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/schema.yaml
@@ -63,7 +63,7 @@ path	@id	schema
 /outputs/raster/metadata/href		/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /inputs/rasters/id	@id	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /inputs/rasters/dataType	http://purl.org/dc/terms/type	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
-/inputs/rasters/representation	https://geolabs.github.io/bblocks-generic-profiles/def/representation	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
+/inputs/rasters/representation	https://w3id.org/geolabs/ospd/generic-profiles/representation	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /inputs/rasters/maxOccurs	https://w3id.org/ogc/api/processes/maxOccurs	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /inputs/index/id	@id	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /inputs/index/dataType	http://purl.org/dc/terms/type	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
@@ -71,4 +71,4 @@ path	@id	schema
 /inputs/index/maxOccurs	https://w3id.org/ogc/api/processes/maxOccurs	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /outputs/raster/id	@id	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
 /outputs/raster/dataType	http://purl.org/dc/terms/type	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
-/outputs/raster/representation	https://geolabs.github.io/bblocks-generic-profiles/def/representation	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml
+/outputs/raster/representation	https://w3id.org/geolabs/ospd/generic-profiles/representation	/github/workspace/build/annotated/implementation-profile/radiometric-index-single-band/schema.yaml

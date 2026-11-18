@@ -1,27 +1,39 @@
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/product-selection/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection",
   "type": "GenericProfile",
   "prefLabel": "Product selection",
   "definition": "Selects, from a catalogue, the products of a collection whose footprint intersects an area of interest and whose acquisition time falls within a time interval. An area of interest, a time interval and a collection in, the selected products out.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile",
   "hasAction": [
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/actions/addition",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection"
     }
   ],
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "broader": [
-    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"
+    "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access"
   ],
   "keywords": [
     "product",
@@ -32,13 +44,13 @@
     {
       "title": "Process Concept: Data Discovery and Access",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access"
     }
   ],
   "inputs": {
     "areaOfInterest": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/areaOfInterest",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/inputs/areaOfInterest",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "title": "Geometry",
       "description": "the area the footprint of each product must intersect",
       "keywords": [
@@ -46,8 +58,8 @@
       ]
     },
     "timeInterval": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/timeInterval",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/time-interval",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/inputs/timeInterval",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/time-interval",
       "title": "Time interval",
       "description": "the period in which each product was acquired",
       "keywords": [
@@ -55,8 +67,8 @@
       ]
     },
     "collection": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/collection",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/collection-identifier",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/inputs/collection",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/collection-identifier",
       "title": "Collection identifier",
       "description": "the collection the products belong to",
       "keywords": [
@@ -66,8 +78,8 @@
   },
   "outputs": {
     "products": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/outputs/products",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/outputs/products",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/eo-product",
       "title": "Earth observation product",
       "description": "the selected products",
       "keywords": [

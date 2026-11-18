@@ -1,57 +1,69 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling> a gp:ImplementationProfile ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling> ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/inputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
+    proc:keywords "raster" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster resampling -- input `raster`" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/inputs/raster" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/inputs/resolution> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/grid-resolution> ;
+    proc:keywords "grid resolution" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster resampling -- input `resolution`" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/inputs/resolution" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/outputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
+    proc:keywords "raster" ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster resampling -- output `raster`" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/outputs/raster" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling> a gp:ImplementationProfile ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling> ;
     skos:definition "Implementation Profile of the operation Raster resampling, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster resampling, bound to data exchange formats." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster resampling" ;
-    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-resampling> ;
-    gp:inputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/inputs/raster> ;
-            ns2:resolution <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/inputs/resolution> ] ;
-    gp:outputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/outputs/raster> ] ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling> ;
+    gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-resampling> ;
+    gp:inputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/inputs/raster> ;
+            ns1:resolution <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/inputs/resolution> ] ;
+    gp:outputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/outputs/raster> ] ;
+    gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling> ;
     proc:keywords "coverage",
         "raster",
         "resampling" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster resampling" ],
         [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/actions/addition> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/actions/addition> a rim:RegisterAction ;
-    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
-    rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling> ;
-    rim:proposer gp:geolabs .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/inputs/raster> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
-    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
-    proc:keywords "raster" ;
-    proc:metadata [ dcterms:title "Generic Profile: Raster resampling -- input `raster`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/raster" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/inputs/resolution> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/grid-resolution> ;
-    proc:keywords "grid resolution" ;
-    proc:metadata [ dcterms:title "Generic Profile: Raster resampling -- input `resolution`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/resolution" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/outputs/raster> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
-    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
-    proc:keywords "raster" ;
-    proc:metadata [ dcterms:title "Generic Profile: Raster resampling -- output `raster`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/outputs/raster" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
 

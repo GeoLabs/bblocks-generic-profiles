@@ -38,26 +38,40 @@ Implementation Profile -> Implementation (instance level).
 #### json
 ```json
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate",
   "type": "GenericProfile",
   "prefLabel": "Unary spatial predicate",
   "definition": "Tests a boolean property of a single geometry. One Geometry input, one Boolean output -- the one-input counterpart to `binary-spatial-predicate`'s two.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-06T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
-  },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile",
+  "hasAction": [
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-10-06T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate"
+    }
+  ],
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "broader": [
-    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
   ],
   "keywords": [
     "vector",
@@ -68,13 +82,13 @@ Implementation Profile -> Implementation (instance level).
     {
       "title": "Process Concept: Vector Geometry Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
     }
   ],
   "inputs": {
     "geometry": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/inputs/geometry",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "title": "Geometry",
       "description": "the input geometry",
       "keywords": [
@@ -84,8 +98,8 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/boolean",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/boolean",
       "title": "Boolean",
       "description": "the predicate's truth value",
       "keywords": [
@@ -101,26 +115,40 @@ Implementation Profile -> Implementation (instance level).
 ```jsonld
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/unary-spatial-predicate/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate",
   "type": "GenericProfile",
   "prefLabel": "Unary spatial predicate",
   "definition": "Tests a boolean property of a single geometry. One Geometry input, one Boolean output -- the one-input counterpart to `binary-spatial-predicate`'s two.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-06T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"
-  },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile",
+  "hasAction": [
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-10-06T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate"
+    }
+  ],
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "broader": [
-    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
   ],
   "keywords": [
     "vector",
@@ -131,13 +159,13 @@ Implementation Profile -> Implementation (instance level).
     {
       "title": "Process Concept: Vector Geometry Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
     }
   ],
   "inputs": {
     "geometry": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/inputs/geometry",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "title": "Geometry",
       "description": "the input geometry",
       "keywords": [
@@ -147,8 +175,8 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/boolean",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/boolean",
       "title": "Boolean",
       "description": "the predicate's truth value",
       "keywords": [
@@ -162,49 +190,61 @@ Implementation Profile -> Implementation (instance level).
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate> a gp:GenericProfile ;
-    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-10-06T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate> ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/inputs/geometry> dcterms:description "the input geometry" ;
+    dcterms:title "Geometry" ;
+    dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/geometry> ;
+    proc:keywords "geometry" .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/outputs/result> dcterms:description "the predicate's truth value" ;
+    dcterms:title "Boolean" ;
+    dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/boolean> ;
+    proc:keywords "boolean" .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate> a gp:GenericProfile ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate> ;
+    skos:broader <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing> ;
     skos:definition "Tests a boolean property of a single geometry. One Geometry input, one Boolean output -- the one-input counterpart to `binary-spatial-predicate`'s two." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Unary spatial predicate" ;
-    gp:inputs [ ns1:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result> ] ;
+    gp:inputs [ ns1:geometry <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/inputs/geometry> ] ;
+    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/outputs/result> ] ;
     proc:keywords "geometry",
         "predicate",
         "vector" ;
     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/actions/addition> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/actions/addition> a rim:RegisterAction ;
-    prov:startedAtTime "2026-10-06T00:00:00+00:00"^^xsd:dateTime ;
-    rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate> ;
-    rim:proposer gp:geolabs .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry> dcterms:description "the input geometry" ;
-    dcterms:title "Geometry" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/geometry> ;
-    proc:keywords "geometry" .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result> dcterms:description "the predicate's truth value" ;
-    dcterms:title "Boolean" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/boolean> ;
-    proc:keywords "boolean" .
 
 
 ```
@@ -220,7 +260,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate
+      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate
       x-jsonld-id: '@id'
     type:
       const: GenericProfile
@@ -241,7 +281,7 @@ allOf:
             role:
               const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
             href:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing
+              const: https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing
       x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       properties:
@@ -251,14 +291,14 @@ allOf:
           - dataType
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/inputs/geometry
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/inputs/geometry
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/geometry
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/geometry
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/inputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/
     outputs:
       properties:
         result:
@@ -267,16 +307,16 @@ allOf:
           - dataType
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/unary-spatial-predicate/outputs/result
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-spatial-predicate/outputs/result
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/boolean
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/boolean
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/outputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/
 x-jsonld-extra-terms:
-  GenericProfile: https://geolabs.github.io/bblocks-generic-profiles/def/GenericProfile
+  GenericProfile: https://w3id.org/geolabs/ospd/generic-profiles/GenericProfile
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
@@ -290,9 +330,15 @@ x-jsonld-extra-terms:
   link:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
-  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause
+  clause: https://w3id.org/geolabs/ospd/generic-profiles/clause
+  sameAs:
+    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs
+    x-jsonld-type: '@id'
+  affectedProperty:
+    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
-  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gp: https://w3id.org/geolabs/ospd/generic-profiles/
   skos: http://www.w3.org/2004/02/skos/core#
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
@@ -300,7 +346,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.unary-spatial-predicate
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-16'
+  dateOfLastChange: '2026-11-18'
 
 ```
 
@@ -503,7 +549,7 @@ Links to the schema:
     "source": "dct:source",
     "inputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -515,7 +561,7 @@ Links to the schema:
     },
     "outputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -524,6 +570,14 @@ Links to the schema:
       "@id": "gp:outputs"
     },
     "GenericProfile": "gp:GenericProfile",
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
     "link": {
       "@id": "dct:references",
       "@type": "@id"
@@ -535,7 +589,7 @@ Links to the schema:
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "proc": "https://w3id.org/ogc/api/processes/",
     "@version": 1.1
   }

@@ -1,36 +1,48 @@
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion",
   "type": "GenericProfile",
   "prefLabel": "Raster format conversion",
   "definition": "Converts a raster coverage from one encoding to another, without changing its content. One Raster input, a target format, one Raster output in the new encoding.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile",
   "hasAction": [
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/actions/addition",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/actions/data-type-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion/actions/data-type-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
-      "description": "The dataType of input `targetFormat` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/format-identifier, created for this role in the data-types register. Its title \"String\" becomes \"Format identifier\".",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "The dataType of input `targetFormat` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/format-identifier, created for this role in the data-types register. Its title \"String\" becomes \"Format identifier\".",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion"
     }
   ],
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "broader": [
-    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
   ],
   "keywords": [
     "raster",
@@ -41,13 +53,13 @@
     {
       "title": "Process Concept: Raster Coverage Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     }
   ],
   "inputs": {
     "raster": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/inputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion/inputs/raster",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
       "title": "Raster",
       "description": "the input raster coverage",
       "keywords": [
@@ -55,8 +67,8 @@
       ]
     },
     "targetFormat": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/inputs/targetFormat",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/format-identifier",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion/inputs/targetFormat",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/format-identifier",
       "title": "Format identifier",
       "description": "the target raster encoding",
       "keywords": [
@@ -66,8 +78,8 @@
   },
   "outputs": {
     "raster": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/outputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-format-conversion/outputs/raster",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
       "title": "Raster",
       "description": "the converted raster coverage",
       "keywords": [

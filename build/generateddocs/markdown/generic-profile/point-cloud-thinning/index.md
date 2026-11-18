@@ -43,26 +43,40 @@ Implementation Profile -> Implementation (instance level).
 #### json
 ```json
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning",
   "type": "GenericProfile",
   "prefLabel": "Point cloud thinning",
   "definition": "Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-08T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning"
-  },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile",
+  "hasAction": [
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-10-08T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning"
+    }
+  ],
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "broader": [
-    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
+    "https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing"
   ],
   "keywords": [
     "point cloud",
@@ -72,13 +86,13 @@ Implementation Profile -> Implementation (instance level).
     {
       "title": "Process Concept: Point Cloud Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing"
     }
   ],
   "inputs": {
     "points": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/points",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud",
       "title": "Point cloud",
       "description": "the input point cloud",
       "keywords": [
@@ -86,8 +100,8 @@ Implementation Profile -> Implementation (instance level).
       ]
     },
     "percentage": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/number",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/percentage",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/number",
       "title": "Number",
       "description": "the share of points to keep, in percent",
       "keywords": [
@@ -97,8 +111,8 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud",
       "title": "Point cloud",
       "description": "the thinned point cloud",
       "keywords": [
@@ -114,26 +128,40 @@ Implementation Profile -> Implementation (instance level).
 ```jsonld
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/point-cloud-thinning/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning",
   "type": "GenericProfile",
   "prefLabel": "Point cloud thinning",
   "definition": "Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-08T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning"
-  },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile",
+  "hasAction": [
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-10-08T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning"
+    }
+  ],
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "broader": [
-    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
+    "https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing"
   ],
   "keywords": [
     "point cloud",
@@ -143,13 +171,13 @@ Implementation Profile -> Implementation (instance level).
     {
       "title": "Process Concept: Point Cloud Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing"
     }
   ],
   "inputs": {
     "points": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/points",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud",
       "title": "Point cloud",
       "description": "the input point cloud",
       "keywords": [
@@ -157,8 +185,8 @@ Implementation Profile -> Implementation (instance level).
       ]
     },
     "percentage": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/number",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/percentage",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/number",
       "title": "Number",
       "description": "the share of points to keep, in percent",
       "keywords": [
@@ -168,8 +196,8 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud",
       "title": "Point cloud",
       "description": "the thinned point cloud",
       "keywords": [
@@ -183,54 +211,66 @@ Implementation Profile -> Implementation (instance level).
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning> a gp:GenericProfile ;
-    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning> ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/percentage> dcterms:description "the share of points to keep, in percent" ;
+    dcterms:title "Number" ;
+    dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/number> ;
+    proc:keywords "percentage" .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/points> dcterms:description "the input point cloud" ;
+    dcterms:title "Point cloud" ;
+    dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud> ;
+    proc:keywords "point cloud" .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/outputs/result> dcterms:description "the thinned point cloud" ;
+    dcterms:title "Point cloud" ;
+    dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud> ;
+    proc:keywords "point cloud" .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning> a gp:GenericProfile ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning> ;
+    skos:broader <https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing> ;
     skos:definition "Reduces the number of points of a point cloud. One point cloud and the share of points to keep in, one point cloud out." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Point cloud thinning" ;
-    gp:inputs [ ns1:percentage <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage> ;
-            ns1:points <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result> ] ;
+    gp:inputs [ ns1:percentage <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/percentage> ;
+            ns1:points <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/points> ] ;
+    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/outputs/result> ] ;
     proc:keywords "point cloud",
         "thinning" ;
     proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/actions/addition> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/actions/addition> a rim:RegisterAction ;
-    prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
-    rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning> ;
-    rim:proposer gp:geolabs .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage> dcterms:description "the share of points to keep, in percent" ;
-    dcterms:title "Number" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/number> ;
-    proc:keywords "percentage" .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points> dcterms:description "the input point cloud" ;
-    dcterms:title "Point cloud" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud> ;
-    proc:keywords "point cloud" .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result> dcterms:description "the thinned point cloud" ;
-    dcterms:title "Point cloud" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud> ;
-    proc:keywords "point cloud" .
 
 
 ```
@@ -246,7 +286,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning
+      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning
       x-jsonld-id: '@id'
     type:
       const: GenericProfile
@@ -267,7 +307,7 @@ allOf:
             role:
               const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
             href:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing
+              const: https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing
       x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       properties:
@@ -277,10 +317,10 @@ allOf:
           - dataType
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/points
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
         percentage:
@@ -289,14 +329,14 @@ allOf:
           - dataType
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/percentage
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/number
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/number
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/inputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/
     outputs:
       properties:
         result:
@@ -305,16 +345,16 @@ allOf:
           - dataType
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/outputs/result
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/outputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/
 x-jsonld-extra-terms:
-  GenericProfile: https://geolabs.github.io/bblocks-generic-profiles/def/GenericProfile
+  GenericProfile: https://w3id.org/geolabs/ospd/generic-profiles/GenericProfile
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
@@ -328,9 +368,15 @@ x-jsonld-extra-terms:
   link:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
-  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause
+  clause: https://w3id.org/geolabs/ospd/generic-profiles/clause
+  sameAs:
+    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs
+    x-jsonld-type: '@id'
+  affectedProperty:
+    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
-  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gp: https://w3id.org/geolabs/ospd/generic-profiles/
   skos: http://www.w3.org/2004/02/skos/core#
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
@@ -338,7 +384,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.point-cloud-thinning
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-16'
+  dateOfLastChange: '2026-11-18'
 
 ```
 
@@ -541,7 +587,7 @@ Links to the schema:
     "source": "dct:source",
     "inputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -553,7 +599,7 @@ Links to the schema:
     },
     "outputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -562,6 +608,14 @@ Links to the schema:
       "@id": "gp:outputs"
     },
     "GenericProfile": "gp:GenericProfile",
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
     "link": {
       "@id": "dct:references",
       "@type": "@id"
@@ -573,7 +627,7 @@ Links to the schema:
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "proc": "https://w3id.org/ogc/api/processes/",
     "@version": 1.1
   }

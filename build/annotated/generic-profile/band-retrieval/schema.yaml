@@ -6,7 +6,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval
+      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/band-retrieval
       x-jsonld-id: '@id'
     type:
       const: GenericProfile
@@ -27,7 +27,7 @@ allOf:
             role:
               const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
             href:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access
+              const: https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access
       x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       required:
@@ -41,10 +41,10 @@ allOf:
           - dataType
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/product
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/band-retrieval/inputs/product
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/eo-product
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
         band:
@@ -53,10 +53,10 @@ allOf:
           - dataType
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/band
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/band-retrieval/inputs/band
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/band-identifier
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/band-identifier
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
         areaOfInterest:
@@ -66,17 +66,17 @@ allOf:
           - minOccurs
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/areaOfInterest
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/band-retrieval/inputs/areaOfInterest
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/bounding-box
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/bounding-box
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
             minOccurs:
               const: 0
               x-jsonld-id: https://w3id.org/ogc/api/processes/minOccurs
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/inputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/
     outputs:
       required:
       - raster
@@ -87,16 +87,16 @@ allOf:
           - dataType
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/outputs/raster
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/band-retrieval/outputs/raster
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/raster
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/outputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/
 x-jsonld-extra-terms:
-  GenericProfile: https://geolabs.github.io/bblocks-generic-profiles/def/GenericProfile
+  GenericProfile: https://w3id.org/geolabs/ospd/generic-profiles/GenericProfile
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
@@ -110,9 +110,15 @@ x-jsonld-extra-terms:
   link:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
-  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause
+  clause: https://w3id.org/geolabs/ospd/generic-profiles/clause
+  sameAs:
+    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs
+    x-jsonld-type: '@id'
+  affectedProperty:
+    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
-  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gp: https://w3id.org/geolabs/ospd/generic-profiles/
   skos: http://www.w3.org/2004/02/skos/core#
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
@@ -120,4 +126,4 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.band-retrieval
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-16'
+  dateOfLastChange: '2026-11-18'

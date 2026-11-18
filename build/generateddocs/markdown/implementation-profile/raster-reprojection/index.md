@@ -98,88 +98,100 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 #### json
 ```json
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection",
   "type": "ImplementationProfile",
   "prefLabel": "Raster reprojection",
   "definition": "Implementation Profile of the operation Raster reprojection, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster reprojection, bound to data exchange formats.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile",
   "hasAction": [
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/addition",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/meaning-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/meaning-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
-      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content.\"",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-reprojection, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content.\"",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/operation-sources-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/operation-sources-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "The source defining the operation moves to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/representation-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/representation-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}).",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/tools-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/tools-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: tool keywords removed: GDAL, gdalwarp; 2 format keywords removed from inputs and outputs (inputs/raster: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): GDAL gdalwarp -- Image mosaicing, reprojection and warping utility <https://gdal.org/programs/gdalwarp.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/data-type-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/data-type-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
-      "description": "The dataType of input `targetCRS` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system, created for this role in the data-types register.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "The dataType of input `targetCRS` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/coordinate-reference-system, created for this role in the data-types register.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/sections-restored-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/sections-restored-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
-      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     }
   ],
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection",
-  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection",
+  "refinesGenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection",
+  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-reprojection",
   "keywords": [
     "raster",
     "coverage",
@@ -189,18 +201,18 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     {
       "title": "Process Concept: Raster Coverage Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     },
     {
       "title": "Generic Profile: Raster reprojection",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection"
     }
   ],
   "inputs": {
     "raster": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/inputs/raster",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
       ],
@@ -210,30 +222,30 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Raster reprojection -- input `raster`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/raster"
         }
       ]
     },
     "targetCRS": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/inputs/targetCRS",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/coordinate-reference-system",
       "keywords": [
         "CRS"
       ],
       "metadata": [
         {
           "title": "Generic Profile: Raster reprojection -- input `targetCRS`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/targetCRS"
         }
       ]
     }
   },
   "outputs": {
     "raster": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/outputs/raster",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
       ],
@@ -243,8 +255,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Raster reprojection -- output `raster`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/outputs/raster"
         }
       ]
     }
@@ -257,88 +269,100 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```jsonld
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/raster-reprojection/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection",
   "type": "ImplementationProfile",
   "prefLabel": "Raster reprojection",
   "definition": "Implementation Profile of the operation Raster reprojection, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster reprojection, bound to data exchange formats.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile",
   "hasAction": [
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/addition",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/meaning-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/meaning-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
-      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content.\"",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-reprojection, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content.\"",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/operation-sources-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/operation-sources-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "The source defining the operation moves to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/representation-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/representation-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}).",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/tools-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/tools-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: tool keywords removed: GDAL, gdalwarp; 2 format keywords removed from inputs and outputs (inputs/raster: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): GDAL gdalwarp -- Image mosaicing, reprojection and warping utility <https://gdal.org/programs/gdalwarp.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/data-type-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/data-type-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
-      "description": "The dataType of input `targetCRS` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system, created for this role in the data-types register.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "The dataType of input `targetCRS` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/coordinate-reference-system, created for this role in the data-types register.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/sections-restored-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/sections-restored-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
-      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"
     }
   ],
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection",
-  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection",
+  "refinesGenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection",
+  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-reprojection",
   "keywords": [
     "raster",
     "coverage",
@@ -348,18 +372,18 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     {
       "title": "Process Concept: Raster Coverage Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     },
     {
       "title": "Generic Profile: Raster reprojection",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection"
     }
   ],
   "inputs": {
     "raster": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/inputs/raster",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
       ],
@@ -369,30 +393,30 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Raster reprojection -- input `raster`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/raster"
         }
       ]
     },
     "targetCRS": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/inputs/targetCRS",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/coordinate-reference-system",
       "keywords": [
         "CRS"
       ],
       "metadata": [
         {
           "title": "Generic Profile: Raster reprojection -- input `targetCRS`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/targetCRS"
         }
       ]
     }
   },
   "outputs": {
     "raster": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/outputs/raster",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
       ],
@@ -402,8 +426,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Raster reprojection -- output `raster`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/outputs/raster"
         }
       ]
     }
@@ -414,113 +438,125 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/addition> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection> ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/data-type-2026-11-09> a rim:RegisterAction ;
-    dcterms:description "The dataType of input `targetCRS` changes from https://geolabs.github.io/bblocks-data-types/def/data-type/string, which hid the concept, to https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system, created for this role in the data-types register." ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/data-type-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The dataType of input `targetCRS` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/coordinate-reference-system, created for this role in the data-types register." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection> ;
     rim:changeClassification rim:substantiveChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/meaning-2026-11-09> a rim:RegisterAction ;
-    dcterms:description "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content.\"" ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/meaning-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-reprojection, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Reprojects a raster coverage to another coordinate reference system, resampling pixel values as needed, preserving the coverage's content.\"" ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection> ;
     rim:changeClassification rim:substantiveChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The source defining the operation moves to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/representation-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/representation-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"})." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection> ;
     rim:changeClassification rim:substantiveChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
-    dcterms:description "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/tools-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/tools-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Decision D4: tool keywords removed: GDAL, gdalwarp; 2 format keywords removed from inputs and outputs (inputs/raster: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): GDAL gdalwarp -- Image mosaicing, reprojection and warping utility <https://gdal.org/programs/gdalwarp.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/inputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster reprojection -- input `raster`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/raster" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/inputs/targetCRS> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/coordinate-reference-system> ;
     proc:keywords "CRS" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster reprojection -- input `targetCRS`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/targetCRS" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/outputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster reprojection -- output `raster`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/outputs/raster" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection> a gp:ImplementationProfile ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection> a gp:ImplementationProfile ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection> ;
     skos:definition "Implementation Profile of the operation Raster reprojection, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster reprojection, bound to data exchange formats." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster reprojection" ;
-    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection> ;
-    gp:inputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster> ;
-            ns1:targetCRS <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS> ] ;
-    gp:outputs [ ns2:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster> ] ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection> ;
+    gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-reprojection> ;
+    gp:inputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/inputs/raster> ;
+            ns1:targetCRS <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/inputs/targetCRS> ] ;
+    gp:outputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/outputs/raster> ] ;
+    gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection> ;
     proc:keywords "coverage",
         "raster",
         "reprojection" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster reprojection" ],
         [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/addition>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/data-type-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/meaning-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/operation-sources-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/representation-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/sections-restored-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/actions/tools-2026-11-09> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/data-type-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/identifier-2026-11-17>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/meaning-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/operation-sources-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/representation-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/sections-restored-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/tools-2026-11-09> ;
     rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
 
@@ -538,7 +574,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection
+      const: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection
       x-jsonld-id: '@id'
     type:
       const: ImplementationProfile
@@ -547,12 +583,12 @@ allOf:
       const: Raster reprojection
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
     refinesGenericProfile:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
+      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/refinesGenericProfile
       x-jsonld-type: '@id'
     activityType:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-reprojection
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/activityType
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-reprojection
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/activityType
       x-jsonld-type: '@id'
     keywords:
       allOf:
@@ -574,7 +610,7 @@ allOf:
             role:
               const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
             href:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing
+              const: https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing
       - contains:
           type: object
           required:
@@ -584,7 +620,7 @@ allOf:
             role:
               const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
             href:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection
       x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       type: object
@@ -608,9 +644,9 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/raster
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/raster
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
         targetCRS:
           properties:
@@ -628,12 +664,12 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/inputs/targetCRS
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/targetCRS
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/inputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/
     outputs:
       type: object
       required:
@@ -655,12 +691,12 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection/outputs/raster
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/outputs/raster
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/outputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/
 - type: object
   properties:
     inputs:
@@ -672,16 +708,16 @@ allOf:
           - representation
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/raster
+              const: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/inputs/raster
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/raster
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
             representation:
               const:
               - https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff
-              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+              x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/representation
               x-jsonld-type: '@id'
         targetCRS:
           required:
@@ -689,14 +725,14 @@ allOf:
           - dataType
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/inputs/targetCRS
+              const: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/inputs/targetCRS
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/coordinate-reference-system
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/coordinate-reference-system
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/inputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/
     outputs:
       properties:
         raster:
@@ -706,21 +742,21 @@ allOf:
           - representation
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-reprojection/outputs/raster
+              const: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/outputs/raster
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/raster
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
             representation:
               const:
               - https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff
-              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+              x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/representation
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/outputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/
 x-jsonld-extra-terms:
-  ImplementationProfile: https://geolabs.github.io/bblocks-generic-profiles/def/ImplementationProfile
+  ImplementationProfile: https://w3id.org/geolabs/ospd/generic-profiles/ImplementationProfile
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
@@ -730,8 +766,14 @@ x-jsonld-extra-terms:
   link:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
+  sameAs:
+    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs
+    x-jsonld-type: '@id'
+  affectedProperty:
+    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
-  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gp: https://w3id.org/geolabs/ospd/generic-profiles/
   skos: http://www.w3.org/2004/02/skos/core#
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
@@ -739,7 +781,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.raster-reprojection
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-16'
+  dateOfLastChange: '2026-11-18'
 
 ```
 
@@ -937,7 +979,7 @@ Links to the schema:
     "metadata": "proc:metadata",
     "inputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -961,7 +1003,7 @@ Links to the schema:
     },
     "outputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -984,6 +1026,14 @@ Links to the schema:
     },
     "source": "dct:source",
     "ImplementationProfile": "gp:ImplementationProfile",
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
     "link": {
       "@id": "dct:references",
       "@type": "@id"
@@ -994,7 +1044,7 @@ Links to the schema:
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "proc": "https://w3id.org/ogc/api/processes/",
     "@version": 1.1
   }

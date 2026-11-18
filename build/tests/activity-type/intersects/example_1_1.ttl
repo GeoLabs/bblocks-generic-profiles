@@ -1,7 +1,7 @@
 @prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -9,27 +9,38 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects> a owl:Class,
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects> ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects> a owl:Class,
         acttype:ActivityType ;
-    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.24 ST_Intersects" ],
-        [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
-            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.15" ] ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.15" ],
+        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.24 ST_Intersects" ] ;
     rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects> ;
     skos:altLabel "ST_Intersects" ;
     skos:definition "Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share at least one point). Equivalent to the negation of Disjoint." ;
     skos:prefLabel "Intersects" ;
     acttype:associatedAgentType prov:SoftwareAgent ;
     acttype:usedEntityType geo:Geometry ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects/actions/addition> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
     rim:itemClass acttype:activityTypeItemClass ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects"^^xsd:anyURI ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects/actions/addition> a rim:RegisterAction ;
-    prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
-    rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects> ;
-    rim:proposer gp:geolabs .
 

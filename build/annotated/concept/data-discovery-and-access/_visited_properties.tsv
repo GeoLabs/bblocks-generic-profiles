@@ -23,5 +23,5 @@ path	@id	schema
 /source	http://purl.org/dc/terms/source	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
 /source/title	http://purl.org/dc/terms/title	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
 /source/link	http://purl.org/dc/terms/references	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
-/source/clause	https://geolabs.github.io/bblocks-generic-profiles/def/clause	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
+/source/clause	https://w3id.org/geolabs/ospd/generic-profiles/clause	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml
 /narrower	http://www.w3.org/2004/02/skos/core#narrower	https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/schema.yaml

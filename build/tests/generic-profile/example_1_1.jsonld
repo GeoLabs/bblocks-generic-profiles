@@ -1,25 +1,25 @@
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile",
   "type": "GenericProfile",
   "prefLabel": "Example Generic Profile (placeholder, not a real signature)",
   "definition": "Illustrates the shape of a Generic Profile entry only. Real Generic Profiles are each their own building block -- see generic-profiles.generic-profile.binary-spatial-predicate, .geometry-buffer and the other siblings for actual signatures.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile",
   "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/actions/addition",
+    "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
     "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile"
+    "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile"
   },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "broader": [
-    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+    "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
   ],
   "keywords": [
     "example"
@@ -28,13 +28,13 @@
     {
       "title": "Process Concept: Vector Geometry Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
     }
   ],
   "inputs": {
     "input1": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/inputs/input1",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile/inputs/input1",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/geometry",
       "title": "Geometry",
       "description": "an input role",
       "keywords": [
@@ -44,8 +44,8 @@
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/example-generic-profile/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/boolean",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/boolean",
       "title": "Boolean",
       "description": "an output role",
       "keywords": [

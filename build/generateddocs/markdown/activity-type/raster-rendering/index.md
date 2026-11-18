@@ -15,7 +15,7 @@ Activity type: **Raster rendering**.
 
 ## The item
 
-`https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering` is an `acttype:ActivityType` item of this register (`gp:register`), of the Activity Type Register's item class, and an OWL class, sub-class of `geoproc:GeoprocessingActivityType`.
+`https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering` is an `acttype:ActivityType` item of this register (`gp:register`), of the Activity Type Register's item class, and an OWL class, sub-class of `geoproc:GeoprocessingActivityType`.
 
 Its activities use or generate spatial data, declared with GeoSPARQL 1.1 classes: `usedEntityType` `geo:Feature`. The class is chosen per kind of role (see `scripts/activity-types.yaml`); how a data type of `bblocks-data-types` maps to an entity type is still open (decision D8, question 5).
 
@@ -39,7 +39,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.raster-rend
 #### json
 ```json
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering",
   "type": [
     "ActivityType",
     "Class"
@@ -47,19 +47,33 @@ The Implementation Profile [`generic-profiles.implementation-profile.raster-rend
   "prefLabel": "Raster rendering",
   "definition": "Depicts a raster as an image for viewing, giving each cell a colour from a colour map that associates values, or classes of values, with colours.",
   "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering",
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-11-10T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering"
-  },
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering",
+  "hasAction": [
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering"
+    }
+  ],
   "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
   "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
   "source": [
@@ -76,7 +90,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.raster-rend
 ```jsonld
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/raster-rendering/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering",
   "type": [
     "ActivityType",
     "Class"
@@ -84,19 +98,33 @@ The Implementation Profile [`generic-profiles.implementation-profile.raster-rend
   "prefLabel": "Raster rendering",
   "definition": "Depicts a raster as an image for viewing, giving each cell a colour from a colour map that associates values, or classes of values, with colours.",
   "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering",
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-11-10T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering"
-  },
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering",
+  "hasAction": [
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering"
+    }
+  ],
   "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
   "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
   "source": [
@@ -113,7 +141,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.raster-rend
 @prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -121,27 +149,38 @@ The Implementation Profile [`generic-profiles.implementation-profile.raster-rend
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering> a owl:Class,
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering> ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering> a owl:Class,
         acttype:ActivityType ;
     dcterms:source [ dcterms:references <https://portal.ogc.org/files/05-077r4> ;
             dcterms:title "OGC 05-077r4 Symbology Encoding Implementation Specification 1.1.0, §11.5 Raster Symbolizer (ColorMap with the Categorize or Interpolate function)" ] ;
     rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering> ;
     skos:definition "Depicts a raster as an image for viewing, giving each cell a colour from a colour map that associates values, or classes of values, with colours." ;
     skos:prefLabel "Raster rendering" ;
     acttype:associatedAgentType prov:SoftwareAgent ;
     acttype:usedEntityType geo:Feature ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering/actions/addition> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
     rim:itemClass acttype:activityTypeItemClass ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering"^^xsd:anyURI ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering/actions/addition> a rim:RegisterAction ;
-    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
-    rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering> ;
-    rim:proposer gp:geolabs .
 
 
 ```
@@ -157,7 +196,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering
       x-jsonld-id: '@id'
     prefLabel:
       const: Raster rendering
@@ -186,18 +225,24 @@ x-jsonld-extra-terms:
   link:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
+  sameAs:
+    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs
+    x-jsonld-type: '@id'
+  affectedProperty:
+    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
   acttype: https://w3id.org/ogc/rim/activity-type/
   owl: http://www.w3.org/2002/07/owl#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   skos: http://www.w3.org/2004/02/skos/core#
   dct: http://purl.org/dc/terms/
-  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gp: https://w3id.org/geolabs/ospd/generic-profiles/
 x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type.raster-rendering
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-16'
+  dateOfLastChange: '2026-11-18'
 
 ```
 
@@ -407,6 +452,14 @@ Links to the schema:
     "source": "dct:source",
     "ActivityType": "rim:activity-type/ActivityType",
     "Class": "owl:Class",
+    "sameAs": {
+      "@id": "owl:sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
     "link": {
       "@id": "dct:references",
       "@type": "@id"
@@ -419,7 +472,7 @@ Links to the schema:
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
     "acttype": "rim:activity-type/",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "@version": 1.1
   }
 }

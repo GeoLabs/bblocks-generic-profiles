@@ -1,27 +1,39 @@
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/raster-resampling/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling",
   "type": "GenericProfile",
   "prefLabel": "Raster resampling",
   "definition": "Changes the cell size of a raster coverage over the same extent and in the same coordinate reference system. One Raster input, a target grid resolution, one Raster output on the new grid.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile",
   "hasAction": [
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/actions/addition",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling"
     }
   ],
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "broader": [
-    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+    "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
   ],
   "keywords": [
     "raster",
@@ -32,13 +44,13 @@
     {
       "title": "Process Concept: Raster Coverage Processing",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     }
   ],
   "inputs": {
     "raster": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/inputs/raster",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
       "title": "Raster",
       "description": "the input raster coverage",
       "keywords": [
@@ -46,8 +58,8 @@
       ]
     },
     "resolution": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/resolution",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/grid-resolution",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/inputs/resolution",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/grid-resolution",
       "title": "Grid resolution",
       "description": "the cell size of the output grid, along each of its axes",
       "keywords": [
@@ -57,8 +69,8 @@
   },
   "outputs": {
     "raster": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/outputs/raster",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/outputs/raster",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
       "title": "Raster",
       "description": "the resampled raster coverage",
       "keywords": [

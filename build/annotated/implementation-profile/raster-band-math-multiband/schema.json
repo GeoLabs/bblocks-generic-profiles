@@ -9,7 +9,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband",
+          "const": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband",
           "x-jsonld-id": "@id"
         },
         "type": {
@@ -21,13 +21,13 @@
           "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#prefLabel"
         },
         "refinesGenericProfile": {
-          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math",
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile",
+          "const": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math",
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/refinesGenericProfile",
           "x-jsonld-type": "@id"
         },
         "activityType": {
-          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband",
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/activityType",
+          "const": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband",
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/activityType",
           "x-jsonld-type": "@id"
         },
         "keywords": {
@@ -64,7 +64,7 @@
                     "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept"
                   },
                   "href": {
-                    "const": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing"
+                    "const": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
                   }
                 }
               }
@@ -81,7 +81,7 @@
                     "const": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic"
                   },
                   "href": {
-                    "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math"
+                    "const": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math"
                   }
                 }
               }
@@ -119,10 +119,10 @@
                         ],
                         "properties": {
                           "role": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input"
                           },
                           "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/inputs/rasters"
                           }
                         }
                       }
@@ -155,10 +155,10 @@
                         ],
                         "properties": {
                           "role": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input"
                           },
                           "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/expression"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/inputs/expression"
                           }
                         }
                       }
@@ -169,8 +169,8 @@
               }
             }
           },
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/inputs",
-          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/"
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/inputs",
+          "x-jsonld-vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/"
         },
         "outputs": {
           "type": "object",
@@ -201,10 +201,10 @@
                         ],
                         "properties": {
                           "role": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output"
                           },
                           "href": {
-                            "const": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster"
+                            "const": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/outputs/raster"
                           }
                         }
                       }
@@ -215,8 +215,8 @@
               }
             }
           },
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/outputs",
-          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/"
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/outputs",
+          "x-jsonld-vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/"
         }
       }
     },
@@ -233,11 +233,11 @@
               ],
               "properties": {
                 "id": {
-                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/rasters",
+                  "const": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/rasters",
                   "x-jsonld-id": "@id"
                 },
                 "dataType": {
-                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+                  "const": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
                 },
@@ -245,7 +245,7 @@
                   "const": [
                     "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
                   ],
-                  "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/representation",
+                  "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/representation",
                   "x-jsonld-type": "@id"
                 }
               }
@@ -257,19 +257,19 @@
               ],
               "properties": {
                 "id": {
-                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/expression",
+                  "const": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/expression",
                   "x-jsonld-id": "@id"
                 },
                 "dataType": {
-                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/expression",
+                  "const": "https://w3id.org/geolabs/ospd/data-types/data-type/expression",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
                 }
               }
             }
           },
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/inputs",
-          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/"
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/inputs",
+          "x-jsonld-vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/"
         },
         "outputs": {
           "properties": {
@@ -281,11 +281,11 @@
               ],
               "properties": {
                 "id": {
-                  "const": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/outputs/raster",
+                  "const": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/outputs/raster",
                   "x-jsonld-id": "@id"
                 },
                 "dataType": {
-                  "const": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster",
+                  "const": "https://w3id.org/geolabs/ospd/data-types/data-type/raster",
                   "x-jsonld-id": "http://purl.org/dc/terms/type",
                   "x-jsonld-type": "@id"
                 },
@@ -293,20 +293,20 @@
                   "const": [
                     "https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"
                   ],
-                  "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/representation",
+                  "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/representation",
                   "x-jsonld-type": "@id"
                 }
               }
             }
           },
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/outputs",
-          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/"
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/outputs",
+          "x-jsonld-vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/"
         }
       }
     }
   ],
   "x-jsonld-extra-terms": {
-    "ImplementationProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/ImplementationProfile",
+    "ImplementationProfile": "https://w3id.org/geolabs/ospd/generic-profiles/ImplementationProfile",
     "definition": "http://www.w3.org/2004/02/skos/core#definition",
     "inScheme": {
       "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#inScheme",
@@ -317,10 +317,18 @@
     "link": {
       "x-jsonld-id": "http://purl.org/dc/terms/references",
       "x-jsonld-type": "@id"
+    },
+    "sameAs": {
+      "x-jsonld-id": "http://www.w3.org/2002/07/owl#sameAs",
+      "x-jsonld-type": "@id"
+    },
+    "affectedProperty": {
+      "x-jsonld-id": "https://w3id.org/ogc/rim/affectedProperty",
+      "x-jsonld-type": "@id"
     }
   },
   "x-jsonld-prefixes": {
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "proc": "https://w3id.org/ogc/api/processes/",
     "dct": "http://purl.org/dc/terms/"
@@ -329,6 +337,6 @@
     "itemIdentifier": "generic-profiles.implementation-profile.raster-band-math-multiband",
     "register": "https://geolabs.github.io/bblocks-generic-profiles/build/register.json",
     "version": "0.1",
-    "dateOfLastChange": "2026-11-16"
+    "dateOfLastChange": "2026-11-18"
   }
 }

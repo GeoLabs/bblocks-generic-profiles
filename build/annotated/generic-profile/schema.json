@@ -47,10 +47,10 @@
           "x-jsonld-type": "@id"
         },
         "itemClass": {
-          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile"
+          "const": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile"
         },
         "inRegister": {
-          "const": "https://geolabs.github.io/bblocks-generic-profiles/def/register"
+          "const": "https://w3id.org/geolabs/ospd/generic-profiles/register"
         },
         "broader": {
           "description": "The Process Concept(s) (generic-profiles.concept.*) documenting the general group this operation belongs to.",
@@ -114,7 +114,7 @@
               },
               "clause": {
                 "type": "string",
-                "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/clause"
+                "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/clause"
               }
             }
           },
@@ -134,7 +134,7 @@
             ],
             "properties": {
               "dataType": {
-                "description": "What kind of data this input is, as a concept of the bblocks-data-types register (`https://geolabs.github.io/bblocks-data-types/def/data-type/...`). Not a data format: Table 21 gives this tier none; an Implementation Profile may narrow it (e.g. `raster` to `raster-single-band`, `geometry` to `surface`).",
+                "description": "What kind of data this input is, as a concept of the bblocks-data-types register (`https://w3id.org/geolabs/ospd/data-types/data-type/...`). Not a data format: Table 21 gives this tier none; an Implementation Profile may narrow it (e.g. `raster` to `raster-single-band`, `geometry` to `surface`).",
                 "type": "string",
                 "format": "uri",
                 "x-jsonld-id": "http://purl.org/dc/terms/type",
@@ -189,8 +189,8 @@
               }
             }
           },
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/inputs",
-          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/"
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/inputs",
+          "x-jsonld-vocab": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/"
         },
         "outputs": {
           "description": "Keyed by role name. No `minOccurs`/`maxOccurs` -- Table 21 has no Output.Multiplicity row (and, per the same reasoning as the earlier `cardinality`-on-outputs mistake this replaces, an output's internal structure, e.g. a raster's band count, is not an output cardinality either way; see generic-profiles.implementation-profile.raster-band-math-multiband's `description.md`).",
@@ -206,7 +206,7 @@
             ],
             "properties": {
               "dataType": {
-                "description": "What kind of data this output is, as a concept of the bblocks-data-types register (`https://geolabs.github.io/bblocks-data-types/def/data-type/...`). Not a data format: Table 21 gives this tier none; an Implementation Profile may narrow it (e.g. `raster` to `raster-single-band`, `geometry` to `surface`).",
+                "description": "What kind of data this output is, as a concept of the bblocks-data-types register (`https://w3id.org/geolabs/ospd/data-types/data-type/...`). Not a data format: Table 21 gives this tier none; an Implementation Profile may narrow it (e.g. `raster` to `raster-single-band`, `geometry` to `surface`).",
                 "type": "string",
                 "format": "uri",
                 "x-jsonld-id": "http://purl.org/dc/terms/type",
@@ -244,17 +244,25 @@
               }
             }
           },
-          "x-jsonld-id": "https://geolabs.github.io/bblocks-generic-profiles/def/outputs",
-          "x-jsonld-vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/"
+          "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/outputs",
+          "x-jsonld-vocab": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/"
         }
       }
     }
   ],
   "x-jsonld-extra-terms": {
-    "GenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/GenericProfile"
+    "GenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/GenericProfile",
+    "sameAs": {
+      "x-jsonld-id": "http://www.w3.org/2002/07/owl#sameAs",
+      "x-jsonld-type": "@id"
+    },
+    "affectedProperty": {
+      "x-jsonld-id": "https://w3id.org/ogc/rim/affectedProperty",
+      "x-jsonld-type": "@id"
+    }
   },
   "x-jsonld-prefixes": {
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "proc": "https://w3id.org/ogc/api/processes/",
     "dct": "http://purl.org/dc/terms/"
@@ -263,6 +271,6 @@
     "itemIdentifier": "generic-profiles.generic-profile",
     "register": "https://geolabs.github.io/bblocks-generic-profiles/build/register.json",
     "version": "0.1",
-    "dateOfLastChange": "2026-11-16"
+    "dateOfLastChange": "2026-11-18"
   }
 }

@@ -1,60 +1,72 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band> a gp:ImplementationProfile ;
-    skos:definition "Implementation Profile of the operation Radiometric index, whose meaning is its activity type (activityType): the signature of the Generic Profile Radiometric index, bound to data exchange formats." ;
-    skos:inScheme gp:implementation-profile ;
-    skos:prefLabel "Radiometric index (single-band rasters)" ;
-    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/radiometric-index> ;
-    gp:inputs [ ns2:index <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band/inputs/index> ;
-            ns2:rasters <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band/inputs/rasters> ] ;
-    gp:outputs [ ns1:raster <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band/outputs/raster> ] ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> ;
-    proc:keywords "coverage",
-        "radiometric index",
-        "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
-        [ dcterms:title "Generic Profile: Radiometric index" ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band/actions/addition> ;
-    rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band/actions/addition> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band> ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band/inputs/index> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/index> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/radiometric-index> ;
     ns2:minOccurs 0 ;
     proc:keywords "radiometric index" ;
     proc:maxOccurs "unbounded" ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- input `index`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/index" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band/inputs/rasters> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/rasters> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff> ;
     proc:keywords "raster" ;
     proc:maxOccurs "unbounded" ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- input `rasters`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/rasters" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band/outputs/raster> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/outputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- output `raster`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/outputs/raster" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band> a gp:ImplementationProfile ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band> ;
+    skos:definition "Implementation Profile of the operation Radiometric index, whose meaning is its activity type (activityType): the signature of the Generic Profile Radiometric index, bound to data exchange formats." ;
+    skos:inScheme gp:implementation-profile ;
+    skos:prefLabel "Radiometric index (single-band rasters)" ;
+    gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index> ;
+    gp:inputs [ ns2:index <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/index> ;
+            ns2:rasters <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/rasters> ] ;
+    gp:outputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/outputs/raster> ] ;
+    gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index> ;
+    proc:keywords "coverage",
+        "radiometric index",
+        "raster" ;
+    proc:metadata [ dcterms:title "Generic Profile: Radiometric index" ],
+        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/actions/identifier-2026-11-17> ;
+    rim:inRegister gp:register ;
+    rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
 

@@ -1,6 +1,6 @@
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/disjoint/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/disjoint",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/disjoint",
   "type": [
     "ActivityType",
     "Class"
@@ -11,19 +11,33 @@
   ],
   "definition": "Returns TRUE if this geometric object is spatially disjoint from anotherGeometry (they share no point). Equivalent to the negation of Intersects.",
   "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/disjoint",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/disjoint",
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/disjoint/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-11-09T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/disjoint"
-  },
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/disjoint",
+  "hasAction": [
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/disjoint/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/disjoint"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/disjoint/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/disjoint to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/disjoint, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/disjoint/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/disjoint"
+    }
+  ],
   "usedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
   "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
   "source": [

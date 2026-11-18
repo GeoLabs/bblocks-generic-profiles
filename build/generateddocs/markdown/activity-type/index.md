@@ -126,7 +126,7 @@ allOf:
       description: Written by scripts/activity_types.py from its constant ATR_ITEM_CLASS.
       const: https://w3id.org/ogc/rim/activity-type/activityTypeItemClass
     inRegister:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/register
+      const: https://w3id.org/geolabs/ospd/generic-profiles/register
     source:
       type: array
       items:
@@ -156,18 +156,24 @@ x-jsonld-extra-terms:
   associatedAgentType:
     x-jsonld-id: https://w3id.org/ogc/rim/activity-type/associatedAgentType
     x-jsonld-type: '@id'
+  sameAs:
+    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs
+    x-jsonld-type: '@id'
+  affectedProperty:
+    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
   acttype: https://w3id.org/ogc/rim/activity-type/
   owl: http://www.w3.org/2002/07/owl#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   skos: http://www.w3.org/2004/02/skos/core#
   dct: http://purl.org/dc/terms/
-  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gp: https://w3id.org/geolabs/ospd/generic-profiles/
 x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-16'
+  dateOfLastChange: '2026-11-18'
 
 ```
 
@@ -385,6 +391,14 @@ Links to the schema:
     },
     "ActivityType": "rim:activity-type/ActivityType",
     "Class": "owl:Class",
+    "sameAs": {
+      "@id": "owl:sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
     "rim": "https://w3id.org/ogc/rim/",
     "prov": "http://www.w3.org/ns/prov#",
     "dct": "http://purl.org/dc/terms/",
@@ -393,7 +407,7 @@ Links to the schema:
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
     "acttype": "rim:activity-type/",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "@version": 1.1
   }
 }

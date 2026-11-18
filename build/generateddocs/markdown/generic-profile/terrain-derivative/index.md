@@ -42,26 +42,40 @@ Implementation Profile -> Implementation (instance level).
 #### json
 ```json
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative",
   "type": "GenericProfile",
   "prefLabel": "Terrain derivative",
   "definition": "Derives one terrain attribute, as a single-band raster, from an elevation model. One elevation model input, one single-band raster output. Covers operations that differ only in the attribute computed (slope, aspect, curvature, terrain ruggedness, topographic position), not in signature.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-08T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative"
-  },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile",
+  "hasAction": [
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-10-08T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative"
+    }
+  ],
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "broader": [
-    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
+    "https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis"
   ],
   "keywords": [
     "terrain",
@@ -73,13 +87,13 @@ Implementation Profile -> Implementation (instance level).
     {
       "title": "Process Concept: Terrain Analysis",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis"
     }
   ],
   "inputs": {
     "elevation": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model",
       "title": "Elevation model",
       "description": "the elevation model",
       "keywords": [
@@ -89,8 +103,8 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band",
       "title": "Raster",
       "description": "the derived terrain attribute",
       "keywords": [
@@ -106,26 +120,40 @@ Implementation Profile -> Implementation (instance level).
 ```jsonld
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/generic-profile/terrain-derivative/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative",
   "type": "GenericProfile",
   "prefLabel": "Terrain derivative",
   "definition": "Derives one terrain attribute, as a single-band raster, from an elevation model. One elevation model input, one single-band raster output. Covers operations that differ only in the attribute computed (slope, aspect, curvature, terrain ruggedness, topographic position), not in signature.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-10-08T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative"
-  },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile",
+  "hasAction": [
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-10-08T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative"
+    }
+  ],
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "broader": [
-    "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
+    "https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis"
   ],
   "keywords": [
     "terrain",
@@ -137,13 +165,13 @@ Implementation Profile -> Implementation (instance level).
     {
       "title": "Process Concept: Terrain Analysis",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis"
     }
   ],
   "inputs": {
     "elevation": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model",
       "title": "Elevation model",
       "description": "the elevation model",
       "keywords": [
@@ -153,8 +181,8 @@ Implementation Profile -> Implementation (instance level).
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band",
       "title": "Raster",
       "description": "the derived terrain attribute",
       "keywords": [
@@ -168,50 +196,62 @@ Implementation Profile -> Implementation (instance level).
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> a gp:GenericProfile ;
-    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative> ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation> dcterms:description "the elevation model" ;
+    dcterms:title "Elevation model" ;
+    dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model> ;
+    proc:keywords "elevation" .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result> dcterms:description "the derived terrain attribute" ;
+    dcterms:title "Raster" ;
+    dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band> ;
+    proc:keywords "raster" .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative> a gp:GenericProfile ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> ;
+    skos:broader <https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis> ;
     skos:definition "Derives one terrain attribute, as a single-band raster, from an elevation model. One elevation model input, one single-band raster output. Covers operations that differ only in the attribute computed (slope, aspect, curvature, terrain ruggedness, topographic position), not in signature." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Terrain derivative" ;
-    gp:inputs [ ns1:elevation <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result> ] ;
+    gp:inputs [ ns2:elevation <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation> ] ;
+    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result> ] ;
     proc:keywords "derivative",
         "elevation",
         "raster",
         "terrain" ;
     proc:metadata [ dcterms:title "Process Concept: Terrain Analysis" ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/actions/addition> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/actions/addition> a rim:RegisterAction ;
-    prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
-    rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> ;
-    rim:proposer gp:geolabs .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation> dcterms:description "the elevation model" ;
-    dcterms:title "Elevation model" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model> ;
-    proc:keywords "elevation" .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result> dcterms:description "the derived terrain attribute" ;
-    dcterms:title "Raster" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band> ;
-    proc:keywords "raster" .
 
 
 ```
@@ -227,7 +267,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative
+      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative
       x-jsonld-id: '@id'
     type:
       const: GenericProfile
@@ -248,7 +288,7 @@ allOf:
             role:
               const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
             href:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis
+              const: https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis
       x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       properties:
@@ -258,14 +298,14 @@ allOf:
           - dataType
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/inputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/
     outputs:
       properties:
         result:
@@ -274,16 +314,16 @@ allOf:
           - dataType
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/outputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/
 x-jsonld-extra-terms:
-  GenericProfile: https://geolabs.github.io/bblocks-generic-profiles/def/GenericProfile
+  GenericProfile: https://w3id.org/geolabs/ospd/generic-profiles/GenericProfile
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
@@ -297,9 +337,15 @@ x-jsonld-extra-terms:
   link:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
-  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause
+  clause: https://w3id.org/geolabs/ospd/generic-profiles/clause
+  sameAs:
+    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs
+    x-jsonld-type: '@id'
+  affectedProperty:
+    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
-  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gp: https://w3id.org/geolabs/ospd/generic-profiles/
   skos: http://www.w3.org/2004/02/skos/core#
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
@@ -307,7 +353,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.terrain-derivative
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-16'
+  dateOfLastChange: '2026-11-18'
 
 ```
 
@@ -510,7 +556,7 @@ Links to the schema:
     "source": "dct:source",
     "inputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -522,7 +568,7 @@ Links to the schema:
     },
     "outputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -531,6 +577,14 @@ Links to the schema:
       "@id": "gp:outputs"
     },
     "GenericProfile": "gp:GenericProfile",
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
     "link": {
       "@id": "dct:references",
       "@type": "@id"
@@ -542,7 +596,7 @@ Links to the schema:
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "proc": "https://w3id.org/ogc/api/processes/",
     "@version": 1.1
   }

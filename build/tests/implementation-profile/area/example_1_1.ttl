@@ -1,95 +1,107 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/addition> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-10-06T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area> ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/meaning-2026-11-09> a rim:RegisterAction ;
-    dcterms:description "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/area, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The area of this Surface, as measured in the spatial reference system of this Surface.\"" ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/meaning-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/area, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The area of this Surface, as measured in the spatial reference system of this Surface.\"" ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area> ;
     rim:changeClassification rim:substantiveChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The keyword ST_Area becomes an altLabel of the activity type; the sources defining the operation move to the activity type: OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Area(); ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/representation-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/representation-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/geometry -> surface-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}). The schema {\"type\": \"number\"} of outputs/result is removed, as for every other number role: it declared no format, and no representation of a number exists." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area> ;
     rim:changeClassification rim:substantiveChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
-    dcterms:description "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/tools-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/tools-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Decision D4: 1 format keywords removed from inputs and outputs (inputs/geometry: GML); sources removed (tools, testbed, the bbox schema now in the representation's format): ZOO-Project Geonovum testbed -- GetArea: Computes the area of a geometry. <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/inputs/geometry> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/surface> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/inputs/geometry> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/surface> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Geometry measure -- input `geometry`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/inputs/geometry" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/inputs/geometry" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/number> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/outputs/result> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/number> ;
     proc:keywords "number" ;
     proc:metadata [ dcterms:title "Generic Profile: Geometry measure -- output `result`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/outputs/result" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/outputs/result" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> a gp:ImplementationProfile ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area> a gp:ImplementationProfile ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> ;
     skos:definition "Implementation Profile of the operation Area, whose meaning is its activity type (activityType): the signature of the Generic Profile Geometry measure, bound to data exchange formats." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Area" ;
-    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/area> ;
-    gp:inputs [ ns2:geometry <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/inputs/geometry> ] ;
-    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/outputs/result> ] ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> ;
+    gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/area> ;
+    gp:inputs [ ns1:geometry <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/inputs/geometry> ] ;
+    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/outputs/result> ] ;
+    gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure> ;
     proc:keywords "Area",
         "geometry",
         "measure",
         "vector" ;
     proc:metadata [ dcterms:title "Generic Profile: Geometry measure" ],
         [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/addition>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/meaning-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/operation-sources-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/representation-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/sections-restored-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/actions/tools-2026-11-09> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/identifier-2026-11-17>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/meaning-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/operation-sources-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/representation-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/sections-restored-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/actions/tools-2026-11-09> ;
     rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
 

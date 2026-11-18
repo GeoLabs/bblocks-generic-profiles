@@ -1,7 +1,7 @@
 @prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -9,25 +9,36 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering> a owl:Class,
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering> ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering> a owl:Class,
         acttype:ActivityType ;
     dcterms:source [ dcterms:references <https://portal.ogc.org/files/05-077r4> ;
             dcterms:title "OGC 05-077r4 Symbology Encoding Implementation Specification 1.1.0, §11.5 Raster Symbolizer (ColorMap with the Categorize or Interpolate function)" ] ;
     rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering> ;
     skos:definition "Depicts a raster as an image for viewing, giving each cell a colour from a colour map that associates values, or classes of values, with colours." ;
     skos:prefLabel "Raster rendering" ;
     acttype:associatedAgentType prov:SoftwareAgent ;
     acttype:usedEntityType geo:Feature ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering/actions/addition> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
     rim:itemClass acttype:activityTypeItemClass ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering"^^xsd:anyURI ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering/actions/addition> a rim:RegisterAction ;
-    prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
-    rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-rendering> ;
-    rim:proposer gp:geolabs .
 

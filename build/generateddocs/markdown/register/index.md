@@ -21,7 +21,7 @@ same graph as any other register mapped onto the model.
 
 | ISO 19135:2026 | Here | IRI |
 |---|---|---|
-| `rim:Register` | this register | `https://geolabs.github.io/bblocks-generic-profiles/def/register` |
+| `rim:Register` | this register | `https://w3id.org/geolabs/ospd/generic-profiles/register` |
 | `rim:RegisterItemClass` | Process Concept | `.../def/item-class/process-concept` |
 | `rim:RegisterItemClass` | Generic Profile | `.../def/item-class/generic-profile` |
 | `rim:RegisterItemClass` | Implementation Profile | `.../def/item-class/implementation-profile` |
@@ -105,7 +105,7 @@ independent concerns (validity, publication), makes supersession a relation, and
 item came to be in the register as a `rim:RegisterAction`. Every entry now carries:
 
 - `hasAction`: one action of type `addition` (`rim:additionAction`), whose `proposer` is
-  `https://geolabs.github.io/bblocks-generic-profiles/def/geolabs` (the register's owner and
+  `https://w3id.org/geolabs/ospd/generic-profiles/geolabs` (the register's owner and
   manager), `startedAtTime` the `dateTimeAddition` its building block declares, and `appliesTo` the
   entry itself. The action's own IRI is `<entry id>/actions/addition`;
 - `validityStatus: invalid` and `publicationStatus: published`: no control-body decision has been
@@ -151,8 +151,8 @@ The ontology of this block as published, validated here as data: this is what ch
 
 #### turtle
 ```turtle
-@prefix gp:   <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix gpic: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/> .
+@prefix gp:   <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix gpic: <https://w3id.org/geolabs/ospd/generic-profiles/item-class/> .
 @prefix rim:  <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dct:  <http://purl.org/dc/terms/> .
@@ -191,7 +191,7 @@ gp: a owl:Ontology ;
 #################################################################
 
 gp:register a rim:Register ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/register"^^xsd:anyURI ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/register"^^xsd:anyURI ;
     rim:functionalIdentifier "https://geolabs.github.io/bblocks-generic-profiles/"^^xsd:anyURI ;
     dct:title "Generic Process Profiles"@en ;
     dct:description "A general-purpose, provider-independent vocabulary of process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5), published as an OGC Building Blocks register."@en ;
@@ -211,7 +211,7 @@ gp:specification a rim:RegisterSpecification ;
         "Scope. This register holds three item classes, the first three tiers of OGC 14-065 WPS 2.0.2 §7.5: Process Concept, Generic Profile and Implementation Profile. It also holds one activity type per operation (acttype:ActivityType, of the item class of the Activity Type Register): the meaning of the operation, to which its Implementation Profiles point with gp:activityType (decision D3): one or more per activity type. Real deployed or deployable processes, the Implementation (instance level), are not items of this register."@en ,
         "Register type. A content register, as the Registered Item Model uses the term: items carry their own name and definition, and there is no concept plane. To be reviewed if a concept plane of operations is created later. The activity types, one per operation, live in this register pending decision D8 on how the Activity Type Register is integrated; the register stays a content register meanwhile, to be reviewed with the answers of the Registered Item Model and Activity Type Register maintainers."@en ,
         "Roles. GeoLabs SARL is the register owner, the register manager and, for now, the control body. GeoLabs intends to delegate the control body role to the OGC or to an OSPD working group."@en ,
-        "Identifiers. The object identifier of an item is its IRI, https://geolabs.github.io/bblocks-generic-profiles/def/<tier>/<name>, with <tier> one of concept, generic-profile, implementation-profile or activity-type. An object identifier never redirects; only a functional identifier may. The identifier of a published item changes only by an explicit decision."@en ,
+        "Identifiers. The object identifier of an item is its IRI, https://w3id.org/geolabs/ospd/generic-profiles/<tier>/<name>, with <tier> one of concept, generic-profile, implementation-profile or activity-type. The namespace resolves through w3id.org: an object identifier answers 303 with a document about the item (Turtle, Markdown, JSON Schema or HTML), never with another item; only a functional identifier may point to another item. The identifier of a published item changes only by an explicit decision. The items published before 2026-11-17 had the IRI https://geolabs.github.io/bblocks-generic-profiles/def/<tier>/<name>; each keeps it as owl:sameAs, and the move is recorded by a clarifying amendment of the item (decision of 2026-11-17)."@en ,
         "Versions. An addition is an action of type addition, with no classification. A substantive change creates a new item or a new version, linked by rim:supersededBy, with an action classified substantive. A clarifying change keeps the item and its version, with an action classified clarifying. The classification correctional is not available. An item is retired by unpublishing it, not by deleting it."@en ,
         "What is substantive here. Substantive: a role added or removed, a change of dataType, cardinality or representation. Clarifying: description, keywords, documentary links. For an activity type: substantive, a change of its parent class or of an entity type; clarifying, its label, a rewording of its definition with the same meaning, its sources."@en ,
         "Proposals. While an item is a proposal, with no control-body decision recorded, it is amended in place, with a classified `rim:RegisterAction`. The substantive rule applies once it has been accepted."@en ,
@@ -243,7 +243,7 @@ gp:registerSystem a rim:RegisterSystem ;
 
 gpic:process-concept a rim:RegisterItemClass ;
     rdfs:isDefinedBy gp: ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept"^^xsd:anyURI ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/item-class/process-concept"^^xsd:anyURI ;
     dct:title "Process Concept"@en ;
     dct:description "WPS 2.0.2 §7.5.1: high-level documentation about a general group of processes; no input, output, format or implementation. Items of this class are gp:ProcessConcept instances."@en ;
     rim:definedIn gp:register ;
@@ -251,7 +251,7 @@ gpic:process-concept a rim:RegisterItemClass ;
 
 gpic:generic-profile a rim:RegisterItemClass ;
     rdfs:isDefinedBy gp: ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile"^^xsd:anyURI ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile"^^xsd:anyURI ;
     dct:title "Generic Profile"@en ;
     dct:description "WPS 2.0.2 §7.5.2: the abstract signature (named inputs/outputs, multiplicity, abstract data type) of one or more operations; no data format. Items of this class are gp:GenericProfile instances."@en ;
     rim:definedIn gp:register ;
@@ -259,7 +259,7 @@ gpic:generic-profile a rim:RegisterItemClass ;
 
 gpic:implementation-profile a rim:RegisterItemClass ;
     rdfs:isDefinedBy gp: ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile"^^xsd:anyURI ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile"^^xsd:anyURI ;
     dct:title "Implementation Profile"@en ;
     dct:description "WPS 2.0.2 §7.5.3: a Generic Profile bound to standard data formats, implementable by multiple providers; not any one deployment. Items of this class are gp:ImplementationProfile instances."@en ;
     rim:definedIn gp:register ;
@@ -379,58 +379,58 @@ gpic:implementation-profile a rim:RegisterItemClass ;
     dct:title "Implementation Profile"@en ;
     rim:definedIn gp:register .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing>
+<https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing>
     a gp:ProcessConcept ;
     skos:prefLabel "Vector Geometry Processing" ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing"^^xsd:anyURI ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"^^xsd:anyURI ;
     rim:itemClass gpic:process-concept ;
     rim:inRegister gp:register ;
     rim:validityStatus rim:invalid ;
     rim:publicationStatus rim:published ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition> .
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing/actions/addition> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing/actions/addition>
+<https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing/actions/addition>
     a rim:RegisterAction ;
     rim:actionType rim:additionAction ;
     rim:proposer gp:geolabs ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing> ;
     prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate>
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate>
     a gp:GenericProfile ;
     skos:prefLabel "Binary spatial predicate" ;
-    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate"^^xsd:anyURI ;
+    skos:broader <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate"^^xsd:anyURI ;
     rim:itemClass gpic:generic-profile ;
     rim:inRegister gp:register ;
     rim:validityStatus rim:invalid ;
     rim:publicationStatus rim:published ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition> .
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/actions/addition> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/actions/addition>
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/actions/addition>
     a rim:RegisterAction ;
     rim:actionType rim:additionAction ;
     rim:proposer gp:geolabs ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate> ;
     prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects>
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects>
     a gp:ImplementationProfile ;
     skos:prefLabel "Intersects" ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate> ;
-    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/intersects> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects"^^xsd:anyURI ;
+    gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate> ;
+    gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects"^^xsd:anyURI ;
     rim:itemClass gpic:implementation-profile ;
     rim:inRegister gp:register ;
     rim:validityStatus rim:invalid ;
     rim:publicationStatus rim:published ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition> .
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/addition> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects/actions/addition>
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/addition>
     a rim:RegisterAction ;
     rim:actionType rim:additionAction ;
     rim:proposer gp:geolabs ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/intersects> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects> ;
     prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .
 
 ```

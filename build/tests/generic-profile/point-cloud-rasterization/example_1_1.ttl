@@ -1,51 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/outputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/inputs/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization> a gp:GenericProfile ;
-    skos:broader <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization> ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization/inputs/cellSize> dcterms:description "the cell size of the output grid" ;
+    dcterms:title "Number" ;
+    dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/number> ;
+    proc:keywords "cell size" .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization/inputs/points> dcterms:description "the input point cloud" ;
+    dcterms:title "Point cloud" ;
+    dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud> ;
+    proc:keywords "point cloud" .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization/outputs/result> dcterms:description "the point cloud's attribute(s) on the grid" ;
+    dcterms:title "Raster" ;
+    dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
+    proc:keywords "raster" .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization> a gp:GenericProfile ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization> ;
+    skos:broader <https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing> ;
     skos:definition "Converts a point cloud to a raster on a grid of a given cell size. One point cloud and one cell size in, one raster out." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Point cloud rasterization" ;
-    gp:inputs [ ns2:cellSize <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/cellSize> ;
-            ns2:points <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/points> ] ;
-    gp:outputs [ ns1:result <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result> ] ;
+    gp:inputs [ ns2:cellSize <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization/inputs/cellSize> ;
+            ns2:points <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization/inputs/points> ] ;
+    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization/outputs/result> ] ;
     proc:keywords "point cloud",
         "raster",
         "rasterization" ;
     proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/actions/addition> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/generic-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/generic-profile> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-rasterization"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/actions/addition> a rim:RegisterAction ;
-    prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
-    rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization> ;
-    rim:proposer gp:geolabs .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/cellSize> dcterms:description "the cell size of the output grid" ;
-    dcterms:title "Number" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/number> ;
-    proc:keywords "cell size" .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/points> dcterms:description "the input point cloud" ;
-    dcterms:title "Point cloud" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud> ;
-    proc:keywords "point cloud" .
-
-<https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result> dcterms:description "the point cloud's attribute(s) on the grid" ;
-    dcterms:title "Raster" ;
-    dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster> ;
-    proc:keywords "raster" .
 

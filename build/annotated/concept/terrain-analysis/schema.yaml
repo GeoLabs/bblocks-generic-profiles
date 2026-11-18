@@ -6,7 +6,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis
+      const: https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis
       x-jsonld-id: '@id'
     type:
       const: ProcessConcept
@@ -15,7 +15,7 @@ allOf:
       const: Terrain Analysis
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
 x-jsonld-extra-terms:
-  ProcessConcept: https://geolabs.github.io/bblocks-generic-profiles/def/ProcessConcept
+  ProcessConcept: https://w3id.org/geolabs/ospd/generic-profiles/ProcessConcept
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
@@ -28,13 +28,19 @@ x-jsonld-extra-terms:
   link:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
-  clause: https://geolabs.github.io/bblocks-generic-profiles/def/clause
+  clause: https://w3id.org/geolabs/ospd/generic-profiles/clause
+  sameAs:
+    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs
+    x-jsonld-type: '@id'
+  affectedProperty:
+    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
-  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gp: https://w3id.org/geolabs/ospd/generic-profiles/
   skos: http://www.w3.org/2004/02/skos/core#
   dct: http://purl.org/dc/terms/
 x-bblocks-metadata:
   itemIdentifier: generic-profiles.concept.terrain-analysis
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-16'
+  dateOfLastChange: '2026-11-18'

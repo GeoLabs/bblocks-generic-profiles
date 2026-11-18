@@ -81,78 +81,90 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 #### json
 ```json
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index",
   "type": "ImplementationProfile",
   "prefLabel": "Topographic position index",
   "definition": "Implementation Profile of the operation Topographic position index, whose meaning is its activity type (activityType): the signature of the Generic Profile Terrain derivative, bound to data exchange formats.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile",
   "hasAction": [
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/addition",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-10-08T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/meaning-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/meaning-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
-      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.\"",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.\"",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/operation-sources-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/operation-sources-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "The source defining the operation moves to the activity type: Guisan, A., Weiss, S.B., Weiss, A.D. (1999): GLM versus CCA spatial modeling of plant species distribution. Plant Ecology 143: 107-122.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/representation-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/representation-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/elevation -> elevation-model-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/result -> raster-single-band-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}).",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/tools-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/tools-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: tool keywords removed: ta_morphometry; 2 format keywords removed from inputs and outputs (inputs/elevation: GeoTIFF; outputs/result: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Topographic Position Index (TPI) <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry_18.html>; ZOO-Project Geonovum testbed -- SAGA.ta_morphometry.18: Topographic Position Index (TPI) <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.18>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/sections-restored-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/sections-restored-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
-      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     }
   ],
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
-  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index",
+  "refinesGenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative",
+  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index",
   "keywords": [
     "terrain",
     "elevation",
@@ -164,18 +176,18 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     {
       "title": "Process Concept: Terrain Analysis",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis"
     },
     {
       "title": "Generic Profile: Terrain derivative",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative"
     }
   ],
   "inputs": {
     "elevation": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/inputs/elevation",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/inputs/elevation",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff"
       ],
@@ -185,16 +197,16 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Terrain derivative -- input `elevation`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation"
         }
       ]
     }
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"
       ],
@@ -204,8 +216,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Terrain derivative -- output `result`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result"
         }
       ]
     }
@@ -218,78 +230,90 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```jsonld
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/implementation-profile/topographic-position-index/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index",
   "type": "ImplementationProfile",
   "prefLabel": "Topographic position index",
   "definition": "Implementation Profile of the operation Topographic position index, whose meaning is its activity type (activityType): the signature of the Generic Profile Terrain derivative, bound to data exchange formats.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile",
   "hasAction": [
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/addition",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-10-08T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/meaning-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/meaning-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
-      "description": "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.\"",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.\"",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/operation-sources-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/operation-sources-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "The source defining the operation moves to the activity type: Guisan, A., Weiss, S.B., Weiss, A.D. (1999): GLM versus CCA spatial modeling of plant species distribution. Plant Ecology 143: 107-122.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/representation-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/representation-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/elevation -> elevation-model-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/result -> raster-single-band-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}).",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/tools-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/tools-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: tool keywords removed: ta_morphometry; 2 format keywords removed from inputs and outputs (inputs/elevation: GeoTIFF; outputs/result: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Topographic Position Index (TPI) <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry_18.html>; ZOO-Project Geonovum testbed -- SAGA.ta_morphometry.18: Topographic Position Index (TPI) <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.18>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
     {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/sections-restored-2026-11-09",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/sections-restored-2026-11-09",
       "type": "RegisterAction",
-      "actionType": "https://geolabs.github.io/bblocks-generic-profiles/def/amendmentAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
-      "description": "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+      "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
-      "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     }
   ],
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "refinesGenericProfile": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative",
-  "activityType": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index",
+  "refinesGenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative",
+  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index",
   "keywords": [
     "terrain",
     "elevation",
@@ -301,18 +325,18 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     {
       "title": "Process Concept: Terrain Analysis",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/concept",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis"
     },
     {
       "title": "Generic Profile: Terrain derivative",
       "role": "http://www.opengis.net/spec/wps/2.0/def/process-profile/generic",
-      "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative"
+      "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative"
     }
   ],
   "inputs": {
     "elevation": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/inputs/elevation",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/inputs/elevation",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff"
       ],
@@ -322,16 +346,16 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Terrain derivative -- input `elevation`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation"
         }
       ]
     }
   },
   "outputs": {
     "result": {
-      "id": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/outputs/result",
-      "dataType": "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band",
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/outputs/result",
+      "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band",
       "representation": [
         "https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"
       ],
@@ -341,8 +365,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "metadata": [
         {
           "title": "Generic Profile: Terrain derivative -- output `result`",
-          "role": "https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output",
-          "href": "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result"
+          "role": "https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output",
+          "href": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result"
         }
       ]
     }
@@ -353,99 +377,111 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/addition> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/meaning-2026-11-09> a rim:RegisterAction ;
-    dcterms:description "The meaning of the operation moves to the activity type https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.\"" ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/identifier-2026-11-17> a rim:RegisterAction ;
+    dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
+    prov:startedAtTime "2026-11-17T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rim:objectIdentifier ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
+    rim:changeClassification rim:clarifyingChange ;
+    rim:proposer gp:geolabs .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/meaning-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.\"" ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:changeClassification rim:substantiveChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The source defining the operation moves to the activity type: Guisan, A., Weiss, S.B., Weiss, A.D. (1999): GLM versus CCA spatial modeling of plant species distribution. Plant Ecology 143: 107-122." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/representation-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/representation-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/elevation -> elevation-model-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/result -> raster-single-band-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"})." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:changeClassification rim:substantiveChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
-    dcterms:description "Corrects what https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
+    dcterms:description "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/tools-2026-11-09> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/tools-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Decision D4: tool keywords removed: ta_morphometry; 2 format keywords removed from inputs and outputs (inputs/elevation: GeoTIFF; outputs/result: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Topographic Position Index (TPI) <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry_18.html>; ZOO-Project Geonovum testbed -- SAGA.ta_morphometry.18: Topographic Position Index (TPI) <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.18>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType gp:amendmentAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/inputs/elevation> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/inputs/elevation> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff> ;
     proc:keywords "elevation" ;
     proc:metadata [ dcterms:title "Generic Profile: Terrain derivative -- input `elevation`" ;
-            ns1:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] .
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/outputs/result> dcterms:type <https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band> ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/outputs/result> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Terrain derivative -- output `result`" ;
-            ns2:href "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result" ;
-            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] .
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result" ;
+            proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index> a gp:ImplementationProfile ;
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> a gp:ImplementationProfile ;
+    owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index> ;
     skos:definition "Implementation Profile of the operation Topographic position index, whose meaning is its activity type (activityType): the signature of the Generic Profile Terrain derivative, bound to data exchange formats." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Topographic position index" ;
-    gp:activityType <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index> ;
-    gp:inputs [ ns1:elevation <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/inputs/elevation> ] ;
-    gp:outputs [ ns2:result <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/outputs/result> ] ;
-    gp:refinesGenericProfile <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> ;
+    gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index> ;
+    gp:inputs [ ns2:elevation <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/inputs/elevation> ] ;
+    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/outputs/result> ] ;
+    gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative> ;
     proc:keywords "TPI",
         "derivative",
         "elevation",
         "raster",
         "terrain" ;
-    proc:metadata [ dcterms:title "Process Concept: Terrain Analysis" ],
-        [ dcterms:title "Generic Profile: Terrain derivative" ] ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/addition>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/meaning-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/operation-sources-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/representation-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/sections-restored-2026-11-09>,
-        <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/actions/tools-2026-11-09> ;
+    proc:metadata [ dcterms:title "Generic Profile: Terrain derivative" ],
+        [ dcterms:title "Process Concept: Terrain Analysis" ] ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/identifier-2026-11-17>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/meaning-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/operation-sources-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/representation-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/sections-restored-2026-11-09>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/tools-2026-11-09> ;
     rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
 
@@ -463,7 +499,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index
+      const: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index
       x-jsonld-id: '@id'
     type:
       const: ImplementationProfile
@@ -472,12 +508,12 @@ allOf:
       const: Topographic position index
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
     refinesGenericProfile:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/refinesGenericProfile
+      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/refinesGenericProfile
       x-jsonld-type: '@id'
     activityType:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/topographic-position-index
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/activityType
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/activityType
       x-jsonld-type: '@id'
     keywords:
       allOf:
@@ -501,7 +537,7 @@ allOf:
             role:
               const: http://www.opengis.net/spec/wps/2.0/def/process-profile/concept
             href:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis
+              const: https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis
       - contains:
           type: object
           required:
@@ -511,7 +547,7 @@ allOf:
             role:
               const: http://www.opengis.net/spec/wps/2.0/def/process-profile/generic
             href:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative
+              const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative
       x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
     inputs:
       type: object
@@ -534,12 +570,12 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/inputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/
     outputs:
       type: object
       required:
@@ -561,12 +597,12 @@ allOf:
                   - href
                   properties:
                     role:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output
                     href:
-                      const: https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result
+                      const: https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result
               x-jsonld-id: https://w3id.org/ogc/api/processes/metadata
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/outputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/
 - type: object
   properties:
     inputs:
@@ -578,19 +614,19 @@ allOf:
           - representation
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/inputs/elevation
+              const: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/inputs/elevation
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
             representation:
               const:
               - https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff
-              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+              x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/representation
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/inputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/inputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/
     outputs:
       properties:
         result:
@@ -600,21 +636,21 @@ allOf:
           - representation
           properties:
             id:
-              const: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index/outputs/result
+              const: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/outputs/result
               x-jsonld-id: '@id'
             dataType:
-              const: https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band
+              const: https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band
               x-jsonld-id: http://purl.org/dc/terms/type
               x-jsonld-type: '@id'
             representation:
               const:
               - https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff
-              x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/representation
+              x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/representation
               x-jsonld-type: '@id'
-      x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/outputs
-      x-jsonld-vocab: https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/
+      x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/outputs
+      x-jsonld-vocab: https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/
 x-jsonld-extra-terms:
-  ImplementationProfile: https://geolabs.github.io/bblocks-generic-profiles/def/ImplementationProfile
+  ImplementationProfile: https://w3id.org/geolabs/ospd/generic-profiles/ImplementationProfile
   definition: http://www.w3.org/2004/02/skos/core#definition
   inScheme:
     x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
@@ -624,8 +660,14 @@ x-jsonld-extra-terms:
   link:
     x-jsonld-id: http://purl.org/dc/terms/references
     x-jsonld-type: '@id'
+  sameAs:
+    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs
+    x-jsonld-type: '@id'
+  affectedProperty:
+    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
-  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gp: https://w3id.org/geolabs/ospd/generic-profiles/
   skos: http://www.w3.org/2004/02/skos/core#
   proc: https://w3id.org/ogc/api/processes/
   dct: http://purl.org/dc/terms/
@@ -633,7 +675,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.topographic-position-index
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-16'
+  dateOfLastChange: '2026-11-18'
 
 ```
 
@@ -831,7 +873,7 @@ Links to the schema:
     "metadata": "proc:metadata",
     "inputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/inputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -855,7 +897,7 @@ Links to the schema:
     },
     "outputs": {
       "@context": {
-        "@vocab": "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/outputs/",
+        "@vocab": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/",
         "dataType": {
           "@id": "dct:type",
           "@type": "@id"
@@ -878,6 +920,14 @@ Links to the schema:
     },
     "source": "dct:source",
     "ImplementationProfile": "gp:ImplementationProfile",
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
     "link": {
       "@id": "dct:references",
       "@type": "@id"
@@ -888,7 +938,7 @@ Links to the schema:
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "proc": "https://w3id.org/ogc/api/processes/",
     "@version": 1.1
   }

@@ -37,22 +37,22 @@ Implementation Profile -> Implementation (instance level).
 #### json
 ```json
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept",
   "type": "ProcessConcept",
   "prefLabel": "Example Concept (placeholder, not a real vocabulary entry)",
   "definition": "Illustrates the shape of a Concept entry only. Real Concepts are each their own building block -- see generic-profiles.concept.vector-geometry-processing for actual vocabulary content.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/concept",
   "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept/actions/addition",
+    "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
     "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept"
+    "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept"
   },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/process-concept",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "source": [
@@ -69,22 +69,22 @@ Implementation Profile -> Implementation (instance level).
 ```jsonld
 {
   "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/concept/context.jsonld",
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept",
   "type": "ProcessConcept",
   "prefLabel": "Example Concept (placeholder, not a real vocabulary entry)",
   "definition": "Illustrates the shape of a Concept entry only. Real Concepts are each their own building block -- see generic-profiles.concept.vector-geometry-processing for actual vocabulary content.",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/concept",
   "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept/actions/addition",
+    "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
     "startedAtTime": "2026-09-30T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept"
+    "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept"
   },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/process-concept",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "source": [
@@ -99,29 +99,29 @@ Implementation Profile -> Implementation (instance level).
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix gp: <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept> a gp:ProcessConcept ;
+<https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept> a gp:ProcessConcept ;
     dcterms:source [ dcterms:title "Placeholder -- not a real citation" ;
             gp:clause "n/a" ] ;
     skos:definition "Illustrates the shape of a Concept entry only. Real Concepts are each their own building block -- see generic-profiles.concept.vector-geometry-processing for actual vocabulary content." ;
     skos:inScheme gp:concept ;
     skos:prefLabel "Example Concept (placeholder, not a real vocabulary entry)" ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept/actions/addition> ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept/actions/addition> ;
     rim:inRegister gp:register ;
-    rim:itemClass <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept> ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/process-concept> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept"^^xsd:anyURI ;
     rim:publicationStatus rim:published ;
     rim:validityStatus rim:invalid .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept/actions/addition> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/concept/example-concept> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept> ;
     rim:proposer gp:geolabs .
 
 
@@ -171,9 +171,9 @@ allOf:
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#inScheme
       x-jsonld-type: '@id'
     itemClass:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept
+      const: https://w3id.org/geolabs/ospd/generic-profiles/item-class/process-concept
     inRegister:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/register
+      const: https://w3id.org/geolabs/ospd/generic-profiles/register
     source:
       type: array
       minItems: 1
@@ -192,7 +192,7 @@ allOf:
             x-jsonld-type: '@id'
           clause:
             type: string
-            x-jsonld-id: https://geolabs.github.io/bblocks-generic-profiles/def/clause
+            x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/clause
       x-jsonld-id: http://purl.org/dc/terms/source
     narrower:
       type: array
@@ -202,16 +202,22 @@ allOf:
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#narrower
       x-jsonld-type: '@id'
 x-jsonld-extra-terms:
-  ProcessConcept: https://geolabs.github.io/bblocks-generic-profiles/def/ProcessConcept
+  ProcessConcept: https://w3id.org/geolabs/ospd/generic-profiles/ProcessConcept
+  sameAs:
+    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs
+    x-jsonld-type: '@id'
+  affectedProperty:
+    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
-  gp: https://geolabs.github.io/bblocks-generic-profiles/def/
+  gp: https://w3id.org/geolabs/ospd/generic-profiles/
   skos: http://www.w3.org/2004/02/skos/core#
   dct: http://purl.org/dc/terms/
 x-bblocks-metadata:
   itemIdentifier: generic-profiles.concept
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-16'
+  dateOfLastChange: '2026-11-18'
 
 ```
 
@@ -412,13 +418,21 @@ Links to the schema:
       "@type": "@id"
     },
     "ProcessConcept": "gp:ProcessConcept",
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
     "rim": "https://w3id.org/ogc/rim/",
     "prov": "http://www.w3.org/ns/prov#",
     "dct": "http://purl.org/dc/terms/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "@version": 1.1
   }
 }

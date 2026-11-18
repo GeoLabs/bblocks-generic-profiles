@@ -1,5 +1,5 @@
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/buffer",
   "type": [
     "ActivityType",
     "Class"
@@ -10,19 +10,33 @@
   ],
   "definition": "Returns a geometric object representing all points whose distance from this geometric object is less than or equal to a given distance.",
   "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/buffer",
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-11-09T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer"
-  },
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer",
+  "hasAction": [
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/buffer/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-09T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/buffer"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/buffer/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/buffer to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/buffer, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/buffer/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/buffer"
+    }
+  ],
   "usedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
   "generatedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
   "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",
