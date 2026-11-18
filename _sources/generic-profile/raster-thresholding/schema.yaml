@@ -6,7 +6,7 @@ allOf:
   - $ref: bblocks://generic-profiles.generic-profile
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding"}
       type: {const: GenericProfile}
       prefLabel: {const: "Raster thresholding"}
   - type: object
@@ -18,12 +18,12 @@ allOf:
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing'}
       inputs:
         required: [raster]
         properties:
-          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"}}}
+          raster: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/inputs/raster"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band"}}}
       outputs:
         required: [mask]
         properties:
-          mask: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding/outputs/mask"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/binary-mask"}}}
+          mask: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/outputs/mask"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/binary-mask"}}}

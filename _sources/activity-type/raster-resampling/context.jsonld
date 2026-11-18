@@ -6,7 +6,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "owl": "http://www.w3.org/2002/07/owl#",
     "acttype": "https://w3id.org/ogc/rim/activity-type/",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "id": "@id",
     "type": "@type",
     "ActivityType": "acttype:ActivityType",
@@ -34,6 +34,14 @@
     "title": "dct:title",
     "link": {
       "@id": "dct:references",
+      "@type": "@id"
+    },
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "https://w3id.org/ogc/rim/affectedProperty",
       "@type": "@id"
     }
   }

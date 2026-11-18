@@ -6,8 +6,8 @@ Generic Profile: **Raster thresholding**.
 
 | Role | Data type | Cardinality | Meaning |
 |---|---|---|---|
-| input `raster` | [`raster-single-band`](https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band) | exactly one | the single-band raster to threshold |
-| output `mask` | [`binary-mask`](https://geolabs.github.io/bblocks-data-types/def/data-type/binary-mask) | exactly one | the cells of the upper class |
+| input `raster` | [`raster-single-band`](https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band) | exactly one | the single-band raster to threshold |
+| output `mask` | [`binary-mask`](https://w3id.org/geolabs/ospd/data-types/data-type/binary-mask) | exactly one | the cells of the upper class |
 
 Each data type is a concept of the [`bblocks-data-types`](https://github.com/GeoLabs/bblocks-data-types) register; this tier names no format ([OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-065.html#32) gives Generic Profile no Data format row). Outputs have no cardinality: Table 21 has no Output.Multiplicity row.
 

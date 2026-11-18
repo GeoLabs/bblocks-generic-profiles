@@ -10,7 +10,7 @@ same graph as any other register mapped onto the model.
 
 | ISO 19135:2026 | Here | IRI |
 |---|---|---|
-| `rim:Register` | this register | `https://geolabs.github.io/bblocks-generic-profiles/def/register` |
+| `rim:Register` | this register | `https://w3id.org/geolabs/ospd/generic-profiles/register` |
 | `rim:RegisterItemClass` | Process Concept | `.../def/item-class/process-concept` |
 | `rim:RegisterItemClass` | Generic Profile | `.../def/item-class/generic-profile` |
 | `rim:RegisterItemClass` | Implementation Profile | `.../def/item-class/implementation-profile` |
@@ -94,7 +94,7 @@ independent concerns (validity, publication), makes supersession a relation, and
 item came to be in the register as a `rim:RegisterAction`. Every entry now carries:
 
 - `hasAction`: one action of type `addition` (`rim:additionAction`), whose `proposer` is
-  `https://geolabs.github.io/bblocks-generic-profiles/def/geolabs` (the register's owner and
+  `https://w3id.org/geolabs/ospd/generic-profiles/geolabs` (the register's owner and
   manager), `startedAtTime` the `dateTimeAddition` its building block declares, and `appliesTo` the
   entry itself. The action's own IRI is `<entry id>/actions/addition`;
 - `validityStatus: invalid` and `publicationStatus: published`: no control-body decision has been

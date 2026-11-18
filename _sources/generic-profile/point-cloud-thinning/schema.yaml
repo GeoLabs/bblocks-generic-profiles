@@ -5,7 +5,7 @@ allOf:
   - $ref: bblocks://generic-profiles.generic-profile
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning"}
       type: {const: GenericProfile}
       prefLabel: {const: "Point cloud thinning"}
   - type: object
@@ -17,11 +17,11 @@ allOf:
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing'}
       inputs:
         properties:
-          points: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud"}}}
-          percentage: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/number"}}}
+          points: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/points"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud"}}}
+          percentage: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/inputs/percentage"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/number"}}}
       outputs:
         properties:
-          result: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/point-cloud"}}}
+          result: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning/outputs/result"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/point-cloud"}}}

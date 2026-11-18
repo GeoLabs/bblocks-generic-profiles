@@ -2,6 +2,6 @@
 # shape that can reject it.
 @prefix rim: <https://w3id.org/ogc/rim/> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/specification-without-title>
+<https://w3id.org/geolabs/ospd/generic-profiles/specification-without-title>
     a rim:RegisterSpecification ;
     rim:definesSubstantiveChange "Any change." .

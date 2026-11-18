@@ -6,7 +6,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/terrain-ruggedness-index
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/terrain-ruggedness-index
     prefLabel:
       const: Terrain ruggedness index
     subClassOf:

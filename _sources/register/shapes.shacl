@@ -1,6 +1,6 @@
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
-@prefix gp:   <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix gpic: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/> .
+@prefix gp:   <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix gpic: <https://w3id.org/geolabs/ospd/generic-profiles/item-class/> .
 @prefix rim:  <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -50,7 +50,7 @@ gp:ImplementationProfileShape a sh:NodeShape ;
     # operation. Checked as an IRI under this register's activity-type namespace, as the other
     # cross-item links: the activity type is not in the profile's data graph.
     sh:property [ sh:path gp:activityType ; sh:nodeKind sh:IRI ; sh:minCount 1 ; sh:maxCount 1 ;
-                  sh:pattern "^https://geolabs\\.github\\.io/bblocks-generic-profiles/def/activity-type/[a-z0-9-]+$" ;
+                  sh:pattern "^https://w3id\\.org/geolabs/ospd/generic-profiles/activity-type/[a-z0-9-]+$" ;
                   sh:message "An Implementation Profile must point to exactly one activity type of this register (activityType)." ] .
 
 # Class -> items: anything claiming one of these item classes must be of the matching type.
@@ -102,14 +102,14 @@ gp:AdditionProposalShape a sh:NodeShape ;
 # messages in the build report. tests/input-datatype-not-a-concept-fail.ttl and its control
 # tests/link-media-type-in-dct-type.ttl show that the check works with what loads.
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix dt:  <https://geolabs.github.io/bblocks-data-types/def/> .
+@prefix dt:  <https://w3id.org/geolabs/ospd/data-types/> .
 
 gp:DataTypeReferenceShape a sh:NodeShape ;
     sh:target [
         a sh:SPARQLTarget ;
         sh:select """
             SELECT ?this WHERE {
-                ?profile <https://geolabs.github.io/bblocks-generic-profiles/def/inputs> | <https://geolabs.github.io/bblocks-generic-profiles/def/outputs> ?roles .
+                ?profile <https://w3id.org/geolabs/ospd/generic-profiles/inputs> | <https://w3id.org/geolabs/ospd/generic-profiles/outputs> ?roles .
                 ?roles ?role ?this .
             }
         """
@@ -139,7 +139,7 @@ gp:RepresentationReferenceShape a sh:NodeShape ;
         a sh:SPARQLTarget ;
         sh:select """
             SELECT ?this WHERE {
-                ?profile <https://geolabs.github.io/bblocks-generic-profiles/def/inputs> | <https://geolabs.github.io/bblocks-generic-profiles/def/outputs> ?roles .
+                ?profile <https://w3id.org/geolabs/ospd/generic-profiles/inputs> | <https://w3id.org/geolabs/ospd/generic-profiles/outputs> ?roles .
                 ?roles ?role ?this .
             }
         """
@@ -153,7 +153,7 @@ gp:RepresentationReferenceShape a sh:NodeShape ;
         sh:message "A representation must realize a version of the role's dataType, or of a broader data type." ;
         sh:select """
             SELECT $this ?value WHERE {
-                $this <https://geolabs.github.io/bblocks-generic-profiles/def/representation> ?value .
+                $this <https://w3id.org/geolabs/ospd/generic-profiles/representation> ?value .
                 $this <http://purl.org/dc/terms/type> ?dataType .
                 FILTER NOT EXISTS {
                     ?value <https://w3id.org/ogc/rim/realizes> ?version .

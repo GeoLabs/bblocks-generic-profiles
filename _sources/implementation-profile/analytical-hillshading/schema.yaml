@@ -5,11 +5,11 @@ allOf:
   - $ref: bblocks://generic-profiles.implementation-profile
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/analytical-hillshading"}
       type: {const: ImplementationProfile}
       prefLabel: {const: "Analytical hillshading"}
-      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading"}
-      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/analytical-hillshading"}
+      refinesGenericProfile: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading"}
+      activityType: {const: "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/analytical-hillshading"}
       # Table 21 against analytical-hillshading: keywords Extend (E), metadata Extend
       # (E, footnote a: Table 22 references on the process, input/output-level ones below),
       # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,
@@ -28,13 +28,13 @@ allOf:
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis'}
         - contains:
             type: object
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading'}
       inputs:
         type: object
         required: [elevation, azimuth, altitude]
@@ -50,8 +50,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/elevation'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/elevation'}
           azimuth:
             properties:
               keywords:
@@ -63,8 +63,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/azimuth'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/azimuth'}
           altitude:
             properties:
               keywords:
@@ -76,8 +76,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/altitude'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/altitude'}
       outputs:
         type: object
         required: [result]
@@ -93,15 +93,15 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/outputs/result'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/outputs/result'}
   - type: object
     properties:
       inputs:
         properties:
-          elevation: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/elevation"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff"]}}}
-          azimuth: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/azimuth"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/number"}}}
-          altitude: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/altitude"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/number"}}}
+          elevation: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/analytical-hillshading/inputs/elevation"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff"]}}}
+          azimuth: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/analytical-hillshading/inputs/azimuth"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/number"}}}
+          altitude: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/analytical-hillshading/inputs/altitude"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/number"}}}
       outputs:
         properties:
-          result: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"]}}}
+          result: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/analytical-hillshading/outputs/result"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"]}}}

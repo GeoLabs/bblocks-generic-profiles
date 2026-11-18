@@ -1,20 +1,34 @@
 {
-  "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access",
   "type": "ProcessConcept",
   "prefLabel": "Data Discovery and Access",
   "definition": "Operations that find data products in catalogues and retrieve their data: selecting products by area, time and metadata, and retrieving bands or areas of a product, without computing new quantities from them -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1).",
-  "inScheme": "https://geolabs.github.io/bblocks-generic-profiles/def/concept",
-  "hasAction": {
-    "id": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access/actions/addition",
-    "type": "RegisterAction",
-    "actionType": "addition",
-    "proposer": "https://geolabs.github.io/bblocks-generic-profiles/def/geolabs",
-    "startedAtTime": "2026-11-10T00:00:00Z",
-    "appliesTo": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"
-  },
-  "objectIdentifier": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access",
-  "itemClass": "https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept",
-  "inRegister": "https://geolabs.github.io/bblocks-generic-profiles/def/register",
+  "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/concept",
+  "hasAction": [
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access/actions/addition",
+      "type": "RegisterAction",
+      "actionType": "addition",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-10T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access/actions/identifier-2026-11-17",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+      "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access to https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access"
+    }
+  ],
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access",
+  "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access",
+  "itemClass": "https://w3id.org/geolabs/ospd/generic-profiles/item-class/process-concept",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "source": [

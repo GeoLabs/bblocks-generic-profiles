@@ -6,11 +6,11 @@ allOf:
   - $ref: bblocks://generic-profiles.implementation-profile
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling"}
       type: {const: ImplementationProfile}
       prefLabel: {const: "Raster resampling"}
-      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling"}
-      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-resampling"}
+      refinesGenericProfile: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling"}
+      activityType: {const: "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-resampling"}
       # Table 21 against raster-resampling: keywords Extend (E), metadata Extend (E, footnote a), input
       # minOccurs/maxOccurs where declared: at most the Generic Profile's (minOccurs may be 0, maxOccurs Restrict (R)).
       keywords:
@@ -25,13 +25,13 @@ allOf:
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing'}
         - contains:
             type: object
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling'}
       inputs:
         type: object
         required: [raster, resolution]
@@ -47,8 +47,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/raster'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/inputs/raster'}
           resolution:
             properties:
               keywords:
@@ -60,8 +60,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/inputs/resolution'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/inputs/resolution'}
       outputs:
         type: object
         required: [raster]
@@ -77,14 +77,14 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-resampling/outputs/raster'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-resampling/outputs/raster'}
   - type: object
     properties:
       inputs:
         properties:
-          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/inputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"]}}}
-          resolution: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/inputs/resolution"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/grid-resolution"}}}
+          raster: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/inputs/raster"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"]}}}
+          resolution: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/inputs/resolution"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/grid-resolution"}}}
       outputs:
         properties:
-          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-resampling/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"]}}}
+          raster: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-resampling/outputs/raster"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"]}}}

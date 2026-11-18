@@ -40,7 +40,7 @@ allOf:
       description: Written by scripts/activity_types.py from its constant ATR_ITEM_CLASS.
       const: https://w3id.org/ogc/rim/activity-type/activityTypeItemClass
     inRegister:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/register
+      const: https://w3id.org/geolabs/ospd/generic-profiles/register
     source:
       type: array
       items:

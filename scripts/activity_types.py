@@ -26,10 +26,13 @@ PARENTS = {
     "geoprocessing": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
 }
 PREFIXES = {"geo:": "http://www.opengis.net/ont/geosparql#", "prov:": "http://www.w3.org/ns/prov#"}
-GP = "https://geolabs.github.io/bblocks-generic-profiles/def/"
+GP = "https://w3id.org/geolabs/ospd/generic-profiles/"
 AT = GP + "activity-type/"
 GEOLABS = GP + "geolabs"
 ADDED = "2026-11-09"
+# Namespace of the items published before the move to w3id.org on IDENTIFIER_MOVED.
+LEGACY_GP = "https://geolabs.github.io/bblocks-generic-profiles/def/"
+IDENTIFIER_MOVED = "2026-11-17"
 
 
 def expand(curie):
@@ -87,6 +90,28 @@ def item(op):
             "startedAtTime": f"{a['date']}T00:00:00Z",
             "appliesTo": iri,
         } for a in op["amendments"]]
+    if op.get("added", ADDED) < IDENTIFIER_MOVED:
+        # Published under the github.io namespace: the old IRI stays declared as owl:sameAs, and
+        # the move of the identifier is recorded as a clarifying amendment (decision of 2026-11-17).
+        old = LEGACY_GP + iri[len(GP):]
+        entry = {**{k: v for k, v in entry.items() if k != "hasAction"}, "sameAs": old,
+                 "hasAction": (entry["hasAction"] if isinstance(entry["hasAction"], list)
+                               else [entry["hasAction"]]) + [{
+            "id": f"{iri}/actions/identifier-{IDENTIFIER_MOVED}",
+            "type": "RegisterAction",
+            "actionType": GP + "amendmentAction",
+            "changeClassification": "clarifying",
+            "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
+            "description": (
+                f"The object identifier of this item moves from {old} to {iri}, which resolves "
+                f"through w3id.org (decision of {IDENTIFIER_MOVED}); the register actions of the item "
+                f"move with it, under {iri}/actions/. The old IRI is kept as owl:sameAs. The content "
+                f"of the item is unchanged. Classified clarifying: the item is the same, only its "
+                f"identifier changes."),
+            "proposer": GEOLABS,
+            "startedAtTime": f"{IDENTIFIER_MOVED}T00:00:00Z",
+            "appliesTo": iri,
+        }]}
     for key in ("usedEntityType", "generatedEntityType"):
         values = [expand(v) for v in op.get(key, [])]
         # The ATR JSON schema (activity-types-schema) types each of these as one IRI.
@@ -183,7 +208,7 @@ def description(op):
 
 
 FIXTURE = """# {comment}
-@prefix gp:      <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gp:      <https://w3id.org/geolabs/ospd/generic-profiles/> .
 @prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
 @prefix geoproc: <https://w3id.org/ogc/rim/geoprocessing/> .
 @prefix geo:     <http://www.opengis.net/ont/geosparql#> .
@@ -224,7 +249,7 @@ FIXTURES = {
     "activity-type-other-item-class-fail": (
         "Must fail: the item class of an Implementation Profile. Only acttype:ActivityTypeShape "
         "(Activity Type Register) can reject it: this proves that its shapes run here.",
-        {"itemClass": "<https://geolabs.github.io/bblocks-generic-profiles/def/item-class/implementation-profile>"}),
+        {"itemClass": "<https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile>"}),
     "geoprocessing-without-spatial-entity-fail": (
         "Must fail: a geoprocessing activity type with no spatial entity type. Only "
         "geoproc:GeoprocessingActivityTypesShape (Activity Type Register) can reject it.",

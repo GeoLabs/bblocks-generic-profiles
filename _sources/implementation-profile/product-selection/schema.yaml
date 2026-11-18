@@ -6,11 +6,11 @@ allOf:
   - $ref: bblocks://generic-profiles.implementation-profile
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection"}
       type: {const: ImplementationProfile}
       prefLabel: {const: "Product selection"}
-      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection"}
-      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection"}
+      refinesGenericProfile: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection"}
+      activityType: {const: "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection"}
       # Table 21 against product-selection: keywords Extend (E), metadata Extend (E, footnote a), input
       # minOccurs/maxOccurs where declared: at most the Generic Profile's (minOccurs may be 0, maxOccurs Restrict (R)).
       keywords:
@@ -25,13 +25,13 @@ allOf:
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access'}
         - contains:
             type: object
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection'}
       inputs:
         type: object
         required: [areaOfInterest, timeInterval, collection]
@@ -47,8 +47,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/areaOfInterest'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/inputs/areaOfInterest'}
           timeInterval:
             properties:
               keywords:
@@ -60,8 +60,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/timeInterval'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/inputs/timeInterval'}
           collection:
             properties:
               keywords:
@@ -73,8 +73,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/inputs/collection'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/inputs/collection'}
       outputs:
         type: object
         required: [products]
@@ -90,15 +90,15 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/product-selection/outputs/products'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/product-selection/outputs/products'}
   - type: object
     properties:
       inputs:
         properties:
-          areaOfInterest: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/areaOfInterest"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/geometry"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/geometry-geojson"]}}}
-          timeInterval: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/timeInterval"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/time-interval"}}}
-          collection: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/inputs/collection"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/collection-identifier"}}}
+          areaOfInterest: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/inputs/areaOfInterest"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/geometry"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/geometry-geojson"]}}}
+          timeInterval: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/inputs/timeInterval"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/time-interval"}}}
+          collection: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/inputs/collection"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/collection-identifier"}}}
       outputs:
         properties:
-          products: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/product-selection/outputs/products"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/eo-product-stac-item"]}}}
+          products: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/outputs/products"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/eo-product"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/eo-product-stac-item"]}}}

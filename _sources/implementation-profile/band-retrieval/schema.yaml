@@ -6,11 +6,11 @@ allOf:
   - $ref: bblocks://generic-profiles.implementation-profile
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/band-retrieval"}
       type: {const: ImplementationProfile}
       prefLabel: {const: "Band retrieval"}
-      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval"}
-      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/band-retrieval"}
+      refinesGenericProfile: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/band-retrieval"}
+      activityType: {const: "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval"}
       # Table 21 against band-retrieval: keywords Extend (E), metadata Extend (E, footnote a), input
       # minOccurs/maxOccurs where declared: at most the Generic Profile's (minOccurs may be 0, maxOccurs Restrict (R)).
       keywords:
@@ -25,13 +25,13 @@ allOf:
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access'}
         - contains:
             type: object
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/band-retrieval'}
       inputs:
         type: object
         required: [product, band, areaOfInterest]
@@ -47,8 +47,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/product'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/band-retrieval/inputs/product'}
           band:
             properties:
               keywords:
@@ -60,8 +60,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/band'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/band-retrieval/inputs/band'}
           areaOfInterest:
             properties:
               keywords:
@@ -73,8 +73,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/inputs/areaOfInterest'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/band-retrieval/inputs/areaOfInterest'}
       outputs:
         type: object
         required: [raster]
@@ -90,15 +90,15 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/band-retrieval/outputs/raster'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/band-retrieval/outputs/raster'}
   - type: object
     properties:
       inputs:
         properties:
-          product: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/product"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/eo-product"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/eo-product-stac-item"]}}}
-          band: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/band"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/band-identifier"}}}
-          areaOfInterest: {required: [id, dataType, representation, minOccurs], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/inputs/areaOfInterest"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/bounding-box"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/bounding-box-ogcapi-processes-bbox"]}, minOccurs: {const: 0}}}
+          product: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/band-retrieval/inputs/product"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/eo-product"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/eo-product-stac-item"]}}}
+          band: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/band-retrieval/inputs/band"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/band-identifier"}}}
+          areaOfInterest: {required: [id, dataType, representation, minOccurs], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/band-retrieval/inputs/areaOfInterest"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/bounding-box"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/bounding-box-ogcapi-processes-bbox"]}, minOccurs: {const: 0}}}
       outputs:
         properties:
-          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/band-retrieval/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"]}}}
+          raster: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/band-retrieval/outputs/raster"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/raster"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff"]}}}

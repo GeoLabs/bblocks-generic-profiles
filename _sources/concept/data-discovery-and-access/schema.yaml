@@ -5,6 +5,6 @@ allOf:
   - $ref: bblocks://generic-profiles.concept
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access"}
       type: {const: ProcessConcept}
       prefLabel: {const: "Data Discovery and Access"}

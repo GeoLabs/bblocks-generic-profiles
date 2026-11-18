@@ -3,7 +3,7 @@
     "@version": 1.1,
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "dct": "http://purl.org/dc/terms/",
-    "gp": "https://geolabs.github.io/bblocks-generic-profiles/def/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
     "id": "@id",
     "type": "@type",
     "ProcessConcept": "gp:ProcessConcept",
@@ -23,6 +23,14 @@
       "@id": "dct:references",
       "@type": "@id"
     },
-    "clause": "gp:clause"
+    "clause": "gp:clause",
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "https://w3id.org/ogc/rim/affectedProperty",
+      "@type": "@id"
+    }
   }
 }

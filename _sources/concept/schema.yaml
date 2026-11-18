@@ -26,9 +26,9 @@ allOf:
         format: uri
       # Pinned per tier; the rest of the ISO 19135:2026 required core comes from rim.registered-item.
       itemClass:
-        const: https://geolabs.github.io/bblocks-generic-profiles/def/item-class/process-concept
+        const: https://w3id.org/geolabs/ospd/generic-profiles/item-class/process-concept
       inRegister:
-        const: https://geolabs.github.io/bblocks-generic-profiles/def/register
+        const: https://w3id.org/geolabs/ospd/generic-profiles/register
       source:
         type: array
         minItems: 1

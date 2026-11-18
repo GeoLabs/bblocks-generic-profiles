@@ -2,15 +2,15 @@
 # Registered Item Model's own rim:RegisterItemShape applies -- here it lacks rim:validityStatus
 # and rim:publicationStatus, and refines no Generic Profile (gp:ImplementationProfileShape).
 # Turtle rather than JSON so that only the SHACL layer, not the JSON Schema, can catch it.
-@prefix gp:   <https://geolabs.github.io/bblocks-generic-profiles/def/> .
-@prefix gpic: <https://geolabs.github.io/bblocks-generic-profiles/def/item-class/> .
+@prefix gp:   <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix gpic: <https://w3id.org/geolabs/ospd/generic-profiles/item-class/> .
 @prefix rim:  <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed>
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/not-governed>
     a gp:ImplementationProfile ;
     skos:prefLabel "Not governed" ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/not-governed"^^xsd:anyURI ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/not-governed"^^xsd:anyURI ;
     rim:itemClass gpic:implementation-profile ;
     rim:inRegister gp:register .

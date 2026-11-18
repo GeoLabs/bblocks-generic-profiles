@@ -6,11 +6,11 @@ allOf:
   - $ref: bblocks://generic-profiles.implementation-profile
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band"}
       type: {const: ImplementationProfile}
       prefLabel: {const: "Radiometric index (single-band rasters)"}
-      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"}
-      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/radiometric-index"}
+      refinesGenericProfile: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index"}
+      activityType: {const: "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index"}
       # Table 21 against radiometric-index: keywords Extend (E), metadata Extend (E, footnote a), input
       # minOccurs/maxOccurs where declared: at most the Generic Profile's (minOccurs may be 0, maxOccurs Restrict (R)).
       keywords:
@@ -25,13 +25,13 @@ allOf:
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing'}
         - contains:
             type: object
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index'}
       inputs:
         type: object
         required: [rasters, index]
@@ -47,8 +47,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/rasters'}
           index:
             properties:
               keywords:
@@ -60,8 +60,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/index'}
       outputs:
         type: object
         required: [raster]
@@ -77,14 +77,14 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/outputs/raster'}
   - type: object
     properties:
       inputs:
         properties:
-          rasters: {required: [id, dataType, representation, maxOccurs], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band/inputs/rasters"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"]}, maxOccurs: {const: "unbounded"}}}
-          index: {required: [id, dataType, minOccurs, maxOccurs], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band/inputs/index"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index"}, minOccurs: {const: 0}, maxOccurs: {const: "unbounded"}}}
+          rasters: {required: [id, dataType, representation, maxOccurs], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/rasters"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"]}, maxOccurs: {const: "unbounded"}}}
+          index: {required: [id, dataType, minOccurs, maxOccurs], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/index"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/radiometric-index"}, minOccurs: {const: 0}, maxOccurs: {const: "unbounded"}}}
       outputs:
         properties:
-          raster: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index-single-band/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"]}}}
+          raster: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/outputs/raster"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"]}}}

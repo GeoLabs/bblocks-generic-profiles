@@ -1,5 +1,5 @@
 # Must fail: no skos:definition. Only gp:ActivityTypeShape can reject it.
-@prefix gp:      <https://geolabs.github.io/bblocks-generic-profiles/def/> .
+@prefix gp:      <https://w3id.org/geolabs/ospd/generic-profiles/> .
 @prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
 @prefix geoproc: <https://w3id.org/ogc/rim/geoprocessing/> .
 @prefix geo:     <http://www.opengis.net/ont/geosparql#> .
@@ -10,20 +10,20 @@
 @prefix prov:    <http://www.w3.org/ns/prov#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/fixture-activity-type-without-definition> a acttype:ActivityType , owl:Class ;
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/fixture-activity-type-without-definition> a acttype:ActivityType , owl:Class ;
     skos:prefLabel "Fixture"@en ;
     rdfs:subClassOf geoproc:GeoprocessingActivityType ;
-    rim:objectIdentifier "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/fixture-activity-type-without-definition"^^xsd:anyURI ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/fixture-activity-type-without-definition"^^xsd:anyURI ;
     rim:itemClass <https://w3id.org/ogc/rim/activity-type/activityTypeItemClass> ;
     rim:inRegister gp:register ;
     rim:validityStatus rim:invalid ;
     rim:publicationStatus rim:published ;
     acttype:usedEntityType geo:Geometry ;
     acttype:associatedAgentType prov:SoftwareAgent ;
-    rim:hasAction <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/fixture-activity-type-without-definition/actions/addition> .
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/fixture-activity-type-without-definition/actions/addition> .
 
-<https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/fixture-activity-type-without-definition/actions/addition> a rim:RegisterAction ;
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/fixture-activity-type-without-definition/actions/addition> a rim:RegisterAction ;
     rim:actionType rim:additionAction ;
     rim:proposer gp:geolabs ;
-    rim:appliesTo <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/fixture-activity-type-without-definition> ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/fixture-activity-type-without-definition> ;
     prov:startedAtTime "2026-11-09T00:00:00Z"^^xsd:dateTime .

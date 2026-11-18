@@ -6,7 +6,7 @@ allOf:
 - type: object
   properties:
     id:
-      const: https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/contains
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/contains
     prefLabel:
       const: Contains
     subClassOf:

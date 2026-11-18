@@ -6,7 +6,7 @@ allOf:
   - $ref: bblocks://generic-profiles.generic-profile
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index"}
       type: {const: GenericProfile}
       prefLabel: {const: "Radiometric index"}
   - type: object
@@ -18,11 +18,11 @@ allOf:
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing'}
       inputs:
         properties:
-          rasters: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}}}
-          index: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/index"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/radiometric-index"}}}
+          rasters: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/rasters"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/raster"}}}
+          index: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/index"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/radiometric-index"}}}
       outputs:
         properties:
-          raster: {required: [id, dataType], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/outputs/raster"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster"}}}
+          raster: {required: [id, dataType], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/outputs/raster"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/raster"}}}

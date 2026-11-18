@@ -3,7 +3,7 @@
 Status: **decided and applied -- Option A** (2026-11-04). The local `generic-profiles.data-type` block
 is removed; `dataType` values are now the concept IRIs of the
 [`bblocks-data-types`](https://geolabs.github.io/bblocks-data-types/) register
-(`https://geolabs.github.io/bblocks-data-types/def/data-type/...`), imported in `bblocks-config.yaml`.
+(`https://w3id.org/geolabs/ospd/data-types/data-type/...`), imported in `bblocks-config.yaml`.
 The analysis below is kept as the record of the decision (2026-10-26) and describes the situation
 *before* the move.
 

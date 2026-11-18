@@ -5,11 +5,11 @@ allOf:
   - $ref: bblocks://generic-profiles.implementation-profile
   - type: object
     properties:
-      id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index"}
+      id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/terrain-ruggedness-index"}
       type: {const: ImplementationProfile}
       prefLabel: {const: "Terrain ruggedness index"}
-      refinesGenericProfile: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative"}
-      activityType: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/terrain-ruggedness-index"}
+      refinesGenericProfile: {const: "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative"}
+      activityType: {const: "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/terrain-ruggedness-index"}
       # Table 21 against terrain-derivative: keywords Extend (E), metadata Extend
       # (E, footnote a: Table 22 references on the process, input/output-level ones below),
       # input minOccurs/maxOccurs, where declared: at most the Generic Profile's (minOccurs may be 0,
@@ -27,13 +27,13 @@ allOf:
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/concept'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/concept/terrain-analysis'}
         - contains:
             type: object
             required: [role, href]
             properties:
               role: {const: 'http://www.opengis.net/spec/wps/2.0/def/process-profile/generic'}
-              href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative'}
+              href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative'}
       inputs:
         type: object
         required: [elevation]
@@ -49,8 +49,8 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation'}
       outputs:
         type: object
         required: [result]
@@ -66,13 +66,13 @@ allOf:
                     type: object
                     required: [role, href]
                     properties:
-                      role: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output'}
-                      href: {const: 'https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result'}
+                      role: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output'}
+                      href: {const: 'https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result'}
   - type: object
     properties:
       inputs:
         properties:
-          elevation: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/inputs/elevation"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/elevation-model"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff"]}}}
+          elevation: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/terrain-ruggedness-index/inputs/elevation"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff"]}}}
       outputs:
         properties:
-          result: {required: [id, dataType, representation], properties: {id: {const: "https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/outputs/result"}, dataType: {const: "https://geolabs.github.io/bblocks-data-types/def/data-type/raster-single-band"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"]}}}
+          result: {required: [id, dataType, representation], properties: {id: {const: "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/terrain-ruggedness-index/outputs/result"}, dataType: {const: "https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band"}, representation: {const: ["https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"]}}}
