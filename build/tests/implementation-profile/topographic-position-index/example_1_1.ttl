@@ -92,8 +92,8 @@
         "elevation",
         "raster",
         "terrain" ;
-    proc:metadata [ dcterms:title "Generic Profile: Terrain derivative" ],
-        [ dcterms:title "Process Concept: Terrain Analysis" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Terrain Analysis" ],
+        [ dcterms:title "Generic Profile: Terrain derivative" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/identifier-2026-11-17>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/meaning-2026-11-09>,

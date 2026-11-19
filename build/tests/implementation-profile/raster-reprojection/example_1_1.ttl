@@ -105,8 +105,8 @@
     proc:keywords "coverage",
         "raster",
         "reprojection" ;
-    proc:metadata [ dcterms:title "Generic Profile: Raster reprojection" ],
-        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
+        [ dcterms:title "Generic Profile: Raster reprojection" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/data-type-2026-11-09>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/identifier-2026-11-17>,

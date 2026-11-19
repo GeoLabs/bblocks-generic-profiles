@@ -421,8 +421,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -489,20 +489,20 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry1`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry1" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry1" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses/inputs/geometry2> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/geometry> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry2`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry2" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry2" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses/outputs/result> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/boolean> ;
     proc:keywords "boolean" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- output `result`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/outputs/result" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/outputs/result" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses> a gp:ImplementationProfile ;
@@ -511,17 +511,17 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Crosses" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/crosses> ;
-    gp:inputs [ ns2:geometry1 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses/inputs/geometry1> ;
-            ns2:geometry2 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses/inputs/geometry2> ] ;
-    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses/outputs/result> ] ;
+    gp:inputs [ ns1:geometry1 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses/inputs/geometry1> ;
+            ns1:geometry2 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses/inputs/geometry2> ] ;
+    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses/outputs/result> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate> ;
     proc:keywords "Crosses",
         "geometry",
         "predicate",
         "spatial relation",
         "vector" ;
-    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
-        [ dcterms:title "Generic Profile: Binary spatial predicate" ] ;
+    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ],
+        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses/actions/identifier-2026-11-17>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/crosses/actions/meaning-2026-11-09>,
@@ -758,7 +758,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.crosses
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

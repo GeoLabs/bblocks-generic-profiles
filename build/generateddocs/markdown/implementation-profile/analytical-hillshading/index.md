@@ -517,8 +517,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
         "illumination",
         "raster",
         "terrain" ;
-    proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading" ],
-        [ dcterms:title "Process Concept: Terrain Analysis" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Terrain Analysis" ],
+        [ dcterms:title "Generic Profile: Analytical hillshading" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/analytical-hillshading/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/analytical-hillshading/actions/identifier-2026-11-17>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/analytical-hillshading/actions/meaning-2026-11-09>,
@@ -789,7 +789,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.analytical-hillshading
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

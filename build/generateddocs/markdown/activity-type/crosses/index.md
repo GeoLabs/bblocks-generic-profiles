@@ -183,9 +183,9 @@ The Implementation Profile [`generic-profiles.implementation-profile.crosses`](.
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/crosses> a owl:Class,
         acttype:ActivityType ;
-    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.12 ST_Crosses" ],
-        [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
-            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.17" ] ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.17" ],
+        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.12 ST_Crosses" ] ;
     rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/crosses> ;
     skos:altLabel "ST_Crosses" ;
@@ -261,7 +261,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type.crosses
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

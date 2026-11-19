@@ -223,7 +223,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type.point-cloud-to-shapes
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

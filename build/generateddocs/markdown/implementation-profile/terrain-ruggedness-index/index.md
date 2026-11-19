@@ -378,8 +378,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -446,14 +446,14 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff> ;
     proc:keywords "elevation" ;
     proc:metadata [ dcterms:title "Generic Profile: Terrain derivative -- input `elevation`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/terrain-ruggedness-index/outputs/result> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Terrain derivative -- output `result`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/terrain-ruggedness-index> a gp:ImplementationProfile ;
@@ -462,8 +462,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Terrain ruggedness index" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/terrain-ruggedness-index> ;
-    gp:inputs [ ns2:elevation <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/terrain-ruggedness-index/inputs/elevation> ] ;
-    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/terrain-ruggedness-index/outputs/result> ] ;
+    gp:inputs [ ns1:elevation <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/terrain-ruggedness-index/inputs/elevation> ] ;
+    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/terrain-ruggedness-index/outputs/result> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative> ;
     proc:keywords "TRI",
         "derivative",
@@ -675,7 +675,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.terrain-ruggedness-index
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

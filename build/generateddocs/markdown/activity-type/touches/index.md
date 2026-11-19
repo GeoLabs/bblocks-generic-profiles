@@ -183,9 +183,9 @@ The Implementation Profile [`generic-profiles.implementation-profile.touches`](.
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/touches> a owl:Class,
         acttype:ActivityType ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
-            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.20" ],
-        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.49 ST_Touches" ] ;
+    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.49 ST_Touches" ],
+        [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
+            dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.20" ] ;
     rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/touches> ;
     skos:altLabel "ST_Touches" ;
@@ -261,7 +261,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type.touches
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

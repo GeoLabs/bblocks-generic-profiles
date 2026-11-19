@@ -29,7 +29,7 @@ format, D; decision D6):
 | Role | Data type | Cardinality | Representation |
 |---|---|---|---|
 | input `raster` | `raster-single-band` | exactly one | [`raster-single-band-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff) (Single-band raster as GeoTIFF) |
-| output `mask` | `binary-mask` | -- | [`raster-single-band-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff) (Single-band raster as GeoTIFF) |
+| output `mask` | `binary-mask` | -- | [`binary-mask-geotiff`](https://w3id.org/geolabs/ospd/data-formats/representation/binary-mask-geotiff) (Binary mask as GeoTIFF) |
 
 The representations are a minimal default: a deployment may support more formats (OGC 14-065 WPS
 2.0.2 §7.5.4 Table 21, footnote d).
@@ -83,6 +83,17 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
       "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/representation-2026-11-18",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "https://w3id.org/geolabs/ospd/generic-profiles/representation",
+      "description": "The representation of outputs/mask changes from raster-single-band-geotiff to binary-mask-geotiff, which realizes binary-mask, the data type of the output; raster-single-band-geotiff realizes raster-single-band, the broader type (decision of 2026-11-18: a representation realizes exactly the data type of its input or output). Classified substantive: a change of representation.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-18T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
     }
   ],
   "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding",
@@ -134,7 +145,7 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/outputs/mask",
       "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/binary-mask",
       "representation": [
-        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"
+        "https://w3id.org/geolabs/ospd/data-formats/representation/binary-mask-geotiff"
       ],
       "keywords": [
         "mask"
@@ -180,6 +191,17 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
       "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/representation-2026-11-18",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "https://w3id.org/geolabs/ospd/generic-profiles/representation",
+      "description": "The representation of outputs/mask changes from raster-single-band-geotiff to binary-mask-geotiff, which realizes binary-mask, the data type of the output; raster-single-band-geotiff realizes raster-single-band, the broader type (decision of 2026-11-18: a representation realizes exactly the data type of its input or output). Classified substantive: a change of representation.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-18T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
     }
   ],
   "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding",
@@ -231,7 +253,7 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/outputs/mask",
       "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/binary-mask",
       "representation": [
-        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"
+        "https://w3id.org/geolabs/ospd/data-formats/representation/binary-mask-geotiff"
       ],
       "keywords": [
         "mask"
@@ -252,8 +274,8 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -276,18 +298,27 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     rim:changeClassification rim:clarifyingChange ;
     rim:proposer gp:geolabs .
 
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/representation-2026-11-18> a rim:RegisterAction ;
+    dcterms:description "The representation of outputs/mask changes from raster-single-band-geotiff to binary-mask-geotiff, which realizes binary-mask, the data type of the output; raster-single-band-geotiff realizes raster-single-band, the broader type (decision of 2026-11-18: a representation realizes exactly the data type of its input or output). Classified substantive: a change of representation." ;
+    prov:startedAtTime "2026-11-18T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty gp:representation ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer gp:geolabs .
+
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/inputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster thresholding -- input `raster`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/inputs/raster" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/inputs/raster" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/outputs/mask> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/binary-mask> ;
-    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff> ;
+    gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/binary-mask-geotiff> ;
     proc:keywords "mask" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster thresholding -- output `mask`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/outputs/mask" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/outputs/mask" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding> a gp:ImplementationProfile ;
@@ -296,16 +327,17 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Otsu thresholding" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/otsu-thresholding> ;
-    gp:inputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/inputs/raster> ] ;
-    gp:outputs [ ns2:mask <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/outputs/mask> ] ;
+    gp:inputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/inputs/raster> ] ;
+    gp:outputs [ ns1:mask <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/outputs/mask> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding> ;
     proc:keywords "coverage",
         "raster",
         "thresholding" ;
-    proc:metadata [ dcterms:title "Generic Profile: Raster thresholding" ],
-        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
+        [ dcterms:title "Generic Profile: Raster thresholding" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/addition>,
-        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/identifier-2026-11-17> ;
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/identifier-2026-11-17>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/representation-2026-11-18> ;
     rim:inRegister gp:register ;
     rim:itemClass <https://w3id.org/geolabs/ospd/generic-profiles/item-class/implementation-profile> ;
     rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"^^xsd:anyURI ;
@@ -469,7 +501,7 @@ allOf:
               x-jsonld-type: '@id'
             representation:
               const:
-              - https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff
+              - https://w3id.org/geolabs/ospd/data-formats/representation/binary-mask-geotiff
               x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/representation
               x-jsonld-type: '@id'
       x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/outputs
@@ -500,7 +532,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.otsu-thresholding
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

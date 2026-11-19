@@ -106,8 +106,8 @@
     proc:keywords "band math",
         "coverage",
         "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
-        [ dcterms:title "Generic Profile: Raster band math" ] ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster band math" ],
+        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math/actions/data-type-2026-11-09>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math/actions/identifier-2026-11-17>,

@@ -527,8 +527,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
         "set operation",
         "spatial analysis",
         "vector" ;
-    proc:metadata [ dcterms:title "Generic Profile: Binary spatial set operation" ],
-        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
+        [ dcterms:title "Generic Profile: Binary spatial set operation" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/union/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/union/actions/identifier-2026-11-17>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/union/actions/meaning-2026-11-09>,
@@ -771,7 +771,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.union
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

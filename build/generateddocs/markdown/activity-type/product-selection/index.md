@@ -186,10 +186,10 @@ The Implementation Profile [`generic-profiles.implementation-profile.product-sel
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection> a owl:Class,
         acttype:ActivityType ;
-    dcterms:source [ dcterms:references <https://docs.ogc.org/is/17-069r4/17-069r4.html> ;
-            dcterms:title "OGC 17-069r4 OGC API - Features - Part 1: Core, §7.15.3 Parameter bbox and §7.15.4 Parameter datetime" ],
-        [ dcterms:references <https://docs.ogc.org/is/13-026r9/13-026r9.html> ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/13-026r9/13-026r9.html> ;
             dcterms:title "OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, §1 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)" ],
+        [ dcterms:references <https://docs.ogc.org/is/17-069r4/17-069r4.html> ;
+            dcterms:title "OGC 17-069r4 OGC API - Features - Part 1: Core, §7.15.3 Parameter bbox and §7.15.4 Parameter datetime" ],
         [ dcterms:references <https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md> ;
             dcterms:title "STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and collections" ] ;
     rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
@@ -267,7 +267,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type.product-selection
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

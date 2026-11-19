@@ -375,8 +375,8 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     proc:keywords "catalogue",
         "product",
         "selection" ;
-    proc:metadata [ dcterms:title "Generic Profile: Product selection" ],
-        [ dcterms:title "Process Concept: Data Discovery and Access" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Data Discovery and Access" ],
+        [ dcterms:title "Generic Profile: Product selection" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
@@ -639,7 +639,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.product-selection
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

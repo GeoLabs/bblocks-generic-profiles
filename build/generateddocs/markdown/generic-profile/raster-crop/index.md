@@ -244,8 +244,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -296,9 +296,9 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Crops a raster coverage to a region of interest. One Raster input, an area of interest, one Raster output covering only that area." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster crop" ;
-    gp:inputs [ ns2:areaOfInterest <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/inputs/areaOfInterest> ;
-            ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/inputs/raster> ] ;
-    gp:outputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/outputs/raster> ] ;
+    gp:inputs [ ns1:areaOfInterest <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/inputs/areaOfInterest> ;
+            ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/inputs/raster> ] ;
+    gp:outputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/outputs/raster> ] ;
     proc:keywords "coverage",
         "crop",
         "raster" ;
@@ -425,7 +425,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.raster-crop
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

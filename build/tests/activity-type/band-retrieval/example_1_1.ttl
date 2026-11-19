@@ -26,10 +26,10 @@
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval> a owl:Class,
         acttype:ActivityType ;
-    dcterms:source [ dcterms:references <https://portal.ogc.org/files/12-040> ;
-            dcterms:title "OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, §1 Scope (retrieval of selected range components of a coverage)" ],
-        [ dcterms:references <https://portal.ogc.org/files/09-110r4> ;
-            dcterms:title "OGC 09-110r4 WCS 2.0 Interface Standard - Core, version 2.0.1, §4.5 (coverage) trimming and §8.4.1 GetCoverage request (domain subsetting)" ] ;
+    dcterms:source [ dcterms:references <https://portal.ogc.org/files/09-110r4> ;
+            dcterms:title "OGC 09-110r4 WCS 2.0 Interface Standard - Core, version 2.0.1, §4.5 (coverage) trimming and §8.4.1 GetCoverage request (domain subsetting)" ],
+        [ dcterms:references <https://portal.ogc.org/files/12-040> ;
+            dcterms:title "OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, §1 Scope (retrieval of selected range components of a coverage)" ] ;
     rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/band-retrieval> ;
     skos:definition "Retrieves one band, one range component, of an Earth observation product as a raster, over the whole product or over an area of interest, with the values the product provides, possibly converted to physical units by the scale and offset the product declares." ;

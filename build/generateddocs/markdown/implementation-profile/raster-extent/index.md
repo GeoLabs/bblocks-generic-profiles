@@ -396,8 +396,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -464,14 +464,14 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster extent -- input `raster`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/inputs/raster" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/inputs/raster" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-extent/outputs/result> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/surface> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster extent -- output `result`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/outputs/result" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/outputs/result" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-extent> a gp:ImplementationProfile ;
@@ -480,14 +480,14 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster extent" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-extent> ;
-    gp:inputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-extent/inputs/raster> ] ;
-    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-extent/outputs/result> ] ;
+    gp:inputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-extent/inputs/raster> ] ;
+    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-extent/outputs/result> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent> ;
     proc:keywords "coverage",
         "extent",
         "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
-        [ dcterms:title "Generic Profile: Raster extent" ] ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster extent" ],
+        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-extent/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-extent/actions/identifier-2026-11-17>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-extent/actions/meaning-2026-11-09>,
@@ -689,7 +689,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.raster-extent
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

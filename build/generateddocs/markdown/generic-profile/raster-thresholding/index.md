@@ -197,8 +197,8 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -237,8 +237,8 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
     skos:definition "Divides the cells of a single-band raster into two classes at a threshold that the operation determines from the raster's values, and returns the upper class as a binary mask. One single-band Raster input, one Binary mask output." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster thresholding" ;
-    gp:inputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/inputs/raster> ] ;
-    gp:outputs [ ns2:mask <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/outputs/mask> ] ;
+    gp:inputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/inputs/raster> ] ;
+    gp:outputs [ ns1:mask <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/outputs/mask> ] ;
     proc:keywords "coverage",
         "raster",
         "thresholding" ;
@@ -356,7 +356,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.raster-thresholding
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

@@ -1,7 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -68,20 +68,20 @@
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry1`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry1" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry1" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/inputs/geometry2> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/geometry> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry2`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry2" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry2" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/outputs/result> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/boolean> ;
     proc:keywords "boolean" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- output `result`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/outputs/result" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/outputs/result" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects> a gp:ImplementationProfile ;
@@ -90,17 +90,17 @@
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Intersects" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects> ;
-    gp:inputs [ ns2:geometry1 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/inputs/geometry1> ;
-            ns2:geometry2 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/inputs/geometry2> ] ;
-    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/outputs/result> ] ;
+    gp:inputs [ ns1:geometry1 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/inputs/geometry1> ;
+            ns1:geometry2 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/inputs/geometry2> ] ;
+    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/outputs/result> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate> ;
     proc:keywords "Intersects",
         "geometry",
         "predicate",
         "spatial relation",
         "vector" ;
-    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate" ],
-        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
+        [ dcterms:title "Generic Profile: Binary spatial predicate" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/identifier-2026-11-17>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/meaning-2026-11-09>,

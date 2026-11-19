@@ -74,8 +74,8 @@
         "predicate",
         "spatial relation",
         "vector" ;
-    proc:metadata [ dct:title "Process Concept: Vector Geometry Processing" ],
-        [ dct:title "Generic Profile: Binary spatial predicate" ] ;
+    proc:metadata [ dct:title "Generic Profile: Binary spatial predicate" ],
+        [ dct:title "Process Concept: Vector Geometry Processing" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/meaning-2026-11-09>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/operation-sources-2026-11-09>,

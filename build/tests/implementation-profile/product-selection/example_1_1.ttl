@@ -64,8 +64,8 @@
     proc:keywords "catalogue",
         "product",
         "selection" ;
-    proc:metadata [ dcterms:title "Generic Profile: Product selection" ],
-        [ dcterms:title "Process Concept: Data Discovery and Access" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Data Discovery and Access" ],
+        [ dcterms:title "Generic Profile: Product selection" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/product-selection/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;

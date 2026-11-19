@@ -222,8 +222,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -269,8 +269,8 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Computes the bounding envelope of a raster coverage, returned as a geometry (a rectangular polygon in the coverage's CRS). One Raster input, one Geometry output." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster extent" ;
-    gp:inputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/inputs/raster> ] ;
-    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/outputs/result> ] ;
+    gp:inputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/inputs/raster> ] ;
+    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-extent/outputs/result> ] ;
     proc:keywords "coverage",
         "extent",
         "raster" ;
@@ -385,7 +385,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.raster-extent
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

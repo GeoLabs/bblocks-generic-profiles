@@ -23,6 +23,17 @@
       "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/representation-2026-11-18",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "https://w3id.org/geolabs/ospd/generic-profiles/representation",
+      "description": "The representation of outputs/mask changes from raster-single-band-geotiff to binary-mask-geotiff, which realizes binary-mask, the data type of the output; raster-single-band-geotiff realizes raster-single-band, the broader type (decision of 2026-11-18: a representation realizes exactly the data type of its input or output). Classified substantive: a change of representation.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-18T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
     }
   ],
   "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding",
@@ -74,7 +85,7 @@
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/outputs/mask",
       "dataType": "https://w3id.org/geolabs/ospd/data-types/data-type/binary-mask",
       "representation": [
-        "https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff"
+        "https://w3id.org/geolabs/ospd/data-formats/representation/binary-mask-geotiff"
       ],
       "keywords": [
         "mask"

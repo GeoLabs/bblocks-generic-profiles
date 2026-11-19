@@ -212,8 +212,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -257,9 +257,9 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Computes a new geometry from the point-set relationship of two input geometries. Shared I/O shape of the SQL/MM set-operation family: two Geometry inputs, one Geometry output." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Binary spatial set operation" ;
-    gp:inputs [ ns2:geometry1 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry1> ;
-            ns2:geometry2 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry2> ] ;
-    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/outputs/result> ] ;
+    gp:inputs [ ns1:geometry1 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry1> ;
+            ns1:geometry2 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/inputs/geometry2> ] ;
+    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-operation/outputs/result> ] ;
     proc:keywords "geometry",
         "set operation",
         "spatial analysis",
@@ -386,7 +386,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.binary-spatial-operation
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

@@ -229,8 +229,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -282,9 +282,9 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Reprojects a raster coverage to another coordinate reference system, preserving its content. One Raster input, a target CRS, one Raster output in the new CRS." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster reprojection" ;
-    gp:inputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/raster> ;
-            ns2:targetCRS <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/targetCRS> ] ;
-    gp:outputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/outputs/raster> ] ;
+    gp:inputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/raster> ;
+            ns1:targetCRS <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/targetCRS> ] ;
+    gp:outputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/outputs/raster> ] ;
     proc:keywords "coverage",
         "raster",
         "reprojection" ;
@@ -411,7 +411,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.raster-reprojection
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

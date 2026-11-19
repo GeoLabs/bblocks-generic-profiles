@@ -446,8 +446,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -521,7 +521,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index/inputs/index> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/radiometric-index> ;
     proc:keywords "radiometric index" ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- input `index`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/index" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/index" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index/inputs/rasters> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
@@ -529,14 +529,14 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     proc:keywords "raster" ;
     proc:maxOccurs 1 ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- input `rasters`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/rasters" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/rasters" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index/outputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- output `raster`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/outputs/raster" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/outputs/raster" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index> a gp:ImplementationProfile ;
@@ -545,9 +545,9 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Radiometric index" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index> ;
-    gp:inputs [ ns1:index <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index/inputs/index> ;
-            ns1:rasters <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index/inputs/rasters> ] ;
-    gp:outputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index/outputs/raster> ] ;
+    gp:inputs [ ns2:index <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index/inputs/index> ;
+            ns2:rasters <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index/inputs/rasters> ] ;
+    gp:outputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index/outputs/raster> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index> ;
     proc:keywords "coverage",
         "radiometric index",
@@ -789,7 +789,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.radiometric-index
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

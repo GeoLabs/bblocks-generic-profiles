@@ -471,8 +471,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -548,21 +548,21 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     proc:keywords "bbox",
         "bounding box" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster crop -- input `areaOfInterest`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/inputs/areaOfInterest" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/inputs/areaOfInterest" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-crop/inputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster crop -- input `raster`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/inputs/raster" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/inputs/raster" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-crop/outputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster crop -- output `raster`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/outputs/raster" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop/outputs/raster" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-crop> a gp:ImplementationProfile ;
@@ -571,9 +571,9 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster crop" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-crop> ;
-    gp:inputs [ ns1:areaOfInterest <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-crop/inputs/areaOfInterest> ;
-            ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-crop/inputs/raster> ] ;
-    gp:outputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-crop/outputs/raster> ] ;
+    gp:inputs [ ns2:areaOfInterest <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-crop/inputs/areaOfInterest> ;
+            ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-crop/inputs/raster> ] ;
+    gp:outputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-crop/outputs/raster> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-crop> ;
     proc:keywords "coverage",
         "crop",
@@ -821,7 +821,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.raster-crop
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

@@ -523,8 +523,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -614,7 +614,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/expression> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/expression> ;
     proc:keywords "expression" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster band math -- input `expression`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/inputs/expression" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/inputs/expression" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/rasters> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
@@ -622,14 +622,14 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     proc:keywords "raster" ;
     proc:maxOccurs "unbounded" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster band math -- input `rasters`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/inputs/rasters" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/inputs/rasters" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/outputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster band math -- output `raster`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/outputs/raster" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/outputs/raster" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> a gp:ImplementationProfile ;
@@ -638,16 +638,16 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster band math (multi-band output)" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband> ;
-    gp:inputs [ ns1:expression <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/expression> ;
-            ns1:rasters <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/rasters> ] ;
-    gp:outputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/outputs/raster> ] ;
+    gp:inputs [ ns2:expression <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/expression> ;
+            ns2:rasters <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/rasters> ] ;
+    gp:outputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/outputs/raster> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math> ;
     proc:keywords "band math",
         "coverage",
         "multi-band",
         "raster" ;
-    proc:metadata [ dcterms:title "Generic Profile: Raster band math" ],
-        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
+        [ dcterms:title "Generic Profile: Raster band math" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/band-count-2026-11-09>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/band-count-correction-2026-11-09>,
@@ -886,7 +886,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.raster-band-math-multiband
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

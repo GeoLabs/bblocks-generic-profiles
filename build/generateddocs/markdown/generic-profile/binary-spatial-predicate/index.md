@@ -215,8 +215,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -260,9 +260,9 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Tests a boolean spatial relationship between two geometries. Shared I/O shape of every SQL/MM DE-9IM-family predicate: two Geometry inputs, one Boolean output, no side effect." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Binary spatial predicate" ;
-    gp:inputs [ ns2:geometry1 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry1> ;
-            ns2:geometry2 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry2> ] ;
-    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/outputs/result> ] ;
+    gp:inputs [ ns1:geometry1 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry1> ;
+            ns1:geometry2 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry2> ] ;
+    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/outputs/result> ] ;
     proc:keywords "geometry",
         "predicate",
         "spatial relation",
@@ -389,7 +389,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.binary-spatial-predicate
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

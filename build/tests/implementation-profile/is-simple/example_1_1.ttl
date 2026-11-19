@@ -90,8 +90,8 @@
         "geometry",
         "predicate",
         "vector" ;
-    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
-        [ dcterms:title "Generic Profile: Unary spatial predicate" ] ;
+    proc:metadata [ dcterms:title "Generic Profile: Unary spatial predicate" ],
+        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/is-simple/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/is-simple/actions/identifier-2026-11-17>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/is-simple/actions/meaning-2026-11-09>,

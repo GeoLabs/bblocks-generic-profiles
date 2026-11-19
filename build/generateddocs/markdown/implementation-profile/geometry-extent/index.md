@@ -391,8 +391,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -459,14 +459,14 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- input `geometry`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-geometry-operation/inputs/geometry" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-geometry-operation/inputs/geometry" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/geometry-extent/outputs/result> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/surface> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation -- output `result`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-geometry-operation/outputs/result" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-geometry-operation/outputs/result" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/geometry-extent> a gp:ImplementationProfile ;
@@ -475,15 +475,15 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Geometry extent" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-extent> ;
-    gp:inputs [ ns1:geometry <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/geometry-extent/inputs/geometry> ] ;
-    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/geometry-extent/outputs/result> ] ;
+    gp:inputs [ ns2:geometry <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/geometry-extent/inputs/geometry> ] ;
+    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/geometry-extent/outputs/result> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-geometry-operation> ;
     proc:keywords "Envelope",
         "derived geometry",
         "geometry",
         "vector" ;
-    proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ],
-        [ dcterms:title "Generic Profile: Unary geometry operation" ] ;
+    proc:metadata [ dcterms:title "Generic Profile: Unary geometry operation" ],
+        [ dcterms:title "Process Concept: Vector Geometry Processing" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/geometry-extent/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/geometry-extent/actions/identifier-2026-11-17>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/geometry-extent/actions/meaning-2026-11-09>,
@@ -685,7 +685,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.geometry-extent
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

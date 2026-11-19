@@ -557,8 +557,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     proc:keywords "band math",
         "coverage",
         "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
-        [ dcterms:title "Generic Profile: Raster band math" ] ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster band math" ],
+        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math/actions/data-type-2026-11-09>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math/actions/identifier-2026-11-17>,
@@ -794,7 +794,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.raster-band-math
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

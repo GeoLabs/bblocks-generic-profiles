@@ -177,9 +177,9 @@ The Implementation Profile [`generic-profiles.implementation-profile.area`](../.
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/area> a owl:Class,
         acttype:ActivityType ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
-            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Area()" ],
-        [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area" ] ;
+    dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_Area" ],
+        [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
+            dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.9.1 Area()" ] ;
     rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/area> ;
     skos:altLabel "ST_Area" ;
@@ -255,7 +255,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type.area
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

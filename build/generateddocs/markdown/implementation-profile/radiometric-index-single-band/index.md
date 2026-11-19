@@ -292,8 +292,8 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -317,11 +317,11 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     rim:proposer gp:geolabs .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/index> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/radiometric-index> ;
-    ns2:minOccurs 0 ;
+    ns1:minOccurs 0 ;
     proc:keywords "radiometric index" ;
     proc:maxOccurs "unbounded" ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- input `index`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/index" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/index" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/rasters> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band> ;
@@ -329,14 +329,14 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     proc:keywords "raster" ;
     proc:maxOccurs "unbounded" ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- input `rasters`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/rasters" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/inputs/rasters" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/outputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- output `raster`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/outputs/raster" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index/outputs/raster" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band> a gp:ImplementationProfile ;
@@ -345,9 +345,9 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Radiometric index (single-band rasters)" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index> ;
-    gp:inputs [ ns2:index <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/index> ;
-            ns2:rasters <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/rasters> ] ;
-    gp:outputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/outputs/raster> ] ;
+    gp:inputs [ ns1:index <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/index> ;
+            ns1:rasters <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/inputs/rasters> ] ;
+    gp:outputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/radiometric-index-single-band/outputs/raster> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/radiometric-index> ;
     proc:keywords "coverage",
         "radiometric index",
@@ -595,7 +595,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.radiometric-index-single-band
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

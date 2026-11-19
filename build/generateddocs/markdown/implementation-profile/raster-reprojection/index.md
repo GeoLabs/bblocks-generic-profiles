@@ -544,8 +544,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     proc:keywords "coverage",
         "raster",
         "reprojection" ;
-    proc:metadata [ dcterms:title "Generic Profile: Raster reprojection" ],
-        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
+        [ dcterms:title "Generic Profile: Raster reprojection" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/data-type-2026-11-09>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-reprojection/actions/identifier-2026-11-17>,
@@ -781,7 +781,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.raster-reprojection
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

@@ -279,8 +279,8 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -306,21 +306,21 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/inputs/colourMap> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/colour-map> ;
     proc:keywords "colour map" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster rendering -- input `colourMap`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering/inputs/colourMap" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering/inputs/colourMap" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/inputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster rendering -- input `raster`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering/inputs/raster" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering/inputs/raster" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/outputs/image> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/rendered-image> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/rendered-image-png> ;
     proc:keywords "image" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster rendering -- output `image`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering/outputs/image" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering/outputs/image" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering> a gp:ImplementationProfile ;
@@ -329,15 +329,15 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster rendering" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering> ;
-    gp:inputs [ ns2:colourMap <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/inputs/colourMap> ;
-            ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/inputs/raster> ] ;
-    gp:outputs [ ns1:image <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/outputs/image> ] ;
+    gp:inputs [ ns1:colourMap <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/inputs/colourMap> ;
+            ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/inputs/raster> ] ;
+    gp:outputs [ ns2:image <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/outputs/image> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-rendering> ;
     proc:keywords "colour map",
         "raster",
         "rendering" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
-        [ dcterms:title "Generic Profile: Raster rendering" ] ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster rendering" ],
+        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-rendering/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
@@ -567,7 +567,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.raster-rendering
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

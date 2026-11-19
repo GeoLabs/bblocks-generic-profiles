@@ -362,8 +362,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -430,13 +430,13 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/surface-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Geometry measure -- input `geometry`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/inputs/geometry" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/inputs/geometry" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/outputs/result> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/number> ;
     proc:keywords "number" ;
     proc:metadata [ dcterms:title "Generic Profile: Geometry measure -- output `result`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/outputs/result" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/outputs/result" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area> a gp:ImplementationProfile ;
@@ -445,8 +445,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Area" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/area> ;
-    gp:inputs [ ns1:geometry <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/inputs/geometry> ] ;
-    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/outputs/result> ] ;
+    gp:inputs [ ns2:geometry <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/inputs/geometry> ] ;
+    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/area/outputs/result> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure> ;
     proc:keywords "Area",
         "geometry",
@@ -649,7 +649,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.area
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 

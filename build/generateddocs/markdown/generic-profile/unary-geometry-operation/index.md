@@ -193,8 +193,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -233,8 +233,8 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Derives a new geometry from a single input geometry. One Geometry input, one Geometry output. Covers operations that differ only in what they compute (bounding envelope, centroid, convex hull), not in signature -- the same principle `binary-spatial-predicate` and `binary-spatial-operation` already use for their own several operations." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Unary geometry operation" ;
-    gp:inputs [ ns1:geometry <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-geometry-operation/inputs/geometry> ] ;
-    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-geometry-operation/outputs/result> ] ;
+    gp:inputs [ ns2:geometry <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-geometry-operation/inputs/geometry> ] ;
+    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/unary-geometry-operation/outputs/result> ] ;
     proc:keywords "derived geometry",
         "geometry",
         "vector" ;
@@ -348,7 +348,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.unary-geometry-operation
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-18'
+  dateOfLastChange: '2026-11-19'
 
 ```
 
