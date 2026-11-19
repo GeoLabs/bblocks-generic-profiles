@@ -1,12 +1,14 @@
 Implementation Profile: **Raster band math (multi-band output)**.
 
-> Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.
+> Implementation Profile of the operation Raster band math, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats, with an output raster of one or more bands.
 
 ## Activity type
 
 The meaning of the operation -- its definition, the standards that define it and its illustration --
-is the activity type [`generic-profiles.activity-type.raster-band-math-multiband`](../../activity-type/raster-band-math-multiband/), to which this
-profile points with `activityType` (decisions D3 and D4).
+is the activity type [`generic-profiles.activity-type.raster-band-math`](../../activity-type/raster-band-math/), to which this
+profile points with `activityType` (decisions D3 and D4). It pointed to `raster-band-math-multiband` until 2026-11-19, when that
+activity type was merged into `raster-band-math`: the number of output bands is a matter of signature, kept here by the
+`dataType` of the output, not of meaning.
 
 ## Signature and representations
 
@@ -94,7 +96,7 @@ Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-06
 ## Relations
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.raster-band-math`](../../generic-profile/raster-band-math/)
-- `activityType`: [`generic-profiles.activity-type.raster-band-math-multiband`](../../activity-type/raster-band-math-multiband/)
+- `activityType`: [`generic-profiles.activity-type.raster-band-math`](../../activity-type/raster-band-math/)
 
 ## Register position
 

@@ -32,7 +32,7 @@
   prefLabel: Analytical hillshading
   definition: For each cell, the angle at which light coming from the position of the light source hits
     the terrain surface.
-  parent: geoprocessing
+  parent: terrain-derivative
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -42,7 +42,7 @@
   altLabel:
   - ST_Area
   definition: The area of this Surface, as measured in the spatial reference system of this Surface.
-  parent: geoprocessing
+  parent: geometry-measure
   usedEntityType:
   - geo:Geometry
   sources:
@@ -55,7 +55,7 @@
   definition: Retrieves one band, one range component, of an Earth observation product as a raster, over
     the whole product or over an area of interest, with the values the product provides, possibly converted
     to physical units by the scale and offset the product declares.
-  parent: geoprocessing
+  parent: coverage-subsetting
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -73,7 +73,7 @@
   - ST_Buffer
   definition: Returns a geometric object representing all points whose distance from this geometric object
     is less than or equal to a given distance.
-  parent: geoprocessing
+  parent: geometry-construction
   usedEntityType:
   - geo:Geometry
   generatedEntityType:
@@ -93,7 +93,7 @@
   - ST_Centroid
   definition: The mathematical centroid for this Surface as a Point. The result is not guaranteed to be
     on this Surface.
-  parent: geoprocessing
+  parent: geometry-construction
   usedEntityType:
   - geo:Geometry
   generatedEntityType:
@@ -109,7 +109,7 @@
   definition: Returns TRUE if this geometric object spatially contains anotherGeometry (no point of anotherGeometry
     lies outside this geometric object, and at least one point of the interior of anotherGeometry lies
     in the interior of this geometric object).
-  parent: geoprocessing
+  parent: spatial-relation-test
   usedEntityType:
   - geo:Geometry
   sources:
@@ -132,7 +132,7 @@
   altLabel:
   - ST_ConvexHull
   definition: Returns a geometry that represents the convex hull of this Geometry.
-  parent: geoprocessing
+  parent: geometry-construction
   usedEntityType:
   - geo:Geometry
   generatedEntityType:
@@ -148,7 +148,7 @@
   definition: 'Returns TRUE if this geometric object ''spatially crosses'' anotherGeometry: the intersection
     results in a geometry of dimension one less than the maximum dimension of the two source geometries,
     and the intersection set is interior to both.'
-  parent: geoprocessing
+  parent: spatial-relation-test
   usedEntityType:
   - geo:Geometry
   sources:
@@ -166,7 +166,7 @@
   - ST_Difference
   definition: Returns a geometric object representing the point set difference of this geometric object
     with anotherGeometry.
-  parent: geoprocessing
+  parent: set-operation
   usedEntityType:
   - geo:Geometry
   generatedEntityType:
@@ -185,7 +185,7 @@
   - ST_Disjoint
   definition: Returns TRUE if this geometric object is spatially disjoint from anotherGeometry (they share
     no point). Equivalent to the negation of Intersects.
-  parent: geoprocessing
+  parent: spatial-relation-test
   usedEntityType:
   - geo:Geometry
   sources:
@@ -203,7 +203,7 @@
   - ST_Equals
   definition: Returns TRUE if this geometric object is spatially equal to anotherGeometry (same point
     set), independent of vertex order or representation.
-  parent: geoprocessing
+  parent: spatial-relation-test
   usedEntityType:
   - geo:Geometry
   sources:
@@ -218,7 +218,7 @@
 - key: geometry-extent
   prefLabel: Geometry extent
   definition: Computes the minimum bounding rectangle of a set of input geometries, as a geometry.
-  parent: geoprocessing
+  parent: extent-computation
   usedEntityType:
   - geo:Geometry
   generatedEntityType:
@@ -233,7 +233,7 @@
   - ST_Intersection
   definition: Returns a geometric object representing the point set intersection of this geometric object
     with anotherGeometry.
-  parent: geoprocessing
+  parent: set-operation
   usedEntityType:
   - geo:Geometry
   generatedEntityType:
@@ -253,7 +253,7 @@
   - ST_Intersects
   definition: Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share
     at least one point). Equivalent to the negation of Disjoint.
-  parent: geoprocessing
+  parent: spatial-relation-test
   usedEntityType:
   - geo:Geometry
   sources:
@@ -271,7 +271,7 @@
   - ST_IsSimple
   definition: Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection
     or self tangency.
-  parent: geoprocessing
+  parent: geometry-property-test
   usedEntityType:
   - geo:Geometry
   sources:
@@ -284,7 +284,7 @@
   definition: Divides the cells of a single-band raster into two classes at the threshold computed from the
     histogram of the cell values by Otsu's method, which maximises the variance between the two classes,
     and returns the cells of the upper class as a binary mask.
-  parent: geoprocessing
+  parent: raster-classification
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -297,7 +297,7 @@
   prefLabel: Point cloud thinning (simple)
   definition: Reduces the number of points to the given percentage by sequential point removal, which
     suits points stored in chronological order best.
-  parent: geoprocessing
+  parent: point-cloud-filtering
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -306,7 +306,7 @@
   prefLabel: Point cloud to grid
   definition: Writes one value per grid cell from the points falling in it -- by default the z value of
     the first point -- as a single-band raster.
-  parent: geoprocessing
+  parent: spatial-model-conversion
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -314,7 +314,7 @@
 - key: point-cloud-to-shapes
   prefLabel: Point cloud to shapes
   definition: Converts a point cloud to a feature collection of points.
-  parent: geoprocessing
+  parent: spatial-model-conversion
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -325,7 +325,7 @@
   definition: Selects, from a catalogue of Earth observation products, those of a collection whose footprint
     intersects an area of interest and whose acquisition time falls within a time interval, possibly
     filtered further on their metadata, such as their cloud cover.
-  parent: geoprocessing
+  parent: catalogue-search
   usedEntityType:
   - geo:Geometry
   generatedEntityType:
@@ -359,7 +359,7 @@
       Classified clarifying, a documentary text.
   definition: Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant
     spectral channels of the input raster(s).
-  parent: geoprocessing
+  parent: band-algebra
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -369,9 +369,31 @@
     link: https://www.ogc.org/standards/wcps/
 - key: raster-band-math
   prefLabel: Raster band math
-  definition: Evaluates a user-supplied mathematical expression per pixel across one or more input rasters,
-    producing a monoband output raster.
-  parent: geoprocessing
+  profiles:
+  - raster-band-math
+  - raster-band-math-multiband
+  amendments:
+  - id: merge-2026-11-19
+    date: '2026-11-19'
+    classification: substantive
+    affectedProperty: http://www.w3.org/2004/02/skos/core#definition
+    description: The activity type raster-band-math-multiband is merged into this one (decision of
+      2026-11-19), which now covers an output raster with one or more bands. The definition changes
+      meaning; it was "Evaluates a user-supplied mathematical expression per pixel across one or more
+      input rasters, producing a monoband output raster." The number of bands of the output is a
+      matter of signature, already enforced by the dataType of each Implementation Profile's output
+      (raster-single-band or raster), not of meaning. The Implementation Profiles raster-band-math and
+      raster-band-math-multiband both point here. Classified substantive, a change of meaning.
+  - id: sources-2026-11-19
+    date: '2026-11-19'
+    classification: clarifying
+    affectedProperty: http://purl.org/dc/terms/source
+    description: With the merge of raster-band-math-multiband, its source on several bands is added
+      here, OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType. Classified
+      clarifying, a source.
+  definition: Evaluates a user-supplied, possibly vector-valued, mathematical expression per pixel across
+    one or more input rasters, producing an output raster with one or more bands.
+  parent: band-algebra
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -379,8 +401,19 @@
   sources:
   - title: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard
     link: https://www.ogc.org/standards/wcps/
+  - title: OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType
+    link: https://docs.ogc.org/is/09-146r8/09-146r8.html
 - key: raster-band-math-multiband
   prefLabel: Raster band math (multi-band output)
+  retired:
+    date: '2026-11-19'
+    replacedBy: raster-band-math
+    description: Withdrawal of the proposal (decision of 2026-11-19). The operation is the same as
+      raster-band-math; only the number of bands of the output differed, a matter of signature already
+      enforced by the dataType of each Implementation Profile's output. raster-band-math, whose
+      definition now covers one or more output bands, replaces it (dct:isReplacedBy), and the
+      Implementation Profile raster-band-math-multiband points there. Nothing is deleted; the item stays,
+      unpublished. Classified substantive, the retirement of a type.
   definition: Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across
     one or more input rasters, producing an output raster with one or more bands.
   parent: geoprocessing
@@ -396,7 +429,7 @@
 - key: raster-crop
   prefLabel: Raster crop
   definition: Extracts the pixels of a raster coverage that fall within a region of interest.
-  parent: geoprocessing
+  parent: coverage-subsetting
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -407,7 +440,7 @@
 - key: raster-extent
   prefLabel: Raster extent
   definition: Computes the bounding envelope of a raster coverage, as a vector polygon.
-  parent: geoprocessing
+  parent: extent-computation
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -418,7 +451,7 @@
 - key: raster-format-conversion
   prefLabel: Raster format conversion
   definition: Re-encodes a raster coverage into another raster format, without altering its content.
-  parent: geoprocessing
+  parent: encoding-conversion
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -431,7 +464,7 @@
   prefLabel: Raster rendering
   definition: Depicts a raster as an image for viewing, giving each cell a colour from a colour map that
     associates values, or classes of values, with colours.
-  parent: geoprocessing
+  parent: portrayal
   usedEntityType:
   - geo:Feature
   sources:
@@ -444,7 +477,7 @@
   prefLabel: Raster reprojection
   definition: Reprojects a raster coverage to another coordinate reference system, resampling pixel values
     as needed, preserving the coverage's content.
-  parent: geoprocessing
+  parent: raster-regridding
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -458,7 +491,7 @@
   definition: Changes the cell size of a raster coverage, or its number of cells along each axis, over the
     same extent and in the same coordinate reference system, computing each new cell value from the input
     cells by an interpolation method.
-  parent: geoprocessing
+  parent: raster-regridding
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -471,7 +504,7 @@
   prefLabel: Slope
   definition: The slope gradient of an elevation model at each cell, from a local fit of the surface by
     the 9 parameter 2nd order polynom of Zevenbergen & Thorne (1987).
-  parent: geoprocessing
+  parent: terrain-derivative
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -485,7 +518,7 @@
   - ST_SymDifference
   definition: Returns a geometric object representing the point set symmetric difference of this geometric
     object with anotherGeometry.
-  parent: geoprocessing
+  parent: set-operation
   usedEntityType:
   - geo:Geometry
   generatedEntityType:
@@ -501,7 +534,7 @@
   prefLabel: Terrain ruggedness index
   definition: 'The terrain ruggedness index (TRI) of Riley et al. (1999): how much the elevation of each
     cell differs from that of its neighbourhood.'
-  parent: geoprocessing
+  parent: terrain-derivative
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -513,7 +546,7 @@
   prefLabel: Topographic position index
   definition: 'The topographic position index (TPI) of Guisan et al. (1999): the difference between the
     elevation of each cell and the mean elevation of its neighbourhood.'
-  parent: geoprocessing
+  parent: terrain-derivative
   usedEntityType:
   - geo:Feature
   generatedEntityType:
@@ -528,7 +561,7 @@
   definition: 'Returns TRUE if the only points in common between this geometric object and anotherGeometry
     lie in the union of their boundaries: at least one boundary point in common, but no interior points
     in common.'
-  parent: geoprocessing
+  parent: spatial-relation-test
   usedEntityType:
   - geo:Geometry
   sources:
@@ -546,7 +579,7 @@
   - ST_Union
   definition: Returns a geometric object representing the point set union of this geometric object with
     anotherGeometry.
-  parent: geoprocessing
+  parent: set-operation
   usedEntityType:
   - geo:Geometry
   generatedEntityType:
@@ -566,7 +599,7 @@
   - ST_Within
   definition: Returns TRUE if this geometric object is spatially within anotherGeometry. The converse
     of Contains.
-  parent: geoprocessing
+  parent: spatial-relation-test
   usedEntityType:
   - geo:Geometry
   sources:
@@ -578,3 +611,173 @@
 
     Source: [PostGIS Workshop -- Spatial Relationships](https://postgis.net/workshops/postgis-intro/spatial_relationships.html),
     © Paul Ramsey, Mark Leslie, PostGIS contributors, licensed [CC BY-SA 3.0 US](http://creativecommons.org/licenses/by-sa/3.0/us/).'
+# Families (decision of 2026-11-19): abstract activity types grouping operations by meaning, not by
+# signature (the Generic Profiles group by signature). Each is a sub-class of
+# geoproc:GeoprocessingActivityType and the parent of its members; no Implementation Profile points to a
+# family. Proposed by GeoLabs: no source defines these groupings. A family with one member waits for the
+# other operations of its kind. Entity types: those common to all members, one value per property (ATR
+# JSON schema); geo:SpatialObject where the members use a geometry or a feature.
+- key: spatial-relation-test
+  family: true
+  added: '2026-11-19'
+  prefLabel: Spatial relation test
+  definition: Tests whether a given spatial relation holds between two geometries, and returns a boolean.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+- key: set-operation
+  family: true
+  added: '2026-11-19'
+  prefLabel: Set operation on geometries
+  definition: Returns the geometry made of the points that belong to two input geometries according to a
+    point-set operation (union, intersection, difference or symmetric difference).
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Geometry
+- key: geometry-construction
+  family: true
+  added: '2026-11-19'
+  prefLabel: Geometry construction
+  definition: Derives a new geometry from one input geometry and, possibly, parameters such as a distance.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Geometry
+- key: extent-computation
+  family: true
+  added: '2026-11-19'
+  prefLabel: Extent computation
+  definition: Computes the bounding envelope of spatial data, a geometry or a coverage, as a geometry.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:SpatialObject
+  generatedEntityType:
+  - geo:Geometry
+- key: terrain-derivative
+  family: true
+  added: '2026-11-19'
+  prefLabel: Terrain derivative
+  definition: Computes, for each cell of an elevation model, a quantity derived from the elevations of
+    the cell and its neighbourhood, such as slope, ruggedness, relative position or illumination.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
+- key: band-algebra
+  family: true
+  added: '2026-11-19'
+  prefLabel: Band algebra
+  definition: Computes, for each cell, values of an output raster from an expression over the band values
+    of one or more input rasters at that cell, the expression being given by the user or named, as a
+    radiometric index.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
+- key: raster-regridding
+  family: true
+  added: '2026-11-19'
+  prefLabel: Raster regridding
+  definition: Computes the values of a raster on another grid, of another coordinate reference system or
+    of another resolution, by resampling the input values.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
+- key: coverage-subsetting
+  family: true
+  added: '2026-11-19'
+  prefLabel: Coverage subsetting
+  definition: Extracts a part of a coverage, restricted in its domain (an area of interest) or in its
+    range (some bands), without changing the values extracted beyond a declared unit conversion.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
+- key: spatial-model-conversion
+  family: true
+  added: '2026-11-19'
+  prefLabel: Spatial model conversion
+  definition: Converts spatial data from one spatial model to another, such as a point cloud to a grid
+    coverage or to a collection of features.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+- key: geometry-measure
+  family: true
+  added: '2026-11-19'
+  prefLabel: Geometry measure
+  definition: Measures a quantity of a geometry, such as its area or length, in the units of its spatial
+    reference system.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+- key: geometry-property-test
+  family: true
+  added: '2026-11-19'
+  prefLabel: Geometry property test
+  definition: Tests whether one geometry has a given property, such as being simple, empty or closed, and
+    returns a boolean.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+- key: raster-classification
+  family: true
+  added: '2026-11-19'
+  prefLabel: Raster classification
+  definition: Assigns each cell of a raster to one of a set of classes from its values, and returns the
+    classes as a raster or a mask.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
+- key: point-cloud-filtering
+  family: true
+  added: '2026-11-19'
+  prefLabel: Point cloud filtering
+  definition: Keeps a subset of the points of a point cloud, chosen by a rule, and returns them as a point
+    cloud.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
+- key: encoding-conversion
+  family: true
+  added: '2026-11-19'
+  prefLabel: Encoding conversion
+  definition: Re-encodes spatial data in another data format, without changing the information it
+    carries.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+  generatedEntityType:
+  - geo:Feature
+- key: portrayal
+  family: true
+  added: '2026-11-19'
+  prefLabel: Portrayal
+  definition: Depicts spatial data as an image for viewing, according to rules that associate values or
+    classes of values with a symbology.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Feature
+- key: catalogue-search
+  family: true
+  added: '2026-11-19'
+  prefLabel: Catalogue search
+  definition: Selects, from a catalogue, the records of spatial data that satisfy query criteria, such as
+    a spatial extent, a time interval or metadata values.
+  parent: geoprocessing
+  usedEntityType:
+  - geo:Geometry
+  generatedEntityType:
+  - geo:Feature

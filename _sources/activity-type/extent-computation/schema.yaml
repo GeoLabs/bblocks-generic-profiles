@@ -1,0 +1,13 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: The activity type "Extent computation" -- see generic-profiles.activity-type for the shape
+  every activity type of this register shares.
+allOf:
+- $ref: bblocks://generic-profiles.activity-type
+- type: object
+  properties:
+    id:
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/extent-computation
+    prefLabel:
+      const: Extent computation
+    subClassOf:
+      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType

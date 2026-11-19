@@ -11,7 +11,7 @@
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
   "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
   "validityStatus": "invalid",
-  "publicationStatus": "published",
+  "publicationStatus": "unpublished",
   "sameAs": "https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband",
   "hasAction": [
     {
@@ -32,8 +32,19 @@
       "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband/actions/unpublication",
+      "type": "RegisterAction",
+      "actionType": "unpublish",
+      "changeClassification": "substantive",
+      "description": "Withdrawal of the proposal (decision of 2026-11-19). The operation is the same as raster-band-math; only the number of bands of the output differed, a matter of signature already enforced by the dataType of each Implementation Profile's output. raster-band-math, whose definition now covers one or more output bands, replaces it (dct:isReplacedBy), and the Implementation Profile raster-band-math-multiband points there. Nothing is deleted; the item stays, unpublished. Classified substantive, the retirement of a type.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband"
     }
   ],
+  "isReplacedBy": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math",
   "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
   "generatedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
   "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent",

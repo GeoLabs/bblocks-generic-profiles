@@ -1,0 +1,5 @@
+- title: Set operation on geometries
+  base-uri: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/
+  snippets:
+  - language: json
+    ref: examples/set-operation.json

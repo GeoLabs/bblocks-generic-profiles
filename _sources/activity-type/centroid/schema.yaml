@@ -10,4 +10,4 @@ allOf:
     prefLabel:
       const: Centroid
     subClassOf:
-      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-construction

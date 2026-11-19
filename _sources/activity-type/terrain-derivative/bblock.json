@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Activity type: Terrain derivative",
+  "abstract": "Computes, for each cell of an elevation model, a quantity derived from the elevations of the cell and its neighbourhood, such as slope, ruggedness, relative position or illumination.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-19T00:00:00Z",
+  "dateOfLastChange": "2026-11-19",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.activity-type"
+  ],
+  "isProfileOf": [
+    "generic-profiles.activity-type"
+  ],
+  "scope": "dev",
+  "tags": [
+    "activity type",
+    "family",
+    "Terrain derivative"
+  ],
+  "sourceSchema": "schema.yaml",
+  "ldContext": "context.jsonld",
+  "maturity": "development",
+  "group": "Activity Types"
+}

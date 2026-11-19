@@ -2,7 +2,7 @@
   "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband",
   "type": "ImplementationProfile",
   "prefLabel": "Raster band math (multi-band output)",
-  "definition": "Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.",
+  "definition": "Implementation Profile of the operation Raster band math, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats, with an output raster of one or more bands.",
   "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile",
   "hasAction": [
     {
@@ -28,7 +28,7 @@
       "type": "RegisterAction",
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
-      "description": "The sources defining the operation move to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard; OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType.",
+      "description": "The sources defining the operation move to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard; OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType.",
       "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
@@ -103,6 +103,17 @@
       "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/activity-type-2026-11-19",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "https://w3id.org/geolabs/ospd/generic-profiles/activityType",
+      "description": "The activity type (activityType) changes from https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband, withdrawn on 2026-11-19, to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math, into which it is merged (decision of 2026-11-19): the number of output bands is a matter of signature, which this profile keeps through the dataType of its output (raster), not of meaning. The definition, which named the operation \"Raster band math (multi-band output)\", now names \"Raster band math\" and states the output of one or more bands. Signature and representations are unchanged. Classified substantive: the meaning the profile points to changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     }
   ],
   "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband",
@@ -112,7 +123,7 @@
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math",
-  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband",
+  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math",
   "keywords": [
     "raster",
     "coverage",

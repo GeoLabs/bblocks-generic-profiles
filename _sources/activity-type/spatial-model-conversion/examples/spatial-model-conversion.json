@@ -1,0 +1,25 @@
+{
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Spatial model conversion",
+  "definition": "Converts spatial data from one spatial model to another, such as a point cloud to a grid coverage or to a collection of features.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+    "startedAtTime": "2026-11-19T00:00:00Z",
+    "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent"
+}

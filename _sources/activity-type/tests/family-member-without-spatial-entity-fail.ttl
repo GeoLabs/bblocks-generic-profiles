@@ -1,0 +1,29 @@
+# Must fail: an operation under a family, with no spatial entity type. Only geoproc:GeoprocessingActivityTypesShape can reject it, and only if families.ttl brings the family's rdfs:subClassOf into the graph: this proves that the shape reaches an operation through its family.
+@prefix gp:      <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
+@prefix geoproc: <https://w3id.org/ogc/rim/geoprocessing/> .
+@prefix geo:     <http://www.opengis.net/ont/geosparql#> .
+@prefix rim:     <https://w3id.org/ogc/rim/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/fixture-family-member-without-spatial-entity> a acttype:ActivityType , owl:Class ;
+    skos:prefLabel "Fixture"@en ;
+    skos:definition "An operation used only to test the shapes."@en ;
+    rdfs:subClassOf <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-measure> ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/fixture-family-member-without-spatial-entity"^^xsd:anyURI ;
+    rim:itemClass <https://w3id.org/ogc/rim/activity-type/activityTypeItemClass> ;
+    rim:inRegister gp:register ;
+    rim:validityStatus rim:invalid ;
+    rim:publicationStatus rim:published ;
+    acttype:associatedAgentType prov:SoftwareAgent ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/fixture-family-member-without-spatial-entity/actions/addition> .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/fixture-family-member-without-spatial-entity/actions/addition> a rim:RegisterAction ;
+    rim:actionType rim:additionAction ;
+    rim:proposer gp:geolabs ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/fixture-family-member-without-spatial-entity> ;
+    prov:startedAtTime "2026-11-09T00:00:00Z"^^xsd:dateTime .

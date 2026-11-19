@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
   "name": "Activity type: Raster band math (multi-band output)",
   "abstract": "Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.",
-  "status": "under-development",
+  "status": "superseded",
   "dateTimeAddition": "2026-11-09T00:00:00Z",
   "dateOfLastChange": "2026-11-09",
   "version": "0.1",
@@ -24,6 +24,8 @@
   "ldContext": "context.jsonld",
   "maturity": "development",
   "group": "Activity Types",
+  "successor": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math",
+  "highlighted": false,
   "sources": [
     {
       "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
