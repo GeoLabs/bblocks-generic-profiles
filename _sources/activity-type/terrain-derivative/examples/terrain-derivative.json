@@ -16,7 +16,7 @@
     "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/terrain-derivative/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
     "startedAtTime": "2026-11-19T00:00:00Z",
     "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/terrain-derivative"
   },

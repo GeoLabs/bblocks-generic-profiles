@@ -18,7 +18,7 @@
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband"
     },
@@ -29,7 +29,7 @@
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband"
     },
@@ -39,7 +39,7 @@
       "actionType": "unpublish",
       "changeClassification": "substantive",
       "description": "Withdrawal of the proposal (decision of 2026-11-19). The operation is the same as raster-band-math; only the number of bands of the output differed, a matter of signature already enforced by the dataType of each Implementation Profile's output. raster-band-math, whose definition now covers one or more output bands, replaces it (dct:isReplacedBy), and the Implementation Profile raster-band-math-multiband points there. Nothing is deleted; the item stays, unpublished. Classified substantive, the retirement of a type.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-19T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband"
     }

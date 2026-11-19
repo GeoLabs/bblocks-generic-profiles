@@ -44,7 +44,9 @@ PARENTS = {
 PREFIXES = {"geo:": "http://www.opengis.net/ont/geosparql#", "prov:": "http://www.w3.org/ns/prov#"}
 GP = "https://w3id.org/geolabs/ospd/generic-profiles/"
 AT = GP + "activity-type/"
-GEOLABS = GP + "geolabs"
+# GeoLabs SARL: one agent IRI for the four OSPD registers, defined in the data-types register
+# (decision of 2026-11-19).
+GEOLABS = "https://w3id.org/geolabs/ospd/org/geolabs"
 ADDED = "2026-11-09"
 # Namespace of the items published before the move to w3id.org on IDENTIFIER_MOVED.
 LEGACY_GP = "https://geolabs.github.io/bblocks-generic-profiles/def/"
@@ -379,7 +381,7 @@ def fixtures():
         lines = [l for l in lines if not any(k in change and change[k] is None and v in l for k, v in drop.items())]
         text = FIXTURE.format(comment=comment, iri=iri, types=change.get("types", "acttype:ActivityType , owl:Class"),
                               body="\n".join(lines),
-                              proposer="" if "proposer" in change else "    rim:proposer gp:geolabs ;\n")
+                              proposer="" if "proposer" in change else f"    rim:proposer <{GEOLABS}> ;\n")
         (tests / f"{name}.ttl").write_text(text)
 
 
