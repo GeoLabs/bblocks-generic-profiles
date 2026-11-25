@@ -48,7 +48,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection"
     },
@@ -58,7 +58,7 @@ Implementation Profile -> Implementation (instance level).
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The dataType of input `targetCRS` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/coordinate-reference-system, created for this role in the data-types register. Its title \"String\" becomes \"Coordinate reference system\".",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection"
     },
@@ -69,7 +69,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection"
     }
@@ -144,7 +144,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection"
     },
@@ -154,7 +154,7 @@ Implementation Profile -> Implementation (instance level).
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The dataType of input `targetCRS` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/coordinate-reference-system, created for this role in the data-types register. Its title \"String\" becomes \"Coordinate reference system\".",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection"
     },
@@ -165,7 +165,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection"
     }
@@ -229,8 +229,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -242,7 +242,7 @@ Implementation Profile -> Implementation (instance level).
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/actions/data-type-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The dataType of input `targetCRS` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/coordinate-reference-system, created for this role in the data-types register. Its title \"String\" becomes \"Coordinate reference system\"." ;
@@ -250,7 +250,7 @@ Implementation Profile -> Implementation (instance level).
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-reprojection to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -259,7 +259,7 @@ Implementation Profile -> Implementation (instance level).
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/raster> dcterms:description "the input raster coverage" ;
     dcterms:title "Raster" ;
@@ -282,9 +282,9 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Reprojects a raster coverage to another coordinate reference system, preserving its content. One Raster input, a target CRS, one Raster output in the new CRS." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster reprojection" ;
-    gp:inputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/raster> ;
-            ns1:targetCRS <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/targetCRS> ] ;
-    gp:outputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/outputs/raster> ] ;
+    gp:inputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/raster> ;
+            ns2:targetCRS <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/inputs/targetCRS> ] ;
+    gp:outputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-reprojection/outputs/raster> ] ;
     proc:keywords "coverage",
         "raster",
         "reprojection" ;
@@ -411,7 +411,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.raster-reprojection
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

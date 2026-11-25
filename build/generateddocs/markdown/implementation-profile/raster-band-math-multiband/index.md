@@ -3,7 +3,7 @@
 
 `generic-profiles.implementation-profile.raster-band-math-multiband` *v0.1*
 
-Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.
+Implementation Profile of the operation Raster band math, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats, with an output raster of one or more bands.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 
@@ -11,13 +11,15 @@ Implementation Profile of the operation Raster band math (multi-band output), wh
 
 Implementation Profile: **Raster band math (multi-band output)**.
 
-> Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.
+> Implementation Profile of the operation Raster band math, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats, with an output raster of one or more bands.
 
 ## Activity type
 
 The meaning of the operation -- its definition, the standards that define it and its illustration --
-is the activity type [`generic-profiles.activity-type.raster-band-math-multiband`](../../activity-type/raster-band-math-multiband/), to which this
-profile points with `activityType` (decisions D3 and D4).
+is the activity type [`generic-profiles.activity-type.raster-band-math`](../../activity-type/raster-band-math/), to which this
+profile points with `activityType` (decisions D3 and D4). It pointed to `raster-band-math-multiband` until 2026-11-19, when that
+activity type was merged into `raster-band-math`: the number of output bands is a matter of signature, kept here by the
+`dataType` of the output, not of meaning.
 
 ## Signature and representations
 
@@ -105,7 +107,7 @@ Per [OGC 14-065 WPS 2.0.2 §7.5.4 Table 21](https://docs.ogc.org/is/14-065/14-06
 ## Relations
 
 - `refinesGenericProfile`: [`generic-profiles.generic-profile.raster-band-math`](../../generic-profile/raster-band-math/)
-- `activityType`: [`generic-profiles.activity-type.raster-band-math-multiband`](../../activity-type/raster-band-math-multiband/)
+- `activityType`: [`generic-profiles.activity-type.raster-band-math`](../../activity-type/raster-band-math/)
 
 ## Register position
 
@@ -141,14 +143,14 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
   "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband",
   "type": "ImplementationProfile",
   "prefLabel": "Raster band math (multi-band output)",
-  "definition": "Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.",
+  "definition": "Implementation Profile of the operation Raster band math, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats, with an output raster of one or more bands.",
   "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile",
   "hasAction": [
     {
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -158,7 +160,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.\"",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -167,8 +169,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "type": "RegisterAction",
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
-      "description": "The sources defining the operation move to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard; OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "description": "The sources defining the operation move to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard; OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType.",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -178,7 +180,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/rasters -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}).",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -188,7 +190,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: tool keywords removed: OTB, BandMathX; 2 format keywords removed from inputs and outputs (inputs/rasters: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB BandMathX -- Performs mathematical operations on several multiband images, outputting a mono- or multi-band image <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMathX.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -198,7 +200,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The dataType of input `expression` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/expression, created for this role in the data-types register.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -208,7 +210,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Description corrected: it said the distinction from raster-band-math (one band or several) was documented only in prose and not structurally enforced; it is enforced since the data type raster-single-band was added (declared 2026-10-08), by the dataType of each profile's output. Decision of 2026-11-09.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -218,7 +220,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Corrects https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/band-count-2026-11-09 and the description: the band count is pinned by the const of each profile's schema.yaml; gp:DataTypeReferenceShape only checks that a dataType is a dt:DataType, not which one.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -228,7 +230,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -239,8 +241,19 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/activity-type-2026-11-19",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "https://w3id.org/geolabs/ospd/generic-profiles/activityType",
+      "description": "The activity type (activityType) changes from https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband, withdrawn on 2026-11-19, to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math, into which it is merged (decision of 2026-11-19): the number of output bands is a matter of signature, which this profile keeps through the dataType of its output (raster), not of meaning. The definition, which named the operation \"Raster band math (multi-band output)\", now names \"Raster band math\" and states the output of one or more bands. Signature and representations are unchanged. Classified substantive: the meaning the profile points to changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     }
   ],
@@ -251,7 +264,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math",
-  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband",
+  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math",
   "keywords": [
     "raster",
     "coverage",
@@ -334,14 +347,14 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
   "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband",
   "type": "ImplementationProfile",
   "prefLabel": "Raster band math (multi-band output)",
-  "definition": "Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.",
+  "definition": "Implementation Profile of the operation Raster band math, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats, with an output raster of one or more bands.",
   "inScheme": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile",
   "hasAction": [
     {
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -351,7 +364,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.\"",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -361,7 +374,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "The sources defining the operation move to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard; OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, \u00a76.5 RangeType.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -371,7 +384,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/rasters -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}).",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -381,7 +394,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: tool keywords removed: OTB, BandMathX; 2 format keywords removed from inputs and outputs (inputs/rasters: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB BandMathX -- Performs mathematical operations on several multiband images, outputting a mono- or multi-band image <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMathX.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -391,7 +404,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The dataType of input `expression` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/expression, created for this role in the data-types register.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -401,7 +414,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Description corrected: it said the distinction from raster-band-math (one band or several) was documented only in prose and not structurally enforced; it is enforced since the data type raster-single-band was added (declared 2026-10-08), by the dataType of each profile's output. Decision of 2026-11-09.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -411,7 +424,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Corrects https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/band-count-2026-11-09 and the description: the band count is pinned by the const of each profile's schema.yaml; gp:DataTypeReferenceShape only checks that a dataType is a dt:DataType, not which one.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -421,7 +434,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     },
@@ -432,8 +445,19 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/activity-type-2026-11-19",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "https://w3id.org/geolabs/ospd/generic-profiles/activityType",
+      "description": "The activity type (activityType) changes from https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband, withdrawn on 2026-11-19, to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math, into which it is merged (decision of 2026-11-19): the number of output bands is a matter of signature, which this profile keeps through the dataType of its output (raster), not of meaning. The definition, which named the operation \"Raster band math (multi-band output)\", now names \"Raster band math\" and states the output of one or more bands. Signature and representations are unchanged. Classified substantive: the meaning the profile points to changes.",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband"
     }
   ],
@@ -444,7 +468,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
   "validityStatus": "invalid",
   "publicationStatus": "published",
   "refinesGenericProfile": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math",
-  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband",
+  "activityType": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math",
   "keywords": [
     "raster",
     "coverage",
@@ -523,8 +547,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -532,11 +556,20 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/activity-type-2026-11-19> a rim:RegisterAction ;
+    dcterms:description "The activity type (activityType) changes from https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband, withdrawn on 2026-11-19, to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math, into which it is merged (decision of 2026-11-19): the number of output bands is a matter of signature, which this profile keeps through the dataType of its output (raster), not of meaning. The definition, which named the operation \"Raster band math (multi-band output)\", now names \"Raster band math\" and states the output of one or more bands. Signature and representations are unchanged. Classified substantive: the meaning the profile points to changes." ;
+    prov:startedAtTime "2026-11-19T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty gp:activityType ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
+
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/addition> a rim:RegisterAction ;
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/band-count-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Description corrected: it said the distinction from raster-band-math (one band or several) was documented only in prose and not structurally enforced; it is enforced since the data type raster-single-band was added (declared 2026-10-08), by the dataType of each profile's output. Decision of 2026-11-09." ;
@@ -544,7 +577,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/band-count-correction-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Corrects https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/band-count-2026-11-09 and the description: the band count is pinned by the const of each profile's schema.yaml; gp:DataTypeReferenceShape only checks that a dataType is a dt:DataType, not which one." ;
@@ -552,7 +585,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/data-type-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The dataType of input `expression` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/expression, created for this role in the data-types register." ;
@@ -560,7 +593,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -569,7 +602,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/meaning-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.\"" ;
@@ -577,7 +610,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The sources defining the operation move to the activity type: OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard; OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType." ;
@@ -585,7 +618,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/representation-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/rasters -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/raster -> raster-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"})." ;
@@ -593,7 +626,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
@@ -601,7 +634,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/tools-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Decision D4: tool keywords removed: OTB, BandMathX; 2 format keywords removed from inputs and outputs (inputs/rasters: GeoTIFF; outputs/raster: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): OTB BandMathX -- Performs mathematical operations on several multiband images, outputting a mono- or multi-band image <https://www.orfeo-toolbox.org/CookBook/Applications/app_BandMathX.html>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
@@ -609,12 +642,12 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/expression> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/expression> ;
     proc:keywords "expression" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster band math -- input `expression`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/inputs/expression" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/inputs/expression" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/rasters> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
@@ -622,33 +655,34 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     proc:keywords "raster" ;
     proc:maxOccurs "unbounded" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster band math -- input `rasters`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/inputs/rasters" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/inputs/rasters" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/outputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster band math -- output `raster`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/outputs/raster" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/outputs/raster" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband> a gp:ImplementationProfile ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband> ;
-    skos:definition "Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats." ;
+    skos:definition "Implementation Profile of the operation Raster band math, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats, with an output raster of one or more bands." ;
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Raster band math (multi-band output)" ;
-    gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband> ;
-    gp:inputs [ ns2:expression <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/expression> ;
-            ns2:rasters <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/rasters> ] ;
-    gp:outputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/outputs/raster> ] ;
+    gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math> ;
+    gp:inputs [ ns1:expression <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/expression> ;
+            ns1:rasters <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/inputs/rasters> ] ;
+    gp:outputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/outputs/raster> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math> ;
     proc:keywords "band math",
         "coverage",
         "multi-band",
         "raster" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
-        [ dcterms:title "Generic Profile: Raster band math" ] ;
-    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/addition>,
+    proc:metadata [ dcterms:title "Generic Profile: Raster band math" ],
+        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/activity-type-2026-11-19>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/band-count-2026-11-09>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/band-count-correction-2026-11-09>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/raster-band-math-multiband/actions/data-type-2026-11-09>,
@@ -692,7 +726,7 @@ allOf:
       x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/refinesGenericProfile
       x-jsonld-type: '@id'
     activityType:
-      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math
       x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/activityType
       x-jsonld-type: '@id'
     keywords:
@@ -886,7 +920,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.raster-band-math-multiband
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

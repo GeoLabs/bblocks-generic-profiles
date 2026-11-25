@@ -13,7 +13,7 @@
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -22,14 +22,23 @@
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband/actions/unpublication> a rim:RegisterAction ;
+    dcterms:description "Withdrawal of the proposal (decision of 2026-11-19). The operation is the same as raster-band-math; only the number of bands of the output differed, a matter of signature already enforced by the dataType of each Implementation Profile's output. raster-band-math, whose definition now covers one or more output bands, replaces it (dct:isReplacedBy), and the Implementation Profile raster-band-math-multiband points there. Nothing is deleted; the item stays, unpublished. Classified substantive, the retirement of a type." ;
+    prov:startedAtTime "2026-11-19T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:unpublishAction ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband> a owl:Class,
         acttype:ActivityType ;
-    dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
-            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ],
-        [ dcterms:references <https://docs.ogc.org/is/09-146r8/09-146r8.html> ;
-            dcterms:title "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType" ] ;
+    dcterms:isReplacedBy <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math> ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/09-146r8/09-146r8.html> ;
+            dcterms:title "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType" ],
+        [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
+            dcterms:title "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard" ] ;
     rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math-multiband> ;
     skos:definition "Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands." ;
@@ -38,10 +47,11 @@
     acttype:generatedEntityType geo:Feature ;
     acttype:usedEntityType geo:Feature ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband/actions/addition>,
-        <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband/actions/identifier-2026-11-17> ;
+        <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband/actions/identifier-2026-11-17>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband/actions/unpublication> ;
     rim:inRegister gp:register ;
     rim:itemClass acttype:activityTypeItemClass ;
     rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
+    rim:publicationStatus rim:unpublished ;
     rim:validityStatus rim:invalid .
 

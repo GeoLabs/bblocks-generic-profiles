@@ -1,0 +1,26 @@
+{
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Set operation on geometries",
+  "definition": "Returns the geometry made of the points that belong to two input geometries according to a point-set operation (union, intersection, difference or symmetric difference).",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+    "startedAtTime": "2026-11-19T00:00:00Z",
+    "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent"
+}

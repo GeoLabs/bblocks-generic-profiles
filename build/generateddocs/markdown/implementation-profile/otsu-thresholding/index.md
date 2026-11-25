@@ -69,7 +69,7 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
     },
@@ -80,7 +80,7 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
     },
@@ -91,7 +91,7 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
       "changeClassification": "substantive",
       "affectedProperty": "https://w3id.org/geolabs/ospd/generic-profiles/representation",
       "description": "The representation of outputs/mask changes from raster-single-band-geotiff to binary-mask-geotiff, which realizes binary-mask, the data type of the output; raster-single-band-geotiff realizes raster-single-band, the broader type (decision of 2026-11-18: a representation realizes exactly the data type of its input or output). Classified substantive: a change of representation.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-18T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
     }
@@ -177,7 +177,7 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
     },
@@ -188,7 +188,7 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
     },
@@ -199,7 +199,7 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
       "changeClassification": "substantive",
       "affectedProperty": "https://w3id.org/geolabs/ospd/generic-profiles/representation",
       "description": "The representation of outputs/mask changes from raster-single-band-geotiff to binary-mask-geotiff, which realizes binary-mask, the data type of the output; raster-single-band-geotiff realizes raster-single-band, the broader type (decision of 2026-11-18: a representation realizes exactly the data type of its input or output). Classified substantive: a change of representation.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-18T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding"
     }
@@ -274,8 +274,8 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -287,7 +287,7 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/otsu-thresholding to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -296,7 +296,7 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/representation-2026-11-18> a rim:RegisterAction ;
     dcterms:description "The representation of outputs/mask changes from raster-single-band-geotiff to binary-mask-geotiff, which realizes binary-mask, the data type of the output; raster-single-band-geotiff realizes raster-single-band, the broader type (decision of 2026-11-18: a representation realizes exactly the data type of its input or output). Classified substantive: a change of representation." ;
@@ -305,20 +305,20 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     rim:affectedProperty gp:representation ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/inputs/raster> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster thresholding -- input `raster`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/inputs/raster" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/inputs/raster" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/outputs/mask> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/binary-mask> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/binary-mask-geotiff> ;
     proc:keywords "mask" ;
     proc:metadata [ dcterms:title "Generic Profile: Raster thresholding -- output `mask`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/outputs/mask" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/outputs/mask" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding> a gp:ImplementationProfile ;
@@ -327,14 +327,14 @@ there, with `implementsProfile`; this item carries no tool, host or testbed (dec
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Otsu thresholding" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/otsu-thresholding> ;
-    gp:inputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/inputs/raster> ] ;
-    gp:outputs [ ns1:mask <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/outputs/mask> ] ;
+    gp:inputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/inputs/raster> ] ;
+    gp:outputs [ ns2:mask <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/outputs/mask> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding> ;
     proc:keywords "coverage",
         "raster",
         "thresholding" ;
-    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ],
-        [ dcterms:title "Generic Profile: Raster thresholding" ] ;
+    proc:metadata [ dcterms:title "Generic Profile: Raster thresholding" ],
+        [ dcterms:title "Process Concept: Raster Coverage Processing" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/identifier-2026-11-17>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/otsu-thresholding/actions/representation-2026-11-18> ;
@@ -532,7 +532,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.otsu-thresholding
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

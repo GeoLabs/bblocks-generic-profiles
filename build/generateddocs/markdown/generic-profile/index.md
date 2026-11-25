@@ -124,7 +124,7 @@ Implementation Profile -> Implementation (instance level).
     "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
     "startedAtTime": "2026-09-30T00:00:00Z",
     "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile"
   },
@@ -185,7 +185,7 @@ Implementation Profile -> Implementation (instance level).
     "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
     "startedAtTime": "2026-09-30T00:00:00Z",
     "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile"
   },
@@ -265,7 +265,7 @@ Implementation Profile -> Implementation (instance level).
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/example-generic-profile/inputs/input1> dcterms:description "an input role" ;
     dcterms:title "Geometry" ;
@@ -544,7 +544,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

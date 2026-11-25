@@ -1,0 +1,27 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/extent-computation/context.jsonld",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/extent-computation",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Extent computation",
+  "definition": "Computes the bounding envelope of spatial data, a geometry or a coverage, as a geometry.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/extent-computation",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/extent-computation/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+    "startedAtTime": "2026-11-19T00:00:00Z",
+    "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/extent-computation"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#SpatialObject",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent"
+}

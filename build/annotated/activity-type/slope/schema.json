@@ -17,7 +17,7 @@
           "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#prefLabel"
         },
         "subClassOf": {
-          "const": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+          "const": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/terrain-derivative",
           "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
           "x-jsonld-type": "@id"
         }
@@ -55,6 +55,10 @@
     "affectedProperty": {
       "x-jsonld-id": "https://w3id.org/ogc/rim/affectedProperty",
       "x-jsonld-type": "@id"
+    },
+    "isReplacedBy": {
+      "x-jsonld-id": "http://purl.org/dc/terms/isReplacedBy",
+      "x-jsonld-type": "@id"
     }
   },
   "x-jsonld-prefixes": {
@@ -69,6 +73,6 @@
     "itemIdentifier": "generic-profiles.activity-type.slope",
     "register": "https://geolabs.github.io/bblocks-generic-profiles/build/register.json",
     "version": "0.1",
-    "dateOfLastChange": "2026-11-19"
+    "dateOfLastChange": "2026-11-25"
   }
 }

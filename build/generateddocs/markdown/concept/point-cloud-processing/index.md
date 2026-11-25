@@ -43,7 +43,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-10-08T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing"
     },
@@ -54,7 +54,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing to https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing"
     }
@@ -93,7 +93,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-10-08T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing"
     },
@@ -104,7 +104,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing to https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing"
     }
@@ -142,7 +142,7 @@ Implementation Profile -> Implementation (instance level).
     prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing to https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -151,13 +151,13 @@ Implementation Profile -> Implementation (instance level).
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/concept/point-cloud-processing> a gp:ProcessConcept ;
-    dcterms:source [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html> ;
-            dcterms:title "SAGA 7.3.0 tool library Shapes - Point Clouds" ],
-        [ dcterms:references <https://www.ogc.org/standards/las/> ;
-            dcterms:title "OGC 17-030r1 LAS Specification 1.4 OGC Community Standard" ] ;
+    dcterms:source [ dcterms:references <https://www.ogc.org/standards/las/> ;
+            dcterms:title "OGC 17-030r1 LAS Specification 1.4 OGC Community Standard" ],
+        [ dcterms:references <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools.html> ;
+            dcterms:title "SAGA 7.3.0 tool library Shapes - Point Clouds" ] ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
     skos:definition "Operations on point clouds: converting them to other kinds of data (grids, feature collections) and reducing them (thinning) -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1)." ;
     skos:inScheme gp:concept ;
@@ -221,7 +221,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.concept.point-cloud-processing
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

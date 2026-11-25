@@ -7,7 +7,7 @@
   ],
   "prefLabel": "Radiometric index",
   "definition": "Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the relevant spectral channels of the input raster(s).",
-  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "subClassOf": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra",
   "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index",
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
   "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
@@ -19,7 +19,7 @@
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index"
     },
@@ -29,7 +29,7 @@
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "The Relations text of this activity type now names the two Implementation Profiles that point to it with activityType, radiometric-index and radiometric-index-single-band (added 2026-11-10), instead of one. The definition, parent class and entity types are unchanged. Classified clarifying, a documentary text.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index"
     },
@@ -40,8 +40,19 @@
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/radiometric-index to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index/actions/family-2026-11-19",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "description": "The parent class (rdfs:subClassOf) changes from https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType to the family https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra, itself a sub-class of it (decision of 2026-11-19: activity types grouped by meaning). The definition and the entity types are unchanged. Classified substantive, a change of parent class.",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index"
     }
   ],

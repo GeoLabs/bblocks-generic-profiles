@@ -1,0 +1,26 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/portrayal/context.jsonld",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/portrayal",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Portrayal",
+  "definition": "Depicts spatial data as an image for viewing, according to rules that associate values or classes of values with a symbology.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/portrayal",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/portrayal/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+    "startedAtTime": "2026-11-19T00:00:00Z",
+    "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/portrayal"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent"
+}

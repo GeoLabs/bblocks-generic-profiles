@@ -203,6 +203,10 @@
       "@id": "rim:affectedProperty",
       "@type": "@id"
     },
+    "isReplacedBy": {
+      "@id": "dct:isReplacedBy",
+      "@type": "@id"
+    },
     "link": {
       "@id": "dct:references",
       "@type": "@id"

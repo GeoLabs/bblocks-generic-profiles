@@ -163,7 +163,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
     "startedAtTime": "2026-09-30T00:00:00Z",
     "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile"
   },
@@ -262,7 +262,7 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
     "startedAtTime": "2026-09-30T00:00:00Z",
     "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile"
   },
@@ -351,8 +351,8 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
@@ -364,9 +364,9 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Example Implementation Profile (placeholder, not a real operation)" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects> ;
-    gp:inputs [ ns2:geometry1 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/inputs/geometry1> ;
-            ns2:geometry2 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/inputs/geometry2> ] ;
-    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/outputs/result> ] ;
+    gp:inputs [ ns1:geometry1 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/inputs/geometry1> ;
+            ns1:geometry2 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/inputs/geometry2> ] ;
+    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/outputs/result> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate> ;
     proc:keywords "example",
         "geometry",
@@ -386,26 +386,26 @@ Third tier of the four-tier model (OGC 14-065 WPS 2.0.2 §7.5): Concept -> Gener
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/inputs/geometry1> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/geometry> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry1`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry1" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry1" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/inputs/geometry2> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/geometry> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/geometry-gml> ;
     proc:keywords "geometry" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry2`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry2" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/inputs/geometry2" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/example-implementation-profile/outputs/result> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/boolean> ;
     proc:keywords "boolean" ;
     proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- output `result`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/outputs/result" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/outputs/result" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 
@@ -505,9 +505,42 @@ allOf:
       description: The activity type (generic-profiles.activity-type.*) that holds
         the meaning of the operation this Implementation Profile binds to formats
         (decisions D3 and D4). gp:activityType, a sub-property of rim:relatedItem.
-      type: string
-      format: uri
-      pattern: ^https://w3id\.org/geolabs/ospd/generic-profiles/activity-type/[a-z0-9-]+$
+      enum:
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/analytical-hillshading
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/area
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/buffer
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/centroid
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/contains
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/convex-hull
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/crosses
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/disjoint
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/equals
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-extent
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersection
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/otsu-thresholding
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-thinning
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-to-grid
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-to-shapes
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/radiometric-index
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-crop
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-extent
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-format-conversion
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-rendering
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-reprojection
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-resampling
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/slope
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/symdifference
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/terrain-ruggedness-index
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/touches
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/union
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/within
       x-jsonld-id: https://w3id.org/geolabs/ospd/generic-profiles/activityType
       x-jsonld-type: '@id'
     keywords:
@@ -726,7 +759,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

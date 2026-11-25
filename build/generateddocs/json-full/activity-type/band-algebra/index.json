@@ -1,0 +1,99 @@
+
+
+{
+  "itemIdentifier": "generic-profiles.activity-type.band-algebra",
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Activity type: Band algebra",
+  "abstract": "Computes, for each cell, values of an output raster from an expression over the band values of one or more input rasters at that cell, the expression being given by the user or named, as a radiometric index.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-19T00:00:00Z",
+  "dateOfLastChange": "2026-11-25",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "generic-profiles",
+  "dependsOn": [
+    "generic-profiles.activity-type"
+  ],
+  "isProfileOf": [
+    "generic-profiles.activity-type"
+  ],
+  "scope": "dev",
+  "tags": [
+    "activity type",
+    "family",
+    "Band algebra"
+  ],
+  "sourceSchema": "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/band-algebra/schema.yaml",
+  "ldContext": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/band-algebra/context.jsonld",
+  "maturity": "development",
+  "group": "Activity Types",
+  "shaclShapes": {
+    "generic-profiles.activity-type": [
+      "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/shapes.shacl"
+    ],
+    "generic-profiles.register": [
+      "https://geolabs.github.io/bblocks-generic-profiles/_sources/register/shapes.shacl"
+    ],
+    "data-formats.vocabulary": [
+      "https://geolabs.github.io/bblocks-data-formats/_sources/vocabulary/shapes.shacl"
+    ],
+    "data-types.vocabulary": [
+      "https://geolabs.github.io/bblocks-data-types/_sources/vocabulary/shapes.shacl"
+    ],
+    "ogc.rim.core-ontology": [
+      "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl"
+    ],
+    "ogc.register.profiles.activity-types": [
+      "https://ogcincubator.github.io/activity-type-register/_sources/profiles/activity-types/shapes.shacl"
+    ],
+    "ogc.model.cross-domain.prov": [
+      "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+    ],
+    "ogc.register.profiles.geoprocessing-activity-types": [
+      "https://ogcincubator.github.io/activity-type-register/_sources/profiles/geoprocessing-activity-types/shapes.shacl"
+    ]
+  },
+  "license": {
+    "name": "Apache-2.0"
+  },
+  "schema": {
+    "application/yaml": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/band-algebra/schema.yaml",
+    "application/json": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/band-algebra/schema.json"
+  },
+  "sourceLdContext": "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/band-algebra/context.jsonld",
+  "resolvedSchemaProperties": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/band-algebra/resolvedProperties.json",
+  "sourceFiles": "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/band-algebra/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-generic-profiles/blob/master/build/tests/activity-type/band-algebra/",
+  "description": "Activity type family: **Band algebra**.\n\n> Computes, for each cell, values of an output raster from an expression over the band values of one or more input rasters at that cell, the expression being given by the user or named, as a radiometric index.\n\n## The item\n\n`https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra` is an `acttype:ActivityType` item of this register (`gp:register`), of the Activity Type Register's item class, and an OWL class, sub-class of `geoproc:GeoprocessingActivityType`.\n\nIts activities use or generate spatial data, declared with GeoSPARQL 1.1 classes: `usedEntityType` `geo:Feature`; `generatedEntityType` `geo:Feature`. The class is chosen per kind of role (see `scripts/activity-types.yaml`); how a data type of `bblocks-data-types` maps to an entity type is still open (decision D8, question 5).\n\nThe run of an activity of this type is not typed here (decision D8, open).\n\n## Members\n\nA family groups operations by meaning (decision of 2026-11-19), proposed by GeoLabs: no source defines this grouping. Its members are its sub-classes; the Generic Profiles, which group operations by signature, are another axis. No Implementation Profile points to a family.\n\n- [`generic-profiles.activity-type.radiometric-index`](../radiometric-index/)\n- [`generic-profiles.activity-type.raster-band-math`](../raster-band-math/)\n",
+  "examples": [
+    {
+      "title": "Band algebra",
+      "base-uri": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://geolabs.github.io/bblocks-generic-profiles/_sources/activity-type/band-algebra/examples/band-algebra.json",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/activity-type/band-algebra/example_1_1.json",
+          "sizeBytes": 1393,
+          "code": "{\n  \"id\": \"https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra\",\n  \"type\": [\n    \"ActivityType\",\n    \"Class\"\n  ],\n  \"prefLabel\": \"Band algebra\",\n  \"definition\": \"Computes, for each cell, values of an output raster from an expression over the band values of one or more input rasters at that cell, the expression being given by the user or named, as a radiometric index.\",\n  \"subClassOf\": \"https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType\",\n  \"objectIdentifier\": \"https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra\",\n  \"itemClass\": \"https://w3id.org/ogc/rim/activity-type/activityTypeItemClass\",\n  \"inRegister\": \"https://w3id.org/geolabs/ospd/generic-profiles/register\",\n  \"validityStatus\": \"invalid\",\n  \"publicationStatus\": \"published\",\n  \"hasAction\": {\n    \"id\": \"https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra/actions/addition\",\n    \"type\": \"RegisterAction\",\n    \"actionType\": \"addition\",\n    \"proposer\": \"https://w3id.org/geolabs/ospd/org/geolabs\",\n    \"startedAtTime\": \"2026-11-19T00:00:00Z\",\n    \"appliesTo\": \"https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra\"\n  },\n  \"usedEntityType\": \"http://www.opengis.net/ont/geosparql#Feature\",\n  \"generatedEntityType\": \"http://www.opengis.net/ont/geosparql#Feature\",\n  \"associatedAgentType\": \"http://www.w3.org/ns/prov#SoftwareAgent\"\n}\n"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/activity-type/band-algebra/example_1_1.jsonld",
+          "sizeBytes": 1518,
+          "code": "{\n  \"@context\": \"https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/band-algebra/context.jsonld\",\n  \"id\": \"https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra\",\n  \"type\": [\n    \"ActivityType\",\n    \"Class\"\n  ],\n  \"prefLabel\": \"Band algebra\",\n  \"definition\": \"Computes, for each cell, values of an output raster from an expression over the band values of one or more input rasters at that cell, the expression being given by the user or named, as a radiometric index.\",\n  \"subClassOf\": \"https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType\",\n  \"objectIdentifier\": \"https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra\",\n  \"itemClass\": \"https://w3id.org/ogc/rim/activity-type/activityTypeItemClass\",\n  \"inRegister\": \"https://w3id.org/geolabs/ospd/generic-profiles/register\",\n  \"validityStatus\": \"invalid\",\n  \"publicationStatus\": \"published\",\n  \"hasAction\": {\n    \"id\": \"https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra/actions/addition\",\n    \"type\": \"RegisterAction\",\n    \"actionType\": \"addition\",\n    \"proposer\": \"https://w3id.org/geolabs/ospd/org/geolabs\",\n    \"startedAtTime\": \"2026-11-19T00:00:00Z\",\n    \"appliesTo\": \"https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra\"\n  },\n  \"usedEntityType\": \"http://www.opengis.net/ont/geosparql#Feature\",\n  \"generatedEntityType\": \"http://www.opengis.net/ont/geosparql#Feature\",\n  \"associatedAgentType\": \"http://www.w3.org/ns/prov#SoftwareAgent\"\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://geolabs.github.io/bblocks-generic-profiles/build/tests/activity-type/band-algebra/example_1_1.ttl",
+          "sizeBytes": 1870,
+          "code": "@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix rim: <https://w3id.org/ogc/rim/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra> a owl:Class,\n        acttype:ActivityType ;\n    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;\n    skos:definition \"Computes, for each cell, values of an output raster from an expression over the band values of one or more input rasters at that cell, the expression being given by the user or named, as a radiometric index.\" ;\n    skos:prefLabel \"Band algebra\" ;\n    acttype:associatedAgentType prov:SoftwareAgent ;\n    acttype:generatedEntityType geo:Feature ;\n    acttype:usedEntityType geo:Feature ;\n    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra/actions/addition> ;\n    rim:inRegister gp:register ;\n    rim:itemClass acttype:activityTypeItemClass ;\n    rim:objectIdentifier \"https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra\"^^xsd:anyURI ;\n    rim:publicationStatus rim:published ;\n    rim:validityStatus rim:invalid .\n\n<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra/actions/addition> a rim:RegisterAction ;\n    prov:startedAtTime \"2026-11-19T00:00:00+00:00\"^^xsd:dateTime ;\n    rim:actionType rim:additionAction ;\n    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra> ;\n    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: The activity type \"Band algebra\" -- see generic-profiles.activity-type\n  for the shape every activity type of this register shares.\nallOf:\n- $ref: https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/schema.yaml\n- type: object\n  properties:\n    id:\n      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra\n      x-jsonld-id: '@id'\n    prefLabel:\n      const: Band algebra\n      x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel\n    subClassOf:\n      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType\n      x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#subClassOf\n      x-jsonld-type: '@id'\nx-jsonld-extra-terms:\n  type: '@type'\n  ActivityType: https://w3id.org/ogc/rim/activity-type/ActivityType\n  Class: http://www.w3.org/2002/07/owl#Class\n  altLabel: http://www.w3.org/2004/02/skos/core#altLabel\n  definition: http://www.w3.org/2004/02/skos/core#definition\n  usedEntityType:\n    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/usedEntityType\n    x-jsonld-type: '@id'\n  generatedEntityType:\n    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/generatedEntityType\n    x-jsonld-type: '@id'\n  associatedAgentType:\n    x-jsonld-id: https://w3id.org/ogc/rim/activity-type/associatedAgentType\n    x-jsonld-type: '@id'\n  source: http://purl.org/dc/terms/source\n  title: http://purl.org/dc/terms/title\n  link:\n    x-jsonld-id: http://purl.org/dc/terms/references\n    x-jsonld-type: '@id'\n  sameAs:\n    x-jsonld-id: http://www.w3.org/2002/07/owl#sameAs\n    x-jsonld-type: '@id'\n  affectedProperty:\n    x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty\n    x-jsonld-type: '@id'\n  isReplacedBy:\n    x-jsonld-id: http://purl.org/dc/terms/isReplacedBy\n    x-jsonld-type: '@id'\nx-jsonld-prefixes:\n  acttype: https://w3id.org/ogc/rim/activity-type/\n  owl: http://www.w3.org/2002/07/owl#\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\n  skos: http://www.w3.org/2004/02/skos/core#\n  dct: http://purl.org/dc/terms/\n  gp: https://w3id.org/geolabs/ospd/generic-profiles/\nx-bblocks-metadata:\n  itemIdentifier: generic-profiles.activity-type.band-algebra\n  register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-11-25'\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-generic-profiles",
+  "gitPath": "_sources/activity-type/band-algebra"
+}

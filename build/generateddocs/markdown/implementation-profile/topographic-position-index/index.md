@@ -91,7 +91,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-10-08T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -101,7 +101,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.\"",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -111,7 +111,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "The source defining the operation moves to the activity type: Guisan, A., Weiss, S.B., Weiss, A.D. (1999): GLM versus CCA spatial modeling of plant species distribution. Plant Ecology 143: 107-122.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -121,7 +121,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/elevation -> elevation-model-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/result -> raster-single-band-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}).",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -131,7 +131,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: tool keywords removed: ta_morphometry; 2 format keywords removed from inputs and outputs (inputs/elevation: GeoTIFF; outputs/result: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Topographic Position Index (TPI) <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry_18.html>; ZOO-Project Geonovum testbed -- SAGA.ta_morphometry.18: Topographic Position Index (TPI) <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.18>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -141,7 +141,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -152,7 +152,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     }
@@ -240,7 +240,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-10-08T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -250,7 +250,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.\"",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -260,7 +260,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "The source defining the operation moves to the activity type: Guisan, A., Weiss, S.B., Weiss, A.D. (1999): GLM versus CCA spatial modeling of plant species distribution. Plant Ecology 143: 107-122.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -270,7 +270,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/elevation -> elevation-model-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/result -> raster-single-band-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}).",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -280,7 +280,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: tool keywords removed: ta_morphometry; 2 format keywords removed from inputs and outputs (inputs/elevation: GeoTIFF; outputs/result: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Topographic Position Index (TPI) <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry_18.html>; ZOO-Project Geonovum testbed -- SAGA.ta_morphometry.18: Topographic Position Index (TPI) <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.18>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -290,7 +290,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     },
@@ -301,7 +301,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index"
     }
@@ -378,8 +378,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -391,7 +391,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -400,7 +400,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/meaning-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"The topographic position index (TPI) of Guisan et al. (1999): the difference between the elevation of each cell and the mean elevation of its neighbourhood.\"" ;
@@ -408,7 +408,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The source defining the operation moves to the activity type: Guisan, A., Weiss, S.B., Weiss, A.D. (1999): GLM versus CCA spatial modeling of plant species distribution. Plant Ecology 143: 107-122." ;
@@ -416,7 +416,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/representation-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/elevation -> elevation-model-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"}); outputs/result -> raster-single-band-geotiff (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"image/tiff\", \"description\": \"GeoTIFF\"})." ;
@@ -424,7 +424,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
@@ -432,7 +432,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/actions/tools-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Decision D4: tool keywords removed: ta_morphometry; 2 format keywords removed from inputs and outputs (inputs/elevation: GeoTIFF; outputs/result: GeoTIFF); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Topographic Position Index (TPI) <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/ta_morphometry_18.html>; ZOO-Project Geonovum testbed -- SAGA.ta_morphometry.18: Topographic Position Index (TPI) <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.18>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
@@ -440,20 +440,20 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/inputs/elevation> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/elevation-model> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/elevation-model-geotiff> ;
     proc:keywords "elevation" ;
     proc:metadata [ dcterms:title "Generic Profile: Terrain derivative -- input `elevation`" ;
-            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation" ;
+            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/inputs/elevation" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-input> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/outputs/result> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/raster-single-band> ;
     gp:representation <https://w3id.org/geolabs/ospd/data-formats/representation/raster-single-band-geotiff> ;
     proc:keywords "raster" ;
     proc:metadata [ dcterms:title "Generic Profile: Terrain derivative -- output `result`" ;
-            ns1:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result" ;
+            ns2:href "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative/outputs/result" ;
             proc:role <https://w3id.org/geolabs/ospd/generic-profiles/role/generic-output> ] .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index> a gp:ImplementationProfile ;
@@ -462,8 +462,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     skos:inScheme gp:implementation-profile ;
     skos:prefLabel "Topographic position index" ;
     gp:activityType <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/topographic-position-index> ;
-    gp:inputs [ ns2:elevation <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/inputs/elevation> ] ;
-    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/outputs/result> ] ;
+    gp:inputs [ ns1:elevation <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/inputs/elevation> ] ;
+    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/topographic-position-index/outputs/result> ] ;
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/terrain-derivative> ;
     proc:keywords "TPI",
         "derivative",
@@ -675,7 +675,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.topographic-position-index
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

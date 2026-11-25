@@ -26,7 +26,7 @@
           "x-jsonld-type": "@id"
         },
         "activityType": {
-          "const": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math-multiband",
+          "const": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math",
           "x-jsonld-id": "https://w3id.org/geolabs/ospd/generic-profiles/activityType",
           "x-jsonld-type": "@id"
         },
@@ -337,6 +337,6 @@
     "itemIdentifier": "generic-profiles.implementation-profile.raster-band-math-multiband",
     "register": "https://geolabs.github.io/bblocks-generic-profiles/build/register.json",
     "version": "0.1",
-    "dateOfLastChange": "2026-11-19"
+    "dateOfLastChange": "2026-11-25"
   }
 }

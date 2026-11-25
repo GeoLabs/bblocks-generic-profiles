@@ -67,7 +67,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math"
     },
@@ -77,7 +77,7 @@ Implementation Profile -> Implementation (instance level).
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The dataType of input `expression` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/expression, created for this role in the data-types register. Its title \"String\" becomes \"Expression\".",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math"
     },
@@ -88,7 +88,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math"
     }
@@ -164,7 +164,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math"
     },
@@ -174,7 +174,7 @@ Implementation Profile -> Implementation (instance level).
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The dataType of input `expression` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/expression, created for this role in the data-types register. Its title \"String\" becomes \"Expression\".",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math"
     },
@@ -185,7 +185,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math"
     }
@@ -263,7 +263,7 @@ Implementation Profile -> Implementation (instance level).
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/actions/data-type-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The dataType of input `expression` changes from https://w3id.org/geolabs/ospd/data-types/data-type/string, which hid the concept, to https://w3id.org/geolabs/ospd/data-types/data-type/expression, created for this role in the data-types register. Its title \"String\" becomes \"Expression\"." ;
@@ -271,7 +271,7 @@ Implementation Profile -> Implementation (instance level).
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -280,7 +280,7 @@ Implementation Profile -> Implementation (instance level).
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-band-math/inputs/expression> dcterms:description "the per-pixel mathematical expression" ;
     dcterms:title "Expression" ;
@@ -433,7 +433,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.raster-band-math
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

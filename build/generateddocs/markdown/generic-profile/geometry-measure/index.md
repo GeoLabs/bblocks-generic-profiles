@@ -48,7 +48,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-10-06T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure"
     },
@@ -59,7 +59,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure"
     }
@@ -125,7 +125,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-10-06T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure"
     },
@@ -136,7 +136,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure"
     }
@@ -191,8 +191,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -204,7 +204,7 @@ Implementation Profile -> Implementation (instance level).
     prov:startedAtTime "2026-10-06T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -213,7 +213,7 @@ Implementation Profile -> Implementation (instance level).
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/inputs/geometry> dcterms:description "the input geometry" ;
     dcterms:title "Geometry" ;
@@ -231,8 +231,8 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Computes a scalar measurement of a single geometry. One Geometry input, one Number output." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Geometry measure" ;
-    gp:inputs [ ns1:geometry <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/inputs/geometry> ] ;
-    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/outputs/result> ] ;
+    gp:inputs [ ns2:geometry <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/inputs/geometry> ] ;
+    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/geometry-measure/outputs/result> ] ;
     proc:keywords "geometry",
         "measure",
         "vector" ;
@@ -346,7 +346,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.geometry-measure
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

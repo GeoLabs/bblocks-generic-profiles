@@ -1,0 +1,26 @@
+{
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-filtering",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Point cloud filtering",
+  "definition": "Keeps a subset of the points of a point cloud, chosen by a rule, and returns them as a point cloud.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-filtering",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-filtering/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+    "startedAtTime": "2026-11-19T00:00:00Z",
+    "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-filtering"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Feature",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent"
+}

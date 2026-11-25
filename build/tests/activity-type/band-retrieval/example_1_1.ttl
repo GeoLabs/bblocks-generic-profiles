@@ -13,7 +13,16 @@
     prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval/actions/family-2026-11-19> a rim:RegisterAction ;
+    dcterms:description "The parent class (rdfs:subClassOf) changes from https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType to the family https://w3id.org/geolabs/ospd/generic-profiles/activity-type/coverage-subsetting, itself a sub-class of it (decision of 2026-11-19: activity types grouped by meaning). The definition and the entity types are unchanged. Classified substantive, a change of parent class." ;
+    prov:startedAtTime "2026-11-19T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rdfs:subClassOf ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/band-retrieval to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -22,15 +31,15 @@
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval> a owl:Class,
         acttype:ActivityType ;
-    dcterms:source [ dcterms:references <https://portal.ogc.org/files/09-110r4> ;
-            dcterms:title "OGC 09-110r4 WCS 2.0 Interface Standard - Core, version 2.0.1, §4.5 (coverage) trimming and §8.4.1 GetCoverage request (domain subsetting)" ],
-        [ dcterms:references <https://portal.ogc.org/files/12-040> ;
-            dcterms:title "OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, §1 Scope (retrieval of selected range components of a coverage)" ] ;
-    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    dcterms:source [ dcterms:references <https://portal.ogc.org/files/12-040> ;
+            dcterms:title "OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, §1 Scope (retrieval of selected range components of a coverage)" ],
+        [ dcterms:references <https://portal.ogc.org/files/09-110r4> ;
+            dcterms:title "OGC 09-110r4 WCS 2.0 Interface Standard - Core, version 2.0.1, §4.5 (coverage) trimming and §8.4.1 GetCoverage request (domain subsetting)" ] ;
+    rdfs:subClassOf <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/coverage-subsetting> ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/band-retrieval> ;
     skos:definition "Retrieves one band, one range component, of an Earth observation product as a raster, over the whole product or over an area of interest, with the values the product provides, possibly converted to physical units by the scale and offset the product declares." ;
     skos:prefLabel "Band retrieval" ;
@@ -38,6 +47,7 @@
     acttype:generatedEntityType geo:Feature ;
     acttype:usedEntityType geo:Feature ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval/actions/family-2026-11-19>,
         <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-retrieval/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
     rim:itemClass acttype:activityTypeItemClass ;

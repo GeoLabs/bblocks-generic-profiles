@@ -86,7 +86,7 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     },
@@ -96,7 +96,7 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The definition extends the operations the concept covers to resampling (Generic Profile raster-resampling), thresholding (raster-thresholding) and depicting a raster as an image (raster-rendering), added the same day under this concept (decision C5 of 2026-11-10). It was: \"Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, deriving a new raster from one or more others via a mathematical expression or a named radiometric index, cropping a coverage to a region of interest, or converting a coverage to another encoding -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).\"",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     },
@@ -107,7 +107,7 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing to https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     }
@@ -148,7 +148,7 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     },
@@ -158,7 +158,7 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The definition extends the operations the concept covers to resampling (Generic Profile raster-resampling), thresholding (raster-thresholding) and depicting a raster as an image (raster-rendering), added the same day under this concept (decision C5 of 2026-11-10). It was: \"Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, deriving a new raster from one or more others via a mathematical expression or a named radiometric index, cropping a coverage to a region of interest, or converting a coverage to another encoding -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 \u00a77.5.1).\"",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     },
@@ -169,7 +169,7 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing to https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing"
     }
@@ -209,7 +209,7 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing to https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -218,7 +218,7 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing/actions/scope-2026-11-10> a rim:RegisterAction ;
     dcterms:description "The definition extends the operations the concept covers to resampling (Generic Profile raster-resampling), thresholding (raster-thresholding) and depicting a raster as an image (raster-rendering), added the same day under this concept (decision C5 of 2026-11-10). It was: \"Operations on raster/coverage data: reprojecting a coverage to another coordinate reference system, deriving a new raster from one or more others via a mathematical expression or a named radiometric index, cropping a coverage to a region of interest, or converting a coverage to another encoding -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1).\"" ;
@@ -226,7 +226,7 @@ not part of this register -- see `ospd.process-profiles.*` in `bblocks-process-p
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/concept/raster-coverage-processing> a gp:ProcessConcept ;
     dcterms:source [ dcterms:references <https://www.ogc.org/standards/wcps/> ;
@@ -297,7 +297,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.concept.raster-coverage-processing
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

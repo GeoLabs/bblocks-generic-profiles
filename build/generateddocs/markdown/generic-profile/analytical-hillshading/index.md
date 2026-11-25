@@ -54,7 +54,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-10-08T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading"
     },
@@ -65,7 +65,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading"
     }
@@ -151,7 +151,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-10-08T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading"
     },
@@ -162,7 +162,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading"
     }
@@ -237,8 +237,8 @@ Implementation Profile -> Implementation (instance level).
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -250,7 +250,7 @@ Implementation Profile -> Implementation (instance level).
     prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -259,7 +259,7 @@ Implementation Profile -> Implementation (instance level).
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/altitude> dcterms:description "the light source's height above the horizon, in degrees" ;
     dcterms:title "Number" ;
@@ -287,10 +287,10 @@ Implementation Profile -> Implementation (instance level).
     skos:definition "Computes how the terrain is lit by a light source. One elevation model and the light source's azimuth and altitude in, one single-band raster out." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Analytical hillshading" ;
-    gp:inputs [ ns1:altitude <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/altitude> ;
-            ns1:azimuth <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/azimuth> ;
-            ns1:elevation <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/elevation> ] ;
-    gp:outputs [ ns2:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/outputs/result> ] ;
+    gp:inputs [ ns2:altitude <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/altitude> ;
+            ns2:azimuth <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/azimuth> ;
+            ns2:elevation <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/inputs/elevation> ] ;
+    gp:outputs [ ns1:result <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/analytical-hillshading/outputs/result> ] ;
     proc:keywords "elevation",
         "hillshade",
         "illumination",
@@ -430,7 +430,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.analytical-hillshading
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

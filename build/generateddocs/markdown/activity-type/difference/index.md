@@ -17,7 +17,7 @@ SQL/MM name: `ST_Difference`.
 
 ## The item
 
-`https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference` is an `acttype:ActivityType` item of this register (`gp:register`), of the Activity Type Register's item class, and an OWL class, sub-class of `geoproc:GeoprocessingActivityType`.
+`https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference` is an `acttype:ActivityType` item of this register (`gp:register`), of the Activity Type Register's item class, and an OWL class, sub-class of the family [`generic-profiles.activity-type.set-operation`](../set-operation/) (decision of 2026-11-19), itself a sub-class of `geoproc:GeoprocessingActivityType`.
 
 Its activities use or generate spatial data, declared with GeoSPARQL 1.1 classes: `usedEntityType` `geo:Geometry`; `generatedEntityType` `geo:Geometry`. The class is chosen per kind of role (see `scripts/activity-types.yaml`); how a data type of `bblocks-data-types` maps to an entity type is still open (decision D8, question 5).
 
@@ -52,7 +52,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.difference`
     "ST_Difference"
   ],
   "definition": "Returns a geometric object representing the point set difference of this geometric object with anotherGeometry.",
-  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "subClassOf": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation",
   "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference",
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
   "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
@@ -64,7 +64,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.difference`
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference"
     },
@@ -75,8 +75,19 @@ The Implementation Profile [`generic-profiles.implementation-profile.difference`
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/difference to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/family-2026-11-19",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "description": "The parent class (rdfs:subClassOf) changes from https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType to the family https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation, itself a sub-class of it (decision of 2026-11-19: activity types grouped by meaning). The definition and the entity types are unchanged. Classified substantive, a change of parent class.",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference"
     }
   ],
@@ -110,7 +121,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.difference`
     "ST_Difference"
   ],
   "definition": "Returns a geometric object representing the point set difference of this geometric object with anotherGeometry.",
-  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "subClassOf": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation",
   "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference",
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
   "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
@@ -122,7 +133,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.difference`
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference"
     },
@@ -133,8 +144,19 @@ The Implementation Profile [`generic-profiles.implementation-profile.difference`
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/difference to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/family-2026-11-19",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "description": "The parent class (rdfs:subClassOf) changes from https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType to the family https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation, itself a sub-class of it (decision of 2026-11-19: activity types grouped by meaning). The definition and the entity types are unchanged. Classified substantive, a change of parent class.",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference"
     }
   ],
@@ -170,7 +192,16 @@ The Implementation Profile [`generic-profiles.implementation-profile.difference`
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/family-2026-11-19> a rim:RegisterAction ;
+    dcterms:description "The parent class (rdfs:subClassOf) changes from https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType to the family https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation, itself a sub-class of it (decision of 2026-11-19: activity types grouped by meaning). The definition and the entity types are unchanged. Classified substantive, a change of parent class." ;
+    prov:startedAtTime "2026-11-19T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rdfs:subClassOf ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/difference to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -179,14 +210,14 @@ The Implementation Profile [`generic-profiles.implementation-profile.difference`
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference> a owl:Class,
         acttype:ActivityType ;
     dcterms:source [ dcterms:references <https://www.ogc.org/standards/sfa/> ;
             dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.26" ],
         [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, §5.1.13 ST_Difference" ] ;
-    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    rdfs:subClassOf <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation> ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/difference> ;
     skos:altLabel "ST_Difference" ;
     skos:definition "Returns a geometric object representing the point set difference of this geometric object with anotherGeometry." ;
@@ -195,6 +226,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.difference`
     acttype:generatedEntityType geo:Geometry ;
     acttype:usedEntityType geo:Geometry ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/family-2026-11-19>,
         <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/difference/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
     rim:itemClass acttype:activityTypeItemClass ;
@@ -222,7 +254,7 @@ allOf:
       const: Difference
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
     subClassOf:
-      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation
       x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#subClassOf
       x-jsonld-type: '@id'
 x-jsonld-extra-terms:
@@ -251,6 +283,9 @@ x-jsonld-extra-terms:
   affectedProperty:
     x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
     x-jsonld-type: '@id'
+  isReplacedBy:
+    x-jsonld-id: http://purl.org/dc/terms/isReplacedBy
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
   acttype: https://w3id.org/ogc/rim/activity-type/
   owl: http://www.w3.org/2002/07/owl#
@@ -262,7 +297,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type.difference
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 
@@ -478,6 +513,10 @@ Links to the schema:
     },
     "affectedProperty": {
       "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
+    "isReplacedBy": {
+      "@id": "dct:isReplacedBy",
       "@type": "@id"
     },
     "link": {

@@ -1,0 +1,27 @@
+{
+  "@context": "https://geolabs.github.io/bblocks-generic-profiles/build/annotated/activity-type/geometry-construction/context.jsonld",
+  "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-construction",
+  "type": [
+    "ActivityType",
+    "Class"
+  ],
+  "prefLabel": "Geometry construction",
+  "definition": "Derives a new geometry from one input geometry and, possibly, parameters such as a distance.",
+  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-construction",
+  "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
+  "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
+  "validityStatus": "invalid",
+  "publicationStatus": "published",
+  "hasAction": {
+    "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-construction/actions/addition",
+    "type": "RegisterAction",
+    "actionType": "addition",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+    "startedAtTime": "2026-11-19T00:00:00Z",
+    "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-construction"
+  },
+  "usedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "generatedEntityType": "http://www.opengis.net/ont/geosparql#Geometry",
+  "associatedAgentType": "http://www.w3.org/ns/prov#SoftwareAgent"
+}

@@ -13,7 +13,16 @@
     prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection/actions/family-2026-11-19> a rim:RegisterAction ;
+    dcterms:description "The parent class (rdfs:subClassOf) changes from https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType to the family https://w3id.org/geolabs/ospd/generic-profiles/activity-type/catalogue-search, itself a sub-class of it (decision of 2026-11-19: activity types grouped by meaning). The definition and the entity types are unchanged. Classified substantive, a change of parent class." ;
+    prov:startedAtTime "2026-11-19T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rdfs:subClassOf ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -22,17 +31,17 @@
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection> a owl:Class,
         acttype:ActivityType ;
-    dcterms:source [ dcterms:references <https://docs.ogc.org/is/13-026r9/13-026r9.html> ;
+    dcterms:source [ dcterms:references <https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md> ;
+            dcterms:title "STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and collections" ],
+        [ dcterms:references <https://docs.ogc.org/is/13-026r9/13-026r9.html> ;
             dcterms:title "OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, §1 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)" ],
         [ dcterms:references <https://docs.ogc.org/is/17-069r4/17-069r4.html> ;
-            dcterms:title "OGC 17-069r4 OGC API - Features - Part 1: Core, §7.15.3 Parameter bbox and §7.15.4 Parameter datetime" ],
-        [ dcterms:references <https://github.com/radiantearth/stac-api-spec/blob/v1.0.0/item-search/README.md> ;
-            dcterms:title "STAC API - Item Search 1.0.0 (community specification), parameters bbox, intersects, datetime and collections" ] ;
-    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+            dcterms:title "OGC 17-069r4 OGC API - Features - Part 1: Core, §7.15.3 Parameter bbox and §7.15.4 Parameter datetime" ] ;
+    rdfs:subClassOf <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/catalogue-search> ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/product-selection> ;
     skos:definition "Selects, from a catalogue of Earth observation products, those of a collection whose footprint intersects an area of interest and whose acquisition time falls within a time interval, possibly filtered further on their metadata, such as their cloud cover." ;
     skos:prefLabel "Product selection" ;
@@ -40,6 +49,7 @@
     acttype:generatedEntityType geo:Feature ;
     acttype:usedEntityType geo:Geometry ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection/actions/family-2026-11-19>,
         <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/product-selection/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
     rim:itemClass acttype:activityTypeItemClass ;

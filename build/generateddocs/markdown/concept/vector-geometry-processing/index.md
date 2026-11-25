@@ -64,7 +64,7 @@ not part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-pro
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
     },
@@ -75,7 +75,7 @@ not part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-pro
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing to https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
     }
@@ -113,7 +113,7 @@ not part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-pro
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-09-30T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
     },
@@ -124,7 +124,7 @@ not part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-pro
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing to https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing"
     }
@@ -161,7 +161,7 @@ not part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-pro
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing to https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -170,12 +170,12 @@ not part of this register -- see `ospd.process-profiles.sqlmm.*` in `bblocks-pro
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing> a gp:ProcessConcept ;
-    dcterms:source [ dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1" ],
-        [ dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ;
-            gp:clause "§6.1" ] ;
+    dcterms:source [ dcterms:title "OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture" ;
+            gp:clause "§6.1" ],
+        [ dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1" ] ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
     skos:definition "Operations on vector geometries: testing a spatial relationship between two geometries, deriving a new geometry from one or two others, or measuring a property of a geometry. Covers the spatial predicates, set operations and measures of OGC Simple Feature Access - Common Architecture (06-103r4) and its harmonized-with-SQL predecessor, Simple Features Specification For SQL Revision 1.1 (99-049), independent of any specific operation's own input/output signature." ;
     skos:inScheme gp:concept ;
@@ -239,7 +239,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.concept.vector-geometry-processing
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

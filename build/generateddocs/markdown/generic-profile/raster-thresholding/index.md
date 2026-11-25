@@ -54,7 +54,7 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding"
     },
@@ -65,7 +65,7 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding"
     }
@@ -131,7 +131,7 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding"
     },
@@ -142,7 +142,7 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding"
     }
@@ -197,8 +197,8 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
-@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
-@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns1: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/inputs/> .
+@prefix ns2: <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/outputs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -210,7 +210,7 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
     prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-thresholding to https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -219,7 +219,7 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/inputs/raster> dcterms:description "the single-band raster to threshold" ;
     dcterms:title "Raster (single band)" ;
@@ -237,8 +237,8 @@ Implementation Profile -> Implementation (instance level). A proposal added on 2
     skos:definition "Divides the cells of a single-band raster into two classes at a threshold that the operation determines from the raster's values, and returns the upper class as a binary mask. One single-band Raster input, one Binary mask output." ;
     skos:inScheme gp:generic-profile ;
     skos:prefLabel "Raster thresholding" ;
-    gp:inputs [ ns2:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/inputs/raster> ] ;
-    gp:outputs [ ns1:mask <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/outputs/mask> ] ;
+    gp:inputs [ ns1:raster <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/inputs/raster> ] ;
+    gp:outputs [ ns2:mask <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/raster-thresholding/outputs/mask> ] ;
     proc:keywords "coverage",
         "raster",
         "thresholding" ;
@@ -356,7 +356,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.generic-profile.raster-thresholding
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

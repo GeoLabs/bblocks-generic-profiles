@@ -91,7 +91,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-10-08T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     },
@@ -101,7 +101,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-thinning, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Reduces the number of points to the given percentage by sequential point removal, which suits points stored in chronological order best.\"",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     },
@@ -111,7 +111,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/points -> point-cloud-las (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"application/vnd.las\", \"description\": \"LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type\"}); outputs/result -> point-cloud-las (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"application/vnd.las\", \"description\": \"LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type\"}).",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     },
@@ -121,7 +121,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: tool keywords removed: Point Cloud Thinning, pointcloud_tools; 2 format keywords removed from inputs and outputs (inputs/points: LAS; outputs/result: LAS); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Point Cloud Thinning (Simple) <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_9.html>; ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.9: Point Cloud Thinning (Simple) <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.9>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     },
@@ -131,7 +131,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     },
@@ -142,7 +142,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     }
@@ -241,7 +241,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-10-08T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     },
@@ -251,7 +251,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-thinning, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Reduces the number of points to the given percentage by sequential point removal, which suits points stored in chronological order best.\"",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     },
@@ -261,7 +261,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "substantive",
       "description": "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/points -> point-cloud-las (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"application/vnd.las\", \"description\": \"LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type\"}); outputs/result -> point-cloud-las (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"application/vnd.las\", \"description\": \"LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type\"}).",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     },
@@ -271,7 +271,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Decision D4: tool keywords removed: Point Cloud Thinning, pointcloud_tools; 2 format keywords removed from inputs and outputs (inputs/points: LAS; outputs/result: LAS); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Point Cloud Thinning (Simple) <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_9.html>; ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.9: Point Cloud Thinning (Simple) <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.9>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     },
@@ -281,7 +281,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
       "changeClassification": "clarifying",
       "description": "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     },
@@ -292,7 +292,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning"
     }
@@ -393,7 +393,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     prov:startedAtTime "2026-10-08T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning to https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -402,7 +402,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/meaning-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-thinning, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Reduces the number of points to the given percentage by sequential point removal, which suits points stored in chronological order best.\"" ;
@@ -410,7 +410,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/representation-2026-11-09> a rim:RegisterAction ;
     dcterms:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/points -> point-cloud-las (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"application/vnd.las\", \"description\": \"LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type\"}); outputs/result -> point-cloud-las (schema was {\"type\": \"string\", \"contentEncoding\": \"base64\", \"contentMediaType\": \"application/vnd.las\", \"description\": \"LAS (OGC 17-030r1); application/vnd.las is the IANA-registered media type\"})." ;
@@ -418,7 +418,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/sections-restored-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Corrects what https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/tools-2026-11-09 describes: the description sections removed then (sources, illustrations, data formats, multiplicity and the open question where present, and the Register position reference to the tier-4 process and its testbed URL) are restored. Tools and testbed stay in the prose; decision D4 applies to the model (keywords, source, properties), which carries none. Decision of 2026-11-09." ;
@@ -426,7 +426,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/tools-2026-11-09> a rim:RegisterAction ;
     dcterms:description "Decision D4: tool keywords removed: Point Cloud Thinning, pointcloud_tools; 2 format keywords removed from inputs and outputs (inputs/points: LAS; outputs/result: LAS); sources removed (tools, testbed, the bbox schema now in the representation's format): SAGA 7.3.0 -- Point Cloud Thinning (Simple) <https://saga-gis.sourceforge.io/saga_tool_doc/7.3.0/pointcloud_tools_9.html>; ZOO-Project Geonovum testbed -- SAGA.pointcloud_tools.9: Point Cloud Thinning (Simple) <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.9>; description rewritten without tool, host or testbed. Each removed tool or testbed reference remains findable at tier 4, in bblocks-process-profiles." ;
@@ -434,7 +434,7 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/inputs/percentage> dcterms:type <https://w3id.org/geolabs/ospd/data-types/data-type/number> ;
     proc:keywords "percentage" ;
@@ -468,8 +468,8 @@ A proposal, amended in place on 2026-11-09 (`gp:amendmentAction`):
     gp:refinesGenericProfile <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/point-cloud-thinning> ;
     proc:keywords "point cloud",
         "thinning" ;
-    proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning" ],
-        [ dcterms:title "Process Concept: Point Cloud Processing" ] ;
+    proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ],
+        [ dcterms:title "Generic Profile: Point cloud thinning" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/identifier-2026-11-17>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/point-cloud-thinning/actions/meaning-2026-11-09>,
@@ -701,7 +701,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.implementation-profile.point-cloud-thinning
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

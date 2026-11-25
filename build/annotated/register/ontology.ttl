@@ -2,7 +2,6 @@
 @prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
 @prefix gpic: <https://w3id.org/geolabs/ospd/generic-profiles/item-class/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -98,19 +97,15 @@ gp:ImplementationProfile a owl:Class ;
     rdfs:subClassOf skos:Concept,
         rim:RegisterItem .
 
-gp:geolabs a prov:Organization ;
-    rdfs:label "GeoLabs SARL" ;
-    rdfs:seeAlso <https://www.geolabs.fr/> .
-
 gp:register a rim:Register ;
     dct:description "A general-purpose, provider-independent vocabulary of process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5), published as an OGC Building Blocks register."@en ;
     dct:title "Generic Process Profiles"@en ;
-    rim:controlBody gp:geolabs ;
+    rim:controlBody <https://w3id.org/geolabs/ospd/org/geolabs> ;
     rim:functionalIdentifier "https://geolabs.github.io/bblocks-generic-profiles/"^^xsd:anyURI ;
     rim:hasSpecification gp:specification ;
     rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/register"^^xsd:anyURI ;
-    rim:registerManager gp:geolabs ;
-    rim:registerOwner gp:geolabs ;
+    rim:registerManager <https://w3id.org/geolabs/ospd/org/geolabs> ;
+    rim:registerOwner <https://w3id.org/geolabs/ospd/org/geolabs> ;
     rim:runsOn gp:registerSystem .
 
 gp: a owl:Ontology ;

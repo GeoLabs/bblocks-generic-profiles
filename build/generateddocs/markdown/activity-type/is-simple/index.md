@@ -17,7 +17,7 @@ SQL/MM name: `ST_IsSimple`.
 
 ## The item
 
-`https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple` is an `acttype:ActivityType` item of this register (`gp:register`), of the Activity Type Register's item class, and an OWL class, sub-class of `geoproc:GeoprocessingActivityType`.
+`https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple` is an `acttype:ActivityType` item of this register (`gp:register`), of the Activity Type Register's item class, and an OWL class, sub-class of the family [`generic-profiles.activity-type.geometry-property-test`](../geometry-property-test/) (decision of 2026-11-19), itself a sub-class of `geoproc:GeoprocessingActivityType`.
 
 Its activities use or generate spatial data, declared with GeoSPARQL 1.1 classes: `usedEntityType` `geo:Geometry`. The class is chosen per kind of role (see `scripts/activity-types.yaml`); how a data type of `bblocks-data-types` maps to an entity type is still open (decision D8, question 5).
 
@@ -48,7 +48,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.is-simple`]
     "ST_IsSimple"
   ],
   "definition": "Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection or self tangency.",
-  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "subClassOf": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test",
   "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple",
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
   "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
@@ -60,7 +60,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.is-simple`]
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple"
     },
@@ -71,8 +71,19 @@ The Implementation Profile [`generic-profiles.implementation-profile.is-simple`]
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/is-simple to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/family-2026-11-19",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "description": "The parent class (rdfs:subClassOf) changes from https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType to the family https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test, itself a sub-class of it (decision of 2026-11-19: activity types grouped by meaning). The definition and the entity types are unchanged. Classified substantive, a change of parent class.",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple"
     }
   ],
@@ -105,7 +116,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.is-simple`]
     "ST_IsSimple"
   ],
   "definition": "Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection or self tangency.",
-  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "subClassOf": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test",
   "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple",
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
   "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
@@ -117,7 +128,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.is-simple`]
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple"
     },
@@ -128,8 +139,19 @@ The Implementation Profile [`generic-profiles.implementation-profile.is-simple`]
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/is-simple to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/family-2026-11-19",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "description": "The parent class (rdfs:subClassOf) changes from https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType to the family https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test, itself a sub-class of it (decision of 2026-11-19: activity types grouped by meaning). The definition and the entity types are unchanged. Classified substantive, a change of parent class.",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple"
     }
   ],
@@ -164,7 +186,16 @@ The Implementation Profile [`generic-profiles.implementation-profile.is-simple`]
     prov:startedAtTime "2026-11-09T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/family-2026-11-19> a rim:RegisterAction ;
+    dcterms:description "The parent class (rdfs:subClassOf) changes from https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType to the family https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test, itself a sub-class of it (decision of 2026-11-19: activity types grouped by meaning). The definition and the entity types are unchanged. Classified substantive, a change of parent class." ;
+    prov:startedAtTime "2026-11-19T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType gp:amendmentAction ;
+    rim:affectedProperty rdfs:subClassOf ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple> ;
+    rim:changeClassification rim:substantiveChange ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/is-simple to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -173,14 +204,14 @@ The Implementation Profile [`generic-profiles.implementation-profile.is-simple`]
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple> a owl:Class,
         acttype:ActivityType ;
     dcterms:source [ dcterms:title "ISO/IEC 13249-3:2016 SQL multimedia and application packages -- Part 3: Spatial, ST_IsSimple" ],
         [ dcterms:references <https://www.ogc.org/standards/sfs/> ;
             dcterms:title "OGC 99-049 OpenGIS Simple Features Specification For SQL, Revision 1.1, §2.1.1.1 IsSimple()" ] ;
-    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    rdfs:subClassOf <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test> ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/is-simple> ;
     skos:altLabel "ST_IsSimple" ;
     skos:definition "Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as self intersection or self tangency." ;
@@ -188,6 +219,7 @@ The Implementation Profile [`generic-profiles.implementation-profile.is-simple`]
     acttype:associatedAgentType prov:SoftwareAgent ;
     acttype:usedEntityType geo:Geometry ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/addition>,
+        <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/family-2026-11-19>,
         <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/is-simple/actions/identifier-2026-11-17> ;
     rim:inRegister gp:register ;
     rim:itemClass acttype:activityTypeItemClass ;
@@ -215,7 +247,7 @@ allOf:
       const: Is simple
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#prefLabel
     subClassOf:
-      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test
       x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#subClassOf
       x-jsonld-type: '@id'
 x-jsonld-extra-terms:
@@ -244,6 +276,9 @@ x-jsonld-extra-terms:
   affectedProperty:
     x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
     x-jsonld-type: '@id'
+  isReplacedBy:
+    x-jsonld-id: http://purl.org/dc/terms/isReplacedBy
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
   acttype: https://w3id.org/ogc/rim/activity-type/
   owl: http://www.w3.org/2002/07/owl#
@@ -255,7 +290,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type.is-simple
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 
@@ -471,6 +506,10 @@ Links to the schema:
     },
     "affectedProperty": {
       "@id": "rim:affectedProperty",
+      "@type": "@id"
+    },
+    "isReplacedBy": {
+      "@id": "dct:isReplacedBy",
       "@type": "@id"
     },
     "link": {

@@ -57,6 +57,12 @@ For each cell, the angle at which light coming from the position of the light so
 
 The area of this Surface, as measured in the spatial reference system of this Surface.
 
+### `generic-profiles.activity-type.band-algebra` — Activity type: Band algebra
+
+**Type:** schema
+
+Computes, for each cell, values of an output raster from an expression over the band values of one or more input rasters at that cell, the expression being given by the user or named, as a radiometric index.
+
 ### `generic-profiles.activity-type.band-retrieval` — Activity type: Band retrieval
 
 **Type:** schema
@@ -68,6 +74,12 @@ Retrieves one band, one range component, of an Earth observation product as a ra
 **Type:** schema
 
 Returns a geometric object representing all points whose distance from this geometric object is less than or equal to a given distance.
+
+### `generic-profiles.activity-type.catalogue-search` — Activity type: Catalogue search
+
+**Type:** schema
+
+Selects, from a catalogue, the records of spatial data that satisfy query criteria, such as a spatial extent, a time interval or metadata values.
 
 ### `generic-profiles.activity-type.centroid` — Activity type: Centroid
 
@@ -87,6 +99,12 @@ Returns TRUE if this geometric object spatially contains anotherGeometry (no poi
 
 Returns a geometry that represents the convex hull of this Geometry.
 
+### `generic-profiles.activity-type.coverage-subsetting` — Activity type: Coverage subsetting
+
+**Type:** schema
+
+Extracts a part of a coverage, restricted in its domain (an area of interest) or in its range (some bands), without changing the values extracted beyond a declared unit conversion.
+
 ### `generic-profiles.activity-type.crosses` — Activity type: Crosses
 
 **Type:** schema
@@ -105,17 +123,47 @@ Returns a geometric object representing the point set difference of this geometr
 
 Returns TRUE if this geometric object is spatially disjoint from anotherGeometry (they share no point). Equivalent to the negation of Intersects.
 
+### `generic-profiles.activity-type.encoding-conversion` — Activity type: Encoding conversion
+
+**Type:** schema
+
+Re-encodes spatial data in another data format, without changing the information it carries.
+
 ### `generic-profiles.activity-type.equals` — Activity type: Equals
 
 **Type:** schema
 
 Returns TRUE if this geometric object is spatially equal to anotherGeometry (same point set), independent of vertex order or representation.
 
+### `generic-profiles.activity-type.extent-computation` — Activity type: Extent computation
+
+**Type:** schema
+
+Computes the bounding envelope of spatial data, a geometry or a coverage, as a geometry.
+
+### `generic-profiles.activity-type.geometry-construction` — Activity type: Geometry construction
+
+**Type:** schema
+
+Derives a new geometry from one input geometry and, possibly, parameters such as a distance.
+
 ### `generic-profiles.activity-type.geometry-extent` — Activity type: Geometry extent
 
 **Type:** schema
 
 Computes the minimum bounding rectangle of a set of input geometries, as a geometry.
+
+### `generic-profiles.activity-type.geometry-measure` — Activity type: Geometry measure
+
+**Type:** schema
+
+Measures a quantity of a geometry, such as its area or length, in the units of its spatial reference system.
+
+### `generic-profiles.activity-type.geometry-property-test` — Activity type: Geometry property test
+
+**Type:** schema
+
+Tests whether one geometry has a given property, such as being simple, empty or closed, and returns a boolean.
 
 ### `generic-profiles.activity-type.intersection` — Activity type: Intersection
 
@@ -141,6 +189,12 @@ Returns 1 (TRUE) if this Geometry has no anomalous geometric points, such as sel
 
 Divides the cells of a single-band raster into two classes at the threshold computed from the histogram of the cell values by Otsu's method, which maximises the variance between the two classes, and returns the cells of the upper class as a binary mask.
 
+### `generic-profiles.activity-type.point-cloud-filtering` — Activity type: Point cloud filtering
+
+**Type:** schema
+
+Keeps a subset of the points of a point cloud, chosen by a rule, and returns them as a point cloud.
+
 ### `generic-profiles.activity-type.point-cloud-thinning` — Activity type: Point cloud thinning (simple)
 
 **Type:** schema
@@ -159,6 +213,12 @@ Writes one value per grid cell from the points falling in it -- by default the z
 
 Converts a point cloud to a feature collection of points.
 
+### `generic-profiles.activity-type.portrayal` — Activity type: Portrayal
+
+**Type:** schema
+
+Depicts spatial data as an image for viewing, according to rules that associate values or classes of values with a symbology.
+
 ### `generic-profiles.activity-type.product-selection` — Activity type: Product selection
 
 **Type:** schema
@@ -175,13 +235,19 @@ Computes one or more named radiometric indices (e.g. NDVI, NDWI, SAVI) from the 
 
 **Type:** schema
 
-Evaluates a user-supplied mathematical expression per pixel across one or more input rasters, producing a monoband output raster.
+Evaluates a user-supplied, possibly vector-valued, mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.
 
 ### `generic-profiles.activity-type.raster-band-math-multiband` — Activity type: Raster band math (multi-band output)
 
 **Type:** schema
 
 Evaluates a user-supplied, possibly vector-valued mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.
+
+### `generic-profiles.activity-type.raster-classification` — Activity type: Raster classification
+
+**Type:** schema
+
+Assigns each cell of a raster to one of a set of classes from its values, and returns the classes as a raster or a mask.
 
 ### `generic-profiles.activity-type.raster-crop` — Activity type: Raster crop
 
@@ -201,6 +267,12 @@ Computes the bounding envelope of a raster coverage, as a vector polygon.
 
 Re-encodes a raster coverage into another raster format, without altering its content.
 
+### `generic-profiles.activity-type.raster-regridding` — Activity type: Raster regridding
+
+**Type:** schema
+
+Computes the values of a raster on another grid, of another coordinate reference system or of another resolution, by resampling the input values.
+
 ### `generic-profiles.activity-type.raster-rendering` — Activity type: Raster rendering
 
 **Type:** schema
@@ -219,17 +291,41 @@ Reprojects a raster coverage to another coordinate reference system, resampling 
 
 Changes the cell size of a raster coverage, or its number of cells along each axis, over the same extent and in the same coordinate reference system, computing each new cell value from the input cells by an interpolation method.
 
+### `generic-profiles.activity-type.set-operation` — Activity type: Set operation on geometries
+
+**Type:** schema
+
+Returns the geometry made of the points that belong to two input geometries according to a point-set operation (union, intersection, difference or symmetric difference).
+
 ### `generic-profiles.activity-type.slope` — Activity type: Slope
 
 **Type:** schema
 
 The slope gradient of an elevation model at each cell, from a local fit of the surface by the 9 parameter 2nd order polynom of Zevenbergen & Thorne (1987).
 
+### `generic-profiles.activity-type.spatial-model-conversion` — Activity type: Spatial model conversion
+
+**Type:** schema
+
+Converts spatial data from one spatial model to another, such as a point cloud to a grid coverage or to a collection of features.
+
+### `generic-profiles.activity-type.spatial-relation-test` — Activity type: Spatial relation test
+
+**Type:** schema
+
+Tests whether a given spatial relation holds between two geometries, and returns a boolean.
+
 ### `generic-profiles.activity-type.symdifference` — Activity type: Symmetric difference
 
 **Type:** schema
 
 Returns a geometric object representing the point set symmetric difference of this geometric object with anotherGeometry.
+
+### `generic-profiles.activity-type.terrain-derivative` — Activity type: Terrain derivative
+
+**Type:** schema
+
+Computes, for each cell of an elevation model, a quantity derived from the elevations of the cell and its neighbourhood, such as slope, ruggedness, relative position or illumination.
 
 ### `generic-profiles.activity-type.terrain-ruggedness-index` — Activity type: Terrain ruggedness index
 
@@ -577,7 +673,7 @@ Implementation Profile of the operation Raster band math, whose meaning is its a
 
 **Type:** schema
 
-Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.
+Implementation Profile of the operation Raster band math, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats, with an output raster of one or more bands.
 
 ### `generic-profiles.implementation-profile.raster-crop` — Implementation Profile: Raster crop
 

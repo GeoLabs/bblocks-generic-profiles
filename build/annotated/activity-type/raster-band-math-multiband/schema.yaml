@@ -41,6 +41,9 @@ x-jsonld-extra-terms:
   affectedProperty:
     x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
     x-jsonld-type: '@id'
+  isReplacedBy:
+    x-jsonld-id: http://purl.org/dc/terms/isReplacedBy
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
   acttype: https://w3id.org/ogc/rim/activity-type/
   owl: http://www.w3.org/2002/07/owl#
@@ -52,4 +55,4 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type.raster-band-math-multiband
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'

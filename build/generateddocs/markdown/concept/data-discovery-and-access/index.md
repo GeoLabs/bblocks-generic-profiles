@@ -50,7 +50,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access"
     },
@@ -61,7 +61,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access to https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access"
     }
@@ -100,7 +100,7 @@ Implementation Profile -> Implementation (instance level).
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-10T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access"
     },
@@ -111,7 +111,7 @@ Implementation Profile -> Implementation (instance level).
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access to https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access"
     }
@@ -149,7 +149,7 @@ Implementation Profile -> Implementation (instance level).
     prov:startedAtTime "2026-11-10T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access/actions/identifier-2026-11-17> a rim:RegisterAction ;
     dcterms:description "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access to https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes." ;
@@ -158,13 +158,13 @@ Implementation Profile -> Implementation (instance level).
     rim:affectedProperty rim:objectIdentifier ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/concept/data-discovery-and-access> a gp:ProcessConcept ;
-    dcterms:source [ dcterms:references <https://portal.ogc.org/files/12-040> ;
-            dcterms:title "OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, §1 Scope" ],
-        [ dcterms:references <https://docs.ogc.org/is/13-026r9/13-026r9.html> ;
-            dcterms:title "OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, §1 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)" ] ;
+    dcterms:source [ dcterms:references <https://docs.ogc.org/is/13-026r9/13-026r9.html> ;
+            dcterms:title "OGC 13-026r9 OpenSearch Extension for Earth Observation 1.1, §1 Scope and the parameters for the discovery of products (parentIdentifier, cloudCover)" ],
+        [ dcterms:references <https://portal.ogc.org/files/12-040> ;
+            dcterms:title "OGC 12-040 Web Coverage Service Interface Standard - Range Subsetting Extension 1.0, §1 Scope" ] ;
     owl:sameAs <https://geolabs.github.io/bblocks-generic-profiles/def/concept/data-discovery-and-access> ;
     skos:definition "Operations that find data products in catalogues and retrieve their data: selecting products by area, time and metadata, and retrieving bands or areas of a product, without computing new quantities from them -- independent of any input/output signature or implementation (OGC 14-065 WPS 2.0.2 §7.5.1)." ;
     skos:inScheme gp:concept ;
@@ -228,7 +228,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.concept.data-discovery-and-access
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

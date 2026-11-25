@@ -1,0 +1,30 @@
+@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion> a owl:Class,
+        acttype:ActivityType ;
+    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    skos:definition "Converts spatial data from one spatial model to another, such as a point cloud to a grid coverage or to a collection of features." ;
+    skos:prefLabel "Spatial model conversion" ;
+    acttype:associatedAgentType prov:SoftwareAgent ;
+    acttype:usedEntityType geo:Feature ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass acttype:activityTypeItemClass ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-19T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion> ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
+

@@ -4,7 +4,7 @@ description: 'An activity type of this register: the meaning of one operation, a
   OWL class. One per operation (decision D3); the Implementation Profile of the operation
   points to it with `activityType`.'
 allOf:
-- $ref: https://ogcincubator.github.io/activity-type-register/build/annotated/register/schemas/activity-types-schema/schema.yaml
+- $ref: https://ogcincubator.github.io/activity-type-register/build/annotated/register/profiles/schemas/activity-types-schema/schema.yaml
 - type: object
   required:
   - id
@@ -38,10 +38,28 @@ allOf:
       type: string
       x-jsonld-id: http://www.w3.org/2004/02/skos/core#definition
     subClassOf:
-      description: Every activity type of this register is a geoprocessing activity
-        type, with at least one GeoSPARQL spatial used or generated entity type (geoproc
-        shapes).
-      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
+      description: geoproc:GeoprocessingActivityType, for a family; a family of this
+        register, for an operation (decision of 2026-11-19). Every activity type has
+        at least one GeoSPARQL spatial used or generated entity type (geoproc shapes).
+        Written by scripts/activity_types.py.
+      enum:
+      - https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-relation-test
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-construction
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/extent-computation
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/terrain-derivative
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-regridding
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/coverage-subsetting
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-measure
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-classification
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-filtering
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/encoding-conversion
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/portrayal
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/catalogue-search
       x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#subClassOf
       x-jsonld-type: '@id'
     itemClass:
@@ -84,6 +102,9 @@ x-jsonld-extra-terms:
   affectedProperty:
     x-jsonld-id: https://w3id.org/ogc/rim/affectedProperty
     x-jsonld-type: '@id'
+  isReplacedBy:
+    x-jsonld-id: http://purl.org/dc/terms/isReplacedBy
+    x-jsonld-type: '@id'
 x-jsonld-prefixes:
   acttype: https://w3id.org/ogc/rim/activity-type/
   owl: http://www.w3.org/2002/07/owl#
@@ -95,4 +116,4 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.activity-type
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'

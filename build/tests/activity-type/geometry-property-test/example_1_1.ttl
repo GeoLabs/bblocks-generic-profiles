@@ -1,0 +1,30 @@
+@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gp: <https://w3id.org/geolabs/ospd/generic-profiles/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test> a owl:Class,
+        acttype:ActivityType ;
+    rdfs:subClassOf <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType> ;
+    skos:definition "Tests whether one geometry has a given property, such as being simple, empty or closed, and returns a boolean." ;
+    skos:prefLabel "Geometry property test" ;
+    acttype:associatedAgentType prov:SoftwareAgent ;
+    acttype:usedEntityType geo:Geometry ;
+    rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test/actions/addition> ;
+    rim:inRegister gp:register ;
+    rim:itemClass acttype:activityTypeItemClass ;
+    rim:objectIdentifier "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test"^^xsd:anyURI ;
+    rim:publicationStatus rim:published ;
+    rim:validityStatus rim:invalid .
+
+<https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test/actions/addition> a rim:RegisterAction ;
+    prov:startedAtTime "2026-11-19T00:00:00+00:00"^^xsd:dateTime ;
+    rim:actionType rim:additionAction ;
+    rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test> ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
+

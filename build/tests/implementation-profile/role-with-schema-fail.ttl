@@ -12,7 +12,7 @@
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/meaning-2026-11-09> a rim:RegisterAction ;
     dct:description "The meaning of the operation moves to the activity type https://w3id.org/geolabs/ospd/generic-profiles/activity-type/intersects, linked by activityType (gp:activityType). The definition no longer defines the operation; it was: \"Returns TRUE if this geometric object spatially intersects anotherGeometry (i.e. they share at least one point). Equivalent to the negation of Disjoint.\"" ;
@@ -20,7 +20,7 @@
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/operation-sources-2026-11-09> a rim:RegisterAction ;
     dct:description "The keyword ST_Intersects becomes an altLabel of the activity type; the sources defining the operation move to the activity type: OGC 06-103r4 Simple Feature Access - Part 1: Common Architecture, §6.1.15; ISO/IEC 13249-3:2016 Information technology -- Database languages -- SQL multimedia and application packages -- Part 3: Spatial, §5.1.24 ST_Intersects; the illustration of the operation moves to the activity type." ;
@@ -28,7 +28,7 @@
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects> ;
     rim:changeClassification rim:clarifyingChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/representation-2026-11-09> a rim:RegisterAction ;
     dct:description "The schema copied on each input and output that had one is replaced by the representation that realizes its data type in the data-formats register (decision D6): inputs/geometry1 -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"}); inputs/geometry2 -> geometry-gml (schema was {\"type\": \"string\", \"contentMediaType\": \"text/xml\", \"description\": \"GML\"})." ;
@@ -36,7 +36,7 @@
     rim:actionType gp:amendmentAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects> ;
     rim:changeClassification rim:substantiveChange ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/inputs/geometry1> dct:type <https://w3id.org/geolabs/ospd/data-types/data-type/geometry> ;
     ns1:schema [ a ns1:string ;
@@ -77,8 +77,8 @@
         "predicate",
         "spatial relation",
         "vector" ;
-    proc:metadata [ dct:title "Generic Profile: Binary spatial predicate" ],
-        [ dct:title "Process Concept: Vector Geometry Processing" ] ;
+    proc:metadata [ dct:title "Process Concept: Vector Geometry Processing" ],
+        [ dct:title "Generic Profile: Binary spatial predicate" ] ;
     rim:hasAction <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/addition>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/meaning-2026-11-09>,
         <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/operation-sources-2026-11-09>,

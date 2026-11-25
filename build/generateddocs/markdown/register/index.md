@@ -105,8 +105,9 @@ independent concerns (validity, publication), makes supersession a relation, and
 item came to be in the register as a `rim:RegisterAction`. Every entry now carries:
 
 - `hasAction`: one action of type `addition` (`rim:additionAction`), whose `proposer` is
-  `https://w3id.org/geolabs/ospd/generic-profiles/geolabs` (the register's owner and
-  manager), `startedAtTime` the `dateTimeAddition` its building block declares, and `appliesTo` the
+  `https://w3id.org/geolabs/ospd/org/geolabs` (GeoLabs SARL, the register's owner and
+  manager; one agent IRI for the four OSPD registers, outside their namespaces and defined in the
+  data-types register, decision of 2026-11-19), `startedAtTime` the `dateTimeAddition` its building block declares, and `appliesTo` the
   entry itself. The action's own IRI is `<entry id>/actions/addition`;
 - `validityStatus: invalid` and `publicationStatus: published`: no control-body decision has been
   recorded, so the entry is visible but not in force.
@@ -195,9 +196,9 @@ gp:register a rim:Register ;
     rim:functionalIdentifier "https://geolabs.github.io/bblocks-generic-profiles/"^^xsd:anyURI ;
     dct:title "Generic Process Profiles"@en ;
     dct:description "A general-purpose, provider-independent vocabulary of process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5), published as an OGC Building Blocks register."@en ;
-    rim:registerOwner gp:geolabs ;
-    rim:registerManager gp:geolabs ;
-    rim:controlBody gp:geolabs ;
+    rim:registerOwner <https://w3id.org/geolabs/ospd/org/geolabs> ;
+    rim:registerManager <https://w3id.org/geolabs/ospd/org/geolabs> ;
+    rim:controlBody <https://w3id.org/geolabs/ospd/org/geolabs> ;
     rim:hasSpecification gp:specification ;
     rim:runsOn gp:registerSystem .
 
@@ -227,9 +228,9 @@ gp:amendmentAction a rim:RegisterActionType , skos:Concept ;
     skos:prefLabel "amendment"@en ;
     skos:definition "An in-place change to a proposal, an item with no control-body decision recorded. Always classified, clarifying or substantive."@en .
 
-gp:geolabs a prov:Organization ;
-    rdfs:label "GeoLabs SARL" ;
-    rdfs:seeAlso <https://www.geolabs.fr/> .
+# GeoLabs SARL, owner, manager, control body and proposer, is
+# <https://w3id.org/geolabs/ospd/org/geolabs>, the one agent IRI of the four OSPD registers,
+# defined in the data-types register (_sources/vocabulary/data.ttl), not here.
 
 # The register system is the OGC Building Blocks pipeline (bblocks-postprocess + GitHub
 # Pages), kept distinct from the register itself as ISO 19135:2026 requires.
@@ -338,7 +339,7 @@ gp:representation a owl:ObjectProperty ;
 # Entry into the register: a proposed addition
 #
 # Every entry carries one rim:RegisterAction of type rim:additionAction,
-# proposed (rim:proposer) by gp:geolabs, at the date the entry's building
+# proposed (rim:proposer) by <https://w3id.org/geolabs/ospd/org/geolabs>, at the date the entry's building
 # block declares as its addition (dateTimeAddition). No control-body
 # decision has been recorded, so entries are rim:invalid (not in force)
 # and rim:published (visible): the state of a proposed addition awaiting
@@ -392,7 +393,7 @@ gpic:implementation-profile a rim:RegisterItemClass ;
 <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing/actions/addition>
     a rim:RegisterAction ;
     rim:actionType rim:additionAction ;
-    rim:proposer gp:geolabs ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing> ;
     prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .
 
@@ -410,7 +411,7 @@ gpic:implementation-profile a rim:RegisterItemClass ;
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/actions/addition>
     a rim:RegisterAction ;
     rim:actionType rim:additionAction ;
-    rim:proposer gp:geolabs ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate> ;
     prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .
 
@@ -429,7 +430,7 @@ gpic:implementation-profile a rim:RegisterItemClass ;
 <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/addition>
     a rim:RegisterAction ;
     rim:actionType rim:additionAction ;
-    rim:proposer gp:geolabs ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects> ;
     prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .
 

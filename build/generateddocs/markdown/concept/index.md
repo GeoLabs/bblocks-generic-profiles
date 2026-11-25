@@ -46,7 +46,7 @@ Implementation Profile -> Implementation (instance level).
     "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
     "startedAtTime": "2026-09-30T00:00:00Z",
     "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept"
   },
@@ -78,7 +78,7 @@ Implementation Profile -> Implementation (instance level).
     "id": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept/actions/addition",
     "type": "RegisterAction",
     "actionType": "addition",
-    "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+    "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
     "startedAtTime": "2026-09-30T00:00:00Z",
     "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept"
   },
@@ -122,7 +122,7 @@ Implementation Profile -> Implementation (instance level).
     prov:startedAtTime "2026-09-30T00:00:00+00:00"^^xsd:dateTime ;
     rim:actionType rim:additionAction ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/example-concept> ;
-    rim:proposer gp:geolabs .
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> .
 
 
 ```
@@ -217,7 +217,7 @@ x-bblocks-metadata:
   itemIdentifier: generic-profiles.concept
   register: https://geolabs.github.io/bblocks-generic-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-25'
 
 ```
 
