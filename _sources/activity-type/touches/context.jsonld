@@ -43,6 +43,10 @@
     "affectedProperty": {
       "@id": "https://w3id.org/ogc/rim/affectedProperty",
       "@type": "@id"
+    },
+    "isReplacedBy": {
+      "@id": "dct:isReplacedBy",
+      "@type": "@id"
     }
   }
 }

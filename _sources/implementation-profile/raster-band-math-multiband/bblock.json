@@ -1,10 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
   "name": "Implementation Profile: Raster band math (multi-band output)",
-  "abstract": "Implementation Profile of the operation Raster band math (multi-band output), whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats.",
+  "abstract": "Implementation Profile of the operation Raster band math, whose meaning is its activity type (activityType): the signature of the Generic Profile Raster band math, bound to data exchange formats, with an output raster of one or more bands.",
   "status": "under-development",
   "dateTimeAddition": "2026-09-30T00:00:00Z",
-  "dateOfLastChange": "2026-11-09",
+  "dateOfLastChange": "2026-11-19",
   "version": "0.1",
   "itemClass": "schema",
   "register": "generic-profiles",

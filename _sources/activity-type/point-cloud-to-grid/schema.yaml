@@ -10,4 +10,4 @@ allOf:
     prefLabel:
       const: Point cloud to grid
     subClassOf:
-      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
+      const: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion

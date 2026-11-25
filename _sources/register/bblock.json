@@ -4,7 +4,7 @@
   "abstract": "This register described with the Registered Item Model (ISO 19135:2026): one rim:Register, three rim:RegisterItemClasses (Process Concept, Generic Profile, Implementation Profile) and the three owl:Classes, each a sub-class of rim:RegisterItem, that every entry of the corresponding tier is typed with. A profile of ogc.rim.schemas.register-item-class, following the same pattern as that register's own activity-type profile.",
   "status": "under-development",
   "dateTimeAddition": "2026-10-26T00:00:00Z",
-  "dateOfLastChange": "2026-11-09",
+  "dateOfLastChange": "2026-11-19",
   "version": "0.1",
   "itemClass": "model",
   "register": "generic-profiles",

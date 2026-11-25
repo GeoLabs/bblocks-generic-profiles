@@ -1,0 +1,52 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dct": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "acttype": "https://w3id.org/ogc/rim/activity-type/",
+    "gp": "https://w3id.org/geolabs/ospd/generic-profiles/",
+    "id": "@id",
+    "type": "@type",
+    "ActivityType": "acttype:ActivityType",
+    "Class": "owl:Class",
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "prefLabel": "skos:prefLabel",
+    "altLabel": "skos:altLabel",
+    "definition": "skos:definition",
+    "usedEntityType": {
+      "@id": "acttype:usedEntityType",
+      "@type": "@id"
+    },
+    "generatedEntityType": {
+      "@id": "acttype:generatedEntityType",
+      "@type": "@id"
+    },
+    "associatedAgentType": {
+      "@id": "acttype:associatedAgentType",
+      "@type": "@id"
+    },
+    "source": "dct:source",
+    "title": "dct:title",
+    "link": {
+      "@id": "dct:references",
+      "@type": "@id"
+    },
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "affectedProperty": {
+      "@id": "https://w3id.org/ogc/rim/affectedProperty",
+      "@type": "@id"
+    },
+    "isReplacedBy": {
+      "@id": "dct:isReplacedBy",
+      "@type": "@id"
+    }
+  }
+}

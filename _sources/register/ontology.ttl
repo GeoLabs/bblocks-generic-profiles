@@ -42,9 +42,9 @@ gp:register a rim:Register ;
     rim:functionalIdentifier "https://geolabs.github.io/bblocks-generic-profiles/"^^xsd:anyURI ;
     dct:title "Generic Process Profiles"@en ;
     dct:description "A general-purpose, provider-independent vocabulary of process Concepts, Generic Profiles and Implementation Profiles (OGC 14-065 WPS 2.0.2 §7.5), published as an OGC Building Blocks register."@en ;
-    rim:registerOwner gp:geolabs ;
-    rim:registerManager gp:geolabs ;
-    rim:controlBody gp:geolabs ;
+    rim:registerOwner <https://w3id.org/geolabs/ospd/org/geolabs> ;
+    rim:registerManager <https://w3id.org/geolabs/ospd/org/geolabs> ;
+    rim:controlBody <https://w3id.org/geolabs/ospd/org/geolabs> ;
     rim:hasSpecification gp:specification ;
     rim:runsOn gp:registerSystem .
 
@@ -74,9 +74,9 @@ gp:amendmentAction a rim:RegisterActionType , skos:Concept ;
     skos:prefLabel "amendment"@en ;
     skos:definition "An in-place change to a proposal, an item with no control-body decision recorded. Always classified, clarifying or substantive."@en .
 
-gp:geolabs a prov:Organization ;
-    rdfs:label "GeoLabs SARL" ;
-    rdfs:seeAlso <https://www.geolabs.fr/> .
+# GeoLabs SARL, owner, manager, control body and proposer, is
+# <https://w3id.org/geolabs/ospd/org/geolabs>, the one agent IRI of the four OSPD registers,
+# defined in the data-types register (_sources/vocabulary/data.ttl), not here.
 
 # The register system is the OGC Building Blocks pipeline (bblocks-postprocess + GitHub
 # Pages), kept distinct from the register itself as ISO 19135:2026 requires.
@@ -185,7 +185,7 @@ gp:representation a owl:ObjectProperty ;
 # Entry into the register: a proposed addition
 #
 # Every entry carries one rim:RegisterAction of type rim:additionAction,
-# proposed (rim:proposer) by gp:geolabs, at the date the entry's building
+# proposed (rim:proposer) by <https://w3id.org/geolabs/ospd/org/geolabs>, at the date the entry's building
 # block declares as its addition (dateTimeAddition). No control-body
 # decision has been recorded, so entries are rim:invalid (not in force)
 # and rim:published (visible): the state of a proposed addition awaiting

@@ -1,0 +1,5 @@
+- title: Band algebra
+  base-uri: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/
+  snippets:
+  - language: json
+    ref: examples/band-algebra.json

@@ -1,0 +1,5 @@
+- title: Spatial model conversion
+  base-uri: https://w3id.org/geolabs/ospd/generic-profiles/activity-type/
+  snippets:
+  - language: json
+    ref: examples/spatial-model-conversion.json

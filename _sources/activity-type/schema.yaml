@@ -3,7 +3,7 @@ description: 'An activity type of this register: the meaning of one operation, a
   item (Activity Type Register) held in gp:register, and an OWL class. One per operation (decision D3);
   the Implementation Profile of the operation points to it with `activityType`.'
 allOf:
-- $ref: bblocks://ogc.register.schemas.activity-types-schema
+- $ref: bblocks://ogc.register.profiles.schemas.activity-types-schema
 - type: object
   required:
   - id
@@ -33,9 +33,27 @@ allOf:
       description: What the operation does. No tool, format or deployment.
       type: string
     subClassOf:
-      description: Every activity type of this register is a geoprocessing activity type, with at least
-        one GeoSPARQL spatial used or generated entity type (geoproc shapes).
-      const: https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
+      description: geoproc:GeoprocessingActivityType, for a family; a family of this register, for an
+        operation (decision of 2026-11-19). Every activity type has at least one GeoSPARQL spatial used
+        or generated entity type (geoproc shapes). Written by scripts/activity_types.py.
+      enum:
+      - https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-relation-test
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/set-operation
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-construction
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/extent-computation
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/terrain-derivative
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-regridding
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/coverage-subsetting
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/spatial-model-conversion
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-measure
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/geometry-property-test
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-classification
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/point-cloud-filtering
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/encoding-conversion
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/portrayal
+      - https://w3id.org/geolabs/ospd/generic-profiles/activity-type/catalogue-search
     itemClass:
       description: Written by scripts/activity_types.py from its constant ATR_ITEM_CLASS.
       const: https://w3id.org/ogc/rim/activity-type/activityTypeItemClass

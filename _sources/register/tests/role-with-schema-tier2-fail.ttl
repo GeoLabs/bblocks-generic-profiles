@@ -24,7 +24,7 @@
 
 <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/fixture-role-with-schema-tier2/actions/addition> a rim:RegisterAction ;
     rim:actionType rim:additionAction ;
-    rim:proposer gp:geolabs ;
+    rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> ;
     rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/fixture-role-with-schema-tier2> ;
     prov:startedAtTime "2026-11-09T00:00:00Z"^^xsd:dateTime .
 

@@ -5,8 +5,8 @@
     "Class"
   ],
   "prefLabel": "Raster band math",
-  "definition": "Evaluates a user-supplied mathematical expression per pixel across one or more input rasters, producing a monoband output raster.",
-  "subClassOf": "https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType",
+  "definition": "Evaluates a user-supplied, possibly vector-valued, mathematical expression per pixel across one or more input rasters, producing an output raster with one or more bands.",
+  "subClassOf": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra",
   "objectIdentifier": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math",
   "itemClass": "https://w3id.org/ogc/rim/activity-type/activityTypeItemClass",
   "inRegister": "https://w3id.org/geolabs/ospd/generic-profiles/register",
@@ -18,7 +18,7 @@
       "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math/actions/addition",
       "type": "RegisterAction",
       "actionType": "addition",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-09T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math"
     },
@@ -29,8 +29,41 @@
       "changeClassification": "clarifying",
       "affectedProperty": "https://w3id.org/ogc/rim/objectIdentifier",
       "description": "The object identifier of this item moves from https://geolabs.github.io/bblocks-generic-profiles/def/activity-type/raster-band-math to https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math, which resolves through w3id.org (decision of 2026-11-17); the register actions of the item move with it, under https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math/actions/. The old IRI is kept as owl:sameAs. The content of the item is unchanged. Classified clarifying: the item is the same, only its identifier changes.",
-      "proposer": "https://w3id.org/geolabs/ospd/generic-profiles/geolabs",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
       "startedAtTime": "2026-11-17T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math/actions/merge-2026-11-19",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "http://www.w3.org/2004/02/skos/core#definition",
+      "description": "The activity type raster-band-math-multiband is merged into this one (decision of 2026-11-19), which now covers an output raster with one or more bands. The definition changes meaning; it was \"Evaluates a user-supplied mathematical expression per pixel across one or more input rasters, producing a monoband output raster.\" The number of bands of the output is a matter of signature, already enforced by the dataType of each Implementation Profile's output (raster-single-band or raster), not of meaning. The Implementation Profiles raster-band-math and raster-band-math-multiband both point here. Classified substantive, a change of meaning.",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math/actions/sources-2026-11-19",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "clarifying",
+      "affectedProperty": "http://purl.org/dc/terms/source",
+      "description": "With the merge of raster-band-math-multiband, its source on several bands is added here, OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType. Classified clarifying, a source.",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
+      "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math"
+    },
+    {
+      "id": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math/actions/family-2026-11-19",
+      "type": "RegisterAction",
+      "actionType": "https://w3id.org/geolabs/ospd/generic-profiles/amendmentAction",
+      "changeClassification": "substantive",
+      "affectedProperty": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "description": "The parent class (rdfs:subClassOf) changes from https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType to the family https://w3id.org/geolabs/ospd/generic-profiles/activity-type/band-algebra, itself a sub-class of it (decision of 2026-11-19: activity types grouped by meaning). The definition and the entity types are unchanged. Classified substantive, a change of parent class.",
+      "proposer": "https://w3id.org/geolabs/ospd/org/geolabs",
+      "startedAtTime": "2026-11-19T00:00:00Z",
       "appliesTo": "https://w3id.org/geolabs/ospd/generic-profiles/activity-type/raster-band-math"
     }
   ],
@@ -41,6 +74,10 @@
     {
       "title": "OGC 08-068r2 Web Coverage Processing Service (WCPS) Language Interface Standard",
       "link": "https://www.ogc.org/standards/wcps/"
+    },
+    {
+      "title": "OGC 09-146r8 Coverage Implementation Schema (CIS) 1.1.1, §6.5 RangeType",
+      "link": "https://docs.ogc.org/is/09-146r8/09-146r8.html"
     }
   ]
 }

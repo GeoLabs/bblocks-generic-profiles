@@ -94,8 +94,9 @@ independent concerns (validity, publication), makes supersession a relation, and
 item came to be in the register as a `rim:RegisterAction`. Every entry now carries:
 
 - `hasAction`: one action of type `addition` (`rim:additionAction`), whose `proposer` is
-  `https://w3id.org/geolabs/ospd/generic-profiles/geolabs` (the register's owner and
-  manager), `startedAtTime` the `dateTimeAddition` its building block declares, and `appliesTo` the
+  `https://w3id.org/geolabs/ospd/org/geolabs` (GeoLabs SARL, the register's owner and
+  manager; one agent IRI for the four OSPD registers, outside their namespaces and defined in the
+  data-types register, decision of 2026-11-19), `startedAtTime` the `dateTimeAddition` its building block declares, and `appliesTo` the
   entry itself. The action's own IRI is `<entry id>/actions/addition`;
 - `validityStatus: invalid` and `publicationStatus: published`: no control-body decision has been
   recorded, so the entry is visible but not in force.

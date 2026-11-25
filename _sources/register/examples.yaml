@@ -56,7 +56,7 @@ examples:
           <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing/actions/addition>
               a rim:RegisterAction ;
               rim:actionType rim:additionAction ;
-              rim:proposer gp:geolabs ;
+              rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> ;
               rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/concept/vector-geometry-processing> ;
               prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .
 
@@ -74,7 +74,7 @@ examples:
           <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate/actions/addition>
               a rim:RegisterAction ;
               rim:actionType rim:additionAction ;
-              rim:proposer gp:geolabs ;
+              rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> ;
               rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/generic-profile/binary-spatial-predicate> ;
               prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .
 
@@ -93,6 +93,6 @@ examples:
           <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects/actions/addition>
               a rim:RegisterAction ;
               rim:actionType rim:additionAction ;
-              rim:proposer gp:geolabs ;
+              rim:proposer <https://w3id.org/geolabs/ospd/org/geolabs> ;
               rim:appliesTo <https://w3id.org/geolabs/ospd/generic-profiles/implementation-profile/intersects> ;
               prov:startedAtTime "2026-09-30T00:00:00Z"^^xsd:dateTime .
