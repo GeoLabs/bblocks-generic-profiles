@@ -3,7 +3,7 @@ description: 'An activity type of this register: the meaning of one operation, a
   item (Activity Type Register) held in gp:register, and an OWL class. One per operation (decision D3);
   the Implementation Profile of the operation points to it with `activityType`.'
 allOf:
-- $ref: bblocks://ogc.register.schemas.activity-types-schema
+- $ref: bblocks://ogc.register.profiles.schemas.activity-types-schema
 - type: object
   required:
   - id
